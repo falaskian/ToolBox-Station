@@ -8,6 +8,7 @@
 	anchored = TRUE
 	max_integrity = 200
 	integrity_failure = 100
+	var/deconstructable = TRUE
 
 /obj/structure/mirror/Initialize(mapload)
 	. = ..()
@@ -98,6 +99,7 @@
 	desc = "Turn and face the strange... face."
 	icon_state = "magic_mirror"
 	var/list/choosable_races = list()
+	deconstructable = FALSE
 
 /obj/structure/mirror/magic/New()
 	if(!choosable_races.len)
