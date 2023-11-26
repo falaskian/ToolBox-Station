@@ -456,7 +456,7 @@
 
 /obj/effect/proc_holder/spell/targeted/summon_bow/perform(list/targets, recharge, mob/living/user)
 	var/list/thecontents = user.get_contents()
-	if(bow && bow in thecontents)
+	if(bow && (bow in thecontents))
 		to_chat(user, "<span class='warning'>You already have your bow!</span>")
 		return
 	return ..()

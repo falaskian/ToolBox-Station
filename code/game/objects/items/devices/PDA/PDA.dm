@@ -451,7 +451,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 					mode = 0
 				else
 					mode = round(mode/10)
-					if((cartridge && mode in cartridge.return_modes) || (mode==4 || mode == 5)) //Fix for cartridges. Redirects to hub.
+					if((cartridge && (mode in cartridge.return_modes)) || (mode==4 || mode == 5)) //Fix for cartridges. Redirects to hub.
 						mode = 0
 				if(!silent)
 					playsound(src, 'sound/machines/terminal_select.ogg', 15, TRUE)

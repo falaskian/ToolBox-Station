@@ -61,7 +61,7 @@ A hostile human animal mob that is customizable. -Falaskian
 		switch(race)
 			if("human")
 				name = capitalize(pick(GLOB.first_names_male)) + " " + capitalize(pick(GLOB.last_names))
-			if("lizard" || "ashwalker")
+			if("lizard", "ashwalker")
 				name = lizard_name(MALE)
 	var/list/overlayslist = list()
 	var/image/I
@@ -108,7 +108,7 @@ A hostile human animal mob that is customizable. -Falaskian
 				I.color = "#[human_traits["facial_hair_color"]]"
 				I.layer = 4.4
 				overlayslist += I
-		if("lizard" || "ashwalker")
+		if("lizard", "ashwalker")
 			//for now, we hard coded what specific lizard mutant parts are used. Lizards all look the same anyway.
 			var/list/body_part_states = list("m_body_markings_ltiger_ADJ" = 4.3,
 			"m_tail_spikes_FRONT" = 4.5,

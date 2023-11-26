@@ -24,7 +24,7 @@
 		var/list/states = icon_states(toolboxicon)
 		if(icon_state in states)
 			icon = toolboxicon
-	if(forcedir && forcedir in GLOB.cardinals)
+	if(forcedir && (forcedir in GLOB.cardinals))
 		setDir(forcedir)
 	. = ..()
 	power_change()

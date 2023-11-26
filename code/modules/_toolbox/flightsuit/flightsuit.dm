@@ -251,7 +251,7 @@ PROCESSING_SUBSYSTEM_DEF(flightpacks)
 /obj/item/flightpack/proc/momentum_drift()
 	if(!flight || !wearer || (momentum_speed == 0))
 		return FALSE
-	else if(!wearer.mobility_flags & MOBILITY_MOVE)
+	else if((!wearer.mobility_flags) & MOBILITY_MOVE)
 		losecontrol()
 	var/drift_dir_x = 0
 	var/drift_dir_y = 0

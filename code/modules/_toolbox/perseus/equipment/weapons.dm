@@ -88,7 +88,8 @@
 * Variables
 */
 
-#define SKNIFE_RECHARGES 1 //set to 1 if you want the stun knife to require charge and to automatically recharge.
+//#define SKNIFE_RECHARGES 1 //set to 1 if you want the stun knife to require charge and to automatically recharge.
+//Defines should not be toggles even in the code, either make it a global variable, or attach it to the object.
 
 /obj/item/stun_knife
 	name = "Stun Knife"
@@ -109,6 +110,7 @@
 
 	var/locked = 1 //Will it shock you if you are not perseus.
 	var/mode = 1 //0 = attack | 1 = stun
+	var/requires_recharge = 1 //Does it require charge to function? Replaces define SKNIFE_RECHARGES
 
 	//power supply
 	var/obj/item/stock_parts/cell/power_supply
@@ -141,15 +143,14 @@
 
 	Initialize()
 		..()
-		if(SKNIFE_RECHARGES)
-			power_supply = new()
-			power_supply.give(power_supply.maxcharge)
-			SSobj.processing += src
+		power_supply = new()
+		power_supply.give(power_supply.maxcharge)
+		SSobj.processing += src
 		update_icon()
 
 	examine()
 		. = ..()
-		if(power_supply && SKNIFE_RECHARGES)
+		if(power_supply && requires_recharge)
 			var/remaining = power_supply.charge
 			if(power_supply.charge < charge_cost)
 				remaining = 0
@@ -170,7 +171,7 @@
 		if(mode)
 			if(!issilicon(M))
 				var/do_stun = 1
-				if(SKNIFE_RECHARGES && !power_supply.use(charge_cost))
+				if(requires_recharge && !power_supply.use(charge_cost))
 					do_stun = 0
 					to_chat(user,"<div class='warning'>The [src] is out of charge!</div>")
 				if(do_stun)

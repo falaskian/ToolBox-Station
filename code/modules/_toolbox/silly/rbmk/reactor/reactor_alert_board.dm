@@ -89,7 +89,7 @@
 					var/alarmfile
 					if(alarm_list[alarm] && islist(alarm_list[alarm]))
 						alarmfile = alarm_list[alarm][alarmnumber]
-					if(isfile(alarmfile) && alarmfile in looping_sounds_list)
+					if(isfile(alarmfile) && (alarmfile in looping_sounds_list))
 						alarmdat += " <A href='?src=\ref[src];silence=[alarm];number=[alarmnumber]'>Silence Alarm</A>"
 					alarmdat += "<br>"
 					alarm_texts += alarmdat
@@ -235,7 +235,7 @@
 		update_icon()
 
 /obj/machinery/rbmkalertconsole/proc/play_alarm_sound(alarm,number)
-	if(!(alarm in alarm_list) || !isnum(number) || number <= 0 ||alarm in muted_alarms)
+	if(!(alarm in alarm_list) || !isnum(number) || number <= 0 || (alarm in muted_alarms))
 		return
 	var/alarmfile
 	if(alarm_list[alarm] && islist(alarm_list[alarm]))
@@ -257,9 +257,9 @@
 	var/alarmfile
 	if(alarm_list[alarm] && islist(alarm_list[alarm]) && number <= 3)
 		alarmfile = alarm_list[alarm][number]
-	if(isfile(alarmfile) && alarmfile in looping_sounds_list)
+	if(isfile(alarmfile) && (alarmfile in looping_sounds_list))
 		var/datum/looping_sound/loop = looping_sounds_list[alarmfile]
-		if(loop && loop in currently_playing_alarms)
+		if(loop && (loop in currently_playing_alarms))
 			currently_playing_alarms -= loop
 			loop.stop()
 

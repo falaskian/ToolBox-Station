@@ -304,7 +304,7 @@ GLOBAL_LIST_EMPTY(hub_features)
 	for(var/mob/living/M in GLOB.player_list)
 		if(!M.mind)
 			continue
-		if(M.mind && M.mind.assigned_role in chain_of_command)
+		if(M.mind && (M.mind.assigned_role in chain_of_command))
 			heads_found = 1
 			chain_of_command[M.mind.assigned_role] = M
 	if(heads_found)

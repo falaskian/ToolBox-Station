@@ -120,7 +120,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	if(SStoolbox_events)
 		for(var/i in SStoolbox_events.cached_events)
 			var/datum/toolbox_event/E = SStoolbox_events.cached_events[i]
-			if(E && E.active && jobtitle in E.block_job_position_changes)
+			if(E && E.active && (jobtitle in E.block_job_position_changes))
 				return TRUE
 	return (jobtitle in blacklisted)
 

@@ -134,7 +134,7 @@
 		if(linkedphone)
 			to_chat(user,"<span class='warning'>Call Cancled.</span>")
 			return
-		if(((!istype(selected,/obj/item/phone)|(loc != user && get_dist(src,user) > 1))))
+		if(((!istype(selected,/obj/item/phone)||(loc != user && (get_dist(src,user) > 1)))))
 			to_chat(user,"<span class='warning'>Call Cancled.</span>")
 			return
 		if(!can_call_out)

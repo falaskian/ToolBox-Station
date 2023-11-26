@@ -146,7 +146,7 @@ GLOBAL_VAR_INIT(aliensexist,0)
 				queen = M
 				SSshuttle.registerHostileEnvironment(queen)
 			alien_count++
-		else if((M.mind && M.mind in GLOB.Original_Minds) && (istype(M,/mob/living/carbon/human)))
+		else if((M.mind && (M.mind in GLOB.Original_Minds)) && (istype(M,/mob/living/carbon/human)))
 			if(is_special_character(M))
 				active_antags += M.mind
 			if(M.client && (M.mind.assigned_role in src.important_jobs))

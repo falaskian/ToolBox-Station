@@ -59,9 +59,9 @@ var/global/obj/new_player_cam/new_player_cam = null
 			continue
 		if(P.client.byond_version < 511)
 			continue
-		if(thescreen && thescreen in P.client.screen)
+		if(thescreen && (thescreen in P.client.screen))
 			P.client.screen -= thescreen
-		if(toolboxlogo && toolboxlogo in P.client.screen)
+		if(toolboxlogo && (toolboxlogo in P.client.screen))
 			P.client.screen -= toolboxlogo
 		if(P.client.eye != src)
 			continue

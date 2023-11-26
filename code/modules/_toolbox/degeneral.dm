@@ -996,7 +996,7 @@ GLOBAL_LIST_EMPTY(lizard_ore_nodes)
 	if(over_object == usr && Adjacent(usr))
 		if(!usr.can_hold_items())
 			return
-		if(!usr.canUseTopic(src, BE_CLOSE(usr)))
+		if(!usr.canUseTopic(src, BE_CLOSE))
 			return
 		usr.visible_message("<span class='notice'>[usr] grabs \the [src.name].</span>", "<span class='notice'>You grab \the [src.name].</span>")
 		var/obj/item/flashlight/flare/torch/on/C = new /obj/item/flashlight/flare/torch/on(loc)

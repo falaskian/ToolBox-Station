@@ -429,11 +429,11 @@ proc/FixWiring(list/aoelist = list())
 		if(buildwire)
 			var/obj/structure/cable/C = new(T)
 			dogridupdate = 1
-			GLOB.cable_list -= src
+			GLOB.cable_list -= C
 			C.d1 = numd1
 			C.d2 = numd2
 			C.update_icon()
-			GLOB.cable_list += src
+			GLOB.cable_list += C
 		for(var/obj/item/stack/cable_coil/C in T)
 			if(!C.fingerprintslast && C.amount <= 5)
 				qdel(C)

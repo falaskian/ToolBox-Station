@@ -6,13 +6,13 @@
 	var/forcedir = 0
 
 /obj/structure/frame/computer/Initialize()
-	if(forcedir && forcedir in GLOB.cardinals)
+	if(forcedir && (forcedir in GLOB.cardinals))
 		setDir(forcedir)
 	. = ..()
 
 /obj/structure/frame/computer/Move(NewLoc,Dir=0,step_x=0,step_y=0)
 	. = ..()
-	if(forcedir && forcedir in GLOB.cardinals)
+	if(forcedir && (forcedir in GLOB.cardinals))
 		setDir(forcedir)
 
 /obj/structure/frame/computer/attackby(obj/item/P, mob/user, params)
@@ -127,7 +127,7 @@
 				to_chat(user, "<span class='notice'>You connect the monitor.</span>")
 				var/obj/B = new circuit.build_path (loc, circuit)
 				var/thedir = dir
-				if(forcedir && forcedir in GLOB.cardinals)
+				if(forcedir && (forcedir in GLOB.cardinals))
 					thedir = forcedir
 				B.setDir(thedir)
 				transfer_fingerprints_to(B)
@@ -155,6 +155,6 @@
 		return
 
 	var/thedir = turn(dir, -90)
-	if(forcedir && forcedir in GLOB.cardinals)
+	if(forcedir && (forcedir in GLOB.cardinals))
 		thedir = forcedir
 	setDir(thedir)

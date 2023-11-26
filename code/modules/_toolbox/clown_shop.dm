@@ -32,7 +32,7 @@
 			host_pda.attack_self(user)
 		else if(href_list["clownstorebuy"])
 			var/thepath = text2path(href_list["clownstorebuy"])
-			if(ispath(thepath) && thepath in clown_buyables)
+			if(ispath(thepath) && (thepath in clown_buyables))
 				var/list/amounts = params2list(clown_buyables[thepath])
 				amounts["cost"] = text2num(amounts["cost"])
 				amounts["remaining"] = text2num(amounts["remaining"])

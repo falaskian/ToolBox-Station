@@ -162,7 +162,7 @@
 			if(!theloc)
 				break
 			theloc = theloc.loc
-		if(theloc && theloc in existingpercs)
+		if(theloc && (theloc in existingpercs))
 			continue
 		if(istype(AM,/obj/item/ammo_casing))
 			var/obj/item/ammo_casing/casing = AM
@@ -594,9 +594,9 @@
 		attack_hand(usr)*/
 	if(href_list["removetrackeditem"])
 		var/atom/movable/AM = locate(href_list["removetrackeditem"])
-		if(istype(AM) && AM in perseus_equipment_list)
+		if(istype(AM) && (AM in perseus_equipment_list))
 			var/choice = alert(usr,"Are you sure you want to stop tracking the [AM.name]?","[src.name]","Confirm","Cancel")
-			if(choice == "Confirm" && istype(AM) && AM in perseus_equipment_list)
+			if(choice == "Confirm" && istype(AM) && (AM in perseus_equipment_list))
 				perseus_equipment_list -= AM
 				to_chat(usr, "[src.name] no longer tracking item: [capitalize(AM.name)]")
 				playsound(get_turf(src), 'sound/machines/twobeep.ogg', 50, 0)

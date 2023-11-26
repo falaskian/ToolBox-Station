@@ -262,7 +262,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 		for(var/obj/item/twohanded/required/fuel_rod/F in fuel_rods)
 			rod = F
 			break
-	if(!rod || !rod in fuel_rods)
+	if(!rod || !(rod in fuel_rods)) // Was also !rod in fuel_rods, which doesnt add up.
 		return
 	playsound(src, 'sound/toolbox/reactor/crane_1.wav', 100, FALSE)
 	var/turf/unloadturf = get_turf(src)
@@ -966,7 +966,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 			to_chat(usr, "<span class='warning'>You cannot remove fuel from [reactor] while it is running above 20% power.</span>")
 			return
 		var/obj/item/twohanded/required/fuel_rod/rod = locate(href_list["fuelrod"])
-		if(istype(rod) && rod in reactor.fuel_rods)
+		if(istype(rod) && (rod in reactor.fuel_rods))
 			to_chat(usr, "<span class='notice'>You remove [rod.name] from the [reactor].</span>")
 			reactor.remove_fuel_rod(rod)
 			playsound(src, pick('sound/toolbox/reactor/switch.ogg','sound/toolbox/reactor/switch2.ogg','sound/toolbox/reactor/switch3.ogg'), 100, FALSE)

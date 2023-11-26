@@ -96,7 +96,10 @@
 			if(prob(20))
 				M.blur_eyes(3)
 			if(M.getStaminaLoss() >= 90)
-				M.Unconscious(80, updating = TRUE, ignore_canunconscious = FALSE)
+				if(ishuman(M))
+					M:Unconscious(80, updating = TRUE, ignore_canunconscious = FALSE)
+				else
+					M:Unconscious(80, updating = TRUE, ignore_canstun = FALSE)
 				M.Sleeping(rand(80,150), 0)
 			do_attack_animation(M)
 
