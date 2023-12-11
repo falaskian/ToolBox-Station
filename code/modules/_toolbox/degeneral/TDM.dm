@@ -135,12 +135,17 @@
 
 
 
+/*
+
+/********************** TDM GEAR **************************/
 
 
 
 
 
 
+
+*/
 
 
 
@@ -187,7 +192,7 @@
 	if(iscyborg(user))
 		return
 	if(do_after(user, 2))
-		user.put_in_hands(new /obj/item/toy/snowball/tdm())
+		user.put_in_hands(new /obj/item/ammo_casing/snowball())
 		to_chat(user, "<span class='notice'>You grab some snow and make a snowball.</span>")
 		playsound(loc, 'sound/effects/shovel_dig.ogg', 15, 1, -3)
 
@@ -242,52 +247,55 @@
 		playsound(src, 'sound/effects/pop.ogg', 20, 1)
 		qdel(src)
 
+/obj/item/ammo_casing/snowball/update_icon()
 
 
 
+/obj/item/ammo_casing/snowball/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, spread_mult = 1, atom/fired_from)
+	.=..()
+	if(.)
+		qdel(src)
 
 
+	//Snowball / Bullet
+
+/obj/item/projectile/bullet/snowball
+    name = "snowball"
+    icon = 'icons/obj/toy.dmi'
+    icon_state = "snowball"
+    damage = 55
+    //hitsound_wall = "ricochet"
+    //impact_effect_type = /obj/effect/temp_visual/impact_effect
+    //hitsound = 'sound/weapons/pierce.ogg'
 
 
 /********************** DISPLAY CASE **************************/
 
 
-/*
-/obj/structure/vendordisplaycase
-	name = "display case"
-	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "glassbox_open"
-	desc = "A display case for prized possessions."
-	density = TRUE
-	anchored = TRUE
-	resistance_flags = ACID_PROOF
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
-	max_integrity = 500
-	var/obj/item/showpiece = null //Weapon on display
-	var/open = FALSE
+/obj/structure/displaycase/itemspawn
+	name = "item spawn display case"
+	var/respawn_timer = 20
 
-
-/obj/structure/displaycase/update_icon()
-	var/icon/I
-	if(open)
-		I = icon('icons/obj/stationobjs.dmi',"glassbox_open")
-	else
-		I = icon('icons/obj/stationobjs.dmi',"glassbox0")
+/obj/structure/displaycase/Initialize()
+	.=..()
 	if(showpiece)
-		var/icon/S = getFlatIcon(showpiece)
-		S.Scale(17,17)
-		I.Blend(S,ICON_UNDERLAY,8,8)
-	src.icon = I
+		name = "[showpiece.name] display case"
+
+/obj/structure/displaycase/itemspawn/attackby(obj/item/W, mob/user, params)
 	return
 
-/obj/structure/vendordisplaycase/attack_hand(mob/user)
-	if(iscyborg(user) || isalien(user))
+/obj/structure/displaycase/itemspawn/obj_break(damage_flag)
+	return
+
+/obj/structure/displaycase/proc/dump()
+	.=..()
+	respawn_item()
+
+/obj/structure/displaycase/proc/respawn_item()
+	if(!start_showpiece_type)
 		return
-	if(do_after(user, 2))
-		user.put_in_hands(new (showpiece)())
-		to_chat(user, "<span class='notice'>You grab a [showpiece_name] out of the display case.</span>")
-		playsound(loc, 'sound/effects/shovel_dig.ogg', 15, 1, -3)
-*/
-
-
+	spawn(respawn_timer)
+		if(!showpiece)
+			showpiece = new start_showpiece_type (src)
+			update_icon()
 
