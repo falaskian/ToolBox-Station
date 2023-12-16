@@ -4,20 +4,11 @@
 
 /* TDM New & Updated Weapons
  - TDM GEAR
- - OTHER
- - SNOWBALLS
- - DISPLAY CASE
  - STRUCTURES
  - TURFS
  - AREAS
+ - WINTER WONDERLAND - SNOWBALLS
 */
-
-
-
-
-
-
-
 
 
 
@@ -29,11 +20,11 @@
 
 		//9mm Pistol - Stechkin - 12 ammo, 20DMG
 
-/obj/item/gun/ballistic/automatic/pistol/tdm
-	desc = "A small, easily concealable 9mm handgun."
-	mag_type = /obj/item/ammo_box/magazine/pistolm9mm/tdm
+/obj/item/gun/ballistic/automatic/pistol/TDM
+	desc = "A small, easily concealable 9mm handgun. DMG:20"
+	mag_type = /obj/item/ammo_box/magazine/pistolm9mm/TDM
 
-/obj/item/ammo_box/magazine/pistolm9mm/tdm
+/obj/item/ammo_box/magazine/pistolm9mm/TDM
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 12
 
@@ -41,54 +32,94 @@
 
 		//9mm Stetchkin APS - 3rnd brst, 12(4) ammo, uses same mags and does same dmg as Stechkin but automatic
 
-/obj/item/gun/ballistic/automatic/pistol/APS/tdm
-	mag_type = /obj/item/ammo_box/magazine/pistolm9mm/tdm
+/obj/item/gun/ballistic/automatic/pistol/APS/TDM
+	desc = "Automatic, easily concealable 9mm handgun. DMG:20"
+	mag_type = /obj/item/ammo_box/magazine/pistolm9mm/TDM
 
 
 
 		//.357 Revolver - 6 ammo, 45DMG
 
-/obj/item/gun/ballistic/revolver/tdm
+/obj/item/gun/ballistic/revolver/TDM
 	name = "\improper .357 revolver"
-	desc = "Big Iron on his hip. Uses .357 ammo."
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/tdm
+	desc = "Big Iron on his hip. Uses .357 ammo. DMG:45"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/TDM
 
-/obj/item/ammo_box/magazine/internal/cylinder/tdm
-	ammo_type = /obj/item/ammo_casing/a357/tdm
+/obj/item/ammo_box/magazine/internal/cylinder/TDM
+	ammo_type = /obj/item/ammo_casing/a357/TDM
 	max_ammo = 6
 
-/obj/item/ammo_box/a357/tdm
-	ammo_type = /obj/item/ammo_casing/a357/tdm
+/obj/item/ammo_box/a357/TDM
+	ammo_type = /obj/item/ammo_casing/a357/TDM
 	max_ammo = 6
 
-/obj/item/ammo_casing/a357/tdm
-	projectile_type = /obj/item/projectile/bullet/a357/tdm
+/obj/item/ammo_casing/a357/TDM
+	projectile_type = /obj/item/projectile/bullet/a357/TDM
 
-/obj/item/projectile/bullet/a357/tdm
+/obj/item/projectile/bullet/a357/TDM
 	damage = 45
 
 
 
-		//DoubleBarrel Shotgun - Shotgun loaded with buckshot
+		//SHOTGUNS
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/tdm/buckshot
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/tdm
+		//DoubleBarrel Shotgun - Slug
+/obj/item/gun/ballistic/shotgun/doublebarrel/TDM
+	desc = "A true classic. DMG:60"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/TDM
 	//rack_sound_volume = 0
 	//fire_rate = 2 //being double barrelled, you don't rely on internal mechanisms.
 	//pb_knockback = 3
 
-/obj/item/ammo_box/magazine/internal/shot/dual/tdm
-	name = "double-barrel shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	caliber = "shotgun"
+
+		//DoubleBarrel Shotgun - Buckshot
+/obj/item/gun/ballistic/shotgun/doublebarrel/TDM/buckshot
+	desc = "A true classic. DMG:54"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/TDM/buckshot
+
+
+		//Pump Shotgun - Slug
+/obj/item/gun/ballistic/shotgun/TDM
+	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath. DMG:60"
+	name = "pump shotgun"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/TDM
+
+
+		//Pump Shotgun - Buckshot
+/obj/item/gun/ballistic/shotgun/TDM/buckshot
+	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath. DMG:54"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/TDM
+
+
+
+		//Shotgun Mags
+
+	//DoubleBarrel - Slug
+/obj/item/ammo_box/magazine/internal/shot/dual/TDM
+	ammo_type = /obj/item/ammo_casing/shotgun
 	max_ammo = 2
-	multiload = 1 //Can be loaded with a speed loader
+	multiload = 1
+
+	//DoubleBarrel - Buckshot
+/obj/item/ammo_box/magazine/internal/shot/dual/TDM/buckshot
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+
+	//Pump Shotgun - Slug
+/obj/item/ammo_box/magazine/internal/shot/TDM
+	ammo_type = /obj/item/ammo_casing/shotgun
+	max_ammo = 4
+	multiload = 1
+
+	//Pump Shotgun - Buckshot
+/obj/item/ammo_box/magazine/internal/shot/TDM/buckshot
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 
 /* SHELL SPEED LOADER
 /obj/item/ammo_box/s12g
 	name = "speedloader (12g Buckshot)"
 	desc = "Designed to quickly reload double-barrel shotguns."
-	icon_state = "762"
+	icon_state = "762-2"
+	color = "#FF0000"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	max_ammo = 2
 	multiple_sprites = 1
@@ -98,29 +129,28 @@
 
 
 
-
 		//Uzi 9mm - 3rnd brst, 24(8) ammo, 20DMG
 
-/obj/item/gun/ballistic/automatic/pistol/APS/tdm/uzi
+/obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi
 	name = "\improper Type U3 Uzi"
-	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
+	desc = "A lightweight submachine gun. Uses 9mm rounds. DMG:20"
 	icon_state = "miniuzi"
 	w_class = WEIGHT_CLASS_NORMAL
 	bolt_type = BOLT_TYPE_OPEN
 	mag_display = TRUE
-	mag_type = /obj/item/ammo_box/magazine/uzim9mm/tdm
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm/TDM
 	burst_size = 3
 
-/obj/item/ammo_box/magazine/uzim9mm/tdm
+/obj/item/ammo_box/magazine/uzim9mm/TDM
 	max_ammo = 24
 
 
 
 		//Carbine - 10 ammo, 35DMG
 
-/obj/item/gun/ballistic/automatic/surplus/tdm
+/obj/item/gun/ballistic/automatic/surplus/TDM
 	name = "carbine"
-	desc = "California Compliant. Uses .45 carbine ammo and its bulky frame prevents one-hand firing."
+	desc = "California Compliant. Uses .45 carbine ammo and its bulky frame prevents one-hand firing. DMG:35"
 	mag_type = /obj/item/ammo_box/magazine/m45carbine
 	fire_delay = 0
 	fire_rate = 2.5
@@ -132,6 +162,7 @@
 	ammo_type = /obj/item/ammo_casing/c45carbine
 	caliber = ".45c"
 	max_ammo = 10
+	multiple_sprites = 1
 
 /obj/item/ammo_casing/c45carbine
 	name = ".45 carbine bullet casing"
@@ -144,10 +175,9 @@
 	damage = 35
 
 
-
 		//Knife - 35DMG, 30DMG thrown
-/obj/item/kitchen/knife/combat/tdm
-	desc = "A military combat utility survival knife."
+/obj/item/kitchen/knife/combat/TDM
+	desc = "A military combat knife. DMG:35"
 	force = 35
 	throwforce = 30
 	bayonet = TRUE
@@ -171,7 +201,7 @@
 	belt = /obj/item/storage/belt/fannypack/red
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/soft/red
+	head = /obj/item/clothing/head/beret/TDM/red
 	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
 	r_pocket = /obj/item/stack/medical/gauze/two
 
@@ -182,6 +212,7 @@
 /datum/outfit/TDM/red/t4
 	name = "TDM Red Team T4"
 	head = /obj/item/clothing/head/helmet/sec
+	suit = /obj/item/clothing/suit/armor/vest/alt
 
 
 	//Blue Team
@@ -192,19 +223,18 @@
 	belt = /obj/item/storage/belt/fannypack/blue
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/soft/blue
+	head = /obj/item/clothing/head/beret/TDM/blue
 	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
 	r_pocket = /obj/item/stack/medical/gauze/two
 
-/datum/outfit/TDM/red/t3
+/datum/outfit/TDM/blue/t3
 	name = "TDM Blue Team T3"
 	suit = /obj/item/clothing/suit/armor/vest/alt
 
-/datum/outfit/TDM/red/t4
+/datum/outfit/TDM/blue/t4
 	name = "TDM Blue Team T4"
 	head = /obj/item/clothing/head/helmet/sec
-
-
+	suit = /obj/item/clothing/suit/armor/vest/alt
 
 
 
@@ -237,17 +267,259 @@
 
 
 
+		//Clothes
+
+/obj/item/clothing/head/beret/TDM
+	name = "beret"
+	desc = "A beret. Very stylish but offers no protection."
+	icon_state = "beretce" //White
+
+
+/obj/item/clothing/head/beret/TDM/red
+	name = "red beret"
+	desc = "A red beret. Very stylish but offers no protection."
+	icon_state = "beret_badge"
+
+
+/obj/item/clothing/head/beret/TDM/blue
+	name = "blue beret"
+	desc = "A blue beret. Very stylish but offers no protection."
+	icon_state = "beret_captain"
+
+
+/********************** STRUCTURES **************************/
+
+
+		//Wall Healer
+
+obj/structure/TDM
+	anchored = 1
+
+obj/structure/TDM/take_damage()
+	return
+
+obj/structure/TDM/wallmed
+	name = "InstaMed"
+	desc = "Wall-mounted healing station."
+	icon = 'icons/obj/vending.dmi'
+	icon_state = "wallmed"
+
+obj/structure/TDM/wallmed/attack_hand(mob/living/user)
+	if(iscyborg(user))
+		return
+	if(do_after(user, 10))
+		user.revive(full_heal = TRUE)
+		to_chat(user,"InstaMed heals all your wounds.")
+		playsound(loc, 'sound/machines/defib_ready.ogg')
+
+
+
+		//Display Case
+
+/obj/structure/displaycase/TDM_item_spawn
+	name = "item spawn display case"
+	var/respawn_timer = 20
+
+/obj/structure/displaycase/TDM_item_spawn/Initialize()
+	.=..()
+	if(showpiece)
+		name = "[showpiece.name] display case"
+		desc = "[showpiece.desc]"
+
+
+/obj/structure/displaycase/TDM_item_spawn/attackby(obj/item/W, mob/user, params)
+	return
+
+/obj/structure/displaycase/TDM_item_spawn/take_damage()
+	return
+
+/obj/structure/displaycase/TDM_item_spawn/dump()
+	.=..()
+	respawn_item()
+
+/obj/structure/displaycase/TDM_item_spawn/proc/respawn_item()
+	if(!start_showpiece_type)
+		return
+	spawn(respawn_timer)
+		if(!showpiece)
+			showpiece = new start_showpiece_type (src)
+			update_icon()
+
+
+
+		// Boxes
+
+/obj/structure/ore_box/TDM
+	name = "sturdy box"
+	desc ="A heavy wooden box. It looks very sturdy."
+	anchored = 1
+
+
+/obj/structure/ore_box/TDM/take_damage()
+	return
+
+
+
+		//Sandbags
+
+/obj/structure/barricade/sandbags/TDM
+	desc = "Bags of sand. Self explanatory. They look very sturdy."
+	canSmoothWith = list(/obj/structure/barricade/sandbags/TDM, /obj/structure/barricade/sandbags, /turf/closed/wall, /turf/closed/wall/r_wall, /obj/structure/falsewall, /obj/structure/falsewall/reinforced, /turf/closed/wall/rust, /turf/closed/wall/r_wall/rust, /obj/structure/barricade/security)
+
+
+/obj/structure/barricade/sandbags/TDM/take_damage()
+	return
+
+		//Half Wall
+/obj/structure/barricade/sandbags/TDM/half_wall
+	name = "half wall"
+	desc = "Stone half wall. You need to be close to shoot accurately over it. It looks very sturdy."
+	color = "#909090"
+
+/obj/structure/barricade/sandbags/TDM/half_wall/CanPass(atom/movable/mover, turf/target)
+	. = ..()
+	if(get_dir(loc, target) & dir)
+		var/checking = FLYING | FLOATING
+		return . || mover.movement_type & checking
+	return TRUE
+
+
+
+		//Banners
+
+/obj/item/banner/TDM
+	anchored = 1
+
+/obj/item/banner/TDM/red
+	icon_state = "banner-red"
+
+/obj/item/banner/TDM/blue
+	icon_state = "banner-blue"
+
+
+
+		//Windows
+obj/structure/window/plastitanium/tough/TDM
+
+obj/structure/window/plastitanium/tough/TDM/take_damage()
+	return
 
 
 
 
 
-/********************** OTHER **************************/
+
+
+/********************** TURFS **************************/
+
+		//Floor
+
+
+/turf/open/floor/sepia/TDM
+	slowdown = 0
+
+/turf/open/floor/sepia/TDM/dark_10
+	color = "#e6e6e6"
+
+
+		//Stairs
+
+/turf/open/floor/plasteel/stairs/TDM
+	icon = 'icons/obj/stairs.dmi'
+	icon_state = "stairs_t"
+	slowdown = 1
+
+/turf/open/floor/plasteel/stairs/TDM/up
+	dir = 1
+
+/turf/open/floor/plasteel/stairs/TDM/right
+	dir = 4
+
+/turf/open/floor/plasteel/stairs/TDM/left
+	dir = 8
+
+
+/turf/open/floor/plasteel/stairs/TDM/sepia
+	color = "#ae9b84"
+
+/turf/open/floor/plasteel/stairs/TDM/sepia/up
+	dir = 1
+
+/turf/open/floor/plasteel/stairs/TDM/sepia/right
+	dir = 4
+
+/turf/open/floor/plasteel/stairs/TDM/sepia/left
+	dir = 8
+
+
+		//Dirt
+
+/proc/TDM_dirt()
+	for(var/area/A in list(
+		/area/TDM,
+		/area/TDM/lobby,
+		/area/TDM/red_base,
+		/area/TDM/blue_base
+		))
+		for(var/turf/open/floor/T in A)
+			var/goforit = 1
+			for (var/t in list(
+			/turf/open/floor/plasteel/stairs
+			))
+				if(istype(T,t))
+					goforit = 0
+					break
+			if(goforit && prob(20))
+				new /obj/effect/decal/cleanable/dirt(T)
+
+
+/********************** AREAS **************************/
+
+
+
+
+/area/TDM
+	name = "Arena"
+	icon_state = "blue-red-d"
+	has_gravity = TRUE
+	dynamic_lighting = 0 //Fully lit at all times
+	requires_power = 0 // Constantly powered
+
+
+/area/TDM/lobby
+	name = "Lobby"
+	icon_state = "blue-red2"
+
+/area/TDM/lobby/red
+	name = "Join Red Team"
+	icon_state = "red2"
+
+/area/TDM/lobby/blue
+	name = "Join Blue Team"
+	icon_state = "blue2"
+
+/area/TDM/red_base
+	name = "Red Base"
+	icon_state = "red2"
+
+
+/area/TDM/blue_base
+	name = "Blue Base"
+	icon_state = "blue2"
+
+
+
+
+
+
+
+
+/********************** WINTER WONDERLAND **************************/
 
 
 		//Snowballs
 
-/obj/item/toy/snowball/tdm
+/obj/item/toy/snowball/TDM
 	name = "snowball"
 	desc = "A compact ball of snow. Good for throwing at people."
 	icon = 'icons/obj/toy.dmi'
@@ -255,7 +527,7 @@
 	throwforce = 60
 
 
-/obj/item/toy/snowball/tdm/yellow
+/obj/item/toy/snowball/TDM/yellow
 	name = "yellow snowball"
 	desc = "A compact ball of snow. Good for throwing at people."
 	color = "#ffff00"
@@ -355,184 +627,3 @@
     //hitsound_wall = "ricochet"
     //impact_effect_type = /obj/effect/temp_visual/impact_effect
     //hitsound = 'sound/weapons/pierce.ogg'
-
-
-
-
-
-
-
-
-
-
-
-
-/********************** STRUCTURES **************************/
-
-
-
-		//Display Case
-
-/obj/structure/displaycase/itemspawn
-	name = "item spawn display case"
-	var/respawn_timer = 20
-
-/obj/structure/displaycase/itemspawn/Initialize()
-	.=..()
-	if(showpiece)
-		name = "[showpiece.name] display case"
-
-/obj/structure/displaycase/itemspawn/attackby(obj/item/W, mob/user, params)
-	return
-
-/obj/structure/displaycase/itemspawn/take_damage()
-	return
-
-/obj/structure/displaycase/itemspawn/dump()
-	.=..()
-	respawn_item()
-
-/obj/structure/displaycase/itemspawn/proc/respawn_item()
-	if(!start_showpiece_type)
-		return
-	spawn(respawn_timer)
-		if(!showpiece)
-			showpiece = new start_showpiece_type (src)
-			update_icon()
-
-
-
-		// Boxes
-
-/obj/structure/ore_box/TDM
-	name = "sturdy box"
-	desc ="A heavy wooden box. It looks very sturdy."
-	anchored = 1
-
-
-/obj/structure/ore_box/TDM/take_damage()
-	return
-
-
-
-		//Sandbags
-
-/obj/structure/barricade/sandbags/TDM
-	desc = "Bags of sand. Self explanatory. They look very sturdy."
-
-
-/obj/structure/barricade/sandbags/TDM/take_damage()
-	return
-
-
-
-		//Banners
-
-/obj/item/banner/TDM
-	anchored = 1
-
-/obj/item/banner/TDM/red
-	icon_state = "banner-red"
-
-/obj/item/banner/TDM/blue
-	icon_state = "banner-blue"
-
-
-
-		//Windows
-obj/structure/window/plastitanium/tough/TDM
-
-obj/structure/window/plastitanium/tough/TDM/take_damage()
-	return
-
-
-
-
-
-/********************** TURFS **************************/
-
-		//Floor
-
-
-/turf/open/floor/sepia/TDM
-	slowdown = 0
-
-/turf/open/floor/sepia/TDM/dark_10
-	color = "#e6e6e6"
-
-
-		//Stairs
-
-/turf/open/floor/plasteel/stairs/TDM
-	icon = 'icons/obj/stairs.dmi'
-	icon_state = "stairs_t"
-
-/turf/open/floor/plasteel/stairs/TDM/up
-	dir = 1
-
-/turf/open/floor/plasteel/stairs/TDM/right
-	dir = 4
-
-/turf/open/floor/plasteel/stairs/TDM/left
-	dir = 8
-
-
-/turf/open/floor/plasteel/stairs/TDM/sepia
-	color = "#ae9b84"
-
-/turf/open/floor/plasteel/stairs/TDM/sepia/up
-	dir = 1
-
-/turf/open/floor/plasteel/stairs/TDM/sepia/right
-	dir = 4
-
-/turf/open/floor/plasteel/stairs/TDM/sepia/left
-	dir = 8
-
-
-		//Dirt
-
-/proc/TDM_dirt()
-	for(var/area/A in list(
-		/area/TDM,
-		/area/TDM/lobby,
-		/area/TDM/red_base,
-		/area/TDM/blue_base
-		))
-		for(var/turf/open/floor/T in A)
-			var/goforit = 1
-			for (var/t in list(
-			/turf/open/floor/plasteel/stairs
-			))
-				if(istype(T,t))
-					goforit = 0
-					break
-			if(goforit && prob(20))
-				new /obj/effect/decal/cleanable/dirt(T)
-
-
-/********************** AREAS **************************/
-
-
-
-
-/area/TDM
-	name = "Arena"
-	icon_state = "blue-red-d"
-	has_gravity = TRUE
-	dynamic_lighting = 0 //Fully lit at all times
-	requires_power = 0 // Constantly powered
-
-
-/area/TDM/lobby
-	name = "Lobby"
-	icon_state = "blue-red2"
-
-/area/TDM/red_base
-	name = "Red Base"
-	icon_state = "red2"
-
-
-/area/TDM/blue_base
-	name = "Blue Base"
-	icon_state = "blue2"
