@@ -8,6 +8,7 @@
  - SNOWBALLS
  - DISPLAY CASE
  - STRUCTURES
+ - TURFS
  - AREAS
 */
 
@@ -164,7 +165,7 @@
 
 	//Red Team
 
-/datum/outfit/TDM/red1
+/datum/outfit/TDM/red
 	name = "TDM Red Team T1"
 	uniform = /obj/item/clothing/under/color/red
 	belt = /obj/item/storage/belt/fannypack/red
@@ -185,7 +186,7 @@
 
 	//Blue Team
 
-/datum/outfit/TDM/blue1
+/datum/outfit/TDM/blue
 	name = "TDM Blue Team T1"
 	uniform = /obj/item/clothing/under/color/blue
 	belt = /obj/item/storage/belt/fannypack/blue
@@ -356,38 +357,6 @@
     //hitsound = 'sound/weapons/pierce.ogg'
 
 
-/********************** DISPLAY CASE **************************/
-
-
-/obj/structure/displaycase/itemspawn
-	name = "item spawn display case"
-	var/respawn_timer = 20
-
-/obj/structure/displaycase/Initialize()
-	.=..()
-	if(showpiece)
-		name = "[showpiece.name] display case"
-
-/obj/structure/displaycase/itemspawn/attackby(obj/item/W, mob/user, params)
-	return
-
-/obj/structure/displaycase/itemspawn/obj_break(damage_flag)
-	return
-
-/obj/structure/displaycase/dump()
-	.=..()
-	respawn_item()
-
-/obj/structure/displaycase/proc/respawn_item()
-	if(!start_showpiece_type)
-		return
-	spawn(20)
-		if(!showpiece)
-			showpiece = new start_showpiece_type (src)
-			update_icon()
-
-
-
 
 
 
@@ -402,30 +371,57 @@
 
 
 
+		//Display Case
 
+/obj/structure/displaycase/itemspawn
+	name = "item spawn display case"
+	var/respawn_timer = 20
+
+/obj/structure/displaycase/itemspawn/Initialize()
+	.=..()
+	if(showpiece)
+		name = "[showpiece.name] display case"
+
+/obj/structure/displaycase/itemspawn/attackby(obj/item/W, mob/user, params)
+	return
+
+/obj/structure/displaycase/itemspawn/take_damage()
+	return
+
+/obj/structure/displaycase/itemspawn/dump()
+	.=..()
+	respawn_item()
+
+/obj/structure/displaycase/itemspawn/proc/respawn_item()
+	if(!start_showpiece_type)
+		return
+	spawn(respawn_timer)
+		if(!showpiece)
+			showpiece = new start_showpiece_type (src)
+			update_icon()
 
 
 
 		// Boxes
 
-/obj/structure/ore_box/tdm
+/obj/structure/ore_box/TDM
 	name = "sturdy box"
 	desc ="A heavy wooden box. It looks very sturdy."
 	anchored = 1
 
 
-/obj/structure/ore_box/tdm/obj_break(damage_flag)
+/obj/structure/ore_box/TDM/take_damage()
 	return
 
 
 
 		//Sandbags
 
-/obj/structure/barricade/sandbags/tdm
+/obj/structure/barricade/sandbags/TDM
 	desc = "Bags of sand. Self explanatory. They look very sturdy."
 
 
-/obj/structure/barricade/sandbags/tdm/obj_break(damage_flag)
+/obj/structure/barricade/sandbags/TDM/take_damage()
 	return
 
 
@@ -444,7 +440,10 @@
 
 
 		//Windows
-//obj/structure/window/plastitanium/tough
+obj/structure/window/plastitanium/tough/TDM
+
+obj/structure/window/plastitanium/tough/TDM/take_damage()
+	return
 
 
 
@@ -454,9 +453,12 @@
 
 		//Floor
 
-/turf/open/floor/sepia/dark_10
-	color = "#e6e6e6"
 
+/turf/open/floor/sepia/TDM
+	slowdown = 0
+
+/turf/open/floor/sepia/TDM/dark_10
+	color = "#e6e6e6"
 
 
 		//Stairs
@@ -487,6 +489,26 @@
 /turf/open/floor/plasteel/stairs/TDM/sepia/left
 	dir = 8
 
+
+		//Dirt
+
+/proc/TDM_dirt()
+	for(var/area/A in list(
+		/area/TDM,
+		/area/TDM/lobby,
+		/area/TDM/red_base,
+		/area/TDM/blue_base
+		))
+		for(var/turf/open/floor/T in A)
+			var/goforit = 1
+			for (var/t in list(
+			/turf/open/floor/plasteel/stairs
+			))
+				if(istype(T,t))
+					goforit = 0
+					break
+			if(goforit && prob(20))
+				new /obj/effect/decal/cleanable/dirt(T)
 
 
 /********************** AREAS **************************/

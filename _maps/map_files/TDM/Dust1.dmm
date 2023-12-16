@@ -3,7 +3,7 @@
 "ac" = (/turf/closed/wall/rust,/area/TDM/blue_base)
 "ad" = (/turf/closed/wall/rust,/area/TDM)
 "ae" = (/turf/open/floor/sepia,/area/TDM)
-"af" = (/obj/structure/ore_box/tdm,/turf/open/floor/sepia,/area/TDM)
+"af" = (/obj/structure/ore_box/TDM,/turf/open/floor/sepia,/area/TDM)
 "ag" = (/obj/machinery/power/floodlight{desc = "A pole with powerful mounted lights on it. Due to its high power draw, it must be powered by a direct connection to a wire node. Looks very sturdy."; max_integrity = 1200; name = "sturdy floodlight"},/turf/open/floor/sepia,/area/TDM)
 "ah" = (/obj/structure/window/plastitanium/tough,/obj/structure/grille,/turf/open/floor/sepia,/area/TDM)
 "ai" = (/obj/structure/barricade/sandbags,/turf/open/floor/sepia,/area/TDM)
@@ -13,25 +13,25 @@
 "am" = (/obj/item/banner/TDM/red,/turf/closed/wall/rust,/area/TDM/red_base)
 "an" = (/obj/machinery/power/floodlight,/turf/open/floor/sepia,/area/TDM/red_base)
 "ao" = (/turf/open/floor/sepia,/area/TDM/red_base)
-"ap" = (/obj/item/gun/ballistic/revolver,/turf/open/floor/sepia,/area/TDM/red_base)
-"aq" = (/obj/item/kitchen/knife/combat,/turf/open/floor/sepia,/area/TDM/red_base)
-"ar" = (/obj/item/gun/ballistic/shotgun/doublebarrel,/turf/open/floor/sepia,/area/TDM/red_base)
-"as" = (/obj/item/gun/ballistic/automatic/pistol,/turf/open/floor/sepia,/area/TDM/red_base)
-"at" = (/obj/item/gun/ballistic/automatic/pistol/APS,/turf/open/floor/sepia,/area/TDM/red_base)
-"au" = (/obj/item/gun/ballistic/automatic/pistol/m1911,/turf/open/floor/sepia,/area/TDM/red_base)
+"ap" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/kitchen/knife/combat/tdm},/turf/open/floor/sepia,/area/TDM/red_base)
+"aq" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/kitchen/knife/combat/tdm},/turf/open/floor/sepia,/area/TDM/blue_base)
+"ar" = (/obj/structure/displaycase/itemspawn{showpiece = null; start_showpiece_type = /obj/item/gun/ballistic/revolver/tdm},/turf/open/floor/sepia,/area/TDM/blue_base)
+"as" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/shotgun/doublebarrel/tdm/buckshot},/turf/open/floor/sepia,/area/TDM/red_base)
+"at" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/tdm},/turf/open/floor/sepia,/area/TDM/red_base)
+"au" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/tdm},/turf/open/floor/sepia,/area/TDM/blue_base)
 "av" = (/turf/open/chasm,/area/TDM)
 "aw" = (/obj/structure/showcase/machinery/cloning_pod,/turf/open/floor/sepia,/area/TDM/red_base)
 "ax" = (/obj/structure/lattice/catwalk,/turf/open/chasm,/area/TDM)
-"ay" = (/obj/item/shield/riot,/turf/open/floor/sepia,/area/TDM/red_base)
+"ay" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/shotgun/doublebarrel/tdm/buckshot},/turf/open/floor/sepia,/area/TDM/blue_base)
 "az" = (/obj/structure/barricade/wooden,/turf/open/floor/sepia,/area/TDM)
 "aA" = (/obj/effect/turf_decal/box,/turf/open/floor/sepia,/area/TDM)
 "aB" = (/obj/structure/mineral_door/iron,/turf/open/floor/sepia,/area/TDM/blue_base)
-"aC" = (/obj/item/gun/ballistic/automatic/surplus,/turf/open/floor/sepia,/area/TDM/red_base)
-"aD" = (/obj/item/gun/ballistic/automatic/pistol/deagle,/turf/open/floor/sepia,/area/TDM/red_base)
-"aE" = (/obj/item/gun/ballistic/rifle/boltaction,/turf/open/floor/sepia,/area/TDM/red_base)
-"aF" = (/obj/item/gun/ballistic/automatic/sniper_rifle,/turf/open/floor/sepia,/area/TDM/red_base)
-"aG" = (/obj/item/gun/ballistic/automatic/mini_uzi,/turf/open/floor/sepia,/area/TDM/red_base)
-"aH" = (/obj/item/gun/ballistic/automatic/c20r/unrestricted,/turf/open/floor/sepia,/area/TDM/red_base)
+"aC" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/tdm},/turf/open/floor/sepia,/area/TDM/red_base)
+"aD" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/floor/sepia,/area/TDM/red_base)
+"aE" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/floor/sepia,/area/TDM/blue_base)
+"aF" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/tdm},/turf/open/floor/sepia,/area/TDM/blue_base)
+"aG" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/shield/riot},/turf/open/floor/sepia,/area/TDM/red_base)
+"aH" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/shield/riot},/turf/open/floor/sepia,/area/TDM/blue_base)
 "aI" = (/obj/effect/turf_decal/delivery,/turf/open/floor/sepia,/area/TDM)
 "aJ" = (/obj/effect/turf_decal/box,/obj/effect/turf_decal/box/corners,/turf/open/floor/sepia,/area/TDM)
 "aK" = (/obj/item/banner/TDM/red,/turf/closed/wall/rust,/area/TDM)
@@ -41,23 +41,20 @@
 "aO" = (/obj/structure/window/plastitanium/tough,/obj/structure/grille,/turf/open/floor/sepia,/area/TDM/blue_base)
 "aP" = (/turf/open/floor/sepia/dark_10,/area/TDM)
 "aQ" = (/obj/machinery/power/floodlight{desc = "A pole with powerful mounted lights on it. Due to its high power draw, it must be powered by a direct connection to a wire node. Looks very sturdy."; max_integrity = 1200; name = "sturdy floodlight"},/turf/open/floor/sepia/dark_10,/area/TDM)
-"aR" = (/obj/structure/ore_box/tdm,/turf/open/floor/sepia/dark_10,/area/TDM)
+"aR" = (/obj/structure/ore_box/TDM,/turf/open/floor/sepia/dark_10,/area/TDM)
 "aS" = (/obj/machinery/power/floodlight,/turf/open/floor/sepia,/area/TDM/blue_base)
 "aT" = (/turf/open/floor/sepia,/area/TDM/blue_base)
-"aU" = (/obj/item/kitchen/knife/combat,/turf/open/floor/sepia,/area/TDM/blue_base)
-"aV" = (/obj/item/gun/ballistic/revolver,/turf/open/floor/sepia,/area/TDM/blue_base)
-"aW" = (/obj/item/gun/ballistic/automatic/pistol,/turf/open/floor/sepia,/area/TDM/blue_base)
-"aX" = (/obj/item/gun/ballistic/shotgun/doublebarrel,/turf/open/floor/sepia,/area/TDM/blue_base)
-"aY" = (/obj/item/gun/ballistic/automatic/pistol/m1911,/turf/open/floor/sepia,/area/TDM/blue_base)
-"aZ" = (/obj/item/gun/ballistic/automatic/pistol/APS,/turf/open/floor/sepia,/area/TDM/blue_base)
+"aU" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/tdm},/turf/open/floor/sepia,/area/TDM/red_base)
+"aV" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle},/turf/open/floor/sepia,/area/TDM/red_base)
+"aW" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle},/turf/open/floor/sepia,/area/TDM/blue_base)
+"aX" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/tdm},/turf/open/floor/sepia,/area/TDM/blue_base)
+"aY" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction},/turf/open/floor/sepia,/area/TDM/red_base)
+"aZ" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle},/turf/open/floor/sepia,/area/TDM/red_base)
 "ba" = (/obj/structure/showcase/machinery/cloning_pod,/turf/open/floor/sepia,/area/TDM/blue_base)
-"bb" = (/obj/item/shield/riot,/turf/open/floor/sepia,/area/TDM/blue_base)
-"bc" = (/obj/item/gun/ballistic/automatic/pistol/deagle,/turf/open/floor/sepia,/area/TDM/blue_base)
-"bd" = (/obj/item/gun/ballistic/automatic/surplus,/turf/open/floor/sepia,/area/TDM/blue_base)
-"be" = (/obj/item/gun/ballistic/automatic/sniper_rifle,/turf/open/floor/sepia,/area/TDM/blue_base)
-"bf" = (/obj/item/gun/ballistic/rifle/boltaction,/turf/open/floor/sepia,/area/TDM/blue_base)
-"bg" = (/obj/item/gun/ballistic/automatic/c20r/unrestricted,/turf/open/floor/sepia,/area/TDM/blue_base)
-"bh" = (/obj/item/gun/ballistic/automatic/mini_uzi,/turf/open/floor/sepia,/area/TDM/blue_base)
+"bb" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle},/turf/open/floor/sepia,/area/TDM/blue_base)
+"bc" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction},/turf/open/floor/sepia,/area/TDM/blue_base)
+"bd" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/tdm/uzi},/turf/open/floor/sepia,/area/TDM/red_base)
+"be" = (/obj/structure/displaycase/itemspawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/tdm/uzi},/turf/open/floor/sepia,/area/TDM/blue_base)
 "bi" = (/obj/item/banner/TDM/blue,/turf/closed/wall/rust,/area/TDM)
 "bj" = (/turf/template_noop,/area/template_noop)
 "bk" = (/obj/structure/displaycase/itemspawn{showpiece = null; start_showpiece_type = /obj/item/gun/ballistic/revolver/tdm},/turf/open/floor/sepia,/area/TDM/red_base)
@@ -80,16 +77,16 @@ aaajajakajalajajajamaeaeaeafaeaeaeaeadaeaeadagaeaeaeaeadadaeaeaeaiaiaeaeaeaeaMae
 aaajanaoaoaoaoaoanajajaeaeaeaeaeadadadaeaeadadahahahadadaeaeaeaiaiaeaeaeaeaeaMaeadadaeaeaeaeadaeaeaeadaeaeaeaeadadaeaNaeaeaeaeaeaiaiaeaeaeadadahahahadadaeaeadadadaeaeaeaeaeacacaSaTaTaTaTaTaSacaa
 aaajaoaoaoaoaoaoaoanajaeaeaeaeaeaeaeadaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadadadadadadaLaLadaeaeaeadaLaLadadadadadadaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadaeaeaeaeaeaeaeacaSaTaTaTaTaTaTaTacaa
 aaajaoaoaoaoaoaoaoaoajaeaeaeaeaeaeaeadaeaeaeaeaeaeaeaeaeadaeaeaeaeaeaeaeaeaeaeaeaeadadaeaeaeaeaeaeaeaeaeaeaeadadaeaeaeaeaeaeaeaeaeaeaeaeadaeaeaeaeaeaeaeaeaeadaeaeaeaeaeaeaeacaTaTaTaTaTaTaTaTacaa
-aaajbkaoaoajajaoaoaoalaeaeadaeaeaeadadadadadadaeaeaeaeaeadadaeaeaeaeafaeaeaeaeaeaeadaeaeaeaeaeaeaeaeaeaeaeaeaeadaeaeaeaeaeaeafaeaeaeaeadadaeaeaeaeaeadadadadadadaeaeaeadaeaeaBaTaTaTacacaTaTaTacaa
-aaajapaoaoaqajaoaoaoalaeaeadaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadadaeaeafaeaeaeaeadaeaeadaeaeaeaeadaeaeaeadaeaeaeaeadaeaeadaeaeaeaeafaeaeadadaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadaeaeaBaTaTaTacaUaTaTaVacaa
-aaamaraoaoasamaoaoaoajaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeagadaeaeaeaeaeaeaeadadadadadaeaeaeaeaeaeaeadaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeacaTaTaTabaWaTaTaXabaa
-aaajataoaoauajaoaoaoajaeaeaeaeaeaeaeaeaeadaeaeadadadadaeaeaeadavavaeaeaeaeadadaeaeaeaeaeaeaeaeadadadaeaeaeaeaeaeaeaeadaeaeaeaeaeavavadaeaeaeadadadadaeaeadaeaeaeaeaeaeaeaeaeacaTaTaTacaYaTaTaZacaa
+aaajaoaoaoajajaoaoaoalaeaeadaeaeaeadadadadadadaeaeaeaeaeadadaeaeaeaeafaeaeaeaeaeaeadaeaeaeaeaeaeaeaeaeaeaeaeaeadaeaeaeaeaeaeafaeaeaeaeadadaeaeaeaeaeadadadadadadaeaeaeadaeaeaBaTaTaTacacaTaTaTacaa
+aaajbkaoaoapajaoaoaoalaeaeadaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadadaeaeafaeaeaeaeadaeaeadaeaeaeaeadaeaeaeadaeaeaeaeadaeaeadaeaeaeaeafaeaeadadaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadaeaeaBaTaTaTacaqaTaTaracaa
+aaamasaoaoatamaoaoaoajaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeagadaeaeaeaeaeaeaeadadadadadaeaeaeaeaeaeaeadaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeacaTaTaTabauaTaTayabaa
+aaajaCaoaoaDajaoaoaoajaeaeaeaeaeaeaeaeaeadaeaeadadadadaeaeaeadavavaeaeaeaeadadaeaeaeaeaeaeaeaeadadadaeaeaeaeaeaeaeaeadaeaeaeaeaeavavadaeaeaeadadadadaeaeadaeaeaeaeaeaeaeaeaeacaTaTaTacaEaTaTaFacaa
 aaajanaoaoawajaoaoaoakaeaeaeaeaeaeaeaeadadaeaeaeaeaeadadaeaeavavavavaxaxaeaeaeaeaeadaeaeaeaeaeagadagaeaeaeaeaeadaeaeadaeaeaxaxavavavavaeaeadadaeaeaeaeaeadadaeaeaeaeaeaeaeaeaOaTaTaTacbaaTaTaSacaa
-aaajayaoaoaoajaoaoaoakaeaeaeaeaeadadadadadaeaeaeaeaeaeadaeaeavavavavaxaxavaeaeaeaeadadadaeaeaeaeaeaeaeaeaeadadadaeaeadaeavaxaxavavavavaeaeadaeaeaeaeaeaeadadadadadaeaeaeaeaeaOaTaTaTacaTaTaTbbacaa
+aaajaGaoaoaoajaoaoaoakaeaeaeaeaeadadadadadaeaeaeaeaeaeadaeaeavavavavaxaxavaeaeaeaeadadadaeaeaeaeaeaeaeaeaeadadadaeaeadaeavaxaxavavavavaeaeadaeaeaeaeaeaeadadadadadaeaeaeaeaeaOaTaTaTacaTaTaTaHacaa
 aaajanaoaoawajaoaoaoakaeaeaeaeaeagadadadaeaeaeaeaeaeaeaeaeaeazavavavaxaxavaeadaeaeaeaeadaeaeaeaeaAaeaeaeaeadaeaeaeaeadaeavaxaxavavavazaeaeaeaeaeaeaeaeaeaeadadadagaeaeaeaeaeaOaTaTaTacbaaTaTaSacaa
-aaajaCaoaoaDajaoaoaoajaeaeaeaeaeaeaeadaeaeaeaeaeaeaeaeaeaeaeaeazavavaxaxavavadaeaeaeaeaeaeaeaAaeaeaeaAaeaeaeaeaeaeaeadavavaxaxavavazaeaeaeaeaeaeaeaeaeaeaeaeadaeaeaeaeaeaeaeacaTaTaTacbcaTaTbdacaa
-aaamaEaoaoaFamaoaoaoajaeaeadaeaeaeaeaeaeaeaeaeaeaeafafaeaeaeaeaeazavaxaxavavavaeaeaeaeaeaeaeaeaeaAaeaeaeaeaeaeaeaeaeavavavaxaxavazaeaeaeaeaeafafaeaeaeaeaeaeaeaeaeaeaeadaeaeacaTaTaTabbeaTaTbfabaa
-aaajaGaoaoaHajaoaoaoalaeaeadaeaeaeaeaeaeafafaeaeaeafagaeaeaeaeaeaeaeaeaeaeavadaeaeaeaeaeaeaAaeaAaIaAaeaAaeaeaeaeaeaeadavaeaeaeaeaeaeaeaeaeaeagafaeaeaeafafaeaeaeaeaeaeadaeaeaBaTaTaTacbgaTaTbhacaa
+aaajaUaoaoaVajaoaoaoajaeaeaeaeaeaeaeadaeaeaeaeaeaeaeaeaeaeaeaeazavavaxaxavavadaeaeaeaeaeaeaeaAaeaeaeaAaeaeaeaeaeaeaeadavavaxaxavavazaeaeaeaeaeaeaeaeaeaeaeaeadaeaeaeaeaeaeaeacaTaTaTacaWaTaTaXacaa
+aaamaYaoaoaZamaoaoaoajaeaeadaeaeaeaeaeaeaeaeaeaeaeafafaeaeaeaeaeazavaxaxavavavaeaeaeaeaeaeaeaeaeaAaeaeaeaeaeaeaeaeaeavavavaxaxavazaeaeaeaeaeafafaeaeaeaeaeaeaeaeaeaeaeadaeaeacaTaTaTabbbaTaTbcabaa
+aaajbdaoaoaZajaoaoaoalaeaeadaeaeaeaeaeaeafafaeaeaeafagaeaeaeaeaeaeaeaeaeaeavadaeaeaeaeaeaeaAaeaAaIaAaeaAaeaeaeaeaeaeadavaeaeaeaeaeaeaeaeaeaeagafaeaeaeafafaeaeaeaeaeaeadaeaeaBaTaTaTacbbaTaTbeacaa
 aaajaoaoaoajajaoaoaoalaeaeadaeaeadadaeaeaeafaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeadaeaeaeaeadaeaeaeaeaAaeaeaeaeadaeaeaeaeadaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeafaeaeaeadadaeaeadaeaeaBaTaTaTacacaTaTaTacaa
 aaajaoaoaoaoaoaoaoaoajaeaeaeaeaeaeadadaeaeaeaeaeaeaeaeaeaeadadazadaeaeaeaeaeaeaeaeaeaeadaeaeaAaeaeaeaJaeaeadaeaeaeaeaeaeaeaeaeaeadazadadaeaeaeaeaeaeaeaeaeaeadadaeaeaeaeaeaeacaTaTaTaTaTaTaTaTacaa
 aaajaoaoaoaoaoaoaoanajaeaeaeafaeaeaeadadaeaeaeaeaeaeaeaeaeaeaeaeadadadaeaeaeaeaeaeaeaeadaeaeaeaeaAaeaeaeaeadaeaeaeaeaeaeaeaeadadadaeaeaeaeaeaeaeaeaeaeaeaeadadaeaeaeafaeaeaeacaSaTaTaTaTaTaTaTacaa
