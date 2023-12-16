@@ -1,5 +1,24 @@
 
 
+/********************** SECTIONS **************************/
+
+/* TDM New & Updated Weapons
+ - TDM GEAR
+ - OTHER
+ - SNOWBALLS
+ - DISPLAY CASE
+ - STRUCTURES
+ - AREAS
+*/
+
+
+
+
+
+
+
+
+
 
 
 
@@ -135,16 +154,84 @@
 
 
 
-/*
+
 
 /********************** TDM GEAR **************************/
 
 
 
+		//OUTFITS
+
+	//Red Team
+
+/datum/outfit/TDM/red1
+	name = "TDM Red Team T1"
+	uniform = /obj/item/clothing/under/color/red
+	belt = /obj/item/storage/belt/fannypack/red
+	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/soft/red
+	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
+	r_pocket = /obj/item/stack/medical/gauze/two
+
+/datum/outfit/TDM/red/t3
+	name = "TDM Red Team T3"
+	suit = /obj/item/clothing/suit/armor/vest/alt
+
+/datum/outfit/TDM/red/t4
+	name = "TDM Red Team T4"
+	head = /obj/item/clothing/head/helmet/sec
+
+
+	//Blue Team
+
+/datum/outfit/TDM/blue1
+	name = "TDM Blue Team T1"
+	uniform = /obj/item/clothing/under/color/blue
+	belt = /obj/item/storage/belt/fannypack/blue
+	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/soft/blue
+	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
+	r_pocket = /obj/item/stack/medical/gauze/two
+
+/datum/outfit/TDM/red/t3
+	name = "TDM Blue Team T3"
+	suit = /obj/item/clothing/suit/armor/vest/alt
+
+/datum/outfit/TDM/red/t4
+	name = "TDM Blue Team T4"
+	head = /obj/item/clothing/head/helmet/sec
 
 
 
 
+
+/*		//OUTFIT TEMPLATE
+/datum/outfit/template
+	name = "template"
+	uniform = null
+	suit = null
+	back = null
+	belt = null
+	gloves = null
+	shoes = null
+	head = null
+	mask = null
+	neck = null
+	ears = null
+	glasses = null
+	id = null
+	l_pocket = null
+	r_pocket = null
+	suit_store = null
+	r_hand = null
+	l_hand = null
+	toggle_helmet = TRUE
+	internals_slot = null
+	list/backpack_contents = null
+	list/implants = null
+	accessory = null
 */
 
 
@@ -287,15 +374,143 @@
 /obj/structure/displaycase/itemspawn/obj_break(damage_flag)
 	return
 
-/obj/structure/displaycase/proc/dump()
+/obj/structure/displaycase/dump()
 	.=..()
 	respawn_item()
 
 /obj/structure/displaycase/proc/respawn_item()
 	if(!start_showpiece_type)
 		return
-	spawn(respawn_timer)
+	spawn(20)
 		if(!showpiece)
 			showpiece = new start_showpiece_type (src)
 			update_icon()
 
+
+
+
+
+
+
+
+
+
+
+
+
+/********************** STRUCTURES **************************/
+
+
+
+
+
+
+
+		// Boxes
+
+/obj/structure/ore_box/tdm
+	name = "sturdy box"
+	desc ="A heavy wooden box. It looks very sturdy."
+	anchored = 1
+
+
+/obj/structure/ore_box/tdm/obj_break(damage_flag)
+	return
+
+
+
+		//Sandbags
+
+/obj/structure/barricade/sandbags/tdm
+	desc = "Bags of sand. Self explanatory. They look very sturdy."
+
+
+/obj/structure/barricade/sandbags/tdm/obj_break(damage_flag)
+	return
+
+
+
+		//Banners
+
+/obj/item/banner/TDM
+	anchored = 1
+
+/obj/item/banner/TDM/red
+	icon_state = "banner-red"
+
+/obj/item/banner/TDM/blue
+	icon_state = "banner-blue"
+
+
+
+		//Windows
+//obj/structure/window/plastitanium/tough
+
+
+
+
+
+/********************** TURFS **************************/
+
+		//Floor
+
+/turf/open/floor/sepia/dark_10
+	color = "#e6e6e6"
+
+
+
+		//Stairs
+
+/turf/open/floor/plasteel/stairs/TDM
+	icon = 'icons/obj/stairs.dmi'
+	icon_state = "stairs_t"
+
+/turf/open/floor/plasteel/stairs/TDM/up
+	dir = 1
+
+/turf/open/floor/plasteel/stairs/TDM/right
+	dir = 4
+
+/turf/open/floor/plasteel/stairs/TDM/left
+	dir = 8
+
+
+/turf/open/floor/plasteel/stairs/TDM/sepia
+	color = "#ae9b84"
+
+/turf/open/floor/plasteel/stairs/TDM/sepia/up
+	dir = 1
+
+/turf/open/floor/plasteel/stairs/TDM/sepia/right
+	dir = 4
+
+/turf/open/floor/plasteel/stairs/TDM/sepia/left
+	dir = 8
+
+
+
+/********************** AREAS **************************/
+
+
+
+
+/area/TDM
+	name = "Arena"
+	icon_state = "blue-red-d"
+	has_gravity = TRUE
+	dynamic_lighting = 0 //Fully lit at all times
+	requires_power = 0 // Constantly powered
+
+
+/area/TDM/lobby
+	name = "Lobby"
+	icon_state = "blue-red2"
+
+/area/TDM/red_base
+	name = "Red Base"
+	icon_state = "red2"
+
+
+/area/TDM/blue_base
+	name = "Blue Base"
+	icon_state = "blue2"
