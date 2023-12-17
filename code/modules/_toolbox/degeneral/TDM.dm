@@ -12,8 +12,6 @@
 
 
 
-
-
 /********************** TDM New & Updated Weapons **************************/
 
 
@@ -21,7 +19,7 @@
 		//9mm Pistol - Stechkin - 12 ammo, 20DMG
 
 /obj/item/gun/ballistic/automatic/pistol/TDM
-	desc = "A small, easily concealable 9mm handgun. DMG:20"
+	desc = "A small, easily concealable 9mm handgun. Damage: 20."
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm/TDM
 
 /obj/item/ammo_box/magazine/pistolm9mm/TDM
@@ -33,7 +31,7 @@
 		//9mm Stetchkin APS - 3rnd brst, 12(4) ammo, uses same mags and does same dmg as Stechkin but automatic
 
 /obj/item/gun/ballistic/automatic/pistol/APS/TDM
-	desc = "Automatic, easily concealable 9mm handgun. DMG:20"
+	desc = "Automatic, easily concealable 9mm handgun. Damage: 20."
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm/TDM
 
 
@@ -42,7 +40,7 @@
 
 /obj/item/gun/ballistic/revolver/TDM
 	name = "\improper .357 revolver"
-	desc = "Big Iron on his hip. Uses .357 ammo. DMG:45"
+	desc = "Big Iron on his hip. Uses .357 ammo. Damage: 45."
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/TDM
 
 /obj/item/ammo_box/magazine/internal/cylinder/TDM
@@ -65,7 +63,7 @@
 
 		//DoubleBarrel Shotgun - Slug
 /obj/item/gun/ballistic/shotgun/doublebarrel/TDM
-	desc = "A true classic. DMG:60"
+	desc = "A true classic. Damage: 60."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/TDM
 	//rack_sound_volume = 0
 	//fire_rate = 2 //being double barrelled, you don't rely on internal mechanisms.
@@ -74,20 +72,20 @@
 
 		//DoubleBarrel Shotgun - Buckshot
 /obj/item/gun/ballistic/shotgun/doublebarrel/TDM/buckshot
-	desc = "A true classic. DMG:54"
+	desc = "A true classic. Damage: 54."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/TDM/buckshot
 
 
 		//Pump Shotgun - Slug
 /obj/item/gun/ballistic/shotgun/TDM
-	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath. DMG:60"
+	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath. Damage: 60."
 	name = "pump shotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/TDM
 
 
 		//Pump Shotgun - Buckshot
 /obj/item/gun/ballistic/shotgun/TDM/buckshot
-	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath. DMG:54"
+	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath. Damage: 54."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/TDM
 
 
@@ -114,6 +112,15 @@
 /obj/item/ammo_box/magazine/internal/shot/TDM/buckshot
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 
+
+
+		//Shotgun Ammo
+//obj/item/ammo_casing/shotgun/TDM
+
+//obj/item/projectile/bullet/shotgun_slug/TDM
+	//damage = 55
+
+
 /* SHELL SPEED LOADER
 /obj/item/ammo_box/s12g
 	name = "speedloader (12g Buckshot)"
@@ -133,7 +140,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi
 	name = "\improper Type U3 Uzi"
-	desc = "A lightweight submachine gun. Uses 9mm rounds. DMG:20"
+	desc = "A lightweight submachine gun. Uses 9mm rounds. Damage: 20."
 	icon_state = "miniuzi"
 	w_class = WEIGHT_CLASS_NORMAL
 	bolt_type = BOLT_TYPE_OPEN
@@ -150,7 +157,7 @@
 
 /obj/item/gun/ballistic/automatic/surplus/TDM
 	name = "carbine"
-	desc = "California Compliant. Uses .45 carbine ammo and its bulky frame prevents one-hand firing. DMG:35"
+	desc = "California Compliant. Uses .45 carbine ammo and its bulky frame prevents one-hand firing. Damage: 35."
 	mag_type = /obj/item/ammo_box/magazine/m45carbine
 	fire_delay = 0
 	fire_rate = 2.5
@@ -177,7 +184,7 @@
 
 		//Knife - 35DMG, 30DMG thrown
 /obj/item/kitchen/knife/combat/TDM
-	desc = "A military combat knife. DMG:35"
+	desc = "A military combat knife. Damage: 35. Damage thrown: 30."
 	force = 35
 	throwforce = 30
 	bayonet = TRUE
@@ -406,6 +413,77 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 
 
+		//Spawn Protection
+
+/obj/structure/trap/ctf/TDM
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "shield-old"
+	layer = 2
+	density = 0
+
+
+/obj/structure/trap/ctf/TDM/red
+	name = "red base"
+	density = 1
+//	team = RED_TEAM
+
+
+/obj/structure/trap/ctf/TDM/blue
+	name = "blue base"
+	density = 1
+//	team = BLUE_TEAM
+
+
+
+
+/*
+/obj/structure/trap/ctf
+	name = "Spawn protection"
+	desc = "Stay outta the enemy spawn!"
+	icon_state = "trap"
+	resistance_flags = INDESTRUCTIBLE
+	var/team = WHITE_TEAM
+	time_between_triggers = 1
+	anchored = TRUE
+	alpha = 255
+
+/obj/structure/trap/ctf/examine(mob/user)
+	return
+
+/obj/structure/trap/ctf/trap_effect(mob/living/L)
+	if(!is_ctf_target(L))
+		return
+	if(!(src.team in L.faction))
+		to_chat(L, "<span class='danger'><B>Stay out of the enemy spawn!</B></span>")
+		L.death()
+
+/obj/structure/trap/ctf/red
+	team = RED_TEAM
+	icon_state = "trap-fire"
+
+/obj/structure/trap/ctf/blue
+	team = BLUE_TEAM
+	icon_state = "trap-frost"
+
+*/
+
+
+
+
+
+
+
+
+		//Metal Doors
+
+/obj/structure/mineral_door/iron/TDM
+	name = "metal door"
+	desc = "Heavy metal door. It looks very sturdy."
+
+
+/obj/structure/mineral_door/iron/TDM/take_damage()
+	return
+
 
 
 
@@ -627,3 +705,25 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
     //hitsound_wall = "ricochet"
     //impact_effect_type = /obj/effect/temp_visual/impact_effect
     //hitsound = 'sound/weapons/pierce.ogg'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//  Have Fun!
+//   - Degeneral
+//
