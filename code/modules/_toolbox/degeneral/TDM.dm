@@ -86,7 +86,7 @@
 		//Pump Shotgun - Buckshot
 /obj/item/gun/ballistic/shotgun/TDM/buckshot
 	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath. Damage: 54."
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/TDM
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/TDM/buckshot
 
 
 
@@ -119,6 +119,38 @@
 
 //obj/item/projectile/bullet/shotgun_slug/TDM
 	//damage = 55
+
+
+
+
+/obj/item/ammo_box/s12g
+	name = "speedloader (12g Buckshot)"
+	desc = "Designed to quickly reload double-barrel shotguns."
+	icon = 'icons/obj/ammo.dmi'
+	icon_state = "gshell-live"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	max_ammo = 2
+
+
+
+/obj/item/ammo_box/s12g/Initialize()
+	.=..()
+	update_icon()
+
+
+/obj/item/ammo_box/s12g/update_icon()
+	overlays.Cut()
+	.=..()
+	var/image/I = new()
+	I.icon = icon
+	I.icon_state = icon_state
+	I.pixel_x = pixel_x+3
+	I.pixel_y = pixel_y-3
+	overlays += I
+	if(stored_ammo.len <= 0)
+		qdel(src)
+		return
+
 
 
 /* SHELL SPEED LOADER
@@ -162,6 +194,7 @@
 	fire_delay = 0
 	fire_rate = 2.5
 
+	//Magazine
 /obj/item/ammo_box/magazine/m45carbine
 	name = "rifle magazine (.45 Carbine)"
 	desc = "California compliant 10 round magazine."
@@ -169,14 +202,22 @@
 	ammo_type = /obj/item/ammo_casing/c45carbine
 	caliber = ".45c"
 	max_ammo = 10
-	multiple_sprites = 1
 
+/obj/item/ammo_box/magazine/m45carbine/update_icon()
+	..()
+	if(ammo_count())
+		icon_state = "75-8"
+	else
+		icon_state = "75-0"
+
+	//Ammo
 /obj/item/ammo_casing/c45carbine
 	name = ".45 carbine bullet casing"
 	desc = "A .45 carbine bullet casing."
 	caliber = ".45c"
 	projectile_type = /obj/item/projectile/bullet/c45carbine
 
+	//Bullet
 /obj/item/projectile/bullet/c45carbine
 	name = ".45 carbine bullet"
 	damage = 35
@@ -204,7 +245,7 @@
 
 /datum/outfit/TDM/red
 	name = "TDM Red Team T1"
-	uniform = /obj/item/clothing/under/color/red
+	uniform = /obj/item/clothing/under/color/red/TDM
 	belt = /obj/item/storage/belt/fannypack/red
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -226,7 +267,7 @@
 
 /datum/outfit/TDM/blue
 	name = "TDM Blue Team T1"
-	uniform = /obj/item/clothing/under/color/blue
+	uniform = /obj/item/clothing/under/color/blue/TDM
 	belt = /obj/item/storage/belt/fannypack/blue
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -276,10 +317,12 @@
 
 		//Clothes
 
+	//Berets
+
 /obj/item/clothing/head/beret/TDM
 	name = "beret"
 	desc = "A beret. Very stylish but offers no protection."
-	icon_state = "beretce" //White
+	icon_state = "beret_ce" //White
 
 
 /obj/item/clothing/head/beret/TDM/red
@@ -292,6 +335,24 @@
 	name = "blue beret"
 	desc = "A blue beret. Very stylish but offers no protection."
 	icon_state = "beret_captain"
+
+
+	//Jumpsuits
+
+/obj/item/clothing/under/color/red/TDM
+	can_adjust = 0
+
+/obj/item/clothing/under/color/red/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+/obj/item/clothing/under/color/blue/TDM
+	can_adjust = 0
+
+/obj/item/clothing/under/color/blue/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 /********************** STRUCTURES **************************/
@@ -310,14 +371,27 @@ obj/structure/TDM/wallmed
 	desc = "Wall-mounted healing station."
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "wallmed"
+	var/healtime = 10
+	var/cooldown = 100
+	var/list/users = list()
 
 obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	if(iscyborg(user))
 		return
-	if(do_after(user, 10))
+	if(user && (user in users))
+		to_chat(user, "<span class='warning'>[name] is still recharging.</span>")
+		playsound(loc, 'sound/machines/buzz-two.ogg', 50)
+		return
+	if(do_after(user, healtime, src))
+		users.Add(user)
 		user.revive(full_heal = TRUE)
-		to_chat(user,"InstaMed heals all your wounds.")
-		playsound(loc, 'sound/machines/defib_ready.ogg')
+		to_chat(user, "<span class='notice'>[name] heals all your wounds.</span>")
+		playsound(loc, 'sound/effects/refill.ogg', 50)
+		spawn(cooldown)
+			if(user)
+				users.Remove(user)
+		spawn(7)
+			playsound(loc, 'sound/machines/defib_ready.ogg', 50)
 
 
 
@@ -354,6 +428,15 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 
 
 
+		//Cloner - Respawn
+
+/obj/structure/TDM/respawn_pod
+	name = "cloning pod"
+	icon = 'icons/obj/machines/cloning.dmi'
+	icon_state = "pod_1"
+
+
+
 		// Boxes
 
 /obj/structure/ore_box/TDM
@@ -382,6 +465,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	name = "half wall"
 	desc = "Stone half wall. You need to be close to shoot accurately over it. It looks very sturdy."
 	color = "#909090"
+	canSmoothWith = list(/obj/structure/barricade/sandbags/TDM/half_wall, /obj/structure/barricade/sandbags, /turf/closed/wall, /turf/closed/wall/r_wall, /obj/structure/falsewall, /obj/structure/falsewall/reinforced, /turf/closed/wall/rust, /turf/closed/wall/r_wall/rust, /obj/structure/barricade/security)
 
 /obj/structure/barricade/sandbags/TDM/half_wall/CanPass(atom/movable/mover, turf/target)
 	. = ..()
@@ -533,12 +617,13 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 		//Dirt
 
 /proc/TDM_dirt()
-	for(var/area/A in list(
+	for(var/a in list(
 		/area/TDM,
 		/area/TDM/lobby,
 		/area/TDM/red_base,
 		/area/TDM/blue_base
 		))
+		var/area/A = locate(a)
 		for(var/turf/open/floor/T in A)
 			var/goforit = 1
 			for (var/t in list(
