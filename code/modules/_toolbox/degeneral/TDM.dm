@@ -380,9 +380,9 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 		return
 	if(user && (user in users))
 		to_chat(user, "<span class='warning'>[name] is still recharging.</span>")
-		playsound(loc, 'sound/machines/buzz-two.ogg', 50)
+		user << sound('sound/machines/buzz-two.ogg', volume = 50)
 		return
-	if(do_after(user, healtime, src))
+	if(do_after(user, healtime, user) && (user && (user in users)))
 		users.Add(user)
 		user.revive(full_heal = TRUE)
 		to_chat(user, "<span class='notice'>[name] heals all your wounds.</span>")
@@ -425,6 +425,18 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 		if(!showpiece)
 			showpiece = new start_showpiece_type (src)
 			update_icon()
+
+
+
+	//Medical Cabinet
+
+/obj/structure/TDM/medical_cabinet
+	name = "medical cabinet"
+	desc = "A small wall mounted cabinet designed to hold medical equipment."
+	icon = 'icons/obj/wallmounts.dmi'
+	icon_state = "extinguisher_closed"
+
+
 
 
 
