@@ -384,7 +384,7 @@
 				G.siemens_coefficient = 0
 				G.permeability_coefficient = 0.05
 				M.equip_to_slot_or_del(G,SLOT_GLOVES)
-			if(istype(outfit,/datum/outfit))
+			if(istype(outfit,/datum/outfit) && outfit.name != "Space Jesus")
 				M.real_name = "[outfit.name] Jesus"
 			else
 				M.real_name = "Space Jesus"

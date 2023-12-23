@@ -14,6 +14,9 @@
 
 /********************** TDM New & Updated Weapons **************************/
 
+#define TEIR_2_KILLS 30
+#define TEIR_3_KILLS 60
+#define TEIR_4_KILLS 90
 
 
 		//9mm Pistol - Stechkin - 12 ammo, 20DMG
@@ -382,7 +385,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 		to_chat(user, "<span class='warning'>[name] is still recharging.</span>")
 		user << sound('sound/machines/buzz-two.ogg', volume = 50)
 		return
-	if(do_after(user, healtime, user) && (user && (user in users)))
+	if(do_after(user, healtime, user) && !(user && (user in users)))
 		users.Add(user)
 		user.revive(full_heal = TRUE)
 		to_chat(user, "<span class='notice'>[name] heals all your wounds.</span>")
@@ -399,14 +402,35 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 
 /obj/structure/displaycase/TDM_item_spawn
 	name = "item spawn display case"
+	var/ammunition
+	var/rack_sound
 	var/respawn_timer = 20
 
 /obj/structure/displaycase/TDM_item_spawn/Initialize()
 	.=..()
+	if(istype(showpiece,/obj/item/gun/ballistic))
+		var/obj/item/gun/ballistic/B = showpiece
+		if(!B.internal_magazine && !ammunition)
+			ammunition = B.mag_type
+		if(B.rack_sound)
+			rack_sound = B.rack_sound
 	if(showpiece)
 		name = "[showpiece.name] display case"
 		desc = "[showpiece.desc]"
 
+/obj/structure/displaycase/TDM_item_spawn/attack_hand(mob/user)
+	if(start_showpiece_type && ammunition)
+		var/list/user_contents = user.get_contents()
+		for(var/obj/O in user_contents)
+			if(istype(O,start_showpiece_type))
+				dump_ammo(user)
+				return
+	. = ..()
+
+/obj/structure/displaycase/TDM_item_spawn/AltClick(mob/user)
+	if(!user.canUseTopic(src, BE_CLOSE) || !isturf(loc))
+		return
+	dump_ammo(user)
 
 /obj/structure/displaycase/TDM_item_spawn/attackby(obj/item/W, mob/user, params)
 	return
@@ -417,6 +441,13 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 /obj/structure/displaycase/TDM_item_spawn/dump()
 	.=..()
 	respawn_item()
+
+/obj/structure/displaycase/TDM_item_spawn/proc/dump_ammo(mob/living/user)
+	if(user && ammunition)
+		var/obj/item/I = new ammunition(loc)
+		user.put_in_hands(I)
+		if(rack_sound)
+			user << sound(rack_sound, volume = 50)
 
 /obj/structure/displaycase/TDM_item_spawn/proc/respawn_item()
 	if(!start_showpiece_type)
@@ -447,8 +478,20 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	icon = 'icons/obj/machines/cloning.dmi'
 	icon_state = "pod_1"
 
-
-
+/obj/structure/TDM/respawn_pod/New()
+	. = ..()
+	var/obj/machinery/clonepod/TDM/C = new(loc)
+	C.TDM_on = 1
+	for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
+		if(cloner == C || !cloner.team)
+			continue
+		if(cloner.team == "red")
+			C.team = "blue"
+			break
+		if(cloner.team == "blue")
+			C.team = "red"
+			break
+	qdel(src)
 		// Boxes
 
 /obj/structure/ore_box/TDM
@@ -806,21 +849,237 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 
 
+	//Clonepod Or Whatever
 
+GLOBAL_LIST_EMPTY(TDM_cloners)
+/obj/machinery/clonepod/TDM
+	name = "spawn point cloning pod"
+	desc = "An electronically-lockable pod for growing organic tissue."
+	var/clone_time = 5 //seconds
+	var/list/records = list()
+	var/TDM_on = 0 //will behave like a normal clonepod if 0
+	var/team
+	var/list/click_cooldowns = list()
+	var/click_cooldown = 3000
+	var/times_cloned = 0
 
+/obj/machinery/clonepod/TDM/Initialize()
+	. = ..()
+	if(!(src in GLOB.TDM_cloners))
+		GLOB.TDM_cloners += src
+	if(team)
+		name = "[team] team [name]"
 
+/obj/machinery/clonepod/TDM/Destroy()
+	. = ..()
+	GLOB.TDM_cloners -= src
 
+/obj/machinery/clonepod/TDM/process()
+	if(TDM_on && !occupant)
+		for(var/datum/data/record/R in records)
+			grow_clone_from_record(src, R)
+	. = ..()
 
+/obj/machinery/clonepod/TDM/attack_ghost(mob/user)
+	if(!TDM_on)
+		return
+	if(click_cooldowns[user.ckey] && click_cooldowns[user.ckey] > world.time)
+		to_chat(user,"<span class='warning'>You cant respawn like this at this time.</span>")
+		return
+	var/client/C = user.client
+	var/confirm = alert(user,"Do you wish to join the deathmatch battle?","Team Deathmatch","Yes","No")
+	if(confirm != "Yes" || !C || !istype(C.mob,/mob/dead/observer))
+		return
+	create_human(user)
+	click_cooldowns[user.ckey] = world.time+click_cooldown
 
+/obj/machinery/clonepod/TDM/proc/create_human(mob/M)
+	var/mob/living/carbon/human/H = new()
+	H.forceMove(loc)
+	if(M.client)
+		M.client.prefs.copy_to(H)
+	H.dna.update_dna_identity()
+	H.key = M.key
+	if(H.mind)
+		H.mind.assigned_role = "Team Deathmatch"
+	create_record(H)
+	equip_clothing(H)
+	return H
 
+/obj/machinery/clonepod/TDM/proc/equip_clothing(mob/living/carbon/human/H)
+	if(!istype(H))
+		return
+	var/list/red_TDM_outfits = list(
+		"t1" = /datum/outfit/TDM/red,
+		"t3" = /datum/outfit/TDM/red/t3,
+		"t4" = /datum/outfit/TDM/red/t4)
+	var/list/blue_TDM_outfits = list(
+		"t1" = /datum/outfit/TDM/blue,
+		"t3" = /datum/outfit/TDM/blue/t3,
+		"t4" = /datum/outfit/TDM/blue/t4)
+	var/list/team_outfit = list()
+	switch(team)
+		if("red")
+			team_outfit = red_TDM_outfits
+		else if("green")
+			team_outfit = blue_TDM_outfits
+	if(team_outfit.len)
+		var/enemy_deaths = get_enemy_deaths()
+		var/teir = 1
+		var/chosen = team_outfit["t[teir]"]
+		if(enemy_deaths >= TEIR_2_KILLS)
+			teir = 2
+		if(enemy_deaths >= TEIR_3_KILLS)
+			teir = 3
+		if(enemy_deaths >= TEIR_4_KILLS)
+			teir = 4
+		if(team_outfit["t[teir]"])
+			chosen = team_outfit["t[teir]"]
+		H.equipOutfit(chosen)
 
+/obj/machinery/clonepod/TDM/proc/create_record(mob/M)
+	var/mob/living/mob_occupant = get_mob_or_brainmob(M)
+	var/datum/dna/dna
+	var/mob/living/carbon/C = mob_occupant
+	var/mob/living/brain/B = mob_occupant
+	if(ishuman(mob_occupant))
+		dna = C.has_dna()
+	if(isbrain(mob_occupant))
+		dna = B.stored_dna
+	if(!istype(dna))
+		return
+	if(NO_DNA_COPY in dna.species.species_traits)
+		return
+	if(mob_occupant.suiciding || mob_occupant.hellbound)
+		return
+	if (isnull(mob_occupant.mind))
+		return
+	var/datum/data/record/R = new()
+	if(dna.species)
+		dna.delete_species = FALSE
+		R.fields["mrace"] = dna.species
+	else
+		var/datum/species/rando_race = pick(GLOB.roundstart_races)
+		R.fields["mrace"] = rando_race.type
+	R.fields["name"] = mob_occupant.real_name
+	R.fields["id"] = copytext_char(rustg_hash_string(RUSTG_HASH_MD5, mob_occupant.real_name), 2, 6)
+	R.fields["UE"] = dna.unique_enzymes
+	R.fields["UI"] = dna.uni_identity
+	R.fields["SE"] = dna.mutation_index
+	R.fields["blood_type"] = dna.blood_type
+	R.fields["features"] = dna.features
+	R.fields["factions"] = mob_occupant.faction
+	R.fields["quirks"] = list()
+	for(var/V in mob_occupant.roundstart_quirks)
+		var/datum/quirk/T = V
+		R.fields["quirks"][T.type] = T.clone_data()
+	R.fields["traumas"] = list()
+	if(ishuman(mob_occupant))
+		R.fields["traumas"] = C.get_traumas()
+	if(isbrain(mob_occupant))
+		R.fields["traumas"] = B.get_traumas()
+	R.fields["mindref"] = "[REF(mob_occupant.mind)]"
+	R.fields["last_death"] = mob_occupant.stat == DEAD ? mob_occupant.mind.last_death : -1
+	var/datum/data/record/old_record = find_record("mindref", REF(mob_occupant.mind), records)
+	if(old_record)
+		records -= old_record
+	records += R
 
+/obj/machinery/clonepod/TDM/go_out(move = TRUE)
+	var/mob/living/carbon/human/M = occupant
+	. = ..()
+	if(M)
+		if(istype(M))
+			if(M.client)
+				M.client.prefs.copy_to(M)
+				M.dna.update_dna_identity()
+			M.fully_heal()
+			equip_clothing(M)
 
+		if(!mess)
+			times_cloned++
 
+/obj/machinery/clonepod/TDM/proc/get_enemy_deaths()
+	. = 0
+	if(!team)
+		return
+	for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
+		if(cloner == src || !cloner.team)
+			continue
+		if(cloner.team != team)
+			. += cloner.times_cloned
 
+/obj/machinery/clonepod/TDM/RefreshParts()	//locking these numbers, machine parts change nothing.
+	. = ..()
+	var/dmg_mult = CONFIG_GET(number/damage_multiplier)
+	speed_coeff = ((150/clone_time)/dmg_mult)*2 //150 is what the cloner would normally set your cloneloss too upon spawning your new body.
+	efficiency = 8
+	fleshamnt = 0
 
+/obj/machinery/clonepod/TDM/take_damage()
+	return
+
+/obj/machinery/clonepod/TDM/attackby(obj/item/W, mob/user, params)
+	return
+
+/obj/machinery/clonepod/TDM/ex_act(severity, target)
+	return
+
+/obj/machinery/clonepod/TDM/team_red
+	team = "red"
+/obj/machinery/clonepod/TDM/team_blue
+	team = "blue"
+
+//Map Template
+/datum/map_template/ruin/space/TDM_chambers
+	name = "Team DeathMatch Combat Chambers"
+	id = "tdm_combat"
+	description = "The map for team deathmatch"
+	unpickable = FALSE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
+	prefix = "_maps/toolbox/TDM/Dust1.dmm"
+
+/datum/map_template/ruin/space/TDM_lobby
+	name = "Team DeathMatch Spawn Chamber"
+	id = "tdm_lobby"
+	description = "The team lobby for team deathmatch"
+	unpickable = FALSE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
+	prefix = "_maps/toolbox/TDM/Lobby.dmm"
+
+var/global/team_death_match_chambers_spawned = 0
+/proc/spawn_TDM_chambers()
+	if(team_death_match_chambers_spawned)
+		return 1
+	var/list/z_levels = SSmapping.levels_by_trait(ZTRAIT_CENTCOM)
+	var/datum/map_template/ruin/combat = SSmapping.space_ruins_templates["Team DeathMatch Combat Chambers"]
+	var/datum/map_template/ruin/lobby = SSmapping.space_ruins_templates["Team DeathMatch Spawn Chamber"]
+	var/list/chambers = list(combat,lobby)
+	var/counts = 0
+	var/did_we_change_it = 0
+	if(z_levels && z_levels.len)
+		for(var/datum/map_template/ruin/S in chambers)
+			if(SSair.can_fire)
+				SSair.can_fire = 0
+				did_we_change_it = 1
+			for(var/i=50,i>0,i--)
+				if(S.try_to_place(pick(z_levels),/area/space))
+					counts++
+					break
+	if(counts == chambers.len)
+		team_death_match_chambers_spawned = 1
+		TDM_dirt()
+		. = 1
+	if(did_we_change_it)
+		SSair.can_fire = 1
 
 //
 //  Have Fun!
 //   - Degeneral
-//
+//			-k nerd
