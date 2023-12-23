@@ -399,6 +399,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	var/ammunition
 	var/rack_sound
 	var/respawn_timer = 20
+	var/death_count_unlock = 0
 
 /obj/structure/displaycase/TDM_item_spawn/Initialize()
 	.=..()
@@ -641,6 +642,7 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	desc = "A huge chunk of metal used to separate rooms. It looks very sturdy."
 	icon = 'icons/turf/walls/wall.dmi'
 	icon_state = "wall"
+	canSmoothWith = /turf/closed/indestructible/TDM/wall
 
 
 /turf/closed/indestructible/TDM/wall/rusty
@@ -648,7 +650,7 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	desc = "A rusted metal wall. It looks very sturdy."
 	icon = 'icons/turf/walls/rusty_wall.dmi'
 	icon_state = "wall"
-
+	canSmoothWith = /turf/closed/indestructible/TDM/wall/rusty
 
 
 		//Floor
@@ -910,6 +912,7 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 	if(TDM_on && !occupant)
 		for(var/datum/data/record/R in records)
 			grow_clone_from_record(src, R)
+	update_display_cases()
 	. = ..()
 
 /obj/machinery/clonepod/TDM/attack_ghost(mob/user)
@@ -925,6 +928,15 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 	create_human(user)
 	click_cooldowns[user.ckey] = world.time+click_cooldown
 
+/obj/machinery/clonepod/TDM/proc/update_display_cases()
+	var/area/A = get_area(src)
+	if(!A)
+		return
+	var/enemy_deaths = get_enemy_deaths()
+	for(var/obj/structure/displaycase/TDM_item_spawn/case in A)
+		if(enemy_deaths >= case.death_count_unlock && !case.open)
+			case.toggle_lock()
+
 /obj/machinery/clonepod/TDM/proc/create_human(mob/M)
 	var/mob/living/carbon/human/H = new()
 	H.forceMove(loc)
@@ -934,6 +946,8 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 	H.key = M.key
 	if(H.mind)
 		H.mind.assigned_role = "Team Deathmatch"
+		if(team)
+			H.mind.special_role = team
 	create_record(H)
 	equip_clothing(H)
 	return H
