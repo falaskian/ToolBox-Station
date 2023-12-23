@@ -468,8 +468,19 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	icon = 'icons/obj/wallmounts.dmi'
 	icon_state = "extinguisher_closed"
 
-
-
+/obj/structure/TDM/medical_cabinet/attack_hand(mob/user)
+	var/result = alert(user,"Take your meds","Medical Cabinet","patch","bandage","cancel")
+	var/meds
+	switch(result)
+		if("patch")
+			meds = /obj/item/reagent_containers/pill/patch/styptic
+		else if("bandage")
+			meds = /obj/item/stack/medical/gauze/two
+		else
+			return
+	var/obj/item/I = new meds(user.loc)
+	user.put_in_hands(I)
+	playsound(loc, 'sound/machines/click.ogg', 15, 1, -3)
 
 
 		//Cloner - Respawn
@@ -493,6 +504,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 			C.team = "red"
 			break
 	qdel(src)
+
 		// Boxes
 
 /obj/structure/ore_box/TDM
