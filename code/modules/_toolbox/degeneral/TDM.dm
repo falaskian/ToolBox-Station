@@ -131,9 +131,9 @@
 	desc = "Designed to quickly reload double-barrel shotguns."
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "gshell-live"
+	item_state = null
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	max_ammo = 2
-
 
 
 /obj/item/ammo_box/s12g/Initialize()
@@ -155,19 +155,6 @@
 		return
 
 
-
-/* SHELL SPEED LOADER
-/obj/item/ammo_box/s12g
-	name = "speedloader (12g Buckshot)"
-	desc = "Designed to quickly reload double-barrel shotguns."
-	icon_state = "762-2"
-	color = "#FF0000"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	max_ammo = 2
-	multiple_sprites = 1
-
-//delete itself if ammo is 0 - basically delete the clip after loading ammo into shotgun
-*/
 
 
 
@@ -610,45 +597,6 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 
 
-
-/*
-/obj/structure/trap/ctf
-	name = "Spawn protection"
-	desc = "Stay outta the enemy spawn!"
-	icon_state = "trap"
-	resistance_flags = INDESTRUCTIBLE
-	var/team = WHITE_TEAM
-	time_between_triggers = 1
-	anchored = TRUE
-	alpha = 255
-
-/obj/structure/trap/ctf/examine(mob/user)
-	return
-
-/obj/structure/trap/ctf/trap_effect(mob/living/L)
-	if(!is_ctf_target(L))
-		return
-	if(!(src.team in L.faction))
-		to_chat(L, "<span class='danger'><B>Stay out of the enemy spawn!</B></span>")
-		L.death()
-
-/obj/structure/trap/ctf/red
-	team = RED_TEAM
-	icon_state = "trap-fire"
-
-/obj/structure/trap/ctf/blue
-	team = BLUE_TEAM
-	icon_state = "trap-frost"
-
-*/
-
-
-
-
-
-
-
-
 		//Metal Doors
 
 /obj/structure/mineral_door/iron/TDM
@@ -663,7 +611,27 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 
 
+
+
 /********************** TURFS **************************/
+
+
+		//Metal Walls
+
+/turf/closed/indestructible/TDM/wall
+	name = "wall"
+	desc = "A huge chunk of metal used to separate rooms. It looks very sturdy."
+	icon = 'icons/turf/walls/wall.dmi'
+	icon_state = "wall"
+
+
+/turf/closed/indestructible/TDM/wall/rusty
+	name = "rusted wall"
+	desc = "A rusted metal wall. It looks very sturdy."
+	icon = 'icons/turf/walls/rusty_wall.dmi'
+	icon_state = "wall"
+
+
 
 		//Floor
 
