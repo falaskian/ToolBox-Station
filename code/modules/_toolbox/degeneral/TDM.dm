@@ -22,7 +22,7 @@
 		//9mm Pistol - Stechkin - 12 ammo, 20DMG
 
 /obj/item/gun/ballistic/automatic/pistol/TDM
-	desc = "A small, easily concealable 9mm handgun. Damage: 20."
+	desc = "A small, easily concealable 9mm handgun. Damage: 20. Fire Rate: 3"
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm/TDM
 
 /obj/item/ammo_box/magazine/pistolm9mm/TDM
@@ -34,7 +34,7 @@
 		//9mm Stetchkin APS - 3rnd brst, 12(4) ammo, uses same mags and does same dmg as Stechkin but automatic
 
 /obj/item/gun/ballistic/automatic/pistol/APS/TDM
-	desc = "Automatic, easily concealable 9mm handgun. Damage: 20."
+	desc = "Automatic, easily concealable 9mm handgun. Damage: 20. Fire Rate: 3"
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm/TDM
 
 
@@ -234,7 +234,8 @@
 	bayonet = TRUE
 
 
-
+/obj/item/gun/ballistic/automatic/pistol/deagle/TDM
+	fire_rate = 2.5
 
 
 
@@ -439,6 +440,13 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	return
 
 /obj/structure/displaycase/TDM_item_spawn/dump()
+/*	if(showpiece)
+		if(istype(showpiece, /obj/item/gun))
+			if(chambered)
+				var/obj/item/ammo_casing/A = chambered
+				if(BB)
+					var/obj/item/projectile/P = BB
+			*/
 	.=..()
 	respawn_item()
 
@@ -554,23 +562,50 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 		//Spawn Protection
 
-/obj/structure/trap/ctf/TDM
+/obj/structure/TDM/spawn_protection
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "shield-old"
 	layer = 2
-	density = 0
+	density = 1
+	var/team = null
+	var/hasShocked = FALSE
 
 
-/obj/structure/trap/ctf/TDM/red
+/obj/structure/TDM/spawn_protection/Bump(atom/movable/M)
+	if(istype(M, /mob/living))
+		var/mob/living/L = M
+		if(team)
+			if(L.mind && L.mind.assigned_role == "Team Deathmatch" && L.mind.special_role == team)
+				var/turf/T = get_turf(src)
+				if(T)
+					M.forceMove(T)
+			else
+				bump_field(L)
+
+
+/obj/structure/TDM/spawn_protection/proc/clear_shock()
+	hasShocked = FALSE
+
+
+/obj/structure/TDM/spawn_protection/proc/bump_field(atom/movable/AM as mob|obj)
+	if(hasShocked)
+		return FALSE
+	hasShocked = TRUE
+	do_sparks(5, TRUE, AM.loc)
+	var/atom/target = get_edge_target_turf(AM, get_dir(src, get_step_away(AM, src)))
+	AM.throw_at(target, 200, 4)
+	addtimer(CALLBACK(src, .proc/clear_shock), 5)
+
+
+
+/obj/structure/TDM/spawn_protection/red
 	name = "red base"
-	density = 1
-//	team = RED_TEAM
+	team = "red"
 
 
-/obj/structure/trap/ctf/TDM/blue
+/obj/structure/TDM/spawn_protection/blue
 	name = "blue base"
-	density = 1
-//	team = BLUE_TEAM
+	team = "blue"
 
 
 

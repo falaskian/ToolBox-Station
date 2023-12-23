@@ -1,0 +1,128 @@
+"aa" = (/turf/closed/wall/rust,/area/space)
+"ab" = (/turf/closed/wall/rust,/area/TDM)
+"ac" = (/turf/open/floor/sepia/TDM,/area/TDM)
+"ad" = (/obj/structure/ore_box/TDM,/turf/open/floor/sepia/TDM,/area/TDM)
+"ae" = (/obj/machinery/power/floodlight{desc = "A pole with powerful mounted lights on it. Due to its high power draw, it must be powered by a direct connection to a wire node. Looks very sturdy."; max_integrity = 1200; name = "sturdy floodlight"},/turf/open/floor/sepia/TDM,/area/TDM)
+"af" = (/obj/machinery/gateway{dir = 9},/turf/closed/wall/rust,/area/TDM)
+"ag" = (/obj/machinery/gateway{dir = 1},/turf/closed/wall/rust,/area/TDM)
+"ah" = (/obj/machinery/gateway{dir = 5},/turf/closed/wall/rust,/area/TDM)
+"ai" = (/obj/structure/barricade/sandbags/TDM,/turf/open/floor/sepia/TDM,/area/TDM)
+"aj" = (/obj/machinery/gateway{dir = 8},/turf/open/floor/sepia/TDM,/area/TDM)
+"ak" = (/obj/machinery/gateway/centerstation,/turf/open/floor/sepia/TDM,/area/TDM)
+"al" = (/obj/machinery/gateway{dir = 4},/turf/open/floor/sepia/TDM,/area/TDM)
+"am" = (/obj/machinery/gateway,/turf/open/floor/sepia/TDM,/area/TDM)
+"an" = (/turf/open/floor/plasteel/stairs/TDM/sepia/up,/area/TDM)
+"ao" = (/turf/open/floor/plating/asteroid,/area/TDM)
+"ap" = (/obj/machinery/power/floodlight{desc = "A pole with powerful mounted lights on it. Due to its high power draw, it must be powered by a direct connection to a wire node. Looks very sturdy."; max_integrity = 1200; name = "sturdy floodlight"},/turf/open/floor/plating/asteroid,/area/TDM)
+"aq" = (/obj/structure/ore_box/TDM,/turf/open/floor/plating/asteroid,/area/TDM)
+"ar" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM)
+"as" = (/turf/open/floor/plasteel/stairs/TDM/sepia/left,/area/TDM)
+"at" = (/turf/open/floor/plasteel/stairs/TDM/sepia/right,/area/TDM)
+"au" = (/obj/structure/barricade/sandbags/TDM,/turf/open/floor/plating/asteroid,/area/TDM)
+"av" = (/turf/closed/wall,/area/TDM/red_base)
+"aw" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM/red_base)
+"ax" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/red,/turf/open/floor/sepia/TDM,/area/TDM/red_base)
+"ay" = (/obj/item/banner/TDM/red,/turf/closed/wall,/area/TDM/red_base)
+"az" = (/obj/item/banner/TDM/blue,/turf/closed/wall,/area/TDM/blue_base)
+"aA" = (/turf/closed/wall,/area/TDM/blue_base)
+"aB" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/blue,/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
+"aC" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
+"aD" = (/obj/machinery/power/floodlight,/turf/open/indestructible,/area/TDM/red_base)
+"aE" = (/turf/open/indestructible,/area/TDM/red_base)
+"aF" = (/obj/machinery/power/floodlight,/turf/open/indestructible,/area/TDM/blue_base)
+"aG" = (/turf/open/indestructible,/area/TDM/blue_base)
+"aH" = (/turf/closed/mineral/volcanic,/area/TDM)
+"aI" = (/obj/structure/TDM/medical_cabinet{pixel_x = 9},/obj/structure/TDM/wallmed{pixel_x = -6},/turf/closed/wall,/area/TDM/red_base)
+"aJ" = (/obj/structure/TDM/medical_cabinet{pixel_x = 9},/obj/structure/TDM/wallmed{pixel_x = -6},/turf/closed/wall,/area/TDM/blue_base)
+"aK" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"aL" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"aM" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"aN" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"aO" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_casing/shotgun/buckshot; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot},/turf/open/indestructible,/area/TDM/red_base)
+"aP" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"aQ" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"aR" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_casing/shotgun/buckshot; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot},/turf/open/indestructible,/area/TDM/blue_base)
+"aS" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"aT" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/red_base)
+"aU" = (/turf/open/chasm/jungle{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/TDM)
+"aV" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/blue_base)
+"aW" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"aX" = (/obj/machinery/clonepod/TDM/team_red,/turf/open/indestructible,/area/TDM/red_base)
+"aY" = (/obj/structure/lattice/catwalk,/turf/open/chasm/jungle{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/TDM)
+"aZ" = (/obj/machinery/clonepod/TDM/team_blue,/turf/open/indestructible,/area/TDM/blue_base)
+"ba" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/shield/riot},/turf/open/indestructible,/area/TDM/red_base)
+"bb" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/shield/riot},/turf/open/indestructible,/area/TDM/blue_base)
+"bc" = (/obj/structure/barricade/wooden,/turf/open/floor/plating/asteroid,/area/TDM)
+"bd" = (/obj/effect/turf_decal/box,/turf/open/floor/plating/asteroid,/area/TDM)
+"be" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"bf" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"bg" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"bh" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"bi" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction},/turf/open/indestructible,/area/TDM/red_base)
+"bj" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle},/turf/open/indestructible,/area/TDM/red_base)
+"bk" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle},/turf/open/indestructible,/area/TDM/blue_base)
+"bl" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction},/turf/open/indestructible,/area/TDM/blue_base)
+"bm" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi},/turf/open/indestructible,/area/TDM/red_base)
+"bn" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted},/turf/open/indestructible,/area/TDM/red_base)
+"bo" = (/obj/effect/turf_decal/delivery,/obj/item/clothing/head/crown,/turf/open/floor/plating/asteroid,/area/TDM)
+"bp" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted},/turf/open/indestructible,/area/TDM/blue_base)
+"bq" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi},/turf/open/indestructible,/area/TDM/blue_base)
+"br" = (/obj/effect/turf_decal/box,/obj/effect/turf_decal/box/corners,/turf/open/floor/plating/asteroid,/area/TDM)
+"bs" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bt" = (/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bu" = (/obj/machinery/power/floodlight{desc = "A pole with powerful mounted lights on it. Due to its high power draw, it must be powered by a direct connection to a wire node. Looks very sturdy."; max_integrity = 1200; name = "sturdy floodlight"},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bv" = (/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bw" = (/obj/item/banner/TDM/red,/turf/closed/wall/rust,/area/TDM)
+"bx" = (/obj/item/banner/TDM/blue,/turf/closed/wall/rust,/area/TDM)
+"by" = (/obj/effect/decal/remains/human,/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bz" = (/turf/template_noop,/area/template_noop)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaababababababababababababacacacacacacacacacabababacacacacacacacadacacacacabaeacacacacacacacacabababacacacacacacacacaeabacacacacadacacacacacacacabababacacacacacacacacacababababababababababababaa
+aaabababababababababababacacacacacacacacacacabaeacacacacacacacacacacacacacabacacacacacadadacabafagahabacadadacacacacacabacacacacacacacacacacacacacaeabacacacacacacacacacacabababababababababababaa
+aaabababababacacacacacacacacadacacacacacacacacacacacacadadadacacacacacacacacacacaiaiacacacacabajakalabacacacacaiaiacacacacacacacacacacadadadacacacacacacacacacacacacadacacacacacacacacabababababaa
+aaababababacacacacacacacacacadacacacacacacacacacacacacacadadacacacacacabacacacacacaiaiacacacacacamacacacacacaiaiacacacacacabacacacacacadadacacacacacacacacacacacacacadacacacacacacacacacababababaa
+aaabababacacacacababaeacacacacacacacabacacacacabacacacacacacacacacacacabacacacacacacaiacacacacacacacacacacacaiacacacacacacabacacacacacacacacacacacabacacacacabacacacacacacacaeababacacacacabababaa
+aaababacacacacababababacacacacacacababacacacacacacacacacacacacadadacacacacacabacacacacacaeacacacacacacacaeacacacacacabacacacacacadadacacacacacacacacacacacacababacacacacacacababababacacacacababaa
+aaababacacacababababababananababababababababacacacacababababababababanabababababababacacacacaiaiaiaiaiacacacacacababababababanababababababababacacacacababababababababananababababababacacacababaa
+aaababananababababababaoaoaoaoabapaoaoaoaoabacacacacadabaoaoaoaoabaoaoaoaoabababacacacacacacacacacacacacacacacacacabababaoaoaoaoabaoaoaoaoabadacacacacabaoaoaoaoapabaoaoaoaoababababababananababaa
+aaababaoaoaoaoapaqaqaoaoaoaoaoaqaoaoaoaoaoaracacacacacasaoaoaoaoaoaoaoaoaoaoabacacacacacacacacacacacacacacacacacacacabaoaoaoaoaoaoaoaoaoaoatacacacacacaraoaoaoaoaoaqaoaoaoaoaoaqaqapaoaoaoaoababaa
+aaabaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoabaoaoabacacacacacabaoaoabaoaoaoauaoaoaoabacacacacacacacacacacacacacacacacacacacabaoaoaoauaoaoaoabaoaoabacacacacacabaoaoabaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoabaa
+aaabaoaoaoaoaoaoaoaoaoaoaqaoaoaoaoaoabaoaoatacacadadacabaoaoaoaoaoauauaoaoaoatacacacacacabababacacacabababacacacacacasaoaoaoauauaoaoaoaoaoabacadadacacasaoaoabaoaoaoaoaoaqaoaoaoaoaoaoaoaoaoaoabaa
+aaavavawavaxavavavayaoaoaoaqaoaqaqaoabaoaoabaeacacacacababaoaoaoauauaoaoaoaoatacacabacacacacabanananabacacacacabacacasaoaoaoaoauauaoaoaoababacacacacaeabaoaoabaoaqaqaoaqaoaoaoazaAaAaAaBaAaCaAaAaa
+aaavaDaEaEaEaEaEaDavavaoaoaoaoaoaqaoabaoaoababarararababaoaoaoauauaoaoaoaoaoatacababacacacacabaoaoaoabacacacacababacasaoaoaoaoaoauauaoaoaoababarararababaoaoabaoaqaoaoaoaoaoaAaAaFaGaGaGaGaGaFaAaa
+aaavaEaEaEaEaEaEaEaDavaoaoaoaoaoaoaoabaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoababababababananabaoaoaoabananababababababaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoabaoaoaoaoaoaoaoaAaFaGaGaGaGaGaGaGaAaa
+aaavaEaEaEaEaEaEaEaEavaoaoaoaoaoaoaoabaoaoaoaoaoaoaoaoaoaHaoaoaoaoaoaoaoaoaoaoaoaoababaoaoaoaoaoaoaoaoaoaoaoababaoaoaoaoaoaoaoaoaoaoaoaoaHaoaoaoaoaoaoaoaoaoabaoaoaoaoaoaoaoaAaGaGaGaGaGaGaGaGaAaa
+aaavaEaEaEaIavaEaEaEaxaoaoabaoaoaoababababababaoaoaoaoaoaHaHaoaoaoaoaqaoaoaoaoaoaoabaoaoaoaoaoaoaoaoaoaoaoaoaoabaoaoaoaoaoaoaqaoaoaoaoaHaHaoaoaoaoaoababababababaoaoaoabaoaoaBaGaGaGaAaJaGaGaGaAaa
+aaavaKaEaEaLavaEaEaEaxaoaoabaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaHaHaoaoaqaoaoaoaoabaoaoabaoaoaoaoaqaoaoaoaqaoaoaoaoabaoaoabaoaoaoaoaqaoaoaHaHaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoabaoaoaBaGaGaGaAaMaGaGaNaAaa
+aaayaOaEaEaPayaEaEaEavaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoapabaoaoaoaoaoaoaoaqabababaqaoaoaoaoaoaoaoabaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaAaGaGaGazaQaGaGaRazaa
+aaavaSaEaEaTavaEaEaEavaoaoaoaoaoaoaoaoaoaHaoaoaHaHaHaHaoaoaoaHaUaUaoaoaoaoababaoaoaoaoaoaoaoaoabababaoaoaoaoaoaoaoaoababaoaoaoaoaUaUaHaoaoaoaHaHaHaHaoaoaHaoaoaoaoaoaoaoaoaoaAaGaGaGaAaVaGaGaWaAaa
+aaavaDaEaEaXavaEaEaEawaoaoaoaoaoaoaoaoaHaHaoaoaoaoaoaHaHaoaoaUaUaUaUaYaYaoaoaoaoaoabaoaoaoaoaoapaqapaoaoaoaoaoabaoaoaoaoaoaYaYaUaUaUaUaoaoaHaHaoaoaoaoaoaHaHaoaoaoaoaoaoaoaoaCaGaGaGaAaZaGaGaFaAaa
+aaavbaaEaEaEavaEaEaEawaoaoaoaoaoaHaHaHaHaHaoaoaoaoaoaoaHaoaoaUaUaUaUaYaYaUaoaoaoaoabababaoaoaoaoaoaoaoaoaoabababaoaoaoaoaUaYaYaUaUaUaUaoaoaHaoaoaoaoaoaoaHaHaHaHaHaoaoaoaoaoaCaGaGaGaAaGaGaGbbaAaa
+aaavaDaEaEaXavaEaEaEawaoaoaoaoaoapaHaHaHaoaoaoaoaoaoaoaoaoaobcaUaUaUaYaYaUaoabaoaoaoaoabaoaoaoaobdaoaoaoaoabaoaoaoaoabaoaUaYaYaUaUaUbcaoaoaoaoaoaoaoaoaoaoaHaHaHapaoaoaoaoaoaCaGaGaGaAaZaGaGaFaAaa
+aaavbeaEaEbfavaEaEaEavaoaoaoaoaoaoaoaHaoaoaoaoaoaoaoaoaoaoaoaobcaUaUaYaYaUaUabaoaoaoaoaoaoaobdaoaoaobdaoaoaoaoaoaoaoabaUaUaYaYaUaUbcaoaoaoaoaoaoaoaoaoaoaoaoaHaoaoaoaoaoaoaoaAaGaGaGaAbgaGaGbhaAaa
+aaaybiaEaEbjayaEaEaEavaoaoabaoaoaoaoaoaoaoaoaoaoaoaqaqaoaoaoaoaobcaUaYaYaUaUaUaoaoaoaoaoaoaoaoaobdaoaoaoaoaoaoaoaoaoaUaUaUaYaYaUbcaoaoaoaoaoaqaqaoaoaoaoaoaoaoaoaoaoaoabaoaoaAaGaGaGazbkaGaGblazaa
+aaavbmaEaEbnavaEaEaEaxaoaoabaoaoaoaoaoaoaqaqaoaoaoaqapaoaoaoaoaoaoaoaoaoaoaUabaoaoaoaoaoaobdaobdbobdaobdaoaoaoaoaoaoabaUaoaoaoaoaoaoaoaoaoaoapaqaoaoaoaqaqaoaoaoaoaoaoabaoaoaBaGaGaGaAbpaGaGbqaAaa
+aaavaEaEaEaIavaEaEaEaxaoaoabaoaoaHaHaoaoaoaqaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoabaoaoaoaoabaoaoaoaobdaoaoaoaoabaoaoaoaoabaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaqaoaoaoaHaHaoaoabaoaoaBaGaGaGaAaJaGaGaGaAaa
+aaavaEaEaEaEaEaEaEaEavaoaoaoaoaoaoaHaHaoaoaoaoaoaoaoaoaoaoaHaHbcaHaHaoaoaoaoaoaoaoaoaoabaoaobdaoaoaobraoaoabaoaoaoaoaoaoaoaoaoaHaHbcaHaHaoaoaoaoaoaoaoaoaoaoaHaHaoaoaoaoaoaoaAaGaGaGaGaGaGaGaGaAaa
+aaavaEaEaEaEaEaEaEaDavaoaoaoaqaoaoaoaHaHaoaoaoaoaoaoaoaoaoaoaoaoaHaHaHaoaoaoaoaoaoaoaoabaoaoaoaobdaoaoaoaoabaoaoaoaoaoaoaoaoaHaHaHaoaoaoaoaoaoaoaoaoaoaoaoaHaHaoaoaoaqaoaoaoaAaFaGaGaGaGaGaGaGaAaa
+aaavaDaEaEaEaEaEaDavayaoaoaoaoaoaoaoaoaoaoaoaHaHaoaoaoaoaoaoaqaoaoaHaoaoaoaoabapaoaoabababaoaoaoaoaoaoaoabababaoaoapabaoaoaoaoaHaoaoaqaoaoaoaoaoaoaHaHaoaoaoaoaoaoaoaoaoaoaoazaAaFaGaGaGaGaGaFaAaa
+aaavavawavaxavavavavaoaoaoaoaoaoaoaoaoaoaoaoaoaHaHaoaoaoaoaoaoaqaoaHaoaoaoababababanabababababanananabababababanababababaoaoaoaHaoaqaoaoaoaoaoaoaHaHaoaoaoaoaoaoaoaoaoaoaoaoaoaAaAaAaAaBaAaCaAaAaa
+aaabaoaoaoaoaoaoaoaqaoaoababbsbsbsababaoaoaoaoaoaHaHaoaoaoaoaoaoaoaHaoaoabababbtbtbtbtbtabbubtbtbtbtbtbuabbtbtbtbtbtabababaoaoaHaoaoaoaoaoaoaoaHaHaoaoaoaoaoababbsbsbsababaoaoaqaoaoaoaoaoaoaoabaa
+aaabaoaoaoaoaoaoaoaqaoaoabbtbtbtbtbtabaoaoaoaoaoaoaoaoaoabaoaoaoaoaoaoaoaoaoabbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtabaoaoaoaoaoaoaoaoaoabaoaoaoaoaoaoaoaoaoabbtbtbtbtbtabaoaoaqaoaoaoaoaoaoaoabaa
+aaabaoaoaoaoaqaoaoaoaoaobsbtbtbtbtbtbsaoaoaoaoaoaoaoaoaoabaoaoaoaoaoaoaoaoaoabbtbtababbtbtbtbtbtbtbtbtbtbtbtababbtbtabaoaoaoaoaoaoaoaoaoabaoaoaoaoaoaoaoaoaobsbtbtbtbtbtbsaoaoaoaoaoaqaoaoaoaoabaa
+aaabaoaoaqaqabaoaoaoaoaoabbtbtbtbtbuabapaoaoaoaoaoaoaoabababababababababanababbtbtbtababbtbtbtbtbtbtbtbtbtababbtbtbtababanabababababababababaoaoaoaoaoaoaoapabbubtbtbtbtabaoaoaoaoaoabaqaqaoaoabaa
+aaabaoaoaqabapaoaoababababbtbtbtababababababananababababbubtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbuababababananababababababbtbtbtababababaoaoapabaqaoaoabaa
+aaabaoaoaqaqaoaoaoabbvbtbtbtbtbtbtbtbtbtbvbvbtbtbtbtbuabbtbtbtbtbtbtbtbtbtabbtbtabbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtabbtbtbtbtbtbtbtbtbtabbubtbtbtbtbvbvbtbtbtbtbtbtbtbtbtbvabaoaoaoaqaqaoaoabaa
+aaabaoaoaqaqaoaoaoabbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbvbvbvbtbtabababbtbtbtbtbtbtbtbtabababababbtbtbtbtbtbtbtbtabababbtbtbvbvbvbtbtabbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtabaoaoaoaqaqaoaoabaa
+aaabaoaoaobwaoaoaoasbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtbtbtbtbtbtbvbvbtbtbtbtbvbtbtbtbtababbtbtabbtbtbtabbtbtababbtbtbtbtbtbtbtbtbtbvbvbtbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtataoaoaobxaoaoaoabaa
+aaabaoaoaoaoaoaoaoasbtbtbtbtbtbtabbvbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtababbtbtbtbtbtbtbtbtbtbtbtababbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtbtbtbtbtbvabbtbtbtbtbtbtataoaoaoaoaoaoaoabaa
+aaababaoaoaoaqaoaoabbtbtbtbtbtbuabbvbvbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtbtbtbtababbtbtabbtbtbtbtbtbtbtabbtbtababbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbvbvabbubtbtbtbtbtabaoaoaqaoaoaoababaa
+aaabababababababababababababababababababababababababababababababababababbtbtabababbybtbtababbtbtbtbtbtababbtbtbyabababbtbtabababababababababababababababababababababababababababababababababababaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbtbtbtabbtbtbtbtbtabbtbtbtbtbtabbtbtbtbtbtabbtbtbtabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+bzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzaaababbtbtbtbtbtabbtbtbtbtbtbubtbtbtbtbtabbtbtbtbtbtababaabzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbz
+bzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzaaaaabababababababababababababababababababababababababaaaabzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbz
+bzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbz
+"}
