@@ -278,7 +278,6 @@
 
 	if(!is_operational()) //Autoeject if power is lost (or the pod is dysfunctional due to whatever reason)
 		if(mob_occupant)
-			to_chat(world,"1")
 			go_out()
 			log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to power loss.")
 
@@ -286,7 +285,6 @@
 
 	else if(mob_occupant && (mob_occupant.loc == src))
 		if(fleshamnt > 0 && !reagents.has_reagent(/datum/reagent/medicine/synthflesh, fleshamnt))
-			to_chat(world,"2")
 			go_out()
 			log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to insufficient material.")
 			connected_message("Clone Ejected: Not enough material.")
@@ -294,14 +292,12 @@
 				SPEAK("The cloning of [mob_occupant.real_name] has been ended prematurely due to insufficient material.")
 		else if(SSeconomy.full_ancap)
 			if(!current_insurance)
-				to_chat(world,"3")
 				go_out()
 				log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to invalid bank account.")
 				connected_message("Clone Ejected: No bank account.")
 				if(internal_radio)
 					SPEAK("The cloning of [mob_occupant.real_name] has been terminated due to no bank account to draw payment from.")
 			else if(!current_insurance.adjust_money(-fair_market_price))
-				to_chat(world,"4")
 				go_out()
 				log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to insufficient funds.")
 				connected_message("Clone Ejected: Out of Money.")
@@ -316,7 +312,6 @@
 			if(internal_radio)
 				SPEAK("The cloning of [mob_occupant.real_name] has been \
 					aborted due to unrecoverable tissue failure.")
-			to_chat(world,"5")
 			go_out()
 			log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] after suiciding.")
 
@@ -365,7 +360,6 @@
 					BP.attach_limb(mob_occupant)
 				unattached_flesh -= i
 
-			to_chat(world,"6")
 			go_out()
 			log_cloning("[key_name(mob_occupant)] completed cloning cycle in [src] at [AREACOORD(src)].")
 

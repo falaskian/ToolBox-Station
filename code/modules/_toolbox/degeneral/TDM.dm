@@ -571,16 +571,17 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	var/hasShocked = FALSE
 
 
-/obj/structure/TDM/spawn_protection/Bump(atom/movable/M)
+/obj/structure/TDM/spawn_protection/Bumped(atom/movable/M)
 	if(istype(M, /mob/living))
 		var/mob/living/L = M
 		if(team)
 			if(L.mind && L.mind.assigned_role == "Team Deathmatch" && L.mind.special_role == team)
 				var/turf/T = get_turf(src)
 				if(T)
-					M.forceMove(T)
-			else
-				bump_field(L)
+					L.forceMove(T)
+					return
+	bump_field(M)
+	. = ..()
 
 
 /obj/structure/TDM/spawn_protection/proc/clear_shock()
