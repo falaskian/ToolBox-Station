@@ -2,7 +2,8 @@
 
 /********************** SECTIONS **************************/
 
-/* TDM New & Updated Weapons
+/* DEFINES
+ - TDM New & Updated Weapons
  - TDM GEAR
  - STRUCTURES
  - TURFS
@@ -12,11 +13,16 @@
 
 
 
-/********************** TDM New & Updated Weapons **************************/
+/********************** DEFINES **************************/
 
-#define TEIR_2_KILLS 30
-#define TEIR_3_KILLS 60
-#define TEIR_4_KILLS 90
+
+#define TEIR_2_KILLS 10
+#define TEIR_3_KILLS 25
+#define TEIR_4_KILLS 50
+
+
+
+/********************** TDM New & Updated Weapons **************************/
 
 
 		//9mm Pistol - Stechkin - 12 ammo, 20DMG
@@ -673,7 +679,9 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	dir = 8
 
 
+
 		//Dirt
+
 
 /proc/TDM_dirt()
 	for(var/a in list(
@@ -684,7 +692,13 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 		))
 		var/area/A = locate(a)
 		for(var/turf/open/floor/T in A)
-			var/goforit = 1
+			var/goforit = 0
+			for (var/t in list(
+			/turf/open/floor/sepia/TDM/dark_10
+			))
+				if(istype(T,t))
+					goforit = 1
+					break
 			for (var/t in list(
 			/turf/open/floor/plasteel/stairs
 			))
@@ -853,7 +867,9 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 
 
-	//Clonepod Or Whatever
+
+
+	//Clonepod Or Whatever (This should go under structures section but who cares)
 
 GLOBAL_LIST_EMPTY(TDM_cloners)
 /obj/machinery/clonepod/TDM
@@ -1084,6 +1100,7 @@ var/global/team_death_match_chambers_spawned = 0
 		SSair.can_fire = 1
 
 //
-//  Have Fun!
+//  "Have Fun!"
 //   - Degeneral
-//			-k nerd
+//			"k nerd"
+//				- Falaskian
