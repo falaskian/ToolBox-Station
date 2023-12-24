@@ -19,6 +19,8 @@
 #define TEIR_2_KILLS 10
 #define TEIR_3_KILLS 25
 #define TEIR_4_KILLS 50
+#define TDM_RED_TEAM "red"
+#define TDM_BLUE_TEAM "blue"
 
 
 
@@ -468,20 +470,32 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	desc = "A small wall mounted cabinet designed to hold medical equipment."
 	icon = 'icons/obj/wallmounts.dmi'
 	icon_state = "extinguisher_closed"
+	var/last_opened = 0
+	var/personal_cooldowns = list()
 
 /obj/structure/TDM/medical_cabinet/attack_hand(mob/user)
-	var/result = alert(user,"Take your meds","Medical Cabinet","patch","bandage","cancel")
+	var/cooldown = personal_cooldowns[user.mind]
+	if(cooldown && cooldown > world.time)
+		return
+	personal_cooldowns[user.mind] = world.time+10
+	var/result = alert(user,"Take your meds","Medical Cabinet","Patch","Bandage","Cancel")
+	personal_cooldowns[user.mind] = world.time+10
 	var/meds
-	switch(result)
-		if("patch")
-			meds = /obj/item/reagent_containers/pill/patch/styptic
-		else if("bandage")
-			meds = /obj/item/stack/medical/gauze/two
-		else
-			return
-	var/obj/item/I = new meds(user.loc)
-	user.put_in_hands(I)
-	playsound(loc, 'sound/machines/click.ogg', 15, 1, -3)
+	var/list/options = list("Patch" = /obj/item/reagent_containers/pill/patch/styptic,"Bandage" = /obj/item/stack/medical/gauze/two)
+	if(result in options)
+		meds = options[result]
+	else
+		return
+	if(meds)
+		var/obj/item/I = new meds(user.loc)
+		user.put_in_hands(I)
+		if(last_opened+11 <= world.time)
+			playsound(loc, 'sound/machines/click.ogg', 15, 1, -3)
+			icon_state = "extinguisher_empty"
+			last_opened = world.time
+			spawn(10)
+				icon_state = initial(icon_state)
+				playsound(loc, 'sound/machines/click.ogg', 15, 1, -3)
 
 
 		//Cloner - Respawn
@@ -498,11 +512,11 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
 		if(cloner == C || !cloner.team)
 			continue
-		if(cloner.team == "red")
-			C.team = "blue"
+		if(cloner.team == TDM_RED_TEAM)
+			C.team = TDM_BLUE_TEAM
 			break
-		if(cloner.team == "blue")
-			C.team = "red"
+		if(cloner.team == TDM_BLUE_TEAM)
+			C.team = TDM_RED_TEAM
 			break
 	qdel(src)
 
@@ -607,12 +621,12 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 /obj/structure/TDM/spawn_protection/red
 	name = "red base"
-	team = "red"
+	team = TDM_RED_TEAM
 
 
 /obj/structure/TDM/spawn_protection/blue
 	name = "blue base"
-	team = "blue"
+	team = TDM_BLUE_TEAM
 
 
 
@@ -965,7 +979,7 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 		"t4" = /datum/outfit/TDM/blue/t4)
 	var/list/team_outfit = list()
 	switch(team)
-		if("red")
+		if(TDM_RED_TEAM)
 			team_outfit = red_TDM_outfits
 		else if("green")
 			team_outfit = blue_TDM_outfits
@@ -1072,9 +1086,9 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 	return
 
 /obj/machinery/clonepod/TDM/team_red
-	team = "red"
+	team = TDM_RED_TEAM
 /obj/machinery/clonepod/TDM/team_blue
-	team = "blue"
+	team = TDM_BLUE_TEAM
 
 //Map Template
 /datum/map_template/ruin/space/TDM_chambers
