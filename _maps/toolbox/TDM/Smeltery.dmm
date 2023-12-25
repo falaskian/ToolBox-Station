@@ -25,7 +25,7 @@
 "ay" = (/obj/item/banner/TDM/red,/turf/closed/wall,/area/TDM/red_base)
 "az" = (/obj/item/banner/TDM/blue,/turf/closed/wall,/area/TDM/blue_base)
 "aA" = (/turf/closed/wall,/area/TDM/blue_base)
-"aB" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/blue,/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
+"aB" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/blue,/obj/structure/fans/tiny,/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
 "aC" = (/turf/open/floor/plasteel/stairs/TDM/sepia/right{dir = 8},/area/TDM)
 "aD" = (/obj/machinery/power/floodlight,/turf/open/indestructible,/area/TDM/red_base)
 "aE" = (/turf/open/indestructible,/area/TDM/red_base)
@@ -111,7 +111,7 @@
 "cg" = (/obj/structure/railing{dir = 6; resistance_flags = 115},/turf/open/lava/smooth,/area/TDM)
 "ch" = (/obj/structure/lattice/catwalk,/obj/structure/railing{dir = 1},/turf/open/lava/smooth{slowdown = 0},/area/TDM)
 "ci" = (/obj/structure/closet/crate/miningcar/minecart{anchored = 1; resistance_flags = 115},/turf/open/floor/plating/asteroid/basalt,/area/TDM)
-"cj" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/red,/turf/open/floor/plating/rust,/area/TDM/red_base)
+"cj" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/red,/obj/structure/fans/tiny,/turf/open/floor/plating/rust,/area/TDM/red_base)
 "ck" = (/obj/structure/railing/corner{dir = 8},/turf/open/floor/plating/asteroid/basalt,/area/TDM)
 "cl" = (/turf/open/lava/smooth,/area/TDM)
 "cm" = (/obj/structure/railing{dir = 10},/turf/open/floor/plating/asteroid/basalt,/area/TDM)
@@ -152,6 +152,8 @@
 "cV" = (/obj/machinery/button/door{id = "bluepod"; name = "Blastdoor Control"; pixel_x = -25; pixel_y = -5; req_access_txt = "0"; resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
 "cW" = (/obj/effect/turf_decal/stripes/asteroid/line{dir = 9},/obj/machinery/door/poddoor{id = "redpod"; resistance_flags = 115},/turf/open/floor/engine,/area/TDM)
 "cX" = (/obj/effect/turf_decal/stripes/asteroid/line{dir = 5},/obj/machinery/door/poddoor{id = "bluepod"; resistance_flags = 115},/turf/open/floor/engine,/area/TDM)
+"cY" = (/turf/open/floor/plating/asteroid/basalt,/area/space)
+"cZ" = (/obj/machinery/button/door{id = "bluefactory"; name = "Blastdoor Control"; pixel_x = -25; pixel_y = 5; req_access_txt = "0"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
 "dc" = (/obj/effect/turf_decal/stripes/asteroid/line,/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_y = 3; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
 "dd" = (/obj/effect/turf_decal/loading_area,/obj/item/coin/gold,/turf/open/floor/plating/rust,/area/TDM)
 "de" = (/obj/machinery/mineral/unloading_machine{dir = 1; icon_state = "unloader-corner"; input_dir = 1; output_dir = 2; resistance_flags = 115},/obj/effect/turf_decal/stripes/line{dir = 9},/obj/effect/turf_decal/stripes/line{dir = 5},/turf/open/floor/plating,/area/TDM)
@@ -166,7 +168,6 @@
 "dn" = (/obj/item/banner/TDM/blue,/turf/closed/wall,/area/TDM)
 "do" = (/obj/machinery/door/poddoor{id = "bluefactory"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
 "dp" = (/obj/machinery/button/door{id = "redfactory"; name = "Blastdoor Control"; pixel_x = 25; pixel_y = 5; req_access_txt = "0"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"dq" = (/obj/machinery/button/door{id = "redfactory"; name = "Blastdoor Control"; pixel_x = -25; pixel_y = 5; req_access_txt = "0"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -199,7 +200,7 @@ aaavbraEaEbsavaEaEaEcjaoaoaUaoaoaoaUclclclclclclaHaHaHaoaoaoaoaoaHaHaHclclclclcl
 aaavaEaEaEaIavaEaEaEcjaoaoaUaoaoaoaoaoclclclclclclclaHaHaoaoaoaHaHaHclclcbcccccccccdclclbDbFclbDaZbFclbDbFclclcbcccccccccdclclaHaHaHaoaoaoaHaHclclclclclclclaoaoaoaoaoaUaoaoaBaGaGaGaAaJaGaGaGaAaa
 aaavaEaEaEaEaEaEaEaEavaoaoaoaoaoaUaoaoaoaoaoclclclclclaHbEbEaHaHaHaoclcbcgaZaZaZaZabababbMbNchbMaZbNchbMbNabababaZaZaZaZdkcdclaoaHaHaHbEbEaHclclclclclaoaoaoaoaoaUaoaoaoaoaoaAaGaGaGaGaGaGaGaGaAaa
 aaavaEaEaEaEaEaEaEaDavaoaoaoaoaoaUaoaoaoaoaoaoaoaoaoaoaUaoaoaHaHaoaoaoaUaZaZaZaZbRbRbRbRaZaZaZaZaZaZaZaZaZbRbRbRbRaZaZaZaZaUaoaoaoaHaHaoaoaUaoaoaoaoaoaoaoaoaoaoaUaoaoaoaoaoaAaFaGaGaGaGaGaGaGaAaa
-aaavaDaEaEaEaEaEaDavayaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaUaoaoaoaoaoaoaZabbTbRbRabababaZaZaZaZaZaZaZabababbRbRbTabaZaoaoaoaoaoaoaUaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoazaAaFaGaGaGaGaGaFaAaa
+aaavaDaEaEaEaEaEaDavayaoaoaocYaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaUaoaoaoaoaoaoaZabbTbRbRabababaZaZaZaZaZaZaZabababbRbRbTabaZaoaoaoaoaoaoaUaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoazaAaFaGaGaGaGaGaFaAaa
 aaavavbPavcjavavavavaoaoaoaoaoaoaoaoaoaoaoaoaUaUaoaoaoaoaoaoaoaoaoaoaoaoabababababanabababababanananabababababanabababababaoaoaoaoaoaoaoaoaoaoaoaoaUaUaoaoaoaoaoaoaoaoaoaoaoaoaAaAaAaAaBaAdiaAaAaa
 aaaHaoaoaoaoaoaoaoaUaoaoaoabbUbUbUabaoaoaoaoaoaoaoaoaoaobBbCbCbCckaoaoababbVabcUbRbRbRbRabcUbRcBcBcBbRcUabbRbRbRbRcUabbVababaoaobBbCbCbCckaoaoaoaoaoaoaoaoaoaoabbUbUbUabaoaoaoaUaoaoaoaoaoaoaoaHaa
 aaaHaoaoaoaoaoaoaoaUaoaoababbRbRbRababaoaoaoaoaoaoaoaoaoabclclclcmbCababbRbRabbRbRbRbRbRbRbRbRbRbRbRbRbRbRbRbRbRbRbRabbRbRababbCdlclclclabaoaoaoaoaoaoaoaoaoababbRbRbRababaoaoaUaoaoaoaoaoaoaoaHaa
@@ -209,7 +210,7 @@ aaaHaobWclclcebZaoababababbRbRbRddbRababababananababababbTbRbRbRbRbRbRbRbRbRbRbR
 aaaHaobWclclcnaoaoabbVbRbRbRbRbRbRbRbRbRbVbVbRbRbRbRbTabbRbRbRbRbRbRbRbRbRabbRbRbRcxbRbRcxbRcrclclclcsbRcxbRbRcxbRbRbRabbRbRbRbRbRbRbRbRbRabbTbRbRbRbRbVbVbRbRbRbRbRbRbRbRbRbVabaoaobWclclcnaoaHaa
 aaaHaobWclclcnaoaoabbRbRbRbRbRbRbRbRbRbRbRbVbRbRbRbRbRcSbRbRbVbVbVbRbRbRababbRbRbRdebRbRdebRcrclclclcsbRdebRbRdebRbRbRababbRbRbRbVbVbVbRbRdobRbRbRbRbRbVbRbRbRbRbRbRbRbRbRbRbRabaoaobWclclcnaoaHaa
 aaaHaobXdfbIbZaoaoasbRbRbRbRbRbRabbRbRbRbRbRbRbRbRbRbRcSbRbRbRbVbVbRbRbRbRbVbRbRbRdgbRbRdgbRcrclclclcsbRdgbRbRdgbRbRbRbVbRbRbRbRbVbVbRbRbRdobRbRbRbRbRbRbRbRbRbRabbRbRbRbRbRbRdmaoaobXdndfdjaoaHaa
-aaaHaoaoaoaoaoaoaoasbRbRbRbRbRbRabbVbRbRbRbRbRbRbVbRdpabbRbRbRbRbRbRbRbRbRbRbRbRbRdhbRbRdhbRcrclclclcsbRdhbRbRdhbRbRbRbRbRbRbRbRbRbRbRbRbRabdqbRbVbRbRbRbRbRbRbVabbRbRbRbRbRbRdmaoaoaoaoaoaoaoaHaa
+aaaHaoaoaoaoaoaoaoasbRbRbRbRbRbRabbVbRbRbRbRbRbRbVbRdpabbRbRbRbRbRbRbRbRbRbRbRbRbRdhbRbRdhbRcrclclclcsbRdhbRbRdhbRbRbRbRbRbRbRbRbRbRbRbRbRabcZbRbVbRbRbRbRbRbRbVabbRbRbRbRbRbRdmaoaoaoaoaoaoaoaHaa
 aaaHaHaoaoaoaUaoapabbRbRbRbRbRbTabbVbVbRbVbRbRbRbRbRbRbUbRbRbRbRbRbRbRbRbRbRbRbRabdgbRbRdgbRctcucucucvbRdgbRbRdgabbRbRbRbRbRbRbRbRbRbRbRbRbUbRbRbRbRbRbRbVbRbVbVabbTbRbRbRbRbRabapaoaUaoaoaoaHaHaa
 aaaHaHaHaHaHaHaHaHabababababababababababababababababababababababababababbRbRbRbVbVcBbRbRcBbRbRbRbRbRbRbRcBbRbRcBbVbVbRbRbRabababababababababababababababababababababababababababaHaHaHaHaHaHaHabaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcUbRbRbRbRbRbRbRbRbRbRbVbVbVbRbRbRbRbRbRbRbRbRbRcUabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
