@@ -237,10 +237,41 @@
 /********************** TDM GEAR **************************/
 
 
-
 		//OUTFITS
 
+
+/*
+	//OUTFIT TEMPLATE
+
+/datum/outfit/template
+	name = "template"
+	uniform = null
+	suit = null
+	back = null
+	belt = null
+	gloves = null
+	shoes = null
+	head = null
+	mask = null
+	neck = null
+	ears = null
+	glasses = null
+	id = null
+	l_pocket = null
+	r_pocket = null
+	suit_store = null
+	r_hand = null
+	l_hand = null
+	toggle_helmet = TRUE
+	internals_slot = null
+	list/backpack_contents = null
+	list/implants = null
+	accessory = null
+*/
+
+
 	//Lobby
+
 /datum/outfit/TDM_lobby
     name = "TDM Lobby"
     uniform = /obj/item/clothing/under/color/grey
@@ -288,6 +319,61 @@
 	name = "TDM Blue Team T4"
 	head = /obj/item/clothing/head/helmet/sec
 	suit = /obj/item/clothing/suit/armor/vest/alt
+
+
+
+
+		//TDM CLOWN OUTFITS
+
+
+	//OUTFIT TDM CLOWN RED
+
+/datum/outfit/TDM/clown/red
+	name = "TDM Clown Red Team"
+	uniform = /obj/item/clothing/under/rank/civilian/clown
+	belt = /obj/item/storage/belt/fannypack/red
+	shoes = /obj/item/clothing/shoes/clown_shoes
+	mask = /obj/item/clothing/mask/gas/clown_hat
+	toggle_helmet = TRUE
+	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
+	r_pocket = /obj/item/stack/medical/gauze/two
+
+
+/datum/outfit/TDM/clown/red/t3
+	name = "TDM Clown Red Team T3"
+	suit = /obj/item/clothing/suit/armor/vest/alt
+
+
+/datum/outfit/TDM/clown/red/t4
+	name = "TDM Clown Red Team T4"
+	head = /obj/item/clothing/head/helmet/sec
+	suit = /obj/item/clothing/suit/armor/vest/alt
+
+
+
+	//OUTFIT TDM CLOWN BLUE
+
+/datum/outfit/TDM/clown/blue
+	name = "TDM Clown Blue Team"
+	uniform = /obj/item/clothing/under/rank/civilian/clown/blue
+	belt = /obj/item/storage/belt/fannypack/blue
+	shoes = /obj/item/clothing/shoes/clown_shoes
+	mask = /obj/item/clothing/mask/gas/sexyclown
+	toggle_helmet = TRUE
+	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
+	r_pocket = /obj/item/stack/medical/gauze/two
+
+
+/datum/outfit/TDM/clown/blue/t3
+	name = "TDM Clown Blue Team T3"
+	suit = /obj/item/clothing/suit/armor/vest/alt
+
+
+/datum/outfit/TDM/clown/blue/t4
+	name = "TDM Clown Blue Team T4"
+	head = /obj/item/clothing/head/helmet/sec
+	suit = /obj/item/clothing/suit/armor/vest/alt
+
 
 
 
@@ -358,6 +444,50 @@
 /obj/item/clothing/under/color/blue/TDM/Initialize()
 	.=..()
 	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+	//Clown
+
+/obj/item/clothing/under/rank/civilian/clown/TDM
+	can_adjust = 0
+
+/obj/item/clothing/under/rank/civilian/clown/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+/obj/item/clothing/mask/gas/clown_hat/TDM
+
+/obj/item/clothing/mask/gas/clown_hat/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+/obj/item/clothing/under/rank/civilian/clown/blue/TDM
+	can_adjust = 0
+
+/obj/item/clothing/under/rank/civilian/clown/blue/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+/obj/item/clothing/shoes/clown_shoes/TDM
+//	slowdown = 0.2
+
+/obj/item/clothing/shoes/clown_shoes/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+/obj/item/clothing/mask/gas/sexyclown/TDM
+
+/obj/item/clothing/mask/gas/sexyclown/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+
+
 
 
 /********************** STRUCTURES **************************/
