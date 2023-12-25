@@ -240,6 +240,12 @@
 
 		//OUTFITS
 
+	//Lobby
+/datum/outfit/TDM_lobby
+    name = "TDM Lobby"
+    uniform = /obj/item/clothing/under/color/grey
+    shoes = /obj/item/clothing/shoes/sneakers/black
+
 	//Red Team
 
 /datum/outfit/TDM/red
@@ -712,24 +718,24 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 
 /proc/TDM_dirt()
-	for(var/a in list(
+	var/list/area_list = list(
 		/area/TDM,
 		/area/TDM/lobby,
 		/area/TDM/red_base,
-		/area/TDM/blue_base
-		))
+		/area/TDM/blue_base)
+	var/list/whitelist = list(
+		/turf/open/floor/sepia/TDM/dark_10)
+	var/list/blacklist = list(
+		/turf/open/floor/plasteel/stairs)
+	for(var/a in area_list)
 		var/area/A = locate(a)
 		for(var/turf/open/floor/T in A)
 			var/goforit = 0
-			for (var/t in list(
-			/turf/open/floor/sepia/TDM/dark_10
-			))
+			for (var/t in whitelist)
 				if(istype(T,t))
 					goforit = 1
 					break
-			for (var/t in list(
-			/turf/open/floor/plasteel/stairs
-			))
+			for (var/t in blacklist)
 				if(istype(T,t))
 					goforit = 0
 					break
@@ -1095,7 +1101,7 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 	name = "Team DeathMatch Combat Chambers"
 	id = "tdm_combat"
 	description = "The map for team deathmatch"
-	unpickable = FALSE
+	unpickable = TRUE
 	always_place = FALSE
 	placement_weight = 1
 	cost = 0
@@ -1106,7 +1112,7 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 	name = "Team DeathMatch Spawn Chamber"
 	id = "tdm_lobby"
 	description = "The team lobby for team deathmatch"
-	unpickable = FALSE
+	unpickable = TRUE
 	always_place = FALSE
 	placement_weight = 1
 	cost = 0
