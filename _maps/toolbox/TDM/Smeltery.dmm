@@ -7,10 +7,10 @@
 "ag" = (/obj/effect/turf_decal/stripes/asteroid/line{dir = 9},/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/floor/engine,/area/TDM)
 "ah" = (/obj/effect/turf_decal/stripes/asteroid/line{dir = 1},/turf/open/floor/engine,/area/TDM)
 "ai" = (/turf/open/floor/engine,/area/TDM)
-"aj" = (/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_x = -4; pixel_y = 4; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
+"aj" = (/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_x = -5; pixel_y = 4; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
 "ak" = (/obj/effect/turf_decal/stripes/asteroid/line{dir = 8},/turf/open/floor/engine,/area/TDM)
 "al" = (/obj/effect/turf_decal/stripes/asteroid/line{dir = 4},/turf/open/floor/engine,/area/TDM)
-"am" = (/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_x = 4; pixel_y = 4; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
+"am" = (/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_x = 5; pixel_y = 4; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
 "an" = (/turf/open/floor/plasteel/stairs/TDM/sepia/up,/area/TDM)
 "ao" = (/turf/open/floor/plating/asteroid/basalt,/area/TDM)
 "ap" = (/obj/machinery/power/floodlight{desc = "A pole with powerful mounted lights on it. Due to its high power draw, it must be powered by a direct connection to a wire node. Looks very sturdy."; max_integrity = 1200; name = "sturdy floodlight"},/turf/open/floor/plating/asteroid/basalt,/area/TDM)
@@ -39,13 +39,13 @@
 "aM" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/blue_base)
 "aN" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM},/turf/open/indestructible,/area/TDM/blue_base)
 "aO" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/s12g; death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot},/turf/open/indestructible,/area/TDM/red_base)
-"aP" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 1; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/red_base)
-"aQ" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 1; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"aP" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"aQ" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/blue_base)
 "aR" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/s12g; death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot},/turf/open/indestructible,/area/TDM/blue_base)
 "aS" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM},/turf/open/indestructible,/area/TDM/red_base)
-"aT" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 1; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/red_base)
+"aT" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/red_base)
 "aU" = (/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/floor/plating/asteroid/basalt,/area/TDM)
-"aV" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 1; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/blue_base)
+"aV" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/blue_base)
 "aW" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM},/turf/open/indestructible,/area/TDM/blue_base)
 "aX" = (/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/turf/open/indestructible,/area/TDM/red_base)
 "aY" = (/obj/structure/lattice/catwalk,/obj/structure/railing{dir = 6},/obj/structure/railing/corner{dir = 1},/turf/open/lava/smooth{slowdown = 0.5},/area/TDM)
@@ -82,7 +82,7 @@
 "bD" = (/obj/structure/lattice/catwalk,/obj/structure/railing{dir = 8},/turf/open/lava/smooth{slowdown = 0},/area/TDM)
 "bE" = (/obj/structure/barricade/wooden,/turf/open/floor/plating/asteroid/basalt,/area/TDM)
 "bF" = (/obj/structure/lattice/catwalk,/obj/structure/railing{dir = 4},/turf/open/lava/smooth{slowdown = 0},/area/TDM)
-"bG" = (/obj/structure/lattice/catwalk,/obj/structure/railing{dir = 8},/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/lava/smooth{slowdown = 0},/area/TDM)
+"bG" = (/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_x = 6; pixel_y = 0; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
 "bH" = (/obj/structure/railing{dir = 1; resistance_flags = 115},/turf/open/lava/smooth,/area/TDM)
 "bI" = (/obj/item/banner/TDM/red,/turf/closed/wall/rust,/area/TDM)
 "bJ" = (/obj/structure/railing/corner{dir = 1},/obj/structure/railing/corner{dir = 8; resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
@@ -94,7 +94,7 @@
 "bP" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/plating/rust,/area/TDM/red_base)
 "bQ" = (/obj/structure/lattice/catwalk,/obj/structure/railing{dir = 10},/turf/open/lava/smooth{slowdown = 0},/area/TDM)
 "bR" = (/turf/open/floor/plating/rust,/area/TDM)
-"bS" = (/obj/structure/lattice/catwalk,/obj/structure/railing{dir = 4},/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/lava/smooth{slowdown = 0},/area/TDM)
+"bS" = (/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_x = -6; pixel_y = 0; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
 "bT" = (/obj/machinery/power/floodlight{desc = "A pole with powerful mounted lights on it. Due to its high power draw, it must be powered by a direct connection to a wire node. Looks very sturdy."; max_integrity = 1200; name = "sturdy floodlight"},/turf/open/floor/plating/rust,/area/TDM)
 "bU" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/plating/rust,/area/TDM)
 "bV" = (/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/floor/plating/rust,/area/TDM)
@@ -152,8 +152,6 @@
 "cV" = (/obj/machinery/button/door{id = "bluepod"; name = "Blastdoor Control"; pixel_x = -25; pixel_y = -5; req_access_txt = "0"; resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
 "cW" = (/obj/effect/turf_decal/stripes/asteroid/line{dir = 9},/obj/machinery/door/poddoor{id = "redpod"; resistance_flags = 115},/turf/open/floor/engine,/area/TDM)
 "cX" = (/obj/effect/turf_decal/stripes/asteroid/line{dir = 5},/obj/machinery/door/poddoor{id = "bluepod"; resistance_flags = 115},/turf/open/floor/engine,/area/TDM)
-"cZ" = (/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_x = 3; pixel_y = 0; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
-"da" = (/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_x = -3; pixel_y = 0; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
 "dc" = (/obj/effect/turf_decal/stripes/asteroid/line,/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_y = 3; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
 "dd" = (/obj/effect/turf_decal/loading_area,/obj/item/coin/gold,/turf/open/floor/plating/rust,/area/TDM)
 "de" = (/obj/machinery/mineral/unloading_machine{dir = 1; icon_state = "unloader-corner"; input_dir = 1; output_dir = 2; resistance_flags = 115},/obj/effect/turf_decal/stripes/line{dir = 9},/obj/effect/turf_decal/stripes/line{dir = 5},/turf/open/floor/plating,/area/TDM)
@@ -177,26 +175,26 @@ aaabababaHaHaHaHaHaHaHaHaHaoaoaoaoabacadadacacacacadabacacacacacacadadacacacabag
 aaababaHaHaHaHaHaHaHaHaHaoaoaoaoaoabacacacacacacacacacacacacacacacacadacadacabcCaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaicGabacadacadacacacacacacacacacacacacacacacacabaoaoaoaoaoaHaHaHaHaHaHaHaHaHababaa
 aaabaHaHaHaHaoaoaoaoaoaoaoaoaUaoaoatacacacacadacacacacacacadababacacacacaccHabakaiaicKaiaiaiaiaiaiaiaiaiaiaicNaiaialabcVacacacacacababadacacacacacacadacacacacaCaoaoaUaoaoaoaoaoaoaoaoaHaHaHaHabaa
 aaaHaHaHaHaoaoaoaoaoaoaoaoaoaUaoaoatacacacababababacacacadadadabacacacacacaccWcDaiaiaicEaiaiaiaiaiaiaiaicEaiaiaiaicFcXacacacacacacabadadadacacacababababacacacaCaoaoaUaoaoaoaoaoaoaoaoaoaHaHaHaHaa
-aaaHaHaHaoaoaoaoaHaHapaoaoaoaoaoaoabadacacacacacabacacacadacacabacacacacacaccWcIaiaicZaiaiaicEaiaicEaiaiaiaidaaiaicJcXacacacacacacabacacadacacacabacacacacacadabaoaoaoaoaoaoapaHaHaoaoaoaoaHaHaHaa
+aaaHaHaHaoaoaoaoaHaHapaoaoaoaoaoaoabadacacacacacabacacacadacacabacacacacacaccWcIaiaibGaiaiaicEaiaicEaiaiaiaibSaiaicJcXacacacacacacabacacadacacacabacacacacacadabaoaoaoaoaoaoapaHaHaoaoaoaoaHaHaHaa
 aaaHaHaoaoaoaoaHaHaHaHaoaoaoaoaoaoababadacacacacababacacacacacabadadacacacaeabcLcMcMcIaiaiaiaiaiaiaiaiaiaiaicJcMcMcOabaeacacacadadabacacacacacababacacacacadababaoaoaoaoaoaoaHaHaHaHaoaoaoaoaHaHaa
 aaaHaHaoaoaoaHaHaHaHaHaHaoaoaoaoaoapababababacacaeabababababababababawabababababababcLdccPcPcMcMcMcMcMcPcPdccOabababababababawabababababababababaeacacababababapaoaoaoaoaoaHaHaHaHaHaHaoaoaoaHaHaa
 aaaHaHaoaoaHaHaHaHaHaHaoaoaoaoaoaoaoaoaoaUabacacacacadabclclclclclclaqclclabababaeacacacacacaccQcQcQacacacacacacaeabababclclaqclclclclclclabadacacacacabaUaoaoaoaoaoaoaoaoaoaHaHaHaHaHaHaoaoaHaHaa
 aaaHaHaoaoaoaoapaUaUaoaoaoaoaoaUaoaoaoaoaoaracacacacacaxauauauauauauaYclclclabacacacacacacacacacacacacacacacacacacacabclclclbdauauauauauaubJacacacacacaraoaoaoaoaoaUaoaoaoaoaoaUaUapaoaoaoaoaHaHaa
 aaaHaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoabacacacacacabclclclclclclclclaoaoabacacacacacacacacacacacacacacacacacacacabaoaoclclclclclclclclabacacacacacabaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaHaa
-aaaHaoaoaoaoaoaoaoaoaoaoaUaoaoaoaoaoaoaoaoatacacacacacabclclclclclclclaoaoaoatacacacacacabababacacacabababacacacacacasaoaoaoclclclclclclclabacacacacacaCaoaoaoaoaoaoaoaoaUaoaoaoaoaoaoaoaoaoaoaHaa
+aaaHaoaoaoaoaoaoaoaoaoaoaUaoaoaoaoaoaoaoaoatacacacacacabclclclclclclclaoaoaoatacacacacacabarabacacacabarabacacacacacasaoaoaoclclclclclclclabacacacacacaCaoaoaoaoaoaoaoaoaUaoaoaoaoaoaoaoaoaoaoaHaa
 aaavavbPavcjavavavayaoaoaoaUaoaoaUaUaoaoaoababacacacababclclclaoaoaoaoaoaoaoatacaccQacacacacabanananabacacacaccQacacasaoaoaoaoaoaoaoclclclababacacacababaoaoaoaUaUaoaoaUaoaoaoazaAaAaAaBaAdiaAaAaa
 aaavaDaEaEaEaEaEaDavavaoaoaoaoaoaoaUaoaoaoaoabarararabclclclaUaoaoaoaoaoaoaoataccQcQacacacacbhaZaZaZbnacacacaccQcQacasaoaoaoaoaoaoaoaUclclclabarararabaoaoaoaoaUaoaoaoaoaoaoaAaAaFaGaGaGaGaGaFaAaa
 aaavaEaEaEaEaEaEaEaDavaoaoaoaoaoaoaoaoaoaoaobWclclclclclaUaUaoaoaoaoaoaoaoaoabababababanananboaZaZaZbtanananabababababaoaoaoaoaoaoaoaoaUaUclclclclclcnaoaoaoaoaoaoaoaoaoaoaoaAaFaGaGaGaGaGaGaGaAaa
 aaavaEaEaEaEaEaEaEaEavaoaoaoaoaoaoaoaoaoaoaobXbYbYbYbYbYbZaoaoaoaoaoaoaoaoaoaoaoclababaZaZaZaZaZaZaZaZaZaZaZababclaoaoaoaoaoaoaoaoaoaoaobXbYbYbYbYbYdjaoaoaoaoaoaoaoaoaoaoaoaAaGaGaGaGaGaGaGaGaAaa
 aaavaEaEaEaIavaEaEaEcjaoaoaUaoaoaoaoaobmaoaoaoaoaoaoaoaoaoaoaoaoaoaoaUaoaoaoaoclclclabbubvbwbzbvaZbwbzbvbwbAabclclclaoaoaoaoaUaoaoaoaoaoaoaoaoaoaoaoaoaoaobmaoaoaoaoaoaUaoaoaBaGaGaGaAaJaGaGaGaAaa
 aaavaKaEaEaLavaEaEaEcjaoaoaUaoaoaoaoaoaZaZaoaoaoaoaoaoaoaoaoaoaoaoaUaoaoaoaoclclclclclclbDbFclbDaZbFclbDbFclclclclclclaoaoaoaoaUaoaoaoaoaoaoaoaoaoaoaoaoaZaZaoaoaoaoaoaUaoaoaBaGaGaGaAaMaGaGaNaAaa
-aaayaOaEaEaPayaEaEaEavaoaoaoaoaoaoaoaZaZaZaZaoaoaoaoaoaUaoaoaHaoaoaoaoaoaoclclclclclclclbDbFclbGaZbFclbDbFclclclclclclclaoaoaoaoaoaoaHaoaoaUaoaoaoaoaoaZaZaZaZaoaoaoaoaoaoaoaAaGaGaGazaQaGaGaRazaa
-aaavaSaEaEaTavaEaEaEavbCbCbCbCbCabbHbHbHbHbHbHabclclclaHbEbEaHclclclclclclclclclclclclbKbMbFclbDaZbFclbDbNbOclclclclclclclclclclclclaHbEbEaHclclclabbHbHbHbHbHbHabbCbCbCbCbCaAaGaGaGaAaVaGaGaWaAaa
+aaayaOaEaEaPayaEaEaEavaoaoaoaoaoaoaoaZaZaZaZaoaoaoaoaoaUaoaoaHaoaoaoaoaoaoclclclclclclclbDbFclbDaZbFclbDbFclclclclclclclaoaoaoaoaoaoaHaoaoaUaoaoaoaoaoaZaZaZaZaoaoaoaoaoaoaoaAaGaGaGazaQaGaGaRazaa
+aaavaSaEaEaTavaEaEaEavcybCbCbCbCabbHbHbHbHbHbHabclclclaHbEbEaHclclclclclclclclclclclclbKbMbFclbDbmbFclbDbNbOclclclclclclclclclclclclaHbEbEaHclclclabbHbHbHbHbHbHabbCbCbCbCcyaAaGaGaGaAaVaGaGaWaAaa
 aaavaDaEaEaXavaEaEaEbPclclclclclclclclclclclclclclaHaHaHaoaoaHaHbeclclclclclclclclclbKbMaZbFclbDaZbFclbDaZbNbOclclclclclclclclclbeaHaHaoaoaHaHaHclclclclclclclclclclclclclcldiaGaGaGaAbaaGaGaFaAaa
-aaavbbaEaEaEavaEaEaEbPclclclclclclclclclclclclclaHaHaHaoaoaoaoaobebeclclclclclclclclbDaZaZbFclbDaZbFclbDaZbmbFclclclclclclclclbebeaoaoaoaoaoaHaHaHclclclclclclclclclclclclcldiaGaGaGaAaGaGaGbcaAaa
-aaavaDaEaEaXavaEaEaEbPclclclclclclclclclclclclaHaHcTaoaoaoaoaoaoaobeclclclclclclclclbDbmaZbFclbDaZbFclbDaZaZbFclclclclclclclclbeaoaoaoaoaoaoaocTaHaHclclclclclclclclclclclcldiaGaGaGaAbaaGaGaFaAaa
-aaavbfaEaEbgavaEaEaEavclcebYbYcfclclclclclclclaHaHaoaoaoaUaUaoaoaoaHaHclclclclclclclbQbvaZbFclbDaZbSclbDaZbwcaclclclclclclclaHaHaoaoaoaUaUaoaoaoaHaHclclclclclclclcebYbYcfclaAaGaGaGaAbiaGaGbjaAaa
-aaaybkaEaEblayaEaEaEavbYbZaoaobXabclclclclclclaHaHaHaoaoaociaUaoaoaHaHclclclclclclclclbQbvbFclbDaZbFclbDbwcaclclclclclclclclaHaHaoaoaUciaoaoaoaHaHaHclclclclclclabdjaoaobXbYaAaGaGaGazbpaGaGbqazaa
+aaavbbaEaEaEavaEaEaEbPclclclclclclclclclclclclclaHaHaHaoaoaoaoaobebeclclclclclclclclbDaZaZbFclbDaZbFclbDaZaZbFclclclclclclclclbebeaoaoaoaoaoaHaHaHclclclclclclclclclclclclcldiaGaGaGaAaGaGaGbcaAaa
+aaavaDaEaEaXavaEaEaEbPclclclclclclclclclclclclaHaHcTaoaoaoaoaoaoaobeclclclclclclclclbDbmaZbFclbDaZbFclbDaZbmbFclclclclclclclclbeaoaoaoaoaoaoaocTaHaHclclclclclclclclclclclcldiaGaGaGaAbaaGaGaFaAaa
+aaavbfaEaEbgavaEaEaEavclcebYbYcfclclclclclclclaHaHaoaoaoaUaUaoaoaoaHaHclclclclclclclbQbvaZbFclbDaZbFclbDaZbwcaclclclclclclclaHaHaoaoaoaUaUaoaoaoaHaHclclclclclclclcebYbYcfclaAaGaGaGaAbiaGaGbjaAaa
+aaaybkaEaEblayaEaEaEavbYbZaoaobXabclclclclclclaHaHaHaoaoaociaUaoaoaHaHclclclclclclclclbQbvbFclbDbmbFclbDbwcaclclclclclclclclaHaHaoaoaUciaoaoaoaHaHaHclclclclclclabdjaoaobXbYaAaGaGaGazbpaGaGbqazaa
 aaavbraEaEbsavaEaEaEcjaoaoaUaoaoaoaUclclclclclclaHaHaHaoaoaoaoaoaoaHaHclclclclclclclclclbDbFclbDaZbFclbDbFclclclclclclclclclaHaHaoaoaoaoaoaoaHaHaHclclclclclclaUaoaoaoaUaoaoaBaGaGaGaAbxaGaGbyaAaa
 aaavaEaEaEaIavaEaEaEcjaoaoaUaoaoaoaoaoclclclclclclclaHaHaoaoaoaoaHaHclclcbcccccccccdclclbDbFclbDaZbFclbDbFclclcbcccccccccdclclaHaHaoaoaoaoaHaHclclclclclclclaoaoaoaoaoaUaoaoaBaGaGaGaAaJaGaGaGaAaa
 aaavaEaEaEaEaEaEaEaEavaoaoaoaoaoaUaoaoaoaoaoclclclclclaHbEbEaHaHaHaoclcbcgaZaZaZaZabababbMbNchbMaZbNchbMbNabababaZaZaZaZdkcdclaoaHaHaHbEbEaHclclclclclaoaoaoaoaoaUaoaoaoaoaoaAaGaGaGaGaGaGaGaGaAaa
