@@ -743,6 +743,23 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 				new /obj/effect/decal/cleanable/dirt(T)
 
 
+
+		//TDM Map Modifiers
+
+
+	//Dust1
+
+obj/TDM_map_modifier/Dust1
+	name = "Dust1 Map Modifier"
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "x"
+
+obj/TDM_map_modifier/Initialize()
+	.=..()
+	TDM_dirt() //Makes "sepia/dark_10" floors dirty
+	qdel(src)
+
+
 /********************** AREAS **************************/
 
 
