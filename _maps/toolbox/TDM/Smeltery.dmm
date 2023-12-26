@@ -1,4 +1,4 @@
-"aa" = (/turf/closed/wall/rust,/area/space)
+"aa" = (/turf/closed/indestructible/riveted/TDM,/area/space)
 "ab" = (/turf/closed/wall/rust,/area/TDM)
 "ac" = (/turf/open/floor/sepia/TDM,/area/TDM)
 "ad" = (/obj/structure/ore_box/TDM,/turf/open/floor/sepia/TDM,/area/TDM)
@@ -19,12 +19,12 @@
 "as" = (/turf/open/floor/plasteel/stairs/TDM/sepia/left,/area/TDM)
 "at" = (/turf/open/floor/plasteel/stairs/TDM/sepia/right,/area/TDM)
 "au" = (/obj/structure/lattice/catwalk,/obj/structure/railing,/obj/structure/railing{dir = 1},/turf/open/lava/smooth{slowdown = 0.5},/area/TDM)
-"av" = (/turf/closed/wall,/area/TDM/red_base)
+"av" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
 "aw" = (/obj/structure/railing/corner{resistance_flags = 115},/obj/structure/railing/corner{dir = 8},/turf/open/floor/sepia/TDM,/area/TDM)
 "ax" = (/obj/structure/railing/corner{dir = 4},/obj/structure/railing/corner,/turf/open/floor/sepia/TDM,/area/TDM)
-"ay" = (/obj/item/banner/TDM/red,/turf/closed/wall,/area/TDM/red_base)
-"az" = (/obj/item/banner/TDM/blue,/turf/closed/wall,/area/TDM/blue_base)
-"aA" = (/turf/closed/wall,/area/TDM/blue_base)
+"ay" = (/obj/item/banner/TDM/red,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"az" = (/obj/item/banner/TDM/blue,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
+"aA" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
 "aB" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/blue,/obj/structure/fans/tiny,/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
 "aC" = (/turf/open/floor/plasteel/stairs/TDM/sepia/right{dir = 8},/area/TDM)
 "aD" = (/obj/machinery/power/floodlight,/turf/open/indestructible,/area/TDM/red_base)
@@ -32,8 +32,8 @@
 "aF" = (/obj/machinery/power/floodlight,/turf/open/indestructible,/area/TDM/blue_base)
 "aG" = (/turf/open/indestructible,/area/TDM/blue_base)
 "aH" = (/turf/closed/mineral/volcanic,/area/TDM)
-"aI" = (/obj/structure/TDM/medical_cabinet{pixel_x = 9},/obj/structure/TDM/wallmed{pixel_x = -6},/turf/closed/wall,/area/TDM/red_base)
-"aJ" = (/obj/structure/TDM/medical_cabinet{pixel_x = -9},/obj/structure/TDM/wallmed{pixel_x = 6},/turf/closed/wall,/area/TDM/blue_base)
+"aI" = (/obj/structure/TDM/medical_cabinet{pixel_x = 9},/obj/structure/TDM/wallmed{pixel_x = -6},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"aJ" = (/obj/structure/TDM/medical_cabinet{pixel_x = -9},/obj/structure/TDM/wallmed{pixel_x = 6},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
 "aK" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM},/turf/open/indestructible,/area/TDM/red_base)
 "aL" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/red_base)
 "aM" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/blue_base)
@@ -154,6 +154,7 @@
 "cX" = (/obj/effect/turf_decal/stripes/asteroid/line{dir = 5},/obj/machinery/door/poddoor{id = "bluepod"; resistance_flags = 115},/turf/open/floor/engine,/area/TDM)
 "cY" = (/turf/open/floor/plating/asteroid/basalt,/area/space)
 "cZ" = (/obj/machinery/button/door{id = "bluefactory"; name = "Blastdoor Control"; pixel_x = -25; pixel_y = 5; req_access_txt = "0"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
+"da" = (/obj/item/banner/TDM/blue,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM)
 "dc" = (/obj/effect/turf_decal/stripes/asteroid/line,/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_y = 3; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
 "dd" = (/obj/effect/turf_decal/loading_area,/obj/item/coin/gold,/turf/open/floor/plating/rust,/area/TDM)
 "de" = (/obj/machinery/mineral/unloading_machine{dir = 1; icon_state = "unloader-corner"; input_dir = 1; output_dir = 2; resistance_flags = 115},/obj/effect/turf_decal/stripes/line{dir = 9},/obj/effect/turf_decal/stripes/line{dir = 5},/turf/open/floor/plating,/area/TDM)
@@ -165,7 +166,6 @@
 "dk" = (/obj/structure/railing{dir = 10; resistance_flags = 115},/turf/open/lava/smooth,/area/TDM)
 "dl" = (/obj/structure/railing{dir = 6; resistance_flags = 115},/turf/open/floor/plating/asteroid/basalt,/area/TDM)
 "dm" = (/turf/open/floor/plasteel/stairs/TDM/sepia/left{dir = 4},/area/TDM)
-"dn" = (/obj/item/banner/TDM/blue,/turf/closed/wall,/area/TDM)
 "do" = (/obj/machinery/door/poddoor{id = "bluefactory"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
 "dp" = (/obj/machinery/button/door{id = "redfactory"; name = "Blastdoor Control"; pixel_x = 25; pixel_y = 5; req_access_txt = "0"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
 
@@ -209,7 +209,7 @@ aaaHaobWclclclcnaoaoaoaoabbRczcAcRbRabapaoaoaoaoaoaoaoabababbUbUbUababbRbRbRbRbR
 aaaHaobWclclcebZaoababababbRbRbRddbRababababananababababbTbRbRbRbRbRbRbRbRbRbRbRbRcBbRbRcBbRcrclclclcsbRcBbRbRcBbRbRbRbRbRbRbRbRbRbRbRbRbTababababananababababbRddbRbRbRababababaobXcfclclcnaoaHaa
 aaaHaobWclclcnaoaoabbVbRbRbRbRbRbRbRbRbRbVbVbRbRbRbRbTabbRbRbRbRbRbRbRbRbRabbRbRbRcxbRbRcxbRcrclclclcsbRcxbRbRcxbRbRbRabbRbRbRbRbRbRbRbRbRabbTbRbRbRbRbVbVbRbRbRbRbRbRbRbRbRbVabaoaobWclclcnaoaHaa
 aaaHaobWclclcnaoaoabbRbRbRbRbRbRbRbRbRbRbRbVbRbRbRbRbRcSbRbRbVbVbVbRbRbRababbRbRbRdebRbRdebRcrclclclcsbRdebRbRdebRbRbRababbRbRbRbVbVbVbRbRdobRbRbRbRbRbVbRbRbRbRbRbRbRbRbRbRbRabaoaobWclclcnaoaHaa
-aaaHaobXdfbIbZaoaoasbRbRbRbRbRbRabbRbRbRbRbRbRbRbRbRbRcSbRbRbRbVbVbRbRbRbRbVbRbRbRdgbRbRdgbRcrclclclcsbRdgbRbRdgbRbRbRbVbRbRbRbRbVbVbRbRbRdobRbRbRbRbRbRbRbRbRbRabbRbRbRbRbRbRdmaoaobXdndfdjaoaHaa
+aaaHaobXdfbIbZaoaoasbRbRbRbRbRbRabbRbRbRbRbRbRbRbRbRbRcSbRbRbRbVbVbRbRbRbRbVbRbRbRdgbRbRdgbRcrclclclcsbRdgbRbRdgbRbRbRbVbRbRbRbRbVbVbRbRbRdobRbRbRbRbRbRbRbRbRbRabbRbRbRbRbRbRdmaoaobXdadfdjaoaHaa
 aaaHaoaoaoaoaoaoaoasbRbRbRbRbRbRabbVbRbRbRbRbRbRbVbRdpabbRbRbRbRbRbRbRbRbRbRbRbRbRdhbRbRdhbRcrclclclcsbRdhbRbRdhbRbRbRbRbRbRbRbRbRbRbRbRbRabcZbRbVbRbRbRbRbRbRbVabbRbRbRbRbRbRdmaoaoaoaoaoaoaoaHaa
 aaaHaHaoaoaoaUaoapabbRbRbRbRbRbTabbVbVbRbVbRbRbRbRbRbRbUbRbRbRbRbRbRbRbRbRbRbRbRabdgbRbRdgbRctcucucucvbRdgbRbRdgabbRbRbRbRbRbRbRbRbRbRbRbRbUbRbRbRbRbRbRbVbRbVbVabbTbRbRbRbRbRabapaoaUaoaoaoaHaHaa
 aaaHaHaHaHaHaHaHaHabababababababababababababababababababababababababababbRbRbRbVbVcBbRbRcBbRbRbRbRbRbRbRcBbRbRcBbVbVbRbRbRabababababababababababababababababababababababababababaHaHaHaHaHaHaHabaa

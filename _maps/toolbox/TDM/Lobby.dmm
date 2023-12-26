@@ -1,9 +1,11 @@
-"a" = (/turf/closed/wall,/area/TDM/lobby)
+"a" = (/turf/closed/indestructible/riveted/TDM,/area/TDM/lobby)
 "b" = (/obj/item/banner/TDM/red,/turf/open/floor/carpet/red,/area/TDM/lobby/red)
 "c" = (/turf/open/floor/carpet/red,/area/TDM/lobby/red)
 "d" = (/obj/item/banner/TDM/blue,/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
 "e" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/indestructible,/area/TDM/lobby)
 "f" = (/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
+"g" = (/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/indestructible,/area/TDM/lobby)
+"h" = (/obj/effect/turf_decal/stripes/corner{dir = 1},/obj/effect/turf_decal/stripes/corner{dir = 4},/turf/open/indestructible,/area/TDM/lobby)
 "i" = (/turf/open/indestructible,/area/TDM/lobby)
 "j" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/lobby)
 "k" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/lobby)
@@ -21,7 +23,12 @@
 "w" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/clothing/suit/armor/vest/alt},/turf/open/indestructible,/area/TDM/lobby)
 "x" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/shield/riot},/turf/open/indestructible,/area/TDM/lobby)
 "y" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/clothing/head/helmet/sec},/turf/open/indestructible,/area/TDM/lobby)
-"z" = (/obj/structure/TDM/wallmed,/turf/closed/wall,/area/TDM/lobby)
+"z" = (/turf/closed/indestructible/fakedoor{name = "Lobby Door"},/area/TDM/lobby)
+"A" = (/turf/closed/indestructible/fakedoor{name = "Lobby Door"},/area/TDM/lobby)
+"B" = (/obj/structure/TDM/wallmed,/turf/closed/indestructible/riveted/TDM,/area/TDM/lobby)
+"C" = (/obj/effect/turf_decal/plaque,/turf/open/indestructible,/area/TDM/lobby)
+"D" = (/obj/effect/turf_decal/loading_area{dir = 1},/turf/open/indestructible,/area/TDM/lobby)
+"E" = (/turf/template_noop,/area/TDM/lobby)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaa
@@ -31,11 +38,11 @@ acccccccceffffffffa
 acccccccceffffffffa
 acccccccceffffffffa
 abccccccbedffffffda
+agggggggghgggggggga
+ziiDiiDiiiiiDiiDiiA
 aiiiiiiiiiiiiiiiiia
-aiiiiiiiiiiiiiiiiia
-aiiiiiiiiiiiiiiiiia
-azjkliiiiiiiiimnoza
+aBjkliiiiCiiiimnoBa
 aaaaapqsiiituvaaaaa
-raaaaaaawxyaaaaaaar
+rEEEaaaawxyaaaaEEEr
 rrrrrrraaaaarrrrrrr
 "}

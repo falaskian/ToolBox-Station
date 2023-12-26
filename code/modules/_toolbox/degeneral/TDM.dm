@@ -565,27 +565,6 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 				playsound(loc, 'sound/machines/click.ogg', 15, 1, -3)
 
 
-		//Cloner - Respawn
-
-/obj/structure/TDM/respawn_pod
-	name = "cloning pod"
-	icon = 'icons/obj/machines/cloning.dmi'
-	icon_state = "pod_1"
-
-/obj/structure/TDM/respawn_pod/New()
-	. = ..()
-	var/obj/machinery/clonepod/TDM/C = new(loc)
-	C.TDM_on = 1
-	for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
-		if(cloner == C || !cloner.team)
-			continue
-		if(cloner.team == TDM_RED_TEAM)
-			C.team = TDM_BLUE_TEAM
-			break
-		if(cloner.team == TDM_BLUE_TEAM)
-			C.team = TDM_RED_TEAM
-			break
-	qdel(src)
 
 		// Boxes
 
@@ -593,6 +572,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	name = "sturdy box"
 	desc ="A heavy wooden box. It looks very sturdy."
 	anchored = 1
+	resistance_flags = 115
 
 
 /obj/structure/ore_box/TDM/take_damage()
@@ -609,20 +589,6 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 
 /obj/structure/barricade/sandbags/TDM/take_damage()
 	return
-
-		//Half Wall
-/obj/structure/barricade/sandbags/TDM/half_wall
-	name = "half wall"
-	desc = "Stone half wall. You need to be close to shoot accurately over it. It looks very sturdy."
-	color = "#909090"
-	canSmoothWith = list(/obj/structure/barricade/sandbags/TDM/half_wall, /obj/structure/barricade/sandbags, /turf/closed/wall, /turf/closed/wall/r_wall, /obj/structure/falsewall, /obj/structure/falsewall/reinforced, /turf/closed/wall/rust, /turf/closed/wall/r_wall/rust, /obj/structure/barricade/security)
-
-/obj/structure/barricade/sandbags/TDM/half_wall/CanPass(atom/movable/mover, turf/target)
-	. = ..()
-	if(get_dir(loc, target) & dir)
-		var/checking = FLYING | FLOATING
-		return . || mover.movement_type & checking
-	return TRUE
 
 
 
@@ -641,6 +607,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 
 		//Windows
 obj/structure/window/plastitanium/tough/TDM
+	desc = "A window made of an alloy of of plasma and titanium. It looks very sturdy."
 
 obj/structure/window/plastitanium/tough/TDM/take_damage()
 	return
@@ -718,20 +685,21 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 		//Metal Walls
 
-/turf/closed/indestructible/TDM/wall
+/turf/closed/indestructible/riveted/TDM
 	name = "wall"
 	desc = "A huge chunk of metal used to separate rooms. It looks very sturdy."
+
+
+/turf/closed/indestructible/riveted/TDM/wall
 	icon = 'icons/turf/walls/wall.dmi'
 	icon_state = "wall"
-	canSmoothWith = /turf/closed/indestructible/TDM/wall
 
 
-/turf/closed/indestructible/TDM/wall/rusty
+/turf/closed/indestructible/riveted/TDM/wall/rusty
 	name = "rusted wall"
 	desc = "A rusted metal wall. It looks very sturdy."
 	icon = 'icons/turf/walls/rusty_wall.dmi'
 	icon_state = "wall"
-	canSmoothWith = /turf/closed/indestructible/TDM/wall/rusty
 
 
 		//Floor
@@ -824,7 +792,8 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	list/turf_whitelist = list(
 		/turf/open/floor/sepia/TDM/dark_10)
 	list/turf_blacklist = list(
-		/turf/open/floor/plasteel/stairs)
+		/turf/open/floor/plasteel/stairs,
+		/turf/open/floor/plating/asteroid)
 
 
 
