@@ -774,53 +774,57 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	dir = 8
 
 
+	//Area Dirtier
 
-		//Dirt
+/obj/TDM_map_modifier
+	name = "Dirtifier Map Modifier"
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "x"
+	var/inited = 0 //making sure this object can only ever be triggered once.
+	var/dirt_probability = 20 //The chance each turf will be dirtied.
+	var/local_area = 1 //Should we dirty the area this object is sitting in?
+	var/list/area_list = list() //lists of areas to dirty.
+	var/list/turf_whitelist = list() //if we only want specific turfs to be dirtied, whitelist them here. if left empty then all turfs in the listed areas will be dirtied.
+	var/list/turf_blacklist = list() //black list turfs to never be dirtied by this object.
 
+/obj/TDM_map_modifier/Initialize()
+	. = ..()
+	if(inited)
+		return
+	inited = 1
+	if(local_area)
+		var/area/current_area = get_area(src)
+		if(!(area_list in area_list))
+			area_list += current_area.type
+	for(var/a in area_list)
+		var/area/A = locate(a)
+		for(var/turf/open/floor/T in A)
+			var/goforit = 1
+			if(turf_whitelist.len)
+				goforit = 0
+				for (var/t in turf_whitelist)
+					if(istype(T,t))
+						goforit = 1
+						break
+			if(turf_blacklist.len)
+				for (var/t in turf_blacklist)
+					if(istype(T,t))
+						goforit = 0
+						break
+			if(goforit && prob(dirt_probability))
+				new /obj/effect/decal/cleanable/dirt(T)
+	qdel(src)
 
-/proc/TDM_dirt()
-	var/list/area_list = list(
+/obj/TDM_map_modifier/Dust1
+	list/area_list = list(
 		/area/TDM,
 		/area/TDM/lobby,
 		/area/TDM/red_base,
 		/area/TDM/blue_base)
-	var/list/whitelist = list(
+	list/turf_whitelist = list(
 		/turf/open/floor/sepia/TDM/dark_10)
-	var/list/blacklist = list(
+	list/turf_blacklist = list(
 		/turf/open/floor/plasteel/stairs)
-	for(var/a in area_list)
-		var/area/A = locate(a)
-		for(var/turf/open/floor/T in A)
-			var/goforit = 0
-			for (var/t in whitelist)
-				if(istype(T,t))
-					goforit = 1
-					break
-			for (var/t in blacklist)
-				if(istype(T,t))
-					goforit = 0
-					break
-			if(goforit && prob(20))
-				new /obj/effect/decal/cleanable/dirt(T)
-
-
-
-		//TDM Map Modifiers
-
-
-	//Dust1
-
-obj/TDM_map_modifier/Dust1
-	name = "Dust1 Map Modifier"
-	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "x"
-
-obj/TDM_map_modifier/Initialize()
-	.=..()
-	TDM_dirt() //Makes "sepia/dark_10" floors dirty
-	qdel(src)
-
-
 
 
 
@@ -1342,7 +1346,6 @@ var/global/team_death_match_chambers_spawned = 0
 					break
 	if(counts == chambers.len)
 		team_death_match_chambers_spawned = 1
-		TDM_dirt()
 		. = 1
 	if(did_we_change_it)
 		SSair.can_fire = 1
