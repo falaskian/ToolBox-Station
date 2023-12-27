@@ -1,11 +1,11 @@
 //event subsystem
 SUBSYSTEM_DEF(toolbox_events)
 	name = "Toolbox Events"
-	runlevels = RUNLEVEL_INIT
+	runlevels = RUNLEVEL_GAME
 	var/savepath = "data/other_saves/toolbox_events.sav"
 	var/list/cached_events = list()
 	init_order = INIT_ORDER_MAPPING+1
-	flags = SS_NO_FIRE
+	//flags = SS_NO_FIRE
 
 /datum/controller/subsystem/toolbox_events/Initialize(timeofday)
 	. = ..()
@@ -56,6 +56,14 @@ SUBSYSTEM_DEF(toolbox_events)
 		if(isnum(E.active))
 			S["[E.eventid]"] << E.active
 
+/datum/controller/subsystem/toolbox_events/fire(resumed = 0)
+	for(var/t in cached_events)
+		var/datum/toolbox_event/E = cached_events[t]
+		if(!E)
+			continue
+		if(E.active && E.processes)
+			E.process()
+
 /*
 The event. Make children of this to make a new event.
 */
@@ -64,6 +72,7 @@ The event. Make children of this to make a new event.
 	var/desc //Description of the end.
 	var/eventid = "" //This is the text id tag of the event. Used in code, must not contain spaces. Example: "clowns_vs_mimes"
 	var/active = 0
+	var/processes = 0
 	var/list/overriden_outfits = list() //populate list like this list("Clown" = /datum/outfit/new_clown). This replaces the outfit for any job you put the title in for.
 	var/list/overriden_job_titles = list() //populate list like this list("Clown" = "Fuckhead"). This replaces the name of the job with the associated entry.
 	var/list/overriden_total_job_positions = list() //populate list like this list("Clown" = 50). This overrides the max jobs available of the mentioned job. Make 0 to ban the job.

@@ -251,7 +251,16 @@ GLOBAL_LIST_EMPTY(hub_features)
 	return ..()
 
 //To ask the player to adminhelp if they are griefed
+GLOBAL_LIST_EMPTY(dont_inform_to_adminhelp_death)
 /client/proc/inform_to_adminhelp_death()
+	var/list/this_guy = list(src,ckey)
+	if(mob)
+		this_guy += mob
+		if(mob.mind)
+			this_guy += mob.mind
+	for(var/t in this_guy)
+		if(t in GLOB.dont_inform_to_adminhelp_death)
+			return
 	spawn(30)
 		var/informed = alert(src,"If you feel this death was illegitimate. Please adminhelp and an admin will investigate this death for you.","You Have Died","No thanks","Admin PM now")
 		if(informed != "Admin PM now")

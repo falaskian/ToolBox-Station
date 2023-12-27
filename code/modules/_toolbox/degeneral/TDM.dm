@@ -766,34 +766,46 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 			area_list += current_area.type
 	for(var/a in area_list)
 		var/area/A = locate(a)
-		for(var/turf/open/floor/T in A)
-			var/goforit = 1
-			if(turf_whitelist.len)
-				goforit = 0
-				for (var/t in turf_whitelist)
-					if(istype(T,t))
-						goforit = 1
-						break
-			if(turf_blacklist.len)
-				for (var/t in turf_blacklist)
-					if(istype(T,t))
-						goforit = 0
-						break
-			if(goforit && prob(dirt_probability))
-				new /obj/effect/decal/cleanable/dirt(T)
+		if(A)
+			for(var/turf/open/floor/T in A)
+				var/goforit = 1
+				if(turf_whitelist.len)
+					goforit = 0
+					for (var/t in turf_whitelist)
+						if(istype(T,t))
+							goforit = 1
+							break
+				if(turf_blacklist.len)
+					for (var/t in turf_blacklist)
+						if(istype(T,t))
+							goforit = 0
+							break
+				if(goforit && prob(dirt_probability))
+					new /obj/effect/decal/cleanable/dirt(T)
 	qdel(src)
 
 /obj/TDM_map_modifier/Dust1
-	list/area_list = list(
+	area_list = list(
 		/area/TDM,
 		/area/TDM/lobby,
 		/area/TDM/red_base,
 		/area/TDM/blue_base)
-	list/turf_whitelist = list(
+	turf_whitelist = list(
 		/turf/open/floor/sepia/TDM/dark_10)
-	list/turf_blacklist = list(
+	turf_blacklist = list(
 		/turf/open/floor/plasteel/stairs,
 		/turf/open/floor/plating/asteroid)
+
+/obj/TDM_map_modifier/smeltery
+	area_list = list(
+		/area/TDM,
+		/area/TDM/lobby,
+		/area/TDM/red_base,
+		/area/TDM/blue_base)
+	turf_whitelist = list(
+		/turf/open/floor/plating/rust,
+		/turf/open/floor/sepia/TDM)
+	turf_blacklist = list()
 
 
 
@@ -1091,6 +1103,14 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 	var/list/click_cooldowns = list()
 	var/click_cooldown = 3000
 	var/times_cloned = 0
+	var/list/red_TDM_outfits = list(
+		"t1" = /datum/outfit/TDM/red,
+		"t3" = /datum/outfit/TDM/red/t3,
+		"t4" = /datum/outfit/TDM/red/t4)
+	var/list/blue_TDM_outfits = list(
+		"t1" = /datum/outfit/TDM/blue,
+		"t3" = /datum/outfit/TDM/blue/t3,
+		"t4" = /datum/outfit/TDM/blue/t4)
 
 /obj/machinery/clonepod/TDM/Initialize()
 	. = ..()
@@ -1135,11 +1155,12 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 /obj/machinery/clonepod/TDM/proc/create_human(mob/M)
 	var/mob/living/carbon/human/H = new()
 	H.forceMove(loc)
-	if(M.client)
-		M.client.prefs.copy_to(H)
-	H.dna.update_dna_identity()
 	H.key = M.key
+	if(H.client)
+		H.client.prefs.copy_to(H)
+	H.dna.update_dna_identity()
 	if(H.mind)
+		GLOB.dont_inform_to_adminhelp_death += H.mind
 		H.mind.assigned_role = "Team Deathmatch"
 		if(team)
 			H.mind.special_role = team
@@ -1150,14 +1171,6 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 /obj/machinery/clonepod/TDM/proc/equip_clothing(mob/living/carbon/human/H)
 	if(!istype(H))
 		return
-	var/list/red_TDM_outfits = list(
-		"t1" = /datum/outfit/TDM/red,
-		"t3" = /datum/outfit/TDM/red/t3,
-		"t4" = /datum/outfit/TDM/red/t4)
-	var/list/blue_TDM_outfits = list(
-		"t1" = /datum/outfit/TDM/blue,
-		"t3" = /datum/outfit/TDM/blue/t3,
-		"t4" = /datum/outfit/TDM/blue/t4)
 	var/list/team_outfit = list()
 	switch(team)
 		if(TDM_RED_TEAM)
@@ -1176,6 +1189,8 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 			teir = 4
 		if(team_outfit["t[teir]"])
 			chosen = team_outfit["t[teir]"]
+		for(var/obj/O in H)
+			qdel(O)
 		H.equipOutfit(chosen)
 
 /obj/machinery/clonepod/TDM/proc/create_record(mob/M)
@@ -1271,6 +1286,23 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 /obj/machinery/clonepod/TDM/team_blue
 	team = TDM_BLUE_TEAM
 
+//clownpod
+/obj/machinery/clonepod/TDM/clowner
+	team = "red"
+	red_TDM_outfits = list(
+		"t1" = /datum/outfit/TDM/clown/red,
+		"t3" = /datum/outfit/TDM/clown/red/t3,
+		"t4" = /datum/outfit/TDM/clown/red/t4)
+
+/obj/machinery/clonepod/TDM/clowner/Initialize()
+	. = ..()
+	var/thefindtext = findtext(name,"clone")
+	while(thefindtext)
+		name = replacetext(name,"clone","clown")
+		thefindtext = findtext(name,"clone")
+		if(!thefindtext)
+			thefindtext = null
+
 //Map Template
 /datum/map_template/ruin/space/TDM_chambers
 	name = "Team DeathMatch Combat Chambers"
@@ -1294,12 +1326,26 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 	allow_duplicates = FALSE
 	prefix = "_maps/toolbox/TDM/Lobby.dmm"
 
+/datum/map_template/ruin/space/TDM_smeltery
+	name = "Team DeathMatch Smeltery Chambers"
+	id = "tdm_smeltery"
+	description = "The smeltery map for team deathmatch"
+	unpickable = TRUE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
+	prefix = "_maps/toolbox/TDM/Smeltery.dmm"
+
 var/global/team_death_match_chambers_spawned = 0
 /proc/spawn_TDM_chambers()
 	if(team_death_match_chambers_spawned)
 		return 1
 	var/list/z_levels = SSmapping.levels_by_trait(ZTRAIT_CENTCOM)
-	var/datum/map_template/ruin/combat = SSmapping.space_ruins_templates["Team DeathMatch Combat Chambers"]
+	var/list/possible_combat_maps = list(
+		SSmapping.space_ruins_templates["Team DeathMatch Combat Chambers"],
+		SSmapping.space_ruins_templates["Team DeathMatch Smeltery Chambers"])
+	var/datum/map_template/ruin/combat = pick(possible_combat_maps)
 	var/datum/map_template/ruin/lobby = SSmapping.space_ruins_templates["Team DeathMatch Spawn Chamber"]
 	var/list/chambers = list(combat,lobby)
 	var/counts = 0
