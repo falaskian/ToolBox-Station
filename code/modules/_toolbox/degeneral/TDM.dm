@@ -1093,6 +1093,7 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	//Clonepod Or Whatever (This should go under structures section but who cares)
 
 GLOBAL_LIST_EMPTY(TDM_cloners)
+GLOBAL_LIST_EMPTY(TDM_cloner_records)
 /obj/machinery/clonepod/TDM
 	name = "spawn point cloning pod"
 	desc = "An electronically-lockable pod for growing organic tissue."
@@ -1124,8 +1125,8 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 	GLOB.TDM_cloners -= src
 
 /obj/machinery/clonepod/TDM/process()
-	if(TDM_on && !occupant)
-		for(var/datum/data/record/R in records)
+	if(TDM_on && team && !occupant && (team in GLOB.TDM_cloner_records))
+		for(var/datum/data/record/R in GLOB.TDM_cloner_records[team])
 			grow_clone_from_record(src, R)
 	update_display_cases()
 	. = ..()
@@ -1236,10 +1237,12 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 		R.fields["traumas"] = B.get_traumas()
 	R.fields["mindref"] = "[REF(mob_occupant.mind)]"
 	R.fields["last_death"] = mob_occupant.stat == DEAD ? mob_occupant.mind.last_death : -1
-	var/datum/data/record/old_record = find_record("mindref", REF(mob_occupant.mind), records)
-	if(old_record)
-		records -= old_record
-	records += R
+	var/datum/data/record/old_record = find_record("mindref", REF(mob_occupant.mind), GLOB.TDM_cloner_records)
+	if(!GLOB.TDM_cloner_records[team])
+		GLOB.TDM_cloner_records[team] = list()
+	if(old_record && team)
+		GLOB.TDM_cloner_records[team] -= old_record
+	GLOB.TDM_cloner_records[team] += R
 
 /obj/machinery/clonepod/TDM/go_out(move = TRUE)
 	var/mob/living/carbon/human/M = occupant
@@ -1251,7 +1254,6 @@ GLOBAL_LIST_EMPTY(TDM_cloners)
 				M.dna.update_dna_identity()
 			M.fully_heal()
 			equip_clothing(M)
-
 		if(!mess)
 			times_cloned++
 
@@ -1358,6 +1360,12 @@ var/global/team_death_match_chambers_spawned = 0
 			for(var/i=50,i>0,i--)
 				if(S.try_to_place(pick(z_levels),/area/space))
 					counts++
+					for(var/obj/effect/landmark/ruin/L in GLOB.ruin_landmarks)
+						if(L.ruin_template == S)
+							for(var/t in SStoolbox_events.cached_events)
+								var/datum/toolbox_event/team_deathmatch/E = SStoolbox_events.cached_events[t]
+								if(istype(E) && E.active)
+									E.active_ruins[S] = "x=[L.x];y=[L.y];z=[L.z]"
 					break
 	if(counts == chambers.len)
 		team_death_match_chambers_spawned = 1
