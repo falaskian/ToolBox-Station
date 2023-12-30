@@ -36,6 +36,8 @@
 		"start timer" = 60,
 		"match duration" = 300)
 	var/list/active_ruins = list()
+	var/list/ruin_turfs = list()
+	var/death_cap = 30
 
 //debugging this bullshit
 var/list/some_bullshit = list()
@@ -101,15 +103,35 @@ client/verb/clearbullshit()
 				announce(failed_to_launch)
 				return
 			phase = COMBAT_PHASE
-			var/time_left = set_timer("match duration")
-			announce("Team deathmatch has begun, this round ends in [time_left/60] minutes.")
+			//var/time_left = set_timer("match duration") //because fuck timers
+			announce("Team deathmatch has begun, this round ends when one team reaches [death_cap] kills.")
 			clean_repair_ruins()
 		if(COMBAT_PHASE)
 			gather_and_spawn_lobbyists(1)
 			if(world.time >= next_timer-100 && !("10seconds" in remembering))
 				announce("This Team deathmatch round will end in 10 seconds")
 				remembering["10seconds"] = 1
-			if(world.time >= next_timer)
+			//if(world.time >= next_timer) //because fuck timers
+			var/list/team_deaths = list()
+			for(var/t in teams)
+				team_deaths[t] = 0
+			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
+				if(cloner.team && cloner.team in team_deaths)
+					team_deaths[cloner.team] +=	cloner.times_cloned
+			var/loser_so_far= ""
+			var/top_deaths_so_far = 0
+			var/winning_team
+			for(var/t in team_deaths)
+				if(!loser_so_far)
+					loser_so_far = t
+				if(team_deaths[t] > top_deaths_so_far)
+					top_deaths_so_far = team_deaths[t]
+					loser_so_far = t
+			for(var/t in team_deaths)
+				if(t != loser_so_far)
+					winning_team = t
+			if(top_deaths_so_far >= death_cap)
+				announce("This round is over. The winner is Team [winning_team] with [top_deaths_so_far] kills.")
 				phase = SETUP_LOBBY
 				remembering.Remove("10seconds")
 				clean_repair_ruins()
@@ -229,6 +251,9 @@ client/verb/clearbullshit()
 						H.equipOutfit(lobby_outfit)
 			teams.Cut()
 			GLOB.TDM_cloner_records.Cut()
+			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
+				cloner.times_cloned = initial(cloner.times_cloned)
+				cloner.update_display_cases()
 
 /datum/toolbox_event/team_deathmatch/override_job_spawn(mob/living/living_mob)
 	spawn(0)
@@ -271,7 +296,7 @@ client/verb/clearbullshit()
 		spawn_TDM_chambers()
 	while(!team_death_match_chambers_spawned)
 		sleep(1)
-	save_items()
+	save_ruin_data()
 	for(var/obj/machinery/clonepod/TDM/cloner in world)
 		if(!(cloner in GLOB.TDM_cloners) && cloner.team)
 			GLOB.TDM_cloners += cloner
@@ -293,19 +318,25 @@ client/verb/clearbullshit()
 					results.Add(turfs)
 	return results
 
-/datum/toolbox_event/team_deathmatch/proc/save_items()
+/datum/toolbox_event/team_deathmatch/proc/save_ruin_data()
 	var/list/turfs = get_all_ruin_floors()
 	if(turfs.len)
 		for(var/turf/T in turfs)
 			for(var/obj/item/I in T)
 				saved_items += I
+			ruin_turfs["x=[T.x];y=[T.y];z=[T.z]"] = T.type
 
 /datum/toolbox_event/team_deathmatch/proc/clean_repair_ruins()
-	var/list/turfs = get_all_ruin_floors()
-	if(turfs.len)
-		for(var/turf/T in turfs)
-			if(istype(T,/turf/open/space))
-				T.ChangeTurf(/turf/open/floor/plating)
+	for(var/t in ruin_turfs)
+		var/list/paramslist = params2list(t)
+		if(!islist(paramslist) || !paramslist.len)
+			continue
+		var/turf/T = locate(text2num(paramslist["x"]),text2num(paramslist["y"]),text2num(paramslist["z"]))
+		if(T)
+			var/thetype = ruin_turfs[t]
+			if(thetype)
+				if(T.type != thetype)
+					T.ChangeTurf(thetype)
 			for(var/atom/movable/AM in T)
 				if(AM in saved_items)
 					continue

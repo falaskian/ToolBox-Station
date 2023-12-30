@@ -1210,7 +1210,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 		return
 	var/enemy_deaths = get_enemy_deaths()
 	for(var/obj/structure/displaycase/TDM_item_spawn/case in A)
-		if(enemy_deaths >= case.death_count_unlock && !case.open)
+		if((enemy_deaths >= case.death_count_unlock && !case.open)||(enemy_deaths < case.death_count_unlock && case.open))
 			case.toggle_lock()
 
 /obj/machinery/clonepod/TDM/proc/create_human(mob/M)
