@@ -676,6 +676,66 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 
 
+		//APC
+
+/obj/structure/TDM/apc
+	name = "area power controller"
+	desc = "A control terminal for the area's electrical systems."
+	icon = 'icons/obj/power.dmi'
+	icon_state = "apc0"
+
+/obj/structure/TDM/apc/Initialize()
+	update_icon()
+
+
+/obj/structure/TDM/apc/red/update_icon()
+
+
+/obj/structure/TDM/apc/red/update_icon()
+//	.=..()
+	SSvis_overlays.add_vis_overlay(src, icon, "apco3-0", ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE, dir)
+	SSvis_overlays.add_vis_overlay(src, icon, "apcox-1", ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE, dir)
+	SSvis_overlays.add_vis_overlay(src, icon, "apco0-0", ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE, dir)
+
+
+
+/obj/structure/TDM/apc/blue/update_icon()
+
+
+/obj/structure/TDM/apc/blue/update_icon()
+//	.=..()
+	SSvis_overlays.add_vis_overlay(src, icon, "apco3-1", ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE, dir)
+	SSvis_overlays.add_vis_overlay(src, icon, "apcox-0", ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE, dir)
+	SSvis_overlays.add_vis_overlay(src, icon, "apco0-3", ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE, dir)
+
+
+
+//		/Optic Fibre
+/obj/structure/cable/TDM
+	name = "optic fibre"
+	desc = "Huh? Where does this lead to?"
+	light_power = 0.3
+	light_range = 3.5
+	light_color = null
+//	d1 =
+//	d2 =
+
+
+
+		//Floodlight
+
+/obj/structure/TDM/floodlight
+	name = "floodlight"
+	desc = "A pole with powerful mounted lights on it. Due to its high power draw, it must be powered by a direct connection to a wire node."
+	icon = 'icons/obj/lighting.dmi'
+	icon_state = "floodlight_on"
+	density = TRUE
+	max_integrity = 200
+	light_power = 1.5
+	light_range = 8
+
+
+
 
 
 
