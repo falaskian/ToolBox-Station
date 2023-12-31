@@ -1,0 +1,212 @@
+"aa" = (/turf/closed/indestructible/riveted/TDM,/area/space)
+"ab" = (/turf/closed/mineral,/area/TDM)
+"ac" = (/turf/closed/wall/rust,/area/TDM)
+"ad" = (/turf/open/floor/plating/asteroid,/area/TDM)
+"ae" = (/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/floor/plating/asteroid,/area/TDM)
+"af" = (/obj/effect/turf_decal/sand/plating,/turf/open/floor/plating,/area/TDM)
+"ag" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"ah" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM/red_base)
+"ai" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/red,/turf/open/floor/sepia/TDM,/area/TDM/red_base)
+"aj" = (/obj/item/banner/TDM/red,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"ak" = (/obj/item/banner/TDM/blue,/turf/closed/wall,/area/TDM/blue_base)
+"al" = (/obj/structure/cable/TDM/yellow{icon_state = "4-8"},/obj/structure/TDM/floodlight,/obj/structure/cable/TDM/yellow{icon_state = "2-4"},/turf/open/floor/plating/rust,/area/TDM)
+"am" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/blue,/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
+"an" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
+"ao" = (/obj/structure/cable/TDM/yellow{icon_state = "2-8"},/obj/structure/cable/TDM/yellow{icon_state = "4-8"},/obj/structure/TDM/floodlight,/turf/open/floor/plating/rust,/area/TDM)
+"ap" = (/turf/open/indestructible,/area/TDM/red_base)
+"aq" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/door/poddoor/preopen{id = "mine_red_factory1"},/obj/structure/cable/TDM/yellow{icon_state = "1-2"},/turf/open/floor/plating,/area/TDM)
+"ar" = (/turf/open/indestructible,/area/TDM/blue_base)
+"as" = (/obj/structure/TDM/medical_cabinet{pixel_x = 9},/obj/structure/TDM/wallmed{pixel_x = -6},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"at" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/door/poddoor/preopen{id = "mine_blue_factory_1"},/obj/structure/cable/TDM/yellow{icon_state = "1-2"},/turf/open/floor/plating,/area/TDM)
+"au" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"av" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"aw" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"ax" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"ay" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/s12g; death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot},/turf/open/indestructible,/area/TDM/red_base)
+"az" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"aA" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"aB" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/s12g; death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot},/turf/open/indestructible,/area/TDM/blue_base)
+"aC" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"aD" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/red_base)
+"aE" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/blue_base)
+"aF" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"aG" = (/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/turf/open/indestructible,/area/TDM/red_base)
+"aH" = (/obj/effect/turf_decal/sand/plating,/turf/open/floor/plating/asteroid,/area/TDM)
+"aI" = (/obj/machinery/clonepod/TDM/team_blue{TDM_on = 1},/turf/open/indestructible,/area/TDM/blue_base)
+"aJ" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/shield/riot},/turf/open/indestructible,/area/TDM/red_base)
+"aK" = (/obj/machinery/button/door{id = "mine_red_factory2"; name = "Blastdoor Control"; pixel_x = -5; pixel_y = -25; req_access_txt = "0"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
+"aL" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/shield/riot},/turf/open/indestructible,/area/TDM/blue_base)
+"aM" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"aN" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"aO" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"aP" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"aQ" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction},/turf/open/indestructible,/area/TDM/red_base)
+"aR" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle},/turf/open/indestructible,/area/TDM/red_base)
+"aS" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle},/turf/open/indestructible,/area/TDM/blue_base)
+"aT" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction},/turf/open/indestructible,/area/TDM/blue_base)
+"aU" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi},/turf/open/indestructible,/area/TDM/red_base)
+"aV" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted},/turf/open/indestructible,/area/TDM/red_base)
+"aW" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted},/turf/open/indestructible,/area/TDM/blue_base)
+"aX" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi},/turf/open/indestructible,/area/TDM/blue_base)
+"aY" = (/obj/structure/closet/crate/miningcar/minecart{anchored = 1; resistance_flags = 115},/turf/open/floor/plating/asteroid,/area/TDM)
+"aZ" = (/obj/item/pickaxe,/turf/open/floor/plating/asteroid,/area/TDM)
+"ba" = (/obj/effect/turf_decal/sand/plating,/turf/closed/wall/rust,/area/TDM)
+"bb" = (/turf/template_noop,/area/template_noop)
+"bc" = (/obj/machinery/atmospherics/components/unary/tank,/turf/open/floor/plating/rust,/area/TDM)
+"bd" = (/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/floor/plating/rust,/area/TDM)
+"be" = (/turf/open/floor/plating/rust,/area/TDM)
+"bf" = (/obj/item/pickaxe,/turf/open/floor/plating/rust,/area/TDM)
+"bg" = (/obj/effect/turf_decal/loading_area{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"bh" = (/obj/machinery/conveyor_switch/oneway{id = "red_factory_conveyor"},/turf/open/floor/plating/rust,/area/TDM)
+"bi" = (/obj/structure/cable/yellow,/turf/open/floor/plating/rust,/area/TDM)
+"bj" = (/obj/machinery/mineral/processing_unit{input_dir = 4; output_dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"bk" = (/obj/effect/turf_decal/delivery,/turf/open/floor/plating/rust,/area/TDM)
+"bl" = (/obj/effect/turf_decal/sand/plating,/turf/open/floor/sepia/TDM,/area/TDM)
+"bm" = (/obj/structure/barricade/sandbags/TDM,/turf/open/floor/plating/asteroid,/area/TDM)
+"bn" = (/obj/effect/turf_decal/sand/plating,/obj/structure/barricade/sandbags/TDM,/turf/open/floor/plating,/area/TDM)
+"bo" = (/obj/effect/turf_decal/sand/plating,/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/floor/plating,/area/TDM)
+"bp" = (/mob/living/simple_animal/hostile/big_legion{health = 650; maxHealth = 650},/turf/open/floor/plating/asteroid,/area/TDM)
+"bq" = (/obj/structure/cable/TDM/yellow{icon_state = "2-4"},/turf/open/floor/plating/rust,/area/TDM)
+"br" = (/turf/closed/mineral/gibtonite{color = "red"},/area/TDM)
+"bs" = (/obj/structure/barricade/wooden,/turf/open/floor/plating/asteroid,/area/TDM)
+"bt" = (/obj/structure/cable/TDM/yellow{icon_state = "4-8"},/turf/open/floor/plating/rust,/area/TDM)
+"bu" = (/obj/machinery/button/door{id = "mine_blue_factory_2"; name = "Blastdoor Control"; pixel_x = -5; pixel_y = -25; req_access_txt = "0"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
+"bv" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM/yellow{icon_state = "2-4"},/turf/open/floor/plating,/area/TDM)
+"bw" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM/yellow{icon_state = "1-8"},/turf/open/floor/plating,/area/TDM)
+"bx" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM)
+"by" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/door/poddoor/preopen{id = "mine_red_factory2"},/turf/open/floor/plating/rust,/area/TDM)
+"bz" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/door/poddoor/preopen{id = "mine_blue_factory_2"},/turf/open/floor/plating/rust,/area/TDM)
+"bA" = (/obj/structure/ore_box/TDM{color = "#e6e6e6"},/obj/structure/cable/TDM/yellow{icon_state = "4-8"},/turf/open/floor/plating/rust,/area/TDM)
+"bB" = (/obj/machinery/conveyor{dir = 8; id = "red_factory_conveyor"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
+"bC" = (/obj/machinery/mineral/unloading_machine{input_dir = 4; output_dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"bD" = (/obj/item/banner/TDM/red,/turf/closed/wall/rust,/area/TDM)
+"bE" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
+"bF" = (/obj/item/banner/TDM/blue,/turf/closed/wall,/area/TDM)
+"bG" = (/obj/structure/cable/TDM{icon_state = "4-8"},/turf/open/indestructible,/area/TDM/red_base)
+"bH" = (/obj/effect/turf_decal/sand/plating,/obj/item/flashlight/glowstick/red,/turf/open/floor/plating,/area/TDM)
+"bI" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/pickaxe},/turf/open/indestructible,/area/TDM/red_base)
+"bJ" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/obj/structure/cable/TDM{icon_state = "4-8"},/turf/open/floor/sepia/TDM,/area/TDM/red_base)
+"bK" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/flashlight/lantern},/turf/open/indestructible,/area/TDM/red_base)
+"bL" = (/turf/closed/mineral/gold{color = "#ffef66"},/area/TDM)
+"bM" = (/obj/item/clothing/head/crown,/turf/open/floor/plating/asteroid,/area/TDM)
+"bN" = (/obj/structure/barricade/wooden,/obj/item/flashlight/lantern/on,/turf/open/floor/plating/asteroid,/area/TDM)
+"bO" = (/obj/item/flashlight/lantern/on{layer = 4.4},/turf/closed/mineral,/area/TDM)
+"bP" = (/obj/effect/turf_decal/sand/plating,/obj/structure/TDM/floodlight,/turf/open/floor/plating,/area/TDM)
+"bQ" = (/obj/structure/TDM/floodlight,/turf/open/indestructible,/area/TDM/red_base)
+"bR" = (/obj/structure/cable/TDM/yellow{icon_state = "2-8"},/turf/open/floor/plating/rust,/area/TDM)
+"bS" = (/obj/structure/cable/TDM/yellow{icon_state = "1-2"},/turf/open/floor/plating/rust,/area/TDM)
+"bT" = (/obj/item/flashlight/lantern/on,/turf/open/floor/plating/rust,/area/TDM)
+"bU" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/blue,/obj/structure/cable/TDM/yellow{icon_state = "1-2"},/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
+"bV" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM/yellow{icon_state = "1-2"},/turf/open/floor/plating,/area/TDM)
+"bW" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM/yellow{icon_state = "1-4"},/turf/open/floor/plating,/area/TDM)
+"bX" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM/yellow{icon_state = "4-8"},/turf/open/floor/plating,/area/TDM)
+"bY" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM/yellow{icon_state = "2-8"},/turf/open/floor/plating,/area/TDM)
+"bZ" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM/yellow{icon_state = "1-2"},/turf/open/floor/sepia/TDM,/area/TDM)
+"ca" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/red,/obj/structure/cable/TDM/yellow{icon_state = "1-2"},/turf/open/floor/sepia/TDM,/area/TDM/red_base)
+"cb" = (/obj/structure/cable/TDM/yellow{icon_state = "1-4"},/turf/open/indestructible,/area/TDM/red_base)
+"cc" = (/obj/effect/turf_decal/sand/plating,/obj/structure/ore_box/TDM{color = "#e6e6e6"},/obj/structure/cable/TDM{icon_state = "4-8"},/turf/open/floor/plating,/area/TDM)
+"cd" = (/obj/item/flashlight/lantern/on,/turf/open/floor/plating/asteroid,/area/TDM)
+"ce" = (/obj/structure/cable/TDM/white{icon_state = "2-4"},/turf/open/indestructible,/area/TDM/red_base)
+"cf" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM{icon_state = "4-8"},/turf/open/floor/plating,/area/TDM)
+"cg" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/red,/obj/structure/cable/TDM/white{icon_state = "1-2"},/turf/open/floor/sepia/TDM,/area/TDM/red_base)
+"ch" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM/white{icon_state = "1-2"},/turf/open/floor/sepia/TDM,/area/TDM)
+"ci" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM/white{icon_state = "1-2"},/turf/open/floor/plating,/area/TDM)
+"cj" = (/obj/structure/cable/TDM/white{icon_state = "1-2"},/turf/open/floor/plating/asteroid,/area/TDM)
+"ck" = (/obj/machinery/button/door{id = "mine_red_factory1"; name = "Blastdoor Control"; pixel_x = -5; pixel_y = 25; req_access_txt = "0"; resistance_flags = 115},/turf/open/indestructible,/area/TDM/red_base)
+"cl" = (/obj/structure/cable/TDM/white{icon_state = "2-4"},/turf/open/floor/plating/asteroid,/area/TDM)
+"cm" = (/obj/structure/cable/TDM/white{icon_state = "4-8"},/turf/open/floor/plating/asteroid,/area/TDM)
+"cn" = (/obj/structure/cable/TDM/white{icon_state = "2-8"},/turf/open/floor/plating/asteroid,/area/TDM)
+"co" = (/obj/structure/cable/TDM/white{icon_state = "1-4"},/obj/structure/cable/TDM/white{icon_state = "1-2"},/turf/open/floor/plating/asteroid,/area/TDM)
+"cp" = (/obj/structure/cable/TDM/white{icon_state = "1-8"},/turf/open/floor/plating/asteroid,/area/TDM)
+"cq" = (/obj/structure/cable/TDM/white{icon_state = "1-4"},/turf/open/floor/plating/asteroid,/area/TDM)
+"cr" = (/obj/structure/TDM/floodlight,/turf/open/indestructible,/area/TDM/blue_base)
+"cs" = (/obj/effect/turf_decal/sand/plating,/obj/structure/TDM/floodlight,/obj/structure/cable/TDM/white{d2 = 2},/turf/open/floor/plating,/area/TDM)
+"ct" = (/obj/effect/turf_decal/sand/plating,/obj/structure/barricade/sandbags/TDM,/obj/structure/cable/TDM{icon_state = "4-8"},/turf/open/floor/plating,/area/TDM)
+"cu" = (/obj/structure/TDM/medical_cabinet{pixel_x = -9},/obj/structure/TDM/wallmed{pixel_x = 6},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
+"cv" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM{icon_state = "2-4"},/turf/open/floor/plating,/area/TDM)
+"cw" = (/obj/structure/cable/TDM/yellow{icon_state = "0-8"},/obj/structure/TDM/apc/red{name = "Factory APC"; pixel_y = 24},/turf/open/indestructible,/area/TDM/red_base)
+"cx" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM{icon_state = "4-8"},/obj/structure/cable/TDM{icon_state = "2-8"},/turf/open/floor/plating,/area/TDM)
+"cy" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM{icon_state = "1-8"},/turf/open/floor/plating,/area/TDM)
+"cz" = (/obj/structure/cable/TDM/yellow{icon_state = "0-4"},/obj/structure/TDM/apc/blue{name = "Factory APC"; pixel_y = 24},/turf/open/indestructible,/area/TDM/blue_base)
+"cA" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM{icon_state = "1-2"},/turf/open/floor/plating,/area/TDM)
+"cB" = (/obj/effect/turf_decal/sand/plating,/obj/structure/TDM/floodlight,/obj/structure/cable/TDM,/turf/open/floor/plating,/area/TDM)
+"cC" = (/obj/structure/cable/TDM/yellow{icon_state = "1-8"},/turf/open/indestructible,/area/TDM/blue_base)
+"cD" = (/obj/machinery/button/door{id = "mine_blue_factory_1"; name = "Blastdoor Control"; pixel_x = -5; pixel_y = 25; req_access_txt = "0"; resistance_flags = 115},/turf/open/indestructible,/area/TDM/blue_base)
+"cE" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM{icon_state = "0-8"},/obj/machinery/button/door{id = "mine_red_blast2"; name = "Blastdoor Control"; pixel_x = 25; pixel_y = -5; req_access_txt = "0"; resistance_flags = 115},/turf/open/floor/plating,/area/TDM)
+"cF" = (/obj/effect/turf_decal/loading_area{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"cG" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/button/door{id = "mine_blue_blast2"; name = "Blastdoor Control"; pixel_x = -25; pixel_y = -5; req_access_txt = "0"; resistance_flags = 115},/obj/structure/cable/TDM{icon_state = "0-4"; pixel_x = 0},/turf/open/floor/plating,/area/TDM)
+"cH" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM{icon_state = "2-8"},/turf/open/floor/plating,/area/TDM)
+"cI" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/pickaxe},/turf/open/indestructible,/area/TDM/blue_base)
+"cJ" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/door/poddoor{id = "mine_red_blast2"; resistance_flags = 115},/turf/open/floor/plating,/area/TDM)
+"cK" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/door/poddoor{id = "mine_blue_blast2"; resistance_flags = 115},/turf/open/floor/plating,/area/TDM)
+"cL" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM{icon_state = ""},/turf/open/floor/plating,/area/TDM)
+"cM" = (/obj/effect/turf_decal/sand/plating,/obj/structure/cable/TDM{icon_state = "1-4"},/turf/open/floor/plating,/area/TDM)
+"cN" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/obj/structure/cable/TDM{icon_state = "4-8"},/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
+"cO" = (/obj/structure/cable/TDM{icon_state = "4-8"},/turf/open/indestructible,/area/TDM/blue_base)
+"cP" = (/obj/structure/cable/TDM{icon_state = "0-8"},/obj/structure/TDM/apc/blue{name = "Mine APC"; pixel_x = 25},/turf/open/indestructible,/area/TDM/blue_base)
+"cQ" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/flashlight/lantern},/turf/open/indestructible,/area/TDM/blue_base)
+"cR" = (/obj/structure/cable/TDM/white{icon_state = "0-4"},/obj/structure/TDM/apc/blue{name = "Tunnel APC"; pixel_y = -24},/turf/open/indestructible,/area/TDM/blue_base)
+"cS" = (/obj/structure/cable/TDM/white{icon_state = "2-8"},/turf/open/indestructible,/area/TDM/blue_base)
+"cT" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/blue,/obj/structure/cable/TDM/white{icon_state = "1-2"},/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
+"cU" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/button/door{id = "mine_red_blast2"; name = "Blastdoor Control"; pixel_x = 25; pixel_y = -5; req_access_txt = "0"; resistance_flags = 115},/obj/structure/cable/TDM/white{icon_state = "0-8"},/turf/open/floor/plating,/area/TDM)
+"cV" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/button/door{id = "mine_blue_blast1"; name = "Blastdoor Control"; pixel_x = -25; pixel_y = -5; req_access_txt = "0"; resistance_flags = 115},/obj/structure/cable/TDM/white{icon_state = "0-4"},/turf/open/floor/plating,/area/TDM)
+"cW" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/door/poddoor{id = "mine_blue_blast1"; resistance_flags = 115},/turf/open/floor/plating,/area/TDM)
+"cX" = (/obj/effect/turf_decal/sand/plating,/obj/item/flashlight/glowstick/blue,/turf/open/floor/plating,/area/TDM)
+"cY" = (/obj/item/banner/TDM/red,/turf/open/indestructible,/area/TDM/red_base)
+"cZ" = (/obj/structure/closet/crate/miningcar/minecart{anchored = 1; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
+"da" = (/mob/living/simple_animal/hostile/customhumanoid/tribal_slave/TDM/red,/turf/open/floor/plating/asteroid,/area/TDM)
+"db" = (/obj/structure/lizard_ore_node/TDM,/turf/open/floor/plating/asteroid,/area/TDM)
+"dc" = (/obj/structure/TDM/apc/red{name = "Mine APC"; pixel_x = -25},/obj/structure/cable/TDM{icon_state = "0-4"; pixel_x = 0},/turf/open/indestructible,/area/TDM/red_base)
+"dd" = (/obj/structure/cable/TDM/white{icon_state = "0-8"},/obj/structure/TDM/apc/red{name = "Tunnel APC"; pixel_y = -24},/turf/open/indestructible,/area/TDM/red_base)
+"de" = (/obj/effect/slave_ore_dropoff_point,/turf/open/floor/plating/rust,/area/TDM)
+"df" = (/mob/living/simple_animal/hostile/customhumanoid/tribal_slave/TDM/blue,/turf/open/floor/plating/asteroid,/area/TDM)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaabababababababababababababababababababababababababababababababababababababababababababababababbLabababababababababababababababababababababababababababababababababababababababababababababababaa
+aaababababababababababababbLababababababababababbLabababababababababababababababababababababababababababababababababababababababababababababababbLababababababababababbLababababababababababababaa
+aaababbLababababababababababababababababababababababbLababababababababbLabababadadabababababababababababababababadadabababbLababababababababbLababababababababababababababababababababababbLababaa
+aaabababababababababababababababababababababababababababababababababababababadadadadadadadadababbLababadadadadadadadadabababababababababababababababababababababababababababababababababababababaa
+aaababababacacacacacacacacacacacacacacacacacacacabababababbLabababababababababadadadadadadadadadadadadadadadadadadadabababababababababbLabababababacacacacacacacacacacacacacacacacacacacababababaa
+aabaacacacacbcbcacacbcbcacbDbdbeacbcbcacacbcbcacacabbLababababababbLabababababbLabadadadadadadadbMadadadadadadadabbLabababababbLababababababbLabacacbcbcacacbcbcacbebdbFacbcbcacacbcbcacacacacbaaa
+aababebqbtbtbtbtbtbtbtbtbtbtbtbtbAbtbtbtaobAbRbhbebfbeababababababababababababababadadadadadadadadadadadadadadadababababababababababababababbebfbebhbqbAalbtbtbtbAbtbtbtbtbtbtbtbtbtbtbtbtbRbebaaa
+aababebSbebebebebdbdbebebebebebebebebebebibebibebebebTbeacabababababababababababababadadadadadadbpadadadadadadabababababababababababababacbebTbebebebibebibebebebebebebebebebebdbdbebebebebSbebaaa
+aababaaqbababebebebebebebdbdbebebebebgbBbjbBbCbkbgbedebeacabababababababababababababbLadadadadadadadadadadadbLabababababababababababababacbedebecFbkbCbBbjbBcFbebebebebdbdbebebebebebebabaatbabaaa
+aabaafbVafbababxbxbxbabaacacacacbebebebebebebebebebebecZbxadadadababababbLabababababababadadadadadadadadadabababababababbLababababadadadbxcZbebebebebebebebebebebeacacacacbababxbxbxbabaafbVafbaaa
+aabaafbWbXbYafafafafafafadadadacbebebdbebebebebebebeaKbdacaYadadadaZbLabababababababababadadadadadadadadadabababababababababbLaZadadadaYacbdbubebebebebebebebdbebeacadadadafafafafafafbvbXbwafbaaa
+aabaafafblbZblafafafafafafadadacacacacacbxbxbxacbDbyacacacaddaadadadbNababababababababababadadadadadadadababababababababababbNadadaddfadacacacbzbFacbxbxbxacacacacacadadafafafafafafblbZblafafbaaa
+aaagagahagcaagagagajbPafafadaeababadadadadadadadadafadadadadadaddbadadababababababababababababadadadababababababababababababadaddbadadadadadadafadadadadadadadadababaeadafafbPakbEbEbEbUbEanbEbEaa
+aaagbQapckcbcwapbQagagafafadadabbLababaZadadadaeadafadadadadadadadadabababababababababababababbLbrbLabababababababababababababadadadadadadadadafadaeadadadaZababbLabadadafafbEbEcrarczcCcDarcrbEaa
+aaagapcYapapapapapbQagafafadadabababababcdadadadadafadadabababbsadababababababababababababababbrbLbrababababababababababababababadbsabababadadafadadadadcdabababababadadafafbEcrarararararararbEaa
+aaagapapapapapapapapagblafadadadababababbLababadadafadababababababababababadadabababababababababababababababababababadadababababababababababadafadadababbLababababadadadafblbEararararararararbEaa
+aaagapapapasagapapapaiblafaeadadadabababababababadafadadababababababababadadadadadabababababababababababababababadadadadadababababababababadadafadabababababababadadadaeafblamarararbEcuarararbEaa
+aaagauapapavagapapapaiblafaeadadadadadabababababadafaHadadaZabababababadadadaHadadadadabababababababababababadadadadaHadadadabababababaZadadaHafadabababababadadadadadaeafblamarararbEawararaxbEaa
+aaajayapapazajapapapagblafafafafafadadadadadbmadadafafaHabadbLabaHabababadadaeaHadadadadabababababababababadadadadaHaeadadabababaHabbLadabaHafafadadbmadadadadadafafafafafblbEarararakaAararaBakaa
+aaagaCapapaDagapapapagafafafafbPafafadadadadbmadafafafafacacacabaHaHababadadbNaHaHadadbsadabababababababadbsadadaHaHbNadadababaHaHabacacacafafafafadbmadadadadafafbPafafafafbEarararbEaEararaFbEaa
+aaagbQapapaGagbIapapahafafbnafafafafafafafafafafafafafcvcEacafaHaHaHaHaHaHaHaeaHaHaHaHaHaHaHababbLababaHaHaHaHaHaHaHaeaHaHaHaHaHaHaHafaccGcHafafafafafafafafafafafafafbnafafanararcIbEaIararcrbEaa
+aaagaJapapapagdcbGbGbJcccfctcfcfcfcfcfcfcfcfcfcfctcfcxcyafcJafaHaHaYaHaHaHaHaHaHaHaHaYaHaHaZbLabababbLaZaHaHaYaHaHaHaHaHaHaHaHaYaHaHafcKcLcMcxcfctcfcfcfcfcfcfcfcfcfcfctcfcccNcOcOcPbEarararaLbEaa
+aaagbQapapaGagbKapapahafafbnafafafafafafafafafafbnafcAafafcJafafaHaHaHaHaHaHaHaHaHaHaHaHaHabababababababaHaHaHaHaHaHaHaHaHaHaHaHaHafafcKcLcLcAafbnafafafafafafafafafafbnafafanararcQbEaIararcrbEaa
+aaagaMapapaNagapapapagafafafafbPafafadadadaeadadafafcBafafacababababababadadabababaHaHbsaeabababababababaebsaHaHabababadadababababababacafcLcBafcLadadaeadadadafafbPafafafafbEarararbEaOararaPbEaa
+aaajaQapapaRajapapapagblafafafafafadadadaeaeadadadabababacacacabababababadadabababababaHaHabababababababaHaHabababababadadabababababacacacabababadadadaeaeadadadafafafafafblbEarararakaSararaTakaa
+aaagaUapapaVagapapapaiblafaeadadadadadadadabababababababababababababadadadadadadadabbLabadabababababababadabbLabadadadadadadadabababababababababababababadadadadadadadaeafblamarararbEaWararaXbEaa
+aaagapapapasagapapapaiblafaeadadadadadababababababbLababababababbsadadadadadadadabababababababababababababababababadadadadadadadbsababababababbLababababababadadadadadaeafblamarararbEcuarararbEaa
+aaagapapapapapapapapagblafadadadadadababababababababababababadadadadadadaYadadabababababababababababababababababababadadaYadadadadadadababababababababababababadadadadadafblbEararararararararbEaa
+aaagapapapapapapapbQagafafadadadadababababababababadadbLadadadadadadadadadadaZabababababababababababababababababababaZadadadadadadadadadadbLadadababababababababadadadadafafbEcrarararararararbEaa
+aaagbQapapceddapbQagajafafadadadaYabababababababadadadababadadadaeadadbsadadabababababababababababababababababababababadadbsadadaeadadadababadadadabababababababaYadadadafafakbEcrarcRcSararcrbEaa
+aaagagahagcgagagagagbPafafadadadadadababababababadadaeababadadadadadadabababababababababababababababababababababababababababadadadadadadababaeadadababababababadadadadadafafbPbEbEbEbEcTbEanbEbEaa
+aaabafafblchblafafafafafadadadadaZababababababadadadadabacadadadadadabababababababababababababababababababababababababababababadadadadadacabadadadadababababababaZadadadadafafafafafblchblafafabaa
+aaabafafafciafafafafafadadabadadababbLabababadadadadadadadadadadadabababababababababababababbrbLabbLbrabababababababababababababadadadadadadadadadadadabababbLababadadabadadafafafafafciafafafabaa
+aaabadadadcjadaeadadadadabababababababababababadadaeaeadadadadadabababababababababababababababadbradabababababababababababababababadadadadadaeaeadadabababababababababababadadadadaeadcjadadadabaa
+aaabadadadcjaeadadadabababababababababadadadacadadaeadadadadadabababababababababababababababadadadadadabababababababababababababababadadadadadaeadadacadadadabababababababababadadadaecjadadadabaa
+aaabadadadcjadadadabababacababababacadadadadadadadadadadadadadacabababababababababadabababababbsbNbsabababababadabababababababababacadadadadadadadadadadadadadacababababacabababadadadcjadadadabaa
+aaababadadcjadadadadabadadadadadadadadadclcmcmcmcmcmcmcmcnadacacacacacacababababadadababadadadadadadadadadababadadababababacacacacacacadclcmcmcmcmcmcmcmcnadadadadadadadadadabadadadadcjadadababaa
+aaabababadcocmcmcmcmcmcmcmcmcmcmcmcmcmcmcpaYadadadadababcqcmcUacafafboadadaeaeadadadbsadadadadadadadadadadadbsadadadaeaeadadboafafaccVcmcpababadadadadaYcqcmcmcmcmcmcmcmcmcmcmcmcmcmcmcpadabababaa
+aaababababcsadadbmadadadadadadaYadadadadadadadadadacababafbHafcJafafafadadadadadadadbsadadadadabababadadadadbsadadadadadadadafafafcWafcXafababacadadadadadadadadadaYadadadadadadbmadadcsababababaa
+aaabababababadadababadadadadadadadadaeadadadadababababababafafacafafadadadadaYadaZababacbsacababbOababacbsacababaZadaYadadadadafafacafafababababababadadadadaeadadadadadadadadababadadabababababaa
+aaabababababababababababacababababacababababababababababababacacacacacacadadadadabababadadadaeadadadaeadadadabababadadadadacacacacacacababababababababababababacababababacabababababababababababaa
+aaababababababababababababababababababababababababababababababacabababababadadadadadadadadadadadadadadadadadadadadadadadabababababacababababababababababababababababababababababababababababababaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababadadadadadadadadadadaYadadadadadadadadadadabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaababababababababababababacacacababababababababababababaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaababababababababababababacababababababababababababaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+"}
