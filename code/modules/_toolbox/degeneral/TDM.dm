@@ -720,6 +720,14 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 //	d1 =
 //	d2 =
 
+/obj/structure/cable/TDM/yellow
+	cable_color = "#ffff00"
+	color = "#ffff00"
+
+
+/obj/structure/cable/TDM/white
+	cable_color = "#ffffff"
+	color = null
 
 
 		//Floodlight
