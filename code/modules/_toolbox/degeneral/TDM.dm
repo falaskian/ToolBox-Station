@@ -1441,6 +1441,38 @@ var/global/team_death_match_chambers_spawned = 0
 	if(did_we_change_it)
 		SSair.can_fire = 1
 
+
+
+
+
+/********************** ECONOMY **************************/
+
+		//TDM Lizard Workers
+
+
+/mob/living/simple_animal/hostile/customhumanoid/tribal_slave/TDM
+	name =  "Lizard Worker"
+	equipped_items = list(/obj/item/clothing/under/color/grey = SLOT_W_UNIFORM)
+
+
+/mob/living/simple_animal/hostile/customhumanoid/tribal_slave/TDM/red
+	equipped_items = list(/obj/item/clothing/under/color/red = SLOT_W_UNIFORM)
+
+
+/mob/living/simple_animal/hostile/customhumanoid/tribal_slave/TDM/blue
+	equipped_items = list(/obj/item/clothing/under/color/blue = SLOT_W_UNIFORM)
+
+
+		//TDM ore node
+
+// dont forget to place crates and /obj/effect/slave_ore_dropoff_point
+
+/obj/structure/lizard_ore_node/TDM
+	ore = list(/obj/item/stack/ore/gold = 10)
+
+
+
+
 //
 //  "Have Fun!"
 //   - Degeneral
