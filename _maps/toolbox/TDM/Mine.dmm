@@ -59,7 +59,7 @@
 "bg" = (/obj/effect/turf_decal/loading_area{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
 "bh" = (/obj/machinery/conveyor_switch/oneway{id = "red_factory_conveyor"},/turf/open/floor/plating/rust,/area/TDM)
 "bi" = (/obj/structure/cable/yellow,/turf/open/floor/plating/rust,/area/TDM)
-"bj" = (/obj/machinery/mineral/processing_unit{input_dir = 4; output_dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"bj" = (/obj/machinery/mineral/ore_redemption/TDM,/turf/open/floor/plating/rust,/area/TDM)
 "bk" = (/obj/effect/turf_decal/delivery,/turf/open/floor/plating/rust,/area/TDM)
 "bl" = (/obj/effect/turf_decal/sand/plating,/turf/open/floor/sepia/TDM,/area/TDM)
 "bm" = (/obj/structure/barricade/sandbags/TDM,/turf/open/floor/plating/asteroid,/area/TDM)
@@ -158,7 +158,7 @@
 "db" = (/obj/structure/lizard_ore_node/TDM,/turf/open/floor/plating/asteroid,/area/TDM)
 "dc" = (/obj/structure/TDM/apc/red{name = "Mine APC"; pixel_x = -25},/obj/structure/cable/TDM{icon_state = "0-4"; pixel_x = 0},/turf/open/indestructible,/area/TDM/red_base)
 "dd" = (/obj/structure/cable/TDM/white{icon_state = "0-8"},/obj/structure/TDM/apc/red{name = "Tunnel APC"; pixel_y = -24},/turf/open/indestructible,/area/TDM/red_base)
-"de" = (/obj/effect/slave_ore_dropoff_point,/turf/open/floor/plating/rust,/area/TDM)
+"de" = (/obj/effect/slave_ore_dropoff_point{make_decal = 1},/turf/open/floor/plating/rust,/area/TDM)
 "df" = (/mob/living/simple_animal/hostile/customhumanoid/tribal_slave/TDM/blue,/turf/open/floor/plating/asteroid,/area/TDM)
 
 (1,1,1) = {"

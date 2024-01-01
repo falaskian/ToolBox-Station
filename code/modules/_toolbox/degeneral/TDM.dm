@@ -4,7 +4,7 @@
 
 /* DEFINES
  - TDM New & Updated Weapons
- - TDM GEAR
+ - TDM GEAR - OUTFITS, CLOTHES
  - STRUCTURES
  - TURFS
  - AREAS
@@ -376,6 +376,31 @@
 
 
 
+		//DeathRun Outfits
+
+	//Death Outfit
+
+/datum/outfit/TDM/Death
+	name = "TDM Death"
+	uniform = /obj/item/clothing/under/color/black/TDM
+	suit = /obj/item/clothing/suit/chaplainsuit/bishoprobe/black/TDM
+	neck = /obj/item/clothing/neck/cloak/chap/bishop/black/TDM
+	belt = /obj/item/storage/belt/fannypack/black
+	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/bishopmitre/black/TDM
+	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
+	r_pocket = /obj/item/stack/medical/gauze/two
+	r_hand = /obj/item/nullrod/scythe
+
+
+	//Runner Outfit
+
+/datum/outfit/TDM/Runner
+	name = "TDM Runner"
+	uniform = /obj/item/clothing/under/color/grey/TDM
+	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
+	r_pocket = /obj/item/stack/medical/gauze/two
 
 
 
@@ -389,6 +414,7 @@
 	icon_state = "beret_ce" //White
 
 
+
 /obj/item/clothing/head/beret/TDM/red
 	name = "red beret"
 	desc = "A red beret. Very stylish but offers no protection."
@@ -400,8 +426,15 @@
 	desc = "A blue beret. Very stylish but offers no protection."
 	icon_state = "beret_captain"
 
+/obj/item/clothing/head/beret/TDM/green
+	name = "green beret"
+	color = "#00B200" //Green
 
-	//Jumpsuits
+
+
+		//Jumpsuits
+
+	//Red TDM Jumpsuit
 
 /obj/item/clothing/under/color/red/TDM
 	can_adjust = 0
@@ -411,12 +444,72 @@
 	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
+	//Blue TDM Jumpsuit
+
 /obj/item/clothing/under/color/blue/TDM
 	can_adjust = 0
 
 /obj/item/clothing/under/color/blue/TDM/Initialize()
 	.=..()
 	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+	//Black TDM Jumpsuit
+
+/obj/item/clothing/under/color/black/TDM
+	can_adjust = 0
+
+/obj/item/clothing/under/color/black/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+	//Grey TDM Jumpsuit
+
+/obj/item/clothing/under/color/grey/TDM
+	can_adjust = 0
+
+/obj/item/clothing/under/color/grey/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+
+		//Death Clothes
+
+	//Death Robe
+
+/obj/item/clothing/suit/chaplainsuit/bishoprobe/black/TDM
+	name = "death robe"
+	desc = "Very ominous robe."
+
+/obj/item/clothing/suit/chaplainsuit/bishoprobe/black/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+	//Death Hat
+
+/obj/item/clothing/head/bishopmitre/black/TDM
+	name = "death hat"
+	desc = "Very ominous hat."
+
+/obj/item/clothing/head/bishopmitre/black/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+	//Death Cloak
+
+/obj/item/clothing/neck/cloak/chap/bishop/black/TDM
+	name = "death cloak"
+	desc = "Very ominous cloak."
+
+/obj/item/clothing/neck/cloak/chap/bishop/black/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
 
 
 
@@ -710,15 +803,28 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 
 
-//		/Optic Fibre
+		//Optic Fibre
+
 /obj/structure/cable/TDM
 	name = "optic fibre"
 	desc = "Huh? Where does this lead to?"
 	light_power = 0.3
 	light_range = 3.5
 	light_color = null
-//	d1 =
-//	d2 =
+
+
+/obj/structure/cable/TDM/Initialize()
+	var/thedash = findtext(icon_state, "-")
+	var/num1 = copytext(icon_state, 1, thedash)
+	var/num2 = copytext(icon_state, thedash+1, length(icon_state)+1)
+	d1 = num1
+	d2 = num2
+	.=..()
+
+
+/obj/structure/cable/TDM/hide(i)
+	return
+
 
 /obj/structure/cable/TDM/yellow
 	cable_color = "#ffff00"
@@ -728,6 +834,7 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 /obj/structure/cable/TDM/white
 	cable_color = "#ffffff"
 	color = null
+
 
 
 		//Floodlight
@@ -741,6 +848,48 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	max_integrity = 200
 	light_power = 1.5
 	light_range = 8
+
+
+		//Blast Doors
+
+/obj/machinery/door/poddoor/TDM
+	autoclose = FALSE
+	resistance_flags = 115
+
+/obj/machinery/door/poddoor/TDM/fast
+	autoclose = 20 //2 seconds
+	open_speed = 2
+
+
+		//TDM Ore Furnace
+
+/obj/machinery/mineral/ore_redemption/TDM
+	name = "furnace"
+	use_power = 0
+	resistance_flags = 115
+	circuit = /obj/item/circuitboard/machine/ore_redemption/TDM
+
+/obj/machinery/mineral/ore_redemption/TDM/process()
+	.=..()
+	if(!materials.mat_container || panel_open || !powered())
+		return
+	materials.mat_container.retrieve_all(get_step(src, output_dir))
+
+/obj/machinery/mineral/ore_redemption/TDM/ui_interact(mob/user, datum/tgui/ui)
+	return
+
+/obj/machinery/mineral/ore_redemption/TDM/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/stack/ore))
+		.=..()
+	else
+		return
+
+
+		//TDM Furnace Circuit Board
+
+/obj/item/circuitboard/machine/ore_redemption/TDM
+	name = "furnace board"
+
 
 
 
