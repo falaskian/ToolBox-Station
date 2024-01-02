@@ -341,13 +341,18 @@ client/verb/clearbullshit()
 				if(AM in saved_items)
 					continue
 				var/delete_this = 0
+				var/mob/living/L
 				if(istype(AM,/mob/living))
-					var/mob/living/L = AM
+					L = AM
 					if((!L.client) && L.stat && ((!L.mind)||(L.mind && L.mind.assigned_role == player_assigned_role)))
 						delete_this = 1
 				if(!delete_this && istype(AM,/obj/item))
 					delete_this = 1
 				if(delete_this)
+					if(L)
+						for(var/obj/item/I in L.get_contents())
+							if(I in saved_items)
+								I.forceMove(L.loc)
 					qdel(AM)
 			if(istype(T,/turf/open/floor))
 				var/turf/open/floor/F = T

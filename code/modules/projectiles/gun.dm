@@ -70,6 +70,7 @@
 	var/zoomed = FALSE //Zoom toggle
 	var/zoom_amt = 3 //Distance in TURFs to move the user's screen forward (the "zoom" effect)
 	var/zoom_out_amt = 0
+	var/zoom_requires_in_active_hand = 0
 	var/datum/action/toggle_scope_zoom/azoom
 	var/fire_rate = null //how many times per second can a gun fire? default is 2.5
 	//Autofire
@@ -660,6 +661,13 @@
 		zoomed = forced_zoom
 
 	if(zoomed)
+		if(zoom_requires_in_active_hand)
+			spawn(0)
+				while(zoomed)
+					if(user.get_active_held_item() != src && zoomed)
+						zoom(user,user.dir,FALSE)
+						break
+					sleep(5)
 		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
 		user.client.view_size.zoomOut(zoom_out_amt, zoom_amt, direc)
 	else

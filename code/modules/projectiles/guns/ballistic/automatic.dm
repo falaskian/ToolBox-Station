@@ -309,6 +309,7 @@
 	actions_types = list()
 	mag_display = TRUE
 	block_upgrade_walk = 1
+	zoom_requires_in_active_hand = 1
 
 /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
 	name = "syndicate sniper rifle"
