@@ -13,7 +13,7 @@
 "m" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/TDM},/turf/open/indestructible,/area/TDM/lobby)
 "n" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction},/turf/open/indestructible,/area/TDM/lobby)
 "o" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi},/turf/open/indestructible,/area/TDM/lobby)
-"p" = (/obj/structure/displaycase/TDM_item_spawn{showpiece = null; start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM},/turf/open/indestructible,/area/TDM/lobby)
+"p" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a357/TDM; showpiece = null; start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM},/turf/open/indestructible,/area/TDM/lobby)
 "q" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/shotgun/doublebarrel/TDM},/turf/open/indestructible,/area/TDM/lobby)
 "r" = (/turf/template_noop,/area/space)
 "s" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM},/turf/open/indestructible,/area/TDM/lobby)
@@ -23,7 +23,6 @@
 "w" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/clothing/suit/armor/vest/alt},/turf/open/indestructible,/area/TDM/lobby)
 "x" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/shield/riot},/turf/open/indestructible,/area/TDM/lobby)
 "y" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/clothing/head/helmet/sec},/turf/open/indestructible,/area/TDM/lobby)
-"z" = (/turf/closed/indestructible/fakedoor{name = "Lobby Door"},/area/TDM/lobby)
 "A" = (/turf/closed/indestructible/fakedoor{name = "Lobby Door"},/area/TDM/lobby)
 "B" = (/obj/structure/TDM/wallmed,/turf/closed/indestructible/riveted/TDM,/area/TDM/lobby)
 "C" = (/obj/effect/turf_decal/plaque,/turf/open/indestructible,/area/TDM/lobby)
@@ -39,7 +38,7 @@ acccccccceffffffffa
 acccccccceffffffffa
 abccccccbedffffffda
 agggggggghgggggggga
-ziiDiiDiiiiiDiiDiiA
+AiiDiiDiiiiiDiiDiiA
 aiiiiiiiiiiiiiiiiia
 aBjkliiiiCiiiimnoBa
 aaaaapqsiiituvaaaaa

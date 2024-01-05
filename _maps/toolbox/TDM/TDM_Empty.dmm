@@ -1,0 +1,96 @@
+"a" = (/turf/closed/indestructible/riveted/TDM,/area/space)
+"b" = (/turf/closed/wall/rust,/area/TDM)
+"c" = (/turf/open/floor/holofloor/grass,/area/TDM)
+"d" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"e" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM/red_base)
+"f" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/red,/turf/open/floor/sepia/TDM,/area/TDM/red_base)
+"g" = (/obj/item/banner/TDM/red,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"h" = (/obj/item/banner/TDM/blue,/turf/closed/wall,/area/TDM/blue_base)
+"i" = (/turf/closed/wall,/area/TDM/blue_base)
+"j" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/blue,/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
+"k" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
+"l" = (/obj/machinery/power/floodlight,/turf/open/indestructible,/area/TDM/red_base)
+"m" = (/turf/open/indestructible,/area/TDM/red_base)
+"n" = (/obj/machinery/power/floodlight,/turf/open/indestructible,/area/TDM/blue_base)
+"o" = (/turf/open/indestructible,/area/TDM/blue_base)
+"p" = (/obj/structure/TDM/medical_cabinet{pixel_x = 9},/obj/structure/TDM/wallmed{pixel_x = -6},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"q" = (/obj/structure/TDM/medical_cabinet{pixel_x = -9},/obj/structure/TDM/wallmed{pixel_x = 6},/turf/closed/wall,/area/TDM/blue_base)
+"r" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a357/TDM; death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"s" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"t" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"u" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a357/TDM; death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"v" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/s12g; death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot},/turf/open/indestructible,/area/TDM/red_base)
+"w" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"x" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"y" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/s12g; death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot},/turf/open/indestructible,/area/TDM/blue_base)
+"z" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"A" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/red_base)
+"B" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/blue_base)
+"C" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"D" = (/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/turf/open/indestructible,/area/TDM/red_base)
+"E" = (/obj/machinery/clonepod/TDM/team_blue{TDM_on = 1},/turf/open/indestructible,/area/TDM/blue_base)
+"F" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/shield/riot},/turf/open/indestructible,/area/TDM/red_base)
+"G" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/shield/riot},/turf/open/indestructible,/area/TDM/blue_base)
+"H" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"I" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"J" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"K" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"L" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction},/turf/open/indestructible,/area/TDM/red_base)
+"M" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle},/turf/open/indestructible,/area/TDM/red_base)
+"N" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle},/turf/open/indestructible,/area/TDM/blue_base)
+"O" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction},/turf/open/indestructible,/area/TDM/blue_base)
+"P" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi},/turf/open/indestructible,/area/TDM/red_base)
+"Q" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted},/turf/open/indestructible,/area/TDM/red_base)
+"R" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted},/turf/open/indestructible,/area/TDM/blue_base)
+"S" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi},/turf/open/indestructible,/area/TDM/blue_base)
+"T" = (/turf/template_noop,/area/template_noop)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+addedfdddgccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccchiiijikiia
+adlmmmmmlddccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccciinooooonia
+admmmmmmmldcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccinoooooooia
+admmmmmmmmdccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccciooooooooia
+admmmpdmmmfcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccjoooiqoooia
+adrmmsdmmmfcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccjoooitoouia
+agvmmwgmmmdccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccciooohxooyha
+adzmmAdmmmdcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccioooiBooCia
+adlmmDdmmmeccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccckoooiEoonia
+adFmmmdmmmeccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccckoooioooGia
+adlmmDdmmmeccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccckoooiEoonia
+adHmmIdmmmdcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccioooiJooKia
+agLmmMgmmmdccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccciooohNooOha
+adPmmQdmmmfcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccjoooiRooSia
+admmmpdmmmfcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccjoooiqoooia
+admmmmmmmmdccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccciooooooooia
+admmmmmmmldcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccinoooooooia
+adlmmmmmldgccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccchinooooonia
+addedfddddccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccciiiijikiia
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abbccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccba
+abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcccccccccccccccccccccccccbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTabbcccccccccccccccccccccccbbaTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTaabbbbbbbbbbbbcbbbbbbbbbbbbaaTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTaaaaaaaaaaaaaaaaaaaaaaaaaaaTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+"}

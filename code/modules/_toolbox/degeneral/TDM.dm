@@ -16,9 +16,9 @@
 /********************** DEFINES **************************/
 
 
-#define TEIR_2_KILLS 10
-#define TEIR_3_KILLS 25
-#define TEIR_4_KILLS 50
+#define TEIR_2_KILLS 3
+#define TEIR_3_KILLS 7
+#define TEIR_4_KILLS 14
 #define TDM_RED_TEAM "red"
 #define TDM_BLUE_TEAM "blue"
 
@@ -438,6 +438,7 @@
 
 /obj/item/clothing/under/color/red/TDM
 	can_adjust = 0
+	resistance_flags = 115
 
 /obj/item/clothing/under/color/red/TDM/Initialize()
 	.=..()
@@ -448,6 +449,7 @@
 
 /obj/item/clothing/under/color/blue/TDM
 	can_adjust = 0
+	resistance_flags = 115
 
 /obj/item/clothing/under/color/blue/TDM/Initialize()
 	.=..()
@@ -458,6 +460,7 @@
 
 /obj/item/clothing/under/color/black/TDM
 	can_adjust = 0
+	resistance_flags = 115
 
 /obj/item/clothing/under/color/black/TDM/Initialize()
 	.=..()
@@ -468,6 +471,7 @@
 
 /obj/item/clothing/under/color/grey/TDM
 	can_adjust = 0
+	resistance_flags = 115
 
 /obj/item/clothing/under/color/grey/TDM/Initialize()
 	.=..()
@@ -856,9 +860,19 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	autoclose = FALSE
 	resistance_flags = 115
 
+/obj/machinery/door/poddoor/TDM/preopen
+	icon_state = "open"
+	density = FALSE
+	opacity = 0
+
 /obj/machinery/door/poddoor/TDM/fast
-	autoclose = 20 //2 seconds
+//	autoclose = 20 //2 seconds
 	open_speed = 2
+
+/obj/machinery/door/poddoor/TDM/fast/preopen
+	icon_state = "open"
+	density = FALSE
+	opacity = 0
 
 
 		//TDM Ore Furnace
@@ -1037,7 +1051,7 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	has_gravity = TRUE
 	dynamic_lighting = 0 //Fully lit at all times
 	requires_power = 0 // Constantly powered
-
+	always_unpowered = 0
 
 /area/TDM/lobby
 	name = "Lobby"
