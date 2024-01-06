@@ -1672,10 +1672,15 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 //clownpod
 /obj/machinery/clonepod/TDM/clowner
 	team = "red"
-	red_TDM_outfits = list(
+	team_outfits = list(
+		TDM_RED_TEAM = list(
 		"t1" = /datum/outfit/TDM/clown/red,
 		"t3" = /datum/outfit/TDM/clown/red/t3,
-		"t4" = /datum/outfit/TDM/clown/red/t4)
+		"t4" = /datum/outfit/TDM/clown/red/t4),
+		TDM_BLUE_TEAM = list(
+		"t1" = /datum/outfit/TDM/blue,
+		"t3" = /datum/outfit/TDM/blue/t3,
+		"t4" = /datum/outfit/TDM/blue/t4))
 
 /obj/machinery/clonepod/TDM/clowner/Initialize()
 	. = ..()
