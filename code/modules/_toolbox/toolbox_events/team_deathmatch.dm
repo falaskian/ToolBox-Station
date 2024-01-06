@@ -16,6 +16,7 @@
 		"Chief Engineer" = 0,
 		"Research Director" = 0,
 		"Chief Medical Officer" = 0)
+	var/list/map_datums = list()
 	var/player_assigned_role = "Team Deathmatch"
 	var/round_startup_complete = 0
 	var/list/saved_items = list()
@@ -35,8 +36,10 @@
 	var/timers = list(
 		"start timer" = 60,
 		"match duration" = 300)
+	var/list/ruin_maps = list()
 	var/list/active_ruins = list()
 	var/list/ruin_turfs = list()
+	var/building_ruin = 0
 	var/death_cap = 30
 
 //debugging this bullshit
@@ -63,8 +66,8 @@ client/verb/clearbullshit()
 	spawn(0)
 		while(!SSmapping || !SSmapping.initialized)
 			stoplag()
-		if(round_startup_complete)
-			setup_map()
+		load_maps()
+		setup_map()
 
 /datum/toolbox_event/team_deathmatch/on_deactivate(mob/admin_user)
 	. = ..()
@@ -76,6 +79,7 @@ client/verb/clearbullshit()
 		return
 	switch(phase)
 		if(SETUP_LOBBY)
+			rotate_map()
 			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
 				if(cloner.team)
 					cloner.TDM_on = 0
@@ -93,25 +97,20 @@ client/verb/clearbullshit()
 				phase = SETUP_PHASE
 				remembering.Remove("10seconds")
 		if(SETUP_PHASE)
-			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
-				if(cloner.team)
-					cloner.TDM_on = 1
 			var/failed_to_launch = gather_and_spawn_lobbyists()
 			if(failed_to_launch)
 				phase = SETUP_LOBBY
 				teams.Cut()
 				announce(failed_to_launch)
 				return
+			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
+				if(cloner.team)
+					cloner.TDM_on = 1
 			phase = COMBAT_PHASE
-			//var/time_left = set_timer("match duration") //because fuck timers
 			announce("Team deathmatch has begun, this round ends when one team reaches [death_cap] kills.")
-			clean_repair_ruins()
+			//clean_repair_ruins()
 		if(COMBAT_PHASE)
 			gather_and_spawn_lobbyists(1)
-			if(world.time >= next_timer-100 && !("10seconds" in remembering))
-				announce("This Team deathmatch round will end in 10 seconds")
-				remembering["10seconds"] = 1
-			//if(world.time >= next_timer) //because fuck timers
 			var/list/team_deaths = list()
 			for(var/t in teams)
 				team_deaths[t] = 0
@@ -133,8 +132,7 @@ client/verb/clearbullshit()
 			if(top_deaths_so_far >= death_cap)
 				announce("This round is over. The winner is Team [winning_team] with [top_deaths_so_far] kills.")
 				phase = SETUP_LOBBY
-				remembering.Remove("10seconds")
-				clean_repair_ruins()
+				//clean_repair_ruins()
 				restart_players()
 
 /datum/toolbox_event/team_deathmatch/proc/set_timer(time = 60)
@@ -178,7 +176,10 @@ client/verb/clearbullshit()
 			qdel(old_mob)
 
 /datum/toolbox_event/team_deathmatch/proc/gather_and_spawn_lobbyists(midround = 0)
+	while(building_ruin)
+		sleep(1)
 	var/player_detected = 0
+	var/list/minds_to_spawn = list()
 	for(var/mob/living/L in GLOB.player_list)
 		var/area/A = get_area(L)
 		for(var/a in team_lobby_areas)
@@ -186,6 +187,7 @@ client/verb/clearbullshit()
 				if(!teams[team_lobby_areas[a]])
 					teams[team_lobby_areas[a]] = list()
 				teams[team_lobby_areas[a]] += L.mind
+				minds_to_spawn[L.mind] = team_lobby_areas[a]
 				player_detected = 1
 	var/failed_to_launch = null
 	if(player_detected && (teams.len >= 2 || midround))
@@ -196,11 +198,13 @@ client/verb/clearbullshit()
 				break
 			var/list/team_cloners = list()
 			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
-				if(!cloner.team)
+				if(!cloner.team || QDELETED(cloner))
 					continue
 				if(cloner.team == t)
 					team_cloners += cloner
 			for(var/datum/mind/M in team)
+				if(!(M in minds_to_spawn))
+					continue
 				var/mob/living/carbon/human/H = M.current
 				if(!istype(H,/mob/living/carbon/human))
 					H = create_human(M,M.current.loc)
@@ -222,6 +226,8 @@ client/verb/clearbullshit()
 	return failed_to_launch
 
 /datum/toolbox_event/team_deathmatch/proc/restart_players(mob/player = null)
+	while(building_ruin)
+		sleep(1)
 	var/area/the_lobby = locate(lobby_area)
 	var/list/lobby_turfs = list()
 	if(istype(the_lobby))
@@ -257,7 +263,7 @@ client/verb/clearbullshit()
 
 /datum/toolbox_event/team_deathmatch/override_job_spawn(mob/living/living_mob)
 	spawn(0)
-		while(!team_death_match_chambers_spawned)
+		while(building_ruin)
 			sleep(1)
 		var/area/the_lobby = locate(lobby_area)
 		var/list/lobby_turfs = list()
@@ -292,23 +298,65 @@ client/verb/clearbullshit()
 	setup_map()
 
 /datum/toolbox_event/team_deathmatch/proc/setup_map()
-	spawn(0)
-		spawn_TDM_chambers()
-	while(!team_death_match_chambers_spawned)
-		sleep(1)
-	save_ruin_data()
-	for(var/obj/machinery/clonepod/TDM/cloner in world)
-		if(!(cloner in GLOB.TDM_cloners) && cloner.team)
-			GLOB.TDM_cloners += cloner
 	var/area/A = locate(lobby_area)
 	if(A)
 		for(var/obj/structure/displaycase/TDM_item_spawn/case in A)
 			if(!case.open)
 				case.toggle_lock()
 
-/datum/toolbox_event/team_deathmatch/proc/get_all_ruin_floors()
+/datum/toolbox_event/team_deathmatch/proc/rotate_map()
+	log_bullshit("rotate_map")
+	while(building_ruin)
+		sleep(1)
+	var/datum/map_template/ruin/previous_ruin
+	for(var/datum/map_template/ruin/R in active_ruins)
+		if(R.name == "Team DeathMatch Spawn Chamber")
+			continue
+		log_bullshit("rotate_map found previous_ruin [R ? "[R.name] [R.type]" : "not found"]")
+		previous_ruin = R
+		break
+	if(previous_ruin)
+		log_bullshit("rotate_map deleting ruin")
+		delete_ruin(previous_ruin)
+	else
+		log_bullshit("rotate_map no previous ruin")
+	if(ruin_maps.len)
+		var/current = 1
+		if(previous_ruin)
+			log_bullshit("rotate_map previous ruin current = [current]")
+			for(var/i=1,i<=ruin_maps.len,i++)
+				var/datum/team_deathmatch_map/map = ruin_maps[i]
+				if(map.map == previous_ruin)
+					current = i
+					log_bullshit("rotate_map found [map ? "[map.type]" : "no map"] current now [current]")
+			current++
+			log_bullshit("rotate_map current increased now [current]")
+			if(current > ruin_maps.len)
+				current = 1
+				log_bullshit("rotate_map current capped out, resetting to [current]")
+		var/datum/team_deathmatch_map/new_map = ruin_maps[current]
+		if(new_map && new_map.map)
+			log_bullshit("rotate_map 2")
+			var/list/z_levels = SSmapping.levels_by_trait("Team_Deathmatch")
+			spawn_ruin(new_map.map,z_levels)
+			setup_cloners(new_map)
+	else
+		log_bullshit("rotate_map error 1")
+
+/datum/toolbox_event/team_deathmatch/proc/setup_cloners(datum/team_deathmatch_map/new_map)
+	if(istype(new_map) && istype(new_map.map))
+		var/list/turfs = get_all_ruin_floors(new_map.map)
+		if(new_map.team_outfits && new_map.team_outfits.len)
+			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
+				if(cloner.loc in turfs)
+					cloner.team_outfits = new_map.team_outfits.Copy()
+					cloner.teir_kills = new_map.teir_kills
+
+/datum/toolbox_event/team_deathmatch/proc/get_all_ruin_floors(datum/map_template/ruin/force)
 	var/list/results = list()
 	for(var/datum/map_template/ruin/R in active_ruins)
+		if(force && R != force)
+			continue
 		var/list/coords_list = params2list(active_ruins[R])
 		if(islist(coords_list) && coords_list.len)
 			var/turf/center = locate(text2num(coords_list["x"]),text2num(coords_list["y"]),text2num(coords_list["z"]))
@@ -318,13 +366,13 @@ client/verb/clearbullshit()
 					results.Add(turfs)
 	return results
 
-/datum/toolbox_event/team_deathmatch/proc/save_ruin_data()
+/*/datum/toolbox_event/team_deathmatch/proc/save_ruin_data()
 	var/list/turfs = get_all_ruin_floors()
 	if(turfs.len)
 		for(var/turf/T in turfs)
 			for(var/obj/item/I in T)
 				saved_items += I
-			ruin_turfs["x=[T.x];y=[T.y];z=[T.z]"] = T.type
+			ruin_turfs["x=[T.x];y=[T.y];z=[T.z]"] = T.type*/
 
 /datum/toolbox_event/team_deathmatch/proc/clean_repair_ruins()
 	for(var/t in ruin_turfs)
@@ -360,3 +408,154 @@ client/verb/clearbullshit()
 					F.air.copy_from_turf(F)
 					F.update_icon()
 
+/datum/toolbox_event/team_deathmatch/proc/spawn_ruin(datum/map_template/ruin/ruin,list/z_levels)
+	. = 0
+	while(building_ruin)
+		sleep(1)
+	if(!ruin || !z_levels)
+		return
+	if(!istype(ruin))
+		return
+	var/did_we_change_it = 0
+	if(z_levels && z_levels.len)
+		if(SSair.can_fire)
+			SSair.can_fire = 0
+			did_we_change_it = 1
+		for(var/i=50,i>0,i--)
+			building_ruin = 1
+			if(ruin.try_to_place(pick(z_levels),/area/space))
+				building_ruin = 0
+				for(var/obj/effect/landmark/ruin/L in GLOB.ruin_landmarks)
+					if(L.ruin_template == ruin)
+						active_ruins[ruin] = "x=[L.x];y=[L.y];z=[L.z]"
+						break
+				. = 1
+				break
+	if(did_we_change_it)
+		SSair.can_fire = 1
+
+/datum/toolbox_event/team_deathmatch/proc/delete_ruin(datum/map_template/ruin/ruin)
+	while(building_ruin)
+		sleep(1)
+	for(var/obj/effect/landmark/ruin/L in GLOB.ruin_landmarks)
+		if(L.ruin_template != ruin)
+			continue
+		if(L.ruin_template == ruin)
+			var/list/coords_list = params2list(active_ruins[ruin])
+			if(islist(coords_list) && coords_list.len)
+				var/turf/center = locate(text2num(coords_list["x"]),text2num(coords_list["y"]),text2num(coords_list["z"]))
+				if(istype(center))
+					var/list/ruinturfs = ruin.get_affected_turfs(center,1)
+					if(ruinturfs.len)
+						building_ruin = 1
+						var/firstturf = ""
+						var/firstobj = ""
+						for(var/turf/T in ruinturfs)
+							if(!firstturf)
+								firstturf = "\"[T.name]\" \"[T.type]\" \"[T.x]\" [T.y]\" \"[T.z]\""
+							for(var/atom/movable/AM in T)
+								if(istype(AM,/mob))
+									if(istype(AM,/mob/dead/observer))
+										continue
+									else if(istype(AM,/mob/living))
+										var/mob/living/living = AM
+										if(living.ckey)
+											continue
+								if(!firstobj)
+									firstobj = "\"[AM.name]\" \"[AM.type]\" \"[AM.x]\" \"[AM.y]\" \"[AM.z]\""
+								if(AM == L)
+									continue
+								AM.moveToNullspace()
+								qdel(AM)
+							T.ChangeTurf(/turf/open/space)
+							T.flags_1 &= ~NO_RUINS_1
+							new /area/space(T)
+						building_ruin = 0
+			active_ruins.Remove(ruin)
+			qdel(L)
+			break
+
+/datum/toolbox_event/team_deathmatch/proc/load_maps()
+	SSmapping.add_new_zlevel("Team_Deathmatch", list(ZTRAIT_LINKAGE = UNAFFECTED, "Team_Deathmatch" = TRUE))
+	if(!spawn_ruin(SSmapping.space_ruins_templates["Team DeathMatch Spawn Chamber"],SSmapping.levels_by_trait(ZTRAIT_CENTCOM)))
+		return
+	for(var/path in subtypesof(/datum/team_deathmatch_map))
+		var/datum/team_deathmatch_map/map = new path()
+		ruin_maps += map
+		map.load_up()
+		if(istype(map.map))
+			map_datums[map.map.name] = map
+
+//Lobby Template
+/datum/map_template/ruin/space/TDM_lobby
+	name = "Team DeathMatch Spawn Chamber"
+	id = "tdm_lobby"
+	description = "The team lobby for team deathmatch"
+	unpickable = TRUE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
+	prefix = "_maps/toolbox/TDM/Lobby.dmm"
+
+//datums for maps which include things like kills to win
+/datum/team_deathmatch_map
+	var/name = "TDM MAP"
+	var/datum/map_template/ruin/map //This can be either the type path of the specific map template ruin you want or the name of it
+	var/list/team_kills = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
+	var/list/team_home_areas = list(
+		/area/TDM/red_base = TDM_RED_TEAM,
+		/area/TDM/blue_base = TDM_BLUE_TEAM)
+	var/list/teir_kills = list(0,3,6,15) //kill requirements to unlock each teir of guns, 4 teirs right now.
+	var/list/team_outfits = list(
+		TDM_RED_TEAM = list(
+		"t1" = /datum/outfit/TDM/red,
+		"t3" = /datum/outfit/TDM/red/t3,
+		"t4" = /datum/outfit/TDM/red/t4),
+		TDM_BLUE_TEAM = list(
+		"t1" = /datum/outfit/TDM/blue,
+		"t3" = /datum/outfit/TDM/blue/t3,
+		"t4" = /datum/outfit/TDM/blue/t4))
+
+/datum/team_deathmatch_map/proc/load_up()
+	if(map)
+		var/mapname
+		if(istext(map))
+			mapname = map
+		else if(ispath(map))
+			var/datum/map_template/ruin/R = map
+			if(initial(R.name))
+				mapname = initial(R.name)
+		if(mapname && istext(mapname))
+			map = SSmapping.space_ruins_templates[mapname]
+
+//maps
+/datum/team_deathmatch_map/TDM_chambers
+	map = /datum/map_template/ruin/space/TDM_chambers
+	//team_kills = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
+
+/datum/map_template/ruin/space/TDM_chambers
+	name = "Team DeathMatch Combat Chambers"
+	id = "tdm_combat"
+	description = "The map for team deathmatch"
+	unpickable = TRUE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
+	prefix = "_maps/toolbox/TDM/Dust1.dmm"
+
+/datum/team_deathmatch_map/TDM_smeltery
+	map = /datum/map_template/ruin/space/TDM_smeltery
+	//team_kills = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
+
+/datum/map_template/ruin/space/TDM_smeltery
+	name = "Team DeathMatch Smeltery Chambers"
+	id = "tdm_smeltery"
+	description = "The smeltery map for team deathmatch"
+	unpickable = TRUE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
+	prefix = "_maps/toolbox/TDM/Smeltery.dmm"

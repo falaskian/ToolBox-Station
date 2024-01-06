@@ -15,10 +15,6 @@
 
 /********************** DEFINES **************************/
 
-
-#define TEIR_2_KILLS 3
-#define TEIR_3_KILLS 7
-#define TEIR_4_KILLS 14
 #define TDM_RED_TEAM "red"
 #define TDM_BLUE_TEAM "blue"
 
@@ -1492,14 +1488,16 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	var/list/click_cooldowns = list()
 	var/click_cooldown = 3000
 	var/times_cloned = 0
-	var/list/red_TDM_outfits = list(
+	var/list/teir_kills = list(0,3,6,15)
+	var/list/team_outfits = list(
+		TDM_RED_TEAM = list(
 		"t1" = /datum/outfit/TDM/red,
 		"t3" = /datum/outfit/TDM/red/t3,
-		"t4" = /datum/outfit/TDM/red/t4)
-	var/list/blue_TDM_outfits = list(
+		"t4" = /datum/outfit/TDM/red/t4),
+		TDM_BLUE_TEAM = list(
 		"t1" = /datum/outfit/TDM/blue,
 		"t3" = /datum/outfit/TDM/blue/t3,
-		"t4" = /datum/outfit/TDM/blue/t4)
+		"t4" = /datum/outfit/TDM/blue/t4))
 
 /obj/machinery/clonepod/TDM/Initialize()
 	. = ..()
@@ -1561,23 +1559,18 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	if(!istype(H))
 		return
 	var/list/team_outfit = list()
-	switch(team)
-		if(TDM_RED_TEAM)
-			team_outfit = red_TDM_outfits
-		else if("green")
-			team_outfit = blue_TDM_outfits
-	if(team_outfit.len)
+	if(team && (team in team_outfits))
+		team_outfit = team_outfits[team]
+	if(team_outfit && team_outfit.len)
 		var/enemy_deaths = get_enemy_deaths()
 		var/teir = 1
 		var/chosen = team_outfit["t[teir]"]
-		if(enemy_deaths >= TEIR_2_KILLS)
-			teir = 2
-		if(enemy_deaths >= TEIR_3_KILLS)
-			teir = 3
-		if(enemy_deaths >= TEIR_4_KILLS)
-			teir = 4
-		if(team_outfit["t[teir]"])
-			chosen = team_outfit["t[teir]"]
+		for(var/t in teir_kills)
+			if(enemy_deaths >= t)
+				teir = teir
+			teir++
+			if(team_outfit["t[teir]"])
+				chosen = team_outfit["t[teir]"]
 		for(var/obj/O in H)
 			qdel(O)
 		H.equipOutfit(chosen)
@@ -1692,77 +1685,6 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 		thefindtext = findtext(name,"clone")
 		if(!thefindtext)
 			thefindtext = null
-
-//Map Template
-/datum/map_template/ruin/space/TDM_chambers
-	name = "Team DeathMatch Combat Chambers"
-	id = "tdm_combat"
-	description = "The map for team deathmatch"
-	unpickable = TRUE
-	always_place = FALSE
-	placement_weight = 1
-	cost = 0
-	allow_duplicates = FALSE
-	prefix = "_maps/toolbox/TDM/Dust1.dmm"
-
-/datum/map_template/ruin/space/TDM_lobby
-	name = "Team DeathMatch Spawn Chamber"
-	id = "tdm_lobby"
-	description = "The team lobby for team deathmatch"
-	unpickable = TRUE
-	always_place = FALSE
-	placement_weight = 1
-	cost = 0
-	allow_duplicates = FALSE
-	prefix = "_maps/toolbox/TDM/Lobby.dmm"
-
-/datum/map_template/ruin/space/TDM_smeltery
-	name = "Team DeathMatch Smeltery Chambers"
-	id = "tdm_smeltery"
-	description = "The smeltery map for team deathmatch"
-	unpickable = TRUE
-	always_place = FALSE
-	placement_weight = 1
-	cost = 0
-	allow_duplicates = FALSE
-	prefix = "_maps/toolbox/TDM/Smeltery.dmm"
-
-var/global/team_death_match_chambers_spawned = 0
-/proc/spawn_TDM_chambers()
-	if(team_death_match_chambers_spawned)
-		return 1
-	var/list/z_levels = SSmapping.levels_by_trait(ZTRAIT_CENTCOM)
-	var/list/possible_combat_maps = list(
-		SSmapping.space_ruins_templates["Team DeathMatch Combat Chambers"],
-		SSmapping.space_ruins_templates["Team DeathMatch Smeltery Chambers"])
-	var/datum/map_template/ruin/combat = pick(possible_combat_maps)
-	var/datum/map_template/ruin/lobby = SSmapping.space_ruins_templates["Team DeathMatch Spawn Chamber"]
-	var/list/chambers = list(combat,lobby)
-	var/counts = 0
-	var/did_we_change_it = 0
-	if(z_levels && z_levels.len)
-		for(var/datum/map_template/ruin/S in chambers)
-			if(SSair.can_fire)
-				SSair.can_fire = 0
-				did_we_change_it = 1
-			for(var/i=50,i>0,i--)
-				if(S.try_to_place(pick(z_levels),/area/space))
-					counts++
-					for(var/obj/effect/landmark/ruin/L in GLOB.ruin_landmarks)
-						if(L.ruin_template == S)
-							for(var/t in SStoolbox_events.cached_events)
-								var/datum/toolbox_event/team_deathmatch/E = SStoolbox_events.cached_events[t]
-								if(istype(E) && E.active)
-									E.active_ruins[S] = "x=[L.x];y=[L.y];z=[L.z]"
-					break
-	if(counts == chambers.len)
-		team_death_match_chambers_spawned = 1
-		. = 1
-	if(did_we_change_it)
-		SSair.can_fire = 1
-
-
-
 
 
 /********************** ECONOMY **************************/
