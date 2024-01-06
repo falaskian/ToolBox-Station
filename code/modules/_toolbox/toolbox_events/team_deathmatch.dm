@@ -18,7 +18,6 @@
 		"Chief Medical Officer" = 0)
 	var/list/map_datums = list()
 	var/player_assigned_role = "Team Deathmatch"
-	var/round_startup_complete = 0
 	var/list/saved_items = list()
 	var/phase = SETUP_LOBBY
 	var/area/lobby_area = /area/TDM/lobby
@@ -64,10 +63,11 @@ client/verb/clearbullshit()
 		for(var/j in SSjob.name_occupations)
 			overriden_outfits[j] = lobby_outfit
 	spawn(0)
-		while(!SSmapping || !SSmapping.initialized)
-			stoplag()
+		while(!SSminor_mapping || !SSminor_mapping.initialized)
+			sleep(1)
 		load_maps()
 		setup_map()
+		rotate_map()
 
 /datum/toolbox_event/team_deathmatch/on_deactivate(mob/admin_user)
 	. = ..()
@@ -77,9 +77,9 @@ client/verb/clearbullshit()
 /datum/toolbox_event/team_deathmatch/process()
 	if(SSticker.current_state != GAME_STATE_PLAYING)
 		return
+	to_chat(world,"<b>FUCK THIS SHIT</b>")
 	switch(phase)
 		if(SETUP_LOBBY)
-			rotate_map()
 			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
 				if(cloner.team)
 					cloner.TDM_on = 0
@@ -134,6 +134,7 @@ client/verb/clearbullshit()
 				phase = SETUP_LOBBY
 				//clean_repair_ruins()
 				restart_players()
+				rotate_map()
 
 /datum/toolbox_event/team_deathmatch/proc/set_timer(time = 60)
 	if(istext(time))
@@ -294,7 +295,6 @@ client/verb/clearbullshit()
 	. = override_job_spawn(M)
 
 /datum/toolbox_event/team_deathmatch/PostRoundSetup()
-	round_startup_complete = 1
 	setup_map()
 
 /datum/toolbox_event/team_deathmatch/proc/setup_map()
@@ -305,43 +305,31 @@ client/verb/clearbullshit()
 				case.toggle_lock()
 
 /datum/toolbox_event/team_deathmatch/proc/rotate_map()
-	log_bullshit("rotate_map")
 	while(building_ruin)
 		sleep(1)
 	var/datum/map_template/ruin/previous_ruin
 	for(var/datum/map_template/ruin/R in active_ruins)
 		if(R.name == "Team DeathMatch Spawn Chamber")
 			continue
-		log_bullshit("rotate_map found previous_ruin [R ? "[R.name] [R.type]" : "not found"]")
 		previous_ruin = R
 		break
 	if(previous_ruin)
-		log_bullshit("rotate_map deleting ruin")
 		delete_ruin(previous_ruin)
-	else
-		log_bullshit("rotate_map no previous ruin")
 	if(ruin_maps.len)
 		var/current = 1
 		if(previous_ruin)
-			log_bullshit("rotate_map previous ruin current = [current]")
 			for(var/i=1,i<=ruin_maps.len,i++)
 				var/datum/team_deathmatch_map/map = ruin_maps[i]
 				if(map.map == previous_ruin)
 					current = i
-					log_bullshit("rotate_map found [map ? "[map.type]" : "no map"] current now [current]")
 			current++
-			log_bullshit("rotate_map current increased now [current]")
 			if(current > ruin_maps.len)
 				current = 1
-				log_bullshit("rotate_map current capped out, resetting to [current]")
 		var/datum/team_deathmatch_map/new_map = ruin_maps[current]
 		if(new_map && new_map.map)
-			log_bullshit("rotate_map 2")
 			var/list/z_levels = SSmapping.levels_by_trait("Team_Deathmatch")
 			spawn_ruin(new_map.map,z_levels)
 			setup_cloners(new_map)
-	else
-		log_bullshit("rotate_map error 1")
 
 /datum/toolbox_event/team_deathmatch/proc/setup_cloners(datum/team_deathmatch_map/new_map)
 	if(istype(new_map) && istype(new_map.map))
@@ -351,6 +339,7 @@ client/verb/clearbullshit()
 				if(cloner.loc in turfs)
 					cloner.team_outfits = new_map.team_outfits.Copy()
 					cloner.teir_kills = new_map.teir_kills
+					cloner.update_display_cases_tiers()
 
 /datum/toolbox_event/team_deathmatch/proc/get_all_ruin_floors(datum/map_template/ruin/force)
 	var/list/results = list()
@@ -448,11 +437,7 @@ client/verb/clearbullshit()
 					var/list/ruinturfs = ruin.get_affected_turfs(center,1)
 					if(ruinturfs.len)
 						building_ruin = 1
-						var/firstturf = ""
-						var/firstobj = ""
 						for(var/turf/T in ruinturfs)
-							if(!firstturf)
-								firstturf = "\"[T.name]\" \"[T.type]\" \"[T.x]\" [T.y]\" \"[T.z]\""
 							for(var/atom/movable/AM in T)
 								if(istype(AM,/mob))
 									if(istype(AM,/mob/dead/observer))
@@ -461,8 +446,6 @@ client/verb/clearbullshit()
 										var/mob/living/living = AM
 										if(living.ckey)
 											continue
-								if(!firstobj)
-									firstobj = "\"[AM.name]\" \"[AM.type]\" \"[AM.x]\" \"[AM.y]\" \"[AM.z]\""
 								if(AM == L)
 									continue
 								AM.moveToNullspace()

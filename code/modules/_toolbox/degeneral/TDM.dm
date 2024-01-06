@@ -719,6 +719,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	var/rack_sound
 	var/respawn_timer = 20
 	var/death_count_unlock = 0
+	var/tier_level = 1
 
 /obj/structure/displaycase/TDM_item_spawn/Initialize()
 	.=..()
@@ -1539,6 +1540,18 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 		if((enemy_deaths >= case.death_count_unlock && !case.open)||(enemy_deaths < case.death_count_unlock && case.open))
 			case.toggle_lock()
 
+/obj/machinery/clonepod/TDM/proc/update_display_cases_tiers()
+	var/area/A = get_area(src)
+	if(!A)
+		return
+	for(var/obj/structure/displaycase/TDM_item_spawn/case in A)
+		var/tier = 1
+		for(var/t in teir_kills)
+			if(tier == case.tier_level)
+				case.death_count_unlock = t
+				break
+			tier++
+
 /obj/machinery/clonepod/TDM/proc/create_human(mob/M)
 	var/mob/living/carbon/human/H = new()
 	H.forceMove(loc)
@@ -1567,8 +1580,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 		var/chosen = team_outfit["t[teir]"]
 		for(var/t in teir_kills)
 			if(enemy_deaths >= t)
-				teir = teir
-			teir++
+				teir++
 			if(team_outfit["t[teir]"])
 				chosen = team_outfit["t[teir]"]
 		for(var/obj/O in H)
