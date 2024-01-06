@@ -322,11 +322,9 @@
 
 
 
+		//TDM Clowns
 
-		//TDM CLOWN OUTFITS
-
-
-	//OUTFIT TDM CLOWN RED
+	//TDM Clown Red
 
 /datum/outfit/TDM/clown/red
 	name = "TDM Clown Red Team"
@@ -351,7 +349,7 @@
 
 
 
-	//OUTFIT TDM CLOWN BLUE
+	//TDM Clown Blue
 
 /datum/outfit/TDM/clown/blue
 	name = "TDM Clown Blue Team"
@@ -371,6 +369,31 @@
 
 /datum/outfit/TDM/clown/blue/t4
 	name = "TDM Clown Blue Team T4"
+	head = /obj/item/clothing/head/helmet/sec
+	suit = /obj/item/clothing/suit/armor/vest/alt
+
+
+
+		//TDM Mime
+
+/datum/outfit/TDM/mime
+	name = "TDM Mime"
+	uniform = /obj/item/clothing/under/rank/civilian/mime/TDM
+	belt = /obj/item/storage/belt/fannypack/red
+	suit = /obj/item/clothing/suit/suspenders/TDM
+	gloves = /obj/item/clothing/gloves/color/white
+	shoes = /obj/item/clothing/shoes/sneakers/black
+	head = /obj/item/clothing/head/frenchberet
+	mask = /obj/item/clothing/mask/gas/mime/TDM
+	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
+	r_pocket = /obj/item/stack/medical/gauze/two
+
+/datum/outfit/TDM/mime/t3
+	name = "TDM Mime T3"
+	suit = /obj/item/clothing/suit/armor/vest/alt
+
+/datum/outfit/TDM/mime/t4
+	name = "TDM Mime T3"
 	head = /obj/item/clothing/head/helmet/sec
 	suit = /obj/item/clothing/suit/armor/vest/alt
 
@@ -401,6 +424,39 @@
 	uniform = /obj/item/clothing/under/color/grey/TDM
 	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
 	r_pocket = /obj/item/stack/medical/gauze/two
+
+
+
+		//TDM Space Outfits
+
+	//Red Team Space Suit
+
+/datum/outfit/TDM/red_space
+	name = "TDM Red Team Space"
+	uniform = /obj/item/clothing/under/color/red/TDM
+	belt = /obj/item/storage/belt/fannypack/red
+	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
+	r_pocket = /obj/item/stack/medical/gauze/two
+	suit = /obj/item/clothing/suit/space/syndicate/black/red/TDM
+	back = /obj/item/tank/jetpack/oxygen/security/TDM_Red
+	head = /obj/item/clothing/head/helmet/space/syndicate/black/red/TDM
+
+
+	//Blue Team Space Suit
+
+/datum/outfit/TDM/blue_space
+	name = "TDM Blue Team Space"
+	uniform = /obj/item/clothing/under/color/blue/TDM
+	belt = /obj/item/storage/belt/fannypack/blue
+	gloves = /obj/item/clothing/gloves/color/black
+	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
+	r_pocket = /obj/item/stack/medical/gauze/two
+	suit = /obj/item/clothing/suit/space/syndicate/black/blue/TDM
+	back = /obj/item/tank/jetpack/oxygen/TDM_Blue
+	head = /obj/item/clothing/head/helmet/space/syndicate/black/blue/TDM
 
 
 
@@ -510,6 +566,107 @@
 	desc = "Very ominous cloak."
 
 /obj/item/clothing/neck/cloak/chap/bishop/black/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+
+		//Space Suits
+
+	//Red TDM Space Suit
+
+/obj/item/clothing/suit/space/syndicate/black/red/TDM
+	resistance_flags = 115
+
+/obj/item/clothing/suit/space/syndicate/black/red/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+	//Blue TDM Space Suit
+
+/obj/item/clothing/suit/space/syndicate/black/blue/TDM
+	resistance_flags = 115
+
+/obj/item/clothing/suit/space/syndicate/black/blue/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+
+		//Space Helmets
+
+	//Red TDM Space Helmet
+
+/obj/item/clothing/head/helmet/space/syndicate/black/red/TDM
+	resistance_flags = 115
+
+/obj/item/clothing/head/helmet/space/syndicate/black/red/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+	//Blue TDM Space Helmet
+
+/obj/item/clothing/head/helmet/space/syndicate/black/blue/TDM
+	resistance_flags = 115
+
+/obj/item/clothing/head/helmet/space/syndicate/black/blue/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+
+		//JetPacks
+
+	//Harness Jetpack TDM
+
+/obj/item/tank/jetpack/oxygen/harness/TDM
+	resistance_flags = 115
+
+	//Red TDM JetPack
+
+/obj/item/tank/jetpack/oxygen/security/TDM_Red
+	desc = "A tank of compressed oxygen for use as propulsion in zero-gravity areas. Use with caution."
+	resistance_flags = 115
+
+
+	//Blue TDM JetPack
+
+/obj/item/tank/jetpack/oxygen/TDM_Blue
+	resistance_flags = 115
+
+
+
+		//Mimes
+
+	//TDM Mime Mask
+
+/obj/item/clothing/mask/gas/mime/TDM
+	resistance_flags = 115
+
+/obj/item/clothing/suit/space/syndicate/black/red/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+	//TDM Mime Jumpsuit
+
+/obj/item/clothing/under/rank/civilian/mime/TDM
+	can_adjust = 0
+	resistance_flags = 115
+
+/obj/item/clothing/under/rank/civilian/mime/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+	//TDM Mime Suspenders
+
+/obj/item/clothing/suit/suspenders/TDM
+	resistance_flags = 115
+
+/obj/item/clothing/suit/space/syndicate/black/red/TDM/Initialize()
 	.=..()
 	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
