@@ -1108,9 +1108,21 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	name = "furnace board"
 
 
+		//TDM Recycler - Crusher
 
+/obj/machinery/recycler/TDM
+	name = "crusher"
+	desc = "A large crushing machine, dont fall in."
+	resistance_flags = 115
 
+/obj/machinery/recycler/TDM/Initialize()
+	.=..()
+	obj_flags |= EMAGGED
+	safety_mode = FALSE
+	update_icon()
 
+/obj/machinery/recycler/TDM/attackby(obj/item/I, mob/user, params)
+	return
 
 
 
