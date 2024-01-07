@@ -458,6 +458,31 @@
 
 
 
+		//TDM Assistants
+
+	//TDM Assistant Red
+
+/datum/outfit/TDM/assistant_red
+	name = "TDM Assistant Red"
+	uniform = /obj/item/clothing/under/color/grey/TDM
+	shoes = /obj/item/clothing/shoes/sneakers/black
+	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
+	r_pocket = /obj/item/stack/medical/gauze/two
+	accessory = /obj/item/clothing/accessory/armband/TDM
+
+
+	//TDM Assistant Blue
+
+/datum/outfit/TDM/assistant_blue
+	name = "TDM Assistant Blue"
+	uniform = /obj/item/clothing/under/color/grey/TDM
+	shoes = /obj/item/clothing/shoes/sneakers/black
+	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
+	r_pocket = /obj/item/stack/medical/gauze/two
+	accessory = /obj/item/clothing/accessory/armband/blue/TDM
+
+
+
 		//Clothes
 
 	//Berets
@@ -531,6 +556,28 @@
 	.=..()
 	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
+
+
+		//Armbands
+
+	//Red Armband
+
+/obj/item/clothing/accessory/armband/TDM
+	resistance_flags = 115
+
+/obj/item/clothing/accessory/armband/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+
+
+	//Blue Armband
+
+/obj/item/clothing/accessory/armband/blue/TDM
+	resistance_flags = 115
+
+/obj/item/clothing/accessory/armband/blue/TDM/Initialize()
+	.=..()
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 		//Death Clothes
