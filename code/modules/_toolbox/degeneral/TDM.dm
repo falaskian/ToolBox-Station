@@ -432,6 +432,7 @@
 	uniform = /obj/item/clothing/under/color/red/TDM
 	belt = /obj/item/storage/belt/fannypack/red
 	gloves = /obj/item/clothing/gloves/color/black
+	mask = /obj/item/clothing/mask/gas/old
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
 	r_pocket = /obj/item/stack/medical/gauze/two
@@ -447,6 +448,7 @@
 	uniform = /obj/item/clothing/under/color/blue/TDM
 	belt = /obj/item/storage/belt/fannypack/blue
 	gloves = /obj/item/clothing/gloves/color/black
+	mask = /obj/item/clothing/mask/gas/old
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
 	r_pocket = /obj/item/stack/medical/gauze/two
@@ -1125,6 +1127,14 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 /turf/open/floor/plasteel/stairs/TDM/sepia/left
 	dir = 8
+
+
+
+		//Mineral Walls
+
+/turf/closed/mineral/has_air
+	turf_type =	/turf/open/floor/plating/asteroid
+
 
 
 	//Area Dirtier

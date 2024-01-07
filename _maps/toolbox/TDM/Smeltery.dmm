@@ -2,7 +2,7 @@
 "ab" = (/turf/closed/wall/rust,/area/TDM)
 "ac" = (/turf/open/floor/sepia/TDM,/area/TDM)
 "ad" = (/obj/structure/ore_box/TDM,/turf/open/floor/sepia/TDM,/area/TDM)
-"ae" = (/obj/machinery/power/floodlight{desc = "A pole with powerful mounted lights on it. Due to its high power draw, it must be powered by a direct connection to a wire node. Looks very sturdy."; max_integrity = 1200; name = "sturdy floodlight"},/turf/open/floor/sepia/TDM,/area/TDM)
+"ae" = (/obj/structure/TDM/floodlight,/turf/open/floor/plating/asteroid/basalt,/area/TDM)
 "af" = (/obj/machinery/door/poddoor/shutters{id = "-noid"; name = "pod bay"; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
 "ag" = (/obj/effect/turf_decal/stripes/asteroid/line{dir = 9},/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/floor/engine,/area/TDM)
 "ah" = (/obj/effect/turf_decal/stripes/asteroid/line{dir = 1},/turf/open/floor/engine,/area/TDM)
@@ -13,15 +13,15 @@
 "am" = (/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_x = 5; pixel_y = 4; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
 "an" = (/turf/open/floor/plasteel/stairs/TDM/sepia/up,/area/TDM)
 "ao" = (/turf/open/floor/plating/asteroid/basalt,/area/TDM)
-"ap" = (/obj/machinery/power/floodlight{desc = "A pole with powerful mounted lights on it. Due to its high power draw, it must be powered by a direct connection to a wire node. Looks very sturdy."; max_integrity = 1200; name = "sturdy floodlight"},/turf/open/floor/plating/asteroid/basalt,/area/TDM)
+"ap" = (/obj/structure/TDM/floodlight,/turf/open/floor/sepia/TDM,/area/TDM)
 "aq" = (/obj/structure/lattice/catwalk,/obj/structure/railing{dir = 4},/obj/structure/railing{dir = 8},/turf/open/lava/smooth{slowdown = 0.5},/area/TDM)
 "ar" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM)
 "as" = (/turf/open/floor/plasteel/stairs/TDM/sepia/left,/area/TDM)
 "at" = (/turf/open/floor/plasteel/stairs/TDM/sepia/right,/area/TDM)
 "au" = (/obj/structure/lattice/catwalk,/obj/structure/railing,/obj/structure/railing{dir = 1},/turf/open/lava/smooth{slowdown = 0.5},/area/TDM)
 "av" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
-"aw" = (/obj/structure/railing/corner{resistance_flags = 115},/obj/structure/railing/corner{dir = 8},/turf/open/floor/sepia/TDM,/area/TDM)
-"ax" = (/obj/structure/railing/corner{dir = 4},/obj/structure/railing/corner,/turf/open/floor/sepia/TDM,/area/TDM)
+"aw" = (/obj/machinery/door/poddoor{id = "redpod"; resistance_flags = 115},/obj/effect/turf_decal/stripes/asteroid/line{dir = 10},/turf/open/floor/engine,/area/TDM)
+"ax" = (/obj/machinery/door/poddoor{id = "bluepod"; resistance_flags = 115},/obj/effect/turf_decal/stripes/asteroid/line{dir = 6},/turf/open/floor/engine,/area/TDM)
 "ay" = (/obj/item/banner/TDM/red,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
 "az" = (/obj/item/banner/TDM/blue,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
 "aA" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
@@ -85,7 +85,7 @@
 "bG" = (/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_x = 6; pixel_y = 0; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
 "bH" = (/obj/structure/railing{dir = 1; resistance_flags = 115},/turf/open/lava/smooth,/area/TDM)
 "bI" = (/obj/item/banner/TDM/red,/turf/closed/wall/rust,/area/TDM)
-"bJ" = (/obj/structure/railing/corner{dir = 1},/obj/structure/railing/corner{dir = 8; resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bJ" = (/obj/structure/railing/corner{resistance_flags = 115},/obj/structure/railing/corner{dir = 8},/obj/effect/turf_decal/stripes/asteroid/full,/turf/open/floor/sepia/TDM,/area/TDM)
 "bK" = (/obj/structure/lattice/catwalk,/obj/structure/railing{dir = 9},/turf/open/lava/smooth{slowdown = 0},/area/TDM)
 "bL" = (/turf/template_noop,/area/template_noop)
 "bM" = (/obj/structure/lattice/catwalk,/obj/structure/railing/corner{dir = 1},/turf/open/lava/smooth{slowdown = 0},/area/TDM)
@@ -95,7 +95,7 @@
 "bQ" = (/obj/structure/lattice/catwalk,/obj/structure/railing{dir = 10},/turf/open/lava/smooth{slowdown = 0},/area/TDM)
 "bR" = (/turf/open/floor/plating/rust,/area/TDM)
 "bS" = (/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_x = -6; pixel_y = 0; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
-"bT" = (/obj/machinery/power/floodlight{desc = "A pole with powerful mounted lights on it. Due to its high power draw, it must be powered by a direct connection to a wire node. Looks very sturdy."; max_integrity = 1200; name = "sturdy floodlight"},/turf/open/floor/plating/rust,/area/TDM)
+"bT" = (/obj/structure/TDM/floodlight,/turf/open/floor/plating/rust,/area/TDM)
 "bU" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/plating/rust,/area/TDM)
 "bV" = (/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/floor/plating/rust,/area/TDM)
 "bW" = (/obj/structure/railing{dir = 4},/turf/open/floor/plating/asteroid/basalt,/area/TDM)
@@ -148,10 +148,11 @@
 "cR" = (/obj/machinery/mineral/mint{resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
 "cS" = (/obj/machinery/door/poddoor{id = "redfactory"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
 "cT" = (/obj/item/pickaxe,/turf/open/floor/plating/asteroid/basalt,/area/TDM)
-"cU" = (/obj/machinery/power/floodlight{desc = "A pole with powerful mounted lights on it. Due to its high power draw, it must be powered by a direct connection to a wire node. Looks very sturdy."; max_integrity = 1200; name = "sturdy floodlight"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"cU" = (/obj/structure/TDM/floodlight,/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
 "cV" = (/obj/machinery/button/door{id = "bluepod"; name = "Blastdoor Control"; pixel_x = -25; pixel_y = -5; req_access_txt = "0"; resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
 "cW" = (/obj/effect/turf_decal/stripes/asteroid/line{dir = 9},/obj/machinery/door/poddoor{id = "redpod"; resistance_flags = 115},/turf/open/floor/engine,/area/TDM)
 "cX" = (/obj/effect/turf_decal/stripes/asteroid/line{dir = 5},/obj/machinery/door/poddoor{id = "bluepod"; resistance_flags = 115},/turf/open/floor/engine,/area/TDM)
+"cY" = (/obj/structure/railing/corner{dir = 4},/obj/structure/railing/corner,/obj/effect/turf_decal/stripes/asteroid/full,/turf/open/floor/sepia/TDM,/area/TDM)
 "cZ" = (/obj/machinery/button/door{id = "bluefactory"; name = "Blastdoor Control"; pixel_x = -25; pixel_y = 5; req_access_txt = "0"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
 "da" = (/obj/item/banner/TDM/blue,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM)
 "db" = (/obj/TDM_map_modifier/smeltery,/turf/closed/mineral/volcanic,/area/TDM)
@@ -166,6 +167,7 @@
 "dk" = (/obj/structure/railing{dir = 10; resistance_flags = 115},/turf/open/lava/smooth,/area/TDM)
 "dl" = (/obj/structure/railing{dir = 6; resistance_flags = 115},/turf/open/floor/plating/asteroid/basalt,/area/TDM)
 "dm" = (/turf/open/floor/plasteel/stairs/TDM/sepia/left{dir = 4},/area/TDM)
+"dn" = (/obj/structure/railing/corner{dir = 1},/obj/structure/railing/corner{dir = 8; resistance_flags = 115},/obj/effect/turf_decal/stripes/asteroid/full,/turf/open/floor/sepia/TDM,/area/TDM)
 "do" = (/obj/machinery/door/poddoor{id = "bluefactory"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
 "dp" = (/obj/machinery/button/door{id = "redfactory"; name = "Blastdoor Control"; pixel_x = 25; pixel_y = 5; req_access_txt = "0"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
 
@@ -176,11 +178,11 @@ aaabababaHaHaHaHaHaHaHaHaHaoaoaoaoabacadadacacacacadabacacacacacacadadacacacabag
 aaababaHaHaHaHaHaHaHaHaHaoaoaoaoaoabacacacacacacacacacacacacacacacacadacadacabcCaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaicGabacadacadacacacacacacacacacacacacacacacacabaoaoaoaoaoaHaHaHaHaHaHaHaHaHababaa
 aaabaHaHaHaHaoaoaoaoaoaoaoaoaUaoaoatacacacacadacacacacacacadababacacacacaccHabakaiaicKaiaiaiaiaiaiaiaiaiaiaicNaiaialabcVacacacacacababadacacacacacacadacacacacaCaoaoaUaoaoaoaoaoaoaoaoaHaHaHaHabaa
 aaaHaHaHaHaoaoaoaoaoaoaoaoaoaUaoaoatacacacababababacacacadadadabacacacacacaccWcDaiaiaicEaiaiaiaiaiaiaiaicEaiaiaiaicFcXacacacacacacabadadadacacacababababacacacaCaoaoaUaoaoaoaoaoaoaoaoaoaHaHaHaHaa
-aaaHaHaHaoaoaoaoaHaHapaoaoaoaoaoaoabadacacacacacabacacacadacacabacacacacacaccWcIaiaibGaiaiaicEaiaicEaiaiaiaibSaiaicJcXacacacacacacabacacadacacacabacacacacacadabaoaoaoaoaoaoapaHaHaoaoaoaoaHaHaHaa
-aaaHaHaoaoaoaoaHaHaHaHaoaoaoaoaoaoababadacacacacababacacacacacabadadacacacaeabcLcMcMcIaiaiaiaiaiaiaiaiaiaiaicJcMcMcOabaeacacacadadabacacacacacababacacacacadababaoaoaoaoaoaoaHaHaHaHaoaoaoaoaHaHaa
-aaaHaHaoaoaoaHaHaHaHaHaHaoaoaoaoaoapababababacacaeabababababababababawabababababababcLdccPcPcMcMcMcMcMcPcPdccOabababababababawabababababababababaeacacababababapaoaoaoaoaoaHaHaHaHaHaHaoaoaoaHaHaa
-aaaHaHaoaoaHaHaHaHaHaHaoaoaoaoaoaoaoaoaoaUabacacacacadabclclclclclclaqclclabababaeacacacacacaccQcQcQacacacacacacaeabababclclaqclclclclclclabadacacacacabaUaoaoaoaoaoaoaoaoaoaHaHaHaHaHaHaoaoaHaHaa
-aaaHaHaoaoaoaoapaUaUaoaoaoaoaoaUaoaoaoaoaoaracacacacacaxauauauauauauaYclclclabacacacacacacacacacacacacacacacacacacacabclclclbdauauauauauaubJacacacacacaraoaoaoaoaoaUaoaoaoaoaoaUaUapaoaoaoaoaHaHaa
+aaaHaHaHaoaoaoaoaHaHaeaoaoaoaoaoaoabadacacacacacabacacacadacacabacacacacacacawcIaiaibGaiaiaicEaiaicEaiaiaiaibSaiaicJaxacacacacacacabacacadacacacabacacacacacadabaoaoaoaoaoaoaeaHaHaoaoaoaoaHaHaHaa
+aaaHaHaoaoaoaoaHaHaHaHaoaoaoaoaoaoababadacacacacababacacacacacabadadacacacapabcLcMcMcIaiaiaiaiaiaiaiaiaiaiaicJcMcMcOabapacacacadadabacacacacacababacacacacadababaoaoaoaoaoaoaHaHaHaHaoaoaoaoaHaHaa
+aaaHaHaoaoaoaHaHaHaHaHaHaoaoaoaoaoaeababababacacapabababababababababbJabababababababcLdccPcPcMcMcMcMcMcPcPdccOabababababababbJabababababababababapacacababababaeaoaoaoaoaoaHaHaHaHaHaHaoaoaoaHaHaa
+aaaHaHaoaoaHaHaHaHaHaHaoaoaoaoaoaoaoaoaoaUabacacacacadabclclclclclclaqclclabababapacacacacacaccQcQcQacacacacacacapabababclclaqclclclclclclabadacacacacabaUaoaoaoaoaoaoaoaoaoaHaHaHaHaHaHaoaoaHaHaa
+aaaHaHaoaoaoaoaeaUaUaoaoaoaoaoaUaoaoaoaoaoaracacacacaccYauauauauauauaYclclclabacacacacacacacacacacacacacacacacacacacabclclclbdauauauauauaudnacacacacacaraoaoaoaoaoaUaoaoaoaoaoaUaUaeaoaoaoaoaHaHaa
 aaaHaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoabacacacacacabclclclclclclclclaoaoabacacacacacacacacacacacacacacacacacacacabaoaoclclclclclclclclabacacacacacabaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaHaa
 aaaHaoaoaoaoaoaoaoaoaoaoaUaoaoaoaoaoaoaoaoatacacacacacabclclclclclclclaoaoaoatacacacacacabarabacacacabarabacacacacacasaoaoaoclclclclclclclabacacacacacaCaoaoaoaoaoaoaoaoaUaoaoaoaoaoaoaoaoaoaoaHaa
 aaavavbPavaBavavavayaoaoaoaUaoaoaUaUaoaoaoababacacacababclclclaoaoaoaoaoaoaoatacaccQacacacacabanananabacacacaccQacacasaoaoaoaoaoaoaoclclclababacacacababaoaoaoaUaUaoaoaUaoaoaoazaAaAaAaNaAdiaAaAaa
@@ -205,13 +207,13 @@ aaavavbPavaBavavavavaoaoaoaoaoaoaoaoaoaoaoaoaUaUaoaoaoaoaoaoaoaoaoaoaoaoabababab
 aaaHaoaoaoaoaoaoaoaUaoaoaoabbUbUbUabaoaoaoaoaoaoaoaoaoaobBbCbCbCckaoaoababbVabcUbRbRbRbRabcUbRcBcBcBbRcUabbRbRbRbRcUabbVababaoaobBbCbCbCckaoaoaoaoaoaoaoaoaoaoabbUbUbUabaoaoaoaUaoaoaoaoaoaoaoaHaa
 aaaHaoaoaoaoaoaoaoaUaoaoababbRbRbRababaoaoaoaoaoaoaoaoaoabclclclcmbCababbRbRabbRbRbRbRbRbRbRbRbRbRbRbRbRbRbRbRbRbRbRabbRbRababbCdlclclclabaoaoaoaoaoaoaoaoaoababbRbRbRababaoaoaUaoaoaoaoaoaoaoaHaa
 aaaHaobBbCcycyckaoaoaoaobUbRbRbRbRbRbUaoaoaoaoaoaoaoaoaoabclclclclclabbRbRbRabbRbRbVbVbRbRbRbRbRbRbRbRbRbRbRbVbVbRbRabbRbRbRabclclclclclabaoaoaoaoaoaoaoaoaobUbRbRbRbRbRbUaoaoaoaobBcycybCckaoaHaa
-aaaHaobWclclclcnaoaoaoaoabbRczcAcRbRabapaoaoaoaoaoaoaoabababbUbUbUababbRbRbRbRbRbRbRbVbVbRbRcocpcpcpcqbRbRbVbVbRbRbRbRbRbRbRababbUbUbUabababaoaoaoaoaoaoaoapabbRcRcAczbRabaoaoaoaobWclclclcnaoaHaa
+aaaHaobWclclclcnaoaoaoaoabbRczcAcRbRabaeaoaoaoaoaoaoaoabababbUbUbUababbRbRbRbRbRbRbRbVbVbRbRcocpcpcpcqbRbRbVbVbRbRbRbRbRbRbRababbUbUbUabababaoaoaoaoaoaoaoaeabbRcRcAczbRabaoaoaoaobWclclclcnaoaHaa
 aaaHaobWclclcebZaoababababbRbRbRddbRababababananababababbTbRbRbRbRbRbRbRbRbRbRbRbRcBbRbRcBbRcrclclclcsbRcBbRbRcBbRbRbRbRbRbRbRbRbRbRbRbRbTababababananababababbRddbRbRbRababababaobXcfclclcnaoaHaa
 aaaHaobWclclcnaoaoabbVbRbRbRbRbRbRbRbRbRbVbVbRbRbRbRbTabbRbRbRbRbRbRbRbRbRabbRbRbRcxbRbRcxbRcrclclclcsbRcxbRbRcxbRbRbRabbRbRbRbRbRbRbRbRbRabbTbRbRbRbRbVbVbRbRbRbRbRbRbRbRbRbVabaoaobWclclcnaoaHaa
 aaaHaobWclclcnaoaoabbRbRbRbRbRbRbRbRbRbRbRbVbRbRbRbRbRcSbRbRbVbVbVbRbRbRababbRbRbRdebRbRdebRcrclclclcsbRdebRbRdebRbRbRababbRbRbRbVbVbVbRbRdobRbRbRbRbRbVbRbRbRbRbRbRbRbRbRbRbRabaoaobWclclcnaoaHaa
 aaaHaobXdfbIbZaoaoasbRbRbRbRbRbRabbRbRbRbRbRbRbRbRbRbRcSbRbRbRbVbVbRbRbRbRbVbRbRbRdgbRbRdgbRcrclclclcsbRdgbRbRdgbRbRbRbVbRbRbRbRbVbVbRbRbRdobRbRbRbRbRbRbRbRbRbRabbRbRbRbRbRbRdmaoaobXdadfdjaoaHaa
 aaaHaoaoaoaoaoaoaoasbRbRbRbRbRbRabbVbRbRbRbRbRbRbVbRdpabbRbRbRbRbRbRbRbRbRbRbRbRbRdhbRbRdhbRcrclclclcsbRdhbRbRdhbRbRbRbRbRbRbRbRbRbRbRbRbRabcZbRbVbRbRbRbRbRbRbVabbRbRbRbRbRbRdmaoaoaoaoaoaoaoaHaa
-aaaHaHaoaoaoaUaoapabbRbRbRbRbRbTabbVbVbRbVbRbRbRbRbRbRbUbRbRbRbRbRbRbRbRbRbRbRbRabdgbRbRdgbRctcucucucvbRdgbRbRdgabbRbRbRbRbRbRbRbRbRbRbRbRbUbRbRbRbRbRbRbVbRbVbVabbTbRbRbRbRbRabapaoaUaoaoaoaHaHaa
+aaaHaHaoaoaoaUaoaeabbRbRbRbRbRbTabbVbVbRbVbRbRbRbRbRbRbUbRbRbRbRbRbRbRbRbRbRbRbRabdgbRbRdgbRctcucucucvbRdgbRbRdgabbRbRbRbRbRbRbRbRbRbRbRbRbUbRbRbRbRbRbRbVbRbVbVabbTbRbRbRbRbRabaeaoaUaoaoaoaHaHaa
 aadbaHaHaHaHaHaHaHabababababababababababababababababababababababababababbRbRbRbVbVcBbRbRcBbRbRbRbRbRbRbRcBbRbRcBbVbVbRbRbRabababababababababababababababababababababababababababaHaHaHaHaHaHaHabaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcUbRbRbRbRbRbRbRbRbRbRbVbVbVbRbRbRbRbRbRbRbRbRbRcUabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 bLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLaaababbRbRbRbRbRcUbRbRbRbVbVbVbVbVbRbRbRcUbRbRbRbRbRababaabLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbL
