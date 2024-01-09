@@ -27,7 +27,6 @@
 "B" = (/obj/structure/TDM/wallmed,/turf/closed/indestructible/riveted/TDM,/area/TDM/lobby)
 "C" = (/obj/effect/turf_decal/plaque,/turf/open/indestructible,/area/TDM/lobby)
 "D" = (/obj/effect/turf_decal/loading_area{dir = 1},/turf/open/indestructible,/area/TDM/lobby)
-"E" = (/turf/template_noop,/area/TDM/lobby)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaa
@@ -42,6 +41,6 @@ AiiDiiDiiiiiDiiDiiA
 aiiiiiiiiiiiiiiiiia
 aBjkliiiiCiiiimnoBa
 aaaaapqsiiituvaaaaa
-rEEEaaaawxyaaaaEEEr
+rrrraaaawxyaaaarrrr
 rrrrrrraaaaarrrrrrr
 "}

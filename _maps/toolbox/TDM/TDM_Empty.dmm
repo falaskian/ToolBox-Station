@@ -1,4 +1,4 @@
-"a" = (/turf/closed/indestructible/riveted/TDM,/area/space)
+"a" = (/turf/closed/indestructible/riveted/TDM,/area/TDM)
 "b" = (/turf/closed/wall/rust,/area/TDM)
 "c" = (/turf/open/floor/holofloor/grass,/area/TDM)
 "d" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)

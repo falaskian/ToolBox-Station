@@ -1,4 +1,4 @@
-"aa" = (/turf/closed/indestructible/riveted/TDM,/area/space)
+"aa" = (/turf/closed/indestructible/riveted/TDM,/area/TDM)
 "ab" = (/turf/closed/mineral/has_air,/area/TDM)
 "ac" = (/turf/closed/wall/rust,/area/TDM)
 "ad" = (/turf/open/floor/plating/asteroid,/area/TDM)
