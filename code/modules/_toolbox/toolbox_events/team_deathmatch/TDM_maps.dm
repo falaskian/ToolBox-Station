@@ -69,3 +69,15 @@
 	cost = 0
 	allow_duplicates = FALSE
 	prefix = "_maps/toolbox/TDM/GreyTide.dmm"
+
+
+/datum/map_template/ruin/space/TDM_MiniStation
+	name = "Team DeathMatch MiniStation"
+	id = "tdm_ministation"
+	description = "Mini Station map for team deathmatch"
+	unpickable = TRUE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
+	prefix = "_maps/toolbox/TDM/MiniStation.dmm"
