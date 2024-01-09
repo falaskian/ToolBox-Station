@@ -71,6 +71,28 @@
 	prefix = "_maps/toolbox/TDM/GreyTide.dmm"
 
 
+
+		//MiniStation
+
+/datum/team_deathmatch_map/ministation
+	name = "TDM MiniStation"
+	map = /datum/map_template/ruin/space/TDM_MiniStation //This can be either the type path of the specific map template ruin you want or the name of it
+	team_kills = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20)
+	team_home_areas = list(
+		/area/TDM/red_base = TDM_RED_TEAM,
+		/area/TDM/blue_base = TDM_BLUE_TEAM)
+	teir_kills = list(0,3,6,15) //kill requirements to unlock each teir of guns, 4 teirs right now.
+	team_outfits = list(
+		TDM_RED_TEAM = list(
+		"t1" = /datum/outfit/TDM/red,
+		"t3" = /datum/outfit/TDM/red/t3,
+		"t4" = /datum/outfit/TDM/red/t4),
+		TDM_BLUE_TEAM = list(
+		"t1" = /datum/outfit/TDM/blue,
+		"t3" = /datum/outfit/TDM/blue/t3,
+		"t4" = /datum/outfit/TDM/blue/t4))
+
+
 /datum/map_template/ruin/space/TDM_MiniStation
 	name = "Team DeathMatch MiniStation"
 	id = "tdm_ministation"
