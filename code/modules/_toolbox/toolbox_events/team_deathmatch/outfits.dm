@@ -285,7 +285,7 @@
 
 /obj/item/clothing/under/color/red/TDM
 	can_adjust = 0
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/under/color/red/TDM/Initialize()
 	.=..()
@@ -296,7 +296,7 @@
 
 /obj/item/clothing/under/color/blue/TDM
 	can_adjust = 0
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/under/color/blue/TDM/Initialize()
 	.=..()
@@ -307,7 +307,7 @@
 
 /obj/item/clothing/under/color/black/TDM
 	can_adjust = 0
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/under/color/black/TDM/Initialize()
 	.=..()
@@ -318,7 +318,7 @@
 
 /obj/item/clothing/under/color/grey/TDM
 	can_adjust = 0
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/under/color/grey/TDM/Initialize()
 	.=..()
@@ -331,7 +331,7 @@
 	//Red Armband
 
 /obj/item/clothing/accessory/armband/TDM
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/accessory/armband/TDM/Initialize()
 	.=..()
@@ -341,7 +341,7 @@
 	//Blue Armband
 
 /obj/item/clothing/accessory/armband/blue/TDM
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/accessory/armband/blue/TDM/Initialize()
 	.=..()
@@ -389,7 +389,7 @@
 	//Red TDM Space Suit
 
 /obj/item/clothing/suit/space/syndicate/black/red/TDM
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/suit/space/syndicate/black/red/TDM/Initialize()
 	.=..()
@@ -399,7 +399,7 @@
 	//Blue TDM Space Suit
 
 /obj/item/clothing/suit/space/syndicate/black/blue/TDM
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/suit/space/syndicate/black/blue/TDM/Initialize()
 	.=..()
@@ -412,7 +412,7 @@
 	//Red TDM Space Helmet
 
 /obj/item/clothing/head/helmet/space/syndicate/black/red/TDM
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/head/helmet/space/syndicate/black/red/TDM/Initialize()
 	.=..()
@@ -422,7 +422,7 @@
 	//Blue TDM Space Helmet
 
 /obj/item/clothing/head/helmet/space/syndicate/black/blue/TDM
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/head/helmet/space/syndicate/black/blue/TDM/Initialize()
 	.=..()
@@ -435,19 +435,19 @@
 	//Harness Jetpack TDM
 
 /obj/item/tank/jetpack/oxygen/harness/TDM
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 	//Red TDM JetPack
 
 /obj/item/tank/jetpack/oxygen/security/TDM_Red
 	desc = "A tank of compressed oxygen for use as propulsion in zero-gravity areas. Use with caution."
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 
 	//Blue TDM JetPack
 
 /obj/item/tank/jetpack/oxygen/TDM_Blue
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 
 
@@ -456,7 +456,7 @@
 	//TDM Mime Mask
 
 /obj/item/clothing/mask/gas/mime/TDM
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/suit/space/syndicate/black/red/TDM/Initialize()
 	.=..()
@@ -467,7 +467,7 @@
 
 /obj/item/clothing/under/rank/civilian/mime/TDM
 	can_adjust = 0
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/under/rank/civilian/mime/TDM/Initialize()
 	.=..()
@@ -477,7 +477,7 @@
 	//TDM Mime Suspenders
 
 /obj/item/clothing/suit/suspenders/TDM
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/suit/space/syndicate/black/red/TDM/Initialize()
 	.=..()

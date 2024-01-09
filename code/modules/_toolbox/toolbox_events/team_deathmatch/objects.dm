@@ -150,7 +150,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	name = "sturdy box"
 	desc ="A heavy wooden box. It looks very sturdy."
 	anchored = 1
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 
 /obj/structure/ore_box/TDM/take_damage()
@@ -275,7 +275,7 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 /obj/machinery/door/poddoor/TDM
 	autoclose = FALSE
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/machinery/door/poddoor/TDM/preopen
 	icon_state = "open"
@@ -303,7 +303,7 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 /obj/machinery/recycler/TDM
 	name = "crusher"
 	desc = "A large crushing machine, dont fall in."
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/machinery/recycler/TDM/Initialize()
 	.=..()

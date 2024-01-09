@@ -28,7 +28,7 @@
 /obj/machinery/mineral/ore_redemption/TDM
 	name = "furnace"
 	use_power = 0
-	resistance_flags = 115
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 	circuit = /obj/item/circuitboard/machine/ore_redemption/TDM
 
 /obj/machinery/mineral/ore_redemption/TDM/process()

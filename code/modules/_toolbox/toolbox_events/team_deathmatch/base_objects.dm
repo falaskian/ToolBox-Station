@@ -16,6 +16,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	var/click_cooldown = 3000
 	var/times_cloned = 0
 	var/list/teir_kills = list(0,3,6,15)
+	var/last_go_out = null //to fix a bug that seems to be happening in the parent, it attempts to call go_out more then once.
 	var/list/team_outfits = list(
 		TDM_RED_TEAM = list(
 		"t1" = /datum/outfit/TDM/red,
@@ -102,7 +103,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 		team_outfit = team_outfits[team]
 	if(team_outfit && team_outfit.len)
 		var/enemy_deaths = get_enemy_deaths()
-		var/teir = 1
+		var/teir = 0
 		var/chosen = team_outfit["t[teir]"]
 		for(var/t in teir_kills)
 			if(enemy_deaths >= t)
@@ -166,7 +167,8 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 /obj/machinery/clonepod/TDM/go_out(move = TRUE)
 	var/mob/living/carbon/human/M = occupant
 	. = ..()
-	if(M)
+	if(M && last_go_out != M)
+		last_go_out = M
 		if(istype(M))
 			if(M.client)
 				M.client.prefs.copy_to(M)
