@@ -1,7 +1,16 @@
+//******************************************************
+//Team Deathmatch event controller
+//******************************************************
+
+/********************** DEFINES **************************/
 #define SETUP_LOBBY "phase1"
 #define LOBBY_PHASE "phase2"
 #define SETUP_PHASE "phase3"
 #define COMBAT_PHASE "phase4"
+
+#define TDM_RED_TEAM "red"
+#define TDM_BLUE_TEAM "blue"
+
 /datum/toolbox_event/team_deathmatch
 	title = "Team Deathmatch"
 	desc = "Everyone spawns in a pvp zone where they choose sides and everyone fights"
@@ -77,7 +86,6 @@ client/verb/clearbullshit()
 /datum/toolbox_event/team_deathmatch/process()
 	if(SSticker.current_state != GAME_STATE_PLAYING)
 		return
-	to_chat(world,"<b>FUCK THIS SHIT</b>")
 	switch(phase)
 		if(SETUP_LOBBY)
 			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
@@ -469,107 +477,8 @@ client/verb/clearbullshit()
 		if(istype(map.map))
 			map_datums[map.map.name] = map
 
-//Lobby Template
-/datum/map_template/ruin/space/TDM_lobby
-	name = "Team DeathMatch Spawn Chamber"
-	id = "tdm_lobby"
-	description = "The team lobby for team deathmatch"
-	unpickable = TRUE
-	always_place = FALSE
-	placement_weight = 1
-	cost = 0
-	allow_duplicates = FALSE
-	prefix = "_maps/toolbox/TDM/Lobby.dmm"
-
-//datums for maps which include things like kills to win
-/datum/team_deathmatch_map
-	var/name = "TDM MAP"
-	var/datum/map_template/ruin/map //This can be either the type path of the specific map template ruin you want or the name of it
-	var/list/team_kills = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
-	var/list/team_home_areas = list(
-		/area/TDM/red_base = TDM_RED_TEAM,
-		/area/TDM/blue_base = TDM_BLUE_TEAM)
-	var/list/teir_kills = list(0,3,6,15) //kill requirements to unlock each teir of guns, 4 teirs right now.
-	var/list/team_outfits = list(
-		TDM_RED_TEAM = list(
-		"t1" = /datum/outfit/TDM/red,
-		"t3" = /datum/outfit/TDM/red/t3,
-		"t4" = /datum/outfit/TDM/red/t4),
-		TDM_BLUE_TEAM = list(
-		"t1" = /datum/outfit/TDM/blue,
-		"t3" = /datum/outfit/TDM/blue/t3,
-		"t4" = /datum/outfit/TDM/blue/t4))
-
-/datum/team_deathmatch_map/proc/load_up()
-	if(map)
-		var/mapname
-		if(istext(map))
-			mapname = map
-		else if(ispath(map))
-			var/datum/map_template/ruin/R = map
-			if(initial(R.name))
-				mapname = initial(R.name)
-		if(mapname && istext(mapname))
-			map = SSmapping.space_ruins_templates[mapname]
-
-//maps
-/datum/team_deathmatch_map/TDM_chambers
-	map = /datum/map_template/ruin/space/TDM_chambers
-	//team_kills = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
-
-/datum/map_template/ruin/space/TDM_chambers
-	name = "Team DeathMatch Combat Chambers"
-	id = "tdm_combat"
-	description = "The map for team deathmatch"
-	unpickable = TRUE
-	always_place = FALSE
-	placement_weight = 1
-	cost = 0
-	allow_duplicates = FALSE
-	prefix = "_maps/toolbox/TDM/Dust1.dmm"
-
-/datum/team_deathmatch_map/TDM_smeltery
-	map = /datum/map_template/ruin/space/TDM_smeltery
-	//team_kills = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
-
-/datum/map_template/ruin/space/TDM_smeltery
-	name = "Team DeathMatch Smeltery Chambers"
-	id = "tdm_smeltery"
-	description = "The smeltery map for team deathmatch"
-	unpickable = TRUE
-	always_place = FALSE
-	placement_weight = 1
-	cost = 0
-	allow_duplicates = FALSE
-	prefix = "_maps/toolbox/TDM/Smeltery.dmm"
-
-
-
-
-
-/********************** MAP DATUMS **************************/
-
-/datum/team_deathmatch_map/grey_tide
-	name = "TDM GreyTide"
-	map = /datum/map_template/ruin/space/TDM_GreyTide //This can be either the type path of the specific map template ruin you want or the name of it
-	team_kills = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
-	team_home_areas = list(
-		/area/TDM/red_base = TDM_RED_TEAM,
-		/area/TDM/blue_base = TDM_BLUE_TEAM)
-	teir_kills = list(0,3,6,15) //kill requirements to unlock each teir of guns, 4 teirs right now.
-	team_outfits = list(
-		TDM_RED_TEAM = list(
-		"t1" = /datum/outfit/TDM/assistant_red),
-		TDM_BLUE_TEAM = list(
-		"t1" = /datum/outfit/TDM/assistant_blue))
-
-/datum/map_template/ruin/space/TDM_GreyTide
-	name = "Team DeathMatch GreyTide"
-	id = "tdm_greytide"
-	description = "The arrivals primary tool storage map for team deathmatch"
-	unpickable = TRUE
-	always_place = FALSE
-	placement_weight = 1
-	cost = 0
-	allow_duplicates = FALSE
-	prefix = "_maps/toolbox/TDM/GreyTide.dmm"
+//
+//  "Have Fun!"
+//   - Degeneral
+//			"k nerd"
+//				- Falaskian
