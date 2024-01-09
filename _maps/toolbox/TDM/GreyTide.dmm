@@ -447,7 +447,7 @@
 "iE" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 1},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/obj/structure/cable/yellow{icon_state = "1-2"},/turf/open/floor/plating,/area/TDM)
 "iF" = (/obj/effect/turf_decal/tile/bar,/obj/effect/turf_decal/tile/bar{dir = 1},/obj/structure/extinguisher_cabinet{pixel_x = -27},/obj/structure/table/wood/poker,/obj/item/toy/cards/deck{pixel_y = 6},/turf/open/floor/plasteel,/area/TDM)
 "iG" = (/obj/effect/turf_decal/tile/bar,/obj/effect/turf_decal/tile/bar{dir = 1},/obj/machinery/door/window{dir = 8; name = "Bar Door"},/turf/open/floor/plasteel,/area/TDM)
-"iH" = (/obj/effect/turf_decal/tile/bar,/obj/effect/turf_decal/tile/bar{dir = 1},/obj/machinery/vending/boozeomat{pixel_x = 32},/turf/open/floor/plasteel,/area/TDM)
+"iH" = (/obj/effect/turf_decal/tile/bar,/obj/effect/turf_decal/tile/bar{dir = 1},/obj/machinery/vending/boozeomat{density = 0; pixel_x = 32},/turf/open/floor/plasteel,/area/TDM)
 "iI" = (/obj/effect/turf_decal/tile/bar,/obj/effect/turf_decal/tile/bar{dir = 1},/obj/structure/table/reinforced,/obj/item/gun/ballistic/shotgun/doublebarrel{pixel_x = 4},/turf/open/floor/plasteel,/area/TDM)
 "iJ" = (/obj/effect/turf_decal/tile/bar,/obj/effect/turf_decal/tile/bar{dir = 1},/obj/structure/table/reinforced,/turf/open/floor/plasteel,/area/TDM)
 "iK" = (/obj/effect/turf_decal/tile/bar,/obj/effect/turf_decal/tile/bar{dir = 1},/obj/structure/table/reinforced,/obj/item/stack/spacecash/c10,/turf/open/floor/plasteel,/area/TDM)
