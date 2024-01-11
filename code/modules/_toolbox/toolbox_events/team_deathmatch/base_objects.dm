@@ -236,7 +236,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 /obj/structure/TDM/spawn_protection
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "shield-old"
-	layer = 2
+	layer = 2.1
 	density = 1
 	var/team = null
 	var/hasShocked = FALSE
