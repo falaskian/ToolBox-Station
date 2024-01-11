@@ -17,7 +17,7 @@
 
 /datum/team_deathmatch_map/TDM_chambers
 	map = /datum/map_template/ruin/space/TDM_chambers
-	//team_kills = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
+	//team_deaths = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
 
 /datum/map_template/ruin/space/TDM_chambers
 	name = "Team DeathMatch Combat Chambers"
@@ -32,7 +32,7 @@
 
 /datum/team_deathmatch_map/TDM_smeltery
 	map = /datum/map_template/ruin/space/TDM_smeltery
-	//team_kills = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
+	//team_deaths = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
 
 /datum/map_template/ruin/space/TDM_smeltery
 	name = "Team DeathMatch Smeltery Chambers"
@@ -52,7 +52,7 @@
 /datum/team_deathmatch_map/ministation
 	name = "TDM MiniStation"
 	map = /datum/map_template/ruin/space/TDM_MiniStation //This can be either the type path of the specific map template ruin you want or the name of it
-	team_kills = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20)
+	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20)
 	team_home_areas = list(
 		/area/TDM/red_base = TDM_RED_TEAM,
 		/area/TDM/blue_base = TDM_BLUE_TEAM)
@@ -86,7 +86,7 @@
 /datum/team_deathmatch_map/ministation_greytide
 	name = "TDM MiniStation - GreyTide"
 	map = /datum/map_template/ruin/space/TDM_MiniStation_GreyTide //This can be either the type path of the specific map template ruin you want or the name of it
-	team_kills = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20)
+	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20)
 	team_home_areas = list(
 		/area/TDM/red_base = TDM_RED_TEAM,
 		/area/TDM/blue_base = TDM_BLUE_TEAM)

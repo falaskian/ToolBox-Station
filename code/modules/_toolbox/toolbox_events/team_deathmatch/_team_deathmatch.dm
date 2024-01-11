@@ -7,6 +7,7 @@
 #define LOBBY_PHASE "phase2"
 #define SETUP_PHASE "phase3"
 #define COMBAT_PHASE "phase4"
+#define GAME_OVER_PHASE "phase5"
 
 #define TDM_RED_TEAM "red"
 #define TDM_BLUE_TEAM "blue"
@@ -32,11 +33,11 @@
 	var/area/lobby_area = /area/TDM/lobby
 	var/lobby_outfit = /datum/outfit/TDM_lobby
 	var/list/team_lobby_areas = list(
-		/area/TDM/lobby/red = "red",
-		/area/TDM/lobby/blue = "blue")
+		/area/TDM/lobby/red = TDM_RED_TEAM,
+		/area/TDM/lobby/blue = TDM_BLUE_TEAM)
 	var/list/team_home_areas = list(
-		/area/TDM/red_base= "red",
-		/area/TDM/blue_base = "blue")
+		/area/TDM/red_base = TDM_RED_TEAM,
+		/area/TDM/blue_base = TDM_BLUE_TEAM)
 	var/next_timer = 0
 	var/list/players = list()
 	var/list/teams = list()
@@ -48,7 +49,7 @@
 	var/list/active_ruins = list()
 	var/list/ruin_turfs = list()
 	var/building_ruin = 0
-	var/death_cap = 30
+	var/list/death_caps = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
 
 //debugging this bullshit
 var/list/some_bullshit = list()
@@ -84,7 +85,7 @@ client/verb/clearbullshit()
 		C.TDM_on = 0
 
 /datum/toolbox_event/team_deathmatch/process()
-	if(SSticker.current_state != GAME_STATE_PLAYING)
+	if(SSticker.current_state != GAME_STATE_PLAYING || phase == GAME_OVER_PHASE)
 		return
 	switch(phase)
 		if(SETUP_LOBBY)
@@ -102,6 +103,7 @@ client/verb/clearbullshit()
 				announce("Team deathmatch will begin in 10 seconds")
 				remembering["10seconds"] = 1
 			if(world.time >= next_timer)
+				next_timer = 0
 				phase = SETUP_PHASE
 				remembering.Remove("10seconds")
 		if(SETUP_PHASE)
@@ -115,34 +117,108 @@ client/verb/clearbullshit()
 				if(cloner.team)
 					cloner.TDM_on = 1
 			phase = COMBAT_PHASE
-			announce("Team deathmatch has begun, this round ends when one team reaches [death_cap] kills.")
-			//clean_repair_ruins()
+			var/announce_end_round_conditions = ""
+			if(islist(death_caps) && death_caps.len)
+				var/position_check = 0
+				for(var/t in death_caps)
+					position_check++
+					if(position_check >= death_caps.len)
+						announce_end_round_conditions += " or when "
+					announce_end_round_conditions += "[capitalize(t)] has [death_caps[t]] deaths"
+					if(position_check >= death_caps.len)
+						announce_end_round_conditions += "."
+			var/datum/team_deathmatch_map/map = get_current_map()
+			if(map && map.round_time > 0)
+				if(announce_end_round_conditions)
+					announce_end_round_conditions += " Round also "
+				else
+					announce_end_round_conditions += " Round "
+				var/seconds = set_timer(map.round_time)
+				var/minutes = 0
+				var/timeout = 200
+				while(seconds >= 60 && timeout > 0)
+					timeout--
+					minutes++
+					seconds -= 60
+				announce_end_round_conditions += "ends after [minutes] minutes[seconds > 0 ? " and [seconds] seconds" : ""]."
+			announce("Team deathmatch has begun, this round ends when [announce_end_round_conditions]")
 		if(COMBAT_PHASE)
+			//spawning new joiners
 			gather_and_spawn_lobbyists(1)
+
+			//should we repair?
+			if(!("repairing" in remembering))
+				remembering["repairing"] = world.time+3000
+			else if(remembering["repairing"])
+				var/repairtime = remembering["repairing"]
+				if(world.time >= repairtime)
+					var/datum/team_deathmatch_map/map = get_current_map()
+					if(map && map.map)
+						clean_repair_ruins(map,repair = map.repair_map,clean_items = map.clean_map_items,clean_bodies = map.clean_map_bodies)
+						remembering.Remove("repairing")
+
+			//calculate if round should end
 			var/list/team_deaths = list()
 			for(var/t in teams)
 				team_deaths[t] = 0
 			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
 				if(cloner.team && cloner.team in team_deaths)
 					team_deaths[cloner.team] +=	cloner.times_cloned
-			var/loser_so_far= ""
-			var/top_deaths_so_far = 0
+			var/loser_so_far = ""
+			var/loser_deaths = 0
+			var/capped_loser = ""
+			var/tie = 0
 			var/winning_team
 			for(var/t in team_deaths)
-				if(!loser_so_far)
+				winning_team = t
+				var/deaths = team_deaths[t]
+				if(deaths > loser_deaths)
+					loser_deaths = deaths
 					loser_so_far = t
-				if(team_deaths[t] > top_deaths_so_far)
-					top_deaths_so_far = team_deaths[t]
-					loser_so_far = t
-			for(var/t in team_deaths)
-				if(t != loser_so_far)
-					winning_team = t
-			if(top_deaths_so_far >= death_cap)
-				announce("This round is over. The winner is Team [winning_team] with [top_deaths_so_far] kills.")
-				phase = SETUP_LOBBY
-				//clean_repair_ruins()
-				restart_players()
-				rotate_map()
+					tie = 0
+				else if(deaths == loser_deaths)
+					tie = 1
+				if(islist(death_caps) && (t in death_caps))
+					if(deaths >= death_caps[t])
+						capped_loser = t
+			var/end_round_message = ""
+			var/timesup = 0
+			if(next_timer > 0 && world.time >= next_timer)
+				timesup = 1
+				next_timer = 0
+				end_round_message = "Times up! "
+			if(timesup || (capped_loser && winning_team))
+				if(!tie)
+					for(var/t in team_deaths)
+						if(t != loser_so_far)
+							winning_team = t
+							end_round_message += "The winner is Team [winning_team] with [loser_deaths] kills."
+				else
+					end_round_message += "The result is a tie."
+					for(var/t in team_deaths)
+						end_round_message += " [capitalize(t)] team has [team_deaths[t]] deaths."
+				if(end_round_message)
+					phase = GAME_OVER_PHASE
+					announce("This round is over. [end_round_message]")
+					spawn(50)
+						phase = SETUP_LOBBY
+						clean_repair_ruins()
+						restart_players()
+						rotate_map()
+					for(var/t in teams)
+						if(t == winning_team)
+							continue
+						var/list/team = teams[t]
+						if(islist(team) && team.len)
+							for(var/datum/mind/mind in team)
+								if(isliving(mind.current))
+									var/mob/living/L = mind.current
+									to_chat(L, "<B>Your team has lost the round!</B>")
+									spawn(0)
+										L.shit_pants(0,0,0)
+									L.Paralyze(50)
+		//nothing happens during GAME_OVER_PHASE phase.
+
 
 /datum/toolbox_event/team_deathmatch/proc/set_timer(time = 60)
 	if(istext(time))
@@ -312,7 +388,7 @@ client/verb/clearbullshit()
 			if(!case.open)
 				case.toggle_lock()
 
-/datum/toolbox_event/team_deathmatch/proc/rotate_map()
+/datum/toolbox_event/team_deathmatch/proc/get_current_map()
 	while(building_ruin)
 		sleep(1)
 	var/datum/map_template/ruin/previous_ruin
@@ -321,22 +397,35 @@ client/verb/clearbullshit()
 			continue
 		previous_ruin = R
 		break
-	if(previous_ruin)
-		delete_ruin(previous_ruin)
+	if(ruin_maps.len && previous_ruin)
+		var/datum/team_deathmatch_map/current
+		for(var/datum/team_deathmatch_map/map in ruin_maps)
+			if(map.map == previous_ruin)
+				current = map
+		if(istype(current))
+			return current
+	return null
+
+/datum/toolbox_event/team_deathmatch/proc/rotate_map()
+	while(building_ruin)
+		sleep(1)
+	var/datum/team_deathmatch_map/current = get_current_map()
+	if(current && current.map)
+		delete_ruin(current.map)
 	if(ruin_maps.len)
-		var/current = 1
-		if(previous_ruin)
-			for(var/i=1,i<=ruin_maps.len,i++)
-				var/datum/team_deathmatch_map/map = ruin_maps[i]
-				if(map.map == previous_ruin)
-					current = i
-			current++
-			if(current > ruin_maps.len)
-				current = 1
-		var/datum/team_deathmatch_map/new_map = ruin_maps[current]
+		var/number = 1
+		for(var/i=1,i<=ruin_maps.len,i++)
+			var/datum/team_deathmatch_map/map = ruin_maps[i]
+			if(map == current)
+				number = i+1
+				if(number > ruin_maps.len)
+					number = 1
+				break
+		var/datum/team_deathmatch_map/new_map = ruin_maps[number]
 		if(new_map && new_map.map)
 			var/list/z_levels = SSmapping.levels_by_trait("Team_Deathmatch")
 			spawn_ruin(new_map.map,z_levels)
+			post_spawn(new_map)
 			setup_cloners(new_map)
 
 /datum/toolbox_event/team_deathmatch/proc/setup_cloners(datum/team_deathmatch_map/new_map)
@@ -363,47 +452,48 @@ client/verb/clearbullshit()
 					results.Add(turfs)
 	return results
 
-/*/datum/toolbox_event/team_deathmatch/proc/save_ruin_data()
-	var/list/turfs = get_all_ruin_floors()
-	if(turfs.len)
-		for(var/turf/T in turfs)
-			for(var/obj/item/I in T)
-				saved_items += I
-			ruin_turfs["x=[T.x];y=[T.y];z=[T.z]"] = T.type*/
-
-/datum/toolbox_event/team_deathmatch/proc/clean_repair_ruins()
-	for(var/t in ruin_turfs)
-		var/list/paramslist = params2list(t)
-		if(!islist(paramslist) || !paramslist.len)
+/datum/toolbox_event/team_deathmatch/proc/clean_repair_ruins(specific,repair = 1,clean_items = 1,clean_bodies = 1)
+	for(var/ruin in ruin_turfs)
+		if(specific && ruin != specific)
 			continue
-		var/turf/T = locate(text2num(paramslist["x"]),text2num(paramslist["y"]),text2num(paramslist["z"]))
-		if(T)
-			var/thetype = ruin_turfs[t]
-			if(thetype)
-				if(T.type != thetype)
-					T.ChangeTurf(thetype)
-			for(var/atom/movable/AM in T)
-				if(AM in saved_items)
+		if(islist(ruin_turfs[ruin]))
+			for(var/t in ruin_turfs[ruin])
+				var/list/paramslist = params2list(t)
+				if(!islist(paramslist) || !paramslist.len)
 					continue
-				var/delete_this = 0
-				var/mob/living/L
-				if(istype(AM,/mob/living))
-					L = AM
-					if((!L.client) && L.stat && ((!L.mind)||(L.mind && L.mind.assigned_role == player_assigned_role)))
-						delete_this = 1
-				if(!delete_this && istype(AM,/obj/item))
-					delete_this = 1
-				if(delete_this)
-					if(L)
-						for(var/obj/item/I in L.get_contents())
-							if(I in saved_items)
-								I.forceMove(L.loc)
-					qdel(AM)
-			if(istype(T,/turf/open/floor))
-				var/turf/open/floor/F = T
-				if(F.initial_gas_mix && F.air)
-					F.air.copy_from_turf(F)
-					F.update_icon()
+				var/turf/T = locate(text2num(paramslist["x"]),text2num(paramslist["y"]),text2num(paramslist["z"]))
+				if(T)
+					var/list/to_be_cleansed = list()
+					for(var/atom/movable/AM in T)
+						if(AM in saved_items)
+							continue
+						to_be_cleansed += AM
+					for(var/atom/movable/AM in to_be_cleansed)
+						var/delete_this = 0
+						var/mob/living/L
+						if(istype(AM,/mob/living) && clean_bodies)
+							L = AM
+							if((!L.client) && L.stat && ((!L.mind)||(L.mind && L.mind.assigned_role == player_assigned_role)))
+								delete_this = 1
+						if(!delete_this && istype(AM,/obj/item) && clean_items)
+							delete_this = 1
+						if(delete_this)
+							if(L)
+								for(var/obj/item/I in L.get_contents())
+									if(I in saved_items)
+										I.forceMove(L.loc)
+										if(!(AM in saved_items))
+											to_be_cleansed += I
+							qdel(AM)
+					if(repair)
+						var/thetype = text2path(paramslist[type])
+						if(ispath(thetype) && T.type != thetype)
+							T.ChangeTurf(thetype)
+						if(istype(T,/turf/open/floor))
+							var/turf/open/floor/F = T
+							if(F.initial_gas_mix && F.air)
+								F.air.copy_from_turf(F)
+								F.update_icon()
 
 /datum/toolbox_event/team_deathmatch/proc/spawn_ruin(datum/map_template/ruin/ruin,list/z_levels)
 	. = 0
@@ -432,6 +522,8 @@ client/verb/clearbullshit()
 		SSair.can_fire = 1
 
 /datum/toolbox_event/team_deathmatch/proc/delete_ruin(datum/map_template/ruin/ruin)
+	if(!istype(ruin))
+		return
 	while(building_ruin)
 		sleep(1)
 	for(var/obj/effect/landmark/ruin/L in GLOB.ruin_landmarks)
@@ -464,7 +556,23 @@ client/verb/clearbullshit()
 						building_ruin = 0
 			active_ruins.Remove(ruin)
 			qdel(L)
+			for(var/datum/team_deathmatch_map/map in ruin_maps)
+				if(map.map && map.map == ruin)
+					ruin_turfs.Remove(ruin)
+					break
 			break
+
+/datum/toolbox_event/team_deathmatch/proc/post_spawn(datum/team_deathmatch_map/new_map)
+	if(new_map)
+		death_caps = new_map.team_deaths
+		if(new_map.map)
+			var/list/turfs = get_all_ruin_floors(new_map.map)
+			if(turfs.len)
+				ruin_turfs[new_map] = list()
+				for(var/turf/T in turfs)
+					for(var/obj/item/I in T)
+						saved_items += I
+					ruin_turfs[new_map] += "type=[T.type];x=[T.x];y=[T.y];z=[T.z]"
 
 /datum/toolbox_event/team_deathmatch/proc/load_maps()
 	SSmapping.add_new_zlevel("Team_Deathmatch", list(ZTRAIT_LINKAGE = UNAFFECTED, "Team_Deathmatch" = TRUE))
