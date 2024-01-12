@@ -4,7 +4,7 @@
 /datum/team_deathmatch_map
 	var/name = "TDM MAP"
 	var/datum/map_template/ruin/map //This can be either the type path of the specific map template ruin you want or the name of it
-	var/list/team_deaths = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30) //round ends when a team meets their number of deaths
+	var/list/team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20) //round ends when a team meets their number of deaths
 	var/round_time = 0 //this is how many seconds before the round ends. if 0 its ignored and the round can only end based on kills.
 	var/list/team_home_areas = list(
 		/area/TDM/red_base = TDM_RED_TEAM,

@@ -489,7 +489,6 @@
 "ju" = (/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral,/obj/structure/reagent_dispensers/water_cooler,/turf/open/floor/plasteel,/area/TDM)
 "jv" = (/obj/machinery/light/small{dir = 1},/turf/open/floor/wood,/area/TDM)
 "jw" = (/obj/machinery/conveyor{desc = "A treadmill."; dir = 4; id = "ministation_treadmill_1"; name = "treadmill"},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plasteel,/area/TDM)
-"jx" = (/obj/structure/bed,/obj/effect/landmark/start/mime,/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel/white/side,/area/crew_quarters/mime)
 "jy" = (/obj/structure/weightmachine/stacklifter,/obj/effect/turf_decal/tile/blue{dir = 4},/obj/effect/turf_decal/tile/blue,/obj/effect/turf_decal/tile/blue{dir = 1},/turf/open/floor/plasteel,/area/TDM)
 "jz" = (/obj/machinery/conveyor/inverted{dir = 5; id = "garbage"},/turf/open/floor/plating,/area/TDM)
 "jA" = (/obj/machinery/conveyor{dir = 8; id = "garbage"},/turf/open/floor/plating,/area/TDM)
@@ -557,6 +556,7 @@
 "kK" = (/obj/effect/turf_decal/tile/blue,/obj/effect/turf_decal/tile/blue{dir = 8},/turf/open/floor/plasteel,/area/TDM)
 "kL" = (/obj/structure/punching_bag,/obj/effect/turf_decal/tile/blue,/obj/effect/turf_decal/tile/blue{dir = 8},/obj/effect/turf_decal/tile/blue{dir = 4},/turf/open/floor/plasteel,/area/TDM)
 "kM" = (/obj/machinery/door/airlock/maintenance{name = "Disposal Access"; req_access_txt = "0"},/turf/open/floor/plating,/area/TDM)
+"kN" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction; tier_level = 3},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
 "kO" = (/obj/structure/curtain{name = "shower curtain"},/turf/open/floor/plasteel/freezer,/area/TDM)
 "kP" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{dir = 1},/obj/item/bikehorn/rubberducky,/turf/open/floor/plasteel/freezer,/area/TDM)
 "kQ" = (/obj/machinery/camera/autoname{dir = 8},/turf/open/floor/plasteel/freezer,/area/TDM)
@@ -624,22 +624,21 @@
 "ma" = (/obj/structure/flora/ausbushes/grassybush,/obj/structure/railing{dir = 6; resistance_flags = 115},/turf/open/floor/grass,/area/TDM)
 "mb" = (/obj/structure/chair{dir = 1},/turf/open/floor/plasteel,/area/TDM)
 "mc" = (/turf/template_noop,/area/template_noop)
-"md" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction; tier_level = 3},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
-"me" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/shield/riot; tier_level = 3},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
-"mf" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle; tier_level = 4},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
-"mg" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle; tier_level = 4},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
-"mh" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/shield/riot; tier_level = 3},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
-"mi" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction; tier_level = 3},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
-"mj" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/s12g; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot; tier_level = 2},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
-"mk" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
-"ml" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
-"mm" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM; tier_level = 2},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
-"mn" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi; tier_level = 3},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
-"mo" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted; tier_level = 4},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
-"mp" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted; tier_level = 4},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
-"mq" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi; tier_level = 3},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
-"mr" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM; tier_level = 2},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
-"ms" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
+"md" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/shield/riot; tier_level = 3},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
+"me" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle; tier_level = 4},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
+"mf" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle; tier_level = 4},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
+"mg" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/shield/riot; tier_level = 3},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
+"mh" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction; tier_level = 3},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
+"mi" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/s12g; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot; tier_level = 2},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
+"mj" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
+"mk" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
+"ml" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM; tier_level = 2},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
+"mm" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi; tier_level = 3},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
+"mn" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted; tier_level = 4},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
+"mo" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted; tier_level = 4},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
+"mp" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi; tier_level = 3},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
+"mq" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM; tier_level = 2},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
+"mr" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -658,8 +657,8 @@ aaabababababababababababababadcFanananananancGadabadcHbMblapapapapapcIapcJbacKcL
 aaababababababababababababcXcXcYcZdadadadacZcYcXcXadbHdbbldcdddedfdgdhapckbabadibabackapdjdkdldmdndodpdqdrdsapcvcwcRdtdudvdwapdxapdydzdAdBapdCbIaddDdDdEdFdGdGdGdGdFdEdDdDabababababababababababaa
 aaabababababababababcXcXcXcXdHdIdJdIdIdIdIdJdIdOdPanbHdQbldRbacKdScMdTapdUbabababababadVbadWbwbwbwbwbwbwdXbadYcwcwdZcweaeaeaapebecedeeeflSapegbIaneheiejekejejejejekejepdDdDdDdDababababababababaa
 aaabababababababababeqereseteudIdKdLdIdMeudIdNdOewanbHexbleyezeAeBeCeDapeEbababababaeFaEeGeHeIbabababaeJeKeLapeMeNeOePePePePeQeReSeVeUeVeWapexbIaneheielejeXemejeneoejeXeZfafbfcababababababababaa
-aaabababababababababeqeueufdeudIeveYdImdmedImfdOewanbHfefffgfhfifjfiapapapapapfkbabaflblfmfnbababafobabafpfqapcwfrfscwapftapapapfufvfwfxapapfybIaneheimgejmhmiejmjmkejeXfzeXeXfcababababababababaa
-aaabababababababababeqerfAeteudImlmmdImneudImodOewanbHbafBfCfDfDfDbafEcofFfGapfHbabafIblfJfnbafKfLfMfNfOfPfQapcwfRfScwapbabacofTfDfDfDfDbafBbabIaneheimpejeXmqejmrmsejeXeZfUfbfcababababababababaa
+aaabababababababababeqeueufdeudIeveYdIkNmddImedOewanbHfefffgfhfifjfiapapapapapfkbabaflblfmfnbababafobabafpfqapcwfrfscwapftapapapfufvfwfxapapfybIaneheimfejmgmhejmimjejeXfzeXeXfcababababababababaa
+aaabababababababababeqerfAeteudImkmldImmeudImndOewanbHbafBfCfDfDfDbafEcofFfGapfHbabafIblfJfnbafKfLfMfNfOfPfQapcwfRfScwapbabacofTfDfDfDfDbafBbabIaneheimoejeXmpejmqmrejeXeZfUfbfcababababababababaa
 aaabababababababababcXcXcXcXfVdIfWdIdIdIdIfWdIdOfXanbHbafYfZgagagbgcgcgcgdbaapgegfgeapblgegggeapapapapgeghgiapgjgegkgjapbaglgagagagagagagagmbabIaneheiejgnejejejejgnejgodDdDdDdDababababababababaa
 aaababababababababababababcXcXcYcZdadadadacZcYcXcXadgpbagegqgrgsgtguapgvgwbagxbabababagybagzbabababababafpgAbababagAbagxbagBgvapgugCgsgrgCgebagDaddDdDdEdFdGdGdGdGdFdEdDdDabababababababababababaa
 aaabababababababababababababadgEanananananangFadabadcHgGgegHgIgJgKgLapgMgNgOgPbabababagQgRgSgRgRgRgRgRgRgTgUgRgRgRgVbafBgWgBgMapgXgYgYgIgZgegGcWadabadgFanananananangEadababababababababababababaa
@@ -681,7 +680,7 @@ aaababababababababababababababababababababababababababababababababanjbbababababa
 aaababababababababababababababababababababababababababababababababadadadadadadadadanananadbabalKlLlMlNbalOadanananadadadadadadadadabababababababababababababababababababababababababababababababaa
 aaabababababababababababababababababababababababababababababababababababababababababababanlPbalQlRlglTbalUanababababababababababababababababababababababababababababababababababababababababababaa
 aaabababababababababababababababababababababababababababababababababababababababababababanlVlWlXlYlZmabambanabaeabababababaeaeaeaeaeababaeabababababababababababababababababababababababababababaa
-aaabababababababababababababababababababababababababababababababababababababababababababananananananananananabababababababaeabaeababjxabababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababababababababababananananananananananabababababababaeabaeababababababababababababababababababababababababababababababababaa
 aaabababababababababababababababababababababababababababababababababababababababababababababaeaeaeaeaeaeaeaeababababababababababababababababababababababababababababababababababababababababababaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
