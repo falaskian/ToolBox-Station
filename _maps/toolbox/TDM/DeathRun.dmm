@@ -1,4 +1,4 @@
-"aa" = (/turf/closed/indestructible/riveted/TDM,/area/space)
+"aa" = (/turf/closed/indestructible/riveted/TDM,/area/TDM)
 "ab" = (/turf/closed/wall/rust,/area/TDM)
 "ac" = (/turf/open/floor/plating/rust,/area/TDM)
 "ad" = (/obj/machinery/power/emitter{active = 1; active_power_usage = 0; anchored = 1; idle_power_usage = 0; resistance_flags = 115; state = 2},/turf/open/floor/plating/rust,/area/TDM)

@@ -70,7 +70,6 @@
 "br" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction; tier_level = 3},/turf/open/indestructible,/area/TDM/blue_base)
 "bs" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi; tier_level = 3},/turf/open/indestructible,/area/TDM/red_base)
 "bt" = (/obj/structure/railing{dir = 10},/turf/open/floor/sepia/TDM,/area/TDM)
-"bu" = (/obj/structure/lattice/catwalk,/obj/structure/railing,/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/lava/smooth{slowdown = 0},/area/TDM)
 "bv" = (/obj/structure/lattice/catwalk,/obj/structure/railing/corner{dir = 8},/turf/open/lava/smooth{slowdown = 0},/area/TDM)
 "bw" = (/obj/structure/lattice/catwalk,/obj/structure/railing/corner,/turf/open/lava/smooth{slowdown = 0},/area/TDM)
 "bx" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted; tier_level = 4},/turf/open/indestructible,/area/TDM/red_base)
@@ -189,7 +188,7 @@ aaavavbPavaBavavavayaoaoaoaUaoaoaUaUaoaoaoababacacacababclclclaoaoaoaoaoaoaoatac
 aaavaDaEaEaEaEaEaDavavaoaoaoaoaoaoaUaoaoaoaoabarararabclclclaUaoaoaoaoaoaoaoataccQcQacacacacbhaZaZaZbnacacacaccQcQacasaoaoaoaoaoaoaoaUclclclabarararabaoaoaoaoaUaoaoaoaoaoaoaAaAaFaGaGaGaGaGaFaAaa
 aaavaEaEaEaEaEaEaEaDavaoaoaoaoaoaoaoaoaoaoaobWclclclclclaUaUaoaoaoaoaoaoaoaoabababababanananboaZaZaZbtanananabababababaoaoaoaoaoaoaoaoaUaUclclclclclcnaoaoaoaoaoaoaoaoaoaoaoaAaFaGaGaGaGaGaGaGaAaa
 aaavaEaEaEaEaEaEaEaEavaoaoaoaoaoaoaoaoaoaoaobXbYbYbYbYbYbZaoaoaoaoaoaoaoaoaoaoaoclababaZaZaZaZaZaZaZaZaZaZaZababclaoaoaoaoaoaoaoaoaoaoaobXbYbYbYbYbYdjaoaoaoaoaoaoaoaoaoaoaoaAaGaGaGaGaGaGaGaGaAaa
-aaavaEaEaEaIavaEaEaEaBaoaoaUaoaoaoaoaobmaoaoaoaoaoaoaoaoaoaoaoaoaoaoaUaoaoaoaoclclclabbubvbwbzbvaZbwbzbvbwbAabclclclaoaoaoaoaUaoaoaoaoaoaoaoaoaoaoaoaoaoaobmaoaoaoaoaoaUaoaoaNaGaGaGaAaJaGaGaGaAaa
+aaavaEaEaEaIavaEaEaEaBaoaoaUaoaoaoaoaobmaoaoaoaoaoaoaoaoaoaoaoaoaoaoaUaoaoaoaoclclclabbAbvbwbzbvaZbwbzbvbwbAabclclclaoaoaoaoaUaoaoaoaoaoaoaoaoaoaoaoaoaoaobmaoaoaoaoaoaUaoaoaNaGaGaGaAaJaGaGaGaAaa
 aaavaKaEaEaLavaEaEaEaBaoaoaUaoaoaoaoaoaZaZaoaoaoaoaoaoaoaoaoaoaoaoaUaoaoaoaoclclclclclclbDbFclbDaZbFclbDbFclclclclclclaoaoaoaoaUaoaoaoaoaoaoaoaoaoaoaoaoaZaZaoaoaoaoaoaUaoaoaNaGaGaGaAaMaGaGaOaAaa
 aaayaRaEaEaPayaEaEaEavaoaoaoaoaoaoaoaZaZaZaZaoaoaoaoaoaUaoaoaHaoaoaoaoaoaoclclclclclclclbDbFclbDaZbFclbDbFclclclclclclclaoaoaoaoaoaoaHaoaoaUaoaoaoaoaoaZaZaZaZaoaoaoaoaoaoaoaAaGaGaGazaQaGaGaSazaa
 aaavaWaEaEaTavaEaEaEavcybCbCbCbCabbHbHbHbHbHbHabclclclaHbEbEaHclclclclclclclclclclclclbKbMbFclbDbmbFclbDbNbOclclclclclclclclclclclclaHbEbEaHclclclabbHbHbHbHbHbHabbCbCbCbCcyaAaGaGaGaAaVaGaGbbaAaa
