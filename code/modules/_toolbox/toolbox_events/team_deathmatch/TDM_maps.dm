@@ -6,7 +6,7 @@
 /datum/team_deathmatch_map/template
 	name = "TDM Map Name"
 	map = /datum/map_template/ruin/space/TDM_Template //This can be either the type path of the specific map template ruin you want or the name of it
-	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20) //Number of respawns for each team
+	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20) //Number of respawn points for each team
 	round_time = 0 //How long does the round last
 	team_home_areas = list(
 		/area/TDM/red_base = TDM_RED_TEAM,
@@ -175,6 +175,36 @@
 
 
 
+		//DeathRun
+
+/datum/team_deathmatch_map/deathrun
+	name = "DeathRun"
+	map = /datum/map_template/ruin/space/TDM_DeathRun
+	team_deaths = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 3) //Blue Team (Death) have only 3 respawn points
+	round_time = 600
+	team_outfits = list(
+		TDM_RED_TEAM = list(
+		"t1" = /datum/outfit/TDM/Runner),
+		TDM_BLUE_TEAM = list(
+		"t1" = /datum/outfit/TDM/Death))
+
+
+/datum/map_template/ruin/space/TDM_DeathRun
+	name = "DeathRun"
+	id = "tdm_deathrun"
+	description = "DeathRun Map"
+	unpickable = TRUE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
+	prefix = "_maps/toolbox/TDM/Template.dmm"
+
+
+
+
+/********************** INACTIVE MAPS **************************/
+/*
 		//MiniStation - GreyTide - NoBase
 
 /datum/team_deathmatch_map/ministation_greytide_nobase
@@ -205,3 +235,4 @@
 
 
 
+*/
