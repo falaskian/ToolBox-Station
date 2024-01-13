@@ -209,6 +209,11 @@
 	name = "Blue Base"
 	icon_state = "blue2"
 
+/area/TDM/offlimits
+	name = "Off Limits Area"
+	icon_state = "space_near"
+
+
 		//Snow Turfs
 
 /turf/open/floor/plating/asteroid/snow/snowball

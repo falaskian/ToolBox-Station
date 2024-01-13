@@ -1,182 +1,204 @@
 "aa" = (/turf/closed/indestructible/riveted/TDM,/area/space)
 "ab" = (/turf/closed/wall/rust,/area/TDM)
 "ac" = (/turf/open/floor/plating/rust,/area/TDM)
-"ad" = (/obj/effect/portal/permanent{id = "p1"},/turf/open/floor/plating/rust,/area/TDM)
-"ae" = (/obj/machinery/door/poddoor/TDM/fast/preopen{id = "d1"},/turf/open/floor/plating/rust,/area/TDM)
-"af" = (/turf/open/floor/holofloor/grass,/area/TDM)
-"ag" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM)
-"ah" = (/obj/machinery/button/door{id = "d1"; sync_doors = 0; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"ai" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
-"aj" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM/red_base)
-"ak" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/red,/obj/structure/fans/tiny/invisible,/turf/open/floor/sepia/TDM,/area/TDM/red_base)
-"al" = (/obj/item/banner/TDM/red,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
-"am" = (/obj/item/banner/TDM/blue,/turf/closed/wall,/area/TDM/blue_base)
-"an" = (/turf/closed/wall,/area/TDM/blue_base)
-"ao" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/blue,/obj/structure/fans/tiny/invisible,/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
-"ap" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
-"aq" = (/obj/structure/TDM/floodlight,/turf/open/indestructible,/area/TDM/red_base)
-"ar" = (/turf/open/indestructible,/area/TDM/red_base)
-"as" = (/obj/structure/TDM/floodlight,/turf/open/indestructible,/area/TDM/blue_base)
-"at" = (/turf/open/indestructible,/area/TDM/blue_base)
-"au" = (/obj/structure/TDM/medical_cabinet{pixel_x = 9},/obj/structure/TDM/wallmed{pixel_x = -6},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
-"av" = (/obj/structure/TDM/medical_cabinet{pixel_x = -9},/obj/structure/TDM/wallmed{pixel_x = 6},/turf/closed/wall,/area/TDM/blue_base)
-"aw" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a357/TDM; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM; tier_level = 2},/turf/open/indestructible,/area/TDM/red_base)
-"ax" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/red_base)
-"ay" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/blue_base)
-"az" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM},/turf/open/indestructible,/area/TDM/blue_base)
-"aA" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/s12g; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot; tier_level = 2},/turf/open/indestructible,/area/TDM/red_base)
-"aB" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/red_base)
-"aC" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/blue_base)
-"aD" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/s12g; death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot},/turf/open/indestructible,/area/TDM/blue_base)
-"aE" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM; tier_level = 2},/turf/open/indestructible,/area/TDM/red_base)
-"aF" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/red_base)
-"aG" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/blue_base)
-"aH" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM},/turf/open/indestructible,/area/TDM/blue_base)
-"aI" = (/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/turf/open/indestructible,/area/TDM/red_base)
-"aJ" = (/obj/machinery/clonepod/TDM/team_blue{TDM_on = 1},/turf/open/indestructible,/area/TDM/blue_base)
-"aK" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/shield/riot; tier_level = 3},/turf/open/indestructible,/area/TDM/red_base)
-"aL" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/shield/riot},/turf/open/indestructible,/area/TDM/blue_base)
-"aM" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/TDM; tier_level = 3},/turf/open/indestructible,/area/TDM/red_base)
-"aN" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/TDM; tier_level = 4},/turf/open/indestructible,/area/TDM/red_base)
-"aO" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/TDM},/turf/open/indestructible,/area/TDM/blue_base)
-"aP" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/TDM},/turf/open/indestructible,/area/TDM/blue_base)
-"aQ" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction; tier_level = 3},/turf/open/indestructible,/area/TDM/red_base)
-"aR" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle; tier_level = 4},/turf/open/indestructible,/area/TDM/red_base)
-"aS" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle},/turf/open/indestructible,/area/TDM/blue_base)
-"aT" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction},/turf/open/indestructible,/area/TDM/blue_base)
-"aU" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi; tier_level = 3},/turf/open/indestructible,/area/TDM/red_base)
-"aV" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted; tier_level = 4},/turf/open/indestructible,/area/TDM/red_base)
-"aW" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted},/turf/open/indestructible,/area/TDM/blue_base)
-"aX" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi},/turf/open/indestructible,/area/TDM/blue_base)
-"aY" = (/turf/template_noop,/area/template_noop)
-"aZ" = (/obj/structure/flora/junglebush/large,/turf/open/floor/holofloor/grass,/area/TDM)
-"ba" = (/obj/structure/flora/junglebush/c,/turf/open/floor/holofloor/grass,/area/TDM)
-"bb" = (/obj/structure/flora/tree/jungle,/turf/open/floor/holofloor/grass,/area/TDM)
-"bc" = (/obj/structure/flora/junglebush/b,/turf/open/floor/holofloor/grass,/area/TDM)
-"bd" = (/obj/structure/flora/tree/jungle/small,/turf/open/floor/holofloor/grass,/area/TDM)
-"be" = (/obj/machinery/button/door{id = "d1"; pixel_x = 10; resistance_flags = 115; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
-"bf" = (/obj/machinery/door/poddoor/TDM/fast{id = "d1"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bg" = (/obj/machinery/door/poddoor/TDM/fast/preopen{id = "d2"},/turf/open/floor/plating/rust,/area/TDM)
-"bh" = (/turf/open/chasm,/area/TDM)
-"bi" = (/obj/machinery/button/door{id = "d2"; sync_doors = 0; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bj" = (/obj/machinery/door/poddoor/TDM/fast{id = "d2"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bk" = (/obj/machinery/button/door{id = "d3"; sync_doors = 0; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bl" = (/obj/effect/portal/permanent{id = "p2"},/turf/open/floor/plating/rust,/area/TDM)
-"bm" = (/obj/machinery/door/poddoor/TDM/fast/preopen{autoclose = 20; id = "d3"},/turf/open/floor/plating/rust,/area/TDM)
-"bn" = (/obj/machinery/conveyor{dir = 1; id = "c1"; operating = 1; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bo" = (/obj/machinery/conveyor_switch{id = "c1"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bp" = (/obj/effect/portal/permanent{id = "p3"},/turf/open/floor/plating/rust,/area/TDM)
-"bq" = (/obj/machinery/conveyor{dir = 1; id = "c2"; operating = 1; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"br" = (/obj/effect/portal/permanent{id = "p4"},/turf/open/floor/plating/rust,/area/TDM)
-"bs" = (/obj/machinery/button/door{id = "d4"; sync_doors = 0; resistance_flags = 115},/turf/closed/wall/rust,/area/TDM)
-"bt" = (/obj/machinery/door/poddoor/TDM/fast{id = "d4"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bu" = (/obj/machinery/button/door{id = "d4"; sync_doors = 0; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bv" = (/obj/effect/portal/permanent{id = "pd1"; name = "Hallway B"},/turf/open/floor/plating/rust,/area/TDM)
-"bw" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM)
-"bx" = (/obj/machinery/door/poddoor/TDM/fast{id = "db"; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM)
-"by" = (/obj/machinery/button/door{id = "db"; pixel_x = -24; sync_doors = 0; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM)
-"bz" = (/obj/structure/TDM/spawn_protection/red,/obj/structure/mineral_door/iron/TDM,/turf/open/floor/plating/rust,/area/TDM)
-"bA" = (/obj/machinery/conveyor{id = "c2"; operating = 1; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bB" = (/obj/machinery/conveyor{dir = 8; id = "c3"; operating = 1; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bC" = (/obj/machinery/conveyor_switch{id = "c3"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bD" = (/obj/machinery/conveyor_switch{id = "c2"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bE" = (/obj/effect/portal/permanent{id = "p5"},/turf/open/floor/plating/rust,/area/TDM)
-"bF" = (/obj/machinery/conveyor{id = "c5"; operating = 1; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bG" = (/obj/machinery/door/poddoor/TDM/fast/preopen{id = "d3_c"},/turf/open/chasm,/area/TDM)
-"bH" = (/obj/machinery/conveyor{dir = 1; id = "c5"; operating = 1; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bI" = (/obj/machinery/door/poddoor/TDM/fast{id = "d5"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bJ" = (/obj/effect/portal/permanent{id = "p7"},/turf/open/floor/plating/rust,/area/TDM)
-"bK" = (/obj/machinery/conveyor_switch{id = "c5"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bL" = (/obj/structure/ore_box/TDM,/turf/open/floor/plating/rust,/area/TDM)
-"bM" = (/obj/machinery/button/door{id = "d5"; sync_doors = 0; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bN" = (/obj/machinery/conveyor_switch{id = "c4"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bO" = (/obj/machinery/conveyor{dir = 1; id = "c4"; operating = 1; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bP" = (/obj/machinery/conveyor{id = "c4"; operating = 1; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bQ" = (/obj/effect/portal/permanent{id = "pf"},/turf/open/floor/plating/rust,/area/TDM)
-"bR" = (/obj/effect/portal/permanent{id = "p6"},/turf/open/floor/plating/rust,/area/TDM)
-"bS" = (/obj/effect/portal/permanent{id = "pbb"; name = "Blue Base"},/turf/open/floor/plating/rust,/area/TDM)
-"bT" = (/obj/effect/portal/permanent{id = "pbb"; name = "Start"},/turf/open/floor/plating/rust,/area/TDM)
-"bU" = (/obj/machinery/door/poddoor/TDM/fast/preopen{id = "d6"},/turf/open/floor/plating/rust,/area/TDM)
-"bV" = (/obj/machinery/button/door{id = "d6"; sync_doors = 0; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bW" = (/obj/machinery/power/emitter/on,/turf/open/floor/plating/rust,/area/TDM)
-"bX" = (/obj/structure/flora/junglebush/large,/obj/item/clothing/shoes/clown_shoes,/turf/open/floor/holofloor/grass,/area/TDM)
-"bY" = (/obj/item/clothing/shoes/sandal,/turf/open/floor/plating/rust,/area/TDM)
-"bZ" = (/obj/item/clothing/shoes/galoshes,/turf/open/floor/plating/rust,/area/TDM)
-"ca" = (/obj/item/clothing/shoes/sneakers/rainbow,/turf/open/floor/plating/rust,/area/TDM)
-"cb" = (/obj/item/clothing/shoes/jackboots,/turf/open/floor/plating/rust,/area/TDM)
-"cc" = (/obj/item/clothing/shoes/sneakers/white,/turf/open/floor/plating/rust,/area/TDM)
-"cd" = (/obj/item/clothing/shoes/winterboots,/turf/open/floor/plating/rust,/area/TDM)
-"ce" = (/obj/item/clothing/shoes/sneakers/green,/turf/open/floor/plating/rust,/area/TDM)
-"cf" = (/obj/item/clothing/shoes/workboots,/turf/open/floor/plating/rust,/area/TDM)
-"cg" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/red,/turf/open/floor/plating/rust,/area/TDM)
-"ch" = (/obj/effect/portal/permanent{id = "pd1"; name = "Hallway A"},/turf/open/floor/plating/rust,/area/TDM)
-"ci" = (/turf/open/floor/carpet/royalblack,/area/TDM)
-"cj" = (/obj/structure/closet/crate/coffin{anchored = 1},/turf/open/floor/carpet/royalblack,/area/TDM)
-"ck" = (/obj/machinery/clonepod/TDM/team_blue{TDM_on = 1},/turf/open/floor/carpet/royalblack,/area/TDM)
-"cl" = (/obj/item/flashlight/lantern/on,/turf/open/floor/carpet/royalblack,/area/TDM)
-"cm" = (/obj/structure/closet/crate/coffin,/turf/open/floor/carpet/royalblack,/area/TDM)
-"cn" = (/obj/structure/table/wood/fancy/red,/obj/item/candle/infinite{name = "cursed candle"; pixel_y = 1},/turf/open/floor/carpet/royalblack,/area/TDM)
-"co" = (/obj/structure/table/wood/fancy/red,/obj/item/book/TDM/death{pixel_y = 6},/turf/open/floor/carpet/royalblack,/area/TDM)
-"cp" = (/obj/effect/decal/remains/human,/turf/open/floor/carpet/royalblack,/area/TDM)
-"cq" = (/obj/machinery/conveyor{id = "c1"; operating = 1; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"cr" = (/obj/machinery/button/door{id = "d2"; pixel_x = 10; resistance_flags = 115; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
-"cs" = (/obj/machinery/button/door{id = "d3"; pixel_x = 10; resistance_flags = 115; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
-"ct" = (/obj/machinery/button/door{id = "d3_c"; resistance_flags = 115; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
-"cu" = (/obj/structure/reflector/single/anchored{dir = 1},/turf/open/floor/plating/rust,/area/TDM)
-"cv" = (/obj/item/grown/bananapeel{anchored = 1},/obj/machinery/conveyor{id = "c5"; operating = 1; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"cw" = (/obj/machinery/door/poddoor/TDM/fast{id = "d6"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"cx" = (/obj/machinery/button/door{id = "d6"; pixel_x = -10; resistance_flags = 115; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
-"cI" = (/obj/structure/chair/pew/left{dir = 1},/turf/open/floor/carpet/royalblack,/area/TDM)
-"cJ" = (/obj/structure/chair/pew/right{dir = 1},/turf/open/floor/carpet/royalblack,/area/TDM)
-"cK" = (/turf/open/floor/carpet/red,/area/TDM)
-"di" = (/obj/structure/table/wood,/obj/item/reagent_containers/food/snacks/grown/poppy,/turf/open/floor/carpet/royalblack,/area/TDM)
+"ad" = (/obj/machinery/power/emitter{active = 1; active_power_usage = 0; anchored = 1; idle_power_usage = 0; resistance_flags = 115; state = 2},/turf/open/floor/plating/rust,/area/TDM)
+"ae" = (/obj/machinery/door/poddoor/preopen{id = "d1"},/turf/open/floor/plating/rust,/area/TDM)
+"af" = (/obj/machinery/button/door{id = "d1"; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
+"ag" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/door/poddoor{id = "d1"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
+"ah" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/door/poddoor{id = "d2"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
+"ai" = (/obj/machinery/door/poddoor/preopen{id = "d2"},/turf/open/floor/plating/rust,/area/TDM)
+"aj" = (/obj/structure/ore_box/TDM,/turf/open/floor/plating/rust,/area/TDM)
+"ak" = (/obj/machinery/door/poddoor/preopen{id = "d3"},/turf/open/floor/plating/rust,/area/TDM)
+"al" = (/obj/machinery/button/door{id = "d3"; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
+"am" = (/turf/open/chasm,/area/TDM)
+"an" = (/obj/effect/portal/permanent{id = "p1"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"ao" = (/obj/machinery/button/door{id = "d2"; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
+"ap" = (/obj/effect/portal/permanent{id = "p2"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"aq" = (/obj/machinery/conveyor{id = "c1"; operating = 1},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"ar" = (/obj/machinery/conveyor{id = "c1"; operating = 1},/turf/open/floor/plating/rust,/area/TDM)
+"as" = (/obj/machinery/conveyor{id = "c1"; operating = 1},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"at" = (/obj/machinery/conveyor{dir = 1; id = "c1"; operating = 1},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"au" = (/obj/machinery/conveyor{dir = 1; id = "c1"; operating = 1},/turf/open/floor/plating/rust,/area/TDM)
+"av" = (/obj/machinery/conveyor{dir = 1; id = "c1"; operating = 1},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"aw" = (/obj/machinery/conveyor{dir = 1; id = "c2"},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"ax" = (/obj/machinery/conveyor{dir = 1; id = "c2"},/turf/open/floor/plating/rust,/area/TDM)
+"ay" = (/obj/machinery/conveyor{dir = 1; id = "c2"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"az" = (/obj/machinery/conveyor{id = "c2"},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"aA" = (/obj/machinery/conveyor{id = "c2"},/turf/open/floor/plating/rust,/area/TDM)
+"aB" = (/obj/machinery/conveyor{id = "c2"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"aC" = (/obj/machinery/conveyor{dir = 8; id = "c3"; operating = 1},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/turf_decal/stripes/line,/turf/open/floor/plating/rust,/area/TDM)
+"aD" = (/obj/effect/turf_decal/caution{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"aE" = (/obj/machinery/conveyor_switch{id = "c1"},/turf/open/floor/plating/rust,/area/TDM)
+"aF" = (/obj/effect/portal/permanent{id = "p3"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"aG" = (/obj/effect/portal/permanent{id = "p4"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"aH" = (/obj/effect/turf_decal/caution{dir = 8; layer = 2.1; pixel_x = -8},/turf/closed/wall/rust,/area/TDM)
+"aI" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM)
+"aJ" = (/obj/machinery/conveyor{dir = 8; id = "c3"; operating = 1},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating/rust,/area/TDM)
+"aL" = (/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating/rust,/area/TDM)
+"aM" = (/obj/machinery/button/door{id = "d1"; sync_doors = 0},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/turf_decal/stripes/box,/turf/open/floor/plating/rust,/area/TDM)
+"aN" = (/obj/effect/turf_decal/stripes/corner{dir = 1},/turf/open/floor/plating/rust,/area/TDM)
+"aO" = (/obj/machinery/button/door{id = "d2"; sync_doors = 0},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/turf_decal/stripes/box,/turf/open/floor/plating/rust,/area/TDM)
+"aP" = (/obj/machinery/button/door{id = "d3"; sync_doors = 0},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/turf_decal/stripes/box,/turf/open/floor/plating/rust,/area/TDM)
+"aQ" = (/obj/machinery/button/door{id = "d4"; sync_doors = 0},/turf/closed/wall/rust,/area/TDM)
+"aR" = (/obj/machinery/door/poddoor{id = "d4"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
+"aS" = (/obj/machinery/conveyor_switch{id = "c3"},/obj/effect/turf_decal/stripes/line{dir = 10},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating/rust,/area/TDM)
+"aT" = (/obj/machinery/button/door{id = "d4"; sync_doors = 0},/obj/effect/turf_decal/stripes/line{dir = 6},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating/rust,/area/TDM)
+"aU" = (/obj/effect/turf_decal/loading_area,/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"aV" = (/obj/machinery/conveyor_switch{id = "c1"},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/turf_decal/stripes/box,/turf/open/floor/plating/rust,/area/TDM)
+"aW" = (/obj/machinery/conveyor_switch{id = "c2"},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/turf_decal/stripes/box,/turf/open/floor/plating/rust,/area/TDM)
+"aX" = (/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"aY" = (/turf/open/floor/holofloor/grass,/area/TDM)
+"aZ" = (/obj/effect/turf_decal/loading_area{dir = 4},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"ba" = (/obj/effect/portal/permanent{id = "pbb"; name = "Blue Base"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"bb" = (/obj/effect/portal/permanent{id = "pd1"; name = "Hallway B"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"bc" = (/obj/effect/turf_decal/stripes/corner{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"bd" = (/obj/effect/portal/permanent{id = "p5"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"be" = (/obj/effect/turf_decal/arrows{dir = 1; pixel_y = -4},/turf/open/floor/plating/rust,/area/TDM)
+"bf" = (/obj/structure/TDM/spawn_protection/red,/obj/machinery/door/airlock/vault,/turf/open/floor/plating/rust,/area/TDM)
+"bg" = (/turf/closed/wall/rust,/area/TDM/blue_base)
+"bh" = (/obj/structure/flora/junglebush/b,/turf/open/floor/holofloor/grass,/area/TDM)
+"bi" = (/obj/structure/flora/junglebush/large,/turf/open/floor/holofloor/grass,/area/TDM)
+"bj" = (/obj/machinery/conveyor{dir = 1; id = "c5"},/obj/effect/turf_decal/stripes/line{dir = 8},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"bk" = (/obj/machinery/conveyor{id = "c5"},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"bl" = (/obj/machinery/conveyor{id = "c5"},/turf/open/floor/plating/rust,/area/TDM)
+"bm" = (/obj/machinery/conveyor{id = "c5"},/obj/item/grown/bananapeel{anchored = 1},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"bn" = (/obj/machinery/conveyor{dir = 1; id = "c5"},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"bo" = (/obj/machinery/conveyor{dir = 1; id = "c5"},/turf/open/floor/plating/rust,/area/TDM)
+"bp" = (/obj/machinery/conveyor{dir = 1; id = "c5"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"bq" = (/obj/machinery/door/poddoor/preopen{id = "d6"},/turf/open/floor/plating/rust,/area/TDM)
+"br" = (/obj/machinery/button/door{id = "d6"; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
+"bs" = (/obj/machinery/conveyor{dir = 1; id = "c4"},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"bt" = (/obj/machinery/conveyor{dir = 1; id = "c4"},/turf/open/floor/plating/rust,/area/TDM)
+"bu" = (/obj/machinery/conveyor{dir = 1; id = "c4"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"bv" = (/obj/machinery/door/poddoor{id = "d5"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
+"bw" = (/obj/machinery/conveyor{id = "c4"},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"bx" = (/obj/machinery/conveyor{id = "c4"},/turf/open/floor/plating/rust,/area/TDM)
+"by" = (/obj/machinery/conveyor{id = "c4"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"bz" = (/obj/structure/TDM/medical_cabinet{color = "#C4A39A"; pixel_x = -8},/obj/structure/TDM/wallmed{color = "#C4A39A"; pixel_x = 6},/turf/closed/wall,/area/TDM/blue_base)
+"bA" = (/obj/structure/table/wood,/obj/item/candle/infinite{name = "cursed candle"; pixel_x = 2; pixel_y = 2},/obj/item/trash/candle{pixel_x = 9; pixel_y = 3},/obj/item/trash/candle{pixel_x = -6; pixel_y = 5},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"bB" = (/obj/item/clothing/head/helmet/skull{pixel_y = 5},/obj/structure/table/wood,/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"bC" = (/obj/structure/closet/crate/coffin{anchored = 1},/obj/effect/temp_visual/cult/turf,/turf/open/floor/carpet/red,/area/TDM/blue_base)
+"bD" = (/obj/machinery/clonepod/TDM/team_blue{color = "#C4A39A"; TDM_on = 1},/turf/open/floor/carpet/red,/area/TDM/blue_base)
+"bE" = (/obj/structure/closet/crate/coffin,/obj/effect/temp_visual/cult/turf,/turf/open/floor/carpet/red,/area/TDM/blue_base)
+"bF" = (/obj/item/clothing/head/helmet/skull{pixel_y = 5},/obj/structure/table/wood,/obj/item/trash/candle{pixel_x = 11; pixel_y = 2},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"bG" = (/obj/structure/table/wood,/obj/item/candle/infinite{name = "cursed candle"; pixel_x = 1; pixel_y = 5},/obj/item/trash/candle{pixel_x = -6; pixel_y = 5},/obj/item/trash/candle{pixel_x = 5; pixel_y = 4},/obj/item/candle/infinite{name = "cursed candle"; pixel_x = 8; pixel_y = 12},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"bH" = (/obj/structure/TDM/medical_cabinet{color = "#C4A39A"; pixel_x = 8},/obj/structure/TDM/wallmed{color = "#C4A39A"; pixel_x = -7},/turf/closed/wall,/area/TDM/blue_base)
+"bI" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"bJ" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM/red_base)
+"bK" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/red,/obj/structure/fans/tiny,/turf/open/floor/sepia/TDM,/area/TDM/red_base)
+"bL" = (/obj/item/banner/TDM/red,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"bM" = (/obj/structure/flora/tree/jungle/small,/turf/open/floor/holofloor/grass,/area/TDM)
+"bN" = (/obj/effect/portal/permanent{id = "pf"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"bO" = (/obj/machinery/conveyor{id = "c5"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"bP" = (/obj/machinery/conveyor_switch{id = "c5"},/turf/open/floor/plating/rust,/area/TDM)
+"bQ" = (/obj/effect/portal/permanent{id = "p7"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"bR" = (/obj/effect/portal/permanent{id = "p6"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"bS" = (/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"bT" = (/obj/machinery/power/floodlight,/turf/open/indestructible,/area/TDM/red_base)
+"bU" = (/turf/open/indestructible,/area/TDM/red_base)
+"bV" = (/obj/machinery/button/door{id = "d5"; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
+"bW" = (/obj/item/candle/infinite{name = "cursed candle"; pixel_y = 2},/obj/structure/table/wood/fancy/red{color = "#CDAA97"},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"bX" = (/obj/item/book{pixel_y = 6},/obj/structure/table/wood/fancy/red{color = "#CDAA97"},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"bY" = (/obj/structure/table/wood/fancy/red{color = "#CDAA97"},/obj/item/candle/infinite{name = "cursed candle"; pixel_y = 2},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"bZ" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM)
+"ca" = (/obj/effect/portal/permanent{id = "pd1"; name = "Hallway A"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"cb" = (/obj/machinery/button/door{id = "d6"; sync_doors = 0},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/turf_decal/stripes/box,/turf/open/floor/plating/rust,/area/TDM)
+"cc" = (/obj/effect/portal/permanent{id = "pbb"; name = "Start"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"cd" = (/obj/effect/turf_decal/loading_area{dir = 8; pixel_x = 0},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"ce" = (/obj/structure/mineral_door/wood{color = "#C4A39A"},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"cf" = (/obj/effect/decal/remains/human{color = "#9E7658"},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"cg" = (/obj/effect/rune/raise_dead,/obj/item/kitchen/knife/ritual,/mob/living/simple_animal/hostile/retaliate/goat,/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"ch" = (/obj/structure/TDM/medical_cabinet{pixel_x = 9},/obj/structure/TDM/wallmed{pixel_x = -6},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"ci" = (/obj/machinery/door/poddoor{id = "db"; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM)
+"cj" = (/obj/machinery/conveyor_switch{id = "c5"},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/turf_decal/stripes/box,/turf/open/floor/plating/rust,/area/TDM)
+"ck" = (/obj/effect/turf_decal/loading_area{dir = 1},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
+"cl" = (/obj/machinery/button/door{id = "d5"; sync_doors = 0},/obj/effect/turf_decal/stripes/line{dir = 10},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating/rust,/area/TDM)
+"cm" = (/obj/machinery/conveyor_switch{id = "c4"},/obj/effect/turf_decal/stripes/line{dir = 6},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating/rust,/area/TDM)
+"cn" = (/turf/open/floor/carpet/red,/area/TDM/blue_base)
+"co" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"cp" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"cq" = (/obj/structure/flora/tree/jungle,/turf/open/floor/holofloor/grass,/area/TDM)
+"cr" = (/obj/structure/chair/pew/left{dir = 1},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"cs" = (/obj/structure/chair/pew/right{dir = 1},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"ct" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/s12g; death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot},/turf/open/indestructible,/area/TDM/red_base)
+"cu" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"cv" = (/obj/effect/turf_decal/bot,/turf/closed/wall/rust,/area/TDM)
+"cw" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 10; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"cx" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/red_base)
+"cy" = (/obj/structure/flora/junglebush/c,/turf/open/floor/holofloor/grass,/area/TDM)
+"cz" = (/obj/structure/chair/pew/left{dir = 1},/obj/item/flashlight/lantern/on{pixel_x = -12},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"cA" = (/obj/structure/chair/pew/right{dir = 1},/obj/item/flashlight/lantern/on{pixel_x = 12},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"cB" = (/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/turf/open/indestructible,/area/TDM/red_base)
+"cC" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/shield/riot},/turf/open/indestructible,/area/TDM/red_base)
+"cD" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"cE" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/TDM},/turf/open/indestructible,/area/TDM/red_base)
+"cF" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction},/turf/open/indestructible,/area/TDM/red_base)
+"cG" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle},/turf/open/indestructible,/area/TDM/red_base)
+"cH" = (/obj/structure/table/wood,/obj/item/reagent_containers/food/snacks/grown/poppy,/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"cI" = (/obj/item/flashlight/lantern/on,/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
+"cJ" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi},/turf/open/indestructible,/area/TDM/red_base)
+"cK" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 50; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted},/turf/open/indestructible,/area/TDM/red_base)
+"cL" = (/obj/structure/mineral_door/wood{color = "#C4A39A"},/turf/open/floor/carpet/red,/area/TDM/blue_base)
+"cM" = (/obj/machinery/button/door{id = "db"; pixel_x = -24; sync_doors = 0},/turf/open/floor/holofloor/grass,/area/TDM)
+"cN" = (/obj/structure/flora/junglebush/large,/obj/item/clothing/shoes/clown_shoes,/turf/open/floor/holofloor/grass,/area/TDM)
+"cO" = (/obj/item/clothing/shoes/sandal,/turf/open/floor/plating/rust,/area/TDM)
+"cP" = (/obj/item/clothing/shoes/galoshes,/turf/open/floor/plating/rust,/area/TDM)
+"cQ" = (/obj/item/clothing/shoes/sneakers/rainbow,/turf/open/floor/plating/rust,/area/TDM)
+"cR" = (/obj/item/clothing/shoes/jackboots,/turf/open/floor/plating/rust,/area/TDM)
+"cS" = (/obj/structure/TDM/spawn_protection/red,/obj/structure/mineral_door/iron/TDM,/turf/open/floor/plating/rust,/area/TDM)
+"cT" = (/obj/item/clothing/shoes/sneakers/white,/turf/open/floor/plating/rust,/area/TDM)
+"cU" = (/obj/item/clothing/shoes/winterboots,/turf/open/floor/plating/rust,/area/TDM)
+"cV" = (/obj/effect/portal/permanent{id = "pf"},/turf/open/floor/plating/rust,/area/TDM)
+"cW" = (/obj/item/clothing/shoes/sneakers/green,/turf/open/floor/plating/rust,/area/TDM)
+"cX" = (/obj/item/clothing/shoes/workboots,/turf/open/floor/plating/rust,/area/TDM)
+"cY" = (/turf/template_noop,/area/template_noop)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
-aaabacacacacacacacacabacacacacacbWbWaeaebebfacacacacacbjacbgbjacacacbLacacacacbmbLbmbLbmacacbLacacacabababababbhbhbhbhbhbhbhabababababababababbGbGbGbhbhbhbhababababababababababababababababababaa
-aaabacacacacacacacacabadacacacacacacaeaeacbfacacacaccrbjacbgbjacacacacacaccsbLbmcsbmbLbmacacacacacblabacacacacbnbnbnaccqcqcqacacacacabacacacacbqbqbqacbAbAbAacacacacabacacacbBbBbBbBbBbBbBbBbhabaa
-aaabacacacacacacacacabacacacacacacbeaeaeacbfacacacacacbjcrbgbjacacacacbLacacacbmbLbmcsbmbLacacacacacabblacacacbnbnbnbocqcqcqacacacbpabbpacacacbqbqbqctbAbAbAacacacbrabbracacbBbBbBbBbBbBbBbBbhabaa
-aaabacacacacacacacacabababababababagagagagagagabababagagagagagabababababababagagagagagababababababababacacacacbnbnbnaccqcqcqacacacacabacacacacbqbqbqacbAbAbAacacacacabacacacbBbBbBbBbBbBbBbBbhabaa
-aaabacacacacacacacacabacacacacacaccuacacahacacacacacacacbiacacacacacacacacacacacbkacacacacacacacacacabababababbhbhbhbhbhbhbhabababababababababbhbhbhbhbhbhbhababababababababagagagagbsbtbtbtababaa
-aaabacacacacacacacacabacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacabagagagagagagagabacacacacacacacabagagagagagagagabacacacacacacacacacbCbuagacacacababaa
-aaabacacacacacacacacabacacacacacacacacabababababababababababacacacababacacacacacacacacacacacacacacacacacacacacacacacboacacacacacacacacacacacacacctacbDacacacacacacacacacacacacacacacagacacacababaa
-aaababababababacacacabacacacacacacacacabafafafafafafafafafabacacacbSabababacacacacacacacacacabababbvabacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacabacbEacababaa
-aaababadababababacacabacacacacacacacacabafafafafafafafafafabacacacabababababababababababababababababababababababababababababababababababababababababababababababababababacacababababababababababaa
-aaabacacacacacabacacababababcgabababababafafafafafafafafafabacacacabbhbhbhbhbhbhbhbhbhbhbhbhbhbhabababababababababababababababababababababababababbhbhbhbhbhbhbhababababacacacacacacacacacacacabaa
-aaabacacacacacabacacabbcafafafafaZafaZabafafafafafafafafafabacacacabbhbhbHacacacbFbFcvacbHbHbHacacacabacacacbhaccwbUacbUbhbUacbUcxbhacacacabacacacbObObObIbPbPbPacacacabacacacacacacacacacacacabaa
-aaaiaiajaiakaiaiaialabafbdafafafafbdaZabafafafafafafafafafabacacacabbQacbHbhacacbFbFbFbKbHbHbHacacbJabbJacacacaccwbUbhbUcxbUbhbUaccwacacbRabbRacacbObObOacbPbPbPacacbEabacacabamanananaoanapananaa
-aaaiaqarararararaqaiaiafafafafafafafafabafafafafafafafafafabacacacabbhbhbHacacacbFbFbFacbHbHbHacacacabacacacacbhcwbUcxbUbhbUcxbUbhcwacacacabacacbMbObObObIbPbPbPacacacabacacananasatatatatatasanaa
-aaaiarararararararaqaiaZafafafafafafafabafafafafafafafafafabacacacabbhbhbhbhbhbhbhbhbhbhbhbhbhbhabababababagagagagagagagagagagagagagagababababababbhbhbhbhbhbhbhababababacacanasatatatatatatatanaa
-aaaiararararararararaibwafafafafafafafabafafafafafafafafafabacacacabababagagagagagagagagagagagababchabacacacacacbVacacacacacbVacacacacacacacacacabagagagagagagagabacbTabacacanatatatatatatatatanaa
-aaaiarararauaiarararakbxbcafafafafafafabafafafafafafafafafabacacacacacacacacacacacacacbKacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacbMbNacacacacacacacacacaoatatatanavatatatanaa
-aaaiawararaxaiarararakbxafafaZafbbafafabafafafafafafafafafabacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacaoatatatanayatatazanaa
-aaalaAararaBalarararaibwafafafafafafafabafafafafafafafafafabababababababababababababababababababababababababababababababababababababababababababababababababababababababababanatatatamaCatataDamaa
-aaaiaEararaFaiarararaiaZafafafbaafafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabacacanatatatanaGatataHanaa
-aaaiaqarararaIarararajafafafafafafafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabacacapatatatanaJatatasanaa
-aaaiaKarararararararajafbbafafafafafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabababababababababababafafafafafafafafafafabacacapatatatanatatataLanaa
-aaaiaqarararaIarararajafafaZafafafafbbabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafababcicicjckcmciciababafafafafafafafafafafabacacapatatatanaJatatasanaa
-aaaiaMararaNaiarararaibcafafafbdafafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabciciciciciciciciciabafafafafafafafafafafabacacanatatatanaOatataPanaa
-aaalaQararaRalarararaibwafafafafafafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabciciciciciciciciciabafafafafafafafafafafabacabanatatatamaSatataTamaa
-aaaiaUararaVaiarararakbxbdafbcafafafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabcicicicncocnciciciabafafafafafafafafafafabacabaoatatatanaWatataXanaa
-aaaiarararauaiarararakbxafafafafafafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabcicicpcKcKcKciciciabafafafafafafafafafafabacabaoatatatanavatatatanaa
-aaaiararararararararaibwafafafafbbafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabcicicicKcKcKciciciabafafafafafafafafafafabacabanatatatatatatatatanaa
-aaaiarararararararaqaiaZafafafafafafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabcicIcJcKcKcKcIcJciabafafafafafafafafafafabacacanasatatatatatatatanaa
-aaaiaqarararararaqaialafafafafafafafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabcicicicKcKcKciciciabafafafafafafafafafafabacacamanasatatatatatasanaa
-aaaiaiajaiakaiaiaiaiaZafafafafafafafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabcicIcJcKcKcKcIcJciabafafafafafafafafafafabacacacananananaoanapananaa
-aabwaZafbwbxbwaZbwafafafafafafafbdafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabcicicicKcKcKciciciabafafafafafafafafafafabacacacacacacabababacacabaa
-aabwbyafbdafafafbwafafafafbcafafafafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabcicIcJcKcKcKcIcJciabafafafafafafafafafafabacacacacacacacacacacacabaa
-aabwafafafafafafbxafbdafafafafafafafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabcicicicKcKcKcpciciabafafafafafafafafafafabababababababababababababaa
-aabwafafafafafafbxafafafafafafafafafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabcicicicKcKcKciciciabafafafafafafafafafafafafafafafafafafafafafafabaa
-aabwafafafafafafbwafafafafafafafafafafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabdiclcicKcKcKcicldiabafafafafafafafafafafafafafafafafafafafafafafabaa
-aabwbbafafafafbcbwaZafafbdafafbXafbbafabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabababababababababababafafafafafafafafafafafafafafafafafafafafafafabaa
-aabwafafafafabababababababagagagababababafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabaa
-aabwbcbbafafabbYacbZaccaacaccbcbacacacabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabaa
-aabwaZbcafafbzacacccacacbYacacaccdacbQabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabaa
-aabwbwaZafbcabceacaccbacaccfacbYacaccbabafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafabaa
-aabwbwbwbwbwababababababababababababababababababababababababababababababafafafafafafafafafafafafafafafafafafafafafafafafafabababababababababababababababababababababababababababababababababababaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabafafafafafafafafafafafafafafafafafafafafafafafafafabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaaababafafafafafafafafafafafafafafafafafafafafafafafababaaaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaY
-aYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaaaaababababababababababababafababababababababababababaaaaaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaY
-aYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaY
+aaabacacacacacacacacabacacacacadacacaeaeafagacacacacacahacaiahacacacajacacacacakajakalakacacajacacacabababababamamamamamamamababababababababamamamamamamamamamabababababababababababababababababaa
+aaabacacacacacacacacabanacacacacacacaeaeacagacacacacaoahacaiahacacacacacacacajakalakajakacacacacacapabacacacacaqarasacatauavacacacacabacacacacawaxayacazaAaBacacacacabacacacaCaCaCaCaCaCaCaCamabaa
+aaabacacacacacacacacabacacacacacacafaeaeacagacacacacacahaoaiahacacacacajacacalakajakalakajacacacacacabapacacaDaqarasaEatauavacacacaFabaFacacacawaxayacazaAaBacacacaGabaGacacaCaCaCaCaCaCaCaCamaHaa
+aaabacacacacacacacacabababababababaIaIaIaIaIaIabababaIaIaIaIaIabababababababaIaIaIaIaIababababababababacacacacaqarasacatauavacacacacabacacacacawaxayacazaAaBacacacacabacacacaJaJaJaJaJaJaJaJamabaa
+aaabacacacacacacacacabacacacacacbcaLaLaLaLaMaLaNacbcaLaLaLaLaOaNacacacacacbcaLaLaPaLaLaNacacacacacacabababababamamamamamamamababababababababamamamamamamamamamabababababababaIaIaIaIaQaRaRaRababaa
+aaabacacacacacacacacabacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacabaIaIaIaIaIaIaIabacacacacacacabaIaIaIaIaIaIaIaIaIabacacacacacbcaLaLaSaTaIacacacababaa
+aaabacacacacacacacacabacacacacacacacacabababababababababababacacacababacacacacacacacacacacacacacacaUacacacacbcaLaLaLaVaLaLaLaNacacacacacacbcaLaLaLaLaWaLaLaLaLaNacacacacacacacacacaXaIacacacababaa
+aaababababababacacacabacacacacacacacacabaYaYaYaYaYaYaYaYaYabacacaZbaabababacacacacacacacacacabababbbabacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacbcabacbdacababaa
+aaababanababababacacabacacacacacacacacabaYaYaYaYaYaYaYaYaYabacacabababababababababababababababababababababababababababababababababababababababababababababababababababacacacababababababababababaa
+aaabacbeacacacabacacababababbfabababababaYaYaYaYaYaYaYaYaYabacacabamamamamamamamamamamamamamamabababababababababababababababababababababababababamamamamamamamababababacacbgbgbgbgbgbgbgbgbgbgbgaa
+aaabacacacacacabacacabbhaYaYaYaYbiaYbiabaYaYaYaYaYaYaYaYaYabacacabamambjacacacbkblbmacbnbobpacacacabacacacamacbqbqacbqambqacbqbramacacacabacacacbsbtbubvbwbxbyacacacabacacbgbzbAbBbCbDbEbFbGbHbgaa
+aabIbIbJbIbKbIbIbIbLabaYbMaYaYaYaYbMbiabaYaYaYaYaYaYaYaYaYabacacabbNacbjamacacbkblbObPbnbobpacacbQabbQacacacacbqbqambqbrbqambqacacacacbRabbRacacbsbtbuacbwbxbyacacbdabacacbgbSbSbSbSbSbSbSbSbSbgaa
+aabIbTbUbUbUbUbUbTbIbIaYaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabacacabamambjacacacbkblbOacbnbobpacacacabacacacacambqbqbrbqambqbrbqamacacacacabacacbVbsbtbubvbwbxbyacacacabacacbgbSbSbSbSbSbSbSbSbSbgaa
+aabIbUbUbUbUbUbUbUbTbIbiaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabacacabamamamamamamamamamamamamamamabababababaIaIaIaIaIaIaIaIaIaIaIaIaIaIababababababamamamamamamamababababacacbgbSbSbSbWbXbYbSbSbSbgaa
+aabIbUbUbUbUbUbUbUbUbIbZaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabacacabababaIaIaIaIaIaIaIaIaIaIaIababcaabacbcaLaLaLcbaLaLaLaLaLcbaLaLaLaLaNacacacacabaIaIaIaIaIaIaIabcccdacacaccebSbScfbScgbSbSbSbSbgaa
+aabIbUbUbUchbIbUbUbUbKcibhaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabacacacacbcaLaLaLaLaLaLaLcjaLaLaLaNacckacacacacacacacacacacacacacacacacacacacacacacbcaLaLclcmaLaLaLaNacacacacacbgbSbSbScncncnbSbSbSbgaa
+aabIcobUbUcpbIbUbUbUbKciaYaYbiaYcqaYaYabaYaYaYaYaYaYaYaYaYabacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacbgbScrcscncncncrcsbSbgaa
+aabLctbUbUcubLbUbUbUbIbZaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabababababababababababababababababababababababababababababababababababababababababababababababababababababcvacacbgbSbSbScncncnbSbSbSbgaa
+aabIcwbUbUcxbIbUbUbUbIbiaYaYaYcyaYaYbiabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbSczcscncncncrcAbSbgaa
+aabIbTbUbUbUcBbUbUbUbJaYaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbSbSbScncncnbSbSbSbgaa
+aabIcCbUbUbUbUbUbUbUbJaYcqaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbScrcscncncncrcsbSbgaa
+aabIbTbUbUbUcBbUbUbUbJaYaYbiaYaYaYaYcqabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbSbSbScncncncfbSbSbgaa
+aabIcDbUbUcEbIbUbUbUbIbhaYaYaYbMaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbSbScncncncncnbSbSbgaa
+aabLcFbUbUcGbLbUbUbUbIbZaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgcHcIcncncncncncIcHbgaa
+aabIcJbUbUcKbIbUbUbUbKcibMaYbhaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbgbgcLcLbgcLcLbgbgbgaa
+aabIbUbUbUchbIbUbUbUbKciaYaYaYaYaYbibiabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacacacacacacacacacacacabaa
+aabIbUbUbUbUbUbUbUbUbIbZaYaYaYaYcqaYbiabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacacacacacacacacacacacabaa
+aabIbUbUbUbUbUbUbUbTbIbiaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYababacacacacacacacacacacacabaa
+aabIbTbUbUbUbUbUbTbIbLaYaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYababababababababababababababaa
+aabIbIbJbIbKbIbIbIbIbiaYaYaYaYaYaYaYbiabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaa
+aabZbiaYbZcibZbibZaYaYaYaYaYaYaYbMaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaa
+aabZcMaYbMaYaYaYbZaYaYaYaYbhaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaa
+aabZaYaYaYaYaYaYciaYbMaYaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaa
+aabZaYaYaYaYaYaYciaYaYaYaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaa
+aabZaYaYaYaYaYaYbZaYaYaYaYaYaYaYaYaYbiabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaa
+aabZcqaYaYaYaYbhbZbiaYaYbMaYaYcNaYcqbiabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaa
+aabZaYaYaYaYabababababababaIaIaIababababaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaa
+aabZbhcqaYaYabcOaccPaccQacaccRcRacacacabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaa
+aabZbibhaYaYcSacaccTacaccOacacaccUaccVabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaa
+aabZbZbiaYbhabcWacaccRacaccXaccOacaccRabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaa
+aabZbZbZbZbZababababababababababababababababababababababababababababababaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabababababababababababababababababababababababababababababababababababaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+cYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYaaababaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYababaacYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcY
+cYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYaaaaababababababababababababaYababababababababababababaaaacYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcY
+cYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcYcY
 "}
