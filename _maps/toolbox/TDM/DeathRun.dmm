@@ -2,45 +2,46 @@
 "ab" = (/turf/closed/wall/rust,/area/TDM)
 "ac" = (/turf/open/floor/plating/rust,/area/TDM)
 "ad" = (/obj/machinery/power/emitter{active = 1; active_power_usage = 0; anchored = 1; idle_power_usage = 0; resistance_flags = 115; state = 2},/turf/open/floor/plating/rust,/area/TDM)
-"ae" = (/obj/machinery/door/poddoor/preopen{id = "d1"},/turf/open/floor/plating/rust,/area/TDM)
+"ae" = (/obj/machinery/door/poddoor/TDM/fast/preopen{id = "d1"},/turf/open/floor/plating/rust,/area/TDM)
 "af" = (/obj/machinery/button/door{id = "d1"; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
-"ag" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/door/poddoor{id = "d1"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"ah" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/door/poddoor{id = "d2"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"ai" = (/obj/machinery/door/poddoor/preopen{id = "d2"},/turf/open/floor/plating/rust,/area/TDM)
+"ag" = (/obj/machinery/door/poddoor/TDM/fast{id = "d1"},/turf/open/floor/plating/rust,/area/TDM)
+"ah" = (/obj/machinery/door/poddoor/TDM/fast{id = "d2"},/turf/open/floor/plating/rust,/area/TDM)
+"ai" = (/obj/machinery/door/poddoor/TDM/fast/preopen{id = "d2"},/turf/open/floor/plating/rust,/area/TDM)
 "aj" = (/obj/structure/ore_box/TDM,/turf/open/floor/plating/rust,/area/TDM)
-"ak" = (/obj/machinery/door/poddoor/preopen{id = "d3"},/turf/open/floor/plating/rust,/area/TDM)
+"ak" = (/obj/machinery/door/poddoor/TDM/fast/preopen{id = "d3"},/turf/open/floor/plating/rust,/area/TDM)
 "al" = (/obj/machinery/button/door{id = "d3"; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
 "am" = (/turf/open/chasm,/area/TDM)
 "an" = (/obj/effect/portal/permanent{id = "p1"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
 "ao" = (/obj/machinery/button/door{id = "d2"; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
 "ap" = (/obj/effect/portal/permanent{id = "p2"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
-"aq" = (/obj/machinery/conveyor{id = "c1"; operating = 1},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
-"ar" = (/obj/machinery/conveyor{id = "c1"; operating = 1},/turf/open/floor/plating/rust,/area/TDM)
-"as" = (/obj/machinery/conveyor{id = "c1"; operating = 1},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
-"at" = (/obj/machinery/conveyor{dir = 1; id = "c1"; operating = 1},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
-"au" = (/obj/machinery/conveyor{dir = 1; id = "c1"; operating = 1},/turf/open/floor/plating/rust,/area/TDM)
-"av" = (/obj/machinery/conveyor{dir = 1; id = "c1"; operating = 1},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"aq" = (/obj/effect/turf_decal/stripes/line{dir = 8},/obj/machinery/conveyor/TDM/permanent{id = "c1"},/turf/open/floor/plating/rust,/area/TDM)
+"ar" = (/obj/machinery/conveyor/TDM/permanent{id = "c1"},/turf/open/floor/plating/rust,/area/TDM)
+"as" = (/obj/effect/turf_decal/stripes/line{dir = 4},/obj/machinery/conveyor/TDM/permanent{id = "c1"},/turf/open/floor/plating/rust,/area/TDM)
+"at" = (/obj/effect/turf_decal/stripes/line{dir = 8},/obj/machinery/conveyor/TDM/permanent{dir = 1; id = "c1"},/turf/open/floor/plating/rust,/area/TDM)
+"au" = (/obj/machinery/conveyor/TDM/permanent{dir = 1; id = "c1"},/turf/open/floor/plating/rust,/area/TDM)
+"av" = (/obj/machinery/conveyor/TDM/permanent{dir = 1; id = "c1"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
 "aw" = (/obj/machinery/conveyor{dir = 1; id = "c2"},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
-"ax" = (/obj/machinery/conveyor{dir = 1; id = "c2"},/turf/open/floor/plating/rust,/area/TDM)
-"ay" = (/obj/machinery/conveyor{dir = 1; id = "c2"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
-"az" = (/obj/machinery/conveyor{id = "c2"},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
-"aA" = (/obj/machinery/conveyor{id = "c2"},/turf/open/floor/plating/rust,/area/TDM)
-"aB" = (/obj/machinery/conveyor{id = "c2"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
-"aC" = (/obj/machinery/conveyor{dir = 8; id = "c3"; operating = 1},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/turf_decal/stripes/line,/turf/open/floor/plating/rust,/area/TDM)
+"ax" = (/obj/machinery/conveyor/TDM/permanent{dir = 1; id = "c2"},/turf/open/floor/plating/rust,/area/TDM)
+"ay" = (/obj/machinery/conveyor/TDM/permanent{dir = 1; id = "c2"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"az" = (/obj/effect/turf_decal/stripes/line{dir = 8},/obj/machinery/conveyor/TDM/permanent{id = "c2"},/turf/open/floor/plating/rust,/area/TDM)
+"aA" = (/obj/machinery/conveyor/TDM/permanent{id = "c2"},/turf/open/floor/plating/rust,/area/TDM)
+"aB" = (/obj/machinery/conveyor/TDM/permanent{id = "c2"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"aC" = (/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/conveyor/TDM/permanent{dir = 8; id = "c3"},/turf/open/floor/plating/rust,/area/TDM)
 "aD" = (/obj/effect/turf_decal/caution{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
 "aE" = (/obj/machinery/conveyor_switch{id = "c1"},/turf/open/floor/plating/rust,/area/TDM)
 "aF" = (/obj/effect/portal/permanent{id = "p3"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
 "aG" = (/obj/effect/portal/permanent{id = "p4"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
 "aH" = (/obj/effect/turf_decal/caution{dir = 8; layer = 2.1; pixel_x = -8},/turf/closed/wall/rust,/area/TDM)
 "aI" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM)
-"aJ" = (/obj/machinery/conveyor{dir = 8; id = "c3"; operating = 1},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating/rust,/area/TDM)
+"aJ" = (/obj/effect/turf_decal/stripes/line{dir = 8},/obj/machinery/conveyor/TDM/permanent{dir = 1; id = "c2"},/turf/open/floor/plating/rust,/area/TDM)
+"aK" = (/obj/machinery/conveyor/TDM/permanent{dir = 1; id = "c5"},/obj/effect/turf_decal/stripes/line{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
 "aL" = (/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating/rust,/area/TDM)
 "aM" = (/obj/machinery/button/door{id = "d1"; sync_doors = 0},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/turf_decal/stripes/box,/turf/open/floor/plating/rust,/area/TDM)
 "aN" = (/obj/effect/turf_decal/stripes/corner{dir = 1},/turf/open/floor/plating/rust,/area/TDM)
 "aO" = (/obj/machinery/button/door{id = "d2"; sync_doors = 0},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/turf_decal/stripes/box,/turf/open/floor/plating/rust,/area/TDM)
 "aP" = (/obj/machinery/button/door{id = "d3"; sync_doors = 0},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/turf_decal/stripes/box,/turf/open/floor/plating/rust,/area/TDM)
 "aQ" = (/obj/machinery/button/door{id = "d4"; sync_doors = 0},/turf/closed/wall/rust,/area/TDM)
-"aR" = (/obj/machinery/door/poddoor{id = "d4"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
+"aR" = (/obj/machinery/door/poddoor/TDM/fast{id = "d4"},/turf/open/floor/plating/rust,/area/TDM)
 "aS" = (/obj/machinery/conveyor_switch{id = "c3"},/obj/effect/turf_decal/stripes/line{dir = 10},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating/rust,/area/TDM)
 "aT" = (/obj/machinery/button/door{id = "d4"; sync_doors = 0},/obj/effect/turf_decal/stripes/line{dir = 6},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating/rust,/area/TDM)
 "aU" = (/obj/effect/turf_decal/loading_area,/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
@@ -58,22 +59,22 @@
 "bg" = (/turf/closed/wall/rust,/area/TDM/blue_base)
 "bh" = (/obj/structure/flora/junglebush/b,/turf/open/floor/holofloor/grass,/area/TDM)
 "bi" = (/obj/structure/flora/junglebush/large,/turf/open/floor/holofloor/grass,/area/TDM)
-"bj" = (/obj/machinery/conveyor{dir = 1; id = "c5"},/obj/effect/turf_decal/stripes/line{dir = 8},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
-"bk" = (/obj/machinery/conveyor{id = "c5"},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
-"bl" = (/obj/machinery/conveyor{id = "c5"},/turf/open/floor/plating/rust,/area/TDM)
-"bm" = (/obj/machinery/conveyor{id = "c5"},/obj/item/grown/bananapeel{anchored = 1},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
-"bn" = (/obj/machinery/conveyor{dir = 1; id = "c5"},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
-"bo" = (/obj/machinery/conveyor{dir = 1; id = "c5"},/turf/open/floor/plating/rust,/area/TDM)
-"bp" = (/obj/machinery/conveyor{dir = 1; id = "c5"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
-"bq" = (/obj/machinery/door/poddoor/preopen{id = "d6"},/turf/open/floor/plating/rust,/area/TDM)
+"bj" = (/obj/effect/turf_decal/stripes/line{dir = 8},/obj/machinery/conveyor/TDM/permanent{id = "c5"},/turf/open/floor/plating/rust,/area/TDM)
+"bk" = (/obj/machinery/conveyor/TDM/permanent{id = "c5"},/turf/open/floor/plating/rust,/area/TDM)
+"bl" = (/obj/item/grown/bananapeel{anchored = 1},/obj/effect/turf_decal/stripes/line{dir = 4},/obj/machinery/conveyor/TDM/permanent{id = "c5"},/turf/open/floor/plating/rust,/area/TDM)
+"bm" = (/obj/effect/turf_decal/stripes/line{dir = 8},/obj/machinery/conveyor/TDM/permanent{dir = 1; id = "c5"},/turf/open/floor/plating/rust,/area/TDM)
+"bn" = (/obj/machinery/conveyor/TDM/permanent{dir = 1; id = "c5"},/turf/open/floor/plating/rust,/area/TDM)
+"bo" = (/obj/machinery/conveyor/TDM/permanent{dir = 1; id = "c5"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"bp" = (/obj/effect/turf_decal/stripes/line{dir = 8},/obj/machinery/conveyor/TDM/permanent{dir = 1; id = "c4"},/turf/open/floor/plating/rust,/area/TDM)
+"bq" = (/obj/machinery/door/poddoor/TDM/fast/preopen{id = "d6"},/turf/open/floor/plating/rust,/area/TDM)
 "br" = (/obj/machinery/button/door{id = "d6"; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
-"bs" = (/obj/machinery/conveyor{dir = 1; id = "c4"},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
-"bt" = (/obj/machinery/conveyor{dir = 1; id = "c4"},/turf/open/floor/plating/rust,/area/TDM)
-"bu" = (/obj/machinery/conveyor{dir = 1; id = "c4"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
-"bv" = (/obj/machinery/door/poddoor{id = "d5"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"bw" = (/obj/machinery/conveyor{id = "c4"},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
-"bx" = (/obj/machinery/conveyor{id = "c4"},/turf/open/floor/plating/rust,/area/TDM)
-"by" = (/obj/machinery/conveyor{id = "c4"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"bs" = (/obj/machinery/conveyor/TDM/permanent{dir = 1; id = "c4"},/turf/open/floor/plating/rust,/area/TDM)
+"bt" = (/obj/machinery/conveyor/TDM/permanent{dir = 1; id = "c4"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"bu" = (/obj/effect/turf_decal/stripes/line{dir = 8},/obj/machinery/conveyor/TDM/permanent{id = "c4"},/turf/open/floor/plating/rust,/area/TDM)
+"bv" = (/obj/machinery/door/poddoor/TDM/fast{id = "d5"},/turf/open/floor/plating/rust,/area/TDM)
+"bw" = (/obj/machinery/conveyor/TDM/permanent{id = "c4"},/turf/open/floor/plating/rust,/area/TDM)
+"bx" = (/obj/machinery/conveyor/TDM/permanent{id = "c4"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"by" = (/obj/machinery/conveyor/TDM/permanent{id = "c5"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
 "bz" = (/obj/structure/TDM/medical_cabinet{color = "#C4A39A"; pixel_x = -8},/obj/structure/TDM/wallmed{color = "#C4A39A"; pixel_x = 6},/turf/closed/wall,/area/TDM/blue_base)
 "bA" = (/obj/structure/table/wood,/obj/item/candle/infinite{name = "cursed candle"; pixel_x = 2; pixel_y = 2},/obj/item/trash/candle{pixel_x = 9; pixel_y = 3},/obj/item/trash/candle{pixel_x = -6; pixel_y = 5},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
 "bB" = (/obj/item/clothing/head/helmet/skull{pixel_y = 5},/obj/structure/table/wood,/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
@@ -89,7 +90,6 @@
 "bL" = (/obj/item/banner/TDM/red,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
 "bM" = (/obj/structure/flora/tree/jungle/small,/turf/open/floor/holofloor/grass,/area/TDM)
 "bN" = (/obj/effect/portal/permanent{id = "pf"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
-"bO" = (/obj/machinery/conveyor{id = "c5"},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
 "bP" = (/obj/machinery/conveyor_switch{id = "c5"},/turf/open/floor/plating/rust,/area/TDM)
 "bQ" = (/obj/effect/portal/permanent{id = "p7"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
 "bR" = (/obj/effect/portal/permanent{id = "p6"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
@@ -157,18 +157,18 @@
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
 aaabacacacacacacacacabacacacacadacacaeaeafagacacacacacahacaiahacacacajacacacacakajakalakacacajacacacabababababamamamamamamamababababababababamamamamamamamamamabababababababababababababababababaa
-aaabacacacacacacacacabanacacacacacacaeaeacagacacacacaoahacaiahacacacacacacacajakalakajakacacacacacapabacacacacaqarasacatauavacacacacabacacacacawaxayacazaAaBacacacacabacacacaCaCaCaCaCaCaCaCamabaa
+aaabacacacacacacacacabanacacacacacacaeaeacagacacacacaoahacaiahacacacacacacacajakalakajakacacacacacapabacacacacaqarasacatauavacacacacabacacacacataxayacazaAaBacacacacabacacacaCaCaCaCaCaCaCaCamabaa
 aaabacacacacacacacacabacacacacacacafaeaeacagacacacacacahaoaiahacacacacajacacalakajakalakajacacacacacabapacacaDaqarasaEatauavacacacaFabaFacacacawaxayacazaAaBacacacaGabaGacacaCaCaCaCaCaCaCaCamaHaa
-aaabacacacacacacacacabababababababaIaIaIaIaIaIabababaIaIaIaIaIabababababababaIaIaIaIaIababababababababacacacacaqarasacatauavacacacacabacacacacawaxayacazaAaBacacacacabacacacaJaJaJaJaJaJaJaJamabaa
+aaabacacacacacacacacabababababababaIaIaIaIaIaIabababaIaIaIaIaIabababababababaIaIaIaIaIababababababababacacacacaqarasacatauavacacacacabacacacacaJaxayacazaAaBacacacacabacacacaCaCaCaCaCaCaCaCamabaa
 aaabacacacacacacacacabacacacacacbcaLaLaLaLaMaLaNacbcaLaLaLaLaOaNacacacacacbcaLaLaPaLaLaNacacacacacacabababababamamamamamamamababababababababamamamamamamamamamabababababababaIaIaIaIaQaRaRaRababaa
 aaabacacacacacacacacabacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacabaIaIaIaIaIaIaIabacacacacacacabaIaIaIaIaIaIaIaIaIabacacacacacbcaLaLaSaTaIacacacababaa
 aaabacacacacacacacacabacacacacacacacacabababababababababababacacacababacacacacacacacacacacacacacacaUacacacacbcaLaLaLaVaLaLaLaNacacacacacacbcaLaLaLaLaWaLaLaLaLaNacacacacacacacacacaXaIacacacababaa
 aaababababababacacacabacacacacacacacacabaYaYaYaYaYaYaYaYaYabacacaZbaabababacacacacacacacacacabababbbabacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacbcabacbdacababaa
 aaababanababababacacabacacacacacacacacabaYaYaYaYaYaYaYaYaYabacacabababababababababababababababababababababababababababababababababababababababababababababababababababacacacababababababababababaa
 aaabacbeacacacabacacababababbfabababababaYaYaYaYaYaYaYaYaYabacacabamamamamamamamamamamamamamamabababababababababababababababababababababababababamamamamamamamababababacacbgbgbgbgbgbgbgbgbgbgbgaa
-aaabacacacacacabacacabbhaYaYaYaYbiaYbiabaYaYaYaYaYaYaYaYaYabacacabamambjacacacbkblbmacbnbobpacacacabacacacamacbqbqacbqambqacbqbramacacacabacacacbsbtbubvbwbxbyacacacabacacbgbzbAbBbCbDbEbFbGbHbgaa
-aabIbIbJbIbKbIbIbIbLabaYbMaYaYaYaYbMbiabaYaYaYaYaYaYaYaYaYabacacabbNacbjamacacbkblbObPbnbobpacacbQabbQacacacacbqbqambqbrbqambqacacacacbRabbRacacbsbtbuacbwbxbyacacbdabacacbgbSbSbSbSbSbSbSbSbSbgaa
-aabIbTbUbUbUbUbUbTbIbIaYaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabacacabamambjacacacbkblbOacbnbobpacacacabacacacacambqbqbrbqambqbrbqamacacacacabacacbVbsbtbubvbwbxbyacacacabacacbgbSbSbSbSbSbSbSbSbSbgaa
+aaabacacacacacabacacabbhaYaYaYaYbiaYbiabaYaYaYaYaYaYaYaYaYabacacabamamaKacacacbjbkblacbmbnboacacacabacacacamacbqbqacbqambqacbqbramacacacabacacacbpbsbtbvbubwbxacacacabacacbgbzbAbBbCbDbEbFbGbHbgaa
+aabIbIbJbIbKbIbIbIbLabaYbMaYaYaYaYbMbiabaYaYaYaYaYaYaYaYaYabacacabbNacaKamacacbjbkbybPbmbnboacacbQabbQacacacacbqbqambqbrbqambqacacacacbRabbRacacbpbsbtacbubwbxacacbdabacacbgbSbSbSbSbSbSbSbSbSbgaa
+aabIbTbUbUbUbUbUbTbIbIaYaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabacacabamamaKacacacbjbkbyacbmbnboacacacabacacacacambqbqbrbqambqbrbqamacacacacabacacbVbpbsbtbvbubwbxacacacabacacbgbSbSbSbSbSbSbSbSbSbgaa
 aabIbUbUbUbUbUbUbUbTbIbiaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabacacabamamamamamamamamamamamamamamabababababaIaIaIaIaIaIaIaIaIaIaIaIaIaIababababababamamamamamamamababababacacbgbSbSbSbWbXbYbSbSbSbgaa
 aabIbUbUbUbUbUbUbUbUbIbZaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabacacabababaIaIaIaIaIaIaIaIaIaIaIababcaabacbcaLaLaLcbaLaLaLaLaLcbaLaLaLaLaNacacacacabaIaIaIaIaIaIaIabcccdacacaccebSbScfbScgbSbSbSbSbgaa
 aabIbUbUbUchbIbUbUbUbKcibhaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabacacacacbcaLaLaLaLaLaLaLcjaLaLaLaNacckacacacacacacacacacacacacacacacacacacacacacacbcaLaLclcmaLaLaLaNacacacacacbgbSbSbScncncnbSbSbSbgaa
