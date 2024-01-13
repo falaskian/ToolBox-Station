@@ -469,9 +469,10 @@ GLOBAL_LIST_EMPTY(tribalslave_ore_dropoff_point)
 	retaliation = 1
 	search_objects = 0
 	wanted_objects = list(/obj/structure/closet/crate,/obj/structure/lizard_ore_node)
-	var/obj/structure/lizard_ore_node/node_target
-	var/list/memory_nodes = list()
-	var/obj/structure/closet/crate/crate_memory
+	var/prefered_node_location = null //text location of where this slave miner should try to find his first node it should be like this "x=1;y=1. the assumption is the z level is the same as the lizard"
+	var/prefered_dropoff_location = null //text location of where this slave miner should try to drop off his first ore load it should be like this "x=1;y=1. the assumption is the z level is the same as the lizard"
+	var/obj/structure/lizard_ore_node/favorite_node
+	var/turf/favorite_drop_off
 	adjustsize = 0.85
 
 /mob/living/simple_animal/hostile/customhumanoid/tribal_slave/ListTargets()
@@ -481,34 +482,63 @@ GLOBAL_LIST_EMPTY(tribalslave_ore_dropoff_point)
 	var/turf/src_turf = get_turf(src)
 	if(!targs.len)
 		if(!has_ore())
-			for(var/obj/structure/lizard_ore_node/node in GLOB.lizard_ore_nodes)
-				if(src_turf.z == node.z)
-					targs += node
-					wander = FALSE
-		else
-			var/list/dropoff_points = list()
-			if(src_turf)
-				for(var/text in GLOB.tribalslave_ore_dropoff_point)
-					var/list/dropoff_point = params2list(text)
-					var/turf/T = locate(text2num(dropoff_point["x"]),text2num(dropoff_point["y"]),text2num(dropoff_point["z"]))
-					if(T)
-						if(T.z != src_turf.z)
-							continue
-						dropoff_points += T
-			if(dropoff_points.len)
-				var/turf/dropoff_point = pick(dropoff_points)
+			var/obj/structure/lizard_ore_node/node
+			if(favorite_node && favorite_node.z == z)
+				node = favorite_node
+			if(!node)
+				var/turf/scan_origin
+				if(istext(prefered_node_location))
+					var/list/paramslist = params2list(prefered_node_location)
+					if(islist(paramslist) && paramslist.len)
+						var/turf/T = locate(text2num(paramslist["x"]),text2num(paramslist["y"]),z)
+						if(istype(T))
+							scan_origin = T
+					scan_origin = src_turf
+				if(scan_origin)
+					node = find_closest(/obj/structure/lizard_ore_node,scan_origin,GLOB.lizard_ore_nodes)
+			if(istype(node))
+				favorite_node = node
+				targs += node
+				wander = FALSE
+			var/turf/drop_off
+			if(favorite_drop_off && favorite_drop_off.z == z)
+				drop_off = favorite_drop_off
+			if(!drop_off)
+				var/turf/scan_origin
+				if(istext(prefered_dropoff_location))
+					var/list/paramslist = params2list(prefered_dropoff_location)
+					if(islist(paramslist) && paramslist.len)
+						var/turf/T = locate(text2num(paramslist["x"]),text2num(paramslist["y"]),z)
+						if(istype(T))
+							scan_origin = T
+					scan_origin = src_turf
+				if(scan_origin)
+					var/list/dropoff_points = list()
+					for(var/text in GLOB.tribalslave_ore_dropoff_point)
+						var/list/dropoff_point = params2list(text)
+						if(islist(dropoff_point) && dropoff_point.len)
+							var/turf/T = locate(text2num(dropoff_point["x"]),text2num(dropoff_point["y"]),text2num(dropoff_point["z"]))
+							if(T)
+								if(T.z != src_turf.z)
+									continue
+								dropoff_points += T
+					if(dropoff_points.len)
+						drop_off = find_closest(null,scan_origin,dropoff_points)
+						favorite_drop_off = drop_off
+			if(drop_off)
+				var/drop_off_target = drop_off
 				var/list/crates = list()
-				var/area/dropoffA = get_area(dropoff_point)
-				for(var/obj/structure/closet/crate/crate in view(8, dropoff_point))
+				var/area/dropoffA = get_area(drop_off)
+				for(var/obj/structure/closet/crate/crate in view(8, drop_off))
 					var/area/crateA = get_area(crate)
-					if(crateA.type != dropoffA.type)
+					if(crateA != dropoffA)
 						continue
 					if(!istype(crate, /obj/structure/closet/crate/secure))
 						crates += crate
 				if(crates.len)
-					if(!crate_memory || !(crate_memory in crates))
-						crate_memory = pick(crates)
-					targs += crate_memory
+					drop_off_target = pick(crates)
+				if(drop_off_target)
+					targs += drop_off_target
 					wander = FALSE
 	return targs
 
@@ -532,13 +562,38 @@ GLOBAL_LIST_EMPTY(tribalslave_ore_dropoff_point)
 		spawn(15)
 			C.close()
 		return
+	/*else if(istype(target, /turf))
+		for(var/obj/item/stack/ore/ore in src)
+			ore.forceMove(target)
+		return*/
 	.=..()
+
+/*/mob/living/simple_animal/hostile/customhumanoid/tribal_slave/CanAttack(atom/the_target)
+	if(isturf(the_target))
+		return TRUE
+	return ..()*/
 
 /mob/living/simple_animal/hostile/customhumanoid/tribal_slave/proc/has_ore()
 	for(var/obj/item/stack/ore/ore in src)
 		return 1
 	return 0
 
+/mob/living/simple_animal/hostile/customhumanoid/proc/find_closest(target_path,atom/origin,list/objects = list())
+	if(origin && objects.len)
+		var/last_dist = -1
+		var/atom/closest
+		for(var/atom/N in objects)
+			if(ispath(target_path) && !istype(N,target_path))
+				continue
+			if(N.z != z)
+				continue
+			var/new_dist = get_dist(N,origin)
+			if(last_dist < 0 || new_dist < last_dist)
+				last_dist = new_dist
+				closest = N
+		if(istype(closest))
+			return closest
+	return null
 
 /mob/living/simple_animal/hostile/customhumanoid/tribal_slave/dead
 	humanoid_held_items = list()

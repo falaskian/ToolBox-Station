@@ -20,6 +20,8 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	speed_process = TRUE
 	var/conveying = FALSE
 
+	var/immune_to_switches = 0
+
 /obj/machinery/conveyor/centcom_auto
 	id = "round_end_belt"
 
@@ -295,6 +297,8 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	operated = 0
 
 	for(var/obj/machinery/conveyor/C in GLOB.conveyors_by_id[id])
+		if(C.immune_to_switches)
+			continue
 		C.operating = position
 		C.update_move_direction()
 		CHECK_TICK

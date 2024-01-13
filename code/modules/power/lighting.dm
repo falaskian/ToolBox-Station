@@ -210,6 +210,7 @@
 	power_channel = AREA_USAGE_LIGHT //Lights are calc'd via area so they dont need to be in the machine list
 	var/on = FALSE					// 1 if on, 0 if off
 	var/on_gs = FALSE
+	var/switched_off_seperately = 0
 	var/static_power_used = 0
 	var/brightness = 10			// luminosity when on, also used in power calculation
 	var/bulb_power = 1			// basically the alpha of the emitted light source
@@ -589,6 +590,8 @@
 // returns if the light has power /but/ is manually turned off
 // if a light is turned off, it won't activate emergency power
 /obj/machinery/light/proc/turned_off()
+	if(switched_off_seperately)
+		return TRUE
 	var/area/A = get_area(src)
 	return !A.lightswitch && A.power_light || flickering
 

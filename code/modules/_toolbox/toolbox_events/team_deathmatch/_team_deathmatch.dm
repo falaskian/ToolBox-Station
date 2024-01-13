@@ -31,6 +31,7 @@
 	var/list/saved_items = list()
 	var/phase = SETUP_LOBBY
 	var/area/lobby_area = /area/TDM/lobby
+	var/lobby_name = ""
 	var/lobby_outfit = /datum/outfit/TDM_lobby
 	var/list/team_lobby_areas = list(
 		/area/TDM/lobby/red = TDM_RED_TEAM,
@@ -67,6 +68,8 @@ client/verb/clearbullshit()
 
 /datum/toolbox_event/team_deathmatch/on_activate(mob/admin_user)
 	. = ..()
+	var/datum/map_template/ruin/space/TDM_lobby/lobby = /datum/map_template/ruin/space/TDM_lobby
+	lobby_name = initial(lobby.name)
 	spawn(0)
 		while(!SSjob || !SSjob.initialized)
 			stoplag()
@@ -154,7 +157,7 @@ client/verb/clearbullshit()
 				if(world.time >= repairtime)
 					var/datum/team_deathmatch_map/map = get_current_map()
 					if(map && map.map)
-						clean_repair_ruins(map,repair = map.repair_map,clean_items = map.clean_map_items,clean_bodies = map.clean_map_bodies)
+						clean_repair_ruins(map,repair = map.repair_map,clean_items = map.clean_map_items,clean_bodies = map.clean_map_bodies,clean_exceptions = map.clean_exceptions)
 						remembering.Remove("repairing")
 
 			//calculate if round should end
@@ -393,7 +396,7 @@ client/verb/clearbullshit()
 		sleep(1)
 	var/datum/map_template/ruin/previous_ruin
 	for(var/datum/map_template/ruin/R in active_ruins)
-		if(R.name == "Team DeathMatch Spawn Chamber")
+		if(R.name == lobby_name)
 			continue
 		previous_ruin = R
 		break
@@ -452,7 +455,7 @@ client/verb/clearbullshit()
 					results.Add(turfs)
 	return results
 
-/datum/toolbox_event/team_deathmatch/proc/clean_repair_ruins(specific,repair = 1,clean_items = 1,clean_bodies = 1)
+/datum/toolbox_event/team_deathmatch/proc/clean_repair_ruins(specific,repair = 1,clean_items = 1,clean_bodies = 1,list/clean_exceptions = list())
 	for(var/ruin in ruin_turfs)
 		if(specific && ruin != specific)
 			continue
@@ -465,7 +468,15 @@ client/verb/clearbullshit()
 				if(T)
 					var/list/to_be_cleansed = list()
 					for(var/atom/movable/AM in T)
+						var/skipme = 0
 						if(AM in saved_items)
+							skipme = 1
+						if(!skipme)
+							for(var/type in clean_exceptions)
+								if(istype(AM,type))
+									skipme = 1
+									break
+						if(skipme)
 							continue
 						to_be_cleansed += AM
 					for(var/atom/movable/AM in to_be_cleansed)
@@ -499,9 +510,7 @@ client/verb/clearbullshit()
 	. = 0
 	while(building_ruin)
 		sleep(1)
-	if(!ruin || !z_levels)
-		return
-	if(!istype(ruin))
+	if(!istype(ruin) || !z_levels)
 		return
 	var/did_we_change_it = 0
 	if(z_levels && z_levels.len)
@@ -570,13 +579,23 @@ client/verb/clearbullshit()
 			if(turfs.len)
 				ruin_turfs[new_map] = list()
 				for(var/turf/T in turfs)
-					for(var/obj/item/I in T)
-						saved_items += I
+					if(new_map.baseturf && !istype(T,/turf/open/space))
+						if(islist(T.baseturfs))
+							for(var/t in T.baseturfs)
+								if(t == /turf/baseturf_bottom)
+									continue
+								T.baseturfs -= t
+							T.baseturfs += new_map.baseturf
+						else
+							T.baseturfs = new_map.baseturf
+					for(var/atom/movable/AM in T)
+						if(!AM.anchored)
+							saved_items += AM
 					ruin_turfs[new_map] += "type=[T.type];x=[T.x];y=[T.y];z=[T.z]"
 
 /datum/toolbox_event/team_deathmatch/proc/load_maps()
 	SSmapping.add_new_zlevel("Team_Deathmatch", list(ZTRAIT_LINKAGE = UNAFFECTED, "Team_Deathmatch" = TRUE))
-	if(!spawn_ruin(SSmapping.space_ruins_templates["Team DeathMatch Spawn Chamber"],SSmapping.levels_by_trait(ZTRAIT_CENTCOM)))
+	if(!spawn_ruin(SSmapping.space_ruins_templates[lobby_name],SSmapping.levels_by_trait(ZTRAIT_CENTCOM)))
 		return
 	for(var/path in subtypesof(/datum/team_deathmatch_map))
 		var/datum/team_deathmatch_map/map = new path()

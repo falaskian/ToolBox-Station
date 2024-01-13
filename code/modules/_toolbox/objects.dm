@@ -798,3 +798,68 @@
 	return ..()
 
 
+//aoe light switch. A light switch that does not rely on area but instead scans out the room to find its lights.
+/obj/machinery/light_switch/aoe
+	var/view_range = 7
+	var/turf/affected_turfs = list()
+	var/on_state = 1
+
+/obj/machinery/light_switch/aoe/Initialize()
+	. = ..()
+	update_lights()
+
+/obj/machinery/light_switch/aoe/toggle_lights()
+	on_state = !on_state
+	update_lights()
+
+/obj/machinery/light_switch/aoe/proc/update_lights()
+	for(var/obj/O in view(view_range,src))
+		if(O == src)
+			continue
+		if(istype(O,/obj/machinery/light) && object_in_los(O))
+			var/obj/machinery/light/L = O
+			L.switched_off_seperately = !on_state
+			L.seton(on_state)
+		if(istype(O,/obj/machinery/light_switch/aoe) && object_in_los(O))
+			var/obj/machinery/light_switch/aoe/A = O
+			A.on_state = on_state
+			A.update_icon()
+	update_icon()
+
+/obj/machinery/light_switch/aoe/proc/object_in_los(atom/movable/AM)
+	var/turf/current = loc
+	var/turf/destination = AM.loc
+	var/timeout = view_range*2
+	while(current != destination && timeout > 0)
+		timeout--
+		var/failure = 0
+		if(current.density)
+			failure = 1
+		if(!failure)
+			for(var/atom/movable/movable in current)
+				if(movable.opacity)
+					failure = 1
+					break
+		if(failure)
+			break
+		current = get_step(current,get_dir(current,destination))
+		if(timeout <= 0)
+			break
+	if(current == destination)
+		return TRUE
+	return FALSE
+
+/obj/machinery/light_switch/aoe/examine(mob/user)
+	. = ..()
+	. -= "It is [area.lightswitch ? "on" : "off"]."
+	. += "It is [on_state ? "on" : "off"]."
+
+/obj/machinery/light_switch/aoe/update_icon()
+	if(stat & NOPOWER)
+		icon_state = "light-p"
+	else
+		if(on_state)
+			icon_state = "light1"
+		else
+			icon_state = "light0"
+

@@ -39,6 +39,9 @@
 /obj/machinery/light_switch/interact(mob/user)
 	. = ..()
 
+	toggle_lights()
+
+/obj/machinery/light_switch/proc/toggle_lights()
 	area.lightswitch = !area.lightswitch
 	area.update_icon()
 

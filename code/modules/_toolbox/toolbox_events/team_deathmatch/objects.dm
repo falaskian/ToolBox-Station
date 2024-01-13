@@ -313,3 +313,27 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 /obj/machinery/recycler/TDM/attackby(obj/item/I, mob/user, params)
 	return
+
+
+		//TDM Converyer. -starts on -cant be switched -cant be disassembled
+
+/obj/machinery/conveyor/TDM
+	immune_to_switches = 0
+	var/cant_be_disesembled = 0
+	var/start_position = 1 // 1 for start forward, -1 for start backwards, 0 for start off
+
+/obj/machinery/conveyor/TDM/Initialize()
+	. = ..()
+	operating = start_position
+	update_move_direction()
+
+//cant be cant_be_disesembled
+/obj/machinery/conveyor/TDM/attackby(obj/item/I, mob/user, params)
+	if(cant_be_disesembled && I.tool_behaviour && (I.tool_behaviour in list(TOOL_CROWBAR,TOOL_WRENCH,TOOL_SCREWDRIVER)))
+		return
+	return ..()
+
+//variations
+/obj/machinery/conveyor/TDM/permanent
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
+	cant_be_disesembled = 1
