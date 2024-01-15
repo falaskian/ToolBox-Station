@@ -1,0 +1,86 @@
+"aa" = (/obj/structure/weightmachine/weightlifter{resistance_flags = 115},/turf/open/floor/carpet/red,/area/TDM/lobby/red)
+"ab" = (/obj/structure/weightmachine/stacklifter{resistance_flags = 115},/turf/open/floor/carpet/red,/area/TDM/lobby/red)
+"ac" = (/obj/structure/weightmachine/stacklifter{resistance_flags = 115},/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
+"ad" = (/obj/structure/weightmachine/weightlifter{resistance_flags = 115},/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
+"ae" = (/obj/structure/punching_bag{color = "#5a5afe"; resistance_flags = 115},/turf/open/floor/carpet/red,/area/TDM/lobby/red)
+"af" = (/obj/machinery/status_display,/turf/closed/indestructible/riveted/TDM,/area/TDM/lobby)
+"ag" = (/obj/structure/punching_bag{color = "#EC2D2D"; resistance_flags = 115},/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
+"ah" = (/obj/machinery/conveyor{desc = "A treadmill."; dir = 4; id = "lobby_big_treadmill_red"; name = "treadmill"; resistance_flags = 115},/turf/open/floor/carpet/red,/area/TDM/lobby/red)
+"ai" = (/turf/closed/indestructible/riveted/TDM,/area/TDM/lobby)
+"aj" = (/obj/machinery/conveyor{dir = 8; id = "lobby_big_treadmill_blue"; operating = 0; resistance_flags = 115},/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
+"ak" = (/obj/machinery/conveyor_switch/oneway{dir = 8; id = "lobby_big_treadmill_red"; name = "treadmill switch"; resistance_flags = 115},/turf/open/floor/carpet/red,/area/TDM/lobby/red)
+"al" = (/obj/structure/reagent_dispensers/water_cooler{resistance_flags = 115},/turf/open/floor/carpet/red,/area/TDM/lobby/red)
+"am" = (/obj/structure/reagent_dispensers/water_cooler,/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
+"an" = (/obj/machinery/conveyor_switch/oneway{id = "lobby_big_treadmill_blue"; name = "treadmill switch"; resistance_flags = 115},/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
+"ao" = (/obj/item/reagent_containers/spray/spraytan,/obj/structure/mirror{pixel_x = -28},/turf/open/floor/carpet/red,/area/TDM/lobby/red)
+"ap" = (/obj/item/reagent_containers/spray/spraytan,/obj/structure/mirror{pixel_x = 28},/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
+"aq" = (/obj/item/banner/TDM/red,/turf/open/floor/carpet/red,/area/TDM/lobby/red)
+"ar" = (/turf/open/floor/carpet/red,/area/TDM/lobby/red)
+"as" = (/obj/structure/railing{dir = 9; resistance_flags = 115},/obj/structure/flora/junglebush/large,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"at" = (/obj/structure/railing{dir = 1; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"au" = (/obj/structure/railing{dir = 5; resistance_flags = 115},/obj/structure/flora/junglebush/large,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"av" = (/obj/item/banner/TDM/blue,/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
+"aw" = (/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
+"ax" = (/obj/structure/mirror{pixel_x = -28},/turf/open/floor/carpet/red,/area/TDM/lobby/red)
+"ay" = (/obj/structure/railing{dir = 8; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"az" = (/obj/structure/flora/tree/jungle/small,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"aA" = (/obj/structure/railing{dir = 4; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"aB" = (/obj/structure/mirror{pixel_x = 28},/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
+"aC" = (/obj/structure/flora/junglebush/b,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"aD" = (/mob/living/simple_animal/pet/penguin/emperor/shamebrero{name = "Guin"},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"aE" = (/obj/structure/flora/junglebush/large,/obj/structure/railing{dir = 4; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"aF" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"aG" = (/obj/structure/flora/junglebush/large,/obj/structure/railing{dir = 8; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"aH" = (/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"aI" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"aJ" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"aK" = (/obj/effect/turf_decal/tile/neutral{dir = 8},/turf/open/indestructible,/area/TDM/lobby)
+"aL" = (/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"aM" = (/obj/structure/railing{dir = 10; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"aN" = (/obj/machinery/door/window{name = "Guin pen"; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"aO" = (/obj/structure/railing{dir = 6; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"aP" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/TDM; tier_level = 4},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"aQ" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle; tier_level = 4},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"aR" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted; tier_level = 4},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"aS" = (/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/indestructible,/area/TDM/lobby)
+"aT" = (/obj/effect/turf_decal/stripes/corner{dir = 1},/turf/open/indestructible,/area/TDM/lobby)
+"aU" = (/turf/open/indestructible,/area/TDM/lobby)
+"aV" = (/obj/effect/turf_decal/stripes/corner{dir = 4},/turf/open/indestructible,/area/TDM/lobby)
+"aW" = (/turf/closed/indestructible/fakedoor{desc = "Its locked."; name = "Lobby Door"},/area/TDM/lobby)
+"aX" = (/obj/effect/turf_decal/loading_area{dir = 1},/turf/open/indestructible,/area/TDM/lobby)
+"aY" = (/obj/effect/turf_decal/plaque,/turf/open/indestructible,/area/TDM/lobby)
+"aZ" = (/obj/structure/TDM/wallmed,/turf/closed/indestructible/riveted/TDM,/area/TDM/lobby)
+"ba" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a357/TDM; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM; tier_level = 2},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"bb" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/s12g; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot; tier_level = 2},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"bc" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM; tier_level = 2},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"bd" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/TDM; tier_level = 3},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"be" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction; tier_level = 3},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"bf" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi; tier_level = 3},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"bg" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/clothing/suit/armor/vest/alt; tier_level = 3},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"bh" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/shield/riot; tier_level = 3},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"bi" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/clothing/head/helmet/sec; tier_level = 4},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
+"bj" = (/obj/item/clothing/gloves/boxing{pixel_x = -7; pixel_y = 10},/turf/open/floor/carpet/red,/area/TDM/lobby/red)
+"bk" = (/obj/item/clothing/gloves/boxing/blue{pixel_x = 7; pixel_y = 10},/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
+"bl" = (/obj/item/clothing/gloves/boxing{pixel_x = -11; pixel_y = -7},/turf/open/floor/carpet/red,/area/TDM/lobby/red)
+"bm" = (/turf/template_noop,/area/space)
+"bn" = (/obj/item/clothing/gloves/boxing/blue{pixel_x = 11; pixel_y = -7},/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
+
+(1,1,1) = {"
+aiaiaiaiaiaibmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmaiaiaiaiaiai
+aiaqaaarabaibmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmaiacawadavai
+aiaoarararaibmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmbmaiawawawapai
+aiaxararabaiaiaiafafafaiaiaiaiaiaiaiafafafaiaiaiacawawaBai
+aiaearararaiaqarararararaqasatauavawawawawawavaiawawawagai
+aibjarararararararararararayazaAawawawawawawawawawawawbkai
+aiaeblararararararararararayaCaAawawawawawawawawawawbnagai
+aiararararararararararararayaDaEawawawawawawawawawawawawai
+aiahahararararararararararaGaHaAawawawawawawawawawawajajai
+aiakararalaiaqarararararaqaMaNaOavawawawawawavaiamawawanai
+aiaiaiaiaiaiaSaSaSaSaSaSaSaTaUaVaSaSaSaSaSaSaSaiaiaiaiaiai
+bmbmbmbmbmaWaUaUaXaUaXaUaUaUaUaUaUaUaXaUaXaUaUaWbmbmbmbmbm
+bmbmbmbmbmaiaUaUaUaUaUaUaUaUaYaUaUaUaUaUaUaUaUaibmbmbmbmbm
+bmbmbmbmbmaiaZaFaIaJaKaUaUaUaUaUaUaUaLaPaQaRaZaibmbmbmbmbm
+bmbmbmbmbmaiaiaiaiaibabbbcaKaUaLbdbebfaiaiaiaiaibmbmbmbmbm
+bmbmbmbmbmbmbmbmbmaiaiaiaibgbhbiaiaiaiaibmbmbmbmbmbmbmbmbm
+bmbmbmbmbmbmbmbmbmbmbmbmaiaiaiaiaibmbmbmbmbmbmbmbmbmbmbmbm
+"}
