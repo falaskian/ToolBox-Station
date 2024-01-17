@@ -95,8 +95,8 @@
 "bQ" = (/obj/effect/portal/permanent{id = "p7"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
 "bR" = (/obj/effect/portal/permanent{id = "p6"},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
 "bS" = (/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
-"bT" = (/obj/structure/TDM/floodlight,/turf/open/indestructible,/area/space)
-"bU" = (/turf/open/indestructible,/area/space)
+"bT" = (/obj/structure/TDM/floodlight,/turf/open/indestructible,/area/TDM/red_base)
+"bU" = (/turf/open/indestructible,/area/TDM/red_base)
 "bV" = (/obj/machinery/button/door{id = "d5"; sync_doors = 0},/turf/open/floor/plating/rust,/area/TDM)
 "bW" = (/obj/item/candle/infinite{name = "cursed candle"; pixel_y = 2},/obj/structure/table/wood/fancy/red{color = "#CDAA97"},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
 "bX" = (/obj/item/book{pixel_y = 6},/obj/structure/table/wood/fancy/red{color = "#CDAA97"},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
@@ -109,36 +109,36 @@
 "ce" = (/obj/structure/mineral_door/wood{color = "#C4A39A"},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
 "cf" = (/obj/effect/decal/remains/human{color = "#9E7658"},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
 "cg" = (/obj/effect/rune/raise_dead,/obj/item/kitchen/knife/ritual,/mob/living/simple_animal/hostile/retaliate/goat,/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
-"ch" = (/turf/closed/indestructible/riveted/TDM/wall,/area/space)
+"ch" = (/obj/structure/TDM/medical_cabinet{pixel_x = 9},/obj/structure/TDM/wallmed{pixel_x = -6},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
 "ci" = (/obj/machinery/door/poddoor{id = "db"; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM)
 "cj" = (/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/turf_decal/stripes/box,/obj/machinery/conveyor_switch{id = "c5"; position = 1},/turf/open/floor/plating/rust,/area/TDM)
 "ck" = (/obj/effect/turf_decal/loading_area{dir = 1},/obj/effect/turf_decal/bot,/turf/open/floor/plating/rust,/area/TDM)
 "cl" = (/obj/machinery/button/door{id = "d5"; sync_doors = 0},/obj/effect/turf_decal/stripes/line{dir = 10},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating/rust,/area/TDM)
 "cm" = (/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/turf_decal/stripes/box,/obj/machinery/conveyor_switch{id = "c6"; position = 1},/turf/open/floor/plating/rust,/area/TDM)
 "cn" = (/turf/open/floor/carpet/red,/area/TDM/blue_base)
-"co" = (/obj/structure/TDM/medical_cabinet{pixel_x = 9},/obj/structure/TDM/wallmed{pixel_x = -6},/turf/closed/indestructible/riveted/TDM/wall,/area/space)
-"cp" = (/obj/structure/displaycase/TDM_item_spawn/revolver,/turf/open/indestructible,/area/space)
+"co" = (/obj/structure/displaycase/TDM_item_spawn/revolver,/turf/open/indestructible,/area/TDM/red_base)
+"cp" = (/obj/structure/displaycase/TDM_item_spawn/knife,/turf/open/indestructible,/area/TDM/red_base)
 "cq" = (/obj/structure/flora/tree/jungle,/turf/open/floor/holofloor/grass,/area/TDM)
 "cr" = (/obj/structure/chair/pew/left{dir = 1},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
 "cs" = (/obj/structure/chair/pew/right{dir = 1},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
-"ct" = (/obj/structure/displaycase/TDM_item_spawn/knife,/turf/open/indestructible,/area/space)
-"cu" = (/obj/structure/displaycase/TDM_item_spawn/shotgun,/turf/open/indestructible,/area/space)
+"ct" = (/obj/structure/displaycase/TDM_item_spawn/shotgun,/turf/open/indestructible,/area/TDM/red_base)
+"cu" = (/obj/structure/displaycase/TDM_item_spawn/stechkin,/turf/open/indestructible,/area/TDM/red_base)
 "cv" = (/obj/effect/turf_decal/bot,/turf/closed/wall/rust,/area/TDM)
-"cw" = (/obj/structure/displaycase/TDM_item_spawn/stechkin,/turf/open/indestructible,/area/space)
-"cx" = (/obj/item/banner/TDM/red,/turf/closed/indestructible/riveted/TDM/wall,/area/space)
+"cw" = (/obj/structure/displaycase/TDM_item_spawn/APS,/turf/open/indestructible,/area/TDM/red_base)
+"cx" = (/obj/structure/displaycase/TDM_item_spawn/m1911,/turf/open/indestructible,/area/TDM/red_base)
 "cy" = (/obj/structure/flora/junglebush/c,/turf/open/floor/holofloor/grass,/area/TDM)
 "cz" = (/obj/structure/chair/pew/left{dir = 1},/obj/item/flashlight/lantern/on{pixel_x = -12},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
 "cA" = (/obj/structure/chair/pew/right{dir = 1},/obj/item/flashlight/lantern/on{pixel_x = 12},/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
-"cB" = (/obj/structure/displaycase/TDM_item_spawn/APS,/turf/open/indestructible,/area/space)
-"cC" = (/obj/structure/displaycase/TDM_item_spawn/m1911,/turf/open/indestructible,/area/space)
-"cD" = (/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/turf/open/indestructible,/area/space)
-"cE" = (/obj/structure/displaycase/TDM_item_spawn/shield,/turf/open/indestructible,/area/space)
-"cF" = (/obj/structure/displaycase/TDM_item_spawn/carbine,/turf/open/indestructible,/area/space)
-"cG" = (/obj/structure/displaycase/TDM_item_spawn/deagle,/turf/open/indestructible,/area/space)
+"cB" = (/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/turf/open/indestructible,/area/TDM/red_base)
+"cC" = (/obj/structure/displaycase/TDM_item_spawn/shield,/turf/open/indestructible,/area/TDM/red_base)
+"cD" = (/obj/structure/displaycase/TDM_item_spawn/carbine,/turf/open/indestructible,/area/TDM/red_base)
+"cE" = (/obj/structure/displaycase/TDM_item_spawn/deagle,/turf/open/indestructible,/area/TDM/red_base)
+"cF" = (/obj/structure/displaycase/TDM_item_spawn/bolt_action,/turf/open/indestructible,/area/TDM/red_base)
+"cG" = (/obj/structure/displaycase/TDM_item_spawn/sniper,/turf/open/indestructible,/area/TDM/red_base)
 "cH" = (/obj/structure/table/wood,/obj/item/reagent_containers/food/snacks/grown/poppy,/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
 "cI" = (/obj/item/flashlight/lantern/on,/turf/open/floor/carpet/royalblack,/area/TDM/blue_base)
-"cJ" = (/obj/structure/displaycase/TDM_item_spawn/bolt_action,/turf/open/indestructible,/area/space)
-"cK" = (/obj/structure/displaycase/TDM_item_spawn/sniper,/turf/open/indestructible,/area/space)
+"cJ" = (/obj/structure/displaycase/TDM_item_spawn/uzi,/turf/open/indestructible,/area/TDM/red_base)
+"cK" = (/obj/structure/displaycase/TDM_item_spawn/c20r,/turf/open/indestructible,/area/TDM/red_base)
 "cL" = (/obj/structure/mineral_door/wood{color = "#C4A39A"},/turf/open/floor/carpet/red,/area/TDM/blue_base)
 "cM" = (/obj/machinery/button/door{id = "db"; pixel_x = -24; sync_doors = 0},/turf/open/floor/holofloor/grass,/area/TDM)
 "cN" = (/obj/structure/flora/junglebush/large,/obj/item/clothing/shoes/clown_shoes,/turf/open/floor/holofloor/grass,/area/TDM)
@@ -161,8 +161,6 @@
 "de" = (/turf/open/floor/plating/asteroid,/area/TDM)
 "df" = (/turf/open/floor/plating/asteroid/basalt,/area/TDM)
 "dg" = (/obj/structure/railing{dir = 1; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM)
-"dh" = (/obj/structure/displaycase/TDM_item_spawn/uzi,/turf/open/indestructible,/area/space)
-"di" = (/obj/structure/displaycase/TDM_item_spawn/c20r,/turf/open/indestructible,/area/space)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -179,23 +177,23 @@ aaababanababababacacabacacacacacacacacabacacacacacacacacacabacacabababababababab
 aaabacbeacacacabacacababababbfabababababacacacacacaccZacacabacacabamamamamamamamamamamamamamamabababababababababababababababababababababababababamamamamamamamababababacacbgbgbgbgbgbgbgbgbgbgbgaa
 aaabacacacacacabacacabbhaYaYaYaYbiaYbiabacacacacacacacacacabacacabamamaVacacacbjbkblacbmbnboacacacabacacacamacbqbqacbqambqcZbqbramacacacabacacacbpbsbtbvbubwbxacacacabacacbgbzbAbBbCbDbEbFbGbHbgaa
 aabIbIbJbIbKbIbIbIbLabaYbMaYaYaYaYbMbiabdedeamamdfdfacacacabacacabbNacaVamacacbjbkbybObmbnboacacbQabbQacacacacbqbqambqbrbqambqacacacacbRabbRacacbpbsbtacbubwbxacacbdabacacbgbSbSbSbSbSbSbSbSbSbgaa
-aabIbTbUbUbUbUbUbTchbIaYaYaYaYaYaYaYaYabdedeamamdfdfacacacabacacabamamaVacacacbjbkbyacbmbnboacacacabacacacacamddbqbrbqambqbrbqamacacacacabacacbVbpbsbtbvbubwbxacacacabacacbgbSbSbSbSbSbSbSbSbSbgaa
+aabIbTbUbUbUbUbUbTbIbIaYaYaYaYaYaYaYaYabdedeamamdfdfacacacabacacabamamaVacacacbjbkbyacbmbnboacacacabacacacacamddbqbrbqambqbrbqamacacacacabacacbVbpbsbtbvbubwbxacacacabacacbgbSbSbSbSbSbSbSbSbSbgaa
 aabIbUbUbUbUbUbUbUbTbIbiaYaYaYaYaYaYaYabababababababababababacacabamamamamamamamamamamamamamamabababababaIaIaIaIaIaIaIaIaIaIaIaIaIaIababababababamamamamamamamababababacacbgbSbSbSbWbXbYbSbSbSbgaa
 aabIbUbUbUbUbUbUbUbUbIbZaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabacacabababaIaIaIaIaIaIaIaIaIaIaIababcaabacbcaLaLaLcbaLaLaLaLaLcbaLaLaLaLaNacacacacabaIaIaIaIaIaIaIabcccdacacaccebSbScfbScgbSbSbSbSbgaa
-aabIbUbUbUcochbUbUbUbKcibhaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabacacacacbcaLcmaNbcaLaLaLcjaLaLaLaNacckacacacacacacacacacacacacacacacacacacacacacacbcaLaLclbPaLaLaLaNacacacacacbgbSbSbScncncnbSbSbSbgaa
-aabIcpbUbUctchbUbUbUbKciaYaYbiaYcqaYaYabaYaYaYaYaYaYaYaYaYabacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacbgbScrcscncncncrcsbSbgaa
-aabLcubUbUcwcxbUbUbUbIbZaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabababababababababababababababababababababababababababababababababababababababababababababababababababababcvacacbgbSbSbScncncnbSbSbSbgaa
-aabIcBbUbUcCchbUbUbUbIbiaYaYaYcyaYaYbiabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbSczcscncncncrcAbSbgaa
-aabIbTbUbUcDchbUbUbUbJaYaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbSbSbScncncnbSbSbSbgaa
-aabIcEbUbUbUchbUbUbUbJaYcqaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbScrcscncncncrcsbSbgaa
-aabIbTbUbUcDchbUbUbUbJaYaYbiaYaYaYaYcqabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbSbSbScncncncfbSbSbgaa
-aabIcFbUbUcGchbUbUbUbIbhaYaYaYbMaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbSbScncncncncnbSbSbgaa
-aabLcJbUbUcKcxbUbUbUbIbZaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgcHcIcncncncncncIcHbgaa
-aabIdhbUbUdichbUbUbUbKcibMaYbhaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbgbgcLcLbgcLcLbgbgbgaa
-aabIbUbUbUcochbUbUbUbKciaYaYaYaYaYbibiabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacacacacacacacacacacacabaa
+aabIbUbUbUchbIbUbUbUbKcibhaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabacacacacbcaLcmaNbcaLaLaLcjaLaLaLaNacckacacacacacacacacacacacacacacacacacacacacacacbcaLaLclbPaLaLaLaNacacacacacbgbSbSbScncncnbSbSbSbgaa
+aabIcobUbUcpbIbUbUbUbKciaYaYbiaYcqaYaYabaYaYaYaYaYaYaYaYaYabacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacbgbScrcscncncncrcsbSbgaa
+aabLctbUbUcubLbUbUbUbIbZaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYabababababababababababababababababababababababababababababababababababababababababababababababababababababcvacacbgbSbSbScncncnbSbSbSbgaa
+aabIcwbUbUcxbIbUbUbUbIbiaYaYaYcyaYaYbiabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbSczcscncncncrcAbSbgaa
+aabIbTbUbUcBbIbUbUbUbJaYaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbSbSbScncncnbSbSbSbgaa
+aabIcCbUbUbUbIbUbUbUbJaYcqaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbScrcscncncncrcsbSbgaa
+aabIbTbUbUcBbIbUbUbUbJaYaYbiaYaYaYaYcqabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbSbSbScncncncfbSbSbgaa
+aabIcDbUbUcEbIbUbUbUbIbhaYaYaYbMaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbSbScncncncncnbSbSbgaa
+aabLcFbUbUcGbLbUbUbUbIbZaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgcHcIcncncncncncIcHbgaa
+aabIcJbUbUcKbIbUbUbUbKcibMaYbhaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacbgbgbgcLcLbgcLcLbgbgbgaa
+aabIbUbUbUchbIbUbUbUbKciaYaYaYaYaYbibiabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacacacacacacacacacacacabaa
 aabIbUbUbUbUbUbUbUbUbIbZaYaYaYaYcqaYbiabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabacacacacacacacacacacacacabaa
 aabIbUbUbUbUbUbUbUbTbIbiaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYababacacacacacacacacacacacabaa
-aabIbTbUbUbUbUbUbTchbLaYaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYababababababababababababababaa
+aabIbTbUbUbUbUbUbTbIbLaYaYaYaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYababababababababababababababaa
 aabIbIbJbIbKbIbIbIbIbiaYaYaYaYaYaYaYbiabaYaYaYaYaYaYaYaYaYaYaYamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaa
 aabZbiaYbZcibZbibZaYaYaYaYaYaYaYbMaYaYabaYaYaYaYaYaYaYaYaYaYaYamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamamaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaa
 aabZcMaYbMaYaYaYbZaYaYaYaYbhaYaYaYaYaYabaYaYaYaYaYaYaYaYaYaYaYdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgdgaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYaYabaa
