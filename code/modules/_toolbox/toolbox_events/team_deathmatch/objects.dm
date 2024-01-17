@@ -108,6 +108,87 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 
 
 
+		//Tier 1
+
+	//Knife
+/obj/structure/displaycase/TDM_item_spawn/knife
+	start_showpiece_type = /obj/item/kitchen/knife/combat/TDM
+	tier_level = 1
+
+	//Stechkin
+/obj/structure/displaycase/TDM_item_spawn/stechkin
+	start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM
+	tier_level = 1
+
+	//M1911
+/obj/structure/displaycase/TDM_item_spawn/m1911
+	start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911
+	tier_level = 1
+
+
+		//Tier 2
+
+	//Revolver
+/obj/structure/displaycase/TDM_item_spawn/revolver
+	start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM
+	ammunition = /obj/item/ammo_box/a357/TDM
+	tier_level = 2
+
+	//Shotgun - Buckshot
+/obj/structure/displaycase/TDM_item_spawn/shotgun
+	start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot
+	ammunition = /obj/item/ammo_box/s12g
+	tier_level = 2
+
+	//APS
+/obj/structure/displaycase/TDM_item_spawn/APS
+	start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM
+	tier_level = 2
+
+
+		//Tier 3
+
+	//Carbine
+/obj/structure/displaycase/TDM_item_spawn/carbine
+	start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/TDM
+	tier_level = 3
+
+	//Bolt Action
+/obj/structure/displaycase/TDM_item_spawn/bolt_action
+	start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction/TDM
+	ammunition = /obj/item/ammo_box/a762/TDM
+	tier_level = 3
+
+	//Uzi
+/obj/structure/displaycase/TDM_item_spawn/uzi
+	start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi
+	tier_level = 3
+
+	//Riot Shield
+/obj/structure/displaycase/TDM_item_spawn/shield
+	start_showpiece_type = /obj/item/shield/riot
+	tier_level = 3
+
+
+		//Tier 4
+
+	//Deagle
+/obj/structure/displaycase/TDM_item_spawn/deagle
+	start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/TDM
+	tier_level = 4
+
+	//Sniper
+/obj/structure/displaycase/TDM_item_spawn/sniper
+	start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle
+	tier_level = 4
+
+	//c20r
+/obj/structure/displaycase/TDM_item_spawn/c20r
+	start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted/TDM
+	tier_level = 4
+
+
+
 	//Medical Cabinet
 
 /obj/structure/TDM/medical_cabinet
