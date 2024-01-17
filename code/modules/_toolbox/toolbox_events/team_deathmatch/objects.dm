@@ -285,6 +285,7 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 /obj/machinery/door/poddoor/TDM/fast
 //	autoclose = 20 //2 seconds
 	open_speed = 2
+	crush_damage = 40
 
 /obj/machinery/door/poddoor/TDM/fast/preopen
 	icon_state = "open"

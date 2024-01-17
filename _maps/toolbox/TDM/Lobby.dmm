@@ -41,10 +41,11 @@
 "O" = (/obj/structure/railing{dir = 6; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "P" = (/obj/effect/turf_decal/stripes/corner{dir = 1},/turf/open/indestructible,/area/TDM/lobby)
 "Q" = (/obj/effect/turf_decal/stripes/corner{dir = 4},/turf/open/indestructible,/area/TDM/lobby)
-"R" = (/obj/machinery/status_display,/turf/closed/indestructible/riveted/TDM,/area/TDM/lobby)
+"R" = (/obj/machinery/status_display{message1 = "RED"; message2 = "TEAM"; resistance_flags = 115},/turf/closed/indestructible/riveted/TDM,/area/TDM/lobby)
+"S" = (/obj/machinery/status_display{message1 = "BLUE"; message2 = "TEAM"; resistance_flags = 115},/turf/closed/indestructible/riveted/TDM,/area/TDM/lobby)
 
 (1,1,1) = {"
-aaaRRRaaaaaaaRRRaaa
+aaaaRaaaaaaaaaSaaaa
 abcccccbehzdfffffda
 acccccccEFGfffffffa
 acccccccEHGfffffffa
