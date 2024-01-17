@@ -104,6 +104,7 @@ client/verb/clearbullshit()
 			announce("Team deathmatch will begin in [time_left] seconds. Choose a side by standing on the side you want to join.")
 			phase = LOBBY_PHASE
 		if(LOBBY_PHASE)
+			clean_repair_ruins(lobby_name,repair = 1,clean_items = 1,clean_bodies = 0)
 			for(var/mob/living/L in GLOB.player_list)
 				if(L.mind && L.mind.assigned_role == player_assigned_role)
 					L.revive(full_heal = TRUE,admin_revive = TRUE)
@@ -644,14 +645,21 @@ client/verb/clearbullshit()
 						T.baseturfs = new_map.baseturf
 					for(var/atom/movable/AM in T)
 						new_map.modify_object(AM)
-						if(!AM.anchored)
-							saved_items += AM
+						saved_items += AM
 					ruin_turfs[new_map] += "type=[T.type];x=[T.x];y=[T.y];z=[T.z]"
 
 /datum/toolbox_event/team_deathmatch/proc/load_maps()
 	SSmapping.add_new_zlevel("Team_Deathmatch", list(ZTRAIT_LINKAGE = UNAFFECTED, "Team_Deathmatch" = TRUE))
-	if(!spawn_ruin(SSmapping.space_ruins_templates[lobby_name],SSmapping.levels_by_trait(ZTRAIT_CENTCOM)))
+	var/datum/map_template/ruin/lobby = SSmapping.space_ruins_templates[lobby_name]
+	if(!spawn_ruin(lobby,SSmapping.levels_by_trait(ZTRAIT_CENTCOM)))
 		return
+	var/list/turfs = get_all_ruin_floors(lobby)
+	if(turfs.len)
+		ruin_turfs[lobby_name] = list()
+		for(var/turf/T in turfs)
+			if(!istype(T,/turf/open/space))
+				T.baseturfs = /turf/open/floor/plating
+			ruin_turfs[lobby_name] += "type=[T.type];x=[T.x];y=[T.y];z=[T.z]"
 	for(var/path in subtypesof(/datum/team_deathmatch_map))
 		var/datum/team_deathmatch_map/map = new path()
 		ruin_maps += map
