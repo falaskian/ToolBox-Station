@@ -18,36 +18,36 @@
 "ar" = (/turf/open/indestructible,/area/TDM/blue_base)
 "as" = (/obj/structure/TDM/medical_cabinet{pixel_x = 9},/obj/structure/TDM/wallmed{pixel_x = -6},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
 "at" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/door/poddoor/preopen{id = "mine_blue_factory_1"},/obj/structure/cable/TDM/yellow{icon_state = "1-2"},/turf/open/floor/plating,/area/TDM)
-"au" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a357/TDM; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM; tier_level = 2},/turf/open/indestructible,/area/TDM/red_base)
-"av" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/red_base)
-"aw" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/turf/open/indestructible,/area/TDM/blue_base)
-"ax" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a357/TDM; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/revolver/TDM; tier_level = 2},/turf/open/indestructible,/area/TDM/blue_base)
-"ay" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/s12g; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot; tier_level = 2},/turf/open/indestructible,/area/TDM/red_base)
-"az" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/red_base)
-"aA" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/TDM},/turf/open/indestructible,/area/TDM/blue_base)
+"au" = (/obj/structure/displaycase/TDM_item_spawn/revolver,/turf/open/indestructible,/area/space)
+"av" = (/turf/open/indestructible,/area/space)
+"aw" = (/obj/structure/displaycase/TDM_item_spawn/knife,/turf/open/indestructible,/area/space)
+"ax" = (/obj/structure/displaycase/TDM_item_spawn/knife,/turf/open/indestructible,/area/TDM/blue_base)
+"ay" = (/obj/structure/displaycase/TDM_item_spawn/revolver,/turf/open/indestructible,/area/TDM/blue_base)
+"az" = (/obj/structure/displaycase/TDM_item_spawn/shotgun,/turf/open/indestructible,/area/space)
+"aA" = (/obj/structure/displaycase/TDM_item_spawn/stechkin,/turf/open/indestructible,/area/space)
 "aB" = (/obj/item/banner/TDM/blue,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
-"aC" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/s12g; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/shotgun/TDM/buckshot; tier_level = 2},/turf/open/indestructible,/area/TDM/blue_base)
-"aD" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/red_base)
-"aE" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/m1911},/turf/open/indestructible,/area/TDM/blue_base)
-"aF" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM; tier_level = 2},/turf/open/indestructible,/area/TDM/red_base)
-"aG" = (/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/turf/open/indestructible,/area/TDM/red_base)
+"aC" = (/obj/structure/displaycase/TDM_item_spawn/stechkin,/turf/open/indestructible,/area/TDM/blue_base)
+"aD" = (/obj/structure/displaycase/TDM_item_spawn/shotgun,/turf/open/indestructible,/area/TDM/blue_base)
+"aE" = (/obj/structure/displaycase/TDM_item_spawn/APS,/turf/open/indestructible,/area/space)
+"aF" = (/obj/structure/displaycase/TDM_item_spawn/m1911,/turf/open/indestructible,/area/space)
+"aG" = (/obj/structure/displaycase/TDM_item_spawn/m1911,/turf/open/indestructible,/area/TDM/blue_base)
 "aH" = (/obj/effect/turf_decal/sand/plating,/turf/open/floor/plating/asteroid,/area/TDM)
 "aI" = (/obj/machinery/clonepod/TDM/team_blue{TDM_on = 1},/turf/open/indestructible,/area/TDM/blue_base)
-"aJ" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM; tier_level = 2},/turf/open/indestructible,/area/TDM/blue_base)
+"aJ" = (/obj/structure/displaycase/TDM_item_spawn/APS,/turf/open/indestructible,/area/TDM/blue_base)
 "aK" = (/obj/machinery/button/door{id = "mine_red_factory2"; name = "Blastdoor Control"; pixel_x = -5; pixel_y = -25; req_access_txt = "0"; resistance_flags = 115},/turf/open/floor/plating/rust,/area/TDM)
-"aL" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 25; start_showpiece_type = /obj/item/shield/riot},/turf/open/indestructible,/area/TDM/blue_base)
+"aL" = (/obj/structure/TDM/floodlight,/turf/open/indestructible,/area/space)
 "aM" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/red,/obj/structure/fans/tiny/invisible,/turf/open/floor/sepia/TDM,/area/TDM/red_base)
 "aN" = (/obj/structure/mineral_door/iron/TDM,/obj/structure/TDM/spawn_protection/blue,/obj/structure/fans/tiny/invisible,/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
-"aO" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/shield/riot; tier_level = 3},/turf/open/indestructible,/area/TDM/red_base)
-"aP" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/TDM; tier_level = 3},/turf/open/indestructible,/area/TDM/red_base)
-"aQ" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/TDM; tier_level = 4},/turf/open/indestructible,/area/TDM/red_base)
-"aR" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/TDM; tier_level = 4},/turf/open/indestructible,/area/TDM/blue_base)
-"aS" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/surplus/TDM; tier_level = 3},/turf/open/indestructible,/area/TDM/blue_base)
-"aT" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction; tier_level = 3},/turf/open/indestructible,/area/TDM/red_base)
-"aU" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle; tier_level = 4},/turf/open/indestructible,/area/TDM/red_base)
-"aV" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle; tier_level = 4},/turf/open/indestructible,/area/TDM/blue_base)
-"aW" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a762; death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/rifle/boltaction; tier_level = 3},/turf/open/indestructible,/area/TDM/blue_base)
-"aX" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi; tier_level = 3},/turf/open/indestructible,/area/TDM/red_base)
+"aO" = (/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/turf/open/indestructible,/area/space)
+"aP" = (/obj/structure/displaycase/TDM_item_spawn/shield,/turf/open/indestructible,/area/space)
+"aQ" = (/obj/structure/displaycase/TDM_item_spawn/shield,/turf/open/indestructible,/area/TDM/blue_base)
+"aR" = (/obj/structure/displaycase/TDM_item_spawn/carbine,/turf/open/indestructible,/area/space)
+"aS" = (/obj/structure/displaycase/TDM_item_spawn/deagle,/turf/open/indestructible,/area/space)
+"aT" = (/obj/structure/displaycase/TDM_item_spawn/deagle,/turf/open/indestructible,/area/TDM/blue_base)
+"aU" = (/obj/structure/displaycase/TDM_item_spawn/carbine,/turf/open/indestructible,/area/TDM/blue_base)
+"aV" = (/obj/structure/displaycase/TDM_item_spawn/bolt_action,/turf/open/indestructible,/area/space)
+"aW" = (/obj/structure/displaycase/TDM_item_spawn/sniper,/turf/open/indestructible,/area/space)
+"aX" = (/obj/structure/displaycase/TDM_item_spawn/sniper,/turf/open/indestructible,/area/TDM/blue_base)
 "aY" = (/obj/structure/closet/crate/miningcar/minecart{anchored = 1; resistance_flags = 115},/turf/open/floor/plating/asteroid,/area/TDM)
 "aZ" = (/obj/item/pickaxe,/turf/open/floor/plating/asteroid,/area/TDM)
 "ba" = (/obj/effect/turf_decal/sand/plating,/turf/closed/wall/rust,/area/TDM)
@@ -160,9 +160,11 @@
 "dd" = (/obj/structure/cable/TDM/white{icon_state = "0-8"},/obj/structure/TDM/apc/red{name = "Tunnel APC"; pixel_y = -24},/turf/open/indestructible,/area/TDM/red_base)
 "de" = (/obj/effect/slave_ore_dropoff_point{make_decal = 1},/turf/open/floor/plating/rust,/area/TDM)
 "df" = (/mob/living/simple_animal/hostile/customhumanoid/tribal_slave/TDM/blue,/turf/open/floor/plating/asteroid,/area/TDM)
-"dg" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted; tier_level = 4},/turf/open/indestructible,/area/TDM/red_base)
-"dh" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/c20r/unrestricted; tier_level = 4},/turf/open/indestructible,/area/TDM/blue_base)
-"di" = (/obj/structure/displaycase/TDM_item_spawn{death_count_unlock = 0; start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi; tier_level = 3},/turf/open/indestructible,/area/TDM/blue_base)
+"dg" = (/obj/structure/displaycase/TDM_item_spawn/bolt_action,/turf/open/indestructible,/area/TDM/blue_base)
+"dh" = (/obj/structure/displaycase/TDM_item_spawn/uzi,/turf/open/indestructible,/area/space)
+"di" = (/obj/structure/displaycase/TDM_item_spawn/c20r,/turf/open/indestructible,/area/space)
+"dj" = (/obj/structure/displaycase/TDM_item_spawn/c20r,/turf/open/indestructible,/area/TDM/blue_base)
+"dk" = (/obj/structure/displaycase/TDM_item_spawn/uzi,/turf/open/indestructible,/area/TDM/blue_base)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -183,15 +185,15 @@ aaagbQapckcbcwapbQagagafafadadabbLababaZadadadaeadafadadadadadadadadabababababab
 aaagapcYapapapapapbQagafafadadabababababcdadadadadafadadabababbsadababababababababababababababbrbLbrababababababababababababababadbsabababadadafadadadadcdabababababadadafafbEcrarararararararbEaa
 aaagapapapapapapapapagblafadadadababababbOababadadafadababababababababababadadabababababababababababababababababababadadababababababababababadafadadababbOababababadadadafblbEararararararararbEaa
 aaagapapapasagapapapaMblafaeadadadabababababababadafadadababababababababadadadadadabababababababababababababababadadadadadababababababababadadafadabababababababadadadaeafblaNarararbEcuarararbEaa
-aaagauapapavagapapapaMblafaeadadadadadabababababadafaHadadaZabababababadadadaHadadadadabababababababababababadadadadaHadadadabababababaZadadaHafadabababababadadadadadaeafblaNarararbEawararaxbEaa
-aaajayapapazajapapapagblafafafafafadadadadadbmadadafafaHabadbOabaHabababadadaeaHadadadadabababababababababadadadadaHaeadadabababaHabbOadabaHafafadadbmadadadadadafafafafafblbEarararaBaAararaCaBaa
-aaagaFapapaDagapapapagafafafafbPafafadadadadbmadafafafafacacacabaHaHababadadbNaHaHadadbsadabababababababadbsadadaHaHbNadadababaHaHabacacacafafafafadbmadadadadafafbPafafafafbEarararbEaEararaJbEaa
-aaagbQapapaGagbIapapahafafbnafafafafafafafafafafafafafcvcEacafaHaHaHaHaHaHaHaeaHaHaHaHaHaHaHababbLababaHaHaHaHaHaHaHaeaHaHaHaHaHaHaHafaccGcHafafafafafafafafafafafafafbnafafanararcIbEaIararcrbEaa
-aaagaOapapapagdcbGbGbJcccfctcfcfcfcfcfcfcfcfcfcfctcfcxcyafcJafaHaHaYaHaHaHaHaHaHaHaHaYaHaHaZbLabababbLaZaHaHaYaHaHaHaHaHaHaHaHaYaHaHafcKcLcMcxcfctcfcfcfcfcfcfcfcfcfcfctcfcccNcOcOcPbEarararaLbEaa
-aaagbQapapaGagbKapapahafafbnafafafafafafafafafafbnafcAafafcJafafaHaHaHaHaHaHaHaHaHaHaHaHaHabababababababaHaHaHaHaHaHaHaHaHaHaHaHaHafafcKcLcLcAafbnafafafafafafafafafafbnafafanararcQbEaIararcrbEaa
-aaagaPapapaQagapapapagafafafafbPafafadadadaeadadafafcBafafacababababababadadabababaHaHbsaeabababababababaebsaHaHabababadadababababababacafcLcBafcLadadaeadadadafafbPafafafafbEarararbEaRararaSbEaa
-aaajaTapapaUajapapapagblafafafafafadadadaeaeadadadabababacacacabababababadadabababababaHaHabababababababaHaHabababababadadabababababacacacabababadadadaeaeadadadafafafafafblbEarararaBaVararaWaBaa
-aaagaXapapdgagapapapaMblafaeadadadadadadadabababababababababababababadadadadadadadabbLabadabababababababadabbOabadadadadadadadabababababababababababababadadadadadadadaeafblaNarararbEdharardibEaa
+aaagauavavawagapapapaMblafaeadadadadadabababababadafaHadadaZabababababadadadaHadadadadabababababababababababadadadadaHadadadabababababaZadadaHafadabababababadadadadadaeafblaNarararbEaxararaybEaa
+aaajazavavaAajapapapagblafafafafafadadadadadbmadadafafaHabadbOabaHabababadadaeaHadadadadabababababababababadadadadaHaeadadabababaHabbOadabaHafafadadbmadadadadadafafafafafblbEarararaBaCararaDaBaa
+aaagaEavavaFagapapapagafafafafbPafafadadadadbmadafafafafacacacabaHaHababadadbNaHaHadadbsadabababababababadbsadadaHaHbNadadababaHaHabacacacafafafafadbmadadadadafafbPafafafafbEarararbEaGararaJbEaa
+aaagaLavavaOagbIapapahafafbnafafafafafafafafafafafafafcvcEacafaHaHaHaHaHaHaHaeaHaHaHaHaHaHaHababbLababaHaHaHaHaHaHaHaeaHaHaHaHaHaHaHafaccGcHafafafafafafafafafafafafafbnafafanararcIbEaIararcrbEaa
+aaagaPavavavagdcbGbGbJcccfctcfcfcfcfcfcfcfcfcfcfctcfcxcyafcJafaHaHaYaHaHaHaHaHaHaHaHaYaHaHaZbLabababbLaZaHaHaYaHaHaHaHaHaHaHaHaYaHaHafcKcLcMcxcfctcfcfcfcfcfcfcfcfcfcfctcfcccNcOcOcPbEarararaQbEaa
+aaagaLavavaOagbKapapahafafbnafafafafafafafafafafbnafcAafafcJafafaHaHaHaHaHaHaHaHaHaHaHaHaHabababababababaHaHaHaHaHaHaHaHaHaHaHaHaHafafcKcLcLcAafbnafafafafafafafafafafbnafafanararcQbEaIararcrbEaa
+aaagaRavavaSagapapapagafafafafbPafafadadadaeadadafafcBafafacababababababadadabababaHaHbsaeabababababababaebsaHaHabababadadababababababacafcLcBafcLadadaeadadadafafbPafafafafbEarararbEaTararaUbEaa
+aaajaVavavaWajapapapagblafafafafafadadadaeaeadadadabababacacacabababababadadabababababaHaHabababababababaHaHabababababadadabababababacacacabababadadadaeaeadadadafafafafafblbEarararaBaXarardgaBaa
+aaagdhavavdiagapapapaMblafaeadadadadadadadabababababababababababababadadadadadadadabbLabadabababababababadabbOabadadadadadadadabababababababababababababadadadadadadadaeafblaNarararbEdjarardkbEaa
 aaagapapapasagapapapaMblafaeadadadadadababababababbLababababababbsadadadadadadadabababababababababababababababababadadadadadadadbsababababababbOababababababadadadadadaeafblaNarararbEcuarararbEaa
 aaagapapapapapapapapagblafadadadadadababababababababababababadadadadadadaYadadabababababababababababababababababababadadaYadadadadadadababababababababababababadadadadadafblbEararararararararbEaa
 aaagapapapapapapapbQagafafadadadadababababababababadadbLadadadadadadadadadadaZabababababababababababababababababababaZadadadadadadadadadadbOadadababababababababadadadadafafbEcrarararararararbEaa
