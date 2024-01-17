@@ -1,8 +1,7 @@
 /********************** TDM New & Updated Weapons **************************/
 
 
-		//9mm Pistol - Stechkin - 12 ammo, 20DMG
-
+	//9mm Pistol - Stechkin - 12 ammo, 20DMG
 /obj/item/gun/ballistic/automatic/pistol/TDM
 	desc = "A small, easily concealable 9mm handgun. Damage: 20. Fire Rate: 3"
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm/TDM
@@ -13,115 +12,133 @@
 
 
 
-		//9mm Stetchkin APS - 3rnd brst, 12(4) ammo, uses same mags and does same dmg as Stechkin but automatic
-
+	//9mm Stetchkin APS - 3rnd brst, 12(4) ammo, uses same mags and does same dmg as Stechkin but automatic
 /obj/item/gun/ballistic/automatic/pistol/APS/TDM
 	desc = "Automatic, easily concealable 9mm handgun. Damage: 20. Fire Rate: 3"
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm/TDM
 
 
 
-		//.357 Revolver - 6 ammo, 45DMG
-
+	//.357 Revolver - 6 ammo, 45DMG
 /obj/item/gun/ballistic/revolver/TDM
 	name = "\improper .357 revolver"
 	desc = "Big Iron on his hip. Uses .357 ammo. Damage: 45."
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/TDM
+	fire_rate = 1.7
 
+	//Magazine - Internal
 /obj/item/ammo_box/magazine/internal/cylinder/TDM
 	ammo_type = /obj/item/ammo_casing/a357/TDM
 	max_ammo = 6
 
+	//Ammo
+/obj/item/ammo_casing/a357/TDM
+	projectile_type = /obj/item/projectile/bullet/a357/TDM
+
+	//Bullet
+/obj/item/projectile/bullet/a357/TDM
+	damage = 45
+
+	//Speedloader
 /obj/item/ammo_box/a357/TDM
 	ammo_type = /obj/item/ammo_casing/a357/TDM
 	max_ammo = 6
 
-/obj/item/ammo_casing/a357/TDM
-	projectile_type = /obj/item/projectile/bullet/a357/TDM
 
-/obj/item/projectile/bullet/a357/TDM
-	damage = 45
+		//Shotguns
 
-
-
-		//SHOTGUNS
-
-		//DoubleBarrel Shotgun - Slug
+	//DoubleBarrel Shotgun - Slug
 /obj/item/gun/ballistic/shotgun/doublebarrel/TDM
 	desc = "A true classic. Damage: 60."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/TDM
 	//rack_sound_volume = 0
 	//fire_rate = 2 //being double barrelled, you don't rely on internal mechanisms.
 	//pb_knockback = 3
+	weapon_weight = WEAPON_HEAVY
 
-
-		//DoubleBarrel Shotgun - Buckshot
+	//DoubleBarrel Shotgun - Buckshot
 /obj/item/gun/ballistic/shotgun/doublebarrel/TDM/buckshot
 	desc = "A true classic. Damage: 54."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/TDM/buckshot
+	weapon_weight = WEAPON_HEAVY
 
-
-		//Pump Shotgun - Slug
+	//Pump Shotgun - Slug
 /obj/item/gun/ballistic/shotgun/TDM
 	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath. Damage: 60."
 	name = "pump shotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/TDM
+	weapon_weight = WEAPON_HEAVY
 
-
-		//Pump Shotgun - Buckshot
+	//Pump Shotgun - Buckshot
 /obj/item/gun/ballistic/shotgun/TDM/buckshot
 	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath. Damage: 54."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/TDM/buckshot
-
+	weapon_weight = WEAPON_HEAVY
 
 
 		//Shotgun Mags
 
 	//DoubleBarrel - Slug
 /obj/item/ammo_box/magazine/internal/shot/dual/TDM
-	ammo_type = /obj/item/ammo_casing/shotgun
+	ammo_type = /obj/item/ammo_casing/shotgun/TDM
 	max_ammo = 2
 	multiload = 1
 
 	//DoubleBarrel - Buckshot
 /obj/item/ammo_box/magazine/internal/shot/dual/TDM/buckshot
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot/TDM
 
 	//Pump Shotgun - Slug
 /obj/item/ammo_box/magazine/internal/shot/TDM
-	ammo_type = /obj/item/ammo_casing/shotgun
+	ammo_type = /obj/item/ammo_casing/shotgun/TDM
 	max_ammo = 4
 	multiload = 1
 
 	//Pump Shotgun - Buckshot
 /obj/item/ammo_box/magazine/internal/shot/TDM/buckshot
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot/TDM
 
 
 		//Shotgun Ammo
-//obj/item/ammo_casing/shotgun/TDM
 
-//obj/item/projectile/bullet/shotgun_slug/TDM
-	//damage = 55
+	//Slug
+/obj/item/ammo_casing/shotgun/TDM
+	projectile_type = /obj/item/projectile/bullet/shotgun_slug/TDM
+
+	//Buckshot
+/obj/item/ammo_casing/shotgun/buckshot/TDM
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot/TDM
 
 
+		//Shotgun Projectile
+
+	//Slug
+/obj/item/projectile/bullet/shotgun_slug/TDM
+	damage = 60
+	armour_penetration = -20
+
+	//Buckshot
+/obj/item/projectile/bullet/pellet/shotgun_buckshot/TDM
+	name = "buckshot pellet"
+	damage = 12
+	tile_dropoff = 0.5
 
 
+	//Shotgun Speedloader
+
+	//Buckshot
 /obj/item/ammo_box/s12g
 	name = "speedloader (12g Buckshot)"
 	desc = "Designed to quickly reload double-barrel shotguns."
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "gshell-live"
 	item_state = null
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot/TDM
 	max_ammo = 2
-
 
 /obj/item/ammo_box/s12g/Initialize()
 	.=..()
 	update_icon()
-
 
 /obj/item/ammo_box/s12g/update_icon()
 	overlays.Cut()
@@ -138,10 +155,7 @@
 
 
 
-
-
-		//Uzi 9mm - 3rnd brst, 24(8) ammo, 20DMG
-
+	//Uzi 9mm - 3rnd brst, 24(8) ammo, 20DMG
 /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi
 	name = "\improper Type U3 Uzi"
 	desc = "A lightweight submachine gun. Uses 9mm rounds. Damage: 20."
@@ -151,20 +165,22 @@
 	mag_display = TRUE
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm/TDM
 	burst_size = 3
+	weapon_weight = WEAPON_HEAVY
 
+	//Uzi Magazine
 /obj/item/ammo_box/magazine/uzim9mm/TDM
 	max_ammo = 24
 
 
 
-		//Carbine - 10 ammo, 35DMG
-
+	//Carbine - 10 ammo, 35DMG
 /obj/item/gun/ballistic/automatic/surplus/TDM
 	name = "carbine"
 	desc = "California Compliant. Uses .45 carbine ammo and its bulky frame prevents one-hand firing. Damage: 35."
 	mag_type = /obj/item/ammo_box/magazine/m45carbine
 	fire_delay = 0
-	fire_rate = 2.5
+	fire_rate = 2.8
+	weapon_weight = WEAPON_HEAVY
 
 	//Magazine
 /obj/item/ammo_box/magazine/m45carbine
@@ -195,7 +211,8 @@
 	damage = 35
 
 
-		//Knife - 35DMG, 30DMG thrown
+
+	//Knife - 35DMG, 30DMG thrown
 /obj/item/kitchen/knife/combat/TDM
 	desc = "A military combat knife. Damage: 35. Damage thrown: 30."
 	force = 35
@@ -203,10 +220,47 @@
 	bayonet = TRUE
 
 
+
+	//Deagle
 /obj/item/gun/ballistic/automatic/pistol/deagle/TDM
 	fire_rate = 2.5
+	weapon_weight = WEAPON_HEAVY
 
-//*************** Misc Weapons ************
+
+
+	//c20r SMG
+/obj/item/gun/ballistic/automatic/c20r/unrestricted/TDM
+	weapon_weight = WEAPON_HEAVY
+
+
+
+	//Bolt Action Rifle
+/obj/item/gun/ballistic/rifle/boltaction/TDM
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/TDM
+	weapon_weight = WEAPON_HEAVY
+
+	//Magazine - Internal
+/obj/item/ammo_box/magazine/internal/boltaction/TDM
+	ammo_type = /obj/item/ammo_casing/a762/TDM
+
+	//Ammo
+/obj/item/ammo_casing/a762/TDM
+	projectile_type = /obj/item/projectile/bullet/a762/TDM
+
+	//Projectile
+/obj/item/projectile/bullet/a762/TDM
+	damage = 60
+	armour_penetration = 20
+
+	//SpeedLoader - Clip
+/obj/item/ammo_box/a762/TDM
+	ammo_type = /obj/item/ammo_casing/a762/TDM
+
+
+
+/********************** MISC WEAPONS **************************/
+
+
 
 /********************** WINTER WONDERLAND **************************/
 
