@@ -91,6 +91,11 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 		H.mind.assigned_role = "Team Deathmatch"
 		if(team)
 			H.mind.special_role = team
+		if(SStoolbox_events)
+			for(var/t in SStoolbox_events.cached_events)
+				var/datum/toolbox_event/team_deathmatch/E = SStoolbox_events.is_active(t)
+				if(istype(E) && E.active)
+					E.create_hud_for_mob(H)
 	create_record(H)
 	equip_clothing(H)
 	return H

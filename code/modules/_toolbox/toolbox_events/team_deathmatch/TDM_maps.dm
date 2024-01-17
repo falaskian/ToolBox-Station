@@ -198,7 +198,7 @@
 	placement_weight = 1
 	cost = 0
 	allow_duplicates = FALSE
-	prefix = "_maps/toolbox/TDM/Template.dmm"
+	prefix = "_maps/toolbox/TDM/DeathRun.dmm"
 
 
 

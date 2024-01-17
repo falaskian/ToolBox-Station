@@ -26,7 +26,6 @@
 		"Chief Engineer" = 0,
 		"Research Director" = 0,
 		"Chief Medical Officer" = 0)
-	var/list/map_datums = list()
 	var/player_assigned_role = "Team Deathmatch"
 	var/list/saved_items = list()
 	var/phase = SETUP_LOBBY
@@ -39,6 +38,7 @@
 	var/list/team_home_areas = list(
 		/area/TDM/red_base = TDM_RED_TEAM,
 		/area/TDM/blue_base = TDM_BLUE_TEAM)
+	var/list/client_images = list()
 	var/next_timer = 0
 	var/list/players = list()
 	var/list/teams = list()
@@ -90,6 +90,7 @@ client/verb/clearbullshit()
 /datum/toolbox_event/team_deathmatch/process()
 	if(SSticker.current_state != GAME_STATE_PLAYING || phase == GAME_OVER_PHASE)
 		return
+	handle_huds()
 	switch(phase)
 		if(SETUP_LOBBY)
 			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
@@ -216,6 +217,9 @@ client/verb/clearbullshit()
 							for(var/datum/mind/mind in team)
 								if(isliving(mind.current))
 									var/mob/living/L = mind.current
+									spawn(20)
+										if(L)
+											L << sound('sound/toolbox/lostthematch.ogg', volume = 100)
 									to_chat(L, "<B>Your team has lost the round!</B>")
 									spawn(0)
 										L.shit_pants(0,0,0)
@@ -260,8 +264,43 @@ client/verb/clearbullshit()
 			GLOB.dont_inform_to_adminhelp_death += H.mind
 			H.mind.assigned_role = player_assigned_role
 			H.mind.special_role = ""
+			create_hud_for_mob(H)
 		if(old_mob && !QDELETED(old_mob))
 			qdel(old_mob)
+
+/datum/toolbox_event/team_deathmatch/proc/create_hud_for_mob(mob/M)
+	if(M && M.mind)
+		var/image/I = new()
+		I.icon = 'icons/oldschool/huds.dmi'
+		client_images[M.mind] = I
+		return I
+
+/datum/toolbox_event/team_deathmatch/proc/handle_huds()
+	var/list/images = list()
+	var/list/mobs = list()
+	for(var/datum/mind/M in client_images)
+		if(M.assigned_role != player_assigned_role)
+			if(client_images[M])
+				del(client_images[M])
+			client_images.Remove(M)
+			continue
+		var/image/I = client_images[M]
+		if(!I)
+			I = create_hud_for_mob(M)
+		if(M.current)
+			mobs += M.current
+			if(I.loc != M.current)
+				I.loc = M.current
+			if(!(M.special_role in list(TDM_RED_TEAM,TDM_BLUE_TEAM)))
+				I.icon_state = ""
+			else
+				I.icon_state = "team_[M.special_role]"
+		images += I
+	for(var/mob/M in mobs)
+		if(M.client)
+			for(var/image/I in images)
+				if(!(I in M.client.images))
+					M.client.images += I
 
 /datum/toolbox_event/team_deathmatch/proc/gather_and_spawn_lobbyists(midround = 0)
 	while(building_ruin)
@@ -339,10 +378,12 @@ client/verb/clearbullshit()
 			for(var/mob/L in players_to_restart)
 				if(!istype(L,/mob/living) && !isobserver(L))
 					continue
-				if(L.mind && L.mind.assigned_role == player_assigned_role)
-					var/mob/living/carbon/human/H = create_human(L.mind,pick(lobby_turfs),1)
-					if(H)
-						H.equipOutfit(lobby_outfit)
+				if(L.mind)
+					L.mind.special_role = ""
+					if(L.mind.assigned_role == player_assigned_role)
+						var/mob/living/carbon/human/H = create_human(L.mind,pick(lobby_turfs),1)
+						if(H)
+							H.equipOutfit(lobby_outfit)
 			teams.Cut()
 			GLOB.TDM_cloner_records.Cut()
 			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
@@ -377,6 +418,7 @@ client/verb/clearbullshit()
 /datum/toolbox_event/team_deathmatch/update_player_inventory(mob/living/M)
 	if(M.mind)
 		M.mind.assigned_role = player_assigned_role
+		create_hud_for_mob(M)
 
 /datum/toolbox_event/team_deathmatch/override_late_join_spawn(mob/living/M,buckle = TRUE)
 	. = override_job_spawn(M)
@@ -512,6 +554,9 @@ client/verb/clearbullshit()
 		sleep(1)
 	if(!istype(ruin) || !z_levels)
 		return
+	if(!ruin.prefix || !fexists(ruin.prefix))
+		message_admins("Ruin [ruin.type] has no .dmm file set as a prefix. Cannot spawn this ruin.")
+		return
 	var/did_we_change_it = 0
 	if(z_levels && z_levels.len)
 		if(SSair.can_fire)
@@ -601,8 +646,6 @@ client/verb/clearbullshit()
 		var/datum/team_deathmatch_map/map = new path()
 		ruin_maps += map
 		map.load_up()
-		if(istype(map.map))
-			map_datums[map.map.name] = map
 
 //
 //  "Have Fun!"
