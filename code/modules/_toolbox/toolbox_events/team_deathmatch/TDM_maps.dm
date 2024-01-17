@@ -63,6 +63,7 @@
 /datum/team_deathmatch_map/TDM_Dust1
 	name = "TDM Dust1"
 	map = /datum/map_template/ruin/space/TDM_Dust1
+	baseturf = /turf/open/floor/plating/asteroid
 
 /datum/map_template/ruin/space/TDM_Dust1
 	name = "TDM Dust1"
@@ -82,6 +83,7 @@
 /datum/team_deathmatch_map/TDM_smeltery
 	name = "TDM Smeltery"
 	map = /datum/map_template/ruin/space/TDM_smeltery
+	baseturf = /turf/open/floor/plating/asteroid/basalt
 
 /datum/map_template/ruin/space/TDM_smeltery
 	name = "TDM Smeltery"
@@ -110,6 +112,7 @@
 	repair_map = 0
 	clean_map_items = 0
 	clean_map_bodies = 1
+	baseturf = /turf/open/floor/plating/asteroid
 
 /datum/map_template/ruin/space/TDM_Mine
 	name = "TDM Mine"
@@ -129,6 +132,7 @@
 /datum/team_deathmatch_map/ministation
 	name = "TDM MiniStation"
 	map = /datum/map_template/ruin/space/TDM_MiniStation
+	baseturf = /turf/open/floor/plating
 //		repair_map = 1
 //		clean_map_items = 1
 //		clean_map_bodies = 1
@@ -161,6 +165,7 @@
 //	repair_map = 1
 	clean_map_items = 0
 //	clean_map_bodies = 1
+	baseturf = /turf/open/floor/plating
 
 /datum/map_template/ruin/space/TDM_MiniStation_GreyTide
 	name = "GreyTide MiniStation"
@@ -187,6 +192,7 @@
 		"t1" = /datum/outfit/TDM/Runner),
 		TDM_BLUE_TEAM = list(
 		"t1" = /datum/outfit/TDM/Death))
+	baseturf = /turf/open/floor/holofloor/grass
 
 
 /datum/map_template/ruin/space/TDM_DeathRun
@@ -220,6 +226,7 @@
 //	repair_map = 1
 	clean_map_items = 0
 //	clean_map_bodies = 1
+	baseturf = /turf/open/floor/plating
 
 /datum/map_template/ruin/space/TDM_MiniStation_GreyTide_NoBase
 	name = "GreyTide MiniStation - nobase"

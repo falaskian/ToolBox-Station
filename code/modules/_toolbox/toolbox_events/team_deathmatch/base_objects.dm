@@ -17,6 +17,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	var/times_cloned = 0
 	var/list/teir_kills = list(0,3,6,15)
 	var/last_go_out = null //to fix a bug that seems to be happening in the parent, it attempts to call go_out more then once.
+	var/spawn_area = null //set as a /area type path, the spawner will send the person to this area at a random turf.
 	var/list/team_outfits = list(
 		TDM_RED_TEAM = list(
 		"t1" = /datum/outfit/TDM/red,
@@ -180,8 +181,46 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 				M.dna.update_dna_identity()
 			M.fully_heal()
 			equip_clothing(M)
+			teleport_to_spawn(M)
 		if(!mess)
 			times_cloned++
+
+/obj/machinery/clonepod/TDM/proc/teleport_to_spawn(mob/M)
+	var/turf/drop_off_turf
+	if(ispath(spawn_area))
+		var/area/A = locate(spawn_area)
+		if(istype(A))
+			var/list/turfs = list()
+			for(var/turf/T in A)
+				if(T.density || istype(T,/turf/open/space))
+					continue
+				var/obscured = 0
+				for(var/obj/O in T)
+					if(O.density)
+						obscured = 1
+						break
+				if(obscured)
+					continue
+				turfs += T
+			if(turfs.len)
+				drop_off_turf += pick(turfs)
+	if(GLOB.TDM_cloner_dropoffs.len)
+		var/list/dropoffs = list()
+		for(var/obj/effect/landmark/TDM_cloner_transport/landmark in GLOB.TDM_cloner_dropoffs)
+			if(isturf(landmark.loc) && landmark.team == team)
+				dropoffs += landmark.loc
+		if(dropoffs.len)
+			var/turf/T = pick(dropoffs)
+			if(T)
+				drop_off_turf = T
+	if(drop_off_turf)
+		M.forceMove(drop_off_turf)
+		var/list/spawns = list(M.loc,drop_off_turf)
+		for(var/turf/T in spawns)
+			spawn(0)
+				var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
+				s.set_up(5, 1, T)
+				s.start()
 
 /obj/machinery/clonepod/TDM/proc/get_enemy_deaths()
 	. = 0
@@ -213,6 +252,20 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	team = TDM_RED_TEAM
 /obj/machinery/clonepod/TDM/team_blue
 	team = TDM_BLUE_TEAM
+
+//cloner transport location
+GLOBAL_LIST_EMPTY(TDM_cloner_dropoffs)
+/obj/effect/landmark/TDM_cloner_transport
+	name = "TDM cloner transport spot"
+	var/team
+
+/obj/effect/landmark/TDM_cloner_transport/Initialize()
+	. = ..()
+	GLOB.TDM_cloner_dropoffs.Add(src)
+
+/obj/effect/landmark/TDM_cloner_transport/Destroy()
+	. = ..()
+	GLOB.TDM_cloner_dropoffs.Remove(src)
 
 //clownpod
 /obj/machinery/clonepod/TDM/clowner

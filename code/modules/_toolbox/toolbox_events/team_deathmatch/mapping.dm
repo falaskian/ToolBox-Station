@@ -25,6 +25,7 @@
 	var/clean_map_bodies = 1
 	var/list/clean_exceptions = list() //atom type paths that will be skipped during clean up.
 	var/baseturf = null //set this to the turf that will remain after an explosion, if left unchanged it will be space. this applies to the whole map
+	var/off_limits = /area/TDM/offlimits //set an area where players will be teleported away from if they enter it. an off limits area
 
 /datum/team_deathmatch_map/proc/load_up()
 	if(map)

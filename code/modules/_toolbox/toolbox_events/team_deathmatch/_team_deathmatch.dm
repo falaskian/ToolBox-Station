@@ -30,6 +30,10 @@
 	var/list/saved_items = list()
 	var/phase = SETUP_LOBBY
 	var/area/lobby_area = /area/TDM/lobby
+	//for tracking players going off limits
+	var/area/current_offlimits = null
+	var/list/player_locations = list()
+
 	var/lobby_name = ""
 	var/lobby_outfit = /datum/outfit/TDM_lobby
 	var/list/team_lobby_areas = list(
@@ -309,6 +313,15 @@ client/verb/clearbullshit()
 	var/list/minds_to_spawn = list()
 	for(var/mob/living/L in GLOB.player_list)
 		var/area/A = get_area(L)
+
+		//putting this here so were only searching the player_list once per round tick
+		if(midround && current_offlimits && L.mind && L.mind.assigned_role == player_assigned_role && L.mind.special_role)
+			if(isturf(player_locations[L]))
+				var/area/offlimits = locate(current_offlimits)
+				if(A == offlimits)
+					L.forceMove(player_locations[L])
+			player_locations[L] = get_turf(L)
+
 		for(var/a in team_lobby_areas)
 			if(istype(A,a) && L.mind)
 				if(!teams[team_lobby_areas[a]])
@@ -457,6 +470,7 @@ client/verb/clearbullshit()
 	var/datum/team_deathmatch_map/current = get_current_map()
 	if(current && current.map)
 		delete_ruin(current.map)
+		current_offlimits = null
 	if(ruin_maps.len)
 		var/number = 1
 		for(var/i=1,i<=ruin_maps.len,i++)
@@ -619,20 +633,15 @@ client/verb/clearbullshit()
 /datum/toolbox_event/team_deathmatch/proc/post_spawn(datum/team_deathmatch_map/new_map)
 	if(new_map)
 		death_caps = new_map.team_deaths
+		if(new_map.off_limits)
+			current_offlimits = new_map.off_limits
 		if(new_map.map)
 			var/list/turfs = get_all_ruin_floors(new_map.map)
 			if(turfs.len)
 				ruin_turfs[new_map] = list()
 				for(var/turf/T in turfs)
 					if(new_map.baseturf && !istype(T,/turf/open/space))
-						if(islist(T.baseturfs))
-							for(var/t in T.baseturfs)
-								if(t == /turf/baseturf_bottom)
-									continue
-								T.baseturfs -= t
-							T.baseturfs += new_map.baseturf
-						else
-							T.baseturfs = new_map.baseturf
+						T.baseturfs = new_map.baseturf
 					for(var/atom/movable/AM in T)
 						if(!AM.anchored)
 							saved_items += AM
