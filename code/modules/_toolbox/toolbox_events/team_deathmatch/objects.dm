@@ -25,9 +25,9 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 		to_chat(user, "<span class='warning'>[name] is still recharging.</span>")
 		user << sound('sound/machines/buzz-two.ogg', volume = 50)
 		return
-	if(do_after(user, healtime, user) && !(user && (user in users)))
+	if(do_after(user, healtime, src) && !(user && (user in users)))
 		users.Add(user)
-		user.revive(full_heal = TRUE)
+		user.revive(full_heal = TRUE,admin_revive = TRUE)
 		to_chat(user, "<span class='notice'>[name] heals all your wounds.</span>")
 		playsound(loc, 'sound/effects/refill.ogg', 50)
 		spawn(cooldown)
@@ -47,6 +47,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	var/respawn_timer = 20
 	var/death_count_unlock = 0
 	var/tier_level = 1
+	var/list/no_firing_allowed_areas = list()
 
 /obj/structure/displaycase/TDM_item_spawn/Initialize()
 	.=..()
@@ -91,6 +92,22 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	.=..()
 	respawn_item()
 
+/obj/structure/displaycase/TDM_item_spawn/proc/update_showpiece()
+	if(showpiece)
+		if(istype(showpiece,/obj/item/gun))
+			var/obj/item/gun/G = showpiece
+			if(G.pin)
+				qdel(G.pin)
+				var/obj/item/firing_pin/TDM/new_pin = new()
+				if(src.no_firing_allowed_areas.len)
+					new_pin.no_firing_allowed_areas = src.no_firing_allowed_areas
+				G.pin = new_pin
+
+/obj/structure/displaycase/TDM_item_spawn/proc/update_to_map(datum/team_deathmatch_map/map)
+	if(map && map.no_firing_allowed_areas && map.no_firing_allowed_areas.len)
+		no_firing_allowed_areas = map.no_firing_allowed_areas
+		update_showpiece()
+
 /obj/structure/displaycase/TDM_item_spawn/proc/dump_ammo(mob/living/user)
 	if(user && ammunition)
 		var/obj/item/I = new ammunition(loc)
@@ -102,11 +119,31 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	if(!start_showpiece_type)
 		return
 	spawn(respawn_timer)
+		if(showpiece && !istype(showpiece,start_showpiece_type))
+			showpiece.forceMove(loc)
+			showpiece = null
 		if(!showpiece)
 			showpiece = new start_showpiece_type (src)
 			update_icon()
+		if(showpiece)
+			update_showpiece()
 
 
+//TDM firing pin
+
+/obj/item/firing_pin/TDM
+	fail_message = "<span class='warning'>You cant firing that here.</span>"
+	var/list/no_firing_allowed_areas = list()
+	can_be_removed = 0
+
+/obj/item/firing_pin/TDM/pin_auth(mob/living/user)
+	if(no_firing_allowed_areas.len && user.mind && user.mind.special_role && (user.mind.special_role in no_firing_allowed_areas))
+		var/list/areas = no_firing_allowed_areas[user.mind.special_role]
+		var/area/A = get_area(user)
+		for(var/a in areas)
+			if(istype(A,a))
+				return FALSE
+	return ..()
 
 		//Tier 1
 

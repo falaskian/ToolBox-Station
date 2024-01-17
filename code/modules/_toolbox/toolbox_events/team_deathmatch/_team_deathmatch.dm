@@ -106,7 +106,7 @@ client/verb/clearbullshit()
 		if(LOBBY_PHASE)
 			for(var/mob/living/L in GLOB.player_list)
 				if(L.mind && L.mind.assigned_role == player_assigned_role)
-					L.revive(1)
+					L.revive(full_heal = TRUE,admin_revive = TRUE)
 			if(world.time >= next_timer-100 && !("10seconds" in remembering))
 				announce("Team deathmatch will begin in 10 seconds")
 				remembering["10seconds"] = 1
@@ -643,6 +643,7 @@ client/verb/clearbullshit()
 					if(new_map.baseturf && !istype(T,/turf/open/space))
 						T.baseturfs = new_map.baseturf
 					for(var/atom/movable/AM in T)
+						new_map.modify_object(AM)
 						if(!AM.anchored)
 							saved_items += AM
 					ruin_turfs[new_map] += "type=[T.type];x=[T.x];y=[T.y];z=[T.z]"
