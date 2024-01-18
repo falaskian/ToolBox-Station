@@ -15,34 +15,32 @@
 "o" = (/turf/open/indestructible,/area/TDM/blue_base)
 "p" = (/obj/structure/TDM/medical_cabinet{pixel_x = 9},/obj/structure/TDM/wallmed{pixel_x = -6},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
 "q" = (/obj/structure/TDM/medical_cabinet{pixel_x = -9},/obj/structure/TDM/wallmed{pixel_x = 6},/turf/closed/wall,/area/TDM/blue_base)
-"r" = (/obj/structure/displaycase/TDM_item_spawn/revolver,/turf/open/indestructible,/area/space)
-"s" = (/turf/open/indestructible,/area/space)
-"t" = (/obj/structure/displaycase/TDM_item_spawn/knife,/turf/open/indestructible,/area/space)
+"r" = (/obj/structure/displaycase/TDM_item_spawn/revolver,/turf/open/indestructible,/area/TDM/red_base)
+"s" = (/obj/structure/displaycase/TDM_item_spawn/knife,/turf/open/indestructible,/area/TDM/red_base)
+"t" = (/obj/structure/displaycase/TDM_item_spawn/shotgun,/turf/open/indestructible,/area/TDM/red_base)
 "u" = (/obj/structure/displaycase/TDM_item_spawn/knife,/turf/open/indestructible,/area/TDM/blue_base)
 "v" = (/obj/structure/displaycase/TDM_item_spawn/revolver,/turf/open/indestructible,/area/TDM/blue_base)
-"w" = (/obj/structure/displaycase/TDM_item_spawn/shotgun,/turf/open/indestructible,/area/space)
-"x" = (/obj/structure/displaycase/TDM_item_spawn/stechkin,/turf/open/indestructible,/area/space)
+"w" = (/obj/structure/displaycase/TDM_item_spawn/stechkin,/turf/open/indestructible,/area/TDM/red_base)
+"x" = (/obj/structure/displaycase/TDM_item_spawn/APS,/turf/open/indestructible,/area/TDM/red_base)
 "y" = (/obj/structure/displaycase/TDM_item_spawn/stechkin,/turf/open/indestructible,/area/TDM/blue_base)
 "z" = (/obj/structure/displaycase/TDM_item_spawn/shotgun,/turf/open/indestructible,/area/TDM/blue_base)
-"A" = (/obj/structure/displaycase/TDM_item_spawn/APS,/turf/open/indestructible,/area/space)
-"B" = (/obj/structure/displaycase/TDM_item_spawn/m1911,/turf/open/indestructible,/area/space)
+"A" = (/obj/structure/displaycase/TDM_item_spawn/m1911,/turf/open/indestructible,/area/TDM/red_base)
+"B" = (/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/turf/open/indestructible,/area/TDM/red_base)
 "C" = (/obj/structure/displaycase/TDM_item_spawn/m1911,/turf/open/indestructible,/area/TDM/blue_base)
 "D" = (/obj/structure/displaycase/TDM_item_spawn/APS,/turf/open/indestructible,/area/TDM/blue_base)
 "E" = (/obj/machinery/clonepod/TDM/team_blue{TDM_on = 1},/turf/open/indestructible,/area/TDM/blue_base)
-"F" = (/obj/structure/TDM/floodlight,/turf/open/indestructible,/area/space)
-"G" = (/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/turf/open/indestructible,/area/space)
-"H" = (/obj/structure/displaycase/TDM_item_spawn/shield,/turf/open/indestructible,/area/space)
+"F" = (/obj/structure/displaycase/TDM_item_spawn/shield,/turf/open/indestructible,/area/TDM/red_base)
+"G" = (/obj/structure/displaycase/TDM_item_spawn/carbine,/turf/open/indestructible,/area/TDM/red_base)
+"H" = (/obj/structure/displaycase/TDM_item_spawn/deagle,/turf/open/indestructible,/area/TDM/red_base)
 "I" = (/obj/structure/displaycase/TDM_item_spawn/shield,/turf/open/indestructible,/area/TDM/blue_base)
-"J" = (/obj/structure/displaycase/TDM_item_spawn/carbine,/turf/open/indestructible,/area/space)
-"K" = (/obj/structure/displaycase/TDM_item_spawn/deagle,/turf/open/indestructible,/area/space)
+"J" = (/obj/structure/displaycase/TDM_item_spawn/bolt_action,/turf/open/indestructible,/area/TDM/red_base)
+"K" = (/obj/structure/displaycase/TDM_item_spawn/sniper,/turf/open/indestructible,/area/TDM/red_base)
 "L" = (/obj/structure/displaycase/TDM_item_spawn/deagle,/turf/open/indestructible,/area/TDM/blue_base)
 "M" = (/obj/structure/displaycase/TDM_item_spawn/carbine,/turf/open/indestructible,/area/TDM/blue_base)
-"N" = (/obj/structure/displaycase/TDM_item_spawn/bolt_action,/turf/open/indestructible,/area/space)
-"O" = (/obj/structure/displaycase/TDM_item_spawn/sniper,/turf/open/indestructible,/area/space)
+"N" = (/obj/structure/displaycase/TDM_item_spawn/uzi,/turf/open/indestructible,/area/TDM/red_base)
+"O" = (/obj/structure/displaycase/TDM_item_spawn/c20r,/turf/open/indestructible,/area/TDM/red_base)
 "P" = (/obj/structure/displaycase/TDM_item_spawn/sniper,/turf/open/indestructible,/area/TDM/blue_base)
 "Q" = (/obj/structure/displaycase/TDM_item_spawn/bolt_action,/turf/open/indestructible,/area/TDM/blue_base)
-"R" = (/obj/structure/displaycase/TDM_item_spawn/uzi,/turf/open/indestructible,/area/space)
-"S" = (/obj/structure/displaycase/TDM_item_spawn/c20r,/turf/open/indestructible,/area/space)
 "T" = (/turf/template_noop,/area/template_noop)
 "U" = (/obj/structure/displaycase/TDM_item_spawn/c20r,/turf/open/indestructible,/area/TDM/blue_base)
 "V" = (/obj/structure/displaycase/TDM_item_spawn/uzi,/turf/open/indestructible,/area/TDM/blue_base)
@@ -66,15 +64,15 @@ adlmmmmmlddccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 admmmmmmmldcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccinoooooooia
 admmmmmmmmdccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccciooooooooia
 admmmpdmmmfcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccjoooiqoooia
-adrsstdmmmfcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccjoooiuoovia
-agwssxgmmmdccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccciooohyoozha
-adAssBdmmmdcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccioooiCooDia
-adFssGdmmmeccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccckoooiEoonia
-adHsssdmmmeccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccckoooioooIia
-adFssGdmmmeccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccckoooiEoonia
-adJssKdmmmdcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccioooiLooMia
-agNssOgmmmdccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccciooohPooQha
-adRssSdmmmfcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccjoooiUooVia
+adrmmsdmmmfcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccjoooiuoovia
+agtmmwgmmmdccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccciooohyoozha
+adxmmAdmmmdcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccioooiCooDia
+adlmmBdmmmeccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccckoooiEoonia
+adFmmmdmmmeccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccckoooioooIia
+adlmmBdmmmeccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccckoooiEoonia
+adGmmHdmmmdcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccioooiLooMia
+agJmmKgmmmdccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccciooohPooQha
+adNmmOdmmmfcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccjoooiUooVia
 admmmpdmmmfcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccjoooiqoooia
 admmmmmmmmdccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccciooooooooia
 admmmmmmmldcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccinoooooooia

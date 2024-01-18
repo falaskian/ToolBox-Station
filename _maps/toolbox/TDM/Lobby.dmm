@@ -45,7 +45,7 @@
 "S" = (/obj/machinery/status_display{message1 = "BLUE"; message2 = "TEAM"; resistance_flags = 115},/turf/closed/indestructible/riveted/TDM,/area/TDM/lobby)
 
 (1,1,1) = {"
-aaaaRaaaaaaaaaSaaaa
+aaaRaRaaaaaaaSaSaaa
 abcccccbehzdfffffda
 acccccccEFGfffffffa
 acccccccEHGfffffffa
