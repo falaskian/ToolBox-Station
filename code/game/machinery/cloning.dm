@@ -40,6 +40,7 @@
 	var/list/unattached_flesh
 	var/flesh_number = 0
 	var/datum/bank_account/current_insurance
+	var/care_about_suiciding = 1
 	fair_market_price = 5 // He nodded, because he knew I was right. Then he swiped his credit card to pay me for arresting him.
 	payment_department = ACCOUNT_MED
 /obj/machinery/clonepod/Initialize()
@@ -187,9 +188,9 @@
 		if(!QDELETED(clonemind.current))
 			if(clonemind.current.stat != DEAD)	//mind is associated with a non-dead body
 				return NONE
-			if(clonemind.current.suiciding) // Mind is associated with a body that is suiciding.
+			if(care_about_suiciding && clonemind.current.suiciding) // Mind is associated with a body that is suiciding.
 				return NONE
-		if(!clonemind.active)
+		if(!clonemind.active && care_about_suiciding)
 			// get_ghost() will fail if they're unable to reenter their body
 			var/mob/dead/observer/G = clonemind.get_ghost()
 			if(!G)
@@ -307,7 +308,7 @@
 				var/datum/bank_account/D = SSeconomy.get_dep_account(payment_department)
 				if(D)
 					D.adjust_money(fair_market_price)
-		if(mob_occupant && (mob_occupant.stat == DEAD) || (mob_occupant.suiciding) || mob_occupant.hellbound)  //Autoeject corpses and suiciding dudes.
+		if(mob_occupant && (mob_occupant.stat == DEAD) || (care_about_suiciding && mob_occupant.suiciding) || mob_occupant.hellbound)  //Autoeject corpses and suiciding dudes.
 			connected_message("Clone Rejected: Deceased.")
 			if(internal_radio)
 				SPEAK("The cloning of [mob_occupant.real_name] has been \

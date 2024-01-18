@@ -27,6 +27,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 		"t1" = /datum/outfit/TDM/blue,
 		"t3" = /datum/outfit/TDM/blue/t3,
 		"t4" = /datum/outfit/TDM/blue/t4))
+	care_about_suiciding = 0
 
 /obj/machinery/clonepod/TDM/Initialize()
 	. = ..()

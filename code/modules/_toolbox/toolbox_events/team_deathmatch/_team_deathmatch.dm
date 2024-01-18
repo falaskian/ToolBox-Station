@@ -27,6 +27,7 @@
 		"Research Director" = 0,
 		"Chief Medical Officer" = 0)
 	var/player_assigned_role = "Team Deathmatch"
+	var/map_loaded = 0
 	var/list/saved_items = list()
 	var/phase = SETUP_LOBBY
 	var/area/lobby_area = /area/TDM/lobby
@@ -82,6 +83,8 @@ client/verb/clearbullshit()
 	spawn(0)
 		while(!SSminor_mapping || !SSminor_mapping.initialized)
 			sleep(1)
+		if(GLOB)
+			GLOB.ghost_role_flags = NONE
 		load_maps()
 		setup_map()
 		rotate_map()
@@ -90,6 +93,8 @@ client/verb/clearbullshit()
 	. = ..()
 	for(var/obj/machinery/clonepod/TDM/C in GLOB.TDM_cloners)
 		C.TDM_on = 0
+	if(GLOB)
+		GLOB.ghost_role_flags = ALL
 
 /datum/toolbox_event/team_deathmatch/process()
 	if(SSticker.current_state != GAME_STATE_PLAYING || phase == GAME_OVER_PHASE)
@@ -104,7 +109,6 @@ client/verb/clearbullshit()
 			announce("Team deathmatch will begin in [time_left] seconds. Choose a side by standing on the side you want to join.")
 			phase = LOBBY_PHASE
 		if(LOBBY_PHASE)
-			clean_repair_ruins(lobby_name,repair = 1,clean_items = 1,clean_bodies = 0)
 			for(var/mob/living/L in GLOB.player_list)
 				if(L.mind && L.mind.assigned_role == player_assigned_role)
 					L.revive(full_heal = TRUE,admin_revive = TRUE)
@@ -122,6 +126,7 @@ client/verb/clearbullshit()
 				teams.Cut()
 				announce(failed_to_launch)
 				return
+			clean_repair_ruins(lobby_name,repair = 1,clean_items = 1,clean_bodies = 0)
 			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
 				if(cloner.team)
 					cloner.TDM_on = 1
@@ -388,7 +393,10 @@ client/verb/clearbullshit()
 			if(player)
 				players_to_restart = list(player)
 			else
-				players_to_restart = GLOB.player_list
+				players_to_restart = list()
+				for(var/mob/M in GLOB.mob_list)
+					if(M.ckey)
+						players_to_restart += M
 			for(var/mob/L in players_to_restart)
 				if(!istype(L,/mob/living) && !isobserver(L))
 					continue
@@ -627,7 +635,7 @@ client/verb/clearbullshit()
 			qdel(L)
 			for(var/datum/team_deathmatch_map/map in ruin_maps)
 				if(map.map && map.map == ruin)
-					ruin_turfs.Remove(ruin)
+					ruin_turfs.Remove(map)
 					break
 			break
 
@@ -649,6 +657,9 @@ client/verb/clearbullshit()
 					ruin_turfs[new_map] += "type=[T.type];x=[T.x];y=[T.y];z=[T.z]"
 
 /datum/toolbox_event/team_deathmatch/proc/load_maps()
+	if(map_loaded)
+		return
+	map_loaded = 1
 	SSmapping.add_new_zlevel("Team_Deathmatch", list(ZTRAIT_LINKAGE = UNAFFECTED, "Team_Deathmatch" = TRUE))
 	var/datum/map_template/ruin/lobby = SSmapping.space_ruins_templates[lobby_name]
 	if(!spawn_ruin(lobby,SSmapping.levels_by_trait(ZTRAIT_CENTCOM)))
@@ -659,6 +670,8 @@ client/verb/clearbullshit()
 		for(var/turf/T in turfs)
 			if(!istype(T,/turf/open/space))
 				T.baseturfs = /turf/open/floor/plating
+			for(var/atom/movable/AM in T)
+				saved_items += AM
 			ruin_turfs[lobby_name] += "type=[T.type];x=[T.x];y=[T.y];z=[T.z]"
 	for(var/path in subtypesof(/datum/team_deathmatch_map))
 		var/datum/team_deathmatch_map/map = new path()

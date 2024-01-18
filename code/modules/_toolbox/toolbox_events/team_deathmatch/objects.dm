@@ -94,6 +94,17 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 
 /obj/structure/displaycase/TDM_item_spawn/proc/update_showpiece()
 	if(showpiece)
+		var/desc_extension = ""
+		var/melee = 0
+		var/throwdam = 0
+		var/shot_damage = 0
+		var/ammo = 0
+		var/burst = 0
+		var/rof = 0
+		if(showpiece.force >= 4)
+			melee = showpiece.force
+		if(showpiece.throwforce >= 3)
+			throwdam = showpiece.throwforce
 		if(istype(showpiece,/obj/item/gun))
 			var/obj/item/gun/G = showpiece
 			if(G.pin)
@@ -102,6 +113,38 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 				if(src.no_firing_allowed_areas.len)
 					new_pin.no_firing_allowed_areas = src.no_firing_allowed_areas
 				G.pin = new_pin
+			if(G.chambered && G.chambered.BB)
+				shot_damage = G.chambered.BB.damage
+			if(istype(G,/obj/item/gun/ballistic))
+				var/obj/item/gun/ballistic/B = G
+				if(B.magazine && B.magazine.max_ammo)
+					ammo = B.magazine.max_ammo
+					if(!G.chambered && !shot_damage)
+						for(var/obj/item/ammo_casing/A in B.magazine)
+							if(A.BB)
+								shot_damage = A.BB.damage
+				if(B.fire_delay)
+					burst = B.fire_delay
+				if(B.fire_rate)
+					rof = B.fire_rate
+		var/list/words = list(
+			"Damage" = shot_damage,
+			"Ammo" = ammo,
+			"Burst" = burst,
+			"Rate of fire" = rof,
+			"Melee Damage" = melee,
+			"Throw Damage" = throwdam)
+		var/line = 0
+		for(var/t in words)
+			line++
+			if(!words[t])
+				continue
+			desc_extension += "[t]: [words[t]]"
+			if(line < words.len)
+				desc_extension += ", "
+		if(desc_extension)
+			showpiece.desc = "[showpiece.desc] [desc_extension]."
+			desc = "[desc] [desc_extension]"
 
 /obj/structure/displaycase/TDM_item_spawn/proc/update_to_map(datum/team_deathmatch_map/map)
 	if(map && map.no_firing_allowed_areas && map.no_firing_allowed_areas.len)
@@ -132,9 +175,10 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 //TDM firing pin
 
 /obj/item/firing_pin/TDM
-	fail_message = "<span class='warning'>You cant firing that here.</span>"
+	fail_message = "<span class='warning'>Do not fire that thing in here!</span>"
 	var/list/no_firing_allowed_areas = list()
 	can_be_removed = 0
+	var/last_do_not_fire_sound = 0
 
 /obj/item/firing_pin/TDM/pin_auth(mob/living/user)
 	if(no_firing_allowed_areas.len && user.mind && user.mind.special_role && (user.mind.special_role in no_firing_allowed_areas))
@@ -142,6 +186,9 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 		var/area/A = get_area(user)
 		for(var/a in areas)
 			if(istype(A,a))
+				if(world.time >= last_do_not_fire_sound)
+					last_do_not_fire_sound = world.time+50
+					user << sound('sound/toolbox/donotfire.ogg', volume = 100)
 				return FALSE
 	return ..()
 

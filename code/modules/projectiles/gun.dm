@@ -78,6 +78,7 @@
 	var/next_autofire = 0 //As to stop mag dumps, Whoops!
 	var/pb_knockback = 0
 	var/ranged_cooldown = 0
+	var/can_be_dual_wielded = 1
 
 /obj/item/gun/Initialize()
 	. = ..()
@@ -242,9 +243,13 @@
 				user.dropItemToGround(src, TRUE)
 				return
 
-	if(weapon_weight == WEAPON_HEAVY && user.get_inactive_held_item())
-		to_chat(user, "<span class='userdanger'>You need both hands free to fire \the [src]!</span>")
-		return
+	var/offhand = user.get_inactive_held_item()
+	if(weapon_weight == WEAPON_HEAVY && offhand)
+		if(!user.doUnEquip(offhand))
+			to_chat(user, "<span class='userdanger'>You need both hands free to fire \the [src]!</span>")
+			return
+		else
+			to_chat(user, "<span class='warning'>You drop \the [offhand] so you can fire \the [src].</span>")
 
 	//DUAL (or more!) WIELDING
 	var/bonus_spread = 0
@@ -252,7 +257,7 @@
 	if(ishuman(user) && user.a_intent == INTENT_HARM)
 		var/mob/living/carbon/human/H = user
 		for(var/obj/item/gun/G in H.held_items)
-			if(G == src || G.weapon_weight >= WEAPON_MEDIUM || weapon_weight >= WEAPON_MEDIUM)
+			if(G == src || G.weapon_weight >= WEAPON_MEDIUM || weapon_weight >= WEAPON_MEDIUM || !can_be_dual_wielded || !G.can_be_dual_wielded)
 				continue
 			else if(G.can_trigger_gun(user))
 				bonus_spread += dual_wield_spread

@@ -3,7 +3,7 @@
 
 	//9mm Pistol - Stechkin - 12 ammo, 20DMG
 /obj/item/gun/ballistic/automatic/pistol/TDM
-	desc = "A small, easily concealable 9mm handgun. Damage: 20. Fire Rate: 3"
+	desc = "A small, easily concealable 9mm handgun."
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm/TDM
 
 /obj/item/ammo_box/magazine/pistolm9mm/TDM
@@ -14,17 +14,18 @@
 
 	//9mm Stetchkin APS - 3rnd brst, 12(4) ammo, uses same mags and does same dmg as Stechkin but automatic
 /obj/item/gun/ballistic/automatic/pistol/APS/TDM
-	desc = "Automatic, easily concealable 9mm handgun. Damage: 20. Fire Rate: 3"
+	desc = "Automatic, easily concealable 9mm handgun."
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm/TDM
-
+	can_be_dual_wielded = 0
 
 
 	//.357 Revolver - 6 ammo, 45DMG
 /obj/item/gun/ballistic/revolver/TDM
 	name = "\improper .357 revolver"
-	desc = "Big Iron on his hip. Uses .357 ammo. Damage: 45."
+	desc = "Big Iron on his hip. Uses .357 ammo."
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/TDM
 	fire_rate = 1.7
+	can_be_dual_wielded = 0
 
 	//Magazine - Internal
 /obj/item/ammo_box/magazine/internal/cylinder/TDM
@@ -49,31 +50,30 @@
 
 	//DoubleBarrel Shotgun - Slug
 /obj/item/gun/ballistic/shotgun/doublebarrel/TDM
-	desc = "A true classic. Damage: 60."
+	desc = "A true classic."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/TDM
 	//rack_sound_volume = 0
 	//fire_rate = 2 //being double barrelled, you don't rely on internal mechanisms.
 	//pb_knockback = 3
-	weapon_weight = WEAPON_HEAVY
+	can_be_dual_wielded = 0
 
 	//DoubleBarrel Shotgun - Buckshot
 /obj/item/gun/ballistic/shotgun/doublebarrel/TDM/buckshot
-	desc = "A true classic. Damage: 54."
+	desc = "A true classic."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/TDM/buckshot
-	weapon_weight = WEAPON_HEAVY
+	can_be_dual_wielded = 0
 
 	//Pump Shotgun - Slug
 /obj/item/gun/ballistic/shotgun/TDM
-	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath. Damage: 60."
+	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath."
 	name = "pump shotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/TDM
-	weapon_weight = WEAPON_HEAVY
+	can_be_dual_wielded = 0
 
 	//Pump Shotgun - Buckshot
 /obj/item/gun/ballistic/shotgun/TDM/buckshot
-	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath. Damage: 54."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/TDM/buckshot
-	weapon_weight = WEAPON_HEAVY
+	can_be_dual_wielded = 0
 
 
 		//Shotgun Mags
@@ -158,14 +158,14 @@
 	//Uzi 9mm - 3rnd brst, 24(8) ammo, 20DMG
 /obj/item/gun/ballistic/automatic/pistol/APS/TDM/uzi
 	name = "\improper Type U3 Uzi"
-	desc = "A lightweight submachine gun. Uses 9mm rounds. Damage: 20."
+	desc = "A lightweight submachine gun. Uses 9mm rounds."
 	icon_state = "miniuzi"
 	w_class = WEIGHT_CLASS_NORMAL
 	bolt_type = BOLT_TYPE_OPEN
 	mag_display = TRUE
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm/TDM
 	burst_size = 3
-	weapon_weight = WEAPON_HEAVY
+	can_be_dual_wielded = 0
 
 	//Uzi Magazine
 /obj/item/ammo_box/magazine/uzim9mm/TDM
@@ -176,11 +176,11 @@
 	//Carbine - 10 ammo, 35DMG
 /obj/item/gun/ballistic/automatic/surplus/TDM
 	name = "carbine"
-	desc = "California Compliant. Uses .45 carbine ammo and its bulky frame prevents one-hand firing. Damage: 35."
+	desc = "California Compliant. Uses .45 carbine ammo and its bulky frame prevents one-hand firing."
 	mag_type = /obj/item/ammo_box/magazine/m45carbine
 	fire_delay = 0
 	fire_rate = 2.8
-	weapon_weight = WEAPON_HEAVY
+	can_be_dual_wielded = 0
 
 	//Magazine
 /obj/item/ammo_box/magazine/m45carbine
@@ -214,7 +214,7 @@
 
 	//Knife - 35DMG, 30DMG thrown
 /obj/item/kitchen/knife/combat/TDM
-	desc = "A military combat knife. Damage: 35. Damage thrown: 30."
+	desc = "A military combat knife."
 	force = 35
 	throwforce = 30
 	bayonet = TRUE
@@ -224,20 +224,20 @@
 	//Deagle
 /obj/item/gun/ballistic/automatic/pistol/deagle/TDM
 	fire_rate = 2.5
-	weapon_weight = WEAPON_HEAVY
+	can_be_dual_wielded = 0
 
 
 
 	//c20r SMG
 /obj/item/gun/ballistic/automatic/c20r/unrestricted/TDM
-	weapon_weight = WEAPON_HEAVY
+	can_be_dual_wielded = 0
 
 
 
 	//Bolt Action Rifle
 /obj/item/gun/ballistic/rifle/boltaction/TDM
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/TDM
-	weapon_weight = WEAPON_HEAVY
+	can_be_dual_wielded = 0
 
 	//Magazine - Internal
 /obj/item/ammo_box/magazine/internal/boltaction/TDM
@@ -315,6 +315,7 @@
 	desc = "Double-barreled snowgun. Uses snowballs as ammo."
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/snowball
 	fire_delay = 30
+	can_be_dual_wielded = 0
 
 /obj/item/ammo_box/magazine/internal/shot/dual/snowball
 	ammo_type = /obj/item/ammo_casing/snowball
@@ -328,6 +329,7 @@
 	desc = "Four-barreled snowgun. Uses snowballs as ammo."
 	name = "\improper four-barreled snowgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/snowball/fourbarrel
+	can_be_dual_wielded = 0
 
 /obj/item/ammo_box/magazine/internal/shot/dual/snowball/fourbarrel
 	ammo_type = /obj/item/ammo_casing/snowball
