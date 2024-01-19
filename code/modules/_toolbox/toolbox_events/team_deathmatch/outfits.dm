@@ -289,7 +289,7 @@
 
 /obj/item/clothing/under/color/red/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 	//Blue TDM Jumpsuit
@@ -300,7 +300,7 @@
 
 /obj/item/clothing/under/color/blue/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 	//Black TDM Jumpsuit
@@ -311,7 +311,7 @@
 
 /obj/item/clothing/under/color/black/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 	//Grey TDM Jumpsuit
@@ -322,7 +322,7 @@
 
 /obj/item/clothing/under/color/grey/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 
@@ -335,7 +335,7 @@
 
 /obj/item/clothing/accessory/armband/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 	//Blue Armband
@@ -345,7 +345,7 @@
 
 /obj/item/clothing/accessory/armband/blue/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 		//Death Clothes
@@ -358,7 +358,7 @@
 
 /obj/item/clothing/suit/chaplainsuit/bishoprobe/black/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 	//Death Hat
@@ -369,7 +369,7 @@
 
 /obj/item/clothing/head/bishopmitre/black/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 	//Death Cloak
@@ -380,7 +380,7 @@
 
 /obj/item/clothing/neck/cloak/chap/bishop/black/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 
@@ -393,7 +393,7 @@
 
 /obj/item/clothing/suit/space/syndicate/black/red/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 	//Blue TDM Space Suit
@@ -403,7 +403,7 @@
 
 /obj/item/clothing/suit/space/syndicate/black/blue/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 
@@ -416,7 +416,7 @@
 
 /obj/item/clothing/head/helmet/space/syndicate/black/red/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 	//Blue TDM Space Helmet
@@ -426,7 +426,7 @@
 
 /obj/item/clothing/head/helmet/space/syndicate/black/blue/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 
@@ -460,7 +460,7 @@
 
 /obj/item/clothing/suit/space/syndicate/black/red/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 	//TDM Mime Jumpsuit
@@ -471,7 +471,7 @@
 
 /obj/item/clothing/under/rank/civilian/mime/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 	//TDM Mime Suspenders
@@ -481,7 +481,7 @@
 
 /obj/item/clothing/suit/space/syndicate/black/red/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 /********************** CLOWNS **************************/
 
@@ -516,14 +516,14 @@
 
 /obj/item/clothing/under/rank/civilian/clown/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 /obj/item/clothing/mask/gas/clown_hat/TDM
 
 /obj/item/clothing/mask/gas/clown_hat/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 /obj/item/clothing/under/rank/civilian/clown/blue/TDM
@@ -531,7 +531,7 @@
 
 /obj/item/clothing/under/rank/civilian/clown/blue/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 /obj/item/clothing/shoes/clown_shoes/TDM
@@ -539,14 +539,14 @@
 
 /obj/item/clothing/shoes/clown_shoes/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 /obj/item/clothing/mask/gas/sexyclown/TDM
 
 /obj/item/clothing/mask/gas/sexyclown/TDM/Initialize()
 	.=..()
-	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 

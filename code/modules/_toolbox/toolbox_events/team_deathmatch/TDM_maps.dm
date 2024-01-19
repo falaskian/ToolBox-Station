@@ -113,6 +113,7 @@
 	clean_map_items = 0
 	clean_map_bodies = 1
 	baseturf = /turf/open/floor/plating/asteroid
+	ban_map = 1
 
 /datum/map_template/ruin/space/TDM_Mine
 	name = "TDM Mine"
@@ -133,6 +134,7 @@
 	name = "TDM MiniStation"
 	map = /datum/map_template/ruin/space/TDM_MiniStation
 	baseturf = /turf/open/floor/plating
+	ban_map = 1
 //		repair_map = 1
 //		clean_map_items = 1
 //		clean_map_bodies = 1

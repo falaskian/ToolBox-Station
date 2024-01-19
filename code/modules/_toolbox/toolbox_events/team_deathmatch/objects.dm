@@ -167,9 +167,101 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 			showpiece = null
 		if(!showpiece)
 			showpiece = new start_showpiece_type (src)
-			update_icon()
 		if(showpiece)
 			update_showpiece()
+		update_icon()
+
+//Greytide display case
+/obj/structure/displaycase/TDM_item_spawn/greytide
+	var/last_flip_item_time = 0
+	var/flip_item_time = 200
+	var/list/inventory = list()
+	var/list/inventory_black_list = list(
+		/obj/item/twohanded/required/kirbyplants,
+		/obj/item/gun)
+
+/obj/structure/displaycase/TDM_item_spawn/greytide/Initialize()
+	. = ..()
+	flip_item_time = rand(flip_item_time-5,flip_item_time+5)
+	START_PROCESSING(SSobj, src)
+
+/obj/structure/displaycase/TDM_item_spawn/greytide/process()
+	if(world.time >= last_flip_item_time+flip_item_time)
+		last_flip_item_time = world.time
+		respawn_item(1)
+
+/obj/structure/displaycase/TDM_item_spawn/greytide/update_to_map(datum/team_deathmatch_map/map)
+	. = ..()
+	for(var/obj/structure/displaycase/TDM_item_spawn/greytide/G in world)
+		if(G == src || G.z != z)
+			continue
+		if(G.inventory.len)
+			inventory = G.inventory.Copy()
+			break
+	if(!map || !map.map)
+		return
+
+	//manually add things here. This should be done here because of reasons.
+	inventory = list(
+		/obj/item/stack/sheet/iron/ten,
+		/obj/item/stack/sheet/glass/ten)
+
+	if(map.map)
+		var/datum/toolbox_event/team_deathmatch/E
+		if(SStoolbox_events)
+			for(var/t in SStoolbox_events.cached_events)
+				E = SStoolbox_events.is_active(t)
+				if(istype(E) && E.active)
+					break
+		if(!E)
+			return
+		var/list/coords_list = params2list(E.active_ruins[map.map])
+		if(islist(coords_list) && coords_list.len)
+			var/turf/center = locate(text2num(coords_list["x"]),text2num(coords_list["y"]),text2num(coords_list["z"]))
+			if(istype(center))
+				var/list/turfs = map.map.get_affected_turfs(center,1)
+				if(turfs.len)
+					for(var/turf/T in turfs)
+						for(var/obj/O in T)
+							var/skip = 0
+							if(istype(O,/obj/machinery/vending))
+								var/obj/machinery/vending/V = O
+								for(var/t in V.products+V.contraband+V.premium)
+									if(!(t in inventory))
+										inventory += t
+								skip = 1
+							if(istype(O,/obj/structure/closet))
+								var/obj/structure/closet/C = O
+								for(var/obj/item/I in C)
+									if(!(I.type in inventory))
+										inventory += I.type
+								skip = 1
+							for(var/t in inventory_black_list)
+								if(istype(O,t))
+									skip = 1
+									break
+							if(skip)
+								continue
+							if(!O.anchored && !(O.type in inventory))
+								inventory += O.type
+
+/obj/structure/displaycase/TDM_item_spawn/greytide/dump()
+	. = ..()
+	last_flip_item_time = world.time
+
+/obj/structure/displaycase/TDM_item_spawn/greytide/respawn_item(process_only = 0)
+	if(process_only)
+		if(showpiece)
+			qdel(showpiece)
+			showpiece = null
+		if(!showpiece && inventory.len)
+			var/spawnpath = pick(inventory)
+			showpiece = new spawnpath(src)
+		update_icon()
+
+//because this didnt exist.
+/obj/item/stack/sheet/glass/ten
+	amount = 10
 
 
 //TDM firing pin

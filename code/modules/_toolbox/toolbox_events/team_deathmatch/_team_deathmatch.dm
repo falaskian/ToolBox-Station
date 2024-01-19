@@ -674,7 +674,10 @@ client/verb/clearbullshit()
 				saved_items += AM
 			ruin_turfs[lobby_name] += "type=[T.type];x=[T.x];y=[T.y];z=[T.z]"
 	for(var/path in subtypesof(/datum/team_deathmatch_map))
-		var/datum/team_deathmatch_map/map = new path()
+		var/datum/team_deathmatch_map/map = path
+		if(initial(map.ban_map))
+			continue
+		map = new path()
 		ruin_maps += map
 		map.load_up()
 

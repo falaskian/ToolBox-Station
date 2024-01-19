@@ -219,10 +219,8 @@
 "ek" = (/obj/structure/chair/comfy/shuttle,/obj/machinery/light/small{dir = 4},/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
 "el" = (/obj/structure/TDM/medical_cabinet{pixel_x = 8},/obj/structure/TDM/wallmed{pixel_x = -7},/turf/closed/wall/mineral/titanium,/area/TDM/red_base)
 "em" = (/turf/open/floor/mineral/titanium,/area/TDM/red_base)
-"en" = (/obj/structure/closet/wardrobe/green,/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
-"eo" = (/obj/structure/closet/wardrobe/black,/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
-"ep" = (/obj/structure/closet/wardrobe/mixed,/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
-"eq" = (/obj/structure/closet/wardrobe/grey,/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
+"en" = (/obj/structure/displaycase/TDM_item_spawn/greytide,/turf/open/floor/mineral/titanium,/area/TDM/red_base)
+"eo" = (/obj/structure/displaycase/TDM_item_spawn/greytide,/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
 "er" = (/obj/structure/shuttle/engine/propulsion{dir = 4},/turf/open/floor/plating/airless,/area/TDM/red_base)
 "es" = (/obj/effect/turf_decal/tile/blue{dir = 4},/turf/open/floor/plasteel/white/corner,/area/TDM)
 "et" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 5},/obj/machinery/light_switch/aoe{pixel_x = -28},/turf/open/floor/plasteel/cafeteria,/area/TDM)
@@ -249,18 +247,12 @@
 "eO" = (/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plasteel/cafeteria,/area/TDM)
 "eP" = (/obj/structure/disposalpipe/junction{dir = 8},/turf/open/floor/plasteel/cafeteria,/area/TDM)
 "eQ" = (/obj/machinery/disposal/bin,/obj/structure/disposalpipe/trunk{dir = 8},/turf/open/floor/plasteel/cafeteria,/area/TDM)
-"eR" = (/obj/structure/closet/wardrobe/grey,/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "eS" = (/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
-"eT" = (/obj/structure/closet/wardrobe/mixed,/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
-"eU" = (/obj/structure/closet/wardrobe/black,/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
-"eV" = (/obj/structure/closet/wardrobe/green,/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "eW" = (/obj/structure/TDM/medical_cabinet{pixel_x = -8},/obj/structure/TDM/wallmed{pixel_x = 7},/turf/closed/wall/mineral/titanium,/area/TDM/blue_base)
 "eX" = (/obj/structure/chair/comfy/shuttle,/obj/machinery/light/small{dir = 8},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "eY" = (/obj/machinery/clonepod/TDM/team_blue{TDM_on = 1},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "eZ" = (/obj/structure/window/shuttle{resistance_flags = 115},/obj/structure/grille,/turf/open/floor/plating,/area/TDM/blue_base)
 "fa" = (/obj/machinery/door/airlock/titanium{name = "Arrivals Shuttle Airlock"},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
-"fb" = (/obj/structure/chair/comfy/shuttle{dir = 8},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
-"fc" = (/obj/structure/chair/comfy/shuttle{dir = 4},/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
 "fd" = (/obj/machinery/power/apc/auto_name/east{dir = 8; pixel_x = -24},/obj/structure/cable/yellow,/obj/effect/turf_decal/tile/blue{dir = 8},/turf/open/floor/plasteel/white/corner{dir = 1},/area/TDM)
 "fe" = (/obj/machinery/airalarm{dir = 4; pixel_x = -22},/obj/effect/turf_decal/tile/red{dir = 1},/obj/effect/turf_decal/tile/red,/obj/effect/turf_decal/tile/red{dir = 8},/obj/machinery/camera/autoname{dir = 1},/obj/machinery/disposal/bin,/obj/structure/disposalpipe/trunk,/obj/machinery/light_switch/aoe{pixel_x = 6; pixel_y = -25},/turf/open/floor/plasteel,/area/TDM)
 "ff" = (/obj/effect/turf_decal/tile/blue{dir = 8},/turf/open/floor/plasteel/white/corner{dir = 1},/area/TDM)
@@ -643,10 +635,10 @@ aaababababababababababadbFadadbGanbHbababIanbGadbJbKbLbMblasapapapapapapapapbNap
 aaababababababababababadbVadbWbXanbYbZcacbanccbWanadcdceblbncfcfcgcfchapcicjckclcmcjciapcncocpcpcqcpcpcpcrcsapctdocvcwcucxcyapafcfcgcfcfczbldBcAadanbWbXancBcabZcCanccbWadbVadabababababababababaa
 aaabababababababababababababadcDanananananancEadabadcGbMblapapapapapcHapcIbacJcKcLbacMapapcNapapapapapapapapapcOcPcQcRcucucSapasapapaTcTcTcUcFcVadabadcEanananananancDadababababababababababababaa
 aaababababababababababababcWcWcXcYcZcZcZcZcYcXcWcWadbHdabldbdcdddedfdgapcibabadhbabaciapdidjdkdldmdndWdpdqdrapctcucQdsdtdudvapdwapdxdydzdAapecbIaddCdCdDdEdFdFdFdFdEdDdCdCabababababababababababaa
-aaabababababababababcWcWcWcWdGdHdIeneoepeqdIdHdJdKanbHdLbldMbacJdNcLdOapdPbabababababadQbadRbwbwbwbwbwbwdSbadTcucudUcudVdVdVapetdXdYdZeaebapfdbIanedeeefegeReTeUeVegefehdCdCdCdCababababababababaa
-aaabababababababababeiejekelemfbdHfbdHfbdHfbemdJeranbHesblfeeuevewexeyapezbababababaeAaEeBeCeDbabababaeEeFeGapeHeIeJeKeKeKeKeLeMeNeOePeOeQapffbIanedeeeSfceffceffceffceSeWeXeYeZababababababababaa
-aaabababababababababeiememfaemfbdHfbdHfbdHfbemdJeranbHfgfhfifjfkflfkapapapapapfmbabafnblfofpbababafqbabafrfsapcuftfucuapfvapapapfwfxfyfzapapfAbIanedeeeSfceffceffceffceSfGeSeSeZababababababababaa
-aaabababababababababeiejfHelemfbdHfbdHfbdHfbemdJeranbHbafMfNfOfOfObafPcmfQfRapfSbabafBblfUfpbafVfWfXfYfZgagbapcugcgdcuapbabacmgefOfOfOfObafMbabIanedeeeSfceffceffceffceSeWgjeYeZababababababababaa
+aaabababababababababcWcWcWcWdGdHdIdHdHdHdHdIdHdJdKanbHdLbldMbacJdNcLdOapdPbabababababadQbadRbwbwbwbwbwbwdSbadTcucudUcudVdVdVapetdXdYdZeaebapfdbIanedeeefegefefefefegefehdCdCdCdCababababababababaa
+aaabababababababababeiejekelemdHenendHenemdHendJeranbHesblfeeuevewexeyapezbababababaeAaEeBeCeDbabababaeEeFeGapeHeIeJeKeKeKeKeLeMeNeOePeOeQapffbIanedeeeoefeSeoefeoeoefeSeWeXeYeZababababababababaa
+aaabababababababababeiememfaemdHenendHenendHendJeranbHfgfhfifjfkflfkapapapapapfmbabafnblfofpbababafqbabafrfsapcuftfucuapfvapapapfwfxfyfzapapfAbIanedeeeoefeoeoefeoeoefeSfGeSeSeZababababababababaa
+aaabababababababababeiejfHelemdHenendHenemdHendJeranbHbafMfNfOfOfObafPcmfQfRapfSbabafBblfUfpbafVfWfXfYfZgagbapcugcgdcuapbabacmgefOfOfOfObafMbabIanedeeeoefeSeoefeoeoefeSeWgjeYeZababababababababaa
 aaabababababababababcWcWcWcWgkdHgldHdHdHdHgldHdJgmanbHbagngogpgpgqgrgrgrgsbaapgtgugtapblgtgvgtapapapapgtgwgxapgygtgzgyapbagAgpgpgpgpgpgpgpgBbabIanedeeefgCefefefefgCefgDdCdCdCdCababababababababaa
 aaababababababababababababcWcWcXcYcZcZcZcZcYcXcWcWadgEbagtgFgGgHgIgJapgKgLbagMbabababagNbagObabababababafrgPbababagPbagMbagQgKapgJgRgHgGgRgtbagSaddCdCdDdEdFdFdFdFdEdDdCdCabababababababababababaa
 aaabababababababababababababadgTanananananangUadabadcGgVgtgWgXgYgZhaaphbhchdhebabababahfhghhhghghghghghghihjhghghghkbafMhlgQhbaphmhnhngXhogtgVcVadabadgUanananananangTadababababababababababababaa

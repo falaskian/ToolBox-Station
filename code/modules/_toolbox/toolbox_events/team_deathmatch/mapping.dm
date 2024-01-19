@@ -27,6 +27,7 @@
 	var/baseturf = null //set this to the turf that will remain after an explosion, if left unchanged it will be space. this applies to the whole map
 	var/off_limits = /area/TDM/offlimits //set an area where players will be teleported away from if they enter it. an off limits area
 	var/list/no_firing_allowed_areas = list(TDM_RED_TEAM = list(/area/TDM/red_base),TDM_BLUE_TEAM = list(/area/TDM/blue_base)) //modifies weapon firing pin so they cant fire in these areas. based on teams
+	var/ban_map = 0
 
 /datum/team_deathmatch_map/proc/load_up()
 	if(map)
