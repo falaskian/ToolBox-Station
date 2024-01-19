@@ -221,6 +221,8 @@
 "em" = (/turf/open/floor/mineral/titanium,/area/TDM/red_base)
 "en" = (/obj/structure/displaycase/TDM_item_spawn/greytide,/turf/open/floor/mineral/titanium,/area/TDM/red_base)
 "eo" = (/obj/structure/displaycase/TDM_item_spawn/greytide,/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
+"ep" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "RED"; message2 = "BASE"},/turf/closed/wall/mineral/titanium,/area/TDM/red_base)
+"eq" = (/obj/machinery/status_display{font_color = "#09f"; message1 = "BLUE"; message2 = "BASE"},/turf/closed/wall/mineral/titanium,/area/TDM/blue_base)
 "er" = (/obj/structure/shuttle/engine/propulsion{dir = 4},/turf/open/floor/plating/airless,/area/TDM/red_base)
 "es" = (/obj/effect/turf_decal/tile/blue{dir = 4},/turf/open/floor/plasteel/white/corner,/area/TDM)
 "et" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 5},/obj/machinery/light_switch/aoe{pixel_x = -28},/turf/open/floor/plasteel/cafeteria,/area/TDM)
@@ -247,7 +249,9 @@
 "eO" = (/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plasteel/cafeteria,/area/TDM)
 "eP" = (/obj/structure/disposalpipe/junction{dir = 8},/turf/open/floor/plasteel/cafeteria,/area/TDM)
 "eQ" = (/obj/machinery/disposal/bin,/obj/structure/disposalpipe/trunk{dir = 8},/turf/open/floor/plasteel/cafeteria,/area/TDM)
+"eR" = (/obj/machinery/status_display{font_color = "#f00"; message1 = "KILLS"},/turf/closed/wall/mineral/titanium,/area/TDM/red_base)
 "eS" = (/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
+"eT" = (/obj/machinery/status_display{font_color = "#09f"; message1 = "KILLS"},/turf/closed/wall/mineral/titanium,/area/TDM/blue_base)
 "eW" = (/obj/structure/TDM/medical_cabinet{pixel_x = -8},/obj/structure/TDM/wallmed{pixel_x = 7},/turf/closed/wall/mineral/titanium,/area/TDM/blue_base)
 "eX" = (/obj/structure/chair/comfy/shuttle,/obj/machinery/light/small{dir = 8},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "eY" = (/obj/machinery/clonepod/TDM/team_blue{TDM_on = 1},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
@@ -635,11 +639,11 @@ aaababababababababababadbFadadbGanbHbababIanbGadbJbKbLbMblasapapapapapapapapbNap
 aaababababababababababadbVadbWbXanbYbZcacbanccbWanadcdceblbncfcfcgcfchapcicjckclcmcjciapcncocpcpcqcpcpcpcrcsapctdocvcwcucxcyapafcfcgcfcfczbldBcAadanbWbXancBcabZcCanccbWadbVadabababababababababaa
 aaabababababababababababababadcDanananananancEadabadcGbMblapapapapapcHapcIbacJcKcLbacMapapcNapapapapapapapapapcOcPcQcRcucucSapasapapaTcTcTcUcFcVadabadcEanananananancDadababababababababababababaa
 aaababababababababababababcWcWcXcYcZcZcZcZcYcXcWcWadbHdabldbdcdddedfdgapcibabadhbabaciapdidjdkdldmdndWdpdqdrapctcucQdsdtdudvapdwapdxdydzdAapecbIaddCdCdDdEdFdFdFdFdEdDdCdCabababababababababababaa
-aaabababababababababcWcWcWcWdGdHdIdHdHdHdHdIdHdJdKanbHdLbldMbacJdNcLdOapdPbabababababadQbadRbwbwbwbwbwbwdSbadTcucudUcudVdVdVapetdXdYdZeaebapfdbIanedeeefegefefefefegefehdCdCdCdCababababababababaa
+aaabababababababababcWcWcWepdGdHdIdHdHdHdHdIdHdJdKanbHdLbldMbacJdNcLdOapdPbabababababadQbadRbwbwbwbwbwbwdSbadTcucudUcudVdVdVapetdXdYdZeaebapfdbIanedeeefegefefefefegefeheqdCdCdCababababababababaa
 aaabababababababababeiejekelemdHenendHenemdHendJeranbHesblfeeuevewexeyapezbababababaeAaEeBeCeDbabababaeEeFeGapeHeIeJeKeKeKeKeLeMeNeOePeOeQapffbIanedeeeoefeSeoefeoeoefeSeWeXeYeZababababababababaa
 aaabababababababababeiememfaemdHenendHenendHendJeranbHfgfhfifjfkflfkapapapapapfmbabafnblfofpbababafqbabafrfsapcuftfucuapfvapapapfwfxfyfzapapfAbIanedeeeoefeoeoefeoeoefeSfGeSeSeZababababababababaa
 aaabababababababababeiejfHelemdHenendHenemdHendJeranbHbafMfNfOfOfObafPcmfQfRapfSbabafBblfUfpbafVfWfXfYfZgagbapcugcgdcuapbabacmgefOfOfOfObafMbabIanedeeeoefeSeoefeoeoefeSeWgjeYeZababababababababaa
-aaabababababababababcWcWcWcWgkdHgldHdHdHdHgldHdJgmanbHbagngogpgpgqgrgrgrgsbaapgtgugtapblgtgvgtapapapapgtgwgxapgygtgzgyapbagAgpgpgpgpgpgpgpgBbabIanedeeefgCefefefefgCefgDdCdCdCdCababababababababaa
+aaabababababababababcWcWcWeRgkdHgldHdHdHdHgldHdJgmanbHbagngogpgpgqgrgrgrgsbaapgtgugtapblgtgvgtapapapapgtgwgxapgygtgzgyapbagAgpgpgpgpgpgpgpgBbabIanedeeefgCefefefefgCefgDeTdCdCdCababababababababaa
 aaababababababababababababcWcWcXcYcZcZcZcZcYcXcWcWadgEbagtgFgGgHgIgJapgKgLbagMbabababagNbagObabababababafrgPbababagPbagMbagQgKapgJgRgHgGgRgtbagSaddCdCdDdEdFdFdFdFdEdDdCdCabababababababababababaa
 aaabababababababababababababadgTanananananangUadabadcGgVgtgWgXgYgZhaaphbhchdhebabababahfhghhhghghghghghghihjhghghghkbafMhlgQhbaphmhnhngXhogtgVcVadabadgUanananananangTadababababababababababababaa
 aaababababababababababadbVadadhpanhqhrhshtanhuadadadbHbagthvhwhxhyhaaphzhAbahBbabababagNbagObabababababafrbabababababafMbagQhzaphmhChxhDhEgtbabIadadadhpanhFhshrhGanhuadadbVadabababababababababaa

@@ -93,6 +93,10 @@
 "bO" = (/obj/machinery/gateway/centerstation{density = 0; layer = 3.1; level = 2},/obj/effect/portal/permanent{icon_state = "portal"; id = "dust1_p_1"; name = "portal"; pixel_y = 9},/obj/machinery/gateway{density = 0; dir = 1; pixel_y = 32},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "bP" = (/obj/machinery/gateway{dir = 4},/obj/machinery/gateway{dir = 5; pixel_y = 32},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "bQ" = (/obj/machinery/gateway,/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bR" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "RED"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"bS" = (/obj/machinery/status_display{message1 = "BLUE"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
+"bT" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"bU" = (/obj/machinery/status_display{message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -116,9 +120,9 @@ aaavaEaEaEaIavaEaEaEaxaoaoabaoaoaoababababababaoaoaoaoaoaHaHaoaoaoaoaqaoaoaoaoao
 aaavaKaEaEaLavaEaEaEaxaoaoabaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaHaHaoaoaqaoaoaoaoabaoaoabaoaoaoaoaqaoaoaoaqaoaoaoaoabaoaoabaoaoaoaoaqaoaoaHaHaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoabaoaoaBaGaGaGaAaMaGaGaNaAaa
 aaayaOaEaEaPayaEaEaEavaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoapabaoaoaoaoaoaoaoaqabababaqaoaoaoaoaoaoaoabaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaAaGaGaGazaQaGaGaRazaa
 aaavaSaEaEaTavaEaEaEavaoaoaoaoaoaoaoaoaoaHaoaoaHaHaHaHaoaoaoaHaUaUaoaoaoaoababaoaoaoaoaoaoaoaoabababaoaoaoaoaoaoaoaoababaoaoaoaoaUaUaHaoaoaoaHaHaHaHaoaoaHaoaoaoaoaoaoaoaoaoaAaGaGaGaAaVaGaGaWaAaa
-aaavaDaEaEaXavaEaEaEawaoaoaoaoaoaoaoaoaHaHaoaoaoaoaoaHaHaoaoaUaUaUaUaYaYaoaoaoaoaoabaoaoaoaoaoapbdapaoaoaoaoaoabaoaoaoaoaoaYaYaUaUaUaUaoaoaHaHaoaoaoaoaoaHaHaoaoaoaoaoaoaoaoaCaGaGaGaAaZaGaGaFaAaa
+aaavaDaEaEaXbRaEaEaEawaoaoaoaoaoaoaoaoaHaHaoaoaoaoaoaHaHaoaoaUaUaUaUaYaYaoaoaoaoaoabaoaoaoaoaoapbdapaoaoaoaoaoabaoaoaoaoaoaYaYaUaUaUaUaoaoaHaHaoaoaoaoaoaHaHaoaoaoaoaoaoaoaoaCaGaGaGbSaZaGaGaFaAaa
 aaavbaaEaEaEavaEaEaEawaoaoaoaoaoaHaHaHaHaHaoaoaoaoaoaoaHaoaoaUaUaUaUaYaYaUaoaoaoaoabababaoaoaoaoaoaoaoaoaoabababaoaoaoaoaUaYaYaUaUaUaUaoaoaHaoaoaoaoaoaoaHaHaHaHaHaoaoaoaoaoaCaGaGaGaAaGaGaGbbaAaa
-aaavaDaEaEaXavaEaEaEawaoaoaoaoaoapaHaHaHaoaoaoaoaoaoaoaoaoaobcaUaUaUaYaYaUaoabaoaoaoaoabaoaoaoaoaobBaoaoaoabaoaoaoaoabaoaUaYaYaUaUaUbcaoaoaoaoaoaoaoaoaoaoaHaHaHapaoaoaoaoaoaCaGaGaGaAaZaGaGaFaAaa
+aaavaDaEaEaXbTaEaEaEawaoaoaoaoaoapaHaHaHaoaoaoaoaoaoaoaoaoaobcaUaUaUaYaYaUaoabaoaoaoaoabaoaoaoaoaobBaoaoaoabaoaoaoaoabaoaUaYaYaUaUaUbcaoaoaoaoaoaoaoaoaoaoaHaHaHapaoaoaoaoaoaCaGaGaGbUaZaGaGaFaAaa
 aaavbeaEaEbfavaEaEaEavaoaoaoaoaoaoaoaHaoaoaoaoaoaoaoaoaoaoaoaobcaUaUaYaYaUaUabaoaoaoaoaoaoaoboaoaoaoaoaoaoaoaoaoaoaoabaUaUaYaYaUaUbcaoaoaoaoaoaoaoaoaoaoaoaoaHaoaoaoaoaoaoaoaAaGaGaGaAbgaGaGbhaAaa
 aaaybiaEaEbjayaEaEaEavaoaoabaoaoaoaoaoaoaoaoaoaoaoaqaqaoaoaoaoaobcaUaYaYaUaUaUaoaoaoaoaoaoaoaoaobrbEbDaoaoaoaoaoaoaoaUaUaUaYaYaUbcaoaoaoaoaoaqaqaoaoaoaoaoaoaoaoaoaoaoabaoaoaAaGaGaGazbkaGaGblazaa
 aaavbmaEaEbnavaEaEaEaxaoaoabaoaoaoaoaoaoaqaqaoaoaoaqapaoaoaoaoaoaoaoaoaoaoaUabaoaoaoaoaoaoaobJbFbGbFaobCaoaoaoaoaoaoabaUaoaoaoaoaoaoaoaoaoaoapaqaoaoaoaqaqaoaoaoaoaoaoabaoaoaBaGaGaGaAbpaGaGbqaAaa

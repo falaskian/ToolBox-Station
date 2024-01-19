@@ -863,3 +863,10 @@
 		else
 			icon_state = "light0"
 
+		//wide display screen
+/obj/machinery/status_display/wide
+	icon = 'icons/oldschool/toolbox64x32.dmi'
+	icon_state = "display_frame"
+	maptext_width = 64
+	chars_per_line = 14
+	separator = "  "

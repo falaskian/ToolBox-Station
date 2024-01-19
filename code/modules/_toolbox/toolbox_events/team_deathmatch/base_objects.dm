@@ -45,6 +45,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 		for(var/datum/data/record/R in GLOB.TDM_cloner_records[team])
 			grow_clone_from_record(src, R)
 	update_display_cases()
+	update_display_screen_kills()
 	. = ..()
 
 /obj/machinery/clonepod/TDM/attack_ghost(mob/user)
@@ -80,6 +81,16 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 				case.death_count_unlock = t
 				break
 			tier++
+
+/obj/machinery/clonepod/TDM/proc/update_display_screen_kills()
+	var/area/A = get_area(src)
+	if(!A)
+		return
+	var/kills = get_enemy_deaths()
+	for(var/obj/machinery/status_display/screen in A)
+		if(screen.message1 == "KILLS")
+			screen.message2 = kills
+			screen.update()
 
 /obj/machinery/clonepod/TDM/proc/create_human(mob/M)
 	var/mob/living/carbon/human/H = new()

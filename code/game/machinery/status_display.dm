@@ -34,6 +34,10 @@
 	var/index1			// display index for scrolling messages or 0 if non-scrolling
 	var/index2
 
+	var/chars_per_line = CHARS_PER_LINE
+	var/font_color = FONT_COLOR
+	var/separator = "|"
+
 /// Immediately blank the display.
 /obj/machinery/status_display/proc/remove_display()
 	cut_overlays()
@@ -49,7 +53,7 @@
 /obj/machinery/status_display/proc/update_display(line1, line2)
 	line1 = uppertext(line1)
 	line2 = uppertext(line2)
-	var/new_text = {"<div style="font-size:[FONT_SIZE];color:[FONT_COLOR];font:'[FONT_STYLE]';text-align:center;" valign="top">[line1]<br>[line2]</div>"}
+	var/new_text = {"<div style="font-size:[FONT_SIZE];color:[font_color];font:'[FONT_STYLE]';text-align:center;" valign="top">[line1]<br>[line2]</div>"}
 	if(maptext != new_text)
 		maptext = new_text
 
@@ -58,14 +62,14 @@
 /// Call with no arguments to disable.
 /obj/machinery/status_display/proc/set_message(m1, m2)
 	if(m1)
-		index1 = (length_char(m1) > CHARS_PER_LINE)
+		index1 = (length_char(m1) > chars_per_line)
 		message1 = m1
 	else
 		message1 = ""
 		index1 = 0
 
 	if(m2)
-		index2 = (length_char(m2) > CHARS_PER_LINE)
+		index2 = (length_char(m2) > chars_per_line)
 		message2 = m2
 	else
 		message2 = ""
@@ -80,7 +84,7 @@
 
 	var/line1 = message1
 	if(index1)
-		line1 = copytext_char("[message1]|[message1]", index1, index1 + CHARS_PER_LINE)
+		line1 = copytext_char("[message1][separator][message1]", index1, index1 + chars_per_line)
 		var/message1_len = length_char(message1)
 		index1 += SCROLL_SPEED
 		if(index1 > message1_len + 1)
@@ -88,7 +92,7 @@
 
 	var/line2 = message2
 	if(index2)
-		line2 = copytext_char("[message2]|[message2]", index2, index2 + CHARS_PER_LINE)
+		line2 = copytext_char("[message2][separator][message2]", index2, index2 + chars_per_line)
 		var/message2_len = length_char(message2)
 		index2 += SCROLL_SPEED
 		if(index2 > message2_len + 1)
@@ -133,7 +137,7 @@
 		var/line1 = "-[shuttle.getModeStr()]-"
 		var/line2 = shuttle.getTimerStr()
 
-		if(length_char(line2) > CHARS_PER_LINE)
+		if(length_char(line2) > chars_per_line)
 			line2 = "error"
 		update_display(line1, line2)
 	else
@@ -245,7 +249,7 @@
 	else
 		line1 = "CARGO"
 		line2 = SSshuttle.supply.getTimerStr()
-		if(length_char(line2) > CHARS_PER_LINE)
+		if(length_char(line2) > chars_per_line)
 			line2 = "Error"
 	update_display(line1, line2)
 

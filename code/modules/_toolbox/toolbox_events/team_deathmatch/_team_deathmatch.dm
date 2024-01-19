@@ -255,7 +255,7 @@ client/verb/clearbullshit()
 				break
 	for(var/mob/living/M in GLOB.player_list)
 		if(M.mind && M.mind.assigned_role == player_assigned_role)
-			to_chat(M,"<B>Guin yells, [message]</B>")
+			to_chat(M,"<B>Guin yells, \"[message]\"</B>")
 	if(ismob(announcer))
 		announcer.say("[message]")
 

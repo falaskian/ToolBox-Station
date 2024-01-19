@@ -339,6 +339,7 @@
 "gA" = (/obj/effect/turf_decal/tile/neutral,/turf/open/floor/plasteel,/area/TDM)
 "gB" = (/obj/machinery/door/firedoor/border_only{dir = 8},/obj/machinery/door/firedoor/border_only{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/turf/open/floor/plasteel,/area/TDM)
 "gC" = (/obj/item/banner/TDM/blue,/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
+"gD" = (/obj/machinery/status_display{font_color = "#09f"; message1 = "BLUE"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM,/area/TDM/blue_base)
 "gE" = (/obj/machinery/firealarm{dir = 4; pixel_x = -24},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/TDM)
 "gF" = (/obj/structure/chair/comfy/beige,/obj/structure/disposalpipe/segment,/turf/open/floor/plasteel/grimy,/area/TDM)
 "gG" = (/obj/structure/chair/comfy/beige,/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,/turf/open/floor/plasteel/grimy,/area/TDM)
@@ -638,6 +639,9 @@
 "mo" = (/obj/structure/flora/ausbushes/grassybush,/obj/structure/railing{dir = 6; resistance_flags = 115},/turf/open/floor/grass,/area/TDM)
 "mp" = (/obj/structure/chair{dir = 1},/turf/open/floor/plasteel,/area/TDM)
 "mq" = (/turf/template_noop,/area/template_noop)
+"mr" = (/obj/machinery/status_display{font_color = "#09f"; message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM,/area/TDM/blue_base)
+"ms" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "RED"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM,/area/TDM/red_base)
+"mt" = (/obj/machinery/status_display{font_color = "#f00"; message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM,/area/TDM/red_base)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -681,9 +685,9 @@ aaababababababababababababababababababababababababababababababababababababababab
 fHfHfHfHfHfHfHfHababababababababababababababababababababababababababababababababababababanmjmkmlmmmnmobampanabaeabababababaeaeaeaeaeababaeababababababababababababababababababababfIfIfIfIfIfIfIfI
 fHfJfKememfKfJfHababababababababababababababababababababababababababababababababababababananananananananananabababababababaeabaeabababababababababababababababababababababababababfIfLgfeSeSgffLfI
 fHememememememfHababababababababababababababababababababababababababababababababababababababaeaeaeaeaeaeaeaeabababababababababababababababababababababababababababababababababababfIeSeSeSeSeSeSfI
-fHememememememfHabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababfIeSeSeSeSeSeSfI
+msememememememfHabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababfIeSeSeSeSeSeSgD
 fHemememememggfHabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababfIgheSeSeSeSeSfI
-fHememememememfHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababababababababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafIeSeSeSeSeSeSfI
+mtememememememfHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababababababababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafIeSeSeSeSeSeSmr
 fHememgigjememfHmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqaaabababababababababababababababababababababababababababaamqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqfIeSeSgkgleSeSfI
 fHgmememememgmfHmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqaaaaabababababababababababababababababababababababababaaaamqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqfIgCeSeSeSeSgCfI
 fHfHfHfHfHfHfHfHmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqmqfIfIfIfIfIfIfIfI
