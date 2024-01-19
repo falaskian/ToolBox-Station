@@ -32,7 +32,7 @@
 "F" = (/obj/structure/flora/tree/jungle/small,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "G" = (/obj/structure/railing{dir = 4},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "H" = (/obj/structure/flora/junglebush/b,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
-"I" = (/mob/living/simple_animal/pet/penguin/emperor/shamebrero{name = "Guin"},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"I" = (/mob/living/simple_animal/pet/penguin/emperor/shamebrero/guin,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "J" = (/obj/structure/railing{dir = 4},/obj/structure/flora/junglebush/large,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "K" = (/obj/structure/railing{dir = 8},/obj/structure/flora/junglebush/large,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "L" = (/turf/open/floor/holofloor/grass,/area/TDM/lobby)

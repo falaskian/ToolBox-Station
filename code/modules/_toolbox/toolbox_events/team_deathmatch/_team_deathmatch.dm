@@ -56,6 +56,7 @@
 	var/list/ruin_turfs = list()
 	var/building_ruin = 0
 	var/list/death_caps = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
+	var/mob/living/announcer = /mob/living/simple_animal/pet/penguin/emperor/shamebrero/guin
 
 //debugging this bullshit
 var/list/some_bullshit = list()
@@ -247,9 +248,16 @@ client/verb/clearbullshit()
 	return time
 
 /datum/toolbox_event/team_deathmatch/proc/announce(message)
+	if(ispath(announcer))
+		for(var/mob/living/M in GLOB.mob_list)
+			if(istype(M,announcer))
+				announcer = M
+				break
 	for(var/mob/living/M in GLOB.player_list)
 		if(M.mind && M.mind.assigned_role == player_assigned_role)
-			to_chat(M,"<B>[message]</B>")
+			to_chat(M,"<B>Guin yells, [message]</B>")
+	if(ismob(announcer))
+		announcer.say("[message]")
 
 /datum/toolbox_event/team_deathmatch/proc/create_human(datum/mind/M,spawn_loc)
 	var/mob/old_mob = M.current
