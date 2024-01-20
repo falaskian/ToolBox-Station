@@ -252,6 +252,7 @@
 "eR" = (/obj/machinery/status_display{font_color = "#f00"; message1 = "KILLS"},/turf/closed/wall/mineral/titanium,/area/TDM/red_base)
 "eS" = (/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
 "eT" = (/obj/machinery/status_display{font_color = "#09f"; message1 = "KILLS"},/turf/closed/wall/mineral/titanium,/area/TDM/blue_base)
+"eU" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/conveyor_switch/oneway{dir = 8; id = "garbage"; name = "disposal conveyor"; position = 1},/turf/open/floor/plating,/area/TDM)
 "eW" = (/obj/structure/TDM/medical_cabinet{pixel_x = -8},/obj/structure/TDM/wallmed{pixel_x = 7},/turf/closed/wall/mineral/titanium,/area/TDM/blue_base)
 "eX" = (/obj/structure/chair/comfy/shuttle,/obj/machinery/light/small{dir = 8},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "eY" = (/obj/machinery/clonepod/TDM/team_blue{TDM_on = 1},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
@@ -541,7 +542,6 @@
 "kI" = (/obj/structure/bodycontainer/crematorium{desc = "Incinerator. Works well on barbecue nights."; dir = 8; id = "greytide_incinerator"; name = "incinerator"},/turf/open/floor/plating,/area/TDM)
 "kJ" = (/obj/structure/disposalpipe/segment{dir = 5},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/button/crematorium{id = "greytide_incinerator"; name = "incinerator igniter"; pixel_x = -5; pixel_y = -25},/turf/open/floor/plating,/area/TDM)
 "kK" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating,/area/TDM)
-"kL" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/conveyor_switch/oneway{dir = 8; id = "garbage"; name = "disposal conveyor"},/turf/open/floor/plating,/area/TDM)
 "kM" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 6},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 5},/obj/structure/disposalpipe/segment{dir = 4},/obj/machinery/door/window{dir = 2; name = "showers"},/turf/open/floor/plasteel/freezer,/area/TDM)
 "kN" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 9},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 9},/obj/structure/disposalpipe/segment{dir = 4},/obj/item/twohanded/required/kirbyplants/random,/obj/structure/window,/obj/machinery/light{dir = 4},/turf/open/floor/plasteel/freezer,/area/TDM)
 "kO" = (/obj/structure/closet/firecloset,/turf/open/floor/plating,/area/TDM)
@@ -654,7 +654,7 @@ aaababababababababababadadadadadadananananadadadadjdjdjdapfhcTjecTcTcTcTcTcTcTcT
 aaababababababababababababababababababababababadjqbabababajrapjsjtjujvjwiYjxjyfDjAapjBjCjDfZbagPjEjFbajGjHhWbajIjJjKapiCjLiEapjMjMjNjOapjrbabababajqadabababababababababababababababababababababaa
 aaababababababababababababababababababababababadjqbababababaapjPjQjQjQjRapapapjSjTapjUjVapjWbagPjXjYgVjGjZhWkafqbakbapkciZkdapkebabakfapbababababajqadabababababababababababababababababababababaa
 aaababababababababababababababababababababababadkgbabaiPbabaapkhapkikjkkklkmknkokpaTkqkrcTksbaktkuhghgkvkwkxkykzkAjIapapkBapapfEkDkEkFkGbabaiPbabakgadabababababababababababababababababababababaa
-aaababababababababababababababababababababababadadananadbabaapkHkIkJkKkLcTcTcTkMkNcUkOkPkQkRkSkSkTkUkUkVkWkXkYkZgPbabababababababalalbapbabaadananadadabababababababababababababababababababababaa
+aaababababababababababababababababababababababadadananadbabaapkHkIkJkKeUcTcTcTkMkNcUkOkPkQkRkSkSkTkUkUkVkWkXkYkZgPbabababababababalalbapbabaadananadadabababababababababababababababababababababaa
 aaababababababababababababababababababababababababababadbabaapapapaplcapapldlelfjSapajlgaplhliljlklllmlnfFhWlplqlrapaplsapapapapgtgtltadbabaapabababababababababababababababababababababababababaa
 aaababababababababababababababababababababababababababadbabafMbababababaaplulejSlvapajlgapapapgtgtgthWlwlxhWlybalzaplAiZiEapbababababafMbafIapabababababababababababababababababababababababababaa
 aaababababababababababababababababababababababababababadbabafMiNbababalBapldlejSlChXajlDlElFlGlHlIlJlKlLlMapbafJlOapkclPjbaplQbabaiObafMbabaapabababababababababababababababababababababababababaa

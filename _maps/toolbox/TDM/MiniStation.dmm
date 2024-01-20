@@ -542,7 +542,7 @@
 "kv" = (/obj/structure/bodycontainer/crematorium{desc = "Incinerator. Works well on barbecue nights."; dir = 8; id = "greytide_incinerator"; name = "incinerator"},/turf/open/floor/plating,/area/TDM)
 "kw" = (/obj/structure/disposalpipe/segment{dir = 5},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/button/crematorium{id = "greytide_incinerator"; name = "incinerator igniter"; pixel_x = -5; pixel_y = -25},/turf/open/floor/plating,/area/TDM)
 "kx" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating,/area/TDM)
-"ky" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/conveyor_switch/oneway{dir = 8; id = "garbage"; name = "disposal conveyor"},/turf/open/floor/plating,/area/TDM)
+"ky" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/conveyor_switch/oneway{dir = 8; id = "garbage"; name = "disposal conveyor"; position = 1},/turf/open/floor/plating,/area/TDM)
 "kz" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 6},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 5},/obj/structure/disposalpipe/segment{dir = 4},/obj/machinery/door/window{dir = 2; name = "showers"},/turf/open/floor/plasteel/freezer,/area/TDM)
 "kA" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 9},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 9},/obj/structure/disposalpipe/segment{dir = 4},/obj/item/twohanded/required/kirbyplants/random,/obj/structure/window,/obj/machinery/light{dir = 4},/turf/open/floor/plasteel/freezer,/area/TDM)
 "kB" = (/obj/structure/closet/firecloset,/turf/open/floor/plating,/area/TDM)
