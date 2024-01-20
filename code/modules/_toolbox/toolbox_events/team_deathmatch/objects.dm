@@ -1,13 +1,12 @@
 /********************** MISC OBJECTS **************************/
 
 
-		//Wall Healer
-
 obj/structure/TDM
 	anchored = 1
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
-obj/structure/TDM/take_damage()
-	return
+
+		//Wall Healer
 
 obj/structure/TDM/wallmed
 	name = "InstaMed"
@@ -373,8 +372,8 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 /obj/structure/TDM/medical_cabinet
 	name = "medical cabinet"
 	desc = "A small wall mounted cabinet designed to hold medical equipment."
-	icon = 'icons/obj/wallmounts.dmi'
-	icon_state = "extinguisher_closed"
+	icon = 'icons/oldschool/objects.dmi'
+	icon_state = "medical_cabinet_closed"
 	var/last_opened = 0
 	var/personal_cooldowns = list()
 
@@ -396,7 +395,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 		user.put_in_hands(I)
 		if(last_opened+11 <= world.time)
 			playsound(loc, 'sound/machines/click.ogg', 15, 1, -3)
-			icon_state = "extinguisher_empty"
+			icon_state = "medical_cabinet_open"
 			last_opened = world.time
 			spawn(10)
 				icon_state = initial(icon_state)
@@ -598,3 +597,20 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 /obj/machinery/conveyor/TDM/permanent
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 	cant_be_disesembled = 1
+
+
+
+		//BlackBoard
+
+/obj/structure/TDM/blackboard
+	name = "Blackboard"
+	desc = "School blackboard."
+	icon = 'icons/oldschool/blackboard.dmi'
+	icon_state = "blackboard"
+	max_integrity = 500
+
+/obj/structure/TDM/blackboard/meta
+	name = "Blackboard"
+	desc = "School blackboard."
+	icon = 'icons/oldschool/blackboard.dmi'
+	icon_state = "metaschool"

@@ -552,7 +552,6 @@
 		//CLOWN CLOTHES
 
 /obj/item/clothing/under/rank/civilian/clown/TDM
-	can_adjust = 0
 
 /obj/item/clothing/under/rank/civilian/clown/TDM/Initialize()
 	.=..()
@@ -563,11 +562,10 @@
 
 /obj/item/clothing/mask/gas/clown_hat/TDM/Initialize()
 	.=..()
-	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 /obj/item/clothing/under/rank/civilian/clown/blue/TDM
-	can_adjust = 0
 
 /obj/item/clothing/under/rank/civilian/clown/blue/TDM/Initialize()
 	.=..()
@@ -581,14 +579,14 @@
 
 /obj/item/clothing/shoes/clown_shoes/TDM/Initialize()
 	.=..()
-	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 /obj/item/clothing/mask/gas/sexyclown/TDM
 
 /obj/item/clothing/mask/gas/sexyclown/TDM/Initialize()
 	.=..()
-	//ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
+	ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 
 
