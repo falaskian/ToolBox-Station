@@ -434,7 +434,7 @@
 "ir" = (/obj/pod/large/industrial{dir = 8; name = "industrial garbage collector pod"},/turf/open/floor/plating,/area/TDM)
 "is" = (/obj/effect/spawner/lootdrop/trash,/obj/structure/disposalpipe/segment,/turf/open/floor/plating,/area/TDM)
 "it" = (/obj/effect/turf_decal/stripes/line,/turf/open/floor/plating,/area/TDM)
-"iu" = (/obj/machinery/light{dir = 8},/obj/effect/portal/permanent/one_way/destroy{alpha = 0; id = "greytide_p_bb"},/turf/open/floor/plasteel/white/side{dir = 4},/area/TDM)
+"iu" = (/obj/machinery/light{dir = 8},/obj/effect/portal/permanent/one_way/destroy{alpha = 0; id = "mimeacademy_p_bb"},/turf/open/floor/plasteel/white/side{dir = 4},/area/TDM)
 "iv" = (/obj/structure/closet/crate/trashcart,/obj/effect/spawner/lootdrop/trash,/obj/effect/turf_decal/stripes/line{dir = 8},/obj/item/stack/cable_coil/white,/turf/open/floor/plating,/area/TDM)
 "iw" = (/obj/structure/disposalpipe/junction{dir = 8},/turf/open/floor/plating,/area/TDM)
 "ix" = (/obj/structure/disposalpipe/segment{dir = 5},/turf/open/floor/plasteel/white/side{dir = 4},/area/TDM)
@@ -495,7 +495,6 @@
 "jA" = (/obj/effect/turf_decal/stripes/white/line{dir = 1},/obj/item/clothing/head/cone,/turf/open/floor/grass{desc = "Asphalt road."; icon_state = "engine_light"; name = "floor"},/area/TDM/offlimits)
 "jB" = (/obj/item/clothing/head/cone,/turf/open/floor/plating,/area/TDM)
 "jC" = (/obj/structure/closet/cardboard,/turf/open/floor/plating,/area/TDM)
-"jD" = (/turf/open/space/basic,/area/TDM/offlimits)
 "jE" = (/obj/effect/turf_decal/stripes/white/line,/obj/item/clothing/head/cone,/turf/open/floor/grass{desc = "Asphalt road."; icon_state = "engine_light"; name = "floor"},/area/TDM/offlimits)
 "jF" = (/obj/machinery/conveyor/TDM/permanent{dir = 8; id = "mimeschool_c_garbage"},/obj/structure/sign/warning/securearea{name = "\improper STAY CLEAR HEAVY MACHINERY"; pixel_y = -32},/obj/item/kitchen/knife/shank,/turf/open/floor/plating,/area/TDM)
 "jG" = (/obj/machinery/door/airlock/maintenance{name = "Disposals"; req_access_txt = "0"},/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plating,/area/TDM)
@@ -561,7 +560,7 @@ gHgIhdgvgJgKgKgKgMgvgvgvfqgviGiHiHiHiHiHiHiHiHiHiHiHiHiHiHadadadadadhVadbtbtbtbP
 gHgIgvgvgJgKgKgKiJiLiLiLiLiLiLiLiLiLiLiLiLiLiLiLiLiLiLiLjAgIjBimjCjsisadilbtbsbsadadhVadadadadeshgdIadcnbsbtbtcnbtbtbtbtbPhpgNgvgvgvgvgOgvgvgvgvgvgNgvgvgvfqgvgvgvgOgvgvgvgvgvgvgvgvgvgNgOfqfqgIgH
 gHgIgvgvgJgKgRgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKjteAeAeBeAjxadadjGadadadadjHeCadeCadeuhgfNadilbtbtbtbtbtbtbtbtbthpgvgvfqgvgvgvgvgvgvgvgvgvgNgvgvgvgvgvfqgvgvgvgvhdgvgvgvgvgvgIgIgIgIgIgH
 gHgIgvgOgJgKgKgKgKiNgKgKiNgKgKiNgKgKiNgKgKiNgKgKiNgKgKiNgKjteAeAeAeAjIjJjKhQjLjMjNiajOjqadjqadadhtadadadbtbtbtbsbtbvbtbtbthpgvgvgvgvgvgvgvgOgvgvhdgvgvgvgvgvgvgvgvgvgvgvgvgvgvgOgvgNgOgIcmcmcmcmcm
-gHgIgvhJgJgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKjteAireAeAjPhwhxiteAhyhzjQhBhzhzhzhzjghBhChDezbtbtbtbtbtbtbtbsbthpgOgvgvgNgvgvgvgvgvgvgvgvgvgvgOgvgvgNgvgvjDgvgvgvgvgvgvgvgvgIcmcvczcvcm
+gHgIgvhJgJgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKjteAireAeAjPhwhxiteAhyhzjQhBhzhzhzhzjghBhChDezbtbtbtbtbtbtbtbsbthpgOgvgvgNgvgvgvgvgvgvgvgvgvgvgOgvgvgNgvgvgvgvgvgvgvgvgvgvgvgIcmcvczcvcm
 gHgIfqgvgJgKgRgKgKhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjjEgIeAeBeBeAhMhLhMjFiveAhOiaiwhQhQhRhQhQhSeAeAadbsbtbtbtbtbtbtbtbthpgvfqgvgvgvgvgvgvfqgvfqfqgvgvgvgvgvgvgvgvgOgvgvfqgvgvgvgvgOgIcmcvcvcvcm
 gHgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIcmcvjocvcm
 gHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHcmcmcmcmcm
