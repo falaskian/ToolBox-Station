@@ -251,7 +251,47 @@
 
 
 
-		//Clothes
+		//Hide&Seek
+
+
+	//Hunter Clown
+
+/datum/outfit/hunter_clown
+	name = "TDM_HUNTER_CLOWN"
+	uniform = /obj/item/clothing/under/rank/civilian/clown
+	back = /obj/item/storage/backpack/clown
+	gloves = /obj/item/clothing/gloves/fingerless
+	shoes = /obj/item/clothing/shoes/clown_shoes/TDM/slow
+	mask = /obj/item/clothing/mask/gas/clown_hat
+
+
+	//Hider Mime
+
+/datum/outfit/hider_mime
+	name = "TDM_HIDER_MIME"
+	uniform = /obj/item/clothing/under/rank/civilian/mime
+	suit = /obj/item/clothing/suit/suspenders
+	gloves = /obj/item/clothing/gloves/color/white
+	shoes = /obj/item/clothing/shoes/sneakers/black
+	head = /obj/item/clothing/head/frenchberet
+	mask = /obj/item/clothing/mask/gas/mime
+
+/datum/outfit/hider_mime/chameleon
+	name = "TDM_HIDER_MIME"
+	uniform = /obj/item/clothing/under/rank/civilian/mime
+	suit = /obj/item/clothing/suit/suspenders
+	gloves = /obj/item/clothing/gloves/color/white
+	shoes = /obj/item/clothing/shoes/sneakers/black
+	head = /obj/item/clothing/head/frenchberet
+	mask = /obj/item/clothing/mask/gas/mime
+	l_pocket = /obj/item/chameleon
+
+
+
+
+
+
+/********************** TDM CLOTHES **************************/
 
 	//Berets
 
@@ -535,7 +575,9 @@
 
 
 /obj/item/clothing/shoes/clown_shoes/TDM
-//	slowdown = 0.2
+
+/obj/item/clothing/shoes/clown_shoes/TDM/slow
+	slowdown = 0.2
 
 /obj/item/clothing/shoes/clown_shoes/TDM/Initialize()
 	.=..()

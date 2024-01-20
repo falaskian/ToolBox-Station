@@ -210,6 +210,42 @@
 
 
 
+		//Hide&Seek
+
+/datum/team_deathmatch_map/hide_and_seek
+	name = "Hide&Seek"
+	map = /datum/map_template/ruin/space/MimeAcademy
+	team_deaths = list(TDM_RED_TEAM = 5,TDM_BLUE_TEAM = 20)
+	round_time = 0
+	team_home_areas = list(
+		/area/TDM/red_base = TDM_RED_TEAM,
+		/area/TDM/blue_base = TDM_BLUE_TEAM)
+	teir_kills = list(0,3,6,15)
+	team_outfits = list(
+		TDM_RED_TEAM = list(
+		"t1" = /datum/outfit/hunter_clown),
+		TDM_BLUE_TEAM = list(
+		"t1" = /datum/outfit/hider_mime))
+	//control what gets cleaned during repair cycle
+	repair_map = 1
+	clean_map_items = 1
+	clean_map_bodies = 1
+
+/datum/map_template/ruin/space/MimeAcademy
+	name = "MimeAcademy"
+	id = "tdm_template"
+	description = "Academy for gifted mimes."
+	unpickable = TRUE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
+	prefix = "_maps/toolbox/TDM/MimeAcademy.dmm"
+
+
+
+
+
 
 /********************** INACTIVE MAPS **************************/
 /*
@@ -242,9 +278,20 @@
 	prefix = "_maps/toolbox/TDM/MiniStation_GreyTide_nobase.dmm"
 
 
-
-
 */
+
+
+
+
+
+
+
+
+
+
+
+/********************** MOBS **************************/
+
 		//GUIN
 
 /mob/living/simple_animal/pet/penguin/emperor/shamebrero/guin
