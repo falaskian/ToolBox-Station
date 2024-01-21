@@ -368,19 +368,28 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 
 		//Experimantal
 
-	//grenade launcher
+	//Grenade launcher
 /obj/structure/displaycase/TDM_item_spawn/grenade_launcher
 	start_showpiece_type = /obj/item/gun/ballistic/revolver/grenadelauncher/unrestricted
+	ammunition = /obj/item/ammo_casing/a40mm
 	tier_level = 4
 
-	//rocket launcher
+	//Rocket launcher
 /obj/structure/displaycase/TDM_item_spawn/rocket_launcher
 	start_showpiece_type = /obj/item/gun/ballistic/rocketlauncher/unrestricted
+	ammunition = /obj/item/ammo_casing/caseless/rocket
 	tier_level = 4
 
-	//frag grenade
+	//Frag grenade
 /obj/structure/displaycase/TDM_item_spawn/frag_grenade
 	start_showpiece_type = /obj/item/grenade/syndieminibomb/concussion/frag
+	ammunition = /obj/item/grenade/syndieminibomb/concussion/frag
+	tier_level = 4
+
+	//RCD
+/obj/structure/displaycase/TDM_item_spawn/rcd
+	start_showpiece_type = /obj/item/construction/rcd
+	ammunition = /obj/item/rcd_ammo
 	tier_level = 4
 
 

@@ -10,7 +10,7 @@
 "aj" = (/obj/machinery/conveyor{dir = 8; id = "lobby_big_treadmill_blue"; operating = 0; resistance_flags = 115},/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
 "ak" = (/obj/machinery/conveyor_switch/oneway{dir = 8; id = "lobby_big_treadmill_red"; name = "treadmill switch"; resistance_flags = 115},/turf/open/floor/carpet/red,/area/TDM/lobby/red)
 "al" = (/obj/structure/reagent_dispensers/water_cooler{resistance_flags = 115},/turf/open/floor/carpet/red,/area/TDM/lobby/red)
-"am" = (/obj/structure/reagent_dispensers/water_cooler,/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
+"am" = (/obj/structure/reagent_dispensers/water_cooler{resistance_flags = 115},/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
 "an" = (/obj/machinery/conveyor_switch/oneway{id = "lobby_big_treadmill_blue"; name = "treadmill switch"; resistance_flags = 115},/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
 "ao" = (/obj/item/reagent_containers/spray/spraytan,/obj/structure/mirror{pixel_x = -28},/turf/open/floor/carpet/red,/area/TDM/lobby/red)
 "ap" = (/obj/item/reagent_containers/spray/spraytan,/obj/structure/mirror{pixel_x = 28},/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
