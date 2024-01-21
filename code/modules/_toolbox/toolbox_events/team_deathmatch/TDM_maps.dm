@@ -8,6 +8,7 @@
 	map = /datum/map_template/ruin/space/TDM_Template //This can be either the type path of the specific map template ruin you want or the name of it
 	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20) //Number of respawn points for each team
 	round_time = 0 //How long does the round last
+	ban_map = 0 //Is map active in map rotation
 	team_home_areas = list(
 		/area/TDM/red_base = TDM_RED_TEAM,
 		/area/TDM/blue_base = TDM_BLUE_TEAM)
@@ -25,6 +26,7 @@
 	repair_map = 1
 	clean_map_items = 1
 	clean_map_bodies = 1
+	baseturf = /turf/open/floor/plating //Turf that will spawn after explosion deletes a turf
 
 /datum/map_template/ruin/space/TDM_Template
 	name = "TDM Template Name"
@@ -134,7 +136,7 @@
 	name = "TDM MiniStation"
 	map = /datum/map_template/ruin/space/TDM_MiniStation
 	baseturf = /turf/open/floor/plating
-	ban_map = 1
+	ban_map = 0
 //		repair_map = 1
 //		clean_map_items = 1
 //		clean_map_bodies = 1
@@ -188,7 +190,7 @@
 	name = "DeathRun"
 	map = /datum/map_template/ruin/space/TDM_DeathRun
 	team_deaths = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 3) //Blue Team (Death) have only 3 respawn points
-	round_time = 600
+	round_time = 0
 	team_outfits = list(
 		TDM_RED_TEAM = list(
 		"t1" = /datum/outfit/TDM/Runner),
@@ -215,6 +217,7 @@
 /datum/team_deathmatch_map/hide_and_seek
 	name = "Hide&Seek"
 	map = /datum/map_template/ruin/space/MimeAcademy
+	baseturf = /turf/open/floor/plating
 	team_deaths = list(TDM_RED_TEAM = 5,TDM_BLUE_TEAM = 20)
 	round_time = 0
 	team_home_areas = list(
@@ -228,8 +231,8 @@
 		"t1" = /datum/outfit/hider_mime))
 	//control what gets cleaned during repair cycle
 	repair_map = 1
-	clean_map_items = 1
-	clean_map_bodies = 1
+	clean_map_items = 0
+	clean_map_bodies = 0
 
 /datum/map_template/ruin/space/MimeAcademy
 	name = "MimeAcademy"

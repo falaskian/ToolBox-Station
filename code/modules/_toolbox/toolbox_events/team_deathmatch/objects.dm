@@ -366,6 +366,23 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	tier_level = 4
 
 
+		//Experimantal
+
+	//grenade launcher
+/obj/structure/displaycase/TDM_item_spawn/grenade_launcher
+	start_showpiece_type = /obj/item/gun/ballistic/revolver/grenadelauncher/unrestricted
+	tier_level = 4
+
+	//rocket launcher
+/obj/structure/displaycase/TDM_item_spawn/rocket_launcher
+	start_showpiece_type = /obj/item/gun/ballistic/rocketlauncher/unrestricted
+	tier_level = 4
+
+	//frag grenade
+/obj/structure/displaycase/TDM_item_spawn/frag_grenade
+	start_showpiece_type = /obj/item/grenade/syndieminibomb/concussion/frag
+	tier_level = 4
+
 
 	//Medical Cabinet
 
