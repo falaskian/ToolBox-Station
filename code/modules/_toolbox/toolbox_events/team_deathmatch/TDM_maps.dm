@@ -218,12 +218,12 @@
 	name = "Hide&Seek"
 	map = /datum/map_template/ruin/space/MimeAcademy
 	baseturf = /turf/open/floor/plating
-	team_deaths = list(TDM_RED_TEAM = 5,TDM_BLUE_TEAM = 20)
+	team_deaths = list(TDM_RED_TEAM = 5,TDM_BLUE_TEAM = 30)
 	round_time = 0
 	team_home_areas = list(
 		/area/TDM/red_base = TDM_RED_TEAM,
 		/area/TDM/blue_base = TDM_BLUE_TEAM)
-	teir_kills = list(0,3,6,15)
+	teir_kills = list(0,3,12,24)
 	team_outfits = list(
 		TDM_RED_TEAM = list(
 		"t1" = /datum/outfit/hunter_clown),
