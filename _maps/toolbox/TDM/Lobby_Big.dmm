@@ -27,7 +27,7 @@
 "aA" = (/obj/structure/railing{dir = 4; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "aB" = (/obj/structure/mirror{pixel_x = 28},/turf/open/floor/carpet/blue,/area/TDM/lobby/blue)
 "aC" = (/obj/structure/flora/junglebush/b,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
-"aD" = (/mob/living/simple_animal/pet/penguin/emperor/shamebrero/guin,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"aD" = (/mob/living/simple_animal/pet/penguin/emperor/shamebrero/guin{icon = 'icons/oldschool/simple_animals.dmi'; icon_dead = "guin_dead"; icon_living = "guin"; icon_state = "guin"},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "aE" = (/obj/structure/flora/junglebush/large,/obj/structure/railing{dir = 4; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "aF" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/kitchen/knife/combat/TDM},/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/turf/open/indestructible,/area/TDM/lobby)
 "aG" = (/obj/structure/flora/junglebush/large,/obj/structure/railing{dir = 8; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM/lobby)

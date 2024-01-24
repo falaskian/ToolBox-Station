@@ -32,7 +32,7 @@
 "F" = (/obj/structure/flora/tree/jungle/small,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "G" = (/obj/structure/railing{dir = 4},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "H" = (/obj/structure/flora/junglebush/b,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
-"I" = (/mob/living/simple_animal/pet/penguin/emperor/shamebrero/guin,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
+"I" = (/mob/living/simple_animal/pet/penguin/emperor/shamebrero/guin{icon = 'icons/oldschool/simple_animals.dmi'; icon_dead = "guin"; icon_living = "guin"; icon_state = "guin"},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "J" = (/obj/structure/railing{dir = 4},/obj/structure/flora/junglebush/large,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "K" = (/obj/structure/railing{dir = 8},/obj/structure/flora/junglebush/large,/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "L" = (/turf/open/floor/holofloor/grass,/area/TDM/lobby)
@@ -40,7 +40,7 @@
 "N" = (/obj/machinery/door/window{name = "Guin pen"},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "O" = (/obj/structure/railing{dir = 6; resistance_flags = 115},/turf/open/floor/holofloor/grass,/area/TDM/lobby)
 "P" = (/obj/effect/turf_decal/stripes/corner{dir = 1},/turf/open/indestructible,/area/TDM/lobby)
-"Q" = (/obj/effect/turf_decal/stripes/corner{dir = 4},/turf/open/indestructible,/area/TDM/lobby)
+"Q" = (/obj/effect/turf_decal/stripes/corner{dir = 4},/mob/living/simple_animal/hostile/retaliate/goat/pineapple,/turf/open/indestructible,/area/TDM/lobby)
 "R" = (/obj/machinery/status_display{message1 = "RED"; message2 = "TEAM"; resistance_flags = 115},/turf/closed/indestructible/riveted/TDM,/area/TDM/lobby)
 "S" = (/obj/machinery/status_display{message1 = "BLUE"; message2 = "TEAM"; resistance_flags = 115},/turf/closed/indestructible/riveted/TDM,/area/TDM/lobby)
 

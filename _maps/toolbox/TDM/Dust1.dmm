@@ -9,7 +9,7 @@
 "ai" = (/obj/structure/barricade/sandbags/TDM,/turf/open/floor/sepia/TDM,/area/TDM)
 "aj" = (/obj/machinery/gateway{dir = 8},/turf/open/floor/sepia/TDM,/area/TDM)
 "ak" = (/obj/effect/portal/permanent{icon_state = "portal"; id = "dust1_p_1"; name = "portal"; pixel_y = 9},/obj/machinery/gateway/centerstation{density = 0; layer = 3.1; level = 2},/turf/open/floor/sepia/TDM,/area/TDM)
-"al" = (/obj/machinery/gateway{dir = 4},/turf/open/floor/sepia/TDM,/area/TDM)
+"al" = (/obj/machinery/power/port_gen/pacman{anchored = 1; resistance_flags = 115},/obj/machinery/gateway{dir = 4},/turf/open/floor/sepia/TDM,/area/TDM)
 "am" = (/obj/machinery/gateway,/turf/open/floor/sepia/TDM,/area/TDM)
 "an" = (/turf/open/floor/plasteel/stairs/TDM/sepia/up,/area/TDM)
 "ao" = (/turf/open/floor/plating/asteroid,/area/TDM)
@@ -82,7 +82,7 @@
 "bD" = (/obj/structure/stone_tile/surrounding_tile/cracked{dir = 8},/turf/open/floor/plating/asteroid,/area/TDM)
 "bE" = (/obj/structure/stone_tile/surrounding_tile/cracked{dir = 6},/turf/open/floor/plating/asteroid,/area/TDM)
 "bF" = (/obj/structure/stone_tile/surrounding,/obj/structure/stone_tile/center/cracked,/turf/open/floor/plating/asteroid,/area/TDM)
-"bG" = (/obj/item/clothing/head/crown,/obj/structure/stone_tile/slab/cracked,/turf/open/floor/plating/asteroid,/area/TDM)
+"bG" = (/obj/item/clothing/head/crown{resistance_flags = 115},/obj/structure/stone_tile/slab/cracked,/turf/open/floor/plating/asteroid,/area/TDM)
 "bH" = (/obj/structure/stone_tile/block/cracked{dir = 4},/turf/open/floor/plating/asteroid,/area/TDM)
 "bI" = (/obj/structure/stone_tile/center/cracked,/obj/structure/stone_tile/surrounding_tile/cracked{dir = 4},/turf/open/floor/plating/asteroid,/area/TDM)
 "bJ" = (/obj/structure/stone_tile/block/cracked{dir = 8},/obj/structure/stone_tile/surrounding_tile/cracked{dir = 6},/turf/open/floor/plating/asteroid,/area/TDM)
@@ -105,6 +105,8 @@
 "ca" = (/obj/structure/displaycase/TDM_item_spawn/frag_grenade,/turf/open/indestructible,/area/TDM/blue_base)
 "cb" = (/obj/structure/displaycase/TDM_item_spawn/rcd,/turf/open/indestructible,/area/TDM/red_base)
 "cc" = (/obj/structure/displaycase/TDM_item_spawn/rcd,/turf/open/indestructible,/area/TDM/blue_base)
+"cd" = (/obj/structure/ore_box/TDM,/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"ce" = (/obj/machinery/power/port_gen/pacman{anchored = 1; resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -146,12 +148,12 @@ aaabaoaoaqaqabaoaoaoaoaoabbtbtbtbtbuabapaoaoaoaoaoaoaoabababababababababanababbt
 aaabaoaoaqabapaoaoababababbtbtbtababababababananababababbubtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbuababababananababababababbtbtbtababababaoaoapabaqaoaoabaa
 aaabaoaoaqaqaoaoaoabbvbtbtbtbtbtbtbtbtbtbvbvbtbtbtbtbuabbtbtbtbtbtbtbtbtbtabbtbtabbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtabbtbtbtbtbtbtbtbtbtabbubtbtbtbtbvbvbtbtbtbtbtbtbtbtbtbvabaoaoaoaqaqaoaoabaa
 aaabaoaoaqaqaoaoaoabbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbvbvbvbtbtabababbtbtbtbtbtbtbtbtabababababbtbtbtbtbtbtbtbtabababbtbtbvbvbvbtbtabbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtabaoaoaoaqaqaoaoabaa
-aaabaoaoaobwaoaoaoasbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtbtbtbtbtbtbvbvbtbtbtbtbvbtbtbtbtababbtbtabbMbObPabbtbtababbtbtbtbtbtbtbtbtbtbvbvbtbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtataoaoaobxaoaoaoabaa
-aaabaoaoaoaoaoaoaoasbtbtbtbtbtbtabbvbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtababbtbtbtbtbtbQbtbtbtbtbtababbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtbtbtbtbtbvabbtbtbtbtbtbtataoaoaoaoaoaoaoabaa
+aaabaoaoaobwaoaoaoasbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtbtbtbtbtbtbvbvbtbtbtbtbvbtbtbtbtababbtbtabbtbtbtabbtbtababbtbtbtbtbtbtbtbtbtbvbvbtbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtataoaoaobxaoaoaoabaa
+aaabaoaoaoaoaoaoaoasbtbtbtbtbtbtabbvbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtababbtbtbtbtbtbtbtbtbtbtbtababbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtbtbtbtbtbvabbtbtbtbtbtbtataoaoaoaoaoaoaoabaa
 aaababaoaoaoaqaoaoabbtbtbtbtbtbuabbvbvbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtbtbtbtababbtbtabbtbtbtbtbtbtbtabbtbtababbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbvbvabbubtbtbtbtbtabaoaoaqaoaoaoababaa
-aabNababababababababababababababababababababababababababababababababababbtbtabababbybtbtababbtbtbtbtbtababbtbtbyabababbtbtabababababababababababababababababababababababababababababababababababaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbtbtbtabbtbtbtbtbtabbtbtbtbtbtabbtbtbtbtbtabbtbtbtabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-bzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzaaababbtbtbtbtbtabbtbtbtbtbtbubtbtbtbtbtabbtbtbtbtbtababaabzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbz
+aabNababababababababababababababababababababababababababababababababababbtbtabababbybtbtabbtbtbtbtbtbtbtabbtbtbyabababbtbtabababababababababababababababababababababababababababababababababababaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbtbtbtabbtbtbtbtbtbtabbMbObPabbtbtbtbtbtbtabbtbtbtabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+bzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzaaababbtbtbtbtbtabbtbtababcdbQceababbtbtabbtbtbtbtbtababaabzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbz
 bzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzaaaaabababababababababababababababababababababababababaaaabzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbz
 bzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbz
 "}

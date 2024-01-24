@@ -263,6 +263,7 @@
 	gloves = /obj/item/clothing/gloves/fingerless
 	shoes = /obj/item/clothing/shoes/clown_shoes/TDM/slow
 	mask = /obj/item/clothing/mask/gas/clown_hat
+	r_pocket = /obj/item/bikehorn
 
 
 	//Hider Mime
