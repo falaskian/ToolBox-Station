@@ -134,6 +134,9 @@ The event. Make children of this to make a new event.
 
 /datum/toolbox_event/proc/generate_event_z_levels() //This proc is called right before any extra space z-levels are generated.
 
+/datum/toolbox_event/proc/get_fal_cam_turfs()
+	return list()
+
 /datum/admins/proc/toggle_tb_event()
 	set category = "Server"
 	set name = "Toggle TB Event"

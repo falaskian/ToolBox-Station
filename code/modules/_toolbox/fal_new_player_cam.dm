@@ -72,10 +72,19 @@ var/global/obj/new_player_cam/new_player_cam = null
 		P.sight = initial(P.sight)
 
 /obj/new_player_cam/New()
-	for(var/turf/open/floor/T in world)
-		if(!is_station_level(T.z))
-			continue
-		camturfs += T
+	if(SStoolbox_events)
+		for(var/t in SStoolbox_events.cached_events)
+			var/datum/toolbox_event/E = SStoolbox_events.is_active(t)
+			if(E && E.active)
+				var/list/event_cam_turfs = E.get_fal_cam_turfs()
+				if(event_cam_turfs && event_cam_turfs.len)
+					camturfs = event_cam_turfs
+					break
+	if(!camturfs || !camturfs.len)
+		for(var/turf/open/floor/T in world)
+			if(!is_station_level(T.z))
+				continue
+			camturfs += T
 	thescreen = new()
 	thescreen.icon = 'icons/effects/ss13_dark_alpha6.dmi'
 	thescreen.icon_state = "0"
