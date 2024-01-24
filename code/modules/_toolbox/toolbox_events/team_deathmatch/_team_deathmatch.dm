@@ -373,6 +373,8 @@ client/verb/clearbullshit()
 					M.special_role = t
 					cloner.create_record(H)
 					cloner.equip_clothing(H)
+					if(M in GLOB.Original_Minds)
+						GLOB.Original_Minds.Remove(M)
 			if(failed_to_launch)
 				break
 	else
@@ -440,8 +442,6 @@ client/verb/clearbullshit()
 				lobby_turfs += T
 			if(lobby_turfs.len)
 				var/turf/T = pick(lobby_turfs)
-				if(living_mob.mind && (living_mob.mind in GLOB.Original_Minds))
-					GLOB.Original_Minds.Remove(living_mob.mind)
 				T.JoinPlayerHere(living_mob)
 				return 1
 
@@ -557,6 +557,8 @@ client/verb/clearbullshit()
 						var/mob/living/L
 						if(istype(AM,/mob/living) && clean_bodies)
 							L = AM
+							if(AM in player_locations)
+								player_locations.Remove(AM)
 							if((!L.client) && L.stat && ((!L.mind)||(L.mind && L.mind.assigned_role == player_assigned_role)))
 								delete_this = 1
 						if(!delete_this && istype(AM,/obj/item) && clean_items)
@@ -689,6 +691,12 @@ client/verb/clearbullshit()
 		ruin_maps += map
 		map.load_up()
 
+/datum/toolbox_event/team_deathmatch/get_fal_cam_turfs()
+	. = ..()
+	var/datum/team_deathmatch_map/current = get_current_map()
+	var/list/results = get_all_ruin_floors(current.map)
+	if(results && results.len)
+		. = results
 //
 //  "Have Fun!"
 //   - Degeneral

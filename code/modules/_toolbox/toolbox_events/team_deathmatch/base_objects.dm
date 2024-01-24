@@ -17,7 +17,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	var/times_cloned = 0
 	var/list/teir_kills = list(0,3,6,15)
 	var/last_go_out = null //to fix a bug that seems to be happening in the parent, it attempts to call go_out more then once.
-	var/spawn_area = null //set as a /area type path, the spawner will send the person to this area at a random turf.
+	var/area/spawn_area = null //set as a /area type path, the spawner will send the person to this area at a random turf.
 	var/list/team_outfits = list(
 		TDM_RED_TEAM = list(
 		"t1" = /datum/outfit/TDM/red,
@@ -27,6 +27,9 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 		"t1" = /datum/outfit/TDM/blue,
 		"t3" = /datum/outfit/TDM/blue/t3,
 		"t4" = /datum/outfit/TDM/blue/t4))
+	var/datum/data/current_record = null
+	var/list/last_cloned = list()
+	var/rapid_death_time = 150 //how much time you must be alive for your death to count as a kill.
 	care_about_suiciding = 0
 
 /obj/machinery/clonepod/TDM/Initialize()
@@ -41,12 +44,27 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	GLOB.TDM_cloners -= src
 
 /obj/machinery/clonepod/TDM/process()
-	if(TDM_on && team && !occupant && (team in GLOB.TDM_cloner_records))
-		for(var/datum/data/record/R in GLOB.TDM_cloner_records[team])
-			grow_clone_from_record(src, R)
-	update_display_cases()
-	update_display_screen_kills()
+	if(occupant && occupant.loc != src)
+		occupant = null
+	if(!occupant)
+		for(var/mob/living/M in src)
+			occupant = M
+			break
 	. = ..()
+	if(TDM_on && team)
+		if(!occupant && (team in GLOB.TDM_cloner_records))
+			var/list/records_in_process = list()
+			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
+				if(cloner.team != team || !cloner.current_record)
+					continue
+				records_in_process.Add(cloner.current_record)
+			for(var/datum/data/record/R in GLOB.TDM_cloner_records[team])
+				if(R in records_in_process)
+					continue
+				grow_clone_from_record(src, R)
+				current_record = R
+		update_display_cases()
+		update_display_screen_kills()
 
 /obj/machinery/clonepod/TDM/attack_ghost(mob/user)
 	if(!TDM_on)
@@ -58,7 +76,9 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	var/confirm = alert(user,"Do you wish to join the deathmatch battle?","Team Deathmatch","Yes","No")
 	if(confirm != "Yes" || !C || !istype(C.mob,/mob/dead/observer))
 		return
-	create_human(user)
+	var/mob/living/carbon/human/H = create_human(user)
+	if(H)
+		teleport_to_spawn(H)
 	click_cooldowns[user.ckey] = world.time+click_cooldown
 
 /obj/machinery/clonepod/TDM/proc/update_display_cases()
@@ -185,38 +205,50 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 /obj/machinery/clonepod/TDM/go_out(move = TRUE)
 	var/mob/living/carbon/human/M = occupant
 	. = ..()
-	if(M && last_go_out != M)
-		last_go_out = M
-		if(istype(M))
-			if(M.client)
-				M.client.prefs.copy_to(M)
-				M.dna.update_dna_identity()
-			M.fully_heal()
-			equip_clothing(M)
-			teleport_to_spawn(M)
-		if(!mess)
-			times_cloned++
+	if(!occupant)
+		current_record = null
+	if(M)
+		if(last_go_out != M)
+			last_go_out = M
+			if(istype(M))
+				if(M.client)
+					M.client.prefs.copy_to(M)
+					M.dna.update_dna_identity()
+				M.fully_heal(1)
+				equip_clothing(M)
+				teleport_to_spawn(M)
+			if(!mess)
+				if(M.mind)
+					var/last_time = last_cloned[M.mind]
+					if(!last_time || !isnum(last_time) || world.time > last_time+rapid_death_time)
+						last_cloned.Remove(M.mind)
+					if(!(M.mind in last_cloned))
+						times_cloned++
+						last_cloned[M.mind] = world.time+rapid_death_time
 
 /obj/machinery/clonepod/TDM/proc/teleport_to_spawn(mob/M)
 	var/turf/drop_off_turf
 	if(ispath(spawn_area))
-		var/area/A = locate(spawn_area)
-		if(istype(A))
-			var/list/turfs = list()
-			for(var/turf/T in A)
-				if(T.density || istype(T,/turf/open/space))
-					continue
-				var/obscured = 0
-				for(var/obj/O in T)
-					if(O.density)
-						obscured = 1
-						break
-				if(obscured)
-					continue
-				turfs += T
-			if(turfs.len)
-				drop_off_turf += pick(turfs)
-	if(GLOB.TDM_cloner_dropoffs.len)
+		for(var/area/A in world)
+			if(A.type == spawn_area)
+				spawn_area = A
+				break
+	if(istype(spawn_area))
+		var/list/turfs = list()
+		for(var/turf/T in spawn_area)
+			if(T.density || istype(T,/turf/open/space))
+				continue
+			var/obscured = 0
+			for(var/obj/O in T)
+				if(O.density)
+					obscured = 1
+					break
+			if(obscured)
+				continue
+			turfs += T
+		if(turfs.len)
+			drop_off_turf += pick(turfs)
+	else if(GLOB.TDM_cloner_dropoffs.len)
 		var/list/dropoffs = list()
 		for(var/obj/effect/landmark/TDM_cloner_transport/landmark in GLOB.TDM_cloner_dropoffs)
 			if(isturf(landmark.loc) && landmark.team == team)
@@ -311,18 +343,15 @@ GLOBAL_LIST_EMPTY(TDM_cloner_dropoffs)
 	var/team = null
 	var/hasShocked = FALSE
 
-
-/obj/structure/TDM/spawn_protection/Bumped(atom/movable/M)
-	if(istype(M, /mob/living))
-		var/mob/living/L = M
+/obj/structure/TDM/spawn_protection/CanPass(atom/movable/mover, turf/target)
+	if(istype(mover, /mob/living))
+		var/mob/living/L = mover
 		if(team)
 			if(L.mind && L.mind.assigned_role == "Team Deathmatch" && L.mind.special_role == team)
-				var/turf/T = get_turf(src)
-				if(T)
-					L.forceMove(T)
-					return
-	bump_field(M)
+				return TRUE
 	. = ..()
+	if(!.)
+		bump_field(mover)
 
 
 /obj/structure/TDM/spawn_protection/proc/clear_shock()
@@ -333,9 +362,10 @@ GLOBAL_LIST_EMPTY(TDM_cloner_dropoffs)
 	if(hasShocked)
 		return FALSE
 	hasShocked = TRUE
-	do_sparks(5, TRUE, AM.loc)
-	var/atom/target = get_edge_target_turf(AM, get_dir(src, get_step_away(AM, src)))
-	AM.throw_at(target, 200, 4)
+	if(isliving(AM) || AM.density)
+		do_sparks(5, TRUE, AM.loc)
+		var/atom/target = get_edge_target_turf(AM, get_dir(src, get_step_away(AM, src)))
+		AM.throw_at(target, 200, 4)
 	addtimer(CALLBACK(src, .proc/clear_shock), 5)
 
 

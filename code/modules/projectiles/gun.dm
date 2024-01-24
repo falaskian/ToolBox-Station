@@ -245,7 +245,7 @@
 
 	var/offhand = user.get_inactive_held_item()
 	if(weapon_weight == WEAPON_HEAVY && offhand)
-		if(!user.doUnEquip(offhand))
+		if(!user.dropItemToGround(offhand))
 			to_chat(user, "<span class='userdanger'>You need both hands free to fire \the [src]!</span>")
 			return
 		else
