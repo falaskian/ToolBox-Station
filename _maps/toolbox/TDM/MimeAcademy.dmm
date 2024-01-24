@@ -28,7 +28,6 @@
 "aB" = (/turf/open/floor/mineral/titanium/blue,/area/TDM)
 "aC" = (/obj/structure/shuttle/engine/heater{dir = 8; resistance_flags = 115},/obj/structure/window/reinforced{dir = 4},/turf/open/floor/plating,/area/TDM/red_base)
 "aD" = (/obj/structure/closet{anchored = 1},/turf/open/floor/plasteel/white/side{dir = 10},/area/TDM)
-"aE" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM)
 "aF" = (/obj/structure/grille,/obj/structure/window/plastitanium,/obj/machinery/door/poddoor{id = "caravansyndicate3_bridge"},/turf/open/floor/plating,/area/TDM/red_base)
 "aG" = (/obj/structure/chair/comfy/shuttle{dir = 1},/turf/open/floor/mineral/titanium/blue,/area/TDM)
 "aH" = (/obj/machinery/door/airlock/maintenance{req_access_txt = "0"},/turf/open/floor/plasteel,/area/TDM)
@@ -703,7 +702,7 @@ aaadbfaAaVaVaVaAaZafafafataZafafafatbrbsbtbtbtbvbtbtbtbHbtbtbtbPbtadadadadadadad
 aaadafafbQbQbQcgafafafafcghbafafafafclcUcUcUcUcUcUcUcUcUcUcUcUcVcnadadgAejhfejhvadadfNajajhgajajajfEadaxmpmqajmpmqaIadmraLajaLaMaddPaLajaLaLgYaddPajaLajklkmadaxhgdXadkafOdWajdXfOfPdWajdXfQaKadaa
 aaadafafafafafafafafafafafafafafafafafbDbDbDbDbDbDbDbDbDbDbDbDcWcUadadiVajajajajbgajajajajhgajajajiQadaxmvajajajajaIadixhmifayazadaxajajhIhmiyadaxajajajajfEadguhgajfRajajajajajajajajajajajdXadaa
 aaadafafafafafafafafafafafafafafafafafbDbDcobsbtbPbtbtbHbtcobDbDbDbgbhajajajajajbgajajajajhgajajajaIadmwmxmyajmzmAmBadaDbimCmDmEadaDbiechgcOggadmFmGecajcOkoadaxhgajfRajajajajajajajajajajajfSadaa
-aaadafaEafkWkWkWkWkWkWkWkWafafafafafafbDbDbPcpcqcqcqcqcqcqcrbPbDbDbgbhajajajajajbgajajajajhgajajajaIadadadadmladadadadadadhUadadadadadadhUadadadadadadnkadhVadaxhgcOadiVajajajajajajajajajajiSadaa
+aaadafafafkWkWkWkWkWkWkWkWafafafafafafbDbDbPcpcqcqcqcqcqcqcrbPbDbDbgbhajajajajajbgajajajajhgajajajaIadadadadmladadadadadadhUadadadadadadhUadadadadadadnkadhVadaxhgcOadiVajajajajajajajajajajiSadaa
 aaadafafcBaCkWaObebnbxbAkWbdkWkWkWaFaFbDbDbtcIbIbJbKbKbJbMcJbtbDbDadadajajajajejadadkbajajhgajajajajalalaldWajdXalbWalaldWhgdXalbWalaldWhgdXalbWalaldWajdXkpalajhgaIadcXcYcZdafTajajfUdcdcdcddadaa
 aaadafafcLaCbBbUbVbVbVbCkWbmbzkWbacbaFaFbDbHcIbKbKbKbKbKbKcJbsbDbDadadajajelajejadadiVajajhgajajajajajajajajajajajajajajajhGhmifhIhmhmhmhWhmhmhmhmhmhmhmhmhWhmhmhuaIaddedfajdgfVajajfWajajajdhadaa
 aaadafafcLaCbEbZbSbXcackbycdcCkWbjiWblaFbDbtcIcebKbKbJbIbJcJbtbDbDadadajajajajejadadghajajhgajaNaNaNbigzbibiaNfXbibibibiaNaNajiAiBbibibiaNfXbibibibiaNaNaNfXaNajajaIaddedididifVajajfWdjdjdjdhadaa
