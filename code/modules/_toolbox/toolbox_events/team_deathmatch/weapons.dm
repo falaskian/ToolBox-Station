@@ -258,7 +258,52 @@
 
 
 
-/********************** MISC WEAPONS **************************/
+	//MediGun
+
+/obj/item/gun/medbeam/TDM
+	name = "MediGun"
+	var/color_cross = "#80F5FF"
+	var/heal_brute = -15
+	var/heal_burn = -15
+	var/heal_tox = -5
+	var/heal_oxy = -5
+
+/obj/item/gun/medbeam/TDM/on_beam_tick(var/mob/living/target)
+	if(target.health != target.maxHealth)
+		new /obj/effect/temp_visual/heal(get_turf(target), color_cross)
+	target.adjustBruteLoss(heal_brute)
+	target.adjustFireLoss(heal_burn)
+	target.adjustToxLoss(heal_tox)
+	target.adjustOxyLoss(heal_oxy)
+	return
+
+	//MediGun Team - Heals teammates and damages enemies
+
+/obj/item/gun/medbeam/TDM/team
+	desc = "Heals teammates and damages enemies. Don't cross the streams!"
+	var/enemy_damage = 10 //Burn
+	var/beam_harm_color = "#F23838" //color of the beam when it is doing damage
+
+/obj/item/gun/medbeam/TDM/team/on_beam_tick(var/mob/living/target)
+	var/mob/living/user = loc
+	if(!check_team(target,user))
+		target.adjustFireLoss(enemy_damage)
+		return
+	.=..()
+
+/obj/item/gun/medbeam/TDM/team/proc/check_team(mob/living/target,mob/living/user)
+	if(istype(user) && user.mind && istype(target) && target.mind && target.mind.special_role == user.mind.special_role)
+		return TRUE
+	return FALSE
+
+/obj/item/gun/medbeam/TDM/team/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+	if(!check_team(target,user))
+		beam_color = beam_harm_color
+	else
+		beam_color = initial(beam_color)
+	.=..()
+
+
 
 
 

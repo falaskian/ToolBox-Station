@@ -15,6 +15,7 @@
 	var/mounted = 0 //Denotes if this is a handheld or mounted version
 	var/explode_on_crossed_beams = 1
 	var/atom/source
+	var/beam_color = null
 
 	weapon_weight = WEAPON_MEDIUM
 
@@ -55,7 +56,7 @@
 	source = user
 	current_target = target
 	active = TRUE
-	current_beam = new(user,current_target,time=6000,beam_icon_state="medbeam",btype=/obj/effect/ebeam/medical)
+	current_beam = new(user,current_target,time=6000,beam_icon_state="medbeam",btype=/obj/effect/ebeam/medical,beam_color=src.beam_color)
 	INVOKE_ASYNC(current_beam, /datum/beam.proc/Start)
 
 	SSblackbox.record_feedback("tally", "gun_fired", 1, type)

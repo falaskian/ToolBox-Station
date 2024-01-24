@@ -1,4 +1,5 @@
-/********************** MISC OBJECTS **************************/
+
+/********************** TDM OBJECTS **************************/
 
 
 obj/structure/TDM
@@ -170,7 +171,9 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 			update_showpiece()
 		update_icon()
 
-//Greytide display case
+
+	//Greytide display case
+
 /obj/structure/displaycase/TDM_item_spawn/greytide
 	var/last_flip_item_time = 0
 	var/flip_item_time = 200
@@ -261,30 +264,6 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 			showpiece = new spawnpath(src)
 		update_icon()
 
-//because this didnt exist.
-/obj/item/stack/sheet/glass/ten
-	amount = 10
-
-
-//TDM firing pin
-
-/obj/item/firing_pin/TDM
-	fail_message = "<span class='warning'>Do not fire that thing in here!</span>"
-	var/list/no_firing_allowed_areas = list()
-	can_be_removed = 0
-	var/last_do_not_fire_sound = 0
-
-/obj/item/firing_pin/TDM/pin_auth(mob/living/user)
-	if(no_firing_allowed_areas.len && user.mind && user.mind.special_role && (user.mind.special_role in no_firing_allowed_areas))
-		var/list/areas = no_firing_allowed_areas[user.mind.special_role]
-		var/area/A = get_area(user)
-		for(var/a in areas)
-			if(istype(A,a))
-				if(world.time >= last_do_not_fire_sound)
-					last_do_not_fire_sound = world.time+50
-					user << sound('sound/toolbox/donotfire.ogg', volume = 100)
-				return FALSE
-	return ..()
 
 		//Tier 1
 
@@ -392,6 +371,12 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	ammunition = /obj/item/rcd_ammo
 	tier_level = 4
 
+	//MediGun
+/obj/structure/displaycase/TDM_item_spawn/medigun
+	start_showpiece_type = /obj/item/gun/medbeam/TDM/team
+	ammunition = null
+	tier_level = 2
+
 
 	//Medical Cabinet
 
@@ -459,6 +444,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 
 /obj/item/banner/TDM
 	anchored = 1
+	layer = 4.1
 
 /obj/item/banner/TDM/red
 	icon_state = "banner-red"
@@ -601,7 +587,7 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	return
 
 
-		//TDM Converyer. -starts on -cant be switched -cant be disassembled
+		//TDM Conveyor. -starts on -cant be switched -cant be disassembled
 
 /obj/machinery/conveyor/TDM
 	immune_to_switches = 0
@@ -640,3 +626,32 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	desc = "School blackboard."
 	icon = 'icons/oldschool/blackboard.dmi'
 	icon_state = "metaschool"
+
+
+
+	//Glass Sheet x10 - because this didnt exist.
+
+/obj/item/stack/sheet/glass/ten
+	amount = 10
+
+
+
+	//TDM firing pin
+
+/obj/item/firing_pin/TDM
+	fail_message = "<span class='warning'>Do not fire that thing in here!</span>"
+	var/list/no_firing_allowed_areas = list()
+	can_be_removed = 0
+	var/last_do_not_fire_sound = 0
+
+/obj/item/firing_pin/TDM/pin_auth(mob/living/user)
+	if(no_firing_allowed_areas.len && user.mind && user.mind.special_role && (user.mind.special_role in no_firing_allowed_areas))
+		var/list/areas = no_firing_allowed_areas[user.mind.special_role]
+		var/area/A = get_area(user)
+		for(var/a in areas)
+			if(istype(A,a))
+				if(world.time >= last_do_not_fire_sound)
+					last_do_not_fire_sound = world.time+50
+					user << sound('sound/toolbox/donotfire.ogg', volume = 100)
+				return FALSE
+	return ..()

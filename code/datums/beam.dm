@@ -15,8 +15,9 @@
 	var/beam_type = /obj/effect/ebeam //must be subtype
 	var/timing_id = null
 	var/recalculating = FALSE
+	var/icon_color = null
 
-/datum/beam/New(beam_origin,beam_target,beam_icon='icons/effects/beam.dmi',beam_icon_state="b_beam",time=50,maxdistance=10,btype = /obj/effect/ebeam,beam_sleep_time=3)
+/datum/beam/New(beam_origin,beam_target,beam_icon='icons/effects/beam.dmi',beam_icon_state="b_beam",time=50,maxdistance=10,btype = /obj/effect/ebeam,beam_sleep_time=3,beam_color=null)
 	origin = beam_origin
 	origin_oldloc =	get_turf(origin)
 	target = beam_target
@@ -28,6 +29,7 @@
 	base_icon = new(beam_icon,beam_icon_state)
 	icon = beam_icon
 	icon_state = beam_icon_state
+	icon_color = beam_color
 	beam_type = btype
 	if(time < INFINITY)
 		addtimer(CALLBACK(src,.proc/End), time)
@@ -116,6 +118,7 @@
 		else
 			X.icon = base_icon
 		X.transform = rot_matrix
+		X.color = icon_color
 
 		//Calculate pixel offsets (If necessary)
 		var/Pixel_x
