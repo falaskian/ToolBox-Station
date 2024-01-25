@@ -250,6 +250,45 @@
 
 
 
+/********************** COMMUNITY MADE MAPS **************************/
+
+		//TrainWreck - by Luckyrichard
+
+/datum/team_deathmatch_map/trainwreck
+	name = "TDM TrainWreck"
+	map = /datum/map_template/ruin/space/TDM_TrainWreck
+	team_deaths = list(TDM_RED_TEAM = 25,TDM_BLUE_TEAM = 25)
+	round_time = 0
+	ban_map = 0
+	team_home_areas = list(
+		/area/TDM/red_base = TDM_RED_TEAM,
+		/area/TDM/blue_base = TDM_BLUE_TEAM)
+	teir_kills = list(0,3,6,15,20)
+	team_outfits = list(
+		TDM_RED_TEAM = list(
+		"t1" = /datum/outfit/TDM/red,
+		"t3" = /datum/outfit/TDM/red/t3,
+		"t4" = /datum/outfit/TDM/red/t4),
+		TDM_BLUE_TEAM = list(
+		"t1" = /datum/outfit/TDM/blue,
+		"t3" = /datum/outfit/TDM/blue/t3,
+		"t4" = /datum/outfit/TDM/blue/t4))
+	//control what gets cleaned during repair cycle
+	repair_map = 1
+	clean_map_items = 1
+	clean_map_bodies = 1
+	baseturf = /turf/open/chasm
+
+/datum/map_template/ruin/space/TDM_TrainWreck
+	name = "TDM TrainWreck"
+	id = "tdm_trainwreck"
+	description = "TrainWreck map made by Luckyrichard."
+	prefix = "_maps/toolbox/TDM/Community_made/TrainWreck.dmm"
+
+
+
+
+
 /********************** INACTIVE MAPS **************************/
 /*
 		//MiniStation - GreyTide - NoBase
