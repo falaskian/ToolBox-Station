@@ -38,11 +38,11 @@
 "aL" = (/obj/structure/rack,/obj/item/grenade/flashbang,/turf/open/floor/pod/dark,/area/TDM)
 "aM" = (/obj/structure/rack,/obj/item/storage/box/rubbershot,/turf/open/floor/pod/dark,/area/TDM)
 "aN" = (/obj/structure/rack,/obj/item/ammo_box/magazine/sniper_rounds/penetrator,/turf/open/floor/pod/dark,/area/TDM)
-"aO" = (/turf/open/floor/plating/ice,/area/TDM)
-"aP" = (/obj/item/toy/snowball,/turf/open/floor/plating/snowed,/area/TDM)
-"aQ" = (/obj/structure/statue/snow/snowlegion,/turf/open/floor/plating/snowed,/area/TDM)
-"aR" = (/obj/effect/decal/cleanable/blood/gibs/torso,/turf/open/floor/plating/ice,/area/TDM)
-"aS" = (/obj/effect/decal/cleanable/blood,/turf/open/floor/plating/ice,/area/TDM)
+"aO" = (/turf/open/floor/plating/ice{planetary_atmos = 0},/area/TDM)
+"aP" = (/turf/open/floor/plating/snowed,/obj/item/toy/snowball,/turf/open/floor/plating/snowed{planetary_atmos = 0},/area/TDM)
+"aQ" = (/turf/open/floor/plating/snowed,/obj/structure/statue/snow/snowlegion,/turf/open/floor/plating/snowed{planetary_atmos = 0},/area/TDM)
+"aR" = (/obj/effect/decal/cleanable/blood/gibs/torso,/turf/open/floor/plating/ice{planetary_atmos = 0},/area/TDM)
+"aS" = (/obj/effect/decal/cleanable/blood,/turf/open/floor/plating/ice{planetary_atmos = 0},/area/TDM)
 "aT" = (/obj/structure/table/wood/fancy,/obj/item/reagent_containers/food/snacks/burger/bigbite,/turf/open/floor/carpet/red,/area/TDM)
 "aU" = (/obj/structure/chair/wood{dir = 8},/turf/open/floor/carpet/red,/area/TDM)
 "aV" = (/turf/open/floor/carpet/red,/area/TDM)
@@ -52,9 +52,9 @@
 "aZ" = (/obj/structure/table,/obj/item/clothing/head/bio_hood,/turf/open/floor/monotile/dark,/area/TDM)
 "ba" = (/obj/structure/table,/obj/item/clothing/suit/bio_suit,/turf/open/floor/monotile/dark,/area/TDM)
 "bb" = (/obj/item/toy/plush/nukeplushie,/turf/open/floor/monotile/dark,/area/TDM)
-"bc" = (/turf/open/floor/plating/snowed,/area/TDM)
-"bd" = (/obj/item/toy/plush/plushvar,/turf/open/floor/plating/snowed,/area/TDM)
-"be" = (/obj/effect/decal/cleanable/blood/gibs/down,/turf/open/floor/plating/ice,/area/TDM)
+"bc" = (/turf/open/floor/plating/snowed,/turf/open/floor/plating/snowed{planetary_atmos = 0},/area/TDM)
+"bd" = (/turf/open/floor/plating/snowed,/obj/item/toy/plush/plushvar,/turf/open/floor/plating/snowed{planetary_atmos = 0},/area/TDM)
+"be" = (/obj/effect/decal/cleanable/blood/gibs/down,/turf/open/floor/plating/ice{planetary_atmos = 0},/area/TDM)
 "bf" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/carpet/red,/area/TDM)
 "bg" = (/obj/structure/chair/wood,/turf/open/floor/carpet/red,/area/TDM)
 "bh" = (/obj/structure/reagent_dispensers/foamtank,/turf/open/floor/pod/dark,/area/TDM)
@@ -62,7 +62,7 @@
 "bj" = (/obj/structure/rack,/obj/item/clothing/head/helmet/space/syndicate/black/red,/turf/open/floor/pod/dark,/area/TDM)
 "bk" = (/obj/structure/rack,/obj/item/clothing/suit/armor/riot,/turf/open/floor/pod/dark,/area/TDM)
 "bl" = (/obj/structure/rack,/obj/item/clothing/suit/space/syndicate/black/red,/obj/item/clothing/suit/space/syndicate/black/red,/turf/open/floor/pod/dark,/area/TDM)
-"bm" = (/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/plating/ice,/area/TDM)
+"bm" = (/turf/open/floor/plating/snowed{planetary_atmos = 0},/area/TDM)
 "bn" = (/obj/structure/table/wood/fancy,/obj/item/reagent_containers/food/snacks/muffin,/turf/open/floor/carpet/red,/area/TDM)
 "bo" = (/obj/structure/table/wood/fancy,/obj/item/reagent_containers/food/snacks/cakeslice/birthday,/turf/open/floor/carpet/red,/area/TDM)
 "bp" = (/obj/structure/table/wood/fancy,/obj/item/reagent_containers/food/drinks/beer,/turf/open/floor/carpet/red,/area/TDM)
@@ -71,7 +71,7 @@
 "bs" = (/turf/open/floor/plating,/area/TDM)
 "bt" = (/obj/structure/safe/floor,/turf/open/floor/pod/dark,/area/TDM)
 "bu" = (/obj/machinery/door/airlock/turbolift,/turf/open/floor/plating,/area/TDM)
-"bv" = (/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/plating/snowed,/area/TDM)
+"bv" = (/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/plating/ice{planetary_atmos = 0},/area/TDM)
 "bw" = (/obj/structure/chair/stool,/turf/open/floor/carpet/red,/area/TDM)
 "bx" = (/obj/structure/sign/departments/medbay/alt,/turf/closed/indestructible/opshuttle,/area/TDM/red_base)
 "by" = (/obj/structure/sign/departments/minsky/medical/clone/cloning2,/turf/closed/indestructible/opshuttle,/area/TDM/red_base)
@@ -104,7 +104,7 @@
 "bZ" = (/obj/structure/reagent_dispensers/fueltank,/turf/open/floor/pod/dark,/area/TDM)
 "ca" = (/obj/structure/rack,/obj/item/ammo_box/magazine/m10mm/ap,/turf/open/floor/pod/dark,/area/TDM)
 "cb" = (/obj/structure/rack,/obj/item/ammo_box/magazine/m12g/breacher,/turf/open/floor/pod/dark,/area/TDM)
-"cc" = (/obj/structure/statue/snow/snowman,/turf/open/floor/plating/ice,/area/TDM)
+"cc" = (/turf/open/floor/plating/snowed,/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/plating/snowed{planetary_atmos = 0},/area/TDM)
 "cd" = (/obj/machinery/vending/boozeomat/all_access,/turf/open/floor/carpet/red,/area/TDM)
 "ce" = (/obj/structure/reagent_dispensers/beerkeg,/turf/open/floor/carpet/red,/area/TDM)
 "cf" = (/obj/structure/table,/obj/machinery/recharger,/turf/open/indestructible,/area/TDM/red_base)
@@ -113,7 +113,7 @@
 "ci" = (/obj/structure/lattice/catwalk,/obj/structure/railing{dir = 10},/turf/open/floor/plating,/area/TDM)
 "cj" = (/obj/structure/lattice/catwalk,/obj/structure/railing,/turf/open/floor/plating,/area/TDM)
 "ck" = (/obj/structure/lattice/catwalk,/obj/structure/railing{dir = 6},/turf/open/floor/plating,/area/TDM)
-"cl" = (/turf/open/chasm/lavaland,/area/TDM)
+"cl" = (/obj/structure/statue/snow/snowman,/turf/open/floor/plating/ice{planetary_atmos = 0},/area/TDM)
 "cm" = (/turf/closed/indestructible/opshuttle,/area/TDM/blue_base)
 "cn" = (/obj/structure/sign/nanotrasen,/turf/closed/indestructible/opshuttle,/area/TDM/blue_base)
 "co" = (/obj/structure/TDM/spawn_protection/blue,/turf/open/indestructible,/area/TDM/blue_base)
@@ -262,16 +262,16 @@ aaahanaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaqaqaoaoaoaoaoaoaqaoaoaoapahahah
 aaahanaoaoarasasasasatauavasasasasaoapahahahanaoasasasasawaxawasasasasaqapahahahanaoasasasasasasasasasasasaoapahahahanaoasasasasayayasasasasasaoapahahahanaoazazazazaAaBaBaAazazazazazaoapahahahahahahahahaa
 aaahanaoaoarasaCaDaEaFaFaFaEaDaCasaoapahahahanaoasaGaHaIaIaJaKaLaMaNasaoapahahahanaoasaOaOaPaPaQaRaSaOaOasaoapahahahanaoasaTaUaVaVaVaVaVaWaTasaoapahahahanaoazaXcrdXaYaYaYaYdYdZeaebazaoapahahahahahahahahaa
 aaahanaoaqarasaFaFaZaFaFaFbabbaFasaoapahahahanaoasaJaJaJaJaJaJaJaJaJasaoapahahahanaoasaObcbdaPaObeaSaOaOasaoapahahahanaoasbfaVaVbgbgbgaVaVbfasaoapahahahanaoazaYaYaYaYaYeJaYaYaYaYaYazaoapahahahahahahahahaa
-aaahanaoaqaqavaFaFaFaFaFaFaFaFaFavaoaoamamamaoaoawaHbhbiaHaJbjbjbkblawaoaoamamamaoaoasbcbcbcbcbcbmbcbcbcasaoaoamamamaoaoasaVaVaWbnbobpaUaVaVasaoaoamamamaoaoaAaYaYecedeeefegeheiaYaYaAaoapahahahahahahahahaa
-aaahanaoaoaoauaFaFaFbqaFbraFaFaFaubsbsbsbsbsbsbsaxaJaJaJaJbtaJaJaJaJaxbsbsbsbsbsbsbsbubcbcbcbcbcbvbcbcbcbubsbsbsbsbsbsbsaybwbwbwbfbfbfbwbwbwaybsbsbsbsbsbsbsaBaYaYdPbxdQbydRbxdPaYaYaBaoapahahahahahahahahaa
-aaahanaoaqaqavbzbzbzbzbAbzbzbzbzataoaobBbBbBaoaobCbDbDbDbEaJbFbGbHbIawaoaobBbBbBaoaoasaOaObcbcbcbvbcbcbcasaoaobBbBbBaoaoasbJbKbKbLaVbMbNbObPasaoaobBbBbBaoaoaAaYaYaYdSejekeldSaYaYaYaAaoapahahahahahahahahaa
-aaahanaoaqarasbAbAbAbQbAbQbAbAbAasaoapahahahanaoasaJaJaJaJaJaJaJaJaJasaqapahahahanaoasaOaOaObcbcbvbcbcaOasaoapahahahanaoasaVaVaVbPaVbRaVaVaVasaoapahahahanaoazaYaYaYaYaYaYaYaYaYaYaYazaoapahahahahahahahahaa
-aaahanaoaoarasbSbTbTbUbVbWbTbTbXasaoapahahahanaoasbYbZaHaHaJcacacbcbasaqapahahahanaoasaOaObcbcbcbvbcaOccasaoapahahahanaoascdaVaVaVaVaVaVceceasaoapahahahanaoazcfcfcfemaYaYeneocfcfcfazaoapahahahahahahahahaa
+aaahanaoaqaqavaFaFaFaFaFaFaFaFaFavaoaoamamamaoaoawaHbhbiaHaJbjbjbkblawaoaoamamamaoaoasbmbcbcbcbcbvbcbcbcasaoaoamamamaoaoasaVaVaWbnbobpaUaVaVasaoaoamamamaoaoaAaYaYecedeeefegeheiaYaYaAaoapahahahahahahahahaa
+aaahanaoaoaoauaFaFaFbqaFbraFaFaFaubsbsbsbsbsbsbsaxaJaJaJaJbtaJaJaJaJaxbsbsbsbsbsbsbsbubcbcbcbcbcccbcbcbcbubsbsbsbsbsbsbsaybwbwbwbfbfbfbwbwbwaybsbsbsbsbsbsbsaBaYaYdPbxdQbydRbxdPaYaYaBaoapahahahahahahahahaa
+aaahanaoaqaqavbzbzbzbzbAbzbzbzbzataoaobBbBbBaoaobCbDbDbDbEaJbFbGbHbIawaoaobBbBbBaoaoasaOaObcbcbcccbcbcbcasaoaobBbBbBaoaoasbJbKbKbLaVbMbNbObPasaoaobBbBbBaoaoaAaYaYaYdSejekeldSaYaYaYaAaoapahahahahahahahahaa
+aaahanaoaqarasbAbAbAbQbAbQbAbAbAasaoapahahahanaoasaJaJaJaJaJaJaJaJaJasaqapahahahanaoasaOaOaObcbcccbcbcaOasaoapahahahanaoasaVaVaVbPaVbRaVaVaVasaoapahahahanaoazaYaYaYaYaYaYaYaYaYaYaYazaoapahahahahahahahahaa
+aaahanaoaoarasbSbTbTbUbVbWbTbTbXasaoapahahahanaoasbYbZaHaHaJcacacbcbasaqapahahahanaoasaOaObcbcbcccbcaOclasaoapahahahanaoascdaVaVaVaVaVaVceceasaoapahahahanaoazcfcfcfemaYaYeneocfcfcfazaoapahahahahahahahahaa
 aaahanaoaoarasasasasasasasasasasasaoapahahahanaoasasasasawaxawasasasasaqapahahahanaoasasascgbuchbucgasasasaoapahahahanaoasasasasasasasasasasasaoapahahahanaoazazazazaAaBaBaAazazazazazaoapahahahahahahahahaa
 aaahanaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaoaqaqaoaoaoaoaoaqaqaoaoapahahahanaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahahahahahahaa
 aaahcicjcjcjcjcjcjbBbBcjcjcjcjcjcjcjckbBbBbBcibBbBcjcjcjbBbBcjcjcjbBbBcjckbBbBbBcicjbBcjcjcjbBbBbBcjcjcjbBcjckbBbBbBcicjcjcjcjcjbBbBcjcjcjcjcjcjckbBbBbBcicjcjcjcjcjbBbBcjcjcjcjcjcjcjcjckahahahahahahahahaa
-aaclclclclclclclclclclclclclclclclclclahahahahahahahahahahahahahahahahahahahahahahahahahahahaoaoaoahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahaa
-aaclclclclclclclclclclclclclclclclclclahahahahahahahahahahahahahahahahahahahahahahahahahahahaoaoaoahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahaa
+aaahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahaoaoaoahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahaa
+aaahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahaoaoaoahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahaa
 aaahajakakakakakakamamakakakakakakakalamamamajakamakakakamamakakakamamakalamamamajakamakakakamamamakakakamakalamamamajakakakakakamamakakakakakakalamamamajakakakakakamamakakakakakakakakalahahahahahahahahaa
 aaahanaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaqaqaoaoaoaoaoaoaoaoaoaoapahahahanaoaoaoaqaqaqaoaoaoaqaqaoaoapahahahanaoaoaqaqaoaoaoaqaqaoaoaqaoaoaoapahahahahahahahahaa
 aaahanaocmcmcmcmcncococncmcmcmcmcmaoapahahahanaoasasasascpcpasasasasasaoapahahahanaoasasascgcqcqcqcgasasasaoapahahahanaoasasasasawaxawasasasasaoapahahahanaoasasasasasasasasasasasaraoaoapahahahahahahahahaa
