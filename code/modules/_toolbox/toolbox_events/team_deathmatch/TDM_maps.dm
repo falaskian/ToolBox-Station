@@ -65,6 +65,7 @@
 /datum/team_deathmatch_map/TDM_Dust1
 	name = "TDM Dust1"
 	map = /datum/map_template/ruin/space/TDM_Dust1
+	teir_kills = list(0,3,6,15)
 	baseturf = /turf/open/floor/plating/asteroid
 
 /datum/map_template/ruin/space/TDM_Dust1
@@ -105,7 +106,6 @@
 /datum/team_deathmatch_map/mine
 	name = "TDM Mine"
 	map = /datum/map_template/ruin/space/TDM_Mine
-	team_deaths = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
 	round_time = 0
 	team_home_areas = list(
 		/area/TDM/red_base = TDM_RED_TEAM,
@@ -260,7 +260,7 @@
 /datum/team_deathmatch_map/trainwreck
 	name = "TDM TrainWreck"
 	map = /datum/map_template/ruin/space/TDM_TrainWreck
-	team_deaths = list(TDM_RED_TEAM = 25,TDM_BLUE_TEAM = 25)
+	team_deaths = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
 	round_time = 0
 	ban_map = 0
 	team_home_areas = list(

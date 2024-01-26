@@ -309,7 +309,22 @@
 	.=..()
 
 
+	//TDM Frag Grenade
 
+/obj/item/grenade/syndieminibomb/TDM
+	name = "frag grenade"
+	desc = "Fire in the hole."
+	icon_state = "frag"
+	var/Destruction_range = 0 //Deletes turfs
+	var/Heavy_impact_range = 0 //Damages and deletes walls and floors
+	var/Light_impact_range = 3 //Damages turfs and delimbs mobs, only deletes mineral walls
+	var/Flash_range = 4 //Flashes the player
+	var/Flame_range = 2 //Range of flames that can light player on fire
+
+/obj/item/grenade/syndieminibomb/TDM/prime()
+	update_mob()
+	explosion(src.loc,Destruction_range,Heavy_impact_range,Light_impact_range,Flash_range,flame_range = Flame_range)
+	qdel(src)
 
 
 /********************** WINTER WONDERLAND **************************/

@@ -361,8 +361,8 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 
 	//Frag grenade
 /obj/structure/displaycase/TDM_item_spawn/frag_grenade
-	start_showpiece_type = /obj/item/grenade/syndieminibomb/concussion/frag
-	ammunition = /obj/item/grenade/syndieminibomb/concussion/frag
+	start_showpiece_type = /obj/item/grenade/syndieminibomb/TDM
+	ammunition = null
 	tier_level = 4
 
 	//RCD
@@ -376,6 +376,8 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	start_showpiece_type = /obj/item/gun/medbeam/TDM/team
 	ammunition = null
 	tier_level = 2
+
+
 
 
 	//Medical Cabinet
