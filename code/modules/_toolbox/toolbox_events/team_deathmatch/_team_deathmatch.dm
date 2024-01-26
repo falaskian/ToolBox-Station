@@ -121,6 +121,7 @@ client/verb/clearbullshit()
 				phase = SETUP_PHASE
 				remembering.Remove("10seconds")
 		if(SETUP_PHASE)
+			update_kill_caps()
 			var/failed_to_launch = gather_and_spawn_lobbyists()
 			if(failed_to_launch)
 				phase = SETUP_LOBBY
@@ -185,7 +186,8 @@ client/verb/clearbullshit()
 			var/tie = 0
 			var/winning_team
 			for(var/t in team_deaths)
-				winning_team = t
+				if(!winning_team)
+					winning_team = t
 				var/deaths = team_deaths[t]
 				if(deaths > loser_deaths)
 					loser_deaths = deaths
@@ -196,6 +198,8 @@ client/verb/clearbullshit()
 				if(islist(death_caps) && (t in death_caps))
 					if(deaths >= death_caps[t])
 						capped_loser = t
+				if(loser_so_far != t)
+					winning_team = t
 			var/end_round_message = ""
 			var/timesup = 0
 			if(next_timer > 0 && world.time >= next_timer)
@@ -452,6 +456,24 @@ client/verb/clearbullshit()
 
 /datum/toolbox_event/team_deathmatch/override_late_join_spawn(mob/living/M,buckle = TRUE)
 	. = override_job_spawn(M)
+
+/datum/toolbox_event/team_deathmatch/proc/update_kill_caps()
+	var/datum/team_deathmatch_map/current = get_current_map()
+	if(current)
+		var/list/player_count = list()
+		for(var/mob/living/L in GLOB.mob_list)
+			if(L.mind && (L.mind.special_role in current.increase_kills_per_player))
+				if(!player_count[L.mind.special_role])
+					player_count[L.mind.special_role] = 0
+				player_count[L.mind.special_role]++
+		if(player_count.len)
+			for(var/t in player_count)
+				if(t in death_caps)
+					var/players = player_count[t]
+					if(players >= current.increase_kills_after_threshold)
+						var/original_cap = death_caps[t]
+						var/theincreaseper = current.increase_kills_per_player[t]
+						death_caps[t] = original_cap+(players*theincreaseper)
 
 /datum/toolbox_event/team_deathmatch/PostRoundSetup()
 	setup_map()

@@ -9,12 +9,8 @@
 	else
 		. += grab_state * 3 //can't go fast while grabbing something.
 
-//before return of flight suit
-/*/mob/living/carbon/movement_delay()
-	. = ..()
-
 	if(!get_leg_ignore() && legcuffed) //ignore the fact we lack legs
-		. += legcuffed.slowdown	*/
+		. += legcuffed.slowdown
 
 /mob/living/carbon/slip(knockdown_amount, obj/O, lube, paralyze, force_drop)
 	if(movement_type & FLYING)

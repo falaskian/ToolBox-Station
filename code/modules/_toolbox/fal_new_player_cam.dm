@@ -20,6 +20,7 @@ var/global/obj/new_player_cam/new_player_cam = null
 	var/list/camturfs = list()
 	var/turf/previousstart
 	var/atom/movable/screen/toolboxlogo/toolboxlogo
+	var/list/viewers = list()
 
 /obj/new_player_cam/Destroy()
 	unlock_eyes_from_cam()
@@ -35,8 +36,6 @@ var/global/obj/new_player_cam/new_player_cam = null
 	for(var/mob/dead/new_player/P in GLOB.player_list)
 		if(!P.client)
 			continue
-		/*if(P.client.byond_version < 511)
-			continue*/
 		if(SSticker.current_state < GAME_STATE_PREGAME)
 			continue
 		if(thescreen && !(thescreen in P.client.screen))
@@ -51,13 +50,19 @@ var/global/obj/new_player_cam/new_player_cam = null
 			P.see_in_dark = 7
 		if(P.see_invisible != 15)
 			P.see_invisible = 15
+		if(!(P in viewers))
+			viewers += P
 		P.sight |= (SEE_TURFS|SEE_MOBS|SEE_OBJS)
 
 /obj/new_player_cam/proc/unlock_eyes_from_cam()
-	for(var/mob/dead/new_player/P in GLOB.player_list)
-		if(!P.client)
+	if(!viewers.len)
+		return
+	for(var/m in viewers)
+		var/mob/dead/new_player/P = m
+		if(!istype(P))
+			viewers -= P
 			continue
-		if(P.client.byond_version < 511)
+		if(!P.client)
 			continue
 		if(thescreen && thescreen in P.client.screen)
 			P.client.screen -= thescreen
@@ -72,19 +77,6 @@ var/global/obj/new_player_cam/new_player_cam = null
 		P.sight = initial(P.sight)
 
 /obj/new_player_cam/New()
-	if(SStoolbox_events)
-		for(var/t in SStoolbox_events.cached_events)
-			var/datum/toolbox_event/E = SStoolbox_events.is_active(t)
-			if(E && E.active)
-				var/list/event_cam_turfs = E.get_fal_cam_turfs()
-				if(event_cam_turfs && event_cam_turfs.len)
-					camturfs = event_cam_turfs
-					break
-	if(!camturfs || !camturfs.len)
-		for(var/turf/open/floor/T in world)
-			if(!is_station_level(T.z))
-				continue
-			camturfs += T
 	thescreen = new()
 	thescreen.icon = 'icons/effects/ss13_dark_alpha6.dmi'
 	thescreen.icon_state = "0"
@@ -96,15 +88,25 @@ var/global/obj/new_player_cam/new_player_cam = null
 	toolboxlogo = new()
 	spawn(0)
 		while(1)
-			if(SSticker.current_state > GAME_STATE_PREGAME||!camturfs.len)
+			if(SSticker.current_state != GAME_STATE_PREGAME)
 				unlock_eyes_from_cam()
 				loc = null
 				sleep(5)
 				continue
-			if(SSticker.current_state < GAME_STATE_PREGAME)
-				unlock_eyes_from_cam()
-				sleep(5)
-				continue
+			if(!camturfs.len)
+				if(SStoolbox_events)
+					for(var/t in SStoolbox_events.cached_events)
+						var/datum/toolbox_event/E = SStoolbox_events.is_active(t)
+						if(E && E.active)
+							var/list/event_cam_turfs = E.get_fal_cam_turfs()
+							if(event_cam_turfs && event_cam_turfs.len)
+								camturfs = event_cam_turfs
+								break
+				if(!camturfs || !camturfs.len)
+					for(var/turf/open/floor/T in world)
+						if(!is_station_level(T.z))
+							continue
+						camturfs += T
 			var/list/destinations = list()
 			var/turf/start = pick(camturfs)
 			while(get_dist(start,previousstart) < 40)

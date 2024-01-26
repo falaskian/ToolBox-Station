@@ -30,6 +30,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	var/datum/data/current_record = null
 	var/list/last_cloned = list()
 	var/rapid_death_time = 150 //how much time you must be alive for your death to count as a kill.
+	var/cancel_flash = 0
 	care_about_suiciding = 0
 
 /obj/machinery/clonepod/TDM/Initialize()
@@ -61,8 +62,10 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 			for(var/datum/data/record/R in GLOB.TDM_cloner_records[team])
 				if(R in records_in_process)
 					continue
-				grow_clone_from_record(src, R)
-				current_record = R
+				var/clonesuccess = grow_clone_from_record(src, R)
+				if(clonesuccess == CLONING_SUCCESS)
+					current_record = R
+					break
 		update_display_cases()
 		update_display_screen_kills()
 
@@ -76,9 +79,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	var/confirm = alert(user,"Do you wish to join the deathmatch battle?","Team Deathmatch","Yes","No")
 	if(confirm != "Yes" || !C || !istype(C.mob,/mob/dead/observer))
 		return
-	var/mob/living/carbon/human/H = create_human(user)
-	if(H)
-		teleport_to_spawn(H)
+	create_human(user)
 	click_cooldowns[user.ckey] = world.time+click_cooldown
 
 /obj/machinery/clonepod/TDM/proc/update_display_cases()
@@ -151,6 +152,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 		for(var/obj/O in H)
 			qdel(O)
 		H.equipOutfit(chosen)
+		teleport_to_spawn(H)
 
 /obj/machinery/clonepod/TDM/proc/create_record(mob/M)
 	var/mob/living/mob_occupant = get_mob_or_brainmob(M)
@@ -216,7 +218,8 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 					M.dna.update_dna_identity()
 				M.fully_heal(1)
 				equip_clothing(M)
-				teleport_to_spawn(M)
+				if(cancel_flash)
+					M.clear_fullscreen("flash")
 			if(!mess)
 				if(M.mind)
 					var/last_time = last_cloned[M.mind]

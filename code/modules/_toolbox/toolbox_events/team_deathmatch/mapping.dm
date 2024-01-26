@@ -28,6 +28,8 @@
 	var/off_limits = /area/TDM/offlimits //set an area where players will be teleported away from if they enter it. an off limits area
 	var/list/no_firing_allowed_areas = list(TDM_RED_TEAM = list(/area/TDM/red_base),TDM_BLUE_TEAM = list(/area/TDM/blue_base)) //modifies weapon firing pin so they cant fire in these areas. based on teams
 	var/ban_map = 0
+	var/list/increase_kills_per_player = list(TDM_RED_TEAM = 2,TDM_BLUE_TEAM = 2)
+	var/increase_kills_after_threshold = 10
 
 /datum/team_deathmatch_map/proc/load_up()
 	if(map)

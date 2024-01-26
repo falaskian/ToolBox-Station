@@ -143,12 +143,17 @@
 /obj/item/ammo_box/s12g/update_icon()
 	overlays.Cut()
 	.=..()
-	var/image/I = new()
-	I.icon = icon
-	I.icon_state = icon_state
-	I.pixel_x = pixel_x+3
-	I.pixel_y = pixel_y-3
-	overlays += I
+	var/ammo_count = 0
+	for(var/obj/item/ammo_casing/A in src)
+		if(A.BB)
+			ammo_count++
+	if(ammo_count > 1)
+		var/image/I = new()
+		I.icon = icon
+		I.icon_state = icon_state
+		I.pixel_x = pixel_x+3
+		I.pixel_y = pixel_y-3
+		overlays += I
 	if(stored_ammo.len <= 0)
 		qdel(src)
 		return
