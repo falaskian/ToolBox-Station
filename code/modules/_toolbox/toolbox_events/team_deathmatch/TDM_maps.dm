@@ -137,6 +137,7 @@
 	map = /datum/map_template/ruin/space/TDM_MiniStation
 	baseturf = /turf/open/floor/plating
 	ban_map = 0
+	items_respawn = 1
 //		repair_map = 1
 //		clean_map_items = 1
 //		clean_map_bodies = 1
@@ -170,6 +171,7 @@
 	clean_map_items = 0
 //	clean_map_bodies = 1
 	baseturf = /turf/open/floor/plating
+	items_respawn = 1
 
 /datum/map_template/ruin/space/TDM_MiniStation_GreyTide
 	name = "GreyTide MiniStation"
@@ -233,6 +235,7 @@
 	repair_map = 1
 	clean_map_items = 0
 	clean_map_bodies = 0
+	items_respawn = 1
 
 /datum/map_template/ruin/space/MimeAcademy
 	name = "MimeAcademy"

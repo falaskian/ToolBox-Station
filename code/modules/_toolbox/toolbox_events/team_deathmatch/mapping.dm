@@ -30,6 +30,8 @@
 	var/ban_map = 0
 	var/list/increase_kills_per_player = list(TDM_RED_TEAM = 2,TDM_BLUE_TEAM = 2)
 	var/increase_kills_after_threshold = 10
+	var/items_respawn = 0 //do items respawn?
+	var/respawn_time = 3000
 
 /datum/team_deathmatch_map/proc/load_up()
 	if(map)

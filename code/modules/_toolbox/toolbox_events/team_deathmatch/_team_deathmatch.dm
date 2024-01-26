@@ -28,7 +28,7 @@
 		"Chief Medical Officer" = 0)
 	var/player_assigned_role = "Team Deathmatch"
 	var/map_loaded = 0
-	var/list/saved_items = list()
+	var/list/clean_exempt = list()
 	var/phase = SETUP_LOBBY
 	var/area/lobby_area = /area/TDM/lobby
 	//for tracking players going off limits
@@ -57,6 +57,8 @@
 	var/building_ruin = 0
 	var/list/death_caps = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
 	var/mob/living/announcer = /mob/living/simple_animal/pet/penguin/emperor/shamebrero/guin
+	var/list/respawned_items = list()
+	var/map_respawn_time = 3000
 
 //debugging this bullshit
 var/list/some_bullshit = list()
@@ -161,6 +163,8 @@ client/verb/clearbullshit()
 		if(COMBAT_PHASE)
 			//spawning new joiners
 			gather_and_spawn_lobbyists(1)
+			//respawning items if set
+			respawn_items()
 
 			//should we repair?
 			if(!("repairing" in remembering))
@@ -525,6 +529,7 @@ client/verb/clearbullshit()
 			spawn_ruin(new_map.map,z_levels)
 			post_spawn(new_map)
 			setup_cloners(new_map)
+			save_items_for_respawn(new_map)
 
 /datum/toolbox_event/team_deathmatch/proc/setup_cloners(datum/team_deathmatch_map/new_map)
 	if(istype(new_map) && istype(new_map.map))
@@ -535,6 +540,101 @@ client/verb/clearbullshit()
 					cloner.team_outfits = new_map.team_outfits.Copy()
 					cloner.teir_kills = new_map.teir_kills
 					cloner.update_display_cases_tiers()
+
+/datum/toolbox_event/team_deathmatch/proc/save_items_for_respawn(datum/team_deathmatch_map/new_map)
+	if(islist(respawned_items))
+		respawned_items.Cut()
+	else
+		respawned_items = list()
+	if(new_map && new_map.items_respawn)
+		var/list/turfs = get_all_ruin_floors(new_map.map)
+		if(turfs.len)
+			var/list/in_objects = list(/obj/item/storage,/obj/structure/closet)
+			var/list/whitelisted_types = list(/obj/item,/obj/structure/reagent_dispensers)
+			var/itemcount = 1
+			for(var/obj/O in world)
+				if(QDELETED(O) || !O.loc)
+					continue
+				var/turf/T = get_turf(O)
+				if(!(T in turfs))
+					continue
+				var/typebanned = 1
+				for(var/t in whitelisted_types)
+					if(istype(O,t))
+						typebanned = 0
+						break
+				if(typebanned)
+					continue
+				var/locbanned = 0
+				if(!isturf(O.loc))
+					locbanned = 1
+					for(var/t in in_objects)
+						if(istype(O.loc,t))
+							locbanned = 0
+							break
+				if(locbanned || O.anchored)
+					continue
+				var/list/data = list(
+					"item" = O,
+					"x" = T.x,
+					"y" = T.y,
+					"z" = T.z,
+					"type" = O.type,
+					"last_time_home" = 0)
+				respawned_items["item[itemcount]"] = data
+				itemcount++
+
+/datum/toolbox_event/team_deathmatch/proc/respawn_items()
+	var/respawn_time = 3000
+	if(map_respawn_time)
+		respawn_time = map_respawn_time
+	if(respawned_items.len)
+		for(var/i in respawned_items)
+			var/list/the_list = respawned_items[i]
+			if(istype(the_list))
+				var/obj/item = the_list["item"]
+				if(item && QDELETED(item))
+					the_list["item"] = null
+					item = null
+				var/turf/home_turf = locate(the_list["x"],the_list["y"],the_list["z"])
+				if(!home_turf)
+					continue
+				var/last_time_home = the_list["last_time_home"]
+				if(item)
+					var/turf/T = get_turf(item)
+					if(T)
+						if(!on_mob(item) && T != home_turf)
+							if(isnum(last_time_home) && world.time >= last_time_home+respawn_time)
+								respawn_item(item,home_turf)
+						else
+							the_list["last_time_home"] = world.time
+					else
+						item = null
+				if(!item)
+					var/thepath = the_list["type"]
+					if(ispath(thepath) && isnum(last_time_home) && world.time >= last_time_home+respawn_time)
+						respawn_item(thepath,home_turf)
+
+/datum/toolbox_event/team_deathmatch/proc/on_mob(obj/O)
+	var/atom/the_loc = O
+	var/failsafe = 20 //incase infinite loop
+	while(istype(the_loc) && !isliving(the_loc) && failsafe > 0)
+		failsafe--
+		the_loc = the_loc.loc
+	if(isliving(the_loc))
+		var/mob/living/M = the_loc
+		if(M.ckey)
+			return TRUE
+	return FALSE
+
+/datum/toolbox_event/team_deathmatch/proc/respawn_item(new_item,turf/home_turf)
+	if(!istype(home_turf))
+		return
+	var/obj/O = new_item
+	if(!istype(O) && ispath(new_item))
+		O = new new_item()
+	if(istype(O))
+		O.forceMove(home_turf)
 
 /datum/toolbox_event/team_deathmatch/proc/get_all_ruin_floors(datum/map_template/ruin/force)
 	var/list/results = list()
@@ -564,7 +664,7 @@ client/verb/clearbullshit()
 					var/list/to_be_cleansed = list()
 					for(var/atom/movable/AM in T)
 						var/skipme = 0
-						if(AM in saved_items)
+						if(AM in clean_exempt)
 							skipme = 1
 						if(!skipme)
 							for(var/type in clean_exceptions)
@@ -588,9 +688,9 @@ client/verb/clearbullshit()
 						if(delete_this)
 							if(L)
 								for(var/obj/item/I in L.get_contents())
-									if(I in saved_items)
+									if(I in clean_exempt)
 										I.forceMove(L.loc)
-										if(!(AM in saved_items))
+										if(!(AM in clean_exempt))
 											to_be_cleansed += I
 							qdel(AM)
 					if(repair)
@@ -676,6 +776,8 @@ client/verb/clearbullshit()
 		death_caps = new_map.team_deaths
 		if(new_map.off_limits)
 			current_offlimits = new_map.off_limits
+		if(new_map.respawn_time)
+			map_respawn_time = new_map.respawn_time
 		if(new_map.map)
 			var/list/turfs = get_all_ruin_floors(new_map.map)
 			if(turfs.len)
@@ -685,7 +787,7 @@ client/verb/clearbullshit()
 						T.baseturfs = new_map.baseturf
 					for(var/atom/movable/AM in T)
 						new_map.modify_object(AM)
-						saved_items += AM
+						clean_exempt += AM
 					ruin_turfs[new_map] += "type=[T.type];x=[T.x];y=[T.y];z=[T.z]"
 
 /datum/toolbox_event/team_deathmatch/proc/load_maps()
@@ -703,7 +805,7 @@ client/verb/clearbullshit()
 			if(!istype(T,/turf/open/space))
 				T.baseturfs = /turf/open/floor/plating
 			for(var/atom/movable/AM in T)
-				saved_items += AM
+				clean_exempt += AM
 			ruin_turfs[lobby_name] += "type=[T.type];x=[T.x];y=[T.y];z=[T.z]"
 	for(var/path in subtypesof(/datum/team_deathmatch_map))
 		var/datum/team_deathmatch_map/map = path
