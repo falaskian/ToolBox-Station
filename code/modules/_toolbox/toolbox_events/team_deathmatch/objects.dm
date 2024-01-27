@@ -48,6 +48,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	var/death_count_unlock = 0
 	var/tier_level = 1
 	var/list/no_firing_allowed_areas = list()
+	var/install_firing_pin = 1
 
 /obj/structure/displaycase/TDM_item_spawn/Initialize()
 	.=..()
@@ -107,7 +108,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 			throwdam = showpiece.throwforce
 		if(istype(showpiece,/obj/item/gun))
 			var/obj/item/gun/G = showpiece
-			if(G.pin)
+			if(G.pin && install_firing_pin)
 				qdel(G.pin)
 				var/obj/item/firing_pin/TDM/new_pin = new()
 				if(src.no_firing_allowed_areas.len)

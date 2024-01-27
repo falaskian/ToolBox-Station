@@ -287,6 +287,11 @@
 	id = "tdm_trainwreck"
 	description = "TrainWreck map made by Luckyrichard."
 	prefix = "_maps/toolbox/TDM/Comunity_made/TrainWreck.dmm"
+	unpickable = TRUE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
 
 
 

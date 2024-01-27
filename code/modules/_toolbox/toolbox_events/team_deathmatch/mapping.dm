@@ -23,7 +23,7 @@
 	var/repair_map = 1
 	var/clean_map_items = 1
 	var/clean_map_bodies = 1
-	var/list/clean_exceptions = list() //atom type paths that will be skipped during clean up.
+	var/list/clean_exceptions = list(/obj/effect/decal) //atom type paths that will be skipped during clean up.
 	var/baseturf = null //set this to the turf that will remain after an explosion, if left unchanged it will be space. this applies to the whole map
 	var/off_limits = /area/TDM/offlimits //set an area where players will be teleported away from if they enter it. an off limits area
 	var/list/no_firing_allowed_areas = list(TDM_RED_TEAM = list(/area/TDM/red_base),TDM_BLUE_TEAM = list(/area/TDM/blue_base)) //modifies weapon firing pin so they cant fire in these areas. based on teams
@@ -138,29 +138,39 @@
 	if(inited)
 		return
 	inited = 1
-	if(local_area)
-		var/area/current_area = get_area(src)
-		if(!(area_list in area_list))
-			area_list += current_area.type
-	for(var/a in area_list)
-		var/area/A = locate(a)
-		if(A)
-			for(var/turf/open/floor/T in A)
-				var/goforit = 1
-				if(turf_whitelist.len)
-					goforit = 0
-					for (var/t in turf_whitelist)
-						if(istype(T,t))
-							goforit = 1
-							break
-				if(turf_blacklist.len)
-					for (var/t in turf_blacklist)
-						if(istype(T,t))
-							goforit = 0
-							break
-				if(goforit && prob(dirt_probability))
-					new /obj/effect/decal/cleanable/dirt(T)
-	qdel(src)
+	spawn(0)
+		if(SStoolbox_events)
+			for(var/t in SStoolbox_events.cached_events)
+				var/datum/toolbox_event/team_deathmatch/E = SStoolbox_events.is_active(t)
+				if(istype(E) && E.active)
+					while(E.building_ruin)
+						sleep(1)
+		if(local_area)
+			var/area/current_area = get_area(src)
+			if(!(area_list in area_list))
+				area_list += current_area.type
+		var/list/searched_turfs = list()
+		for(var/area/A in world)
+			if(A.type in area_list)
+				for(var/turf/open/floor/T in A)
+					if(T in searched_turfs)
+						continue
+					searched_turfs += T
+					var/goforit = 1
+					if(turf_whitelist.len)
+						goforit = 0
+						for(var/t in turf_whitelist)
+							if(istype(T,t))
+								goforit = 1
+								break
+					if(turf_blacklist.len)
+						for(var/t in turf_blacklist)
+							if(istype(T,t))
+								goforit = 0
+								break
+					if(goforit && prob(dirt_probability))
+						new /obj/effect/decal/cleanable/dirt(T)
+		qdel(src)
 
 /obj/TDM_map_modifier/Dust1
 	area_list = list(

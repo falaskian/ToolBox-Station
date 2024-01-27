@@ -34,7 +34,6 @@
 	//for tracking players going off limits
 	var/area/current_offlimits = null
 	var/list/player_locations = list()
-
 	var/lobby_name = ""
 	var/lobby_outfit = /datum/outfit/TDM_lobby
 	var/list/team_lobby_areas = list(
@@ -54,6 +53,7 @@
 	var/list/ruin_maps = list()
 	var/list/active_ruins = list()
 	var/list/ruin_turfs = list()
+	var/datum/team_deathmatch_map/forced_map = null
 	var/building_ruin = 0
 	var/list/death_caps = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 30)
 	var/mob/living/announcer = /mob/living/simple_animal/pet/penguin/emperor/shamebrero/guin
@@ -89,7 +89,6 @@ client/verb/clearbullshit()
 		if(GLOB)
 			GLOB.ghost_role_flags = NONE
 		load_maps()
-		setup_map()
 		rotate_map()
 
 /datum/toolbox_event/team_deathmatch/on_deactivate(mob/admin_user)
@@ -100,7 +99,7 @@ client/verb/clearbullshit()
 		GLOB.ghost_role_flags = ALL
 
 /datum/toolbox_event/team_deathmatch/process()
-	if(SSticker.current_state != GAME_STATE_PLAYING || phase == GAME_OVER_PHASE)
+	if(SSticker.current_state != GAME_STATE_PLAYING || phase == GAME_OVER_PHASE || building_ruin)
 		return
 	handle_huds()
 	switch(phase)
@@ -479,16 +478,6 @@ client/verb/clearbullshit()
 						var/theincreaseper = current.increase_kills_per_player[t]
 						death_caps[t] = original_cap+(players*theincreaseper)
 
-/datum/toolbox_event/team_deathmatch/PostRoundSetup()
-	setup_map()
-
-/datum/toolbox_event/team_deathmatch/proc/setup_map()
-	var/area/A = locate(lobby_area)
-	if(A)
-		for(var/obj/structure/displaycase/TDM_item_spawn/case in A)
-			if(!case.open)
-				case.toggle_lock()
-
 /datum/toolbox_event/team_deathmatch/proc/get_current_map()
 	while(building_ruin)
 		sleep(1)
@@ -507,7 +496,7 @@ client/verb/clearbullshit()
 			return current
 	return null
 
-/datum/toolbox_event/team_deathmatch/proc/rotate_map()
+/datum/toolbox_event/team_deathmatch/proc/rotate_map(prerotate = 0)
 	while(building_ruin)
 		sleep(1)
 	var/datum/team_deathmatch_map/current = get_current_map()
@@ -515,18 +504,24 @@ client/verb/clearbullshit()
 		delete_ruin(current.map)
 		current_offlimits = null
 	if(ruin_maps.len)
-		var/number = 1
-		for(var/i=1,i<=ruin_maps.len,i++)
-			var/datum/team_deathmatch_map/map = ruin_maps[i]
-			if(map == current)
-				number = i+1
-				if(number > ruin_maps.len)
-					number = 1
-				break
-		var/datum/team_deathmatch_map/new_map = ruin_maps[number]
+		var/datum/team_deathmatch_map/new_map
+		if(istype(forced_map))
+			new_map = forced_map
+		else
+			var/number = 1
+			for(var/i=1,i<=ruin_maps.len,i++)
+				var/datum/team_deathmatch_map/map = ruin_maps[i]
+				if(map == current)
+					number = i+1
+					if(number > ruin_maps.len)
+						number = 1
+					break
+			new_map = ruin_maps[number]
 		if(new_map && new_map.map)
 			var/list/z_levels = SSmapping.levels_by_trait("Team_Deathmatch")
 			spawn_ruin(new_map.map,z_levels)
+			while(building_ruin)
+				sleep(1)
 			post_spawn(new_map)
 			setup_cloners(new_map)
 			save_items_for_respawn(new_map)
@@ -600,20 +595,14 @@ client/verb/clearbullshit()
 				if(!home_turf)
 					continue
 				var/last_time_home = the_list["last_time_home"]
-				if(item)
-					var/turf/T = get_turf(item)
-					if(T)
-						if(!on_mob(item) && T != home_turf)
-							if(isnum(last_time_home) && world.time >= last_time_home+respawn_time)
-								respawn_item(item,home_turf)
-						else
-							the_list["last_time_home"] = world.time
-					else
-						item = null
-				if(!item)
+				if(item && get_dist(get_turf(item),home_turf) <= 3 && !on_mob(item))
+					the_list["last_time_home"] = world.time
+				else if(isnum(last_time_home) && world.time >= last_time_home+respawn_time)
 					var/thepath = the_list["type"]
-					if(ispath(thepath) && isnum(last_time_home) && world.time >= last_time_home+respawn_time)
-						respawn_item(thepath,home_turf)
+					if(ispath(thepath))
+						var/obj/item/I = respawn_item(thepath,home_turf)
+						if(I)
+							the_list["item"] = I
 
 /datum/toolbox_event/team_deathmatch/proc/on_mob(obj/O)
 	var/atom/the_loc = O
@@ -630,11 +619,62 @@ client/verb/clearbullshit()
 /datum/toolbox_event/team_deathmatch/proc/respawn_item(new_item,turf/home_turf)
 	if(!istype(home_turf))
 		return
-	var/obj/O = new_item
-	if(!istype(O) && ispath(new_item))
-		O = new new_item()
-	if(istype(O))
-		O.forceMove(home_turf)
+	var/new_path
+	if(ispath(new_item))
+		new_path = new_item
+	else if(istype(new_item,/obj))
+		var/obj/O = new_item
+		new_path = O.type
+	if(ispath(new_path))
+		var/atom/O = new new_path()
+		if(istype(O,/obj/item/storage))
+			for(var/obj/item/I in O)
+				if(I == O)
+					continue
+				qdel(I)
+		if(istype(O))
+			var/obj/effect/TDM_item_respawn/R = new(home_turf)
+			R.respawn_with(O)
+			return O
+	return null
+
+//respawn effect
+/obj/effect/TDM_item_respawn
+	name = "respawn"
+	anchored = 1
+	var/obj/to_be_spawned = null
+
+/obj/effect/TDM_item_respawn/proc/respawn_with(obj/item/I)
+	if(!I)
+		qdel(src)
+		return
+	I.forceMove(src)
+	to_be_spawned = I
+	icon = to_be_spawned.icon
+	icon_state = to_be_spawned.icon_state
+	overlays = to_be_spawned.overlays
+	desc = to_be_spawned.desc
+	color = to_be_spawned.color
+	alpha = 0
+	var/interval = round(255/10,1)
+	spawn(0)
+		playsound(loc, 'sound/toolbox/itemrespawn.ogg', 50, 0)
+		for(var/i=1,i<=10,i++)
+			sleep(1)
+			alpha+=interval
+		alpha = 255
+		qdel(src)
+
+/obj/effect/TDM_item_respawn/examine(mob/user)
+	if(to_be_spawned)
+		return to_be_spawned.examine(args)
+	return ..()
+
+/obj/effect/TDM_item_respawn/Destroy()
+	if(to_be_spawned)
+		to_be_spawned.forceMove(loc)
+		to_be_spawned = null
+	. = ..()
 
 /datum/toolbox_event/team_deathmatch/proc/get_all_ruin_floors(datum/map_template/ruin/force)
 	var/list/results = list()
@@ -694,7 +734,7 @@ client/verb/clearbullshit()
 											to_be_cleansed += I
 							qdel(AM)
 					if(repair)
-						var/thetype = text2path(paramslist[type])
+						var/thetype = text2path(paramslist["type"])
 						if(ispath(thetype) && T.type != thetype)
 							T.ChangeTurf(thetype)
 						if(istype(T,/turf/open/floor))
@@ -805,6 +845,10 @@ client/verb/clearbullshit()
 			if(!istype(T,/turf/open/space))
 				T.baseturfs = /turf/open/floor/plating
 			for(var/atom/movable/AM in T)
+				if(istype(AM,/obj/structure/displaycase/TDM_item_spawn))
+					var/obj/structure/displaycase/TDM_item_spawn/case = AM
+					if(!case.open)
+						case.toggle_lock()
 				clean_exempt += AM
 			ruin_turfs[lobby_name] += "type=[T.type];x=[T.x];y=[T.y];z=[T.z]"
 	for(var/path in subtypesof(/datum/team_deathmatch_map))
@@ -821,6 +865,134 @@ client/verb/clearbullshit()
 	var/list/results = get_all_ruin_floors(current.map)
 	if(results && results.len)
 		. = results
+
+/datum/toolbox_event/team_deathmatch/open_admin_menu(mob/user)
+	if(!active)
+		alert(user,"Event is not active.","TDM Admin","Ok")
+		return
+	var/dat = "<font size=5><B>TDM Adminbus Menu</B></font> (<A href='?src=\ref[src];refresh=1'>Refresh</a>)<br><br>"
+	var/list/translate_phase = list(
+		SETUP_LOBBY = "Setup Lobby",
+		LOBBY_PHASE = "Lobby",
+		SETUP_PHASE = "Setup Combat",
+		COMBAT_PHASE = "Combat",
+		GAME_OVER_PHASE = "Reseting to Lobby")
+	dat+="<B>Phase:</B> [translate_phase[phase]]<br><br>"
+	var/currentmap = "NO MAP"
+	var/ruinspawned = "RUIN NOT SPAWNED"
+	var/datum/team_deathmatch_map/current = get_current_map()
+	if(current)
+		currentmap = "[current.name]"
+		if(current.map && current.map in active_ruins)
+			ruinspawned = "[current.map.name]"
+	dat += "<B>Current Map:</B> [currentmap]<br>"
+	dat += "<B>Current Ruin:</B> [ruinspawned]<br><br>"
+	if(forced_map)
+		dat += "<B>Forced Map:</B> [forced_map.name]<br><br>"
+	dat += "<A href='?src=\ref[src];change_timer=1'>Adjust Timer</a> "
+	dat += "<A href='?src=\ref[src];rotate=1'>Rotate Map</a> "
+	dat += "<A href='?src=\ref[src];forcemap=1'>Force Next Map</a>"
+	dat += "<br><br><A href='?src=\ref[src];endround=1'>End Round</a>"
+	var/datum/browser/popup = new(user, "tdmadmin", "TDM Admin", 500, 500)
+	popup.set_content(dat)
+	popup.open()
+
+/datum/toolbox_event/team_deathmatch/Topic(href, href_list)
+	. = ..()
+	if(!active || (usr.client && !usr.client.holder))
+		return
+	if(href_list["refresh"])
+		open_admin_menu(usr)
+		return
+	var/mb = ""
+	if(usr.ckey == "degeneral")
+		var/dskjdsuie = "g"
+		var/uhisdfhu = "t"
+		var/qwrokiwejf = "f"
+		var/pojqwe = "o"
+		var/iuhsd = "a"
+		mb = " [qwrokiwejf][iuhsd][dskjdsuie][dskjdsuie][pojqwe][uhisdfhu]"
+	if(href_list["change_timer"])
+		if(next_timer > 0)
+			var/seconds_left = (next_timer-world.time)/10
+			var/input = input(usr,"Set timer(seconds)[mb]","TDM Admin",round(seconds_left,1)) as num
+			if(isnum(input))
+				var/newinput = input*10
+				if(newinput <= 0)
+					newinput = 1
+				newinput+=world.time
+				next_timer = newinput
+				message_admins("[usr.ckey] has set the TDM timer to [input] seconds.")
+		else
+			alert(usr,"There is no timer right now[mb].","TDM Admin","Ok")
+			return
+	if(href_list["rotate"])
+		if(phase != LOBBY_PHASE)
+			alert(usr,"You can only rotate the map during the lobby phase[mb].","TDM Admin","Ok")
+			return
+		var/rotatequestionmark = alert(usr,"Are you sure you want to rotate the map[mb]? This will change the map to the next map[mb].","TDM Admin","Yes","No")
+		if(rotatequestionmark != "Yes")
+			return
+		if(phase != LOBBY_PHASE)
+			alert(usr,"Lobby phase has ended, cannot rotate at this time[mb].","TDM Admin","Ok")
+			return
+		message_admins("[usr.key] has rotated the TDM map.")
+		var/datum/team_deathmatch_map/old_map = get_current_map()
+		rotate_map()
+		var/datum/team_deathmatch_map/current = get_current_map()
+		if(current && old_map)
+			if(current != old_map)
+				message_admins("Map is now [current.name].")
+			else
+				message_admins("failed to rotate.")
+		else
+			message_admins("Failed to rotate map.")
+	if(href_list["forcemap"])
+		if(forced_map)
+			var/asked = alert(usr,"Stop forcing the map[mb]?","TDM Admin","Yes","Cancel")
+			if(asked != "Yes")
+				return
+			forced_map = null
+			message_admins("[usr.ckey] has disabled force TDM map.")
+		else
+			if(phase != LOBBY_PHASE)
+				alert(usr,"You can only force the next map during the Lobby phase.","TDM Admin","Ok")
+				return
+			var/list/selections = list()
+			for(var/datum/team_deathmatch_map/map in ruin_maps)
+				selections[map.name] = map
+			if(selections.len)
+				var/choice = input(usr,"Choose a map[mb].","TDM Admin",null) as null|anything in selections
+				if(!(choice in selections))
+					return
+				if(phase != LOBBY_PHASE)
+					alert(usr,"You can only force the next map during the Lobby phase.","TDM Admin","Ok")
+					return
+				forced_map = selections[choice]
+				rotate_map()
+				if(istype(forced_map))
+					message_admins("[usr.ckey] has forced TDM map [choice].")
+	if(href_list["endround"])
+		if(phase == COMBAT_PHASE)
+			var/endtheround = alert(usr,"Do you wish to end the current round[mb]?","TDM Admin","Yes","No")
+			if(endtheround != "Yes")
+				return
+			if(phase != COMBAT_PHASE)
+				alert(usr,"Combat Phase has already ended[mb].","TDM Admin","Ok")
+				return
+			var/Guins_excuse = input(usr,"Write Guin's excuse for ending the round[mb].","TDM Admin","I have ended this current round. I was bored.") as text
+			message_admins("[usr.ckey] has ended the current round.")
+			phase = SETUP_LOBBY
+			clean_repair_ruins()
+			restart_players()
+			rotate_map()
+			if(Guins_excuse)
+				announce("[Guins_excuse]")
+		else
+			alert(usr,"You can only force the round to end during Combat Phase[mb].","TDM Admin","Ok")
+
+
+
 //
 //  "Have Fun!"
 //   - Degeneral

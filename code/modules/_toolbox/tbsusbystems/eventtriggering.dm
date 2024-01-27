@@ -137,6 +137,9 @@ The event. Make children of this to make a new event.
 /datum/toolbox_event/proc/get_fal_cam_turfs()
 	return list()
 
+/datum/toolbox_event/proc/open_admin_menu(mob/user)
+	to_chat(user,"<span class='warning'>This event has no admin window.</span>")
+
 /datum/admins/proc/toggle_tb_event()
 	set category = "Server"
 	set name = "Toggle TB Event"
@@ -156,7 +159,7 @@ The event. Make children of this to make a new event.
 	var/datum/toolbox_event/E = SStoolbox_events.cached_events[which]
 	if(!E)
 		return
-	var/getdesc = alert(usr,"You have chosen \"[E.title]\".","Toggle TB Event","Toggle Event","Read Description")
+	var/getdesc = alert(usr,"You have chosen \"[E.title]\".","Toggle TB Event","Toggle Event","Read Description","Open Admin Menu")
 	var/activate = 0
 	switch(getdesc)
 		if("Toggle Event")
@@ -166,6 +169,8 @@ The event. Make children of this to make a new event.
 			if(getdesc != "Toggle Event")
 				return
 			activate = 1
+		if("Open Admin Menu")
+			E.open_admin_menu(usr)
 	if(activate)
 		E.active = !E.active
 		if(E.active)
