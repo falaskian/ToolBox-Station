@@ -97,14 +97,14 @@
 "bS" = (/obj/machinery/power/emitter/anchored{dir = 4},/obj/structure/window/reinforced{dir = 1; layer = 3},/turf/open/floor/circuit/red/anim,/area/TDM)
 "bT" = (/obj/structure/window/reinforced{dir = 1; layer = 3},/turf/open/floor/circuit/red/anim,/area/TDM)
 "bU" = (/obj/structure/window/reinforced{color = "#FFFFFF"; dir = 4},/obj/structure/window/reinforced{dir = 1},/turf/open/floor/circuit/red/anim,/area/TDM)
-"bV" = (/obj/effect/portal/permanent{id = "train1_p_1"; name = "portal"},/turf/open/floor/circuit/red/anim,/area/TDM)
+"bV" = (/turf/open/floor/plating/snowed,/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/plating/snowed{planetary_atmos = 0},/area/TDM)
 "bW" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 1},/turf/open/floor/circuit/red/anim,/area/TDM)
 "bX" = (/obj/machinery/power/emitter/anchored{dir = 8},/obj/structure/window/reinforced{dir = 1; layer = 3},/turf/open/floor/circuit/red/anim,/area/TDM)
 "bY" = (/obj/structure/statue/sandstone/venus,/turf/open/floor/pod/dark,/area/TDM)
 "bZ" = (/obj/structure/reagent_dispensers/fueltank,/turf/open/floor/pod/dark,/area/TDM)
 "ca" = (/obj/structure/rack,/obj/item/ammo_box/magazine/m10mm/ap,/turf/open/floor/pod/dark,/area/TDM)
 "cb" = (/obj/structure/rack,/obj/item/ammo_box/magazine/m12g/breacher,/turf/open/floor/pod/dark,/area/TDM)
-"cc" = (/turf/open/floor/plating/snowed,/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/plating/snowed{planetary_atmos = 0},/area/TDM)
+"cc" = (/obj/effect/portal/permanent{id = "trainwreck_p_1"; name = "portal"},/turf/open/floor/circuit/red/anim,/area/TDM)
 "cd" = (/obj/machinery/vending/boozeomat/all_access,/turf/open/floor/carpet/red,/area/TDM)
 "ce" = (/obj/structure/reagent_dispensers/beerkeg,/turf/open/floor/carpet/red,/area/TDM)
 "cf" = (/obj/structure/table,/obj/machinery/recharger,/turf/open/indestructible,/area/TDM/red_base)
@@ -133,7 +133,7 @@
 "cC" = (/obj/machinery/power/emitter/anchored{dir = 4},/obj/structure/window/reinforced,/turf/open/floor/circuit/green/anim,/area/TDM)
 "cD" = (/obj/structure/window/reinforced,/turf/open/floor/circuit/green/anim,/area/TDM)
 "cE" = (/obj/structure/window/reinforced,/obj/structure/window/reinforced{color = "#FFFFFF"; dir = 4},/turf/open/floor/circuit/green/anim,/area/TDM)
-"cF" = (/obj/effect/portal/permanent{icon_state = "portal"; id = "train1_p_2"; name = "portal"; pixel_y = 9},/turf/open/floor/circuit/green/anim,/area/TDM)
+"cF" = (/obj/effect/portal/permanent{icon_state = "portal"; id = "trainwreck_p_1"; name = "portal"; pixel_y = 9},/turf/open/floor/circuit/green/anim,/area/TDM)
 "cG" = (/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 8},/turf/open/floor/circuit/green/anim,/area/TDM)
 "cH" = (/obj/machinery/power/emitter/anchored{dir = 8},/obj/structure/window/reinforced,/turf/open/floor/circuit/green/anim,/area/TDM)
 "cI" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/carpet/blue,/area/TDM)
@@ -263,10 +263,10 @@ aaahanaoaoarasasasasatauavasasasasaoapahahahanaoasasasasawaxawasasasasaqapahahah
 aaahanaoaoarasaCaDaEaFaFaFaEaDaCasaoapahahahanaoasaGaHaIaIaJaKaLaMaNasaoapahahahanaoasaOaOaPaPaQaRaSaOaOasaoapahahahanaoasaTaUaVaVaVaVaVaWaTasaoapahahahanaoazaXcrdXaYaYaYaYdYdZeaebazaoapahahahahahahahahaa
 aaahanaoaqarasaFaFaZaFaFaFbabbaFasaoapahahahanaoasaJaJaJaJaJaJaJaJaJasaoapahahahanaoasaObcbdaPaObeaSaOaOasaoapahahahanaoasbfaVaVbgbgbgaVaVbfasaoapahahahanaoazaYaYaYaYaYeJaYaYaYaYaYazaoapahahahahahahahahaa
 aaahanaoaqaqavaFaFaFaFaFaFaFaFaFavaoaoamamamaoaoawaHbhbiaHaJbjbjbkblawaoaoamamamaoaoasbmbcbcbcbcbvbcbcbcasaoaoamamamaoaoasaVaVaWbnbobpaUaVaVasaoaoamamamaoaoaAaYaYecedeeefegeheiaYaYaAaoapahahahahahahahahaa
-aaahanaoaoaoauaFaFaFbqaFbraFaFaFaubsbsbsbsbsbsbsaxaJaJaJaJbtaJaJaJaJaxbsbsbsbsbsbsbsbubcbcbcbcbcccbcbcbcbubsbsbsbsbsbsbsaybwbwbwbfbfbfbwbwbwaybsbsbsbsbsbsbsaBaYaYdPbxdQbydRbxdPaYaYaBaoapahahahahahahahahaa
-aaahanaoaqaqavbzbzbzbzbAbzbzbzbzataoaobBbBbBaoaobCbDbDbDbEaJbFbGbHbIawaoaobBbBbBaoaoasaOaObcbcbcccbcbcbcasaoaobBbBbBaoaoasbJbKbKbLaVbMbNbObPasaoaobBbBbBaoaoaAaYaYaYdSejekeldSaYaYaYaAaoapahahahahahahahahaa
-aaahanaoaqarasbAbAbAbQbAbQbAbAbAasaoapahahahanaoasaJaJaJaJaJaJaJaJaJasaqapahahahanaoasaOaOaObcbcccbcbcaOasaoapahahahanaoasaVaVaVbPaVbRaVaVaVasaoapahahahanaoazaYaYaYaYaYaYaYaYaYaYaYazaoapahahahahahahahahaa
-aaahanaoaoarasbSbTbTbUbVbWbTbTbXasaoapahahahanaoasbYbZaHaHaJcacacbcbasaqapahahahanaoasaOaObcbcbcccbcaOclasaoapahahahanaoascdaVaVaVaVaVaVceceasaoapahahahanaoazcfcfcfemaYaYeneocfcfcfazaoapahahahahahahahahaa
+aaahanaoaoaoauaFaFaFbqaFbraFaFaFaubsbsbsbsbsbsbsaxaJaJaJaJbtaJaJaJaJaxbsbsbsbsbsbsbsbubcbcbcbcbcbVbcbcbcbubsbsbsbsbsbsbsaybwbwbwbfbfbfbwbwbwaybsbsbsbsbsbsbsaBaYaYdPbxdQbydRbxdPaYaYaBaoapahahahahahahahahaa
+aaahanaoaqaqavbzbzbzbzbAbzbzbzbzataoaobBbBbBaoaobCbDbDbDbEaJbFbGbHbIawaoaobBbBbBaoaoasaOaObcbcbcbVbcbcbcasaoaobBbBbBaoaoasbJbKbKbLaVbMbNbObPasaoaobBbBbBaoaoaAaYaYaYdSejekeldSaYaYaYaAaoapahahahahahahahahaa
+aaahanaoaqarasbAbAbAbQbAbQbAbAbAasaoapahahahanaoasaJaJaJaJaJaJaJaJaJasaqapahahahanaoasaOaOaObcbcbVbcbcaOasaoapahahahanaoasaVaVaVbPaVbRaVaVaVasaoapahahahanaoazaYaYaYaYaYaYaYaYaYaYaYazaoapahahahahahahahahaa
+aaahanaoaoarasbSbTbTbUccbWbTbTbXasaoapahahahanaoasbYbZaHaHaJcacacbcbasaqapahahahanaoasaOaObcbcbcbVbcaOclasaoapahahahanaoascdaVaVaVaVaVaVceceasaoapahahahanaoazcfcfcfemaYaYeneocfcfcfazaoapahahahahahahahahaa
 aaahanaoaoarasasasasasasasasasasasaoapahahahanaoasasasasawaxawasasasasaqapahahahanaoasasascgbuchbucgasasasaoapahahahanaoasasasasasasasasasasasaoapahahahanaoazazazazaAaBaBaAazazazazazaoapahahahahahahahahaa
 aaahanaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaoaqaqaoaoaoaoaoaqaqaoaoapahahahanaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahahahahahahaa
 aaahcicjcjcjcjcjcjbBbBcjcjcjcjcjcjcjckbBbBbBcibBbBcjcjcjbBbBcjcjcjbBbBcjckbBbBbBcicjbBcjcjcjbBbBbBcjcjcjbBcjckbBbBbBcicjcjcjcjcjbBbBcjcjcjcjcjcjckbBbBbBcicjcjcjcjcjbBbBcjcjcjcjcjcjcjcjckahahahahahahahahaa
