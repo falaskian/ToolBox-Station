@@ -53,7 +53,7 @@
 "ba" = (/obj/structure/table,/obj/item/clothing/suit/bio_suit,/turf/open/floor/monotile/dark,/area/TDM)
 "bb" = (/obj/item/toy/plush/nukeplushie,/turf/open/floor/monotile/dark,/area/TDM)
 "bc" = (/turf/open/floor/plating/snowed,/turf/open/floor/plating/snowed{planetary_atmos = 0},/area/TDM)
-"bd" = (/turf/open/floor/plating/snowed,/obj/item/toy/plush/plushvar,/turf/open/floor/plating/snowed{planetary_atmos = 0},/area/TDM)
+"bd" = (/obj/structure/displaycase/TDM_item_spawn/shotgun,/turf/open/indestructible,/area/TDM/red_base)
 "be" = (/obj/effect/decal/cleanable/blood/gibs/down,/turf/open/floor/plating/ice{planetary_atmos = 0},/area/TDM)
 "bf" = (/obj/structure/chair/wood{dir = 1},/turf/open/floor/carpet/red,/area/TDM)
 "bg" = (/obj/structure/chair/wood,/turf/open/floor/carpet/red,/area/TDM)
@@ -97,7 +97,7 @@
 "bS" = (/obj/machinery/power/emitter/anchored{dir = 4},/obj/structure/window/reinforced{dir = 1; layer = 3},/turf/open/floor/circuit/red/anim,/area/TDM)
 "bT" = (/obj/structure/window/reinforced{dir = 1; layer = 3},/turf/open/floor/circuit/red/anim,/area/TDM)
 "bU" = (/obj/structure/window/reinforced{color = "#FFFFFF"; dir = 4},/obj/structure/window/reinforced{dir = 1},/turf/open/floor/circuit/red/anim,/area/TDM)
-"bV" = (/turf/open/floor/plating/snowed,/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/plating/snowed{planetary_atmos = 0},/area/TDM)
+"bV" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a357; start_showpiece_type = /obj/item/gun/ballistic/revolver/mateba; tier_level = 3},/turf/open/indestructible,/area/TDM/red_base)
 "bW" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 1},/turf/open/floor/circuit/red/anim,/area/TDM)
 "bX" = (/obj/machinery/power/emitter/anchored{dir = 8},/obj/structure/window/reinforced{dir = 1; layer = 3},/turf/open/floor/circuit/red/anim,/area/TDM)
 "bY" = (/obj/structure/statue/sandstone/venus,/turf/open/floor/pod/dark,/area/TDM)
@@ -203,9 +203,9 @@
 "dU" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "KILLS"},/turf/closed/indestructible/opshuttle,/area/TDM/blue_base)
 "dV" = (/obj/machinery/status_display{message1 = "BLUE"; message2 = "BASE"},/turf/closed/indestructible/opshuttle,/area/TDM/blue_base)
 "dW" = (/obj/machinery/clonepod/TDM/team_blue,/turf/open/indestructible,/area/TDM/blue_base)
-"dX" = (/obj/structure/displaycase/TDM_item_spawn{tier_level = 2},/turf/open/indestructible,/area/TDM/red_base)
+"dX" = (/turf/open/floor/plating/snowed,/obj/item/toy/plush/plushvar,/turf/open/floor/plating/snowed{planetary_atmos = 0},/area/TDM)
 "dY" = (/obj/structure/displaycase/TDM_item_spawn/uzi{tier_level = 2},/turf/open/indestructible,/area/TDM/red_base)
-"dZ" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a357; start_showpiece_type = /obj/item/gun/ballistic/revolver/mateba},/turf/open/indestructible,/area/TDM/red_base)
+"dZ" = (/turf/open/floor/plating/snowed,/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/plating/snowed{planetary_atmos = 0},/area/TDM)
 "ea" = (/obj/structure/displaycase/TDM_item_spawn/bolt_action{tier_level = 2},/turf/open/indestructible,/area/TDM/red_base)
 "eb" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/grenade/flashbang; tier_level = 3},/turf/open/indestructible,/area/TDM/red_base)
 "ec" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/ammo_box/magazine/m12g/dragon; tier_level = 5},/turf/open/indestructible,/area/TDM/red_base)
@@ -223,9 +223,9 @@
 "eo" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/energy/laser/retro},/turf/open/indestructible,/area/TDM/red_base)
 "ep" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/energy/lasercannon; tier_level = 2},/turf/open/indestructible,/area/TDM/blue_base)
 "eq" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/gun/ballistic/automatic/proto/unrestricted; tier_level = 2},/turf/open/indestructible,/area/TDM/blue_base)
-"er" = (/obj/structure/displaycase/TDM_item_spawn{tier_level = 2},/turf/open/indestructible,/area/TDM/blue_base)
+"er" = (/obj/structure/displaycase/TDM_item_spawn/shotgun,/turf/open/indestructible,/area/TDM/blue_base)
 "es" = (/obj/structure/displaycase/TDM_item_spawn/uzi{tier_level = 2},/turf/open/indestructible,/area/TDM/blue_base)
-"et" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a357; start_showpiece_type = /obj/item/gun/ballistic/revolver/mateba},/turf/open/indestructible,/area/TDM/blue_base)
+"et" = (/obj/structure/displaycase/TDM_item_spawn{ammunition = /obj/item/ammo_box/a357; start_showpiece_type = /obj/item/gun/ballistic/revolver/mateba; tier_level = 3},/turf/open/indestructible,/area/TDM/blue_base)
 "eu" = (/obj/structure/displaycase/TDM_item_spawn/bolt_action{tier_level = 2},/turf/open/indestructible,/area/TDM/blue_base)
 "ev" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/grenade/flashbang; tier_level = 3},/turf/open/indestructible,/area/TDM/blue_base)
 "ew" = (/obj/structure/displaycase/TDM_item_spawn{start_showpiece_type = /obj/item/ammo_box/magazine/m12g/dragon; tier_level = 5},/turf/open/indestructible,/area/TDM/blue_base)
@@ -260,13 +260,13 @@ aaahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahah
 aaahajakakakakakakakakakakakakakakakalamamamajakakakakakakakakakakakakakalamamamajakakakakakakakakakakakakakalamamamajakakakakakakakakakakakakakalamamamajakakakakakakakakakakakakakakakalahahahahahahahahaa
 aaahanaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaqaqaoaoaoaoaoaoaqaoaoaoapahahahanaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahahahahahahaa
 aaahanaoaoarasasasasatauavasasasasaoapahahahanaoasasasasawaxawasasasasaqapahahahanaoasasasasasasasasasasasaoapahahahanaoasasasasayayasasasasasaoapahahahanaoazazazazaAaBaBaAazazazazazaoapahahahahahahahahaa
-aaahanaoaoarasaCaDaEaFaFaFaEaDaCasaoapahahahanaoasaGaHaIaIaJaKaLaMaNasaoapahahahanaoasaOaOaPaPaQaRaSaOaOasaoapahahahanaoasaTaUaVaVaVaVaVaWaTasaoapahahahanaoazaXcrdXaYaYaYaYdYdZeaebazaoapahahahahahahahahaa
-aaahanaoaqarasaFaFaZaFaFaFbabbaFasaoapahahahanaoasaJaJaJaJaJaJaJaJaJasaoapahahahanaoasaObcbdaPaObeaSaOaOasaoapahahahanaoasbfaVaVbgbgbgaVaVbfasaoapahahahanaoazaYaYaYaYaYeJaYaYaYaYaYazaoapahahahahahahahahaa
+aaahanaoaoarasaCaDaEaFaFaFaEaDaCasaoapahahahanaoasaGaHaIaIaJaKaLaMaNasaoapahahahanaoasaOaOaPaPaQaRaSaOaOasaoapahahahanaoasaTaUaVaVaVaVaVaWaTasaoapahahahanaoazaXcrbdaYaYaYaYdYbVeaebazaoapahahahahahahahahaa
+aaahanaoaqarasaFaFaZaFaFaFbabbaFasaoapahahahanaoasaJaJaJaJaJaJaJaJaJasaoapahahahanaoasaObcdXaPaObeaSaOaOasaoapahahahanaoasbfaVaVbgbgbgaVaVbfasaoapahahahanaoazaYaYaYaYaYeJaYaYaYaYaYazaoapahahahahahahahahaa
 aaahanaoaqaqavaFaFaFaFaFaFaFaFaFavaoaoamamamaoaoawaHbhbiaHaJbjbjbkblawaoaoamamamaoaoasbmbcbcbcbcbvbcbcbcasaoaoamamamaoaoasaVaVaWbnbobpaUaVaVasaoaoamamamaoaoaAaYaYecedeeefegeheiaYaYaAaoapahahahahahahahahaa
-aaahanaoaoaoauaFaFaFbqaFbraFaFaFaubsbsbsbsbsbsbsaxaJaJaJaJbtaJaJaJaJaxbsbsbsbsbsbsbsbubcbcbcbcbcbVbcbcbcbubsbsbsbsbsbsbsaybwbwbwbfbfbfbwbwbwaybsbsbsbsbsbsbsaBaYaYdPbxdQbydRbxdPaYaYaBaoapahahahahahahahahaa
-aaahanaoaqaqavbzbzbzbzbAbzbzbzbzataoaobBbBbBaoaobCbDbDbDbEaJbFbGbHbIawaoaobBbBbBaoaoasaOaObcbcbcbVbcbcbcasaoaobBbBbBaoaoasbJbKbKbLaVbMbNbObPasaoaobBbBbBaoaoaAaYaYaYdSejekeldSaYaYaYaAaoapahahahahahahahahaa
-aaahanaoaqarasbAbAbAbQbAbQbAbAbAasaoapahahahanaoasaJaJaJaJaJaJaJaJaJasaqapahahahanaoasaOaOaObcbcbVbcbcaOasaoapahahahanaoasaVaVaVbPaVbRaVaVaVasaoapahahahanaoazaYaYaYaYaYaYaYaYaYaYaYazaoapahahahahahahahahaa
-aaahanaoaoarasbSbTbTbUccbWbTbTbXasaoapahahahanaoasbYbZaHaHaJcacacbcbasaqapahahahanaoasaOaObcbcbcbVbcaOclasaoapahahahanaoascdaVaVaVaVaVaVceceasaoapahahahanaoazcfcfcfemaYaYeneocfcfcfazaoapahahahahahahahahaa
+aaahanaoaoaoauaFaFaFbqaFbraFaFaFaubsbsbsbsbsbsbsaxaJaJaJaJbtaJaJaJaJaxbsbsbsbsbsbsbsbubcbcbcbcbcdZbcbcbcbubsbsbsbsbsbsbsaybwbwbwbfbfbfbwbwbwaybsbsbsbsbsbsbsaBaYaYdPbxdQbydRbxdPaYaYaBaoapahahahahahahahahaa
+aaahanaoaqaqavbzbzbzbzbAbzbzbzbzataoaobBbBbBaoaobCbDbDbDbEaJbFbGbHbIawaoaobBbBbBaoaoasaOaObcbcbcdZbcbcbcasaoaobBbBbBaoaoasbJbKbKbLaVbMbNbObPasaoaobBbBbBaoaoaAaYaYaYdSejekeldSaYaYaYaAaoapahahahahahahahahaa
+aaahanaoaqarasbAbAbAbQbAbQbAbAbAasaoapahahahanaoasaJaJaJaJaJaJaJaJaJasaqapahahahanaoasaOaOaObcbcdZbcbcaOasaoapahahahanaoasaVaVaVbPaVbRaVaVaVasaoapahahahanaoazaYaYaYaYaYaYaYaYaYaYaYazaoapahahahahahahahahaa
+aaahanaoaoarasbSbTbTbUccbWbTbTbXasaoapahahahanaoasbYbZaHaHaJcacacbcbasaqapahahahanaoasaOaObcbcbcdZbcaOclasaoapahahahanaoascdaVaVaVaVaVaVceceasaoapahahahanaoazcfcfcfemaYaYeneocfcfcfazaoapahahahahahahahahaa
 aaahanaoaoarasasasasasasasasasasasaoapahahahanaoasasasasawaxawasasasasaqapahahahanaoasasascgbuchbucgasasasaoapahahahanaoasasasasasasasasasasasaoapahahahanaoazazazazaAaBaBaAazazazazazaoapahahahahahahahahaa
 aaahanaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaoaqaqaoaoaoaoaoaqaqaoaoapahahahanaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahanaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoapahahahahahahahahaa
 aaahcicjcjcjcjcjcjbBbBcjcjcjcjcjcjcjckbBbBbBcibBbBcjcjcjbBbBcjcjcjbBbBcjckbBbBbBcicjbBcjcjcjbBbBbBcjcjcjbBcjckbBbBbBcicjcjcjcjcjbBbBcjcjcjcjcjcjckbBbBbBcicjcjcjcjcjbBbBcjcjcjcjcjcjcjcjckahahahahahahahahaa
