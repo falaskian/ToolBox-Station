@@ -318,6 +318,7 @@
 "gf" = (/obj/effect/turf_decal/tile/green{dir = 8},/obj/effect/turf_decal/tile/green{dir = 1},/obj/effect/turf_decal/tile/green,/obj/machinery/door/window/eastright{base_state = "left"; dir = 8; icon_state = "left"; name = "glass door"},/turf/open/floor/plasteel,/area/TDM)
 "gg" = (/obj/item/twohanded/required/kirbyplants/random,/turf/open/floor/plasteel/white/side{dir = 6},/area/TDM)
 "gh" = (/obj/structure/extinguisher_cabinet{pixel_x = -27},/turf/open/floor/plasteel,/area/TDM)
+"gi" = (/obj/structure/table,/obj/item/storage/bag/tray{pixel_y = 6},/mob/living/simple_animal/hostile/retaliate/frog/dead{pixel_y = 15},/turf/open/floor/plasteel,/area/TDM)
 "gj" = (/obj/structure/extinguisher_cabinet{pixel_x = -27},/turf/open/floor/plasteel/white/side{dir = 4},/area/TDM)
 "gk" = (/obj/machinery/door/airlock/security{name = "Security Checkpoint"; req_access_txt = "1"},/obj/machinery/door/poddoor{name = "gate"},/turf/open/floor/plasteel,/area/TDM)
 "gl" = (/obj/structure/table,/obj/item/reagent_containers/food/condiment/saltshaker,/turf/open/floor/plasteel,/area/TDM)
@@ -582,6 +583,7 @@
 "lk" = (/obj/structure/table,/obj/item/stack/sheet/iron,/turf/open/floor/plasteel,/area/TDM)
 "ll" = (/obj/structure/closet{anchored = 1},/obj/item/stack/sheet/iron,/obj/item/stack/sheet/iron,/obj/item/weldingtool,/turf/open/floor/plasteel/white/side{dir = 8},/area/TDM)
 "lm" = (/obj/item/shovel,/turf/open/floor/plating,/area/TDM)
+"ln" = (/obj/structure/table,/obj/item/storage/bag/tray{pixel_y = 6},/obj/item/scalpel{pixel_y = 8},/mob/living/simple_animal/hostile/retaliate/frog/dead{pixel_y = 15},/turf/open/floor/plasteel,/area/TDM)
 "lo" = (/obj/structure/table,/obj/machinery/recharger{pixel_x = 8; pixel_y = 2},/obj/item/reagent_containers/spray/pepper{pixel_x = -6; pixel_y = 3},/turf/open/floor/plasteel,/area/TDM)
 "lp" = (/obj/structure/table,/obj/item/stack/sheet/mineral/wood,/obj/item/stack/sheet/mineral/wood,/turf/open/floor/plasteel/white/side{dir = 4},/area/TDM)
 "lq" = (/obj/structure/table,/obj/item/storage/belt/utility,/turf/open/floor/plasteel,/area/TDM)
@@ -602,14 +604,12 @@
 "lF" = (/obj/structure/closet{anchored = 1},/obj/item/stack/sheet/mineral/wood,/obj/item/kitchen/knife{name = "carving knife"},/turf/open/floor/plasteel/white/side{dir = 6},/area/TDM)
 "lG" = (/obj/structure/table,/obj/item/screwdriver{pixel_y = 4},/turf/open/floor/plasteel/white/corner,/area/TDM)
 "lH" = (/obj/structure/table,/obj/item/stack/sheet/mineral/wood,/turf/open/floor/plasteel/white/side{dir = 6},/area/TDM)
-"lI" = (/obj/structure/table,/obj/item/storage/bag/tray{pixel_y = 6},/mob/living/simple_animal/hostile/retaliate/frog{health = 0; pixel_y = 15},/turf/open/floor/plasteel,/area/TDM)
 "lJ" = (/obj/structure/table,/obj/item/scalpel{pixel_x = -3; pixel_y = 4},/turf/open/floor/plasteel,/area/TDM)
 "lK" = (/obj/machinery/door/airlock/mime{name = "Shop Class"; req_access_txt = "0"},/turf/open/floor/plasteel,/area/TDM)
 "lL" = (/obj/machinery/door/airlock/mime{name = "Workshop"; req_access_txt = "0"},/turf/open/floor/plasteel,/area/TDM)
 "lM" = (/obj/structure/table,/obj/item/paper/crumpled{pixel_y = 3},/turf/open/floor/plasteel/white/side{dir = 4},/area/TDM)
 "lN" = (/obj/machinery/disposal/bin,/obj/structure/disposalpipe/trunk{dir = 4},/obj/effect/turf_decal/tile/blue{dir = 8},/obj/effect/turf_decal/tile/blue{dir = 1},/obj/effect/turf_decal/tile/blue,/turf/open/floor/plasteel/white,/area/TDM)
 "lO" = (/obj/item/chair,/obj/item/clothing/head/cone,/turf/open/floor/plasteel/white/side{dir = 4},/area/TDM)
-"lP" = (/obj/structure/table,/obj/item/storage/bag/tray{pixel_y = 6},/obj/item/scalpel{pixel_y = 8},/mob/living/simple_animal/hostile/retaliate/frog{health = 0; pixel_y = 15},/turf/open/floor/plasteel,/area/TDM)
 "lQ" = (/obj/item/chair,/turf/open/floor/plasteel,/area/TDM)
 "lR" = (/obj/structure/closet{anchored = 1},/obj/item/clothing/under/costume/schoolgirl/red,/turf/open/floor/plasteel/white/side{dir = 10},/area/TDM)
 "lS" = (/obj/structure/closet{anchored = 1},/obj/item/clothing/under/costume/schoolgirl/green,/turf/open/floor/plasteel/white/side,/area/TDM)
@@ -716,11 +716,11 @@ gHgIfqgvgJgKgKgKhrgKgMgmhenclhadbPbtbtadadadadadadadadajajadadadadadadadadfeffaj
 gHgIfqgOgJgKgRgKgLgKgMgpjklogradbtbtbtaddCjVgPalaldDadajajadakgBalalamanadguajajajajajajajhgduadhNhNhNhNnenfaddMaLaLajaLaMadgugYadlpajlqlrajlsehltajfGajajluadgQhgajezfvmffvfveBlvadgvgvgvgvgOgIgH
 gHgIhdgvgJgKgKgKhshjhkadadadadadbtbtbsadlwjSajjXajjladajajadeGajajajeIfiadfDecajcOaNaNaNechgduadngadhNiXadadadixhmhmifajaIadaxgYadlyajajajajlzehlAajajajfGlBaddlhgcOadadadezadadadadgvgOgvgvgNgIgH
 gHgIgvgvgJgKgKgKgMgvgvgvgNkemubtbtbtbtadaxajajajajhGhqhmhmlChHajajajajaIadadadeDadadadadaxhgfEadnhadhNhNninjadaDbiechgcOggadgjgYadlDlEecajcOlFadnmmXecajlGlHaddlhgaIadbsbtbtbtkegvgvgvgvfqgvgvgIgH
-gHgIgvgvgJgKgRgKgMhdgvgvgvkebtcnbtbtbtaUdGayajjtayjmadajiSadjhlIlJajfklIadfmhFhFhFhFhPadgjhgaIadadadmZadadadadadadadhUadadadaxgYadadadadlKadadadadadadlLadadadaxhgaIaUbtbtbtbskegvgOgvgvgvgvgvgIgH
+gHgIgvgvgJgKgRgKgMhdgvgvgvkebtcnbtbtbtaUdGayajjtayjmadajiSadjhgilJajfkgiadfmhFhFhFhFhPadgjhgaIadadadmZadadadadadadadhUadadadaxgYadadadadlKadadadadadadlLadadadaxhgaIaUbtbtbtbskegvgOgvgvgvgvgvgIgH
 gHgIgvgvgJgKgKgKgMgvgvgvfqkebtbtbtbtbPaddPaLajaLaLaIadajfNaddMaLaLajaLaMadhXeFeFfjeFhYadaxhgajalbWdWajdXalalbWalaldWhgdXbWalajhgalalbWdWajdXalalalbWdWajdXalalajhgaIaUbtbPbtbtkehJgvgvgvgNgvgOgIgH
-gHgIfqgOgJgKgKgKgMgvgOgvgvkebtbtbtbtbtadlMjtajayayaIadaUaUaddMfklIajiijdadjfeFflhAeFlxadaxhGhmhmifhIhmhmhmhmhmhmhmhmhWhmhmhmhmhWhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhuaIaUbtbtbtbtkegvgvgvgvgvgvgvgIgH
+gHgIfqgOgJgKgKgKgMgvgOgvgvkebtbtbtbtbtadlMjtajayayaIadaUaUaddMfkgiajiijdadjfeFflhAeFlxadaxhGhmhmifhIhmhmhmhmhmhmhmhmhWhmhmhmhmhWhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhuaIaUbtbtbtbtkegvgvgvgvgvgvgvgIgH
 gHgIgvgvgJgKgRgKgMgvgvgvhJkebsbtbtbtbtadlOaLajaLgSaIadilbtaddMaLaLajaLaMadlNlXlYlZlYmaadfDaNaNeciOiPaNaNaNaNfXbibibiaNaNaNaNaNbibibiaNaNaNbibibifXaNaNbibibiaNaNaNjeadbtbtbtbskegvgNgvgvgvhdgvgIgH
-gHgIgvhdgJgKgKgKgMgvgNgvgvkebtbtcnbtbtaUdGayajkcayiQadbtcnadjikcmbajlPlIadadhZiaibadadadadadadadhhadadadadadadadadadadadaUaUaUadadadaUaUaUadadadaUaUaUadadadaUaUaUadadilbtbtbtkegvgvgvgOgvgvgvgIgH
+gHgIgvhdgJgKgKgKgMgvgNgvgvkebtbtcnbtbtaUdGayajkcayiQadbtcnadjikcmbajlngiadadhZiaibadadadadadadadhhadadadadadadadadadadadaUaUaUadadadaUaUaUadadadaUaUaUadadadaUaUaUadadilbtbtbtkegvgvgvgOgvgvgvgIgH
 gHgIgvgvgJgKgKgKgMgvgvgvfqkeilbtbtbtbtaddPaLajaLlQaIadbsbvaddMaLaLajaLaMadilbtbthVicipiqerjuadfNhgajadiMajajgXgWadbsbtbtbtbtbtbtbtbtbtbtbtbtbsbsbtbtbtbtbtbtbtbsbtbtcnbtbtbsbtkefqgvgvgvgvgvgvgIgH
 gHgIgvgvgJgKgRgKgMgvgvgvgvkebtbtbPbtbtadaxajajajajaIadbtiladdMajajajajaIaUbsbtcnidhHajajajajadghhihmiehmhmifjwevadbtbPbtbtbsbtbtbtbtbtcnbtbtbtbtbtbtbPbtbtbtbtbtbtbtbtbtbtbtbtkegvgvgvgvgvgvgvgIgH
 gHgIgOgvgJgKgKgKgMgvgvgvgvkebtbtbtbtbsadlRlSaNaNaNggadbPbtadigihihihmcnnadbtbPbtadhgajexajajadajhgajadetjnhgajiSadbtbtbtbtbtbtbtbvbtbtbtbtbtbtbsbtbtbtbtbtbsbtbtbtbtbtbtbtbtbtkegvgvgNgNgvgOgvgIgH
