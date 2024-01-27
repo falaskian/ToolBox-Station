@@ -143,7 +143,7 @@
 //		clean_map_bodies = 1
 
 /datum/map_template/ruin/space/TDM_MiniStation
-	name = "Team DeathMatch MiniStation"
+	name = "TDM MiniStation"
 	id = "tdm_ministation"
 	description = "Mini Station map for team deathmatch."
 	unpickable = TRUE
@@ -174,7 +174,7 @@
 	items_respawn = 1
 
 /datum/map_template/ruin/space/TDM_MiniStation_GreyTide
-	name = "GreyTide MiniStation"
+	name = "TDM MiniStation - GreyTide"
 	id = "greytide_ministation"
 	description = "Mini Station map for Greytiding."
 	unpickable = TRUE
@@ -214,10 +214,10 @@
 
 
 
-		//Hide&Seek
+		//Hide&Seek - MimeAcademy
 
 /datum/team_deathmatch_map/hide_and_seek
-	name = "Hide&Seek"
+	name = "MimeAcademy"
 	map = /datum/map_template/ruin/space/MimeAcademy
 	baseturf = /turf/open/floor/plating
 	team_deaths = list(TDM_RED_TEAM = 5,TDM_BLUE_TEAM = 30)
@@ -312,7 +312,7 @@
 	baseturf = /turf/open/floor/plating
 
 /datum/map_template/ruin/space/TDM_MiniStation_GreyTide_NoBase
-	name = "GreyTide MiniStation - nobase"
+	name = "TDM MiniStation - GreyTide NoBase"
 	id = "greytide_ministation_nobase"
 	description = "Mini Station map for Greytiding with no spawn protection."
 	unpickable = TRUE
