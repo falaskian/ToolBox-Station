@@ -92,7 +92,7 @@
 #if DM_VERSION != 513 || DM_BUILD != 1542
 #warn You are currently compiling with the wrong version! Please compile with 513.1542. Recommend running toolboxstation_compilable.dme.bat to open .dme with correct version! -KT
 #else
-#warn [Correct Compiler] Compiled with correct version. Congrats! You should host with 513.1526. Recommend running toolboxstation_dreamdaemon.bat to open correct version of dreamdaemo! -KT
+#warn [Correct Compiler] Compiling with correct version. Congrats! You should host with 513.1526. Recommend running toolboxstation_dreamdaemon.bat to open correct version of dreamdaemon! -KT
 #elif
 
 #endif
