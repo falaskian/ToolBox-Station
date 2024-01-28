@@ -108,12 +108,16 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 			throwdam = showpiece.throwforce
 		if(istype(showpiece,/obj/item/gun))
 			var/obj/item/gun/G = showpiece
-			if(G.pin && install_firing_pin)
-				qdel(G.pin)
+			if(install_firing_pin)
+				if(G.pin)
+					qdel(G.pin)
+					G.pin = null
 				var/obj/item/firing_pin/TDM/new_pin = new()
 				if(src.no_firing_allowed_areas.len)
 					new_pin.no_firing_allowed_areas = src.no_firing_allowed_areas
 				G.pin = new_pin
+			else if(!G.pin)
+				G.pin = new /obj/item/firing_pin()
 			if(G.chambered && G.chambered.BB)
 				shot_damage = G.chambered.BB.damage
 			if(istype(G,/obj/item/gun/ballistic))
@@ -396,10 +400,10 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	if(cooldown && cooldown > world.time)
 		return
 	personal_cooldowns[user.mind] = world.time+10
-	var/result = alert(user,"Take your meds","Medical Cabinet","Patch","Bandage","Cancel")
+	var/list/options = list("Brute Patch" = /obj/item/reagent_containers/pill/patch/styptic, "Burn Patch" = /obj/item/reagent_containers/pill/patch/kelotane, "Bandage" = /obj/item/stack/medical/gauze/two)
+	var/result = input(user,"Take your meds","Medical Cabinet","Brute Patch") as null|anything in options
 	personal_cooldowns[user.mind] = world.time+10
 	var/meds
-	var/list/options = list("Patch" = /obj/item/reagent_containers/pill/patch/styptic,"Bandage" = /obj/item/stack/medical/gauze/two)
 	if(result in options)
 		meds = options[result]
 	else
@@ -415,6 +419,12 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 				icon_state = initial(icon_state)
 				playsound(loc, 'sound/machines/click.ogg', 15, 1, -3)
 
+		// Burn Patch, this didnt exist
+/obj/item/reagent_containers/pill/patch/kelotane
+	name = "burn patch"
+	desc = "Helps with burns."
+	list_reagents = list(/datum/reagent/medicine/kelotane = 12)
+	icon_state = "bandaid_burn"
 
 
 		// Boxes

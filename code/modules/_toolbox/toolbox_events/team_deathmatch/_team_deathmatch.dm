@@ -603,6 +603,7 @@ client/verb/clearbullshit()
 						var/obj/item/I = respawn_item(thepath,home_turf)
 						if(I)
 							the_list["item"] = I
+							the_list["last_time_home"] = world.time
 
 /datum/toolbox_event/team_deathmatch/proc/on_mob(obj/O)
 	var/atom/the_loc = O
