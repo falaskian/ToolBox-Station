@@ -115,7 +115,7 @@
 	clean_map_items = 0
 	clean_map_bodies = 1
 	baseturf = /turf/open/floor/plating/asteroid
-	ban_map = 1
+	ban_map = 0
 
 /datum/map_template/ruin/space/TDM_Mine
 	name = "TDM Mine"
@@ -182,7 +182,7 @@
 	placement_weight = 1
 	cost = 0
 	allow_duplicates = FALSE
-	prefix = "_maps/toolbox/TDM/MiniStation_GreyTide.dmm"
+	prefix = "_maps/toolbox/TDM/MiniStation_GreyTide_no_displaycases.dmm"
 
 
 
