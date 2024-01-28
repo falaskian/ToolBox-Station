@@ -1,0 +1,127 @@
+/*IRC command aliases
+  author: Dan of Dantom
+  email: dantom@dantom.com
+  date: 4-May-2000
+
+  This script is automatically executed when connecting to an IRC world
+  unless you are using another script already.  You can include this script
+  in another one by inserting #include<irc.dms> at the top of your file.
+*/
+
+//TODO: define a default URL
+
+
+//define the terminal style
+<STYLE>
+	.irc {color: aqua}
+</STYLE>
+
+
+alias
+	admin(server as null)
+		set desc = "([server]) Prints administrative information about an IRC server."
+
+	away(message as null|text)
+		set desc = "(message) Mark yourself as being away (or inform of your return)."
+		return "AWAY :[message]"
+
+	bye()
+		set desc = "Logout from the IRC server."
+		return "QUIT"
+
+	channel(channel)
+		set desc = "(channel) Join a channel."
+		return "JOIN [channel]"
+
+	date(server as null)
+		set desc = "([server]) Print the date and time local to the server."
+		return "TIME"
+
+	exit()
+		set desc = "Logout from the IRC server."
+		return "QUIT"
+
+	info()
+		set desc = "Print some information about IRC."
+
+	invite(channel,nickname)
+		set desc = "Invite a user to join your channel."
+
+	join(channel)
+		set desc = "(channel) Join a channel."
+
+	JOIN(channel)
+		set desc = "(channel) Join a channel."
+		set hidden = 1
+
+	kick(channel,user,comment as null|text)
+		set desc = "(channel,user,[comment]) Kick a user off your channel."
+		return "KICK [channel] [user] :[comment]"
+
+	links(pattern as null,server as null)
+		set desc = "([pattern],[server]) List all active links matching a patter."
+
+	list()
+		set desc = "List all active channels and their topics."
+
+	lusers()
+		set desc = "Show the number of people and servers connected to the IRC network."
+
+	//The MSG command is translated by the BYOND client into PRIVMSG <channel_list> :message
+	msg(message as text)
+	MSG(message as text)
+		set hidden = 1
+
+	privmsg(nicknames,message as text)
+		set desc = "(nicknames,message) Send a private message."
+		return "PRIVMSG [nicknames] :[message]"
+
+	mode(channel,flags,maxusers as null)
+		set desc = "(channel,flags,maximum users) Flags begin with + (on) or - (off) and any of (m)oderated, (s)ecret, (p)rivate, (l)imited, (t)opiclimited, (a)nonymous (o)per, (i)nviteonly."
+
+	motd(server as null)
+		set desc = "([server]) Get message-of-today from a server."
+
+	names(channel as null)
+		set desc = "([channel]) List nicknames of users on a channel."
+
+	nick(nickname)
+		set desc = "(nickname) Change your nickname."
+
+	NICK(nickname)
+		set hidden = 1
+		set desc = "(nickname) Change your nickname."
+
+	quit()
+		set desc = "Logout from the IRC server."
+
+	signoff()
+		set desc = "Logout"
+
+	stats(line as null)
+		set desc = "(c|h|i|k|l|m|n|o|q|y) Shows various IRC server statistics."
+
+	summon(user,server as null)
+		set desc = "(user,[server]) Ask a user to enter IRC.  They must be on a machine running a server."
+
+	time()
+		set desc = "([server]) Print the date and time local to the server."
+
+	topic(channel,topic as text|null)
+		set desc = "(channel,[topic]) Sets the topic for a channel."
+		return "TOPIC [channel] :[topic]"
+
+	users(host as null)
+		set desc = "([host]) List all users logged into a host (which must be running an IRC server)."
+
+	version(server as null)
+		set desc = "([server]) Prints the version number of an IRC server."
+
+	who(channel as null)
+		set desc = "([channel]) List all users on a channel."
+
+	whois(nickname)
+		set desc = "(nickname) Prints information about a user."
+
+	whowas(nickname,count as null,server as null)
+		set desc = "(nickname,[count],[server]) Print nickname history information."

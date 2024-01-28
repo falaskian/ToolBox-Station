@@ -1,0 +1,108 @@
+############################################################################
+# This file contains known joystick setups for common gamepads. If you don't
+# see your gamepad in this file, use the Gamepad Setup option in Dream
+# Seeker to configure your gamepad. Then look for cfg/joysticks.txt in your
+# BYOND data folder, and post its contents on the BYOND forums so your setup
+# can be shared with other users who have the same gamepad.
+#
+# We need these settings because a gamepad's own choice of which button is
+# button 0, what axis 3 means, etc. is not standardized. Gamepad setup tells
+# BYOND what a controller does with each button and axis, so that you can
+# give players a more consistent gaming experience.
+#
+# Each setup consists of a name followed by settings, and ends with a blank
+# line or end of file.
+#
+# Settings:
+#
+#   buttons: The BYOND-friendly button names, in the order that the gamepad
+#            sees them starting with button 0. Separate with commas, and
+#            leave blanks for any buttons that are skipped. Including
+#            direction buttons is optional.
+#
+#   axes: The axis numbers that correspond to left analog X, left Y, right
+#         X, right Y.
+#
+#   axisbuttons: BYOND-friendly button names that correspond to the axes,
+#                starting with axis 0. Separate with commas and leave blank
+#                for any axes that are not used as buttons. A value of X+Y
+#                means that X is the button hit when the axis is negative,
+#                and Y when it is positive. Any other value, like Face1,
+#                means the axis is treated as positive only.
+
+Controller (Xbox One For Windows)
+buttons = Face1,Face2,Face3,Face4,L1,R1,Select,Start,L3,R3
+axes = 0,1,3,4
+axisbuttons = ,,L2,,,R2
+
+Logitech Dual Action USB
+vendor = 1133
+buttons = Face3,Face1,Face2,Face4,L1,R1,L2,R2,Select,Start,L3,R3,Up,Down,Left,Right
+axes = 0,1,2,3
+
+Logitech Dual Action
+vendor = 1133
+buttons = Face3,Face1,Face2,Face4,L1,R1,L2,R2,Select,Start,L3,R3,Up,Down,Left,Right
+axes = 0,1,2,3
+
+# Note: This is the same controller as above, in XInput mode.
+Controller (Gamepad F310)
+buttons = Face1,Face2,Face3,Face4,L1,R1,Select,Start,L3,R3,,,Up,Down,Left,Right
+axes = 0,1,3,4
+axisbuttons = ,,R2+L2
+
+Gamepad F310 (Controller)
+buttons = Face1,Face2,Face3,Face4,L1,R1,Select,Start,L3,R3,,,Up,Down,Left,Right
+axes = 0,1,3,4
+axisbuttons = ,,R2+L2
+
+Controller (Rock Candy Gamepad for Xbox 360)
+buttons = Face1,Face2,Face3,Face4,L1,R1,Select,Start,L3,R3,,,Up,Down,Left,Right
+axes = 0,1,3,4
+axisbuttons = ,,R2+L2
+
+Controller (XBOX 360 For Windows)
+buttons = Face1,Face2,Face3,Face4,L1,R1,Select,Start,L3,R3,,,Up,Down,Left,Right
+axes = 0,1,3,4
+axisbuttons = ,,R2+L2
+
+# DualShock PS4
+Wireless Controller
+vendor = 1356
+product = 2508
+buttons = Face3,Face1,Face2,Face4,L1,R1,L2,R2,Select,Start,L3,R3,Up,Down,Left,Right
+axes = 0,1,2,5
+
+## Alternate DualShock PS4 configuration, using axes for triggers
+## The gamepad uses buttons and axes both for L2/R2, so this is a different way it can be setup.
+#
+# Wireless Controller
+# vendor = 1356
+# product = 2508
+# buttons = Face3,Face1,Face2,Face4,L1,R1,,,Select,Start,L3,R3,Up,Down,Left,Right
+# axes = 0,1,2,5
+# axisbuttons = ,,,L2,R2
+
+Controller (Afterglow Gamepad for Xbox 360)
+vendor = 3695
+product = 531
+buttons = Face1,Face2,Face3,Face4,L1,R1,Select,Start,L3,R3,,,Up,Down,Left,Right
+axes = 0,1,3,4
+axisbuttons = ,,R2+L2
+
+XBOX 360 For Windows (Controller)
+vendor = 1118
+product = 654
+axes = 0,1,2,3
+
+Generic   USB  Joystick
+vendor = 121
+axes = 0,1,2,3
+
+USB Gamepad
+vendor = 121
+axes = 0,1,2,3
+
+Controller (ZD Game For Windows)
+vendor = 1118
+axes = 0,1,2,3

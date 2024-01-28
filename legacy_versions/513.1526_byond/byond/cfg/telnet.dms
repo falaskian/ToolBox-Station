@@ -1,0 +1,57 @@
+/*Telnet command aliases
+  author: Dan of Dantom
+  email: dantom@dantom.com
+  date: 12-Feb-2001
+
+  This file gets automatically executed after making a telnet connection
+  unless you are running another script.  You can include this file in
+  another script by inserting #include<telnet.dms> at the top of your file.
+
+  These are some common aliases for use when playing MUDs.  The "dot"
+  direction commands are called by the direction keys, which would normally
+  do nothing in telnet mode, so these aliases make it generate a real
+  movement command.
+*/
+
+//some very primitive MUDs echo the password, so we try to suppress that here
+#define PASSWORD_TRIGGER "assword:"
+
+//define the terminal style
+<STYLE>
+	BODY {font-family: monospace}
+</STYLE>
+
+command_text = "> "
+alias
+	Command(T as command_text)
+		set name = ">"
+		set hidden = 1
+		return "\"[T]"
+	NorthKey()
+		set name = ".north"
+		return "north"
+	SouthKey()
+		set name = ".south"
+		return "south"
+	EastKey()
+		set name = ".east"
+		return "east"
+	WestKey()
+		set name = ".west"
+		return "west"
+	NortheastKey()
+		set name = ".northeast"
+		return "northeast"
+	NorthwestKey()
+		set name = ".northwest"
+		return "northwest"
+	SoutheastKey()
+		set name = ".southeast"
+		return "southeast"
+	SouthwestKey()
+		set name = ".southwest"
+		return "southwest"
+
+	CenterKey()
+		set name = ".center"
+		return "exits"
