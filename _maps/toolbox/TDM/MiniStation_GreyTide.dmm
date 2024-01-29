@@ -253,11 +253,13 @@
 "eS" = (/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
 "eT" = (/obj/machinery/status_display{font_color = "#09f"; message1 = "KILLS"},/turf/closed/wall/mineral/titanium,/area/TDM/blue_base)
 "eU" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/conveyor_switch/oneway{dir = 8; id = "garbage"; name = "disposal conveyor"; position = 1},/turf/open/floor/plating,/area/TDM)
+"eV" = (/obj/structure/TDM_dresser,/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
 "eW" = (/obj/structure/TDM/medical_cabinet{pixel_x = -8},/obj/structure/TDM/wallmed{pixel_x = 7},/turf/closed/wall/mineral/titanium,/area/TDM/blue_base)
 "eX" = (/obj/structure/chair/comfy/shuttle,/obj/machinery/light/small{dir = 8},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "eY" = (/obj/machinery/clonepod/TDM/team_blue{TDM_on = 1},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "eZ" = (/obj/structure/window/shuttle{resistance_flags = 115},/obj/structure/grille,/turf/open/floor/plating,/area/TDM/blue_base)
 "fa" = (/obj/machinery/door/airlock/titanium{name = "Arrivals Shuttle Airlock"},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
+"fb" = (/obj/structure/TDM_dresser,/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "fd" = (/obj/machinery/power/apc/auto_name/east{dir = 8; pixel_x = -24},/obj/structure/cable/yellow,/obj/effect/turf_decal/tile/blue{dir = 8},/turf/open/floor/plasteel/white/corner{dir = 1},/area/TDM)
 "fe" = (/obj/machinery/airalarm{dir = 4; pixel_x = -22},/obj/effect/turf_decal/tile/red{dir = 1},/obj/effect/turf_decal/tile/red,/obj/effect/turf_decal/tile/red{dir = 8},/obj/machinery/camera/autoname{dir = 1},/obj/machinery/disposal/bin,/obj/structure/disposalpipe/trunk,/obj/machinery/light_switch/aoe{pixel_x = 6; pixel_y = -25},/turf/open/floor/plasteel,/area/TDM)
 "ff" = (/obj/effect/turf_decal/tile/blue{dir = 8},/turf/open/floor/plasteel/white/corner{dir = 1},/area/TDM)
@@ -310,7 +312,6 @@
 "gd" = (/obj/effect/turf_decal/tile/bar,/obj/effect/turf_decal/tile/bar{dir = 1},/obj/structure/chair{dir = 1},/obj/structure/disposalpipe/segment,/turf/open/floor/plasteel,/area/TDM)
 "ge" = (/obj/machinery/light{dir = 1},/obj/machinery/camera/autoname,/turf/open/floor/plasteel,/area/TDM)
 "gj" = (/obj/structure/chair/comfy/shuttle{dir = 1},/obj/machinery/light/small{dir = 8},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
-"gk" = (/obj/structure/closet/emcloset,/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
 "gl" = (/obj/machinery/light,/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
 "gm" = (/obj/structure/shuttle/engine/propulsion/burst/left{dir = 4},/turf/open/floor/plating/airless,/area/TDM/red_base)
 "gn" = (/obj/effect/turf_decal/tile/neutral,/obj/machinery/door/firedoor/border_only{dir = 8},/obj/machinery/door/firedoor/border_only{dir = 4},/turf/open/floor/plasteel,/area/TDM)
@@ -329,7 +330,6 @@
 "gA" = (/obj/effect/turf_decal/tile/neutral,/turf/open/floor/plasteel,/area/TDM)
 "gB" = (/obj/machinery/door/firedoor/border_only{dir = 8},/obj/machinery/door/firedoor/border_only{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/turf/open/floor/plasteel,/area/TDM)
 "gC" = (/obj/machinery/light,/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
-"gD" = (/obj/structure/closet/emcloset,/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "gE" = (/obj/machinery/firealarm{dir = 4; pixel_x = -24},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/TDM)
 "gF" = (/obj/structure/chair/comfy/beige,/obj/structure/disposalpipe/segment,/turf/open/floor/plasteel/grimy,/area/TDM)
 "gG" = (/obj/structure/chair/comfy/beige,/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,/turf/open/floor/plasteel/grimy,/area/TDM)
@@ -643,7 +643,7 @@ aaabababababababababcWcWcWepdGdHdIdHdHdHdHdIdHdJdKanbHdLbldMbacJdNcLdOapdPbababa
 aaabababababababababeiejekelemdHenendHenemdHendJeranbHesblfeeuevewexeyapezbababababaeAaEeBeCeDbabababaeEeFeGapeHeIeJeKeKeKeKeLeMeNeOePeOeQapffbIanedeeeoefeSeoefeoeoefeSeWeXeYeZababababababababaa
 aaabababababababababeiememfaemdHenendHenendHendJeranbHfgfhfifjfkflfkapapapapapfmbabafnblfofpbababafqbabafrfsapcuftfucuapfvapapapfwfxfyfzapapfAbIanedeeeoefeoeoefeoeoefeSfGeSeSeZababababababababaa
 aaabababababababababeiejfHelemdHenendHenemdHendJeranbHbafMfNfOfOfObafPcmfQfRapfSbabafBblfUfpbafVfWfXfYfZgagbapcugcgdcuapbabacmgefOfOfOfObafMbabIanedeeeoefeSeoefeoeoefeSeWgjeYeZababababababababaa
-aaabababababababababcWcWcWeRgkdHgldHdHdHdHgldHdJgmanbHbagngogpgpgqgrgrgrgsbaapgtgugtapblgtgvgtapapapapgtgwgxapgygtgzgyapbagAgpgpgpgpgpgpgpgBbabIanedeeefgCefefefefgCefgDeTdCdCdCababababababababaa
+aaabababababababababcWcWcWeReVdHgldHdHdHdHgldHdJgmanbHbagngogpgpgqgrgrgrgsbaapgtgugtapblgtgvgtapapapapgtgwgxapgygtgzgyapbagAgpgpgpgpgpgpgpgBbabIanedeeefgCefefefefgCeffbeTdCdCdCababababababababaa
 aaababababababababababababcWcWcXcYcZcZcZcZcYcXcWcWadgEbagtgFgGgHgIgJapgKgLbagMbabababagNbagObabababababafrgPbababagPbagMbagQgKapgJgRgHgGgRgtbagSaddCdCdDdEdFdFdFdFdEdDdCdCabababababababababababaa
 aaabababababababababababababadgTanananananangUadabadcGgVgtgWgXgYgZhaaphbhchdhebabababahfhghhhghghghghghghihjhghghghkbafMhlgQhbaphmhnhngXhogtgVcVadabadgUanananananangTadababababababababababababaa
 aaababababababababababadbVadadhpanhqhrhshtanhuadadadbHbagthvhwhxhyhaaphzhAbahBbabababagNbagObabababababafrbabababababafMbagQhzaphmhChxhDhEgtbabIadadadhpanhFhshrhGanhuadadbVadabababababababababaa

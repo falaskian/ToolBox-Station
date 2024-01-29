@@ -81,7 +81,7 @@
 "bC" = (/obj/effect/decal/cleanable/dirt,/obj/structure/TDM/medical_cabinet{pixel_x = 40},/obj/structure/TDM/wallmed{pixel_x = 25},/obj/effect/turf_decal/tile/red{dir = 4},/obj/effect/turf_decal/tile/red{dir = 1},/turf/open/floor/plasteel/dark,/area/TDM/red_base)
 "bD" = (/turf/open/floor/monotile/steel,/area/TDM)
 "bE" = (/obj/effect/turf_decal/stripes/line{dir = 4},/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plasteel/dark,/area/TDM/red_base)
-"bF" = (/obj/effect/turf_decal/stripes/line{dir = 4},/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plasteel/dark,/area/TDM/red_base)
+"bF" = (/obj/effect/turf_decal/stripes/line{dir = 4},/obj/structure/cable{icon_state = "1-2"},/obj/structure/TDM_dresser,/turf/open/floor/plasteel/dark,/area/TDM/red_base)
 "bG" = (/obj/structure/chair/comfy/shuttle{dir = 4},/obj/effect/turf_decal/tile/red,/turf/open/floor/plasteel/dark,/area/TDM/red_base)
 "bH" = (/obj/structure/flora/ausbushes/leafybush,/turf/open/floor/grass,/area/TDM)
 "bI" = (/obj/structure/flora/rock/jungle,/turf/open/floor/plating/beach/water,/area/TDM)

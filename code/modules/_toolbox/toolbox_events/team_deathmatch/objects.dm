@@ -176,6 +176,10 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 			update_showpiece()
 		update_icon()
 
+/obj/structure/displaycase/TDM_item_spawn/examine()
+	. = ..()
+	if(!open)
+		. += "<span class='notice'>Unlocks at [death_count_unlock] kills.</span>"
 
 	//Greytide display case
 
@@ -668,3 +672,56 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 					user << sound('sound/toolbox/donotfire.ogg', volume = 100)
 				return FALSE
 	return ..()
+
+
+	//TDM reequipper
+
+/obj/structure/TDM_dresser
+	name = "Re-equipper"
+	desc = "Re-equips you with your updated tier of gear."
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "dresser"
+	anchored = 1
+	density = 1
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
+	var/list/equip_cooldowns = list()
+	var/equip_cooldown = 100
+
+/obj/structure/TDM_dresser/take_damage()
+	return
+
+/obj/structure/TDM_dresser/attack_hand(mob/living/user)
+	. = ..()
+	if(istype(user,/mob/living/carbon/human) && user.mind && user.mind.special_role)
+		var/mob/living/carbon/human/H = user
+		var/theoutfit
+		for(var/obj/machinery/clonepod/TDM/C in GLOB.TDM_cloners)
+			if(C.team == user.mind.special_role)
+				theoutfit = C.get_current_tier_outfit()
+				break
+		if(theoutfit)
+			if(!(H in equip_cooldowns) || ((H in equip_cooldowns) && world.time >= equip_cooldowns[H]))
+				equip_cooldowns[H] = world.time+equip_cooldown
+				H.equipOutfit(theoutfit)
+				to_chat(H,"<span class='notice'>You re-equip your self.</span>")
+				var/datum/outfit/O = new theoutfit()
+				var/list/Ovars = O.vars
+				var/list/Hclothingtypes = list()
+				var/list/Hcontents = H.get_contents()
+				for(var/obj/object in Hcontents)
+					if(!(object.type in Hclothingtypes))
+						Hclothingtypes += object.type
+				for(var/vari in Ovars)
+					var/newpath = Ovars[vari]
+					if(ispath(newpath))
+						if(newpath == O.type)
+							continue
+						if(!(newpath in Hclothingtypes))
+							var/obj/object = new newpath(H.loc)
+							if(istype(object))
+								var/fullhandstext = ""
+								var/handsuccess = H.put_in_hands(object)
+								if(!handsuccess)
+									fullhandstext = ", dropped to ground"
+								to_chat(H,"<span class='warning'>Could not equip [object.name][fullhandstext].</span>")
+				qdel(O)

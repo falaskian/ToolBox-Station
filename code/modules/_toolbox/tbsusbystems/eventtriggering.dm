@@ -83,6 +83,7 @@ The event. Make children of this to make a new event.
 	var/override_AI_name //text string. forces the job start AI to be named this.
 	var/override_space_zlevel_count = -1 //set to 0 or higher to override how many extra space zlevels there will be. -1 means its ignored
 	var/override_mining = -1 //Set as null to delete mining or another text string to change to another mining map. This must be coded in. -1 means its ignored
+	var/override_station = 0 //set to one if you want the main station not to spawn. This can and will cause a lot of proc crashes.
 	var/delete_empty_z_level = 0 //The game will always add one extra totally empty z-level after finsihing generating all the z-levels. Setting to 1 prevents this.
 
 /datum/toolbox_event/proc/on_activate(mob/admin_user) //this proc must have ..() .... Add any code to this, it will activate when the event is enabled.
