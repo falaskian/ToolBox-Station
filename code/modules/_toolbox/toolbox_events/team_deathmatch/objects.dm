@@ -341,7 +341,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 
 	//Sniper
 /obj/structure/displaycase/TDM_item_spawn/sniper
-	start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle
+	start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle/TDM
 	tier_level = 4
 
 	//c20r
