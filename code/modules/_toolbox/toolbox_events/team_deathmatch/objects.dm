@@ -668,3 +668,12 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 					user << sound('sound/toolbox/donotfire.ogg', volume = 100)
 				return FALSE
 	return ..()
+
+
+	//Street lines
+/obj/structure/TDM/street_line
+	name = "white line"
+	icon = 'icons/turf/decals.dmi'
+	icon_state = "warningline_white"
+	dir = 8
+	pixel_x = 13
