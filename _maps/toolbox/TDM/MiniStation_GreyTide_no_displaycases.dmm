@@ -92,7 +92,7 @@
 "bN" = (/obj/machinery/door/airlock/maintenance{name = "Garden Maintenance"; req_access_txt = "0"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 1},/obj/structure/cable/yellow{icon_state = "1-2"},/turf/open/floor/plating,/area/TDM)
 "bO" = (/obj/structure/cable/yellow{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 1},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/turf/open/floor/plating,/area/TDM)
 "bP" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 1},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/obj/structure/cable/yellow{icon_state = "1-2"},/turf/open/floor/plating,/area/TDM)
-"bQ" = (/obj/machinery/door/airlock/maintenance{name = "Bar Maintenance"; req_access_txt = "0"},/turf/open/floor/plating,/area/TDM)
+"bQ" = (/obj/machinery/door/airlock/maintenance{name = "Bar Maintenance"; req_access_txt = "0"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 1},/obj/structure/cable/yellow{icon_state = "1-2"},/turf/open/floor/plating,/area/TDM)
 "bR" = (/obj/structure/chair{dir = 4},/turf/open/floor/plating,/area/TDM)
 "bS" = (/obj/machinery/gibber,/turf/open/floor/plating,/area/TDM)
 "bT" = (/obj/effect/turf_decal/stripes/corner,/turf/open/floor/plasteel,/area/TDM)
@@ -186,7 +186,7 @@
 "dD" = (/obj/machinery/door/airlock/titanium{name = "Arrivals Shuttle Airlock"},/obj/structure/fans/tiny,/obj/structure/TDM/spawn_protection/blue,/turf/open/floor/plating,/area/TDM/blue_base)
 "dE" = (/obj/item/banner/TDM/blue,/turf/closed/wall/mineral/titanium,/area/TDM/blue_base)
 "dF" = (/obj/effect/spawner/structure/window/shuttle,/turf/open/floor/plating,/area/TDM/blue_base)
-"dG" = (/obj/structure/table,/obj/item/storage/firstaid/regular,/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
+"dG" = (/obj/structure/table,/obj/item/storage/firstaid/regular,/obj/structure/extinguisher_cabinet/regenerating{pixel_y = 32},/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
 "dH" = (/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
 "dI" = (/obj/machinery/light{dir = 1},/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
 "dJ" = (/obj/structure/shuttle/engine/heater{dir = 4},/obj/structure/window/reinforced{dir = 8},/turf/open/floor/plating/airless,/area/TDM/red_base)
@@ -213,7 +213,7 @@
 "ee" = (/obj/structure/shuttle/engine/heater{dir = 8},/obj/structure/window/reinforced{dir = 4},/turf/open/floor/plating/airless,/area/TDM/blue_base)
 "ef" = (/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "eg" = (/obj/machinery/light{dir = 1},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
-"eh" = (/obj/structure/table,/obj/item/storage/firstaid/regular,/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
+"eh" = (/obj/structure/table,/obj/item/storage/firstaid/regular,/obj/structure/extinguisher_cabinet/regenerating{pixel_y = 32},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "ei" = (/obj/structure/window/shuttle{resistance_flags = 115},/obj/structure/grille,/turf/open/floor/plating,/area/TDM/red_base)
 "ej" = (/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
 "ek" = (/obj/structure/chair/comfy/shuttle,/obj/machinery/light/small{dir = 4},/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
@@ -253,14 +253,13 @@
 "eS" = (/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
 "eT" = (/obj/machinery/status_display{font_color = "#09f"; message1 = "KILLS"},/turf/closed/wall/mineral/titanium,/area/TDM/blue_base)
 "eU" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/conveyor_switch/oneway{dir = 8; id = "garbage"; name = "disposal conveyor"; position = 1},/turf/open/floor/plating,/area/TDM)
-"eV" = (/obj/machinery/conveyor{dir = 4; id = "garbage"},/turf/open/floor/plating,/area/TDM)
+"eV" = (/obj/structure/closet/emcloset,/obj/structure/extinguisher_cabinet/regenerating{pixel_y = -32},/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
 "eW" = (/obj/structure/TDM/medical_cabinet{pixel_x = -8},/obj/structure/TDM/wallmed{pixel_x = 7},/turf/closed/wall/mineral/titanium,/area/TDM/blue_base)
 "eX" = (/obj/structure/chair/comfy/shuttle,/obj/machinery/light/small{dir = 8},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "eY" = (/obj/machinery/clonepod/TDM/team_blue{TDM_on = 1},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "eZ" = (/obj/structure/window/shuttle{resistance_flags = 115},/obj/structure/grille,/turf/open/floor/plating,/area/TDM/blue_base)
 "fa" = (/obj/machinery/door/airlock/titanium{name = "Arrivals Shuttle Airlock"},/turf/open/floor/mineral/titanium,/area/TDM/red_base)
-"fb" = (/obj/machinery/conveyor{dir = 4; id = "garbage"},/obj/machinery/light/small{dir = 1},/turf/open/floor/plating,/area/TDM)
-"fc" = (/obj/machinery/conveyor{id = "garbage"},/obj/structure/sign/warning/vacuum{pixel_x = -32},/turf/open/floor/plating,/area/TDM)
+"fb" = (/obj/structure/closet/emcloset,/obj/structure/extinguisher_cabinet/regenerating{pixel_y = -32},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "fd" = (/obj/machinery/power/apc/auto_name/east{dir = 8; pixel_x = -24},/obj/structure/cable/yellow,/obj/effect/turf_decal/tile/blue{dir = 8},/turf/open/floor/plasteel/white/corner{dir = 1},/area/TDM)
 "fe" = (/obj/machinery/airalarm{dir = 4; pixel_x = -22},/obj/effect/turf_decal/tile/red{dir = 1},/obj/effect/turf_decal/tile/red,/obj/effect/turf_decal/tile/red{dir = 8},/obj/machinery/camera/autoname{dir = 1},/obj/machinery/disposal/bin,/obj/structure/disposalpipe/trunk,/obj/machinery/light_switch/aoe{pixel_x = 6; pixel_y = -25},/turf/open/floor/plasteel,/area/TDM)
 "ff" = (/obj/effect/turf_decal/tile/blue{dir = 8},/turf/open/floor/plasteel/white/corner{dir = 1},/area/TDM)
@@ -294,7 +293,6 @@
 "fH" = (/obj/structure/chair/comfy/shuttle{dir = 1},/obj/machinery/light/small{dir = 4},/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
 "fI" = (/obj/structure/extinguisher_cabinet{pixel_x = 27},/turf/open/floor/plasteel,/area/TDM)
 "fJ" = (/obj/effect/turf_decal/tile/neutral,/obj/structure/closet/wardrobe/pjs,/obj/machinery/light_switch/aoe{pixel_x = 0; pixel_y = -28},/turf/open/floor/plasteel,/area/TDM)
-"fK" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/effect/spawner/lootdrop/trash,/turf/open/floor/plating,/area/TDM)
 "fM" = (/obj/machinery/door/firedoor/border_only{dir = 8},/obj/machinery/door/firedoor/border_only{dir = 4},/turf/open/floor/plasteel,/area/TDM)
 "fN" = (/obj/effect/turf_decal/bot,/obj/structure/disposalpipe/segment,/turf/open/floor/plasteel,/area/TDM)
 "fO" = (/obj/effect/turf_decal/bot,/turf/open/floor/plasteel,/area/TDM)
@@ -314,7 +312,6 @@
 "gd" = (/obj/effect/turf_decal/tile/bar,/obj/effect/turf_decal/tile/bar{dir = 1},/obj/structure/chair{dir = 1},/obj/structure/disposalpipe/segment,/turf/open/floor/plasteel,/area/TDM)
 "ge" = (/obj/machinery/light{dir = 1},/obj/machinery/camera/autoname,/turf/open/floor/plasteel,/area/TDM)
 "gj" = (/obj/structure/chair/comfy/shuttle{dir = 1},/obj/machinery/light/small{dir = 8},/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
-"gk" = (/obj/structure/closet/emcloset,/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
 "gl" = (/obj/machinery/light,/turf/open/floor/mineral/titanium/blue,/area/TDM/red_base)
 "gm" = (/obj/structure/shuttle/engine/propulsion/burst/left{dir = 4},/turf/open/floor/plating/airless,/area/TDM/red_base)
 "gn" = (/obj/effect/turf_decal/tile/neutral,/obj/machinery/door/firedoor/border_only{dir = 8},/obj/machinery/door/firedoor/border_only{dir = 4},/turf/open/floor/plasteel,/area/TDM)
@@ -333,7 +330,6 @@
 "gA" = (/obj/effect/turf_decal/tile/neutral,/turf/open/floor/plasteel,/area/TDM)
 "gB" = (/obj/machinery/door/firedoor/border_only{dir = 8},/obj/machinery/door/firedoor/border_only{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/turf/open/floor/plasteel,/area/TDM)
 "gC" = (/obj/machinery/light,/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
-"gD" = (/obj/structure/closet/emcloset,/turf/open/floor/mineral/titanium/blue,/area/TDM/blue_base)
 "gE" = (/obj/machinery/firealarm{dir = 4; pixel_x = -24},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/TDM)
 "gF" = (/obj/structure/chair/comfy/beige,/obj/structure/disposalpipe/segment,/turf/open/floor/plasteel/grimy,/area/TDM)
 "gG" = (/obj/structure/chair/comfy/beige,/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,/turf/open/floor/plasteel/grimy,/area/TDM)
@@ -478,6 +474,8 @@
 "jq" = (/obj/structure/closet/emcloset,/turf/open/floor/plasteel,/area/TDM)
 "jr" = (/obj/item/twohanded/required/kirbyplants/random,/turf/open/floor/plasteel,/area/TDM)
 "js" = (/obj/structure/disposaloutlet{dir = 4},/obj/structure/disposalpipe/trunk{dir = 1},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating,/area/TDM)
+"jt" = (/obj/machinery/conveyor{dir = 4; id = "garbage"},/obj/effect/spawner/lootdrop/trash,/obj/effect/spawner/lootdrop/trash,/turf/open/floor/plating,/area/TDM)
+"ju" = (/obj/machinery/conveyor{dir = 4; id = "garbage"},/obj/machinery/light/small{dir = 1},/obj/effect/spawner/lootdrop/trash,/turf/open/floor/plating,/area/TDM)
 "jv" = (/obj/machinery/conveyor{dir = 4; id = "garbage"},/obj/structure/sign/warning/securearea{name = "\improper STAY CLEAR HEAVY MACHINERY"; pixel_y = 32},/obj/machinery/recycler/TDM,/turf/open/floor/plating,/area/TDM)
 "jw" = (/obj/machinery/conveyor{dir = 6; id = "garbage"},/turf/open/floor/plating,/area/TDM)
 "jx" = (/obj/structure/toilet{pixel_y = 8},/obj/machinery/light/small{dir = 8},/obj/item/reagent_containers/syringe/used{pixel_y = -4},/turf/open/floor/plasteel/freezer,/area/TDM)
@@ -540,8 +538,10 @@
 "kE" = (/obj/item/clothing/gloves/boxing,/turf/open/floor/plasteel,/area/TDM)
 "kF" = (/obj/effect/turf_decal/tile/blue{dir = 4},/obj/effect/turf_decal/tile/blue,/turf/open/floor/plasteel,/area/TDM)
 "kG" = (/obj/machinery/door/airlock/public/glass{name = "Gym"},/turf/open/floor/plasteel,/area/TDM)
+"kH" = (/obj/machinery/conveyor{id = "garbage"},/obj/structure/sign/warning/vacuum{pixel_x = -32},/obj/effect/spawner/lootdrop/trash,/turf/open/floor/plating,/area/TDM)
 "kI" = (/obj/structure/bodycontainer/crematorium{desc = "Incinerator. Works well on barbecue nights."; dir = 8; id = "greytide_incinerator"; name = "incinerator"},/turf/open/floor/plating,/area/TDM)
 "kJ" = (/obj/structure/disposalpipe/segment{dir = 5},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/button/crematorium{id = "greytide_incinerator"; name = "incinerator igniter"; pixel_x = -5; pixel_y = -25},/turf/open/floor/plating,/area/TDM)
+"kK" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating,/area/TDM)
 "kM" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 6},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 5},/obj/structure/disposalpipe/segment{dir = 4},/obj/machinery/door/window{dir = 2; name = "showers"},/turf/open/floor/plasteel/freezer,/area/TDM)
 "kN" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 9},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 9},/obj/structure/disposalpipe/segment{dir = 4},/obj/item/twohanded/required/kirbyplants/random,/obj/structure/window,/obj/machinery/light{dir = 4},/turf/open/floor/plasteel/freezer,/area/TDM)
 "kO" = (/obj/structure/closet/firecloset,/turf/open/floor/plating,/area/TDM)
@@ -643,7 +643,7 @@ aaabababababababababcWcWcWepdGdHdIdHdHdHdHdIdHdJdKanbHdLbldMbacJdNcLdOapdPbababa
 aaabababababababababeiejekelemendHendHendHenemdJeranbHesblfeeuevewexeyapezbababababaeAaEeBeCeDbabababaeEeFeGapeHeIeJeKeKeKeKeLeMeNeOePeOeQapffbIanedeeeSeoefeoefeoefeoeSeWeXeYeZababababababababaa
 aaabababababababababeiememfaemendHendHendHenemdJeranbHfgfhfifjfkflfkapapapapapfmbabafnblfofpbababafqbabafrfsapcuftfucuapfvapapapfwfxfyfzapapfAbIanedeeeSeoefeoefeoefeoeSfGeSeSeZababababababababaa
 aaabababababababababeiejfHelemendHendHendHenemdJeranbHbafMfNfOfOfObafPcmfQfRapfSbabafBblfUfpbafVfWfXfYfZgagbapcugcgdcuapbabacmgefOfOfOfObafMbabIanedeeeSeoefeoefeoefeoeSeWgjeYeZababababababababaa
-aaabababababababababcWcWcWeRgkdHgldHdHdHdHgldHdJgmanbHbagngogpgpgqgrgrgrgsbaapgtgugtapblgtgvgtapapapapgtgwgxapgygtgzgyapbagAgpgpgpgpgpgpgpgBbabIanedeeefgCefefefefgCefgDeTdCdCdCababababababababaa
+aaabababababababababcWcWcWeReVdHgldHdHdHdHgldHdJgmanbHbagngogpgpgqgrgrgrgsbaapgtgugtapblgtgvgtapapapapgtgwgxapgygtgzgyapbagAgpgpgpgpgpgpgpgBbabIanedeeefgCefefefefgCeffbeTdCdCdCababababababababaa
 aaababababababababababababcWcWcXcYcZcZcZcZcYcXcWcWadgEbagtgFgGgHgIgJapgKgLbagMbabababagNbagObabababababafrgPbababagPbagMbagQgKapgJgRgHgGgRgtbagSaddCdCdDdEdFdFdFdFdEdDdCdCabababababababababababaa
 aaabababababababababababababadgTanananananangUadabadcGgVgtgWgXgYgZhaaphbhchdhebabababahfhghhhghghghghghghihjhghghghkbafMhlgQhbaphmhnhngXhogtgVcVadabadgUanananananangTadababababababababababababaa
 aaababababababababababadbVadadhpanhqhrhshtanhuadadadbHbagthvhwhxhyhaaphzhAbahBbabababagNbagObabababababafrbabababababafMbagQhzaphmhChxhDhEgtbabIadadadhpanhFhshrhGanhuadadbVadabababababababababaa
@@ -651,10 +651,10 @@ aaababababababababababadatadadhHanbHbabahIanhHadhJhKhLbagthMhNgHhOgJaphPhAbaaphQ
 aaababababababababababaXajaYicidieifigigihiiijikifigigigilimininioinininipbaapiqirisitiuapiviwiwixfCiziAiBhWajapiCiDiEapigininininioininiFiGigigigiHikijiiiIigigiHiJiKicaYajaXabababababababababaa
 aaababababababababababadbFauiLiMiMiMiMiMiMbababababababafMgPbaiNbaiObabaiPiQapiRiSiRapiTapiUbabaiViWiWiWiXhWajiYiZjajbapjciPbabaiObaiNbabafMbababababababaiMiMiMiMiMiMiLaubFadabababababababababaa
 aaababababababababababadadadadadadananananadadadadjdjdjdapfhcTjecTcTcTcTcTcTcTcTjfcTcTjgcTjhhgjijjjkjkjljmhWhXapjnapapjoapapapapapapapapapapjdjdjdadadadadadadadadadjpjpadadadabababababababababaa
-aaababababababababababababababababababababababadjqbabababajrapjseVfbjvjwiYjxjyfDjAapjBjCjDfZbagPjEjFbajGjHhWbajIjJjKapiCjLiEapjMjMjNjOapjrbabababajqadabababababababababababababababababababababaa
+aaababababababababababababababababababababababadjqbabababajrapjsjtjujvjwiYjxjyfDjAapjBjCjDfZbagPjEjFbajGjHhWbajIjJjKapiCjLiEapjMjMjNjOapjrbabababajqadabababababababababababababababababababababaa
 aaababababababababababababababababababababababadjqbababababaapjPjQjQjQjRapapapjSjTapjUjVapjWbagPjXjYgVjGjZhWkafqbakbapkciZkdapkebabakfapbababababajqadabababababababababababababababababababababaa
 aaababababababababababababababababababababababadkgbabaiPbabaapkhapkikjkkklkmknkokpaTkqkrcTksbaktkuhghgkvkwkxkykzkAjIapapkBapapfEkDkEkFkGbabaiPbabakgadabababababababababababababababababababababaa
-aaababababababababababababababababababababababadadananadbabaapfckIkJfKeUcTcTcTkMkNcUkOkPkQkRkSkSkTkUkUkVkWkXkYkZgPbabababababababalalbapbabaadananadadabababababababababababababababababababababaa
+aaababababababababababababababababababababababadadananadbabaapkHkIkJkKeUcTcTcTkMkNcUkOkPkQkRkSkSkTkUkUkVkWkXkYkZgPbabababababababalalbapbabaadananadadabababababababababababababababababababababaa
 aaababababababababababababababababababababababababababadbabaapapapaplcapapldlelfjSapajlgaplhliljlklllmlnfFhWlplqlrapaplsapapapapgtgtltadbabaapabababababababababababababababababababababababababaa
 aaababababababababababababababababababababababababababadbabafMbababababaaplulejSlvapajlgapapapgtgtgthWlwlxhWlybalzaplAiZiEapbababababafMbafIapabababababababababababababababababababababababababaa
 aaababababababababababababababababababababababababababadbabafMiNbababalBapldlejSlChXajlDlElFlGlHlIlJlKlLlMapbafJlOapkclPjbaplQbabaiObafMbabaapabababababababababababababababababababababababababaa

@@ -137,22 +137,28 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 /obj/machinery/clonepod/TDM/proc/equip_clothing(mob/living/carbon/human/H)
 	if(!istype(H))
 		return
-	var/list/team_outfit = list()
-	if(team && (team in team_outfits))
-		team_outfit = team_outfits[team]
-	if(team_outfit && team_outfit.len)
-		var/enemy_deaths = get_enemy_deaths()
-		var/teir = 0
-		var/chosen = team_outfit["t[teir]"]
-		for(var/t in teir_kills)
-			if(enemy_deaths >= t)
-				teir++
-			if(team_outfit["t[teir]"])
-				chosen = team_outfit["t[teir]"]
+	var/chosen = get_current_tier_outfit()
+	if(chosen)
 		for(var/obj/O in H)
 			qdel(O)
 		H.equipOutfit(chosen)
 		teleport_to_spawn(H)
+
+/obj/machinery/clonepod/TDM/proc/get_current_tier_outfit()
+	var/list/team_outfit = list()
+	if(team && (team in team_outfits))
+		team_outfit = team_outfits[team]
+	var/enemy_deaths = get_enemy_deaths()
+	var/teir = 0
+	var/chosen = team_outfit["t[teir]"]
+	for(var/t in teir_kills)
+		if(enemy_deaths >= t)
+			teir++
+		if(team_outfit["t[teir]"])
+			chosen = team_outfit["t[teir]"]
+	if(chosen)
+		return chosen
+	return null
 
 /obj/machinery/clonepod/TDM/proc/create_record(mob/M)
 	var/mob/living/mob_occupant = get_mob_or_brainmob(M)

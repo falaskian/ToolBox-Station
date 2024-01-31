@@ -244,9 +244,17 @@ SUBSYSTEM_DEF(mapping)
 	InitializeDefaultZLevels()
 
 	// load the station
-	station_start = world.maxz + 1
-	INIT_ANNOUNCE("Loading [config.map_name]...")
-	LoadGroup(FailedZs, "Station", config.map_path, config.map_file, config.traits, ZTRAITS_STATION)
+	var/toolbox_override_station = 0
+	if(SStoolbox_events)
+		for(var/t in SStoolbox_events.cached_events)
+			var/datum/toolbox_event/E = SStoolbox_events.cached_events[t]
+			if(E && E.active && E.override_station)
+				toolbox_override_station = 1
+				break
+	if(!toolbox_override_station)
+		station_start = world.maxz + 1
+		INIT_ANNOUNCE("Loading [config.map_name]...")
+		LoadGroup(FailedZs, "Station", config.map_path, config.map_file, config.traits, ZTRAITS_STATION)
 
 	if(SSdbcore.Connect())
 		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"

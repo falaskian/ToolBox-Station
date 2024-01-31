@@ -8,7 +8,10 @@ GLOBAL_LIST_EMPTY(savedstationapcs)
 proc
 	SaveStation()
 		set background = 1
-		if(GLOB.savedstationfloors.len || GLOB.savedstationwalls.len || GLOB.savedstationwindows.len || GLOB.savedstationairlocks.len || GLOB.savedstationwires.len || GLOB.savedstationapcs.len)
+		var/station_exists = 0
+		if(SSmapping && SSmapping.levels_by_trait(ZTRAIT_STATION))
+			station_exists = 1
+		if(!station_exists || !GLOB.savedstationfloors.len || GLOB.savedstationwalls.len || GLOB.savedstationwindows.len || GLOB.savedstationairlocks.len || GLOB.savedstationwires.len || GLOB.savedstationapcs.len)
 			return
 		var/stationz = SSmapping.levels_by_trait(ZTRAIT_STATION)[1]
 		if(!stationz)

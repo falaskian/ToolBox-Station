@@ -26,6 +26,10 @@
 		"Chief Engineer" = 0,
 		"Research Director" = 0,
 		"Chief Medical Officer" = 0)
+	override_mining = null
+	override_space_zlevel_count = 0
+	override_station = 1
+	delete_empty_z_level = 1
 	var/player_assigned_role = "Team Deathmatch"
 	var/map_loaded = 0
 	var/list/clean_exempt = list()
@@ -86,6 +90,7 @@ client/verb/clearbullshit()
 	spawn(0)
 		while(!SSminor_mapping || !SSminor_mapping.initialized)
 			sleep(1)
+		CONFIG_SET(flag/allow_random_events, 0)
 		if(GLOB)
 			GLOB.ghost_role_flags = NONE
 		load_maps()
@@ -436,27 +441,26 @@ client/verb/clearbullshit()
 				cloner.update_display_cases()
 
 /datum/toolbox_event/team_deathmatch/override_job_spawn(mob/living/living_mob)
-	spawn(0)
-		while(building_ruin)
-			sleep(1)
-		var/area/the_lobby = locate(lobby_area)
-		var/list/lobby_turfs = list()
-		if(istype(the_lobby))
-			for(var/turf/open/T in the_lobby)
-				if(T.density || istype(T,/turf/open/space))
-					continue
-				var/obscured = 0
-				for(var/obj/O in T)
-					if(O.density)
-						obscured = 1
-						break
-				if(obscured)
-					continue
-				lobby_turfs += T
-			if(lobby_turfs.len)
-				var/turf/T = pick(lobby_turfs)
-				T.JoinPlayerHere(living_mob)
-				return 1
+	while(building_ruin)
+		sleep(1)
+	var/area/the_lobby = locate(lobby_area)
+	var/list/lobby_turfs = list()
+	if(istype(the_lobby))
+		for(var/turf/open/T in the_lobby)
+			if(T.density || istype(T,/turf/open/space))
+				continue
+			var/obscured = 0
+			for(var/obj/O in T)
+				if(O.density)
+					obscured = 1
+					break
+			if(obscured)
+				continue
+			lobby_turfs += T
+		if(lobby_turfs.len)
+			var/turf/T = pick(lobby_turfs)
+			T.JoinPlayerHere(living_mob)
+			return 1
 
 /datum/toolbox_event/team_deathmatch/update_player_inventory(mob/living/M)
 	if(M.mind)

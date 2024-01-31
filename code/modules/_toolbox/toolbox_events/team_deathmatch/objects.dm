@@ -176,6 +176,10 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 			update_showpiece()
 		update_icon()
 
+/obj/structure/displaycase/TDM_item_spawn/examine()
+	. = ..()
+	if(!open)
+		. += "<span class='notice'>Unlocks at [death_count_unlock] kills.</span>"
 
 	//Greytide display case
 
@@ -341,7 +345,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 
 	//Sniper
 /obj/structure/displaycase/TDM_item_spawn/sniper
-	start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle
+	start_showpiece_type = /obj/item/gun/ballistic/automatic/sniper_rifle/TDM
 	tier_level = 4
 
 	//c20r
@@ -391,7 +395,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	name = "medical cabinet"
 	desc = "A small wall mounted cabinet designed to hold medical equipment."
 	icon = 'icons/oldschool/objects.dmi'
-	icon_state = "medical_cabinet_closed"
+	icon_state = "medical_cabinet2_closed"
 	var/last_opened = 0
 	var/personal_cooldowns = list()
 
@@ -413,7 +417,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 		user.put_in_hands(I)
 		if(last_opened+11 <= world.time)
 			playsound(loc, 'sound/machines/click.ogg', 15, 1, -3)
-			icon_state = "medical_cabinet_open"
+			icon_state = "medical_cabinet2_open"
 			last_opened = world.time
 			spawn(10)
 				icon_state = initial(icon_state)
@@ -670,6 +674,58 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	return ..()
 
 
+	//TDM reequipper dresser
+
+/obj/structure/TDM_dresser
+	name = "Re-equipper"
+	desc = "Re-equips you with your updated tier of gear."
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "dresser"
+	anchored = 1
+	density = 1
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
+	var/list/equip_cooldowns = list()
+	var/equip_cooldown = 100
+
+/obj/structure/TDM_dresser/take_damage()
+	return
+
+/obj/structure/TDM_dresser/attack_hand(mob/living/user)
+	. = ..()
+	if(istype(user,/mob/living/carbon/human) && user.mind && user.mind.special_role)
+		var/mob/living/carbon/human/H = user
+		var/theoutfit
+		for(var/obj/machinery/clonepod/TDM/C in GLOB.TDM_cloners)
+			if(C.team == user.mind.special_role)
+				theoutfit = C.get_current_tier_outfit()
+				break
+		if(theoutfit)
+			if(!(H in equip_cooldowns) || ((H in equip_cooldowns) && world.time >= equip_cooldowns[H]))
+				equip_cooldowns[H] = world.time+equip_cooldown
+				H.equipOutfit(theoutfit)
+				to_chat(H,"<span class='notice'>You re-equip your self.</span>")
+				var/datum/outfit/O = new theoutfit()
+				var/list/Ovars = O.vars
+				var/list/Hclothingtypes = list()
+				var/list/Hcontents = H.get_contents()
+				for(var/obj/object in Hcontents)
+					if(!(object.type in Hclothingtypes))
+						Hclothingtypes += object.type
+				for(var/vari in Ovars)
+					var/newpath = Ovars[vari]
+					if(ispath(newpath))
+						if(newpath == O.type)
+							continue
+						if(!(newpath in Hclothingtypes))
+							var/obj/object = new newpath(H.loc)
+							if(istype(object))
+								var/fullhandstext = ""
+								var/handsuccess = H.put_in_hands(object)
+								if(!handsuccess)
+									fullhandstext = ", dropped to ground"
+								to_chat(H,"<span class='warning'>Could not equip [object.name][fullhandstext].</span>")
+				qdel(O)
+
 	//Street lines
 /obj/structure/TDM/street_line
 	name = "white line"
@@ -677,3 +733,56 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	icon_state = "warningline_white"
 	dir = 8
 	pixel_x = 13
+
+		//Regenerating fire extinguisher cabinet or whatever
+
+/obj/structure/extinguisher_cabinet/regenerating
+	var/last_take = 0
+	var/respawn_time = 200
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
+
+/obj/structure/extinguisher_cabinet/regenerating/proc/regenerate_extinguisher()
+	if(!last_take)
+		last_take = world.time
+		START_PROCESSING(SSobj, src)
+
+/obj/structure/extinguisher_cabinet/regenerating/process()
+	if(last_take > 0 && world.time >= last_take+respawn_time)
+		last_take= 0
+		stored_extinguisher = new /obj/item/extinguisher(src)
+		if(opened)
+			opened = !opened
+			playsound(loc, 'sound/machines/click.ogg', 15, 1, -3)
+		update_icon()
+		STOP_PROCESSING(SSobj, src)
+
+/obj/structure/extinguisher_cabinet/regenerating/contents_explosion(severity, target)
+	. = ..()
+	regenerate_extinguisher()
+
+/obj/structure/extinguisher_cabinet/regenerating/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_WRENCH && !stored_extinguisher)
+		return
+	. = ..()
+
+/obj/structure/extinguisher_cabinet/regenerating/attack_hand(mob/user)
+	. = ..()
+	if(. || iscyborg(user) || isalien(user))
+		return
+	if(!stored_extinguisher && !last_take)
+		regenerate_extinguisher()
+
+/obj/structure/extinguisher_cabinet/regenerating/attack_tk(mob/user)
+	. = ..()
+	if(stored_extinguisher)
+		regenerate_extinguisher()
+
+/obj/structure/extinguisher_cabinet/regenerating/take_damage()
+	return
+
+/obj/structure/extinguisher_cabinet/regenerating/obj_break(damage_flag)
+	broken = 0
+	return
+
+/obj/structure/extinguisher_cabinet/regenerating/deconstruct(disassembled = TRUE)
+	return
