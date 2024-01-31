@@ -395,7 +395,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	name = "medical cabinet"
 	desc = "A small wall mounted cabinet designed to hold medical equipment."
 	icon = 'icons/oldschool/objects.dmi'
-	icon_state = "medical_cabinet_closed"
+	icon_state = "medical_cabinet2_closed"
 	var/last_opened = 0
 	var/personal_cooldowns = list()
 
@@ -417,7 +417,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 		user.put_in_hands(I)
 		if(last_opened+11 <= world.time)
 			playsound(loc, 'sound/machines/click.ogg', 15, 1, -3)
-			icon_state = "medical_cabinet_open"
+			icon_state = "medical_cabinet2_open"
 			last_opened = world.time
 			spawn(10)
 				icon_state = initial(icon_state)
@@ -725,3 +725,57 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 									fullhandstext = ", dropped to ground"
 								to_chat(H,"<span class='warning'>Could not equip [object.name][fullhandstext].</span>")
 				qdel(O)
+
+
+		//Regenerating fire extinguisher cabinet or whatever
+
+/obj/structure/extinguisher_cabinet/regenerating
+	var/last_take = 0
+	var/respawn_time = 200
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
+
+/obj/structure/extinguisher_cabinet/regenerating/proc/regenerate_extinguisher()
+	if(!last_take)
+		last_take = world.time
+		START_PROCESSING(SSobj, src)
+
+/obj/structure/extinguisher_cabinet/regenerating/process()
+	if(last_take > 0 && world.time >= last_take+respawn_time)
+		last_take= 0
+		stored_extinguisher = new /obj/item/extinguisher(src)
+		if(opened)
+			opened = !opened
+			playsound(loc, 'sound/machines/click.ogg', 15, 1, -3)
+		update_icon()
+		STOP_PROCESSING(SSobj, src)
+
+/obj/structure/extinguisher_cabinet/regenerating/contents_explosion(severity, target)
+	. = ..()
+	regenerate_extinguisher()
+
+/obj/structure/extinguisher_cabinet/regenerating/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_WRENCH && !stored_extinguisher)
+		return
+	. = ..()
+
+/obj/structure/extinguisher_cabinet/regenerating/attack_hand(mob/user)
+	. = ..()
+	if(. || iscyborg(user) || isalien(user))
+		return
+	if(!stored_extinguisher && !last_take)
+		regenerate_extinguisher()
+
+/obj/structure/extinguisher_cabinet/regenerating/attack_tk(mob/user)
+	. = ..()
+	if(stored_extinguisher)
+		regenerate_extinguisher()
+
+/obj/structure/extinguisher_cabinet/regenerating/take_damage()
+	return
+
+/obj/structure/extinguisher_cabinet/regenerating/obj_break(damage_flag)
+	broken = 0
+	return
+
+/obj/structure/extinguisher_cabinet/regenerating/deconstruct(disassembled = TRUE)
+	return

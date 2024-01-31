@@ -317,6 +317,7 @@ client/verb/clearbullshit()
 		var/image/I = client_images[M]
 		if(!I)
 			I = create_hud_for_mob(M)
+		var/the_team = null
 		if(M.current)
 			mobs += M.current
 			if(I.loc != M.current)
@@ -325,11 +326,16 @@ client/verb/clearbullshit()
 				I.icon_state = ""
 			else
 				I.icon_state = "team_[M.special_role]"
-		images += I
+				the_team = M.special_role
+		images[I] = the_team
 	for(var/mob/M in mobs)
 		if(M.client)
+			var/mob_team = M.mind ? M.mind.special_role : null
 			for(var/image/I in images)
-				if(!(I in M.client.images))
+				var/image_team = images[I]
+				if(!mob_team || !image_team || image_team != mob_team)
+					M.client.images -= I
+				if(mob_team && image_team && image_team == mob_team && !(I in M.client.images))
 					M.client.images += I
 
 /datum/toolbox_event/team_deathmatch/proc/gather_and_spawn_lobbyists(midround = 0)
@@ -573,12 +579,18 @@ client/verb/clearbullshit()
 							break
 				if(locbanned || O.anchored)
 					continue
+				var/loctype = null
+				if(istype(O.loc,/obj/structure/closet))
+					loctype = /obj/structure/closet
+				else if(istype(O.loc,/obj/item/storage))
+					loctype = O.loc.type
 				var/list/data = list(
 					"item" = O,
 					"x" = T.x,
 					"y" = T.y,
 					"z" = T.z,
 					"type" = O.type,
+					"loc" = loctype,
 					"last_time_home" = 0)
 				respawned_items["item[itemcount]"] = data
 				itemcount++
@@ -604,10 +616,34 @@ client/verb/clearbullshit()
 				else if(isnum(last_time_home) && world.time >= last_time_home+respawn_time)
 					var/thepath = the_list["type"]
 					if(ispath(thepath))
-						var/obj/item/I = respawn_item(thepath,home_turf)
-						if(I)
-							the_list["item"] = I
-							the_list["last_time_home"] = world.time
+						var/atom/respawn_loc = home_turf
+						var/locpath = the_list["loc"]
+						var/checkforspawn = 0
+						if(ispath(locpath))
+							checkforspawn = 1
+						spawn(0)
+							if(ispath(locpath))
+								if(checkforspawn)
+									var/foundspawner = 1
+									while(foundspawner)
+										foundspawner = 0
+										for(var/obj/effect/TDM_item_respawn/R in home_turf)
+											foundspawner = 1
+											break
+										if(foundspawner)
+											sleep(1)
+								for(var/obj/possible_loc in home_turf)
+									if(istype(possible_loc,locpath))
+										if(istype(possible_loc,/obj/structure/closet))
+											var/obj/structure/closet/C = possible_loc
+											if(C.opened)
+												continue
+										respawn_loc = possible_loc
+										break
+							var/obj/item/I = respawn_item(thepath,respawn_loc)
+							if(I)
+								the_list["item"] = I
+								the_list["last_time_home"] = world.time
 
 /datum/toolbox_event/team_deathmatch/proc/on_mob(obj/O)
 	var/atom/the_loc = O
@@ -621,7 +657,7 @@ client/verb/clearbullshit()
 			return TRUE
 	return FALSE
 
-/datum/toolbox_event/team_deathmatch/proc/respawn_item(new_item,turf/home_turf)
+/datum/toolbox_event/team_deathmatch/proc/respawn_item(new_item,atom/home_turf)
 	if(!istype(home_turf))
 		return
 	var/new_path
@@ -663,7 +699,7 @@ client/verb/clearbullshit()
 	alpha = 0
 	var/interval = round(255/10,1)
 	spawn(0)
-		playsound(loc, 'sound/toolbox/itemrespawn.ogg', 50, 0)
+		playsound(get_turf(src), 'sound/toolbox/itemrespawn.ogg', 50, 0)
 		for(var/i=1,i<=10,i++)
 			sleep(1)
 			alpha+=interval

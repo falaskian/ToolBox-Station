@@ -31,6 +31,15 @@ SUBSYSTEM_DEF(persistence)
 		break //Who's been duping the bird?!
 
 /datum/controller/subsystem/persistence/proc/LoadChiselMessages()
+	var/toolbox_override_station = 0
+	if(SStoolbox_events)
+		for(var/t in SStoolbox_events.cached_events)
+			var/datum/toolbox_event/E = SStoolbox_events.cached_events[t]
+			if(E && E.active && E.override_station)
+				toolbox_override_station = 1
+				break
+	if(toolbox_override_station)
+		return
 	var/list/saved_messages = list()
 	if(fexists("data/npc_saves/ChiselMessages.sav")) //legacy compatability to convert old format to new
 		var/savefile/chisel_messages_sav = new /savefile("data/npc_saves/ChiselMessages.sav")
