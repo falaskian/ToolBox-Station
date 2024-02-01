@@ -555,7 +555,7 @@ client/verb/clearbullshit()
 		var/list/turfs = get_all_ruin_floors(new_map.map)
 		if(turfs.len)
 			var/list/in_objects = list(/obj/item/storage,/obj/structure/closet)
-			var/list/whitelisted_types = list(/obj/item,/obj/structure/reagent_dispensers)
+			var/list/whitelisted_types = list(/obj/item,/obj/structure/reagent_dispensers,/obj/machinery/vending)
 			var/itemcount = 1
 			for(var/obj/O in world)
 				if(QDELETED(O) || !O.loc)
@@ -577,7 +577,7 @@ client/verb/clearbullshit()
 						if(istype(O.loc,t))
 							locbanned = 0
 							break
-				if(locbanned || O.anchored)
+				if(locbanned)
 					continue
 				var/loctype = null
 				if(istype(O.loc,/obj/structure/closet))
@@ -611,9 +611,35 @@ client/verb/clearbullshit()
 				if(!home_turf)
 					continue
 				var/last_time_home = the_list["last_time_home"]
+				var/list/vending_to_be_refilled = null
+				if(istype(item,/obj/machinery/vending))
+					var/obj/machinery/vending/V = item
+					for(var/t in list(V.product_records,V.hidden_records,V.coin_records))
+						var/list/record_list = t
+						if(istype(record_list))
+							for(var/datum/data/vending_product/R in record_list)
+								if(R.amount < R.max_amount)
+									if(!islist(vending_to_be_refilled))
+										vending_to_be_refilled = list()
+									vending_to_be_refilled += R
+				var/inrange = 0
 				if(item && get_dist(get_turf(item),home_turf) <= 3 && !on_mob(item))
+					inrange = 1
+				var/timesup = 0
+				if(isnum(last_time_home) && world.time >= last_time_home+respawn_time)
+					timesup = 1
+				if(inrange && !vending_to_be_refilled)
 					the_list["last_time_home"] = world.time
-				else if(isnum(last_time_home) && world.time >= last_time_home+respawn_time)
+				else if(inrange && vending_to_be_refilled && timesup && item)
+					for(var/n=min(rand(1.3),vending_to_be_refilled.len),n>0,n--)
+						var/datum/data/vending_product/R = pick(vending_to_be_refilled)
+						if(istype(R))
+							R.amount++
+							vending_to_be_refilled -= R
+							spawn(n)
+								playsound(get_turf(item), 'sound/toolbox/itemrespawn.ogg', 50, 0)
+					the_list["last_time_home"] = world.time
+				else if(!inrange && timesup)
 					var/thepath = the_list["type"]
 					if(ispath(thepath))
 						var/atom/respawn_loc = home_turf
@@ -640,8 +666,11 @@ client/verb/clearbullshit()
 												continue
 										respawn_loc = possible_loc
 										break
-							var/obj/item/I = respawn_item(thepath,respawn_loc)
+							var/obj/I = respawn_item(thepath,respawn_loc)
 							if(I)
+								if(istype(I,/obj/machinery/vending))
+									var/obj/machinery/vending/V = I
+									V.onstation = 0
 								the_list["item"] = I
 								the_list["last_time_home"] = world.time
 
