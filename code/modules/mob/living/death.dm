@@ -54,7 +54,8 @@
 			var/cacheentry = "Informed_To_Adminhelp_Grief"
 			if(istype(cache) && istype(cache.warnings_experienced,/list) && !(cacheentry in cache.warnings_experienced))
 				cache.warnings_experienced += cacheentry*/
-		client.inform_to_adminhelp_death()
+		if(mind && (mind in GLOB.Original_Minds))
+			client.inform_to_adminhelp_death()
 	var/was_dead_before = stat == DEAD
 	stat = DEAD
 	unset_machine()

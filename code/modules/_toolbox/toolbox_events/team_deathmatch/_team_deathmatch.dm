@@ -63,6 +63,7 @@
 	var/mob/living/announcer = /mob/living/simple_animal/pet/penguin/emperor/shamebrero/guin
 	var/list/respawned_items = list()
 	var/map_respawn_time = 3000
+	var/list/debug_minds = list()
 
 //debugging this bullshit
 var/list/some_bullshit = list()
@@ -116,7 +117,7 @@ client/verb/clearbullshit()
 			announce("Team deathmatch will begin in [time_left] seconds. Choose a side by standing on the side you want to join.")
 			phase = LOBBY_PHASE
 		if(LOBBY_PHASE)
-			for(var/mob/living/L in GLOB.player_list)
+			for(var/mob/living/L in get_available_players())
 				if(L.mind && L.mind.assigned_role == player_assigned_role)
 					L.revive(full_heal = TRUE,admin_revive = TRUE)
 			if(world.time >= next_timer-100 && !("10seconds" in remembering))
@@ -265,7 +266,7 @@ client/verb/clearbullshit()
 			if(istype(M,announcer))
 				announcer = M
 				break
-	for(var/mob/living/M in GLOB.player_list)
+	for(var/mob/living/M in get_available_players())
 		if(M.mind && M.mind.assigned_role == player_assigned_role)
 			to_chat(M,"<B>Guin yells, \"[message]\"</B>")
 	if(ismob(announcer))
@@ -279,24 +280,23 @@ client/verb/clearbullshit()
 			if(mob.mind == M && mob.ckey)
 				old_mob = mob
 				ckey = old_mob.ckey
-	if(ckey)
-		var/mob/living/carbon/human/H = new(spawn_loc)
-		M.transfer_to(H,1)
-		if(!H.mind)
-			H.mind_initialize()
-		if(H.ckey != ckey)
-			H.ckey = ckey
-		. = H
-		if(H.client)
-			H.client.prefs.copy_to(H)
-		H.dna.update_dna_identity()
-		if(H.mind)
-			GLOB.dont_inform_to_adminhelp_death += H.mind
-			H.mind.assigned_role = player_assigned_role
-			H.mind.special_role = ""
-			create_hud_for_mob(H)
-		if(old_mob && !QDELETED(old_mob))
-			qdel(old_mob)
+	var/mob/living/carbon/human/H = new(spawn_loc)
+	M.transfer_to(H,1)
+	if(!H.mind)
+		H.mind_initialize()
+	if(ckey && H.ckey != ckey)
+		H.ckey = ckey
+	. = H
+	if(H.client)
+		H.client.prefs.copy_to(H)
+	H.dna.update_dna_identity()
+	if(H.mind)
+		GLOB.dont_inform_to_adminhelp_death += H.mind
+		H.mind.assigned_role = player_assigned_role
+		H.mind.special_role = ""
+		create_hud_for_mob(H)
+	if(old_mob && !QDELETED(old_mob))
+		qdel(old_mob)
 
 /datum/toolbox_event/team_deathmatch/proc/create_hud_for_mob(mob/M)
 	if(M && M.mind)
@@ -343,7 +343,7 @@ client/verb/clearbullshit()
 		sleep(1)
 	var/player_detected = 0
 	var/list/minds_to_spawn = list()
-	for(var/mob/living/L in GLOB.player_list)
+	for(var/mob/living/L in get_available_players())
 		var/area/A = get_area(L)
 
 		//putting this here so were only searching the player_list once per round tick
@@ -366,7 +366,7 @@ client/verb/clearbullshit()
 		for(var/t in teams)
 			var/list/team = teams[t]
 			if(!team.len && !midround)
-				failed_to_launch = "Team deathmatch failed to start, not enough teams."
+				failed_to_launch = "Team deathmatch failed to start, not enough teams.1"
 				break
 			var/list/team_cloners = list()
 			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
@@ -396,7 +396,7 @@ client/verb/clearbullshit()
 			if(failed_to_launch)
 				break
 	else
-		failed_to_launch = "Team deathmatch failed to start, not enough teams."
+		failed_to_launch = "Team deathmatch failed to start, not enough teams.2"
 	return failed_to_launch
 
 /datum/toolbox_event/team_deathmatch/proc/restart_players(mob/player = null)
@@ -423,7 +423,7 @@ client/verb/clearbullshit()
 			else
 				players_to_restart = list()
 				for(var/mob/M in GLOB.mob_list)
-					if(M.ckey)
+					if(M.mind && M.mind.assigned_role == player_assigned_role)
 						players_to_restart += M
 			for(var/mob/L in players_to_restart)
 				if(!istype(L,/mob/living) && !isobserver(L))
@@ -789,10 +789,10 @@ client/verb/clearbullshit()
 						var/mob/living/L
 						if(istype(AM,/mob/living) && clean_bodies)
 							L = AM
-							if(AM in player_locations)
-								player_locations.Remove(AM)
-							if((!L.client) && L.stat && ((!L.mind)||(L.mind && L.mind.assigned_role == player_assigned_role)))
+							if((!L.ckey||(L.mind && !(L.mind in debug_minds))) && L.stat && ((!L.mind)||(L.mind && L.mind.assigned_role == player_assigned_role)))
 								delete_this = 1
+								if(AM in player_locations)
+									player_locations.Remove(AM)
 						if(!delete_this && istype(AM,/obj/item) && clean_items)
 							delete_this = 1
 						if(delete_this)
@@ -963,6 +963,7 @@ client/verb/clearbullshit()
 	dat += "<A href='?src=\ref[src];rotate=1'>Rotate Map</a> "
 	dat += "<A href='?src=\ref[src];forcemap=1'>Force Next Map</a>"
 	dat += "<br><br><A href='?src=\ref[src];endround=1'>End Round</a>"
+	dat += "<br><br><A href='?src=\ref[src];fakeplayer=1'>Create Dummy Player(Debug)</a>"
 	var/datum/browser/popup = new(user, "tdmadmin", "TDM Admin", 500, 500)
 	popup.set_content(dat)
 	popup.open()
@@ -1060,7 +1061,25 @@ client/verb/clearbullshit()
 				announce("[Guins_excuse]")
 		else
 			alert(usr,"You can only force the round to end during Combat Phase[mb].","TDM Admin","Ok")
+	if(href_list["fakeplayer"])
+		if(phase != LOBBY_PHASE)
+			alert(usr,"This requires Lobby phase[mb].","TDM Admin","Ok")
+			return
+		var/mob/living/carbon/human/H = new()
+		if(!H.mind)
+			H.mind_initialize()
+		if(H.mind)
+			H.mind.assigned_role = player_assigned_role
+			debug_minds += H.mind
+			restart_players(H)
+			message_admins("[usr.ckey] has created a dummy player for team_deathmatch.")
 
+/datum/toolbox_event/team_deathmatch/proc/get_available_players()
+	. = GLOB.player_list.Copy()
+	if(debug_minds.len)
+		for(var/datum/mind/M in debug_minds)
+			if(isliving(M.current))
+				. += M.current
 
 
 //
