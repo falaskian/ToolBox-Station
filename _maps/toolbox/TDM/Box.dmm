@@ -1,0 +1,135 @@
+"aa" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_r1"; innate_accuracy_penalty = 6},/turf/open/indestructible,/area/TDM/red_base)
+"ab" = (/turf/closed/indestructible/riveted/TDM,/area/TDM/offlimits)
+"ac" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"ad" = (/obj/item/banner/TDM/red,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"ae" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/offlimits)
+"af" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
+"ag" = (/obj/item/banner/TDM/blue,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
+"ah" = (/obj/structure/TDM/medical_cabinet{pixel_x = 9},/obj/structure/TDM/wallmed{pixel_x = -6},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"ai" = (/obj/structure/displaycase/TDM_item_spawn/knife,/turf/open/indestructible,/area/TDM/red_base)
+"aj" = (/turf/closed/wall/rust,/area/TDM)
+"ak" = (/obj/structure/displaycase/TDM_item_spawn/stechkin,/turf/open/indestructible,/area/TDM/red_base)
+"al" = (/obj/structure/displaycase/TDM_item_spawn/m1911,/turf/open/indestructible,/area/TDM/red_base)
+"am" = (/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/turf/open/indestructible,/area/TDM/red_base)
+"an" = (/obj/structure/displaycase/TDM_item_spawn/medigun,/turf/open/indestructible,/area/TDM/red_base)
+"ao" = (/obj/structure/displaycase/TDM_item_spawn/deagle,/turf/open/indestructible,/area/TDM/red_base)
+"ap" = (/obj/structure/displaycase/TDM_item_spawn/sniper,/turf/open/indestructible,/area/TDM/red_base)
+"aq" = (/obj/structure/displaycase/TDM_item_spawn/c20r,/turf/open/indestructible,/area/TDM/red_base)
+"ar" = (/obj/structure/TDM/medical_cabinet{pixel_x = 9},/obj/structure/TDM/wallmed{pixel_x = -6},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
+"as" = (/obj/structure/displaycase/TDM_item_spawn/knife,/turf/open/indestructible,/area/TDM/blue_base)
+"at" = (/obj/structure/displaycase/TDM_item_spawn/stechkin,/turf/open/indestructible,/area/TDM/blue_base)
+"au" = (/obj/structure/displaycase/TDM_item_spawn/m1911,/turf/open/indestructible,/area/TDM/blue_base)
+"av" = (/obj/machinery/clonepod/TDM/team_blue{TDM_on = 1},/turf/open/indestructible,/area/TDM/blue_base)
+"aw" = (/obj/structure/displaycase/TDM_item_spawn/medigun,/turf/open/indestructible,/area/TDM/blue_base)
+"ax" = (/obj/structure/displaycase/TDM_item_spawn/deagle,/turf/open/indestructible,/area/TDM/blue_base)
+"ay" = (/obj/structure/displaycase/TDM_item_spawn/sniper,/turf/open/indestructible,/area/TDM/blue_base)
+"az" = (/obj/structure/displaycase/TDM_item_spawn/c20r,/turf/open/indestructible,/area/TDM/blue_base)
+"aA" = (/turf/open/indestructible,/area/TDM/red_base)
+"aB" = (/turf/open/indestructible,/area/TDM/blue_base)
+"aC" = (/obj/structure/displaycase/TDM_item_spawn/grenade_launcher,/turf/open/indestructible,/area/TDM/red_base)
+"aD" = (/obj/structure/displaycase/TDM_item_spawn/frag_grenade,/turf/open/indestructible,/area/TDM/red_base)
+"aE" = (/obj/structure/displaycase/TDM_item_spawn/grenade_launcher,/turf/open/indestructible,/area/TDM/blue_base)
+"aF" = (/obj/structure/displaycase/TDM_item_spawn/frag_grenade,/turf/open/indestructible,/area/TDM/blue_base)
+"aG" = (/obj/structure/TDM/floodlight,/turf/open/indestructible,/area/TDM/red_base)
+"aH" = (/obj/structure/displaycase/TDM_item_spawn/revolver,/turf/open/indestructible,/area/TDM/red_base)
+"aI" = (/obj/structure/displaycase/TDM_item_spawn/shotgun,/turf/open/indestructible,/area/TDM/red_base)
+"aJ" = (/obj/structure/displaycase/TDM_item_spawn/APS,/turf/open/indestructible,/area/TDM/red_base)
+"aK" = (/obj/structure/displaycase/TDM_item_spawn/shield,/turf/open/indestructible,/area/TDM/red_base)
+"aL" = (/obj/structure/displaycase/TDM_item_spawn/carbine,/turf/open/indestructible,/area/TDM/red_base)
+"aM" = (/obj/structure/displaycase/TDM_item_spawn/bolt_action,/turf/open/indestructible,/area/TDM/red_base)
+"aN" = (/obj/structure/displaycase/TDM_item_spawn/uzi,/turf/open/indestructible,/area/TDM/red_base)
+"aO" = (/obj/structure/TDM/floodlight,/turf/open/indestructible,/area/TDM/blue_base)
+"aP" = (/obj/structure/displaycase/TDM_item_spawn/revolver,/turf/open/indestructible,/area/TDM/blue_base)
+"aQ" = (/obj/structure/displaycase/TDM_item_spawn/shotgun,/turf/open/indestructible,/area/TDM/blue_base)
+"aR" = (/obj/structure/displaycase/TDM_item_spawn/APS,/turf/open/indestructible,/area/TDM/blue_base)
+"aS" = (/obj/structure/displaycase/TDM_item_spawn/shield,/turf/open/indestructible,/area/TDM/blue_base)
+"aT" = (/obj/structure/displaycase/TDM_item_spawn/carbine,/turf/open/indestructible,/area/TDM/blue_base)
+"aU" = (/obj/structure/displaycase/TDM_item_spawn/bolt_action,/turf/open/indestructible,/area/TDM/blue_base)
+"aV" = (/obj/structure/displaycase/TDM_item_spawn/uzi,/turf/open/indestructible,/area/TDM/blue_base)
+"aW" = (/turf/open/floor/sepia/TDM,/area/TDM)
+"aX" = (/turf/open/floor/plasteel/stairs/TDM/sepia/right,/area/TDM)
+"aY" = (/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"aZ" = (/turf/open/floor/plasteel/stairs/TDM/sepia/left,/area/TDM)
+"ba" = (/turf/open/floor/plasteel/stairs/TDM/sepia/up,/area/TDM)
+"bb" = (/obj/structure/lattice/catwalk{resistance_flags = 115},/obj/structure/railing{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bc" = (/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bd" = (/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"be" = (/obj/structure/railing/corner{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bf" = (/obj/structure/railing{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bg" = (/obj/structure/ore_box/TDM,/obj/structure/railing{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bh" = (/obj/structure/railing/corner{dir = 8; icon_state = "railing_corner"; pixel_y = 0; resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bi" = (/obj/structure/railing/corner{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bj" = (/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM)
+"bk" = (/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM)
+"bl" = (/obj/structure/railing/corner{dir = 8; icon_state = "railing_corner"; pixel_y = 0; resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bm" = (/obj/structure/railing{icon_state = "railing"; dir = 6},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bn" = (/obj/structure/railing{icon_state = "railing"; dir = 10},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bo" = (/obj/item/clothing/head/crown{resistance_flags = 115},/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM)
+"bp" = (/obj/structure/railing/corner{dir = 4; icon_state = "railing_corner"; resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bq" = (/obj/structure/railing{icon_state = "railing"; dir = 5},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"br" = (/obj/structure/railing{icon_state = "railing"; dir = 9},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bs" = (/obj/structure/railing/corner{dir = 1; icon_state = "railing_corner"; resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bt" = (/obj/structure/railing/corner{dir = 4; icon_state = "railing_corner"; resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bu" = (/obj/structure/railing{dir = 1; icon_state = "railing"; resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bv" = (/obj/structure/ore_box/TDM{layer = 2.91},/obj/structure/railing{dir = 1; icon_state = "railing"; resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bw" = (/obj/structure/railing/corner{dir = 1; icon_state = "railing_corner"; resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bx" = (/turf/open/floor/plasteel/stairs/TDM/sepia,/area/TDM)
+"by" = (/obj/structure/lattice/catwalk{resistance_flags = 115},/obj/structure/railing{dir = 1; icon_state = "railing"; resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bz" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_x = -32; pixel_y = 0},/turf/open/indestructible,/area/TDM/red_base)
+"bA" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_x = 32; pixel_y = 0},/turf/open/indestructible,/area/TDM/red_base)
+"bB" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_x = -32; pixel_y = 0},/turf/open/indestructible,/area/TDM/blue_base)
+"bC" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_r2"; innate_accuracy_penalty = 6},/turf/open/indestructible,/area/TDM/red_base)
+"bD" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_b1"; innate_accuracy_penalty = 6},/turf/open/indestructible,/area/TDM/blue_base)
+"bE" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_b2"; innate_accuracy_penalty = 6},/turf/open/indestructible,/area/TDM/blue_base)
+"bF" = (/obj/effect/portal/permanent/one_way/destroy{alpha = 20; id = "box_p_b1"},/obj/effect/portal/permanent/one_way/destroy{alpha = 20; id = "box_p_r1"},/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM)
+"bG" = (/obj/effect/portal/permanent/one_way/destroy{alpha = 20; id = "box_p_b2"},/obj/effect/portal/permanent/one_way/destroy{alpha = 20; id = "box_p_r2"},/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM)
+"bH" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_x = 32; pixel_y = 0},/turf/open/indestructible,/area/TDM/blue_base)
+"bI" = (/obj/machinery/gateway{dir = 9},/turf/closed/wall/rust,/area/TDM)
+"bJ" = (/obj/machinery/gateway{dir = 1},/turf/closed/wall/rust,/area/TDM)
+"bK" = (/turf/template_noop,/area/template_noop)
+"bL" = (/obj/machinery/gateway{dir = 5},/turf/closed/wall/rust,/area/TDM)
+"bM" = (/obj/structure/lattice/catwalk{resistance_flags = 115},/obj/structure/ore_box/TDM,/obj/machinery/gateway{dir = 8},/turf/open/floor/sepia/TDM,/area/TDM)
+"bN" = (/obj/effect/portal/permanent{icon_state = "portal"; id = "box_p_a1"; name = "portal"; pixel_y = 9},/obj/machinery/gateway/centerstation{density = 0; layer = 3.1; level = 2},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bO" = (/obj/machinery/power/port_gen/pacman{anchored = 1; resistance_flags = 115},/obj/machinery/gateway{dir = 4},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bP" = (/obj/TDM_map_modifier/Dust1,/turf/closed/wall/rust,/area/TDM)
+"bQ" = (/obj/machinery/gateway,/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bR" = (/obj/structure/railing{icon_state = "railing"; dir = 10},/turf/open/floor/sepia/TDM,/area/TDM)
+"bS" = (/obj/structure/railing{icon_state = "railing"; dir = 6},/turf/open/floor/sepia/TDM,/area/TDM)
+"bT" = (/obj/structure/railing{icon_state = "railing"; dir = 9},/turf/open/floor/sepia/TDM,/area/TDM)
+"bU" = (/obj/structure/railing{icon_state = "railing"; dir = 5},/turf/open/floor/sepia/TDM,/area/TDM)
+"bV" = (/obj/machinery/gateway{dir = 8},/obj/machinery/gateway{dir = 9; layer = 4.1; pixel_y = 32},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bW" = (/obj/machinery/gateway/centerstation{density = 0; layer = 3.1; level = 2},/obj/effect/portal/permanent{icon_state = "portal"; id = "box_p_a1"; name = "portal"; pixel_y = 9},/obj/machinery/gateway{density = 0; dir = 1; layer = 4.1; pixel_y = 32},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bX" = (/obj/machinery/gateway{dir = 4},/obj/machinery/gateway{dir = 5; layer = 4.1; pixel_y = 32},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"bY" = (/obj/structure/lattice/catwalk{resistance_flags = 115},/obj/structure/ore_box/TDM,/turf/open/floor/sepia/TDM,/area/TDM)
+"cl" = (/obj/machinery/power/port_gen/pacman{anchored = 1; resistance_flags = 115},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+
+(1,1,1) = {"
+ababababababababababababababababababababababababababab
+abacacacacacadacadacacacacaeafafafafagafagafafafafafab
+abacahaiakalamanamaoapaqahaearasatauavawavaxayazarafab
+abacbzaAaAaAaAaAaAaAaAaAbAaebBaBaBaBaBaBaBaBaBaBbHafab
+abacaCaAaAaAaAaAaAaAaAaAaDaeaEaBaBaBaBaBaBaBaBaBaFafab
+abacaGaHaIaJaaaKbCaLaMaNaGaeaOaPaQaRbDaSbEaTaUaVaOafab
+abacacacacacacacacacacacacaeafafafafafafafafafafafafab
+abababababababababababajbIbJbLajababababababababababab
+bKbKabajajajajajajajabajbMbNbOajabajajajajajajajabbKbK
+abababajaWaWaXaYaYajajajaYbQaYajajajaYaYaZaWaWajababab
+abajajajbaajajajbbbbbbbbbbbbbbbbbbbbbbajajajbaajajajab
+abajbcbcbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbcbcajab
+abajbcbdbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbdbcajab
+abajbcbcbcbcaXbebfbfbfbhaWaWaWbebfbfbfbhaZbcbcbcbcajab
+abajbdbcbcbiajajbjbjbjbRbgbgbgbSbjbjbjajajblbdbcbcajab
+abajbcbcbibmbjbjbjbjbjbjbjbjbjbjbjbjbjbjbjbnblbcbcajab
+abajbcbcbcaZbjbjbkbFbjbjbjbobjbjbjbGbkbjbjaXbcbcbcajab
+abajbcbcbpbqbjbjbjbjbjbjbjbjbjbjbjbjbjbjbjbrbsbcbcajab
+abajbcbcbdbpajajbjbjbjbTbvbvbvbUbjbjbjajajbsbcbcbdajab
+abajbcbcbcbcaXbtbubububwaWaWaWbtbubububwaZbcbcbcbcajab
+abajbcbdbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbdbcajab
+abajbcbcbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbcbcajab
+abbPajajbxajajajbybybybybybybybybybybyajajajbxajajajab
+abababajaWaWaXaYaYajajajaYaYaYajajajaYaYaZaWaWajababab
+bKbKabajajajajajajajabajbVbWbXajabajajajajajajajabbKbK
+bKbKabababababababababajbYbQclajabababababababababbKbK
+bKbKbKbKbKbKbKbKbKbKabajajajajajabbKbKbKbKbKbKbKbKbKbK
+bKbKbKbKbKbKbKbKbKbKabababababababbKbKbKbKbKbKbKbKbKbK
+"}
