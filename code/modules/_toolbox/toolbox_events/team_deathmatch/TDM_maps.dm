@@ -253,7 +253,7 @@
 		//Church
 
 /datum/team_deathmatch_map/church
-	name = "TDM Map Church"
+	name = "TDM Church"
 	map = /datum/map_template/ruin/space/TDM_Church
 	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20)
 	round_time = 0
@@ -278,7 +278,7 @@
 	baseturf = /turf/open/floor/plating/asteroid/has_air
 
 /datum/map_template/ruin/space/TDM_Church
-	name = "TDM Map Church"
+	name = "TDM Church"
 	id = "tdm_church"
 	description = "Small size Church map for TDM"
 	unpickable = TRUE
