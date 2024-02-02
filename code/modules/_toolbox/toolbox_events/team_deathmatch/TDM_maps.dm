@@ -5,14 +5,14 @@
 
 /datum/team_deathmatch_map/template
 	name = "TDM Map Name"
-	map = /datum/map_template/ruin/space/TDM_Template //This can be either the type path of the specific map template ruin you want or the name of it
-	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20) //Number of respawn points for each team
+	map = /datum/map_template/ruin/space/TDM_Template 			//This can be either the type path of the specific map template ruin you want or the name of it
+	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20) 	//Number of respawn points for each team
 	round_time = 0 //How long does the round last
 	ban_map = 0 //Is map active in map rotation
 	team_home_areas = list(
 		/area/TDM/red_base = TDM_RED_TEAM,
 		/area/TDM/blue_base = TDM_BLUE_TEAM)
-	teir_kills = list(0,3,6,15) //kill requirements to unlock each teir of guns, 4 teirs right now.
+	teir_kills = list(0,3,6,15) 	//kill requirements to unlock each teir of guns.
 	team_outfits = list(
 		TDM_RED_TEAM = list(
 		"t1" = /datum/outfit/TDM/red,
@@ -22,10 +22,12 @@
 		"t1" = /datum/outfit/TDM/blue,
 		"t3" = /datum/outfit/TDM/blue/t3,
 		"t4" = /datum/outfit/TDM/blue/t4)) //Outfits for each tier - t1,t2,t3,t4
-	//control what gets cleaned during repair cycle
-	repair_map = 1
-	clean_map_items = 1
-	clean_map_bodies = 1
+	//control what gets cleaned or respawned during repair cycle
+	repair_map = 1  		//Does Map get repaired
+	clean_map_items = 1		//Clean trash like empty mags, clothes etc.
+	clean_map_bodies = 1	//Clean dead bodies
+	items_respawn = 0 		//Respawn mapped items
+	respawn_time = 3000		//How often do mapped items respawn, default is 5 minutes
 	baseturf = /turf/open/floor/plating //Turf that will spawn after explosion deletes a turf
 
 /datum/map_template/ruin/space/TDM_Template
@@ -217,7 +219,7 @@
 		//Hide&Seek - MimeAcademy
 
 /datum/team_deathmatch_map/hide_and_seek
-	name = "MimeAcademy"
+	name = "H&S MimeAcademy"
 	map = /datum/map_template/ruin/space/MimeAcademy
 	baseturf = /turf/open/floor/plating
 	team_deaths = list(TDM_RED_TEAM = 5,TDM_BLUE_TEAM = 30)
@@ -238,7 +240,7 @@
 	items_respawn = 1
 
 /datum/map_template/ruin/space/MimeAcademy
-	name = "MimeAcademy"
+	name = "H&S MimeAcademy"
 	id = "tdm_template"
 	description = "Academy for gifted mimes."
 	unpickable = TRUE
@@ -290,7 +292,7 @@
 
 
 
-		//Box1v1
+		//Box
 
 /datum/team_deathmatch_map/box
 	name = "TDM Box"

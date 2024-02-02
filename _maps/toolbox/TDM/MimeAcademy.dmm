@@ -181,7 +181,7 @@
 "dy" = (/obj/machinery/door/airlock/maintenance{name = "Bolier room"; req_access_txt = "0"},/turf/open/floor/plating,/area/TDM)
 "dz" = (/obj/effect/turf_decal/tile/green{dir = 4},/obj/effect/turf_decal/tile/green{dir = 1},/turf/open/floor/plasteel,/area/TDM)
 "dA" = (/obj/machinery/atmospherics/components/unary/tank/nitrogen{name = "boiler"},/obj/effect/turf_decal/stripes/line{dir = 9},/obj/effect/decal/cleanable/cobweb/cobweb2,/turf/open/floor/plating,/area/TDM)
-"dB" = (/obj/machinery/computer/security/wooden_tv,/turf/open/floor/plating,/area/TDM)
+"dB" = (/obj/machinery/computer/security/wooden_tv{network = list("MimeAcademy")},/turf/open/floor/plating,/area/TDM)
 "dC" = (/obj/structure/filingcabinet/chestdrawer,/turf/open/floor/plasteel/white/side{dir = 9},/area/TDM)
 "dD" = (/obj/machinery/disposal/bin,/obj/structure/disposalpipe/trunk,/turf/open/floor/plasteel/white/side{dir = 5},/area/TDM)
 "dE" = (/turf/open/floor/plasteel/cafeteria,/area/TDM)
@@ -418,7 +418,7 @@
 "ib" = (/obj/structure/disposalpipe/segment{dir = 10},/turf/closed/wall,/area/TDM)
 "ic" = (/obj/machinery/disposal/bin,/obj/structure/disposalpipe/trunk,/turf/open/floor/plasteel,/area/TDM)
 "id" = (/obj/structure/disposalpipe/segment{dir = 5},/turf/closed/wall,/area/TDM)
-"ie" = (/obj/machinery/door/airlock/mime{name = "Office"; req_access_txt = "0"},/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plasteel,/area/TDM)
+"ie" = (/obj/machinery/camera/xray{c_tag = "Cafeteria #2"; dir = 1; network = list("MimeAcademy")},/turf/open/floor/plasteel/white/side,/area/TDM)
 "if" = (/obj/structure/disposalpipe/segment{dir = 10},/turf/open/floor/plasteel,/area/TDM)
 "ig" = (/obj/item/twohanded/required/kirbyplants/random,/obj/structure/disposalpipe/segment{dir = 5},/turf/open/floor/plasteel/white/side{dir = 10},/area/TDM)
 "ih" = (/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plasteel/white/side,/area/TDM)
@@ -510,10 +510,11 @@
 "jP" = (/obj/structure/window/reinforced,/obj/item/storage/bag/trash,/turf/open/floor/plating,/area/TDM)
 "jQ" = (/obj/machinery/rnd/production/circuit_imprinter,/turf/open/floor/plasteel/white/side{dir = 8},/area/TDM)
 "jR" = (/obj/structure/chair/office,/obj/structure/TDM/blackboard{pixel_y = 30},/turf/open/floor/plasteel/white/side{dir = 1},/area/TDM)
-"jS" = (/obj/structure/table/wood,/obj/item/pen/red{pixel_y = 4},/turf/open/floor/plasteel,/area/TDM)
+"jS" = (/obj/structure/table/wood,/obj/item/pen/red{pixel_y = 4},/turf/open/floor/plasteel/white/side{dir = 8},/area/TDM)
 "jT" = (/obj/structure/table,/obj/item/stack/cable_coil/white,/obj/item/multitool{pixel_x = 14; pixel_y = 2},/obj/item/assembly/signaler{pixel_y = 4},/obj/item/assembly/prox_sensor{pixel_x = -8; pixel_y = 4},/turf/open/floor/plasteel,/area/TDM)
 "jU" = (/obj/structure/table,/obj/item/integrated_circuit/logic,/turf/open/floor/plasteel/white/side{dir = 8},/area/TDM)
 "jV" = (/obj/structure/chair/office,/obj/structure/TDM/blackboard/meta{pixel_y = 30},/turf/open/floor/plasteel/white/side{dir = 1},/area/TDM)
+"jW" = (/obj/machinery/camera/xray{c_tag = "Cafeteria #1"; dir = 1; network = list("MimeAcademy")},/turf/open/floor/plasteel/white/corner{dir = 8},/area/TDM)
 "jX" = (/obj/item/toy/crayon/white{pixel_y = 3},/turf/open/floor/plasteel,/area/TDM)
 "jY" = (/obj/structure/table,/obj/item/reagent_containers/food/snacks/jellysandwich,/turf/open/floor/plasteel,/area/TDM)
 "jZ" = (/obj/structure/closet/secure_closet/freezer/meat{req_access = null},/obj/structure/disposalpipe/segment,/turf/open/floor/plasteel/cafeteria,/area/TDM)
@@ -638,6 +639,7 @@
 "mo" = (/obj/machinery/vending/snack/random,/turf/open/floor/plasteel/white/side,/area/TDM)
 "mp" = (/obj/structure/chair/pew/left{desc = "A wooden bench."; dir = 1; name = "theatre bench"},/turf/open/floor/plasteel,/area/TDM)
 "mq" = (/obj/structure/chair/pew/right{desc = "A wooden bench."; dir = 1; name = "theatre bench"},/turf/open/floor/plasteel,/area/TDM)
+"mr" = (/obj/machinery/camera/xray{c_tag = "Lobby"; dir = 8; network = list("MimeAcademy")},/turf/open/floor/plasteel,/area/TDM)
 "ms" = (/obj/structure/table,/obj/item/wirecutters{pixel_y = -12},/obj/item/storage/toolbox/electrical{pixel_y = 6},/turf/open/floor/plasteel/white/side{dir = 8},/area/TDM)
 "mt" = (/obj/item/trash/popcorn,/turf/open/floor/plasteel,/area/TDM)
 "mu" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/flora/junglebush/large,/turf/open/floor/grass,/area/TDM)
@@ -686,6 +688,14 @@
 "nl" = (/obj/structure/table,/obj/item/stack/sheet/iron,/obj/item/storage/toolbox/mechanical{pixel_x = -2; pixel_y = 2},/turf/open/floor/plasteel/white/side{dir = 8},/area/TDM)
 "nm" = (/obj/structure/closet{anchored = 1},/obj/item/storage/toolbox/mechanical{pixel_x = -2; pixel_y = 2},/turf/open/floor/plasteel/white/side{dir = 10},/area/TDM)
 "nn" = (/obj/structure/closet{anchored = 1},/obj/item/storage/box/masks,/obj/item/lazarus_injector,/turf/open/floor/plasteel/white/side{dir = 6},/area/TDM)
+"no" = (/obj/machinery/camera/xray{c_tag = "South West Hallway"; dir = 4; network = list("MimeAcademy")},/turf/open/floor/plasteel,/area/TDM)
+"np" = (/obj/machinery/door/airlock/mime{name = "Administration Office"; req_access_txt = "0"},/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plasteel,/area/TDM)
+"nq" = (/obj/machinery/camera/xray{c_tag = "Administration"; dir = 4; network = list("MimeAcademy")},/turf/open/floor/plasteel,/area/TDM)
+"nr" = (/obj/machinery/camera/xray{c_tag = "North Hallway"; dir = 1; network = list("MimeAcademy")},/turf/open/floor/plasteel/white/side,/area/TDM)
+"ns" = (/obj/machinery/camera/xray{c_tag = "Gym Hallway"; dir = 8; network = list("MimeAcademy")},/turf/open/floor/plasteel/white/side{dir = 8},/area/TDM)
+"nt" = (/obj/machinery/camera/xray{c_tag = "Workshop"; dir = 8; network = list("MimeAcademy")},/turf/open/floor/plasteel/white/corner,/area/TDM)
+"nu" = (/obj/structure/extinguisher_cabinet{pixel_x = 27},/turf/open/floor/plasteel/white/corner,/area/TDM)
+"nv" = (/obj/machinery/camera/xray{c_tag = "South Hallway"; dir = 2; network = list("MimeAcademy")},/turf/open/floor/plasteel/white/side{dir = 1},/area/TDM)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -695,36 +705,36 @@ aaadataparararasauafavafawauafavafawaWaXaXaXaXaYaHdFfnfnjDdEdEdEdEdEdEdEdEdEgqad
 aaadafaAaBaGaBaAafafafafafafafafafafaoadadaHadadadeidEeJjZadadadadhodNftfuhLadadaxdHfsaydIdHgldOdIaIadmgefefefiCefefadfwadadadadadaxajajajajhgnkajajajajajiuadguhgcOadewaRgwgTadiEeBejfwhEfxfyadaa
 aaadataJaBaBaBaJaZafafafataZafafafatbbadgjajendoadaddSadhVaddTdUeLalalalalalalalajdHaydOdIdHayaydIiQadmimimimimimimjadakgBalamanaddGayajayjtjyadjzajjNajajjQadaxhgaIadadfwadadadadadadadadadadadaa
 aaadafaAaGaBaGaAafafafafafafafafafafaoadaxitajajalalalalbOiRhmhmephmhmhmhmhmhmhmhmhmhmhmhmifajajajdXadeLalalalalalaKadmkajajahaqaddPaLajaLaLgYaddPajaLajjTjUehaxhgajfzadfAfBemememademememfBfCadaa
-aaadataAaBaBaBaAaZafafafataZafafafatbbadfDaNdZgsebaNfXaNdZeaebaNfXaNdHfsdIajajdHjYdIajajajiAhmhmhmhmjghuajajajajajaIadlIayajayazaddGkcajayaygYadkhajjNajfGkiehaxhgajaIadfFfBajajajadfcajajfBfHadaa
-aaadafaSaGaGaGaTafafafafafafafafafafaoadadadaUaUaUadadadaUaUaUadadadeegsebaNaNdZctebaNecajhgajajmnmoadecmpmqajmpmqaIadlPaLajaLaMaddPaLajaLaLgYaddPajaLajajmsehaxhgajfIadfFfBajfGgGadfGajajfBfCadaa
+aaadataAaBaBaBaAaZafafafataZafafafatbbadfDaNdZgsebiefXaNdZeaebaNfXaNdHfsdIajajdHjYdIajajajiAhmhmhmhmjghuajajajajajaIadlIayajayazaddGkcajayaygYadkhajjNajfGkiehaxhgajaIadfFfBajajajadfcajajfBfHadaa
+aaadafaSaGaGaGaTafafafafafafafafafafaoadadadaUaUaUadadadaUaUaUadadadeegsebaNaNdZctebaNjWajhgajajmnmoadecmpmqajmpmqaIadlPaLajaLaMaddPaLajaLaLgYaddPajaLajajmsehaxhgajfIadfFfBajfGgGadfGajajfBfCadaa
 aaadbfaAaVaVaVaAaZafafafataZafafafatbrbsbtbtbtbvbtbtbtbHbtbtbtbPbtadadadadadadadadadadadegjpehegadadadaxajajajajmtaIadmdayajayazadgyayajayayjcadkhajjNajfGkkadgjhgaIadadadadfLadadadadgxadadadadaa
 aaadafafbQbQbQcgafafafafcghbafafafafclcUcUcUcUcUcUcUcUcUcUcUcUcVcnadadgAajhfajhvadadfNajajhgajajajfEadaxmpmqajmpmqaIadlPaLajaLaMaddPaLajaLaLgYaddPajaLajklkmadaxhgdXadkafOdWajdXfOfPdWajdXfQaKadaa
 aaadafafafafafafafafafafafafafafafafafbDbDbDbDbDbDbDbDbDbDbDbDcWcUadadiVajajajajbgajajajajhgajajajiQadaxmvajajajajaIadixhmifayazadaxajajhIhmiyadaxajajajajfEadguhgajfRajajajajajajajajajajajdXadaa
 aaadafafafafafafafafafafafafafafafafafbDbDcobsbtbPbtbtbHbtcobDbDbDbgbhajajajajajbgajajajajhgajajajaIadmwmxmyajmzmAmBadaDbimCmDmEadaDbiechgcOggadmFmGecajcOkoadaxhgajfRajajajajajajajajajajajfSadaa
 aaadafafafkWkWkWkWkWkWkWkWafafafafafafbDbDbPcpcqcqcqcqcqcqcrbPbDbDbgbhajajajajajbgajajajajhgajajajaIadadadadmladadadadadadhUadadadadadadhUadadadadadadnkadhVadaxhgcOadiVajajajajajajajajajajiSadaa
 aaadafafcBaCkWaObebnbxbAkWbdkWkWkWaFaFbDbDbtcIbIbJbKbKbJbMcJbtbDbDadadajajajajajadadkbajajhgajajajajalalaldWajdXalbWalaldWhgdXalbWalaldWhgdXalbWalaldWajdXkpalajhgaIadcXcYcZdafTajajfUdcdcdcddadaa
-aaadafafcLaCbBbUbVbVbVbCkWbmbzkWbacbaFaFbDbHcIbKbKbKbKbKbKcJbsbDbDadadajajelajajadadiVajajhgajajajajajajajajajajajajajajajhGhmifhIhmhmhmhWhmhmhmhmhmhmhmhmhWhmhmhuaIaddedfajdgfVajajfWajajajdhadaa
-aaadafafcLaCbEbZbSbXcackbycdcCkWbjiWblaFbDbtcIcebKbKbJbIbJcJbtbDbDadadajajajajajadadghajajhgajaNaNaNbigzbibiaNfXbibibibiaNaNajiAiBbibibiaNfXbibibibiaNaNaNfXaNajajaIaddedididifVajajfWdjdjdjdhadaa
+aaadafafcLaCbBbUbVbVbVbCkWbmbzkWbacbaFaFbDbHcIbKbKbKbKbKbKcJbsbDbDadadajajelajmradadiVajajhgajajajajajajajajajajajajajajajhGhmifhIhmhmhmhWhmhmhmhmhmhmhmhmhWhmhmhukHaddedfajdgfVajajfWajajajdhadaa
+aaadafafcLaCbEbZbSbXcackbycdcCkWbjiWblaFbDbtcIcebKbKbJbIbJcJbtbDbDadadajajajajajadadghajajhgajaNaNaNbigzbibiaNfXbibibibiaNnrajiAiBbibibiaNfXbibibibiaNaNaNfXaNajajaIaddedididifVajajfWdjdjdjdhadaa
 aaadafafcLaCbFbZckaEckckgVckboizckbubwaFbDbtcMcNcPcNcNcNcQcSbtbDbDbgbhajajajajajbgajajajajhgaIadadadadadadadadadadadadadadadaxgYadadadadadadadadadadadadadadadaxajiQaddeajajajfVajajfWdkajajdhadaa
 aaadafafcLaCbEbZcccscuckbybZcDkWbqbGbLaFbDcobtbsbtbtbPbtbtcobDbDbDbgbhajajajajajbgajajajajhgfEadhKhKhKhNiTjjadakgBalalamanadgjgYadakgBalkqaldoadkrksktijkvkwaddlajaIaddmdndndnfYajajfZdndndqdradaa
-aaadafafcLaCbNcxcycxcybRkWbmgUkWisiZaFaFbDbDbDbDbDbDbDbDbDbDbDdsdtadadiVajajajajbgajajajajhgduadhNmhhNiXadadadhgajajajahaqadaxhlkxiDhmkykzkAkBiakCkDkEhTajkGaddlajkHaddvdwdwdwgaajajgbdzdzdzeKadaa
-aaadafafcTaCkWbYcjcwcEcFkWbdkWkWkWaFaFdtdtdtdtdtdtdtdtdtdtdtdteNcoadadajajajajiFiaiahmhmifhgduadhNhNhNhNjxlgadhgajajajajaIadgugYadaxajajajajajkIajkJkKkLajkMaddlajaIadjaajePajgcajajgdajajajjbadaa
+aaadafafcLaCbNcxcycxcybRkWbmgUkWisiZaFaFbDbDbDbDbDbDbDbDbDbDbDdsdtadadiVajajajajbgajajajajhgduadhNmhhNiXadadadhgajajajahjSadaxhlkxiDhmkykzkAkBiakCkDkEhTajkGaddlajaIaddvdwdwdwgaajajgbdzdzdzeKadaa
+aaadafafcTaCkWbYcjcwcEcFkWbdkWkWkWaFaFdtdtdtdtdtdtdtdtdtdtdtdteNcoadadajajajajiFiaiahmhmifhgduadhNhNhNhNjxlgadhgajajajajaIadgugYadaxajajajajajkIajkJkKkLajkMaddlajnsadjaajePajgcajajgdajajajjbadaa
 aaadafafafkWkWkWkWkWkWkWkWafafafafafaobsbtbtbtbtbHbtbtbtbtbvbtbtbPadkuajajajeRadadadiVajiAhumTadhNmUadhNadadadkXayayajayazadaxgYehkNkOajkPkQajkRajajajajajkSadliajaIadeOeSeTeTgcajajgddweUdweQadaa
 aaadafafafafafafafafafafafafafafafafaoadadadaUaUaUadadadaUaUaUadadadeoajajajeVadadadajajhgajajmWhNmUadhNiYmYfwdMaLaLajaLaMadaxgYehkTajajkUfGajehajajkVajajnladdlajaIadeOeWajeQgcajajgdajajajeQadaa
-aaadafafafafafafafafafafafafafafafafaoadghcfajajajajajcfajajajajajajajajajajeVajgDgEajajhgajiSadadadadadadadaddMayayajayazadaxgYehkYjtajkZjtcOadlaajkFfGajlbaddlajiQadeYeZfafbgeajajgfeTeTeTfdadaa
+aaadafafafafafafafafafafafafafafafafaoadghcfajajajajajcfajajajajajajajajajajeVajgDgEajajhgajiSadadadadadadadaddMayayajayazadaxgYehkYjtajkZjtntadlaajkFfGajlbaddlajiQadeYeZfafbgeajajgfeTeTeTfdadaa
 aaadeqeqadfgfgfgadeqeqadadadgkadfhfofpadfNememememajajajajajajajajajajajajajeVajajajajajhgajajmZhNmUadhNnanbaddMaLaLajaLaMadaxgYehaxfGajajfGiQadlcajldleajlfaddlajaIadadadadadadezadadadadadadadaa
 gHgIfqgvgJgKgKgKhrgKgMgmhenclhadbPbtbtadadadadadadadadajajadadadadadadadadfeffajajajajajhGifndadhNmUadhNadadadmVmmayajayazadaxgYehliajajajajkHadljajlkayajlladiKifdXadlmeBmHjqeAfvadgNgvgvgNgvgIgH
 gHgIfqgOgJgKgRgKgLgKgMgpjklogradbtbtbtaddCjVgPalaldDadajajadakgBalalamanadguajajajajajajajhgduadhNhNhNhNnenfaddMaLaLajaLaMadgugYadlpajlqlrajlsehltajfGajajluadgQhgajezfvmffvfveBlvadgvgvgvgvgOgIgH
-gHgIhdgvgJgKgKgKhshjhkadadadadadbtbtbsadlwjSajjXajjladajajadeGajajajeIfiadfDecajcOaNaNaNechgduadngadhNiXadadadixhmhmifajaIadaxgYadlyajajajajlzehlAajajajfGlBaddlhgcOadadadezadadadadgvgOgvgvgNgIgH
+gHgIhdgvgJgKgKgKhshjhkadadadadadbtbtbsadlwdLajjXajjladajajadeGajajajeIfiadfDecajcOaNaNaNechgduadngadhNiXadadadixhmhmifajaIadaxgYadlyajajajajlzehlAajajajfGlBaddlhgnuadadadezadadadadgvgOgvgvgNgIgH
 gHgIgvgvgJgKgKgKgMgvgvgvgNkemubtbtbtbtadaxajajajajhGhqhmhmlChHajajajajaIadadadeDadadadadaxhgfEadnhadhNhNninjadaDbiechgcOggadgjgYadlDlEecajcOlFadnmmXecajlGlHaddlhgaIadbsbtbtbtkegvgvgvgvfqgvgvgIgH
-gHgIgvgvgJgKgRgKgMhdgvgvgvkebtcnbtbtbtaUdGayajjtayjmadajiSadjhgilJajfkgiadfmhFhFhFhFhPadgjhgaIadadadmZadadadadadadadhUadadadaxgYadadadadlKadadadadadadlLadadadaxhgaIaUbtbtbtbskegvgOgvgvgvgvgvgIgH
-gHgIgvgvgJgKgKgKgMgvgvgvfqkebtbtbtbtbPaddPaLajaLaLaIadajfNaddMaLaLajaLaMadhXeFeFfjeFhYadaxhgajalbWdWajdXalalbWalaldWhgdXbWalajhgalalbWdWajdXalalalbWdWajdXalalajhgaIaUbtbPbtbtkehJgvgvgvgNgvgOgIgH
+gHgIgvgvgJgKgRgKgMhdgvgvgvkebtcnbtbtbtaUdGayajjtayjmadnoiSadjhgilJajfkgiadfmhFhFhFhFhPadgjhgaIadadadmZadadadadadadadhUadadadaxgYadadadadlKadadadadadadlLadadadaxhgaIaUbtbtbtbskegvgOgvgvgvgvgvgIgH
+gHgIgvgvgJgKgKgKgMgvgvgvfqkebtbtbtbtbPaddPaLajaLaLaIadajfNaddMaLaLajaLaMadhXeFeFfjeFhYadaxhgajalbWdWajdXalalbWalaldWhgdXbWnvajhgalalbWdWajdXalalalbWdWajdXalalajhgaIaUbtbPbtbtkehJgvgvgvgNgvgOgIgH
 gHgIfqgOgJgKgKgKgMgvgOgvgvkebtbtbtbtbtadlMjtajayayaIadaUaUaddMfkgiajiijdadjfeFflhAeFlxadaxhGhmhmifhIhmhmhmhmhmhmhmhmhWhmhmhmhmhWhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhmhuaIaUbtbtbtbtkegvgvgvgvgvgvgvgIgH
 gHgIgvgvgJgKgRgKgMgvgvgvhJkebsbtbtbtbtadlOaLajaLgSaIadilbtaddMaLaLajaLaMadlNlXlYlZlYmaadfDaNaNeciOiPaNaNaNaNfXbibibiaNaNaNaNaNbibibiaNaNaNbibibifXaNaNbibibiaNaNaNjeadbtbtbtbskegvgNgvgvgvhdgvgIgH
 gHgIgvhdgJgKgKgKgMgvgNgvgvkebtbtcnbtbtaUdGayajkcayiQadbtcnadjikcmbajlngiadadhZiaibadadadadadadadhhadadadadadadadadadadadaUaUaUadadadaUaUaUadadadaUaUaUadadadaUaUaUadadilbtbtbtkegvgvgvgOgvgvgvgIgH
 gHgIgvgvgJgKgKgKgMgvgvgvfqkeilbtbtbtbtaddPaLajaLlQaIadbsbvaddMaLaLajaLaMadilbtbthVicipiqerjuadfNhgajadiMajajgXgWadbsbtbtbtbtbtbtbtbtbtbtbtbtbsbsbtbtbtbtbtbtbtbsbtbtcnbtbtbsbtkefqgvgvgvgvgvgvgIgH
-gHgIgvgvgJgKgRgKgMgvgvgvgvkebtbtbPbtbtadaxajajajajaIadbtiladdMajajajajaIaUbsbtcnidhHajajajajadghhihmiehmhmifjwevadbtbPbtbtbsbtbtbtbtbtcnbtbtbtbtbtbtbPbtbtbtbtbtbtbtbtbtbtbtbtkegvgvgvgvgvgvgvgIgH
-gHgIgOgvgJgKgKgKgMgvgvgvgvkebtbtbtbtbsadlRlSaNaNaNggadbPbtadigihihihmcnnadbtbPbtadhgajexajajadajhgajadjnethgajiSadbtbtbtbtbtbtbtbvbtbtbtbtbtbtbsbtbtbtbtbtbsbtbtbtbtbtbtbtbtbtkegvgvgNgNgvgOgvgIgH
+gHgIgvgvgJgKgRgKgMgvgvgvgvkebtbtbPbtbtadaxajajajajaIadbtiladdMajajajajaIaUbsbtcnidhHajajajajadnqhihmnphmhmifjwevadbtbPbtbtbsbtbtbtbtbtcnbtbtbtbtbtbtbPbtbtbtbtbtbtbtbtbtbtbtbtkegvgvgvgvgvgvgvgIgH
+gHgIgOgvgJgKgKgKgMgvgvgvgvkebtbtbtbtbsadlRlSaNaNaNggadbPbtadigihihihmcnnadbtbPbtadhgajexajajadghhgajadjnethgajiSadbtbtbtbtbtbtbtbvbtbtbtbtbtbtbsbtbtbtbtbtbsbtbtbtbtbtbtbtbtbtkegvgvgNgNgvgOgvgIgH
 gHgIgvfqgJgKgKgKgMgvgvgOgvkebtilbtbtbtadadadadaUeMadadbtbsadadaUaUadhVadadbtbtbsadhgjvjwjriSadiVhgdIadeyajhGikeradbtbtbtbtbtbtbtbtbtbsbtbtbtbtbtbtbtbtbtbtbtbtbvbtbtbtbsbtbtcnkehdgvgvgvgvgvgvgIgH
 gHgIgvgvgJgKgRgKgMgNhJgvhdkebsbsbtbtbtbtbtbtbsbtbtbtbtbtbtbtbtbtbtbsiobtbtbtbtbtaUhgaLajaLajhcajhgdIadadadaUaUadadbtbtbsbtkfhpkgkgkgkgkgkgiGkgkgkgkgiHkgkgkgkgkgkgkgkgkgkgkgkgiIgvgvgvgvgvfqgvgIgH
 gHgIhdgvgJgKgKgKgMgvgvfqgvkfkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgadadadadadhVadbtbtbtbPadinifajajajadajhgdIadbtbsbPbsbtilbtbtbtbtkegvgvfqgvgvgvgvgvgvhdgvgvgvgvgvgOgvgvgvgvgvgvgvfqgvgvgvgvgvgvgvgvgvgIgH

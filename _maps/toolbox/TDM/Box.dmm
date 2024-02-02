@@ -1,4 +1,4 @@
-"aa" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_r1"; innate_accuracy_penalty = 6},/turf/open/indestructible,/area/TDM/red_base)
+"aa" = (/obj/effect/turf_decal/loading_area,/turf/open/indestructible,/area/TDM/red_base)
 "ab" = (/turf/closed/indestructible/riveted/TDM,/area/TDM/offlimits)
 "ac" = (/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
 "ad" = (/obj/item/banner/TDM/red,/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
@@ -10,7 +10,7 @@
 "aj" = (/turf/closed/wall/rust,/area/TDM)
 "ak" = (/obj/structure/displaycase/TDM_item_spawn/stechkin,/turf/open/indestructible,/area/TDM/red_base)
 "al" = (/obj/structure/displaycase/TDM_item_spawn/m1911,/turf/open/indestructible,/area/TDM/red_base)
-"am" = (/obj/machinery/clonepod/TDM/team_red{TDM_on = 1},/turf/open/indestructible,/area/TDM/red_base)
+"am" = (/obj/machinery/clonepod/TDM/team_red{cancel_flash = 1; TDM_on = 1},/turf/open/indestructible,/area/TDM/red_base)
 "an" = (/obj/structure/displaycase/TDM_item_spawn/medigun,/turf/open/indestructible,/area/TDM/red_base)
 "ao" = (/obj/structure/displaycase/TDM_item_spawn/deagle,/turf/open/indestructible,/area/TDM/red_base)
 "ap" = (/obj/structure/displaycase/TDM_item_spawn/sniper,/turf/open/indestructible,/area/TDM/red_base)
@@ -19,7 +19,7 @@
 "as" = (/obj/structure/displaycase/TDM_item_spawn/knife,/turf/open/indestructible,/area/TDM/blue_base)
 "at" = (/obj/structure/displaycase/TDM_item_spawn/stechkin,/turf/open/indestructible,/area/TDM/blue_base)
 "au" = (/obj/structure/displaycase/TDM_item_spawn/m1911,/turf/open/indestructible,/area/TDM/blue_base)
-"av" = (/obj/machinery/clonepod/TDM/team_blue{TDM_on = 1},/turf/open/indestructible,/area/TDM/blue_base)
+"av" = (/obj/machinery/clonepod/TDM/team_blue{cancel_flash = 1; TDM_on = 1},/turf/open/indestructible,/area/TDM/blue_base)
 "aw" = (/obj/structure/displaycase/TDM_item_spawn/medigun,/turf/open/indestructible,/area/TDM/blue_base)
 "ax" = (/obj/structure/displaycase/TDM_item_spawn/deagle,/turf/open/indestructible,/area/TDM/blue_base)
 "ay" = (/obj/structure/displaycase/TDM_item_spawn/sniper,/turf/open/indestructible,/area/TDM/blue_base)
@@ -30,7 +30,7 @@
 "aD" = (/obj/structure/displaycase/TDM_item_spawn/frag_grenade,/turf/open/indestructible,/area/TDM/red_base)
 "aE" = (/obj/structure/displaycase/TDM_item_spawn/grenade_launcher,/turf/open/indestructible,/area/TDM/blue_base)
 "aF" = (/obj/structure/displaycase/TDM_item_spawn/frag_grenade,/turf/open/indestructible,/area/TDM/blue_base)
-"aG" = (/obj/structure/TDM/floodlight,/turf/open/indestructible,/area/TDM/red_base)
+"aG" = (/obj/effect/turf_decal/loading_area,/turf/open/indestructible,/area/TDM/blue_base)
 "aH" = (/obj/structure/displaycase/TDM_item_spawn/revolver,/turf/open/indestructible,/area/TDM/red_base)
 "aI" = (/obj/structure/displaycase/TDM_item_spawn/shotgun,/turf/open/indestructible,/area/TDM/red_base)
 "aJ" = (/obj/structure/displaycase/TDM_item_spawn/APS,/turf/open/indestructible,/area/TDM/red_base)
@@ -38,7 +38,7 @@
 "aL" = (/obj/structure/displaycase/TDM_item_spawn/carbine,/turf/open/indestructible,/area/TDM/red_base)
 "aM" = (/obj/structure/displaycase/TDM_item_spawn/bolt_action,/turf/open/indestructible,/area/TDM/red_base)
 "aN" = (/obj/structure/displaycase/TDM_item_spawn/uzi,/turf/open/indestructible,/area/TDM/red_base)
-"aO" = (/obj/structure/TDM/floodlight,/turf/open/indestructible,/area/TDM/blue_base)
+"aO" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_r1"; innate_accuracy_penalty = 6},/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced{dir = 8},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/indestructible,/area/TDM/red_base)
 "aP" = (/obj/structure/displaycase/TDM_item_spawn/revolver,/turf/open/indestructible,/area/TDM/blue_base)
 "aQ" = (/obj/structure/displaycase/TDM_item_spawn/shotgun,/turf/open/indestructible,/area/TDM/blue_base)
 "aR" = (/obj/structure/displaycase/TDM_item_spawn/APS,/turf/open/indestructible,/area/TDM/blue_base)
@@ -78,9 +78,9 @@
 "bz" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_x = -32; pixel_y = 0},/turf/open/indestructible,/area/TDM/red_base)
 "bA" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_x = 32; pixel_y = 0},/turf/open/indestructible,/area/TDM/red_base)
 "bB" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_x = -32; pixel_y = 0},/turf/open/indestructible,/area/TDM/blue_base)
-"bC" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_r2"; innate_accuracy_penalty = 6},/turf/open/indestructible,/area/TDM/red_base)
-"bD" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_b1"; innate_accuracy_penalty = 6},/turf/open/indestructible,/area/TDM/blue_base)
-"bE" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_b2"; innate_accuracy_penalty = 6},/turf/open/indestructible,/area/TDM/blue_base)
+"bC" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_r2"; innate_accuracy_penalty = 6},/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/indestructible,/area/TDM/red_base)
+"bD" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_b1"; innate_accuracy_penalty = 6},/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced{dir = 8},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/indestructible,/area/TDM/blue_base)
+"bE" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_b2"; innate_accuracy_penalty = 6},/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced{dir = 8},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/indestructible,/area/TDM/blue_base)
 "bF" = (/obj/effect/portal/permanent/one_way/destroy{alpha = 20; id = "box_p_b1"},/obj/effect/portal/permanent/one_way/destroy{alpha = 20; id = "box_p_r1"},/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM)
 "bG" = (/obj/effect/portal/permanent/one_way/destroy{alpha = 20; id = "box_p_b2"},/obj/effect/portal/permanent/one_way/destroy{alpha = 20; id = "box_p_r2"},/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM)
 "bH" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_x = 32; pixel_y = 0},/turf/open/indestructible,/area/TDM/blue_base)
@@ -88,7 +88,7 @@
 "bJ" = (/obj/machinery/gateway{dir = 1},/turf/closed/wall/rust,/area/TDM)
 "bK" = (/turf/template_noop,/area/template_noop)
 "bL" = (/obj/machinery/gateway{dir = 5},/turf/closed/wall/rust,/area/TDM)
-"bM" = (/obj/structure/lattice/catwalk{resistance_flags = 115},/obj/structure/ore_box/TDM,/obj/machinery/gateway{dir = 8},/turf/open/floor/sepia/TDM,/area/TDM)
+"bM" = (/obj/structure/lattice/catwalk{resistance_flags = 115},/obj/machinery/gateway{dir = 8},/turf/open/floor/sepia/TDM,/area/TDM)
 "bN" = (/obj/effect/portal/permanent{icon_state = "portal"; id = "box_p_a1"; name = "portal"; pixel_y = 9},/obj/machinery/gateway/centerstation{density = 0; layer = 3.1; level = 2},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
 "bO" = (/obj/machinery/power/port_gen/pacman{anchored = 1; resistance_flags = 115},/obj/machinery/gateway{dir = 4},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
 "bP" = (/obj/TDM_map_modifier/Dust1,/turf/closed/wall/rust,/area/TDM)
@@ -101,15 +101,19 @@
 "bW" = (/obj/machinery/gateway/centerstation{density = 0; layer = 3.1; level = 2},/obj/effect/portal/permanent{icon_state = "portal"; id = "box_p_a1"; name = "portal"; pixel_y = 9},/obj/machinery/gateway{density = 0; dir = 1; layer = 4.1; pixel_y = 32},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
 "bX" = (/obj/machinery/gateway{dir = 4},/obj/machinery/gateway{dir = 5; layer = 4.1; pixel_y = 32},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
 "bY" = (/obj/structure/lattice/catwalk{resistance_flags = 115},/obj/structure/ore_box/TDM,/turf/open/floor/sepia/TDM,/area/TDM)
+"bZ" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/space)
+"ca" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
+"cb" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "RED"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"cc" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "RED"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
 "cl" = (/obj/machinery/power/port_gen/pacman{anchored = 1; resistance_flags = 115},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
 
 (1,1,1) = {"
 ababababababababababababababababababababababababababab
-abacacacacacadacadacacacacaeafafafafagafagafafafafafab
+abacacaccbacadbZadaccbacacaeafafccafagcaagafccafafafab
 abacahaiakalamanamaoapaqahaearasatauavawavaxayazarafab
 abacbzaAaAaAaAaAaAaAaAaAbAaebBaBaBaBaBaBaBaBaBaBbHafab
-abacaCaAaAaAaAaAaAaAaAaAaDaeaEaBaBaBaBaBaBaBaBaBaFafab
-abacaGaHaIaJaaaKbCaLaMaNaGaeaOaPaQaRbDaSbEaTaUaVaOafab
+abacaaaAaAaAaAaAaAaAaAaAaaaeaGaBaBaBaBaBaBaBaBaBaGafab
+abacaOaHaIaJaKaDaCaLaMaNbCaebDaPaQaRaSaFaEaTaUaVbEafab
 abacacacacacacacacacacacacaeafafafafafafafafafafafafab
 abababababababababababajbIbJbLajababababababababababab
 bKbKabajajajajajajajabajbMbNbOajabajajajajajajajabbKbK
