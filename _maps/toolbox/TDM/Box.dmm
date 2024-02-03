@@ -102,14 +102,15 @@
 "bX" = (/obj/machinery/gateway{dir = 4},/obj/machinery/gateway{dir = 5; layer = 4.1; pixel_y = 32},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
 "bY" = (/obj/structure/lattice/catwalk{resistance_flags = 115},/obj/structure/ore_box/TDM,/turf/open/floor/sepia/TDM,/area/TDM)
 "bZ" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
-"ca" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
+"ca" = (/obj/machinery/status_display{message1 = "BLUE"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
 "cb" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "RED"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
-"cc" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "RED"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
+"cc" = (/obj/machinery/status_display{message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
+"cd" = (/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM/blue_base)
 "cl" = (/obj/machinery/power/port_gen/pacman{anchored = 1; resistance_flags = 115},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
 
 (1,1,1) = {"
 ababababababababababababababababababababababababababab
-abacacaccbacadbZadaccbacacaeafafccafagcaagafccafafafab
+abacacaccbacadbZadaccbacacaeafafcaafagccagafcaafafafab
 abacahaiakalamanamaoapaqahaearasatauavawavaxayazarafab
 abacbzaAaAaAaAaAaAaAaAaAbAaebBaBaBaBaBaBaBaBaBaBbHafab
 abacaaaAaAaAaAaAaAaAaAaAaaaeaGaBaBaBaBaBaBaBaBaBaGafab
@@ -123,9 +124,9 @@ abajbcbcbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbcbcajab
 abajbcbdbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbdbcajab
 abajbcbcbcbcaXbebfbfbfbhaWaWaWbebfbfbfbhaZbcbcbcbcajab
 abajbdbcbcbiajajbjbjbjbRbgbgbgbSbjbjbjajajblbdbcbcajab
-abajbcbcbibmbjbjbjbjbjbjbjbjbjbjbjbjbjbjbjbnblbcbcajab
-abajbcbcbcaZbjbjbkbFbjbjbjbobjbjbjbGbkbjbjaXbcbcbcajab
-abajbcbcbpbqbjbjbjbjbjbjbjbjbjbjbjbjbjbjbjbrbsbcbcajab
+abajbcbcbibmbjbjbjbjbjbjbjbjbjbjcdbjbjbjbjbnblbcbcajab
+abajbcbcbcaZbjbjbkbFbjbjbjbobjbjcdbGbkbjbjaXbcbcbcajab
+abajbcbcbpbqbjbjbjbjbjbjbjbjbjbjcdbjbjbjbjbrbsbcbcajab
 abajbcbcbdbpajajbjbjbjbTbvbvbvbUbjbjbjajajbsbcbcbdajab
 abajbcbcbcbcaXbtbubububwaWaWaWbtbubububwaZbcbcbcbcajab
 abajbcbdbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbdbcajab

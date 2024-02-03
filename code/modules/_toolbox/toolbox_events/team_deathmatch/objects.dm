@@ -7,6 +7,7 @@ obj/structure/TDM
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 
+
 		//Wall Healer
 
 obj/structure/TDM/wallmed
@@ -674,6 +675,7 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	return ..()
 
 
+
 	//TDM reequipper dresser
 
 /obj/structure/TDM_dresser
@@ -726,6 +728,8 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 								to_chat(H,"<span class='warning'>Could not equip [object.name][fullhandstext].</span>")
 				qdel(O)
 
+
+
 	//Street lines
 /obj/structure/TDM/street_line
 	name = "white line"
@@ -733,6 +737,8 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 	icon_state = "warningline_white"
 	dir = 8
 	pixel_x = 13
+
+
 
 		//Regenerating fire extinguisher cabinet or whatever
 
@@ -786,3 +792,42 @@ obj/structure/window/plastitanium/tough/TDM/take_damage()
 
 /obj/structure/extinguisher_cabinet/regenerating/deconstruct(disassembled = TRUE)
 	return
+
+
+
+		//Fence Door
+obj/structure/TDM/fence_door
+	name = "fence door"
+	desc = "A chain link fence door. Its locked."
+	icon = 'icons/obj/fence.dmi'
+	icon_state = "door_closed"
+
+
+
+		//Pickups
+
+obj/item/TDM_pickup
+	name = "pick up"
+	desc = "Click on me to pick me up."
+	anchored = 1
+
+
+obj/item/TDM_pickup/health
+	name = "instant-aid kit"
+	desc = "Heals 50 damage of any type."
+	icon = 'icons/oldschool/items.dmi'
+	icon_state = "floating_firstaid"
+	var/heal_brute = -50
+	var/heal_burn = -40
+	var/heal_tox = -10
+	var/heal_oxy = -10
+
+obj/item/TDM_pickup/health/attack_hand(mob/living/user)
+	if(iscyborg(user))
+		return
+	user.adjustBruteLoss(heal_brute)
+	user.adjustFireLoss(heal_burn)
+	user.adjustToxLoss(heal_tox)
+	user.adjustOxyLoss(heal_oxy)
+	playsound(loc, 'sound/effects/refill.ogg', 50)
+	qdel()

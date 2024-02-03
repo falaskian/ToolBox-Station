@@ -263,6 +263,12 @@
 	name = "Lobby"
 	icon_state = "blue-red2"
 
+/area/TDM/lobby/nospawn
+	name = "Lobby"
+	desc = "Players wont spawn in this area."
+	icon_state = "space_near"
+	color = "#F6FC3D"
+
 /area/TDM/lobby/red
 	name = "Join Red Team"
 	icon_state = "red2"

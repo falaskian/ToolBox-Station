@@ -18,6 +18,7 @@
 "ar" = (/obj/structure/chair/wood{dir = 8},/turf/open/floor/wood,/area/TDM)
 "as" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "RED"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
 "at" = (/obj/TDM_map_modifier/grass_mouse_opacifier,/turf/closed/indestructible/riveted/TDM,/area/TDM/offlimits)
+"au" = (/obj/structure/TDM/fence_door,/turf/open/floor/mineral/titanium,/area/TDM)
 "av" = (/obj/structure/table/wood,/obj/item/scalpel{pixel_y = 8},/turf/open/floor/wood,/area/TDM)
 "aw" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
 "ax" = (/obj/structure/flora/ausbushes/genericbush{layer = 4.1},/turf/open/floor/grass,/area/TDM)
@@ -162,7 +163,6 @@
 "dh" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
 "di" = (/obj/machinery/status_display{message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
 "dj" = (/obj/structure/fence{resistance_flags = 115},/turf/open/floor/grass,/area/TDM)
-"dk" = (/obj/structure/fence{desc = "A chain link fence door. Its locked."; dir = 2; icon_state = "door_closed"; name = "fence door"; resistance_flags = 115},/turf/open/floor/mineral/titanium,/area/TDM)
 
 (1,1,1) = {"
 ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
@@ -225,7 +225,7 @@ abadaaadadaeadadadadadadadaaadadadadadadadadaDakakakakakakakakakakakakcnaybAamam
 abadadadadadbMadadadaeadadadadadadadadadadadadadadaeadadadadadadadadaddjaIbEamamamciaHaGckamamamciclaJckamamambFaIdjadadadadadaaadadadadadadadaeadadadadadadadadadadadadadadadadadadadadab
 abadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadaeadadaddjaIaIamamambNbObObPamamambNbObObPamamamaIaydjaaadaeadadadadbZadadadadbMadadadadadaeadadadadaeadadadadadadadadadadab
 abadadadadadadadadadbMadadadadadadaeadadbMadadadadadadadbMadadadadadaddjayaIamamamamamamamamamamamamamamamamamaIaIdjadadadadadadadadadadaaadadadadadadadadadadadadadadadadadadadadaeadadab
-abadadadadadadadadadadadadaeadadadadadadadadadadadadadadadadadadadbZadaDakakcmdkcmakakakakcmdkcmakakakakcmdkcmakakcnadadadadbMadadadadadadadadadadadadadadadadadadadadadadadadadadadadadab
+abadadadadadadadadadadadadaeadadadadadadadadadadadadadadadadadadadbZadaDakakcmaucmakakakakcmaucmakakakakcmaucmakakcnadadadadbMadadadadadadadadadadadadadadadadadadadadadadadadadadadadadab
 abadadaaadadaeadadadadadadadadadadadadadadadaeadadbZadadadadadadadadadadadadcococoadadadadcococoadadadadcococoadadadadadadadadadadadaeadadadadaeadadadadaaadadadadadadbMadadadadadadadadab
 abadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadcOcocococOadadcOcocococOadadcOcocococOadadaaadadaaadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadab
 abadadadadadadadadadadadadadadaeadadadadadadadadadadadadadadbMadadadadadadadcocococOadadcOcocococOadadcOcococoadadadadaeadadadadadadadadbMadadadadadadadadadadadadadadadadadaeadadadadadab
