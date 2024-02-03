@@ -54,6 +54,7 @@
 	var/timers = list(
 		"start timer" = 60,
 		"match duration" = 300)
+	var/datum/team_deathmatch_map/current_map = null
 	var/list/ruin_maps = list()
 	var/list/active_ruins = list()
 	var/list/ruin_turfs = list()
@@ -170,6 +171,9 @@ client/verb/clearbullshit()
 			gather_and_spawn_lobbyists(1)
 			//respawning items if set
 			respawn_items()
+
+			if(current_map)
+				current_map.process_map(src)
 
 			//should we repair?
 			if(!("repairing" in remembering))
@@ -366,7 +370,7 @@ client/verb/clearbullshit()
 		for(var/t in teams)
 			var/list/team = teams[t]
 			if(!team.len && !midround)
-				failed_to_launch = "Team deathmatch failed to start, not enough teams.1"
+				failed_to_launch = "Team deathmatch failed to start, not enough teams."
 				break
 			var/list/team_cloners = list()
 			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
@@ -396,7 +400,7 @@ client/verb/clearbullshit()
 			if(failed_to_launch)
 				break
 	else
-		failed_to_launch = "Team deathmatch failed to start, not enough teams.2"
+		failed_to_launch = "Team deathmatch failed to start, not enough teams."
 	return failed_to_launch
 
 /datum/toolbox_event/team_deathmatch/proc/restart_players(mob/player = null)
@@ -509,9 +513,12 @@ client/verb/clearbullshit()
 /datum/toolbox_event/team_deathmatch/proc/rotate_map(prerotate = 0)
 	while(building_ruin)
 		sleep(1)
-	var/datum/team_deathmatch_map/current = get_current_map()
+	var/datum/team_deathmatch_map/current = current_map
+	if(!istype(current_map))
+		current = get_current_map()
 	if(current && current.map)
 		delete_ruin(current.map)
+		current_map = null
 		current_offlimits = null
 	if(ruin_maps.len)
 		var/datum/team_deathmatch_map/new_map
@@ -530,6 +537,7 @@ client/verb/clearbullshit()
 		if(new_map && new_map.map)
 			var/list/z_levels = SSmapping.levels_by_trait("Team_Deathmatch")
 			spawn_ruin(new_map.map,z_levels)
+			current_map = new_map
 			while(building_ruin)
 				sleep(1)
 			post_spawn(new_map)
@@ -789,10 +797,11 @@ client/verb/clearbullshit()
 						var/mob/living/L
 						if(istype(AM,/mob/living) && clean_bodies)
 							L = AM
-							if((!L.ckey||(L.mind && !(L.mind in debug_minds))) && L.stat && ((!L.mind)||(L.mind && L.mind.assigned_role == player_assigned_role)))
-								delete_this = 1
-								if(AM in player_locations)
-									player_locations.Remove(AM)
+							if(L.mind && L.mind.assigned_role == player_assigned_role && L.stat)
+								if(!(L.mind in debug_minds) && !L.ckey)
+									delete_this = 1
+									if(AM in player_locations)
+										player_locations.Remove(AM)
 						if(!delete_this && istype(AM,/obj/item) && clean_items)
 							delete_this = 1
 						if(delete_this)

@@ -45,7 +45,17 @@
 			if (isnull(temp))
 				log_world("Improperly set up stationgroup (no module template): [inited.chosen]")
 			else
-				temp.load(locate(picklist[inited.chosen][1], picklist[inited.chosen][2], picklist[inited.chosen][3]), centered=FALSE, placeOnTop=TRUE, overWrite=TRUE)
+				var/z_level = picklist[inited.chosen][3]
+				if(istext(z_level))
+					var/list/zlevellist = SSmapping.levels_by_trait(z_level)
+					if(zlevellist.len)
+						z_level = SSmapping.levels_by_trait(z_level)[1]
+				if(!isnum(z_level))
+					log_world("Failed to load. \"[z_level]\" is not a usable zlevel number: [inited.chosen]")
+					continue
+				var/loadresult = temp.load(locate(picklist[inited.chosen][1], picklist[inited.chosen][2], z_level), centered=FALSE, placeOnTop=TRUE, overWrite=TRUE)
+				if(!loadresult)
+					log_world("Failed to load.[!z_level ? "No z level" : ""]: [inited.chosen]")
 				inited.post_load()
 
 	log_world("Finished randomizing station")
@@ -164,16 +174,18 @@
 /datum/stationmodule_group/box_singulo
 	name = "Boxstation Singulo"
 	station_map = "Box Station"
-	possibilities = list("alt_engi_singularity.dmm" = list(95,52,2),
-		"alt_engi_supermatter.dmm" = list(95,52,2))
+	possibilities = list("alt_engi_singularity.dmm" = list(95,52,ZTRAIT_STATION),
+		"alt_engi_supermatter.dmm" = list(95,52,ZTRAIT_STATION))
 	//always = 1
 	//force = "alt_engi_singularity.dmm"
 
 /datum/stationmodule_group/box_singulo/post_load()
 	if(chosen == "alt_engi_singularity.dmm")
-		var/turf/T = locate(102,81,2)
-		if(T)
-			new /obj/machinery/the_singularitygen(T)
+		var/z_level = SSmapping.levels_by_trait(ZTRAIT_STATION)[1]
+		if(isnum(z_level))
+			var/turf/T = locate(102,81,z_level)
+			if(T)
+				new /obj/machinery/the_singularitygen(T)
 	return ..()
 
 /datum/admins/proc/preload_station_module()

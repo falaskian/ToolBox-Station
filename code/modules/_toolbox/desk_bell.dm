@@ -20,6 +20,8 @@
 	/// The sound the bell makes
 	var/ring_sound = 'sound/toolbox/bellsound.ogg'
 
+	var/sound_extra_range = -9
+
 /obj/structure/desk_bell/Initialize(mapload)
 	. = ..()
 
@@ -80,7 +82,7 @@
 		return FALSE
 	check_clapper(user)
 	// The lack of varying is intentional. The only variance occurs on the strike the bell breaks.
-	playsound(src, ring_sound, 70, vary = broken_ringer, extrarange = -9)
+	playsound(src, ring_sound, 70, vary = broken_ringer, extrarange = sound_extra_range)
 	flick("desk_bell_ring", src)
 	times_rang++
 	return TRUE

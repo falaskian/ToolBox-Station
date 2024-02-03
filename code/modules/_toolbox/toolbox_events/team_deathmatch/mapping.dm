@@ -50,6 +50,8 @@
 		var/obj/structure/displaycase/TDM_item_spawn/display = AM
 		display.update_to_map(src)
 
+/datum/team_deathmatch_map/proc/process_map(datum/toolbox_event/team_deathmatch/TDM)
+
 //************* TURFS *************
 
 
