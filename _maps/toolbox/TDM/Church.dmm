@@ -17,6 +17,7 @@
 "aq" = (/obj/structure/piano{dir = 4; icon_state = "piano"},/turf/open/floor/wood,/area/TDM)
 "ar" = (/obj/structure/chair/wood{dir = 8},/turf/open/floor/wood,/area/TDM)
 "as" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "RED"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
+"at" = (/obj/TDM_map_modifier/grass_mouse_opacifier,/turf/closed/indestructible/riveted/TDM,/area/TDM/offlimits)
 "av" = (/obj/structure/table/wood,/obj/item/scalpel{pixel_y = 8},/turf/open/floor/wood,/area/TDM)
 "aw" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/floor/sepia/TDM,/area/TDM/blue_base)
 "ax" = (/obj/structure/flora/ausbushes/genericbush{layer = 4.1},/turf/open/floor/grass,/area/TDM)
@@ -232,5 +233,5 @@ abadadadadadadadadadaaadadadadadadadadadadadadadadadadaeadadadadadadadadaecpcoco
 abadadadadaeadadadadadadadadadadadadadadaeadadadadaaadadadadadadadaeadadadcrcocococOadadcOcocococOadadcOcocococsadadadadadadadadadadadadadadaeadadadadadadadadadaeadadadadadadadadbMadadab
 abadadadadadadadbMadadadadadadadadadadadadadadadadadadadadadadadadadadadadadcocococOadadcOcocococOadadcOcococoadaeadadadadbMadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadab
 abadadadadadadadadadadadadadaeadadadadadadadadadadadadadadadadadadadadadadadcococoadadadadcococoadadadadcococoadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadab
-ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
+atabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab
 "}

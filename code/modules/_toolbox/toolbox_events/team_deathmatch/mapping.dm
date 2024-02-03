@@ -125,15 +125,13 @@
 	//Area Dirtier
 
 /obj/TDM_map_modifier
-	name = "Dirtifier Map Modifier"
+	name = "Map Modifier"
+	desc = "Used to mass modiufy maps"
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "x"
 	var/inited = 0 //making sure this object can only ever be triggered once.
-	var/dirt_probability = 20 //The chance each turf will be dirtied.
-	var/local_area = 1 //Should we dirty the area this object is sitting in?
-	var/list/area_list = list() //lists of areas to dirty.
-	var/list/turf_whitelist = list() //if we only want specific turfs to be dirtied, whitelist them here. if left empty then all turfs in the listed areas will be dirtied.
-	var/list/turf_blacklist = list() //black list turfs to never be dirtied by this object.
+	var/list/ruin_turfs = null
+
 
 /obj/TDM_map_modifier/Initialize()
 	. = ..()
@@ -141,40 +139,89 @@
 		return
 	inited = 1
 	spawn(0)
-		if(SStoolbox_events)
-			for(var/t in SStoolbox_events.cached_events)
-				var/datum/toolbox_event/team_deathmatch/E = SStoolbox_events.is_active(t)
-				if(istype(E) && E.active)
-					while(E.building_ruin)
-						sleep(1)
-		if(local_area)
-			var/area/current_area = get_area(src)
-			if(!(area_list in area_list))
-				area_list += current_area.type
-		var/list/searched_turfs = list()
-		for(var/area/A in world)
-			if(A.type in area_list)
-				for(var/turf/open/floor/T in A)
-					if(T in searched_turfs)
-						continue
-					searched_turfs += T
-					var/goforit = 1
-					if(turf_whitelist.len)
-						goforit = 0
-						for(var/t in turf_whitelist)
-							if(istype(T,t))
-								goforit = 1
-								break
-					if(turf_blacklist.len)
-						for(var/t in turf_blacklist)
-							if(istype(T,t))
-								goforit = 0
-								break
-					if(goforit && prob(dirt_probability))
-						new /obj/effect/decal/cleanable/dirt(T)
+		run_bs()
 		qdel(src)
 
-/obj/TDM_map_modifier/Dust1
+
+
+/obj/TDM_map_modifier/proc/run_bs()
+	if(SStoolbox_events)
+		for(var/t in SStoolbox_events.cached_events)
+			var/datum/toolbox_event/team_deathmatch/E = SStoolbox_events.is_active(t)
+			if(istype(E) && E.active)
+				while(E.building_ruin)
+					sleep(1)
+	ruin_turfs = get_turfs()
+
+
+
+/obj/TDM_map_modifier/proc/get_turfs()
+	. = list()
+	if(SStoolbox_events)
+		for(var/t in SStoolbox_events.cached_events)
+			var/datum/toolbox_event/team_deathmatch/E = SStoolbox_events.is_active(t)
+			if(istype(E) && E.active)
+				var/datum/team_deathmatch_map/map = E.get_current_map()
+				if(map.map)
+					. = E.get_all_ruin_floors(map.map)
+
+/obj/TDM_map_modifier/grass_mouse_opacifier
+	name = "Grass Map Modifier"
+	desc = "Used to mass modiufy grass mouse_opacity variable to prevent bullets from hitting grass"
+
+/obj/TDM_map_modifier/grass_mouse_opacifier/run_bs()
+	. = ..()
+	if(ruin_turfs.len)
+		for(var/turf/T in ruin_turfs)
+			for(var/obj/structure/flora/ausbushes/A in T)
+				A.mouse_opacity = 0
+
+
+/obj/TDM_map_modifier/dirtifier
+	name = "Dirtifier Map Modifier"
+	var/dirt_probability = 20 //The chance each turf will be dirtied.
+	var/local_area = 1 //Should we dirty the area this object is sitting in?
+	var/list/area_list = list() //lists of areas to dirty.
+	var/list/turf_whitelist = list() //if we only want specific turfs to be dirtied, whitelist them here. if left empty then all turfs in the listed areas will be dirtied.
+	var/list/turf_blacklist = list() //black list turfs to never be dirtied by this object.
+
+
+/obj/TDM_map_modifier/dirtifier/run_bs()
+	. = ..()
+	if(SStoolbox_events)
+		for(var/t in SStoolbox_events.cached_events)
+			var/datum/toolbox_event/team_deathmatch/E = SStoolbox_events.is_active(t)
+			if(istype(E) && E.active)
+				while(E.building_ruin)
+					sleep(1)
+	if(local_area)
+		var/area/current_area = get_area(src)
+		if(!(area_list in area_list))
+			area_list += current_area.type
+	var/list/searched_turfs = list()
+	for(var/area/A in world)
+		if(A.type in area_list)
+			for(var/turf/open/floor/T in A)
+				if(T in searched_turfs)
+					continue
+				searched_turfs += T
+				var/goforit = 1
+				if(turf_whitelist.len)
+					goforit = 0
+					for(var/t in turf_whitelist)
+						if(istype(T,t))
+							goforit = 1
+							break
+				if(turf_blacklist.len)
+					for(var/t in turf_blacklist)
+						if(istype(T,t))
+							goforit = 0
+							break
+				if(goforit && prob(dirt_probability))
+					new /obj/effect/decal/cleanable/dirt(T)
+
+
+/obj/TDM_map_modifier/dirtifier/Dust1
 	area_list = list(
 		/area/TDM,
 		/area/TDM/lobby,
@@ -186,7 +233,7 @@
 		/turf/open/floor/plasteel/stairs,
 		/turf/open/floor/plating/asteroid)
 
-/obj/TDM_map_modifier/smeltery
+/obj/TDM_map_modifier/dirtifier/smeltery
 	area_list = list(
 		/area/TDM,
 		/area/TDM/lobby,

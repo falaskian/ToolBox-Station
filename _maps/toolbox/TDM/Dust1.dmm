@@ -89,7 +89,7 @@
 "bK" = (/obj/structure/stone_tile,/obj/structure/stone_tile/surrounding_tile/cracked{dir = 8},/turf/open/floor/plating/asteroid,/area/TDM)
 "bL" = (/obj/structure/stone_tile/surrounding_tile/cracked{dir = 4},/turf/open/floor/plating/asteroid,/area/TDM)
 "bM" = (/obj/machinery/gateway{dir = 8},/obj/machinery/gateway{dir = 9; layer = 4.1; pixel_y = 32},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
-"bN" = (/obj/TDM_map_modifier/Dust1,/turf/closed/wall/rust,/area/TDM)
+"bN" = (/obj/TDM_map_modifier/dirtifier/Dust1,/turf/closed/indestructible/riveted/TDM,/area/TDM)
 "bO" = (/obj/machinery/gateway/centerstation{density = 0; layer = 3.1; level = 2},/obj/effect/portal/permanent{icon_state = "portal"; id = "dust1_p_1"; name = "portal"; pixel_y = 9},/obj/machinery/gateway{density = 0; dir = 1; layer = 4.1; pixel_y = 32},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "bP" = (/obj/machinery/gateway{dir = 4},/obj/machinery/gateway{dir = 5; layer = 4.1; pixel_y = 32},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "bQ" = (/obj/machinery/gateway,/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
@@ -159,8 +159,8 @@ aaabaoaoaqaqaoaoaoabbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbvbvbvbtbtabababbtbt
 aaabaoaoaobwaoaoaoasbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtbtbtbtbtbtbvbvbtbtbtbtbvbtbtbtbtababbtbtabbtbtbtabbtbtababbtbtbtbtbtbtbtbtbtbvbvbtbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtataoaoaobxaoaoaoabaa
 aaabaoaoaoaoaoaoaoasbtbtbtbtbtbtabbvbtbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtababbtbtbtbtbtbtbtbtbtbtbtababbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtbtbtbtbtbvabbtbtbtbtbtbtataoaoaoaoaoaoaoabaa
 aaababaoaoaoaqaoaoabbtbtbtbtbtbuabbvbvbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbtbtbtbtababbtbtabbtbtbtbtbtbtbtabbtbtababbtbtbtbtbtbtbtbtbtbtbtbtabbtbtbtbtbtbtbtbtbvbvabbubtbtbtbtbtabaoaoaqaoaoaoababaa
-aabNababababababababababababababababababababababababababababababababababbtbtabababbybtbtabbtbtbtbtbtbtbtabbtbtbyabababbtbtabababababababababababababababababababababababababababababababababababaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbtbtbtabbtbtbtbtbtbtabbMbObPabbtbtbtbtbtbtabbtbtbtabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaabababababababababababababababababababababababababababababababababababbtbtabababbybtbtabbtbtbtbtbtbtbtabbtbtbyabababbtbtabababababababababababababababababababababababababababababababababababaa
+bNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbtbtbtabbtbtbtbtbtbtabbMbObPabbtbtbtbtbtbtabbtbtbtabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 bzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzaaababbtbtbtbtbtabbtbtababcdbQceababbtbtabbtbtbtbtbtababaabzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbz
 bzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzaaaaabababababababababababababababababababababababababaaaabzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbz
 bzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbz

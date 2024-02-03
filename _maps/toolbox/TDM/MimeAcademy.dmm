@@ -377,7 +377,6 @@
 "hm" = (/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plasteel,/area/TDM)
 "hn" = (/obj/structure/dresser,/turf/open/floor/wood,/area/TDM)
 "ho" = (/obj/structure/table/reinforced,/obj/machinery/door/poddoor/shutters/preopen{id = "kitchen"; name = "kitchen shutters"},/obj/item/storage/bag/tray,/obj/item/reagent_containers/food/snacks/hotdog,/turf/open/floor/plasteel/cafeteria,/area/TDM)
-"hp" = (/obj/structure/fence{dir = 4; resistance_flags = 115},/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/flora/ausbushes/ppflowers,/turf/open/floor/grass,/area/TDM)
 "hq" = (/obj/machinery/door/airlock/mime{name = "Classroom"; req_access_txt = "0"},/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plasteel,/area/TDM)
 "hr" = (/obj/effect/turf_decal/stripes/white/corner,/obj/item/clothing/head/cone{pixel_x = 6; pixel_y = 16},/turf/open/floor/grass{desc = "Asphalt road."; icon_state = "engine_light"; name = "floor"},/area/TDM/offlimits)
 "hs" = (/obj/effect/turf_decal/stripes/white/corner,/obj/item/clothing/head/cone{pixel_x = 6},/turf/open/floor/grass{desc = "Asphalt road."; icon_state = "engine_light"; name = "floor"},/area/TDM/offlimits)
@@ -446,8 +445,6 @@
 "iD" = (/obj/structure/disposalpipe/junction{dir = 8},/turf/open/floor/plasteel/white/side{dir = 4},/area/TDM)
 "iE" = (/obj/structure/closet{anchored = 1},/obj/item/stack/cable_coil/white,/obj/item/storage/box/lights/mixed,/obj/item/flashlight{pixel_x = 1; pixel_y = 5},/turf/open/floor/plating,/area/TDM)
 "iF" = (/obj/machinery/disposal/bin,/obj/structure/disposalpipe/trunk{dir = 4},/turf/open/floor/plasteel,/area/TDM)
-"iG" = (/obj/structure/fence{dir = 4; resistance_flags = 115},/obj/structure/flora/ausbushes/lavendergrass,/turf/open/floor/grass,/area/TDM)
-"iH" = (/obj/structure/fence{dir = 4; resistance_flags = 115},/obj/structure/flora/ausbushes/ppflowers,/turf/open/floor/grass,/area/TDM)
 "iI" = (/obj/structure/fence/corner{resistance_flags = 115},/turf/open/floor/grass,/area/TDM)
 "iJ" = (/obj/effect/turf_decal/stripes/white/corner{dir = 4},/turf/open/floor/grass{desc = "Asphalt road."; icon_state = "engine_light"; name = "floor"},/area/TDM/offlimits)
 "iK" = (/obj/machinery/disposal/bin,/obj/structure/disposalpipe/trunk{dir = 4},/turf/open/floor/plasteel/white/side{dir = 4},/area/TDM)
@@ -696,6 +693,7 @@
 "nt" = (/obj/machinery/camera/xray{c_tag = "Workshop"; dir = 8; network = list("MimeAcademy")},/turf/open/floor/plasteel/white/corner,/area/TDM)
 "nu" = (/obj/structure/extinguisher_cabinet{pixel_x = 27},/turf/open/floor/plasteel/white/corner,/area/TDM)
 "nv" = (/obj/machinery/camera/xray{c_tag = "South Hallway"; dir = 2; network = list("MimeAcademy")},/turf/open/floor/plasteel/white/side{dir = 1},/area/TDM)
+"nw" = (/obj/TDM_map_modifier/grass_mouse_opacifier,/turf/closed/indestructible/riveted/TDM,/area/TDM/offlimits)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -736,7 +734,7 @@ gHgIgvgvgJgKgKgKgMgvgvgvfqkeilbtbtbtbtaddPaLajaLlQaIadbsbvaddMaLaLajaLaMadilbtbt
 gHgIgvgvgJgKgRgKgMgvgvgvgvkebtbtbPbtbtadaxajajajajaIadbtiladdMajajajajaIaUbsbtcnidhHajajajajadnqhihmnphmhmifjwevadbtbPbtbtbsbtbtbtbtbtcnbtbtbtbtbtbtbPbtbtbtbtbtbtbtbtbtbtbtbtkegvgvgvgvgvgvgvgIgH
 gHgIgOgvgJgKgKgKgMgvgvgvgvkebtbtbtbtbsadlRlSaNaNaNggadbPbtadigihihihmcnnadbtbPbtadhgajexajajadghhgajadjnethgajiSadbtbtbtbtbtbtbtbvbtbtbtbtbtbtbsbtbtbtbtbtbsbtbtbtbtbtbtbtbtbtkegvgvgNgNgvgOgvgIgH
 gHgIgvfqgJgKgKgKgMgvgvgOgvkebtilbtbtbtadadadadaUeMadadbtbsadadaUaUadhVadadbtbtbsadhgjvjwjriSadiVhgdIadeyajhGikeradbtbtbtbtbtbtbtbtbtbsbtbtbtbtbtbtbtbtbtbtbtbtbvbtbtbtbsbtbtcnkehdgvgvgvgvgvgvgIgH
-gHgIgvgvgJgKgRgKgMgNhJgvhdkebsbsbtbtbtbtbtbtbsbtbtbtbtbtbtbtbtbtbtbsiobtbtbtbtbtaUhgaLajaLajhcajhgdIadadadaUaUadadbtbtbsbtkfhpkgkgkgkgkgkgiGkgkgkgkgiHkgkgkgkgkgkgkgkgkgkgkgkgiIgvgvgvgvgvfqgvgIgH
+gHgIgvgvgJgKgRgKgMgNhJgvhdkebsbsbtbtbtbtbtbtbsbtbtbtbtbtbtbtbtbtbtbsiobtbtbtbtbtaUhgaLajaLajhcajhgdIadadadaUaUadadbtbtbsbtkfkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgiIgvgvgvgvgvfqgvgIgH
 gHgIhdgvgJgKgKgKgMgvgvfqgvkfkgkgkgkgkgkgkgkgkgkgkgkgkgkgkgadadadadadhVadbtbtbtbPadinifajajajadajhgdIadbtbsbPbsbtilbtbtbtbtkegvgvfqgvgvgvgvgvgvhdgvgvgvgvgvgOgvgvgvgvgvgvgvfqgvgvgvgvgvgvgvgvgvgIgH
 gHgIgvgvgJgKgKgKiJiLiLiLiLiLiLiLiLiLiLiLiLiLiLiLiLiLiLiLjAadjBmIjCjsiUadilbtbsbsadadhVadadadadeshgdIadcnbsbtbtcnbtbtbtbtbPkegNgvgvgvgvgOgvgvgvgvgvgNgvgvgvfqgvgvgvgOgvgvgvgvgvgvgvgvgvgNgOfqfqgIgH
 gHgIgvgvgJgKgRgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKlTmKeAeBfvmLadadjGadadadadjHeCadhBadeuhgfNadilbtbtbtbtbtbtbtbtbtkegvgvfqgvgvgvgvgvgvgvgvgvgNgvgvgvgvgvfqgvgvgvgvhdgvgvgvgvgvgIgIgIgIgIgH
@@ -744,5 +742,5 @@ gHgIgvgOgJgKgKgKgKiNgKgKiNgKgKiNgKgKiNgKgKiNgKgKiNgKgKiNgKlTeAeAeAeAjIjJjKhQjLjM
 gHgIgvhJgJgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKgKlTfvireAeAjPmMhxmNeAhymOlVmPmJkdmOhzmQmPhChDezbtbtbtbtbtbtbtbsbtkegOgvgvgNgvgvgvgvgvgvgvgvgvgvgOgvgvgNgvgvgvgvgvgvgvgvgvgvgvgIcmcvczcvcm
 gHgIfqgvgJgKgRgKgKhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjhjjEadeAeBeBmKhMlWhMjFivmRhOiaiwmShQhRhQhQhSmffvadbsbtbtbtbtbtbtbtbtkegvfqgvgvgvgvgvgvfqgvfqfqgvgvgvgvgvgvgvgvgOgvgvfqgvgvgvgvgOgIcmcvcvcvcm
 gHgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIgIcmcvjocvcm
-gHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHcmcmcmcmcm
+nwgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHgHcmcmcmcmcm
 "}
