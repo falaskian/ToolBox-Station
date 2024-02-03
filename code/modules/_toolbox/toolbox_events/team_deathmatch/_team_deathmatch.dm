@@ -973,6 +973,7 @@ client/verb/clearbullshit()
 	dat += "<A href='?src=\ref[src];forcemap=1'>Force Next Map</a>"
 	dat += "<br><br><A href='?src=\ref[src];endround=1'>End Round</a>"
 	dat += "<br><br><A href='?src=\ref[src];fakeplayer=1'>Create Dummy Player(Debug)</a>"
+	dat += "<br><br><A href='?src=\ref[src];eventvars=1'>Event Variables(Debug)</a>"
 	var/datum/browser/popup = new(user, "tdmadmin", "TDM Admin", 500, 500)
 	popup.set_content(dat)
 	popup.open()
@@ -1082,6 +1083,10 @@ client/verb/clearbullshit()
 			debug_minds += H.mind
 			restart_players(H)
 			message_admins("[usr.ckey] has created a dummy player for team_deathmatch.")
+	if(href_list["eventvars"])
+		if(usr.client)
+			usr.client.debug_variables(src)
+
 
 /datum/toolbox_event/team_deathmatch/proc/get_available_players()
 	. = GLOB.player_list.Copy()
