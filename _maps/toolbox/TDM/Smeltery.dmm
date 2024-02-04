@@ -85,7 +85,7 @@
 "bG" = (/obj/structure/marker_beacon{mouse_opacity = 0; picked_color = "Bronze"; pixel_x = 6; pixel_y = 0; resistance_flags = "LAVA_PROOF, FIRE_PROOF, UNACIDABLE, ACID_PROOF, INDESTRUCTIBLE"},/turf/open/floor/engine,/area/TDM)
 "bH" = (/obj/structure/railing{dir = 1; resistance_flags = 115},/turf/open/lava/smooth,/area/TDM)
 "bI" = (/obj/item/banner/TDM/red,/turf/closed/wall/rust,/area/TDM)
-"bJ" = (/obj/structure/railing/corner{resistance_flags = 115},/obj/structure/railing/corner{dir = 8},/obj/effect/turf_decal/stripes/asteroid/full,/turf/open/floor/sepia/TDM,/area/TDM)
+"bJ" = (/obj/effect/turf_decal/loading_area{color = "#FFBD50"},/turf/open/floor/sepia/TDM,/area/TDM)
 "bK" = (/obj/structure/lattice/catwalk,/obj/structure/railing{dir = 9},/turf/open/lava/smooth{slowdown = 0},/area/TDM)
 "bL" = (/turf/template_noop,/area/template_noop)
 "bM" = (/obj/structure/lattice/catwalk,/obj/structure/railing/corner{dir = 1},/turf/open/lava/smooth{slowdown = 0},/area/TDM)
@@ -181,6 +181,40 @@
 "dy" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_y = -32},/turf/open/indestructible,/area/TDM/blue_base)
 "dz" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_y = 32},/turf/open/indestructible,/area/TDM/red_base)
 "dA" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_y = 32},/turf/open/indestructible,/area/TDM/blue_base)
+"dB" = (/obj/machinery/disposal/deliveryChute{dir = 1},/obj/structure/disposalpipe/trunk,/obj/effect/turf_decal/stripes/asteroid/line{dir = 1},/turf/open/floor/sepia/TDM,/area/TDM)
+"dC" = (/obj/structure/disposalpipe/segment{dir = 5},/turf/closed/wall/rust,/area/TDM)
+"dD" = (/obj/structure/disposalpipe/segment{dir = 4},/turf/closed/wall/rust,/area/TDM)
+"dE" = (/obj/structure/railing/corner{resistance_flags = 115},/obj/structure/railing/corner{dir = 8},/obj/effect/turf_decal/stripes/asteroid/full,/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/sepia/TDM,/area/TDM)
+"dF" = (/obj/structure/disposalpipe/segment{dir = 10},/turf/closed/wall/rust,/area/TDM)
+"dG" = (/obj/structure/disposalpipe/segment{dir = 6},/turf/closed/wall/rust,/area/TDM)
+"dH" = (/obj/structure/disposalpipe/segment{dir = 9},/turf/closed/wall/rust,/area/TDM)
+"dI" = (/obj/structure/disposaloutlet{dir = 4},/obj/structure/disposalpipe/trunk{dir = 8},/obj/effect/turf_decal/stripes/asteroid/line{dir = 4},/turf/open/floor/sepia/TDM,/area/TDM)
+"dJ" = (/obj/effect/turf_decal/loading_area{color = "#FFBD50"; dir = 4},/turf/open/floor/sepia/TDM,/area/TDM)
+"dK" = (/obj/effect/turf_decal/loading_area{color = "#FFBD50"; dir = 8},/turf/open/floor/sepia/TDM,/area/TDM)
+"dL" = (/obj/structure/disposalpipe/trunk{dir = 4},/obj/structure/disposaloutlet{dir = 8},/obj/effect/turf_decal/stripes/asteroid/line{dir = 8},/turf/open/floor/sepia/TDM,/area/TDM)
+"dM" = (/obj/structure/ore_box/TDM{color = "#e6e6e6"},/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/floor/plating/rust,/area/TDM)
+"dN" = (/obj/structure/grille,/turf/open/floor/plating/rust,/area/TDM)
+"dO" = (/obj/structure/disposalpipe/segment{dir = 6},/turf/open/floor/plating/rust,/area/TDM)
+"dP" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/structure/grille,/turf/open/floor/plating/rust,/area/TDM)
+"dQ" = (/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"dR" = (/obj/effect/turf_decal/stripes/line{dir = 4},/obj/structure/disposaloutlet{dir = 4},/obj/structure/disposalpipe/trunk{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"dS" = (/obj/effect/turf_decal/loading_area{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"dT" = (/obj/structure/disposalpipe/trunk{dir = 4},/obj/structure/disposaloutlet{dir = 8},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"dU" = (/obj/structure/disposalpipe/segment{dir = 10},/turf/open/floor/plating/rust,/area/TDM)
+"dV" = (/turf/closed/indestructible/riveted/TDM,/area/template_noop)
+"dW" = (/obj/machinery/disposal/deliveryChute{dir = 8},/obj/structure/disposalpipe/trunk{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plating/rust,/area/TDM)
+"dX" = (/obj/structure/ore_box/TDM{color = "#e6e6e6"},/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"dY" = (/obj/structure/grille,/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plating/rust,/area/TDM)
+"dZ" = (/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plating/rust,/area/template_noop)
+"ea" = (/obj/structure/disposalpipe/segment{dir = 9},/turf/open/floor/plating/rust,/area/template_noop)
+"eb" = (/turf/closed/wall/rust,/area/template_noop)
+"ec" = (/turf/open/floor/plating/rust,/area/template_noop)
+"ed" = (/obj/structure/disposalpipe/segment{dir = 5},/turf/open/floor/plating/rust,/area/template_noop)
+"ee" = (/obj/structure/grille,/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plating/rust,/area/template_noop)
+"ef" = (/obj/structure/ore_box/TDM{color = "#e6e6e6"},/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plating/rust,/area/template_noop)
+"eg" = (/obj/structure/disposalpipe/trunk{dir = 8},/obj/machinery/disposal/deliveryChute{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating/rust,/area/template_noop)
+"eh" = (/obj/effect/turf_decal/loading_area{dir = 8},/turf/open/floor/plating/rust,/area/template_noop)
+"ei" = (/obj/structure/ore_box/TDM{color = "#e6e6e6"},/turf/open/floor/plating/rust,/area/template_noop)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -189,11 +223,11 @@ aaabababaHaHaHaHaHaHaHaHaHaoaoaoaoabacadadacacacacadabacacacacacacadadacacacabag
 aaababaHaHaHaHaHaHaHaHaHaoaoaoaoaoabacacacacacacacacacacacacacacacacadacadacabcCaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaiaicGabacadacadacacacacacacacacacacacacacacacacabaoaoaoaoaoaHaHaHaHaHaHaHaHaHababaa
 aaabaHaHaHaHaoaoaoaoaoaoaoaoaUaoaoatacacacacadacacacacacacadababacacacacaccHabakaiaicKaiaiaiaiaiaiaiaiaiaiaicNaiaialabcVacacacacacababadacacacacacacadacacacacaCaoaoaUaoaoaoaoaoaoaoaoaHaHaHaHabaa
 aaaHaHaHaHaoaoaoaoaoaoaoaoaoaUaoaoatacacacababababacacacadadadabacacacacacaccWcDaiaiaicEaiaiaiaiaiaiaiaicEaiaiaiaicFcXacacacacacacabadadadacacacababababacacacaCaoaoaUaoaoaoaoaoaoaoaoaoaHaHaHaHaa
-aaaHaHaHaoaoaoaoaHaHaeaoaoaoaoaoaoabadacacacacacabacacacadacacabacacacacacacawcIaiaibGaiaiaicEaiaicEaiaiaiaibSaiaicJaxacacacacacacabacacadacacacabacacacacacadabaoaoaoaoaoaoaeaHaHaoaoaoaoaHaHaHaa
-aaaHaHaoaoaoaoaHaHaHaHaoaoaoaoaoaoababadacacacacababacacacacacabadadacacacapabcLcMcMcIaiaiaiaiaiaiaiaiaiaiaicJcMcMcOabapacacacadadabacacacacacababacacacacadababaoaoaoaoaoaoaHaHaHaHaoaoaoaoaHaHaa
-aaaHaHaoaoaoaHaHaHaHaHaHaoaoaoaoaoaeababababacacapabababababababababbJabababababababcLdccPcPcMcMcMcMcMcPcPdccOabababababababbJabababababababababapacacababababaeaoaoaoaoaoaHaHaHaHaHaHaoaoaoaHaHaa
-aaaHaHaoaoaHaHaHaHaHaHaoaoaoaoaoaoaoaoaoaUabacacacacadabclclclclclclaqclclabababapacacacacacaccQcQcQacacacacacacapabababclclaqclclclclclclabadacacacacabaUaoaoaoaoaoaoaoaoaoaHaHaHaHaHaHaoaoaHaHaa
-aaaHaHaoaoaoaoaeaUaUaoaoaoaoaoaUaoaoaoaoaoaracacacacaccYauauauauauauaYclclclabacacacacacacacacacacacacacacacacacacacabclclclaZauauauauauaudnacacacacacaraoaoaoaoaoaUaoaoaoaoaoaUaUaeaoaoaoaoaHaHaa
+aaaHaHaHaoaoaoaoaHaHaeaoaoaoaoaoaoabadacacacacacabacacacadacbJabacacacacacacawcIaiaibGaiaiaicEaiaicEaiaiaiaibSaiaicJaxacacacacacacabbJacadacacacabacacacacacadabaoaoaoaoaoaoaeaHaHaoaoaoaoaHaHaHaa
+aaaHaHaoaoaoaoaHaHaHaHaoaoaoaoaoaoababadacacacacababacacacacdBabadadacacacapabcLcMcMcIaiaiaiaiaiaiaiaiaiaiaicJcMcMcOabapacacacadadabdBacacacacababacacacacadababaoaoaoaoaoaoaHaHaHaHaoaoaoaoaHaHaa
+aaaHaHaoaoaoaHaHaHaHaHaHaoaoaoaoaoaeababababacacapabababababdCdDdDdDdEdDdDdFababababcLdccPcPcMcMcMcMcMcPcPdccOababababdGdDdDdEdDdDdDdHabababababapacacababababaeaoaoaoaoaoaHaHaHaHaHaHaoaoaoaHaHaa
+aaaHaHaoaoaHaHaHaHaHaHaoaoaoaoaoaoaoaoaoaUabacacacacadabclclclclclclaqclcldCdDdDdIdJacacacacaccQcQcQacacacacacdKdLdDdDdHclclaqclclclclclclabadacacacacabaUaoaoaoaoaoaoaoaoaoaHaHaHaHaHaHaoaoaHaHaa
+aaaHaHaoaoaoaoaeaUaUaoaoaoaoaoaUaoaoaoaoaoaracacacacaccYauauauauauauaYclclclabapacacacacacacacacacacacacacacacacacapabclclclaZauauauauauaudnacacacacacaraoaoaoaoaoaUaoaoaoaoaoaUaUaeaoaoaoaoaHaHaa
 aaaHaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoabacacacacacabclclclclclclclclaoaoabacacacacacacacacacacacacacacacacacacacabaoaoclclclclclclclclabacacacacacabaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaoaHaa
 aaaHaoaoaoaoaoaoaoaoaoaoaUaoaoaoaoaoaoaoaoatacacacacacabclclclclclclclaoaoaoatacacacacacabarabacacacabarabacacacacacasaoaoaoclclclclclclclabacacacacacaCaoaoaoaoaoaoaoaoaUaoaoaoaoaoaoaoaoaoaoaHaa
 aaavavbPavaBavavavayaoaoaoaUaoaoaUaUaoaoaoababacacacababclclclaoaoaoaoaoaoaoatacaccQacacacacabanananabacacacaccQacacasaoaoaoaoaoaoaoclclclababacacacababaoaoaoaUaUaoaoaUaoaoaoazaAaAaAaNaAdiaAaAaa
@@ -206,9 +240,9 @@ aaayaMaEaEaQayaEaEaEavaoaoaoaoaoaoaobdbdbdbdaoaoaoaoaoaUaoaoaHaoaoaoaoaoaoclclcl
 aaavaRaEaEaVavaEaEaEavcybCbCbCbCabbHbHbHbHbHbHabclclclaHbEbEaHclclclclclclclclclclclclbKbMbFclbDbmbFclbDbNbOclclclclclclclclclclclclaHbEbEaHclclclabbHbHbHbHbHbHabbCbCbCbCcyaAaGaGaGaAaXaGaGbbaAaa
 aaavaDaEaEaWbxaEaEaEbPclclclclclclclclclclclclclclaHaHaHaoaoaHaHaoclclclclclclclclclbKbMbdbFclbDbdbFclbDbdbNbOclclclclclclclclclaoaHaHaoaoaHaHaHclclclclclclclclclclclclclcldiaGaGaGbybaaGaGaFaAaa
 aaavbcaEaEaEavaEaEaEbPclclclclclclclclclclclclclaHaHaHaoaoaoaoaHbebeclclclclclclclclbDbdbdbFclbDbdbFclbDbdbdbFclclclclclclclclbebeaHaoaoaoaoaHaHaHclclclclclclclclclclclclcldiaGaGaGaAaGaGaGbiaAaa
-aaavaDaEaEaWdraEaEaEbPclclclclclclclclclclclclaHaHcTaoaoaoaoaoaoaobeclclclclclclclclbDbmbdbFclbDbdbFclbDbdbmbFclclclclclclclclbeaoaoaoaoaoaoaocTaHaHclclclclclclclclclclclcldiaGaGaGdsbaaGaGaFaAaa
-aaavbfaEaEbgavaEaEaEavclcebYbYcfclclclclclclclaHaHaoaoaoaUaUaoaoaoaHaoclclclclclclclbQbwbdbFclbDbdbFclbDbdbzcaclclclclclclclaoaHaoaoaoaUaUaoaoaoaHaHclclclclclclclcebYbYcfclaAaGaGaGaAblaGaGbpaAaa
-aaaybjaEaEbkayaEaEaEavbYbZaoaobXabclclclclclclaHaHaHaoaoaociaUaoaoaHaHclclclclclclclclbQbwbFclbDbmbFclbDbzcaclclclclclclclclaHaHaoaoaUciaoaoaoaHaHaHclclclclclclabdjaoaobXbYaAaGaGaGazbsaGaGbuazaa
+aaavaDaEaEaWdraEaEaEbPclclclclclclclclclclclclaHaHcTaoaoaoaoaoaoaobebeclclclclclclclbDbmbdbFclbDbdbFclbDbdbmbFclclclclclclclbebeaoaoaoaoaoaoaocTaHaHclclclclclclclclclclclcldiaGaGaGdsbaaGaGaFaAaa
+aaavbfaEaEbgavaEaEaEavclcebYbYcfclclclclclclclaHaHaoaoaoaUaUaoaoaoaobeclclclclclclclbQbwbdbFclbDbdbFclbDbdbzcaclclclclclclclbeaoaoaoaoaUaUaoaoaoaHaHclclclclclclclcebYbYcfclaAaGaGaGaAblaGaGbpaAaa
+aaaybjaEaEbkayaEaEaEavbYbZaoaobXabclclclclclclaHaHaHaoaoaociaUaoaoaobeclclclclclclclclbQbwbFclbDbmbFclbDbzcaclclclclclclclclbeaoaoaoaUciaoaoaoaHaHaHclclclclclclabdjaoaobXbYaAaGaGaGazbsaGaGbuazaa
 aaavbqaEaEbravaEaEaEaBaoaoaUaoaoaoaUclclclclclclaHaHaHaoaoaoaoaoaHaHaHclclclclclclclclclbDbFclbDbdbFclbDbFclclclclclclclclclaHaHaHaoaoaoaoaoaHaHaHclclclclclclaUaoaoaoaUaoaoaNaGaGaGaAcjaGaGdqaAaa
 aaavaEaEaEaIavaEaEaEaBaoaoaUaoaoaoaoaoclclclclclclclaHaHaoaoaoaHaHaHclclcbcccccccccdclclbDbFclbDbdbFclbDbFclclcbcccccccccdclclaHaHaHaoaoaoaHaHclclclclclclclaoaoaoaoaoaUaoaoaNaGaGaGaAaJaGaGaGaAaa
 aaavaEaEaEaEdzaEaEaEavaoaoaoaoaoaUaoaoaoaoaoclclclclclaHbEbEaHaHaHaoclcbcgbdbdbdbdabababbMbNchbMbdbNchbMbNabababbdbdbdbddkcdclaoaHaHaHbEbEaHclclclclclaoaoaoaoaoaUaoaoaoaoaoaAaGaGaGdAaGaGaGaGaAaa
@@ -221,13 +255,13 @@ aaaHaobBbCcycyckaoaoaoaobUbRbRbRbRbRbUaoaoaoaoaoaoaoaoaoabclclclclclabbRbRbRabbR
 aaaHaobWclclclcnaoaoaoaoabbRczcAcRbRabaeaoaoaoaoaoaoaoabababbUbUbUababbRbRbRbRbRbRbRbVbVbRbRcocpcpcpcqbRbRbVbVbRbRbRbRbRbRbRababbUbUbUabababaoaoaoaoaoaoaoaeabbRcRcAczbRabaoaoaoaobWclclclcnaoaHaa
 aaaHaobWclclcebZaoababababbRbRbRddbRababababananababababbTbRbRbRbRbRbRbRbRbRbRbRbRcBbRbRcBbRcrclclclcsbRcBbRbRcBbRbRbRbRbRbRbRbRbRbRbRbRbTababababananababababbRddbRbRbRababababaobXcfclclcnaoaHaa
 aaaHaobWclclcnaoaoabbVbRbRbRbRbRbRbRbRbRbVbVbRbRbRbRbTabbRbRbRbRbRbRbRbRbRabbRbRbRcxbRbRcxbRcrcldtclcsbRcxbRbRcxbRbRbRabbRbRbRbRbRbRbRbRbRabbTbRbRbRbRbVbVbRbRbRbRbRbRbRbRbRbVabaoaobWclclcnaoaHaa
-aaaHaobWclclcnaoaoabbRbRbRbRbRbRbRbRbRbRbRbVbRbRbRbRbRcSbRbRbVbVbVbRbRbRababbRbRbRdebRbRdebRcrclclclcsbRdebRbRdebRbRbRababbRbRbRbVbVbVbRbRdobRbRbRbRbRbVbRbRbRbRbRbRbRbRbRbRbRabaoaobWclclcnaoaHaa
+aaaHaobWclclcnaoaoabbRbRbRbRbRbRbRbRbRbRbRbVbRbRbRbRbRcSbRbRbVbVbVbRbRbRababbRbRbRdebRbRdebRcrclclclcsbRdebRbRdebRbRbRababbRbRbRbVbVbVbRbRdobRbRbRbRbRdMbRbRbRbRbRbRbRbRbRbRbRabaoaobWclclcnaoaHaa
 aaaHaobXdfbIbZaoaoasbRbRbRbRbRbRabbRbRbRbRbRbRbRbRbRbRcSbRbRbRbVbVbRbRbRbRbVbRbRbRdgbRbRdgbRcrclclclcsbRdgbRbRdgbRbRbRbVbRbRbRbRbVbVbRbRbRdobRbRbRbRbRbRbRbRbRbRabbRbRbRbRbRbRdmaoaobXdadfdjaoaHaa
 aaaHaoaoaoaoaoaoaoasbRbRbRbRbRbRabbVbRbRbRbRbRbRbVbRdpabbRbRbRbRbRbRbRbRbRbRbRbRbRdhbRbRdhbRcrclclclcsbRdhbRbRdhbRbRbRbRbRbRbRbRbRbRbRbRbRabcZbRbVbRbRbRbRbRbRbVabbRbRbRbRbRbRdmaoaoaoaoaoaoaoaHaa
 aaaHaHaoaoaoaUaoaeabbRbRbRbRbRbTabbVbVbRbVbRbRbRbRbRbRbUbRbRbRbRbRbRbRbRbRbRbRbRabdgbRbRdgbRctcucucucvbRdgbRbRdgabbRbRbRbRbRbRbRbRbRbRbRbRbUbRbRbRbRbRbRbVbRbVbVabbTbRbRbRbRbRabaeaoaUaoaoaoaHaHaa
-aaduaHaHaHaHaHaHaHabababababababababababababababababababababababababababbRbRbRbVbVcBbRbRcBbRbRbRbRbRbRbRcBbRbRcBbVbVbRbRbRabababababababababababababababababababababababababababaHaHaHaHaHaHaHabaa
-dbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcUbRbRbRbRbRbRbRbRbRbRbVbVbVbRbRbRbRbRbRbRbRbRbRcUabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-bLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLaaababbRbRbRbRbRcUbRbRbRbVbVbVbVbVbRbRbRcUbRbRbRbRbRababaabLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbL
-bLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLaaaaabababababababababababababababababababababababababaaaabLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbL
-bLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbLbL
+aaduaHaHaHaHaHaHaHababababbRbRababababdNabababababababababababababababcUbRbRbRbVbVcBbRbRcBbRbRbRbRbRbRbRcBbRbRcBbVbVbRbRbRcUabababababababababababababababdNababababbRbRababababaHaHaHaHaHaHaHaHaa
+dbaaaaaaaaaaaaaaaaaaaaaaabbRbRbRbRbRbRbRabbVbRbRabababababababdOdPdQdQdRcAbRbRbRbRbRbRbRbRbRbRbVbVbVbRbRbRbRbRbRbRbRbRbRdSdTdQdQdPdUabababababababbRbRbVabbRbRbRbRbRbRbRabaaaaaaaaaaaaaaaaaaaaaaaa
+bLbLbLbLbLbLbLbLbLbLbLdVabbRbVcAdWdXdQdQdYdZdZdZdZdZdZdZdZdZdZeaebecbRbRbRbRbRbRbRbRcUbRbRbRbVbVbVbVbVbRbRbRcUbRbRbRbRbRbRbRbRecebeddZdZdZdZdZdZdZdZdZdZeedZdZefegeheiecebdVbLbLbLbLbLbLbLbLbLbLbL
+bLbLbLbLbLbLbLbLbLbLbLdVabababababababababebebebebebebebebebebebebebabababababababababababababababababababababababababababababebebebebebebebebebebebebebebebebebebebebebebdVbLbLbLbLbLbLbLbLbLbLbL
+bLbLbLbLbLbLbLbLbLbLbLdVaaaaaaaaaaaaaaaaaadVdVdVdVdVdVdVdVdVdVdVdVdVdVaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadVdVdVdVdVdVdVdVdVdVdVdVdVdVdVdVdVdVdVdVdVdVdVdVbLbLbLbLbLbLbLbLbLbLbL
 "}

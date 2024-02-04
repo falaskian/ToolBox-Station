@@ -76,65 +76,69 @@
 "bx" = (/turf/open/floor/plasteel/stairs/TDM/sepia,/area/TDM)
 "by" = (/obj/structure/lattice/catwalk{resistance_flags = 115},/obj/structure/railing{dir = 1; icon_state = "railing"; resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
 "bz" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_x = -32; pixel_y = 0},/turf/open/indestructible,/area/TDM/red_base)
-"bA" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_x = 32; pixel_y = 0},/turf/open/indestructible,/area/TDM/red_base)
-"bB" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_x = -32; pixel_y = 0},/turf/open/indestructible,/area/TDM/blue_base)
+"bA" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/turf/open/indestructible,/area/TDM/offlimits)
+"bB" = (/obj/machinery/gateway{density = 0; dir = 9; layer = 4.1; pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "bC" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_r2"; innate_accuracy_penalty = 6},/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/indestructible,/area/TDM/red_base)
 "bD" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_b1"; innate_accuracy_penalty = 6},/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced{dir = 8},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/indestructible,/area/TDM/blue_base)
 "bE" = (/obj/effect/portal/permanent/one_way/keep{id = "box_p_b2"; innate_accuracy_penalty = 6},/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced{dir = 8},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/indestructible,/area/TDM/blue_base)
 "bF" = (/obj/effect/portal/permanent/one_way/destroy{alpha = 20; id = "box_p_b1"},/obj/effect/portal/permanent/one_way/destroy{alpha = 20; id = "box_p_r1"},/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM)
 "bG" = (/obj/effect/portal/permanent/one_way/destroy{alpha = 20; id = "box_p_b2"},/obj/effect/portal/permanent/one_way/destroy{alpha = 20; id = "box_p_r2"},/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM)
 "bH" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_x = 32; pixel_y = 0},/turf/open/indestructible,/area/TDM/blue_base)
-"bI" = (/obj/machinery/gateway{dir = 9},/turf/closed/wall/rust,/area/TDM)
-"bJ" = (/obj/machinery/gateway{dir = 1},/turf/closed/wall/rust,/area/TDM)
+"bI" = (/turf/closed/indestructible/riveted/TDM/wall/rusty,/area/TDM)
+"bJ" = (/obj/machinery/gateway{dir = 9},/turf/closed/indestructible/riveted/TDM/wall/rusty,/area/TDM)
 "bK" = (/turf/template_noop,/area/template_noop)
-"bL" = (/obj/machinery/gateway{dir = 5},/turf/closed/wall/rust,/area/TDM)
+"bL" = (/obj/machinery/gateway{dir = 1},/turf/closed/indestructible/riveted/TDM/wall/rusty,/area/TDM)
 "bM" = (/obj/structure/lattice/catwalk{resistance_flags = 115},/obj/machinery/gateway{dir = 8},/turf/open/floor/sepia/TDM,/area/TDM)
 "bN" = (/obj/effect/portal/permanent{icon_state = "portal"; id = "box_p_a1"; name = "portal"; pixel_y = 9},/obj/machinery/gateway/centerstation{density = 0; layer = 3.1; level = 2},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
 "bO" = (/obj/machinery/power/port_gen/pacman{anchored = 1; resistance_flags = 115},/obj/machinery/gateway{dir = 4},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
-"bP" = (/obj/TDM_map_modifier/dirtifier/Dust1,/turf/closed/wall/rust,/area/TDM)
+"bP" = (/obj/machinery/gateway{dir = 5},/turf/closed/indestructible/riveted/TDM/wall/rusty,/area/TDM)
 "bQ" = (/obj/machinery/gateway,/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
 "bR" = (/obj/structure/railing{icon_state = "railing"; dir = 10},/turf/open/floor/sepia/TDM,/area/TDM)
 "bS" = (/obj/structure/railing{icon_state = "railing"; dir = 6},/turf/open/floor/sepia/TDM,/area/TDM)
 "bT" = (/obj/structure/railing{icon_state = "railing"; dir = 9},/turf/open/floor/sepia/TDM,/area/TDM)
 "bU" = (/obj/structure/railing{icon_state = "railing"; dir = 5},/turf/open/floor/sepia/TDM,/area/TDM)
-"bV" = (/obj/machinery/gateway{dir = 8},/obj/machinery/gateway{dir = 9; layer = 4.1; pixel_y = 32},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
-"bW" = (/obj/machinery/gateway/centerstation{density = 0; layer = 3.1; level = 2},/obj/effect/portal/permanent{icon_state = "portal"; id = "box_p_a1"; name = "portal"; pixel_y = 9},/obj/machinery/gateway{density = 0; dir = 1; layer = 4.1; pixel_y = 32},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
-"bX" = (/obj/machinery/gateway{dir = 4},/obj/machinery/gateway{dir = 5; layer = 4.1; pixel_y = 32},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
-"bY" = (/obj/structure/lattice/catwalk{resistance_flags = 115},/obj/structure/ore_box/TDM,/turf/open/floor/sepia/TDM,/area/TDM)
+"bV" = (/obj/machinery/gateway{density = 0; dir = 1; layer = 4.1; pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bW" = (/obj/machinery/gateway{density = 0; dir = 5; layer = 4.1; pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bX" = (/obj/machinery/gateway{dir = 8; layer = 2.91; pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bY" = (/obj/machinery/gateway/centerstation{density = 0; layer = 3.1; level = 2; pixel_y = -8},/obj/effect/portal/permanent{icon_state = "portal"; id = "dust1_p_1"; name = "portal"; pixel_y = 1},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "bZ" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
 "ca" = (/obj/machinery/status_display{message1 = "BLUE"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
 "cb" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "RED"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
 "cc" = (/obj/machinery/status_display{message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
 "cd" = (/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM/blue_base)
-"cl" = (/obj/machinery/power/port_gen/pacman{anchored = 1; resistance_flags = 115},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM,/area/TDM)
+"ce" = (/obj/TDM_map_modifier/dirtifier/Dust1,/turf/closed/indestructible/riveted/TDM/wall/rusty,/area/TDM)
+"cf" = (/obj/machinery/gateway{dir = 4; layer = 2.91; pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"cg" = (/obj/structure/ore_box/TDM,/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"ch" = (/obj/machinery/gateway{pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"ci" = (/obj/machinery/power/port_gen/pacman{anchored = 1; resistance_flags = 115},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 
 (1,1,1) = {"
 ababababababababababababababababababababababababababab
 abacacaccbacadbZadaccbacacaeafafcaafagccagafcaafafafab
 abacahaiakalamanamaoapaqahaearasatauavawavaxayazarafab
-abacbzaAaAaAaAaAaAaAaAaAbAaebBaBaBaBaBaBaBaBaBaBbHafab
-abacaaaAaAaAaAaAaAaAaAaAaaaeaGaBaBaBaBaBaBaBaBaBaGafab
+abacbzaAaAaAaAaAaAaAaAaAaAbAaBaBaBaBaBaBaBaBaBaBbHafab
+abacaaaAaAaAaAaAaAaAaAaAaabAaGaBaBaBaBaBaBaBaBaBaGafab
 abacaOaHaIaJaKaDaCaLaMaNbCaebDaPaQaRaSaFaEaTaUaVbEafab
 abacacacacacacacacacacacacaeafafafafafafafafafafafafab
-abababababababababababajbIbJbLajababababababababababab
-bKbKabajajajajajajajabajbMbNbOajabajajajajajajajabbKbK
-abababajaWaWaXaYaYajajajaYbQaYajajajaYaYaZaWaWajababab
-abajajajbaajajajbbbbbbbbbbbbbbbbbbbbbbajajajbaajajajab
-abajbcbcbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbcbcajab
-abajbcbdbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbdbcajab
-abajbcbcbcbcaXbebfbfbfbhaWaWaWbebfbfbfbhaZbcbcbcbcajab
-abajbdbcbcbiajajbjbjbjbRbgbgbgbSbjbjbjajajblbdbcbcajab
-abajbcbcbibmbjbjbjbjbjbjbjbjbjbjcdbjbjbjbjbnblbcbcajab
-abajbcbcbcaZbjbjbkbFbjbjbjbobjbjcdbGbkbjbjaXbcbcbcajab
-abajbcbcbpbqbjbjbjbjbjbjbjbjbjbjcdbjbjbjbjbrbsbcbcajab
-abajbcbcbdbpajajbjbjbjbTbvbvbvbUbjbjbjajajbsbcbcbdajab
-abajbcbcbcbcaXbtbubububwaWaWaWbtbubububwaZbcbcbcbcajab
-abajbcbdbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbdbcajab
-abajbcbcbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbcbcajab
-abbPajajbxajajajbybybybybybybybybybybyajajajbxajajajab
-abababajaWaWaXaYaYajajajaYaYaYajajajaYaYaZaWaWajababab
-bKbKabajajajajajajajabajbVbWbXajabajajajajajajajabbKbK
-bKbKabababababababababajbYbQclajabababababababababbKbK
-bKbKbKbKbKbKbKbKbKbKabajajajajajabbKbKbKbKbKbKbKbKbKbK
+abababababababababababbIbJbLbPbIababababababababababab
+bKbKabbIbIbIbIbIbIbIabbIbMbNbObIabbIbIbIbIbIbIbIabbKbK
+abababbIaWaWaXaYaYbIbIbIaYbQaYbIbIbIaYaYaZaWaWbIababab
+abbIbIbIbaajajajbbbbbbbbbbbbbbbbbbbbbbajajajbabIbIbIab
+abbIbcbcbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbcbcbIab
+abbIbcbdbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbdbcbIab
+abbIbcbcbcbcaXbebfbfbfbhaWaWaWbebfbfbfbhaZbcbcbcbcbIab
+abbIbdbcbcbiajajbjbjbjbRbgbgbgbSbjbjbjajajblbdbcbcbIab
+abbIbcbcbibmbjbjbjbjbjbjbjbjbjbjcdbjbjbjbjbnblbcbcbIab
+abbIbcbcbcaZbjbjbkbFbjbjbjbobjbjcdbGbkbjbjaXbcbcbcbIab
+abbIbcbcbpbqbjbjbjbjbjbjbjbjbjbjcdbjbjbjbjbrbsbcbcbIab
+abbIbcbcbdbpajajbjbjbjbTbvbvbvbUbjbjbjajajbsbcbcbdbIab
+abbIbcbcbcbcaXbtbubububwaWaWaWbtbubububwaZbcbcbcbcbIab
+abbIbcbdbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbdbcbIab
+abbIbcbcbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbcbcbIab
+abcebIbIbxajajajbybybybybybybybybybybyajajajbxbIbIbIab
+abababbIaWaWaXaYaYbIbIbIbBbVbWbIbIbIaYaYaZaWaWbIababab
+bKbKabbIbIbIbIbIbIbIabbIbXbYcfbIabbIbIbIbIbIbIbIabbKbK
+bKbKabababababababababbIcgchcibIabababababababababbKbK
+bKbKbKbKbKbKbKbKbKbKabbIbIbIbIbIabbKbKbKbKbKbKbKbKbKbK
 bKbKbKbKbKbKbKbKbKbKabababababababbKbKbKbKbKbKbKbKbKbK
 "}

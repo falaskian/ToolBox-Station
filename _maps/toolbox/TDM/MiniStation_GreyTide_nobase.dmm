@@ -173,7 +173,7 @@
 "dq" = (/obj/machinery/vending/modularpc,/turf/open/floor/plasteel,/area/TDM)
 "dr" = (/obj/machinery/vending/tool,/turf/open/floor/plasteel,/area/TDM)
 "ds" = (/obj/effect/turf_decal/tile/bar,/obj/effect/turf_decal/tile/bar{dir = 1},/obj/structure/table/reinforced,/obj/item/gun/ballistic/shotgun/doublebarrel{pixel_x = 4},/turf/open/floor/plasteel,/area/TDM)
-"dt" = (/obj/effect/turf_decal/tile/bar,/obj/effect/turf_decal/tile/bar{dir = 1},/obj/structure/table/reinforced,/turf/open/floor/plasteel,/area/TDM)
+"dt" = (/obj/effect/turf_decal/tile/bar,/obj/effect/turf_decal/tile/bar{dir = 1},/obj/structure/table/reinforced,/obj/item/reagent_containers/glass/rag{pixel_y = 4},/turf/open/floor/plasteel,/area/TDM)
 "du" = (/obj/effect/turf_decal/tile/bar,/obj/effect/turf_decal/tile/bar{dir = 1},/obj/structure/table/reinforced,/obj/item/stack/spacecash/c10,/turf/open/floor/plasteel,/area/TDM)
 "dv" = (/obj/effect/turf_decal/tile/bar,/obj/effect/turf_decal/tile/bar{dir = 1},/obj/structure/table/reinforced,/obj/item/reagent_containers/food/drinks/beer{pixel_y = 7},/turf/open/floor/plasteel,/area/TDM)
 "dw" = (/obj/machinery/door/airlock/maintenance{name = "Kitchen Maintenance"; req_access_txt = "0"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 1},/obj/structure/cable/yellow{icon_state = "1-2"},/turf/open/floor/plating,/area/TDM)
@@ -514,7 +514,7 @@
 "jT" = (/obj/structure/sink{dir = 4; pixel_x = 11},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 1},/obj/structure/mirror{pixel_x = 28},/turf/open/floor/plasteel/freezer,/area/TDM)
 "jU" = (/obj/machinery/atmospherics/components/unary/tank/air{dir = 4},/turf/open/floor/plating,/area/TDM)
 "jV" = (/obj/structure/cable/yellow{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold/supply/hidden{dir = 4},/turf/open/floor/plating,/area/TDM)
-"jW" = (/obj/structure/closet/crate{opened = 1},/obj/machinery/light{dir = 8},/obj/effect/turf_decal/delivery,/turf/open/floor/plasteel,/area/TDM)
+"jW" = (/obj/item/stack/sheet/iron/five,/turf/open/floor/plating,/area/TDM)
 "jX" = (/obj/structure/table,/obj/item/storage/toolbox/mechanical{pixel_x = -2; pixel_y = -1},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,/obj/effect/turf_decal/tile/brown{dir = 4},/turf/open/floor/plasteel,/area/TDM)
 "jY" = (/obj/structure/table,/obj/item/folder/yellow,/obj/item/folder/yellow,/obj/item/storage/firstaid/regular,/obj/effect/turf_decal/tile/brown{dir = 1},/turf/open/floor/plasteel,/area/TDM)
 "jZ" = (/obj/structure/table,/obj/item/radio/intercom{dir = 4; pixel_x = 27},/obj/item/clothing/gloves/color/yellow,/obj/item/t_scanner,/obj/effect/turf_decal/tile/brown,/obj/effect/turf_decal/tile/brown{dir = 4},/turf/open/floor/plasteel,/area/TDM)
@@ -643,6 +643,7 @@
 "ms" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "RED"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM,/area/TDM/red_base)
 "mt" = (/obj/machinery/status_display{font_color = "#f00"; message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM,/area/TDM/red_base)
 "mu" = (/obj/structure/disposalpipe/segment{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating,/area/TDM)
+"mv" = (/obj/structure/closet/crate{opened = 1},/obj/machinery/light{dir = 8},/obj/effect/turf_decal/delivery,/obj/item/stack/sheet/iron/five,/turf/open/floor/plasteel,/area/TDM)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -653,7 +654,7 @@ aaababababababababababababababababababababababababababababababababababababababab
 aaabababababababababababababababababababababababababadadadadadadadabababababababababababababababababababababaeaeaeaeaeaeaeababababadadadadadadadababababababababababababababababababababababababaa
 aaabababababababababababababababababababababababababadafagahaiajadababababababababababababababababababababababaeaeaeaeaeabababababadakalafamahadababababababababababababababababababababababababaa
 aaababababababababababadadadadadadananananadadadadadadaoapaqajajadanananadadadababababababadadadadadadadadadadadadadadadadadanananadajarasapaoadadadadadadananananadadadadadadabababababababababaa
-aaababababababababababadatauavawawawawawaxayazaAaBaCaCaDaEaqapajaiajajajadaFadadadadadadadadajaGaHaiajaIaiaiadaJaKaLaiaMadaNaOaPaQaRaSapasaTaDawawawawaUawaVawawawawawaWauatadabababababababababaa
+aaababababababababababadatauavawawawawawaxayazaAaBaCaCaDaEaqapajaiajajajadaFadadadadadadadadjWaGaHaiajaIaiaiadaJaKaLaiaMadaNaOaPaQaRaSapasaTaDawawawawaUawaVawawawawawaWauatadabababababababababaa
 aaababababababababababaXajaYaZbabbbcbdbebfbgbhbibjbababkblasbmajajajaiajajbnboagagagagagahaIbpajbqbraiapafagbsagagagagagbtajajajaiajajbuasblbvbwbwbxbibybzbAbBbCbDbEbaaZaYajaXabababababababababaa
 aaababababababababababadbFadadbGanbHbababIanbGadbJbKbLbMblasapapapapapapapapbNapapapapapbOapapapapapapapbPatapapapapapbQapapapbRarajbSapasblbMbTbKbUadbGanbHbababIanbGadadbFadabababababababababaa
 aaababababababababababadbVadbWbXanbYbZcacbanccbWanadcdceblbncfcfcgcfchapcicjckclcmcjciapcncocpcpcqcpcpcpcrcsapctcucvcwcucxcyapafcfcgcfcfczblcecAadanbWbXancBcabZcCanccbWadbVadabababababababababaa
@@ -672,10 +673,10 @@ aaababababababababababaXajaYicidieifigigihiiijikifigigigilimininioinininipbaapiq
 aaababababababababababadbFauiLiMiMiMiMiMiMbababababababafMgPbaiNbaiObabaiPiQapiRiSiRapiTapiUbabaiViWiWiWiXhWajiYiZjajbapjciPbabaiObaiNbabafMbababababababaiMiMiMiMiMiMiLaubFadabababababababababaa
 aaababababababababababadadadadadadananananadadadadjdjdjdapfhcTjecTcTcTcTcTcTcTcTjfcTcTjgcTjhhgjijjjkjkjljmhWhXapjnapapjoapapapapapapapapapapjdjdjdadadadadadadadadadjpjpadadadabababababababababaa
 aaababababababababababababababababababababababadjqbabababajrapjsjtjujvjwiYjxjyjzjAapjBjCjDfZbagPjEjFbajGjHhWbajIjJjKapiCjLiEapjMjMjNjOapjrbabababajqadabababababababababababababababababababababaa
-aaababababababababababababababababababababababadjqbababababaapjPjQjQjQjRapapapjSjTapjUjVapjWbagPjXjYgVjGjZhWkafqbakbapkciZkdapkebabakfapbababababajqadabababababababababababababababababababababaa
+aaababababababababababababababababababababababadjqbababababaapjPjQjQjQjRapapapjSjTapjUjVapmvbagPjXjYgVjGjZhWkafqbakbapkciZkdapkebabakfapbababababajqadabababababababababababababababababababababaa
 aaababababababababababababababababababababababadkgbabaiPbabaapkhkHkikjkkklkmknkokpaTkqkrcTksbaktkuhghgkvkwkxkykzkAjIapapkBapapkCkDkEkFkGbabaiPbabakgadabababababababababababababababababababababaa
 aaababababababababababababababababababababababadadananadbabaapkIkJkKmukLcTcTcTkMkNcUkOkPkQkRkSkSkTkUkUkVkWkXkYkZgPbabababababababalalbapbabaadananadadabababababababababababababababababababababaa
-aaababababababababababababababababababababababababababadbabaapapapaplcapapldlelfjSapajlgaplhliljlklllmlnlohWlplqlrapaplsapapapapgtgtltadbabaapabababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababadbabaapapapaplcapapldlelfjSapjWlgaplhliljlklllmlnlohWlplqlrapaplsapapapapgtgtltadbabaapabababababababababababababababababababababababababaa
 aaababababababababababababababababababababababababababadbabafMbababababaaplulejSlvapajlgapapapgtgtgthWlwlxhWlybalzaplAiZiEapbababababafMbabaapabababababababababababababababababababababababababaa
 aaababababababababababababababababababababababababababadbabafMbabababalBapldlejSlChXajlDlElFlGlHlIlJlKlLlMapbalNlOapkclPjbaplQbabababafMbabaapababaeaeabababababababababababababababababababababaa
 aaababababababababababababababababababababababababababadadadadadadadbabaapapapapapapapapapapaplRlSkSkSlTlUaplVapapapapapapapbabaapapapapapapapabababababababababababababababababababababababababaa
