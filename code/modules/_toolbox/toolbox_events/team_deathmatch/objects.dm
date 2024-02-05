@@ -831,3 +831,58 @@ obj/item/TDM_pickup/health/attack_hand(mob/living/user)
 	user.adjustOxyLoss(heal_oxy)
 	playsound(loc, 'sound/effects/refill.ogg', 100)
 	qdel(src)
+
+
+		//Universal Magazine
+
+/obj/item/universal_magazine
+	name = "Chameleon Magazine"
+	desc = "This magazine is a revolutionary universal weapons magazine, constructed with advanced nanotechnology that instantly adjusts and morphs its ammunition to flawlessly match any firearm, ensuring seamless compatibility and maximizing adaptability on the battlefield."
+	icon = 'icons/oldschool/items.dmi'
+	icon_state = "universalammo"
+	w_class = 2
+	var/list/specific_ammo = list() //forces a specific ammo for a specific weapon. write list entries like this example; /obj/item/gun/ballistic/shotgun = /obj/item/ammo_box/magazine/internal/shot/lethal
+
+/obj/item/universal_magazine/afterattack(atom/target as mob|obj|turf|area, mob/user)
+	if(istype(target,/obj/item/gun/ballistic) && (CanReach(user,target) || (target in user.DirectAccess())))
+		var/obj/item/gun/ballistic/B = target
+		var/new_mag_type = null
+		if(B.type in specific_ammo)
+			new_mag_type = specific_ammo[B.type]
+		else if(!B.internal_magazine && B.mag_type && (!B.magazine || B.tac_reloads))
+			new_mag_type = B.mag_type
+		else if((B.bolt_type == BOLT_TYPE_NO_BOLT || B.internal_magazine) && B.magazine)
+			var/gunammo_type = B.magazine.ammo_type
+			var/guncaliber = B.magazine.caliber
+			if(!gunammo_type || !guncaliber)
+				var/obj/item/ammo_box/magazine/internalmag = B.mag_type
+				if(internalmag)
+					gunammo_type = initial(internalmag.ammo_type)
+					guncaliber = initial(internalmag.caliber)
+			var/topammo = 0
+			for(var/t in subtypesof(/obj/item/ammo_box))
+				if(findtext("[t]","/obj/item/ammo_box/magazine/internal"))
+					continue
+				var/obj/item/ammo_box/box = t
+				var/boxcaliber = initial(box.caliber)
+				var/boxammo_type = initial(box.ammo_type)
+				if((boxammo_type == gunammo_type) || (guncaliber && boxcaliber == guncaliber))
+					if(initial(box.max_ammo) > topammo)
+						new_mag_type = t
+			if(!new_mag_type && gunammo_type)
+				new_mag_type = gunammo_type
+		if(new_mag_type)
+			var/obj/item/box = new new_mag_type()
+			if(box)
+				moveToNullspace()
+				to_chat(user, "<span class='notice'>The [src] transforms in to <B>[capitalize(box)]</B>.</span>")
+				if(user.put_in_hands(box))
+					B.attackby(box,user)
+				else
+					box.forceMove(user.loc)
+				qdel(src)
+		return
+	. = ..()
+
+
+
