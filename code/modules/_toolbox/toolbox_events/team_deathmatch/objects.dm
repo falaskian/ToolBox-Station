@@ -886,3 +886,119 @@ obj/item/TDM_pickup/health/attack_hand(mob/living/user)
 
 
 
+		//floating item hologram
+
+/obj/structure/holographic_item
+	name = "floating item"
+	desc = null
+	icon = 'icons/oldschool/items.dmi'
+	icon_state = "hololamp_broken"
+	anchored = 1
+	density = 0
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
+	var/image/item_image = null
+	var/obj/item/holder = null
+	var/last_take = 0
+	var/current_outline_frame = 1
+	var/list/animation_direction = 1
+
+	//dynamic variables (editable)
+	var/starting_item		//set as the type of item that will spawn inside this.
+	var/respawn_time = 0		//how long to respawn the item once taken?
+	var/list/glow_outline_frames = list(		//Set each list entry as how you want each animated frame to be. time: how long is the fame. size: outline thickness. R.G.B: red, green and blue color numbers for the outline. Alpha: the alpha of the outline
+		"time=1.7;size=0;R=250;G=228;B=140;alpha=0",
+		"time=1.3;size=1;R=250;G=228;B=140;alpha=50",
+		"time=1.3;size=1;R=250;G=228;B=140;alpha=80",
+		"time=1.3;size=1;R=250;G=228;B=140;alpha=110",
+		"time=1.3;size=2;R=250;G=228;B=140;alpha=110")
+
+/obj/structure/holographic_item/Initialize()
+	. = ..()
+	respawn_item()
+	update_icon()
+	spawn(0)
+		var/sleep_duration = 1
+		while(1)
+			sleep_duration = animate_outline()
+			if(!isnum(sleep_duration))
+				sleep_duration = 1
+			sleep_duration = max(1,sleep_duration)
+			sleep(sleep_duration)
+
+/obj/structure/holographic_item/process()
+	if(!last_take || world.time >= last_take+respawn_time)
+		respawn_item()
+		STOP_PROCESSING(SSobj, src)
+
+/obj/structure/holographic_item/attack_hand(mob/user)
+	if(holder)
+		if(!user.put_in_hands(holder))
+			holder.forceMove(user.loc)
+		to_chat(user,"<span class='notice'>You take the [holder].</span>")
+		holder = null
+		animate_outline()
+		last_take = world.time
+		START_PROCESSING(SSobj, src)
+		update_icon()
+		return
+	. = ..()
+
+/obj/structure/holographic_item/proc/animate_outline()
+	if(!item_image)
+		update_icon()
+	if(!holder)
+		item_image.filters = null
+		item_image.pixel_y = initial(item_image.pixel_y)
+		return
+	if(current_outline_frame > glow_outline_frames.len||current_outline_frame < 1)
+		current_outline_frame = clamp(current_outline_frame, 1, glow_outline_frames.len)
+		animation_direction *= -1
+	var/list/paramslist = params2list(glow_outline_frames[current_outline_frame])
+	var/sleep_duration = 1
+	if(paramslist.len)
+		var/thealpha = text2num(paramslist["alpha"])
+		var/thesize = text2num(paramslist["size"])
+		var/animation_color = rgb(text2num(paramslist["R"]),text2num(paramslist["G"]),text2num(paramslist["B"]),thealpha)
+		sleep_duration = text2num(paramslist["time"])
+		item_image.pixel_y = current_outline_frame-1
+		if(thesize > 0 && thealpha > 0)
+			item_image.filters = filter(type="outline", size=thesize, color=animation_color)
+		else if(filters)
+			item_image.filters = null
+	current_outline_frame += animation_direction
+	update_icon()
+	return sleep_duration
+
+/obj/structure/holographic_item/proc/respawn_item()
+	holder = new starting_item()
+	name = holder.name
+	desc = holder.desc
+	update_icon()
+
+/obj/structure/holographic_item/update_icon()
+	overlays.Cut()
+	if(!item_image)
+		item_image = new()
+	item_image.icon = null
+	item_image.icon_state = null
+	item_image.overlays.Cut()
+	item_image.color = null
+	if(holder)
+		icon_state = "hololamp"
+		item_image.icon = holder.icon
+		item_image.icon_state = holder.icon_state
+		item_image.overlays = holder.overlays
+		item_image.color = holder.color
+	else
+		icon_state = "hololamp_broken"
+	overlays.Add(item_image)
+
+/obj/structure/holographic_item/take_damage()
+	return
+
+
+		//floating ammo hologram
+
+/obj/structure/holographic_item/universal_magazine
+	starting_item = /obj/item/universal_magazine
+	respawn_time = 300
