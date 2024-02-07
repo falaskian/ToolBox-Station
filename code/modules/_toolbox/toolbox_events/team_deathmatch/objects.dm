@@ -875,7 +875,7 @@ obj/item/TDM_pickup/health/attack_hand(mob/living/user)
 			var/obj/item/box = new new_mag_type()
 			if(box)
 				moveToNullspace()
-				to_chat(user, "<span class='notice'>The [src] transforms in to <B>[capitalize(box)]</B>.</span>")
+				to_chat(user, "<span class='notice'>The [src] transforms in to <B>[capitalize(box.name)]</B>.</span>")
 				if(user.put_in_hands(box))
 					B.attackby(box,user)
 				else
@@ -903,6 +903,7 @@ obj/item/TDM_pickup/health/attack_hand(mob/living/user)
 	var/list/animation_direction = 1
 
 	//dynamic variables (editable)
+	var/image_starter_pixel_y = 5
 	var/starting_item		//set as the type of item that will spawn inside this.
 	var/respawn_time = 0		//how long to respawn the item once taken?
 	var/list/glow_outline_frames = list(		//Set each list entry as how you want each animated frame to be. time: how long is the fame. size: outline thickness. R.G.B: red, green and blue color numbers for the outline. Alpha: the alpha of the outline
@@ -918,7 +919,7 @@ obj/item/TDM_pickup/health/attack_hand(mob/living/user)
 	update_icon()
 	spawn(0)
 		var/sleep_duration = 1
-		while(1)
+		while(!QDELETED(src))
 			sleep_duration = animate_outline()
 			if(!isnum(sleep_duration))
 				sleep_duration = 1
@@ -948,9 +949,9 @@ obj/item/TDM_pickup/health/attack_hand(mob/living/user)
 		update_icon()
 	if(!holder)
 		item_image.filters = null
-		item_image.pixel_y = initial(item_image.pixel_y)
+		item_image.pixel_y = image_starter_pixel_y
 		return
-	if(current_outline_frame > glow_outline_frames.len||current_outline_frame < 1)
+	if(current_outline_frame >= glow_outline_frames.len||current_outline_frame <= 1)
 		current_outline_frame = clamp(current_outline_frame, 1, glow_outline_frames.len)
 		animation_direction *= -1
 	var/list/paramslist = params2list(glow_outline_frames[current_outline_frame])
@@ -960,7 +961,7 @@ obj/item/TDM_pickup/health/attack_hand(mob/living/user)
 		var/thesize = text2num(paramslist["size"])
 		var/animation_color = rgb(text2num(paramslist["R"]),text2num(paramslist["G"]),text2num(paramslist["B"]),thealpha)
 		sleep_duration = text2num(paramslist["time"])
-		item_image.pixel_y = current_outline_frame-1
+		item_image.pixel_y = (image_starter_pixel_y+current_outline_frame)-1
 		if(thesize > 0 && thealpha > 0)
 			item_image.filters = filter(type="outline", size=thesize, color=animation_color)
 		else if(filters)
