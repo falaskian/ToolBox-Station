@@ -612,7 +612,6 @@
 "lN" = (/obj/structure/flora/rock/pile,/obj/structure/railing{dir = 1; resistance_flags = 115},/turf/open/floor/grass,/area/TDM)
 "lO" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/railing{dir = 1; resistance_flags = 115},/turf/open/floor/grass,/area/TDM)
 "lP" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/flora/ausbushes/ppflowers,/obj/structure/railing{dir = 5},/turf/open/floor/grass,/area/TDM)
-"lQ" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/obj/structure/transit_tube/curved/flipped{dir = 1; resistance_flags = 115},/turf/open/floor/plating,/area/TDM)
 "lR" = (/obj/structure/chair/comfy/beige,/turf/open/floor/plasteel,/area/TDM)
 "lS" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/railing{dir = 8},/turf/open/floor/grass,/area/TDM)
 "lT" = (/obj/structure/flora/ausbushes/sunnybush,/turf/open/floor/grass,/area/TDM)
@@ -643,29 +642,15 @@
 "ms" = (/obj/structure/displaycase/TDM_item_spawn/uzi,/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
 "mt" = (/obj/structure/displaycase/TDM_item_spawn/APS,/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
 "mu" = (/obj/structure/displaycase/TDM_item_spawn/m1911,/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
-"mv" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/obj/structure/transit_tube/curved{icon_state = "curved0"; dir = 1; resistance_flags = 115},/turf/open/floor/plating,/area/TDM)
-"mw" = (/obj/structure/transit_tube/curved{dir = 8; resistance_flags = 115},/turf/open/floor/fakespace,/area/TDM/offlimits)
 "mx" = (/obj/machinery/status_display{font_color = "#f00"; message1 = "KILLS"},/turf/closed/wall/mineral/titanium,/area/TDM/red_base)
 "my" = (/obj/machinery/status_display{font_color = "#09f"; message1 = "KILLS"},/turf/closed/wall/mineral/titanium,/area/TDM/blue_base)
 "mz" = (/obj/structure/disposalpipe/segment{dir = 5},/obj/machinery/button/crematorium{id = "ministation_incinerator"; name = "incinerator igniter"; pixel_x = -5; pixel_y = -25},/obj/effect/turf_decal/stripes/line{dir = 9},/turf/open/floor/plating,/area/TDM)
 "mA" = (/obj/structure/closet/crate{opened = 1},/obj/machinery/light{dir = 8},/obj/effect/turf_decal/delivery,/obj/item/stack/sheet/iron/five,/turf/open/floor/plasteel,/area/TDM)
-"mB" = (/obj/structure/transit_tube/curved/flipped{icon_state = "curved1"; dir = 4; resistance_flags = 115},/turf/open/floor/fakespace,/area/TDM/offlimits)
 "nB" = (/obj/item/storage/toolbox/mechanical{pixel_x = -2; pixel_y = -1},/turf/open/floor/plasteel,/area/TDM)
 "nC" = (/obj/structure/table,/obj/item/storage/toolbox/mechanical{pixel_x = 4; pixel_y = 2},/turf/open/floor/plasteel,/area/TDM)
 "nD" = (/obj/structure/table,/obj/item/wrench,/turf/open/floor/plasteel,/area/TDM)
 "nE" = (/obj/machinery/conveyor/inverted{dir = 9; icon_state = "conveyor_map_inverted"; id = "garbage"},/turf/open/floor/plating,/area/TDM)
-"nF" = (/obj/structure/transit_tube/station/reverse{dir = 4; resistance_flags = 115},/obj/effect/turf_decal/stripes/line{dir = 5},/obj/structure/transit_tube_pod,/turf/open/floor/plating,/area/TDM)
-"nG" = (/obj/machinery/door/airlock/public/glass{name = "Transit Tube"},/turf/open/floor/plasteel,/area/TDM)
-"nH" = (/obj/effect/turf_decal/stripes/line{dir = 9},/obj/structure/transit_tube/station/reverse{dir = 8; resistance_flags = 115},/turf/open/floor/plating,/area/TDM)
-"nI" = (/obj/structure/transit_tube{resistance_flags = 115},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating,/area/TDM)
-"nJ" = (/obj/effect/turf_decal/stripes/line{dir = 8},/obj/structure/transit_tube{resistance_flags = 115},/turf/open/floor/plating,/area/TDM)
-"nM" = (/obj/structure/transit_tube/diagonal/topleft{resistance_flags = 115},/turf/open/floor/fakespace,/area/TDM/offlimits)
-"nN" = (/obj/structure/transit_tube/diagonal{resistance_flags = 115},/turf/open/floor/fakespace,/area/TDM/offlimits)
 "nQ" = (/obj/structure/chair,/obj/structure/extinguisher_cabinet{pixel_x = 27},/turf/open/floor/plasteel,/area/TDM)
-"nR" = (/obj/structure/transit_tube/curved{dir = 4},/turf/open/floor/fakespace,/area/TDM/offlimits)
-"nS" = (/obj/structure/transit_tube/horizontal{resistance_flags = 115},/turf/open/floor/fakespace,/area/TDM/offlimits)
-"nW" = (/obj/structure/transit_tube/curved/flipped{icon_state = "curved1"; dir = 8; resistance_flags = 115},/turf/open/floor/fakespace,/area/TDM/offlimits)
-"nX" = (/obj/structure/transit_tube/curved{dir = 4; resistance_flags = 115},/turf/open/floor/fakespace,/area/TDM/offlimits)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -698,18 +683,18 @@ aaababababababababababababababababababababababadjdbababalKjeaojfjgjhjijjiLjkjljm
 aaababababababababababababababababababababababadjdbababababaaojCjDjDjDjEaoaoaojFjGaojHjIaomAnBgCjKjLgIjtjMhJjNfqbajOaojPiMjQaojRbabajSaobababababajdadabababababababababababababababababababababaa
 aaababababababababababababababababababababababadjTbabababaloaojUkujVjWjXjYjZkakbkcaSkdkecVkfbakgkhgTgTkikjkkklkmknjvaoaokoaoaokpkqkrksktbababababajTadabababababababababababababababababababababaa
 aaababababababababababababababababababababababadadnCnDbababaaonEkwmzkxkycVcVcVkzkAcWkBkCkDkEkFkFkGkHkHkIkJkKkLkMgCbabababababababakNkOaobababanDnCadadabababababababababababababababababababababaa
-aaabababababababababababababababababababababababadggggaobabaaoaoaoaokPaoaokQkRkSjFaojJkTaokUkVkWkXkYkZlalbhJlcldleaoaolfaoaoaoaogggglgadbabaaoggggadababababababababababababababababababababababaa
-aaabababababababababababababababababababababababadnFbanGbabafDbababababaaolhkRjFliaoaikTaoaoaogggggghJljlkhJllbalmaolniMiraobababababafDbabanGbanHadababababababababababababababababababababababaa
-aaabababababababababababababababababababababababadnIbaadbabafDiAbababalpaokQkRjFlqhKailrlsltlulvlwlxlylzlAaobalBlCaojPlDiOaolEbabaiBbafDbabaadbanJadababababababababababababababababababababababaa
-aaabababababababababababababababababababababababadlQamadadadadadadadbabaaoaoaoaoaoaoaoaoaoaoaolFlGkFkFlHlIaolJaoaoaoaoaoaoaobabaaoaoaoaoaoaoaoammvadababababababababababababababababababababababaa
-aaabababababababababababababababababababababababababnMababababababambababababacnfDbababalKbababababababalLlKbababafDbabababababaamababababababnNababababababababababababababababababababababababaa
-aaababababababababababababababababababababababababababnMabababababamjebababababafDbababaiBbabababababababababababafDbaiAbababajeamabababababnNabababababababababababababababababababababababababaa
-aaabababababababababababababababababababababababababababnMababababadadadadadadadadamamamadbabalMlNlOlPbanQadamamamadadadadadadadadababababnNababababababababababababababababababababababababababaa
-aaababababababababababababababababababababababababababababnMababababababababababababababamlRbalSlTlUlVbalWamababababababababababababababnNabababababababababababababababababababababababababababaa
-aaabababababababababababababababababababababababababababababnRnSnSnSnSnSnSnSnSmwababababamlXlYlZmambmcbamdamabababmBnSnSnSnSnSnSnSnSnSnWababababababababababababababababababababababababababababaa
-aaabababababababababababababababababababababababababababababababababababababababnMabababamamamamamamamamamamababnNabababababababababababababababababababababababababababababababababababababababaa
-aaababababababababababababababababababababababababababababababababababababababababnMabababababababababababababnNababababababababababababababababababababababababababababababababababababababababaa
-aaabababababababababababababababababababababababababababababababababababababababababnXnSnSnSnSnSnSnSnSnSnSnSnWabababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababadamamadbabaaoaoaoaokPaoaokQkRkSjFaojJkTaokUkVkWkXkYkZlalbhJlcldleaoaolfaoaoaoaogggglgadbabaaoamamadababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababadbabafDbababababaaolhkRjFliaoaikTaoaoaogggggghJljlkhJllbalmaolniMiraobababababafDbabaaoabababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababadbabafDiAbababalpaokQkRjFlqhKailrlsltlulvlwlxlylzlAaobalBlCaojPlDiOaolEbabaiBbafDbabaadabababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababadadadadadadadbabaaoaoaoaoaoaoaoaoaoaoaolFlGkFkFlHlIaolJaoaoaoaoaoaoaobabaaoaoaoaoaoaoaoabababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababababababababambababababacnfDbababalKbababababababalLlKbababafDbabababababaamabababababababababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababababababababamjebababababafDbababaiBbabababababababababababafDbaiAbababajeamabababababababababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababababababababadadadadadadadadamamamadbabalMlNlOlPbanQadamamamadadadadadadadadabababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababababababababababamlRbalSlTlUlVbalWamababababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababababababababababamlXlYlZmambmcbamdamababababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababababababababababamamamamamamamamamamababababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa

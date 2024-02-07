@@ -105,11 +105,13 @@
 "ca" = (/obj/machinery/status_display{message1 = "BLUE"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
 "cb" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "RED"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
 "cc" = (/obj/machinery/status_display{message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
+"cd" = (/obj/structure/holographic_item/universal_magazine,/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "ce" = (/obj/TDM_map_modifier/dirtifier/Dust1,/turf/closed/indestructible/riveted/TDM/wall/rusty,/area/TDM)
 "cf" = (/obj/machinery/gateway{dir = 4; layer = 2.91; pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "cg" = (/obj/structure/ore_box/TDM,/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "ch" = (/obj/machinery/gateway{pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "ci" = (/obj/machinery/power/port_gen/pacman{anchored = 1; resistance_flags = 115},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"cj" = (/obj/structure/holographic_item/universal_magazine,/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM)
 
 (1,1,1) = {"
 ababababababababababababababababababababababababababab
@@ -126,11 +128,11 @@ abbIbIbIbaajajajbbbbbbbbbbbbbbbbbbbbbbajajajbabIbIbIab
 abbIbcbcbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbcbcbIab
 abbIbcbdbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbdbcbIab
 abbIbcbcbcbcaXbebfbfbfbhaWaWaWbebfbfbfbhaZbcbcbcbcbIab
-abbIbdbcbcbiajajbjbjbjbRbgbgbgbSbjbjbjajajblbdbcbcbIab
+abbIbdbcbcbiajajbjbjbjbRbgbgbgbSbjbjbjajajblbdbccdbIab
 abbIbcbcbibmbjbjbjbjbjbjbjbjbjbjbjbjbjbjbjbnblbcbcbIab
-abbIbcbcbcaZbjbjbkbFbjbjbjbobjbjbjbGbkbjbjaXbcbcbcbIab
+abbIbcbcbcaZbjbjbkbFbjcjbjbobjcjbjbGbkbjbjaXbcbcbcbIab
 abbIbcbcbpbqbjbjbjbjbjbjbjbjbjbjbjbjbjbjbjbrbsbcbcbIab
-abbIbcbcbdbpajajbjbjbjbTbvbvbvbUbjbjbjajajbsbcbcbdbIab
+abbIcdbcbdbpajajbjbjbjbTbvbvbvbUbjbjbjajajbsbcbcbdbIab
 abbIbcbcbcbcaXbtbubububwaWaWaWbtbubububwaZbcbcbcbcbIab
 abbIbcbdbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbdbcbIab
 abbIbcbcbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbcbcbIab

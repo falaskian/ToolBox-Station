@@ -579,69 +579,54 @@
 "lE" = (/obj/effect/turf_decal/tile/neutral,/obj/structure/disposalpipe/segment,/turf/open/floor/plasteel,/area/TDM)
 "lF" = (/obj/machinery/door/airlock{id_tag = "ministation_cabin_3"; name = "Cabin 3"},/turf/open/floor/wood,/area/TDM)
 "lG" = (/obj/effect/turf_decal/tile/blue{dir = 8},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM)
-"lH" = (/obj/structure/transit_tube/station/reverse{dir = 4; resistance_flags = 115},/obj/effect/turf_decal/stripes/line{dir = 5},/obj/structure/transit_tube_pod,/turf/open/floor/plating,/area/TDM)
-"lI" = (/obj/machinery/door/airlock/public/glass{name = "Transit Tube"},/turf/open/floor/plasteel,/area/TDM)
-"lJ" = (/obj/machinery/shower{dir = 4},/obj/item/soap/nanotrasen,/turf/open/floor/plasteel/freezer,/area/TDM)
-"lK" = (/obj/machinery/camera/autoname{dir = 8},/turf/open/floor/plasteel/freezer,/area/TDM)
-"lL" = (/obj/machinery/door/airlock/public/glass{name = "Primary Tool Storage"},/obj/machinery/atmospherics/pipe/simple/supply/hidden,/obj/structure/cable/yellow{icon_state = "1-2"},/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/obj/effect/turf_decal/stripes/line,/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/door/firedoor/border_only{dir = 1},/obj/machinery/door/firedoor/border_only,/turf/open/floor/plasteel,/area/TDM)
-"lM" = (/obj/machinery/door/airlock/public/glass{name = "Primary Tool Storage"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/obj/effect/turf_decal/stripes/line,/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/door/firedoor/border_only{dir = 1},/obj/machinery/door/firedoor/border_only,/turf/open/floor/plasteel,/area/TDM)
-"lN" = (/obj/effect/turf_decal/tile/neutral{dir = 1},/turf/open/floor/plasteel,/area/TDM)
-"lO" = (/obj/effect/turf_decal/tile/neutral,/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/structure/disposalpipe/segment,/turf/open/floor/plasteel,/area/TDM)
-"lP" = (/obj/structure/chair/stool{pixel_y = 8},/obj/machinery/button/door{id = "ministation_cabin_3"; name = "Cabin Bolt Control"; normaldoorcontrol = 1; pixel_y = 25; specialfunctions = 4},/turf/open/floor/wood,/area/TDM)
-"lQ" = (/obj/effect/turf_decal/stripes/line{dir = 9},/obj/structure/transit_tube/station/reverse{dir = 8; resistance_flags = 115},/turf/open/floor/plating,/area/TDM)
-"lR" = (/obj/structure/transit_tube{resistance_flags = 115},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating,/area/TDM)
-"lS" = (/obj/machinery/light{dir = 4},/turf/open/floor/plasteel,/area/TDM)
-"lT" = (/obj/machinery/airalarm{dir = 1; pixel_y = -22},/turf/open/floor/plasteel/freezer,/area/TDM)
-"lU" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 5},/obj/structure/cable/yellow{icon_state = "1-4"},/turf/open/floor/plating{icon_state = "panelscorched"},/area/TDM)
-"lV" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/item/trash/popcorn,/obj/machinery/atmospherics/pipe/manifold/supply/hidden{dir = 1},/turf/open/floor/plating,/area/TDM)
-"lW" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating,/area/TDM)
-"lX" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/machinery/door/airlock/maintenance{req_one_access_txt = "0"},/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/turf/open/floor/plating,/area/TDM)
-"lY" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/turf/open/floor/plasteel,/area/TDM)
-"lZ" = (/obj/structure/cable/yellow{icon_state = "2-8"},/obj/machinery/atmospherics/pipe/manifold/supply/hidden{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 1},/turf/open/floor/plasteel,/area/TDM)
-"ma" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 1},/turf/open/floor/plasteel,/area/TDM)
-"mb" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/obj/machinery/firealarm{pixel_y = 32},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/item/twohanded/required/kirbyplants/random,/turf/open/floor/plasteel,/area/TDM)
-"mc" = (/obj/structure/cable/yellow{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold/supply/hidden,/obj/effect/turf_decal/tile/neutral{dir = 1},/turf/open/floor/plasteel,/area/TDM)
-"md" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,/obj/effect/turf_decal/tile/neutral{dir = 1},/turf/open/floor/plasteel,/area/TDM)
-"me" = (/obj/effect/turf_decal/tile/neutral,/obj/structure/closet/wardrobe/pjs,/obj/machinery/light_switch/aoe{pixel_x = 0; pixel_y = -28},/turf/open/floor/plasteel,/area/TDM)
-"mf" = (/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/machinery/disposal/bin,/obj/structure/disposalpipe/trunk{dir = 1},/turf/open/floor/plasteel,/area/TDM)
-"mg" = (/obj/machinery/light/small,/turf/open/floor/wood,/area/TDM)
-"mh" = (/obj/machinery/light{dir = 8},/turf/open/floor/plasteel,/area/TDM)
-"mi" = (/obj/effect/turf_decal/stripes/line{dir = 8},/obj/structure/transit_tube{resistance_flags = 115},/turf/open/floor/plating,/area/TDM)
-"mj" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/obj/structure/transit_tube/curved/flipped{dir = 1; resistance_flags = 115},/turf/open/floor/plating,/area/TDM)
-"mk" = (/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/item/radio/intercom{pixel_x = -29},/turf/open/floor/plasteel,/area/TDM)
-"ml" = (/obj/machinery/atmospherics/components/unary/vent_pump/on{dir = 1},/obj/structure/cable/yellow{icon_state = "1-4"},/turf/open/floor/plasteel,/area/TDM)
-"mm" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable/yellow{icon_state = "1-8"},/obj/machinery/navbeacon{codes_txt = "patrol;next_patrol=3-Central-Port"; location = "2.2-Leaving-Storage"},/turf/open/floor/plasteel,/area/TDM)
-"mn" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,/turf/open/floor/plasteel,/area/TDM)
-"mo" = (/obj/machinery/door/airlock/public/glass{name = "Dorms"},/turf/open/floor/plasteel,/area/TDM)
-"mp" = (/obj/structure/window/plastitanium/tough/TDM,/obj/structure/grille,/obj/structure/transit_tube/curved{icon_state = "curved0"; dir = 1; resistance_flags = 115},/turf/open/floor/plating,/area/TDM)
-"mq" = (/obj/structure/transit_tube/diagonal/topleft{resistance_flags = 115},/turf/open/floor/fakespace,/area/TDM/offlimits)
-"mr" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on{dir = 1},/turf/open/floor/plasteel,/area/TDM)
-"ms" = (/obj/structure/transit_tube/diagonal{resistance_flags = 115},/turf/open/floor/fakespace,/area/TDM/offlimits)
-"mt" = (/obj/structure/flora/junglebush/large,/obj/structure/railing{dir = 9},/turf/open/floor/grass,/area/TDM)
-"mu" = (/obj/structure/flora/rock/pile,/obj/structure/railing{dir = 1; resistance_flags = 115},/turf/open/floor/grass,/area/TDM)
-"mv" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/railing{dir = 1; resistance_flags = 115},/turf/open/floor/grass,/area/TDM)
-"mw" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/flora/ausbushes/ppflowers,/obj/structure/railing{dir = 5},/turf/open/floor/grass,/area/TDM)
-"mx" = (/obj/structure/chair,/obj/structure/extinguisher_cabinet{pixel_x = 27},/turf/open/floor/plasteel,/area/TDM)
-"my" = (/obj/structure/chair/comfy/beige,/turf/open/floor/plasteel,/area/TDM)
-"mz" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/railing{dir = 8},/turf/open/floor/grass,/area/TDM)
-"mA" = (/obj/structure/flora/ausbushes/sunnybush,/turf/open/floor/grass,/area/TDM)
-"mB" = (/obj/item/clothing/shoes/sandal,/turf/open/floor/grass,/area/TDM)
-"mC" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/railing{dir = 4},/turf/open/floor/grass,/area/TDM)
-"mD" = (/obj/structure/table,/obj/item/toy/cards/deck{pixel_y = 4},/turf/open/floor/plasteel,/area/TDM)
-"mE" = (/obj/structure/transit_tube/curved{dir = 4},/turf/open/floor/fakespace,/area/TDM/offlimits)
-"mF" = (/obj/structure/transit_tube/horizontal{resistance_flags = 115},/turf/open/floor/fakespace,/area/TDM/offlimits)
-"mG" = (/obj/structure/transit_tube/curved{dir = 8; resistance_flags = 115},/turf/open/floor/fakespace,/area/TDM/offlimits)
-"mH" = (/obj/structure/table,/obj/item/storage/fancy/cigarettes/cigars/cohiba{pixel_y = 11},/obj/item/storage/box/matches{pixel_y = 2},/turf/open/floor/plasteel,/area/TDM)
-"mI" = (/obj/structure/chair/comfy/beige{dir = 8},/turf/open/floor/plasteel,/area/TDM)
-"mJ" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/flora/ausbushes/ppflowers,/obj/structure/railing{dir = 10; resistance_flags = 115},/turf/open/floor/grass,/area/TDM)
-"mK" = (/obj/structure/flora/junglebush/c,/obj/structure/railing,/turf/open/floor/grass,/area/TDM)
-"mL" = (/obj/structure/flora/tree/jungle/small{pixel_y = 4},/obj/structure/railing,/turf/open/floor/grass,/area/TDM)
-"mM" = (/obj/structure/flora/ausbushes/grassybush,/obj/structure/railing{dir = 6; resistance_flags = 115},/turf/open/floor/grass,/area/TDM)
-"mN" = (/obj/structure/chair{dir = 1},/turf/open/floor/plasteel,/area/TDM)
-"mO" = (/obj/structure/transit_tube/curved/flipped{icon_state = "curved1"; dir = 4; resistance_flags = 115},/turf/open/floor/fakespace,/area/TDM/offlimits)
-"mP" = (/obj/structure/transit_tube/curved/flipped{icon_state = "curved1"; dir = 8; resistance_flags = 115},/turf/open/floor/fakespace,/area/TDM/offlimits)
-"mQ" = (/obj/structure/transit_tube/curved{dir = 4; resistance_flags = 115},/turf/open/floor/fakespace,/area/TDM/offlimits)
-"mR" = (/turf/template_noop,/area/template_noop)
+"lI" = (/obj/machinery/shower{dir = 4},/obj/item/soap/nanotrasen,/turf/open/floor/plasteel/freezer,/area/TDM)
+"lJ" = (/obj/machinery/camera/autoname{dir = 8},/turf/open/floor/plasteel/freezer,/area/TDM)
+"lK" = (/obj/machinery/door/airlock/public/glass{name = "Primary Tool Storage"},/obj/machinery/atmospherics/pipe/simple/supply/hidden,/obj/structure/cable/yellow{icon_state = "1-2"},/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/obj/effect/turf_decal/stripes/line,/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/door/firedoor/border_only{dir = 1},/obj/machinery/door/firedoor/border_only,/turf/open/floor/plasteel,/area/TDM)
+"lL" = (/obj/machinery/door/airlock/public/glass{name = "Primary Tool Storage"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,/obj/effect/turf_decal/tile/brown{dir = 1},/obj/effect/turf_decal/tile/brown{dir = 4},/obj/effect/turf_decal/stripes/line,/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/door/firedoor/border_only{dir = 1},/obj/machinery/door/firedoor/border_only,/turf/open/floor/plasteel,/area/TDM)
+"lM" = (/obj/effect/turf_decal/tile/neutral{dir = 1},/turf/open/floor/plasteel,/area/TDM)
+"lN" = (/obj/effect/turf_decal/tile/neutral,/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/structure/disposalpipe/segment,/turf/open/floor/plasteel,/area/TDM)
+"lO" = (/obj/structure/chair/stool{pixel_y = 8},/obj/machinery/button/door{id = "ministation_cabin_3"; name = "Cabin Bolt Control"; normaldoorcontrol = 1; pixel_y = 25; specialfunctions = 4},/turf/open/floor/wood,/area/TDM)
+"lP" = (/obj/machinery/light{dir = 4},/turf/open/floor/plasteel,/area/TDM)
+"lQ" = (/obj/machinery/airalarm{dir = 1; pixel_y = -22},/turf/open/floor/plasteel/freezer,/area/TDM)
+"lR" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 5},/obj/structure/cable/yellow{icon_state = "1-4"},/turf/open/floor/plating{icon_state = "panelscorched"},/area/TDM)
+"lS" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/item/trash/popcorn,/obj/machinery/atmospherics/pipe/manifold/supply/hidden{dir = 1},/turf/open/floor/plating,/area/TDM)
+"lT" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 4},/turf/open/floor/plating,/area/TDM)
+"lU" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/machinery/door/airlock/maintenance{req_one_access_txt = "0"},/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/turf/open/floor/plating,/area/TDM)
+"lV" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/turf/open/floor/plasteel,/area/TDM)
+"lW" = (/obj/structure/cable/yellow{icon_state = "2-8"},/obj/machinery/atmospherics/pipe/manifold/supply/hidden{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 1},/turf/open/floor/plasteel,/area/TDM)
+"lX" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 1},/turf/open/floor/plasteel,/area/TDM)
+"lY" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/obj/machinery/firealarm{pixel_y = 32},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/item/twohanded/required/kirbyplants/random,/turf/open/floor/plasteel,/area/TDM)
+"lZ" = (/obj/structure/cable/yellow{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold/supply/hidden,/obj/effect/turf_decal/tile/neutral{dir = 1},/turf/open/floor/plasteel,/area/TDM)
+"ma" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,/obj/effect/turf_decal/tile/neutral{dir = 1},/turf/open/floor/plasteel,/area/TDM)
+"mb" = (/obj/effect/turf_decal/tile/neutral,/obj/structure/closet/wardrobe/pjs,/obj/machinery/light_switch/aoe{pixel_x = 0; pixel_y = -28},/turf/open/floor/plasteel,/area/TDM)
+"mc" = (/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/effect/turf_decal/tile/neutral,/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/machinery/disposal/bin,/obj/structure/disposalpipe/trunk{dir = 1},/turf/open/floor/plasteel,/area/TDM)
+"md" = (/obj/machinery/light/small,/turf/open/floor/wood,/area/TDM)
+"me" = (/obj/machinery/light{dir = 8},/turf/open/floor/plasteel,/area/TDM)
+"mf" = (/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/item/radio/intercom{pixel_x = -29},/turf/open/floor/plasteel,/area/TDM)
+"mg" = (/obj/machinery/atmospherics/components/unary/vent_pump/on{dir = 1},/obj/structure/cable/yellow{icon_state = "1-4"},/turf/open/floor/plasteel,/area/TDM)
+"mh" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/structure/cable/yellow{icon_state = "1-8"},/obj/machinery/navbeacon{codes_txt = "patrol;next_patrol=3-Central-Port"; location = "2.2-Leaving-Storage"},/turf/open/floor/plasteel,/area/TDM)
+"mi" = (/obj/structure/cable/yellow{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,/turf/open/floor/plasteel,/area/TDM)
+"mj" = (/obj/machinery/door/airlock/public/glass{name = "Dorms"},/turf/open/floor/plasteel,/area/TDM)
+"mk" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/on{dir = 1},/turf/open/floor/plasteel,/area/TDM)
+"ml" = (/obj/structure/flora/junglebush/large,/obj/structure/railing{dir = 9},/turf/open/floor/grass,/area/TDM)
+"mm" = (/obj/structure/flora/rock/pile,/obj/structure/railing{dir = 1; resistance_flags = 115},/turf/open/floor/grass,/area/TDM)
+"mn" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/railing{dir = 1; resistance_flags = 115},/turf/open/floor/grass,/area/TDM)
+"mo" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/flora/ausbushes/ppflowers,/obj/structure/railing{dir = 5},/turf/open/floor/grass,/area/TDM)
+"mp" = (/obj/structure/chair,/obj/structure/extinguisher_cabinet{pixel_x = 27},/turf/open/floor/plasteel,/area/TDM)
+"mq" = (/obj/structure/chair/comfy/beige,/turf/open/floor/plasteel,/area/TDM)
+"mr" = (/obj/structure/flora/ausbushes/ppflowers,/obj/structure/railing{dir = 8},/turf/open/floor/grass,/area/TDM)
+"ms" = (/obj/structure/flora/ausbushes/sunnybush,/turf/open/floor/grass,/area/TDM)
+"mt" = (/obj/item/clothing/shoes/sandal,/turf/open/floor/grass,/area/TDM)
+"mu" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/railing{dir = 4},/turf/open/floor/grass,/area/TDM)
+"mv" = (/obj/structure/table,/obj/item/toy/cards/deck{pixel_y = 4},/turf/open/floor/plasteel,/area/TDM)
+"mw" = (/obj/structure/table,/obj/item/storage/fancy/cigarettes/cigars/cohiba{pixel_y = 11},/obj/item/storage/box/matches{pixel_y = 2},/turf/open/floor/plasteel,/area/TDM)
+"mx" = (/obj/structure/chair/comfy/beige{dir = 8},/turf/open/floor/plasteel,/area/TDM)
+"my" = (/obj/structure/flora/ausbushes/lavendergrass,/obj/structure/flora/ausbushes/ppflowers,/obj/structure/railing{dir = 10; resistance_flags = 115},/turf/open/floor/grass,/area/TDM)
+"mz" = (/obj/structure/flora/junglebush/c,/obj/structure/railing,/turf/open/floor/grass,/area/TDM)
+"mA" = (/obj/structure/flora/tree/jungle/small{pixel_y = 4},/obj/structure/railing,/turf/open/floor/grass,/area/TDM)
+"mB" = (/obj/structure/flora/ausbushes/grassybush,/obj/structure/railing{dir = 6; resistance_flags = 115},/turf/open/floor/grass,/area/TDM)
+"mC" = (/obj/structure/chair{dir = 1},/turf/open/floor/plasteel,/area/TDM)
+"mD" = (/turf/template_noop,/area/template_noop)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -674,24 +659,24 @@ aaababababababababababababababababababababababacjxbababajyjzanjAjBjCjDjEjfjFjGjH
 aaababababababababababababababababababababababacjxbababababaanjXjYjYjYjZananankakbankckdankekfgWkgkhhcjOkiidkjfvbakkankljgkmanknbabakoanbababababajxacabababababababababababababababababababababaa
 aaababababababababababababababababababababababackpbabababakqankrksktkukvkwkxkykzkAaSkBkCcVkDbakEkFhnhnkGkHkIkJkKkLjQanankManankNkOkPkQkRbababababakpacabababababababababababababababababababababaa
 aaababababababababababababababababababababababacackSkTbababaankUkVkWkXkYcVcVcVkZlacWlblcldlelflflglhlhliljlklllmgWbabababababababalnloanbababakTkSacacabababababababababababababababababababababaa
-aaabababababababababababababababababababababababacgzgzanbabaananananlpananlqlrlskaanaEltanlulvlwlxlylzlAlBidlClDlEananlFanananangzgzlGacbabaangzgzacababababababababababababababababababababababaa
-aaabababababababababababababababababababababababaclHbalIbabafRbababababaanlJlrkalKanahltananangzgzgzidlLlMidlNbalOanlPjgiLanbababababafRbabalIbalQacababababababababababababababababababababababaa
-aaabababababababababababababababababababababababaclRbaacbabafRiUbababalSanlqlrkalTieahlUlVlWlXlYlZmambmcmdanbamemfanklmgjianmhbabaiVbafRbabaacbamiacababababababababababababababababababababababaa
-aaabababababababababababababababababababababababacmjalacacacacacacacbabaanananananananananananmkmllflfmmmnanmoanananananananbabaanananananananalmpacababababababababababababababababababababababaa
-aaabababababababababababababababababababababababababmqababababababalbababababacnfRbababajybababababababamrjybababafRbabababababaalababababababmsababababababababababababababababababababababababaa
-aaababababababababababababababababababababababababababmqabababababaljzbababababafRbababaiVbabababababababababababafRbaiUbababajzalabababababmsabababababababababababababababababababababababababaa
-aaabababababababababababababababababababababababababababmqababababacacacacacacacacalalalacbabamtmumvmwbamxacalalalacacacacacacacacababababmsababababababababababababababababababababababababababaa
-aaababababababababababababababababababababababababababababmqababababababababababababababalmybamzmAmBmCbamDalababababababababababababababmsabababababababababababababababababababababababababababaa
-aaabababababababababababababababababababababababababababababmEmFmFmFmFmFmFmFmFmGababababalmHmImJmKmLmMbamNalabababmOmFmFmFmFmFmFmFmFmFmPababababababababababababababababababababababababababababaa
-aaabababababababababababababababababababababababababababababababababababababababmqabababalalalalalalalalalalababmsabababababababababababababababababababababababababababababababababababababababaa
-aaababababababababababababababababababababababababababababababababababababababababmqabababababababababababababmsababababababababababababababababababababababababababababababababababababababababaa
-aaabababababababababababababababababababababababababababababababababababababababababmQmFmFmFmFmFmFmFmFmFmFmFmPabababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababacalalacbabaananananlpananlqlrlskaanaEltanlulvlwlxlylzlAlBidlClDlEananlFanananangzgzlGacbabaanalalacababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababacbabafRbababababaanlIlrkalJanahltananangzgzgzidlKlLidlMbalNanlOjgiLanbababababafRbabaanabababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababacbabafRiUbababalPanlqlrkalQieahlRlSlTlUlVlWlXlYlZmaanbambmcanklmdjianmebabaiVbafRbabaacabababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababacacacacacacacbabaanananananananananananmfmglflfmhmianmjanananananananbabaanananananananabababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababababababababalbababababacnfRbababajybababababababamkjybababafRbabababababaalabababababababababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababababababababaljzbababababafRbababaiVbabababababababababababafRbaiUbababajzalabababababababababababababababababababababababababababababababaa
+aaababababababababababababababababababababababababababababababababacacacacacacacacalalalacbabamlmmmnmobampacalalalacacacacacacacacabababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababababababababababalmqbamrmsmtmubamvalababababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababababababababababalmwmxmymzmAmBbamCalababababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababababababababababalalalalalalalalalalababababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
 aaabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababababababababababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-mRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRaaabababababababababababababababababababababababababababaamRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmR
-mRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRaaaaabababababababababababababababababababababababababaaaamRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmR
-mRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmRmR
+mDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDaaabababababababababababababababababababababababababababaamDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmD
+mDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDaaaaabababababababababababababababababababababababababaaaamDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmD
+mDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmDmD
 "}
