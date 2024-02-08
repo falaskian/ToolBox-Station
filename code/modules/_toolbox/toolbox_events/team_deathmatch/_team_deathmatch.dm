@@ -598,6 +598,8 @@ client/verb/clearbullshit()
 					"y" = T.y,
 					"z" = T.z,
 					"type" = O.type,
+					"pixel_x" = O.pixel_x,
+					"pixel_y" = O.pixel_y,
 					"loc" = loctype,
 					"last_time_home" = 0)
 				respawned_items["item[itemcount]"] = data
@@ -674,7 +676,9 @@ client/verb/clearbullshit()
 												continue
 										respawn_loc = possible_loc
 										break
-							var/obj/I = respawn_item(thepath,respawn_loc)
+							var/pixx = the_list["pixel_x"]
+							var/pixy = the_list["pixel_y"]
+							var/obj/I = respawn_item(thepath,respawn_loc,pixx,pixy)
 							if(I)
 								if(istype(I,/obj/machinery/vending))
 									var/obj/machinery/vending/V = I
@@ -694,7 +698,7 @@ client/verb/clearbullshit()
 			return TRUE
 	return FALSE
 
-/datum/toolbox_event/team_deathmatch/proc/respawn_item(new_item,atom/home_turf)
+/datum/toolbox_event/team_deathmatch/proc/respawn_item(new_item,atom/home_turf,pixel_X = null,pixel_Y = null)
 	if(!istype(home_turf))
 		return
 	var/new_path
@@ -712,6 +716,12 @@ client/verb/clearbullshit()
 				qdel(I)
 		if(istype(O))
 			var/obj/effect/TDM_item_respawn/R = new(home_turf)
+			if(isnum(pixel_X))
+				O.pixel_x = pixel_X
+				R.pixel_x = pixel_X
+			if(isnum(pixel_Y))
+				O.pixel_y = pixel_Y
+				R.pixel_y = pixel_Y
 			R.respawn_with(O)
 			return O
 	return null
