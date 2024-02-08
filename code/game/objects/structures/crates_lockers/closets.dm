@@ -142,7 +142,7 @@
 		if(HAS_TRAIT(L, TRAIT_SKITTISH))
 			. += "<span class='notice'>Ctrl-Shift-click [src] to jump inside.</span>"
 	if(secure && (broken || !circuit || !circuit_wires))
-		to_chat(user, "<span class='warning'>The locking mechanism appears to be malfunctioning.</span>")
+		. += "<span class='warning'>The locking mechanism appears to be malfunctioning.</span>"
 
 /obj/structure/closet/CanPass(atom/movable/mover, turf/target)
 	if(wall_mounted)

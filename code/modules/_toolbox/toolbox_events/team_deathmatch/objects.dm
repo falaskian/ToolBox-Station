@@ -1003,3 +1003,62 @@ obj/item/TDM_pickup/health/attack_hand(mob/living/user)
 /obj/structure/holographic_item/universal_magazine
 	starting_item = /obj/item/universal_magazine
 	respawn_time = 300
+
+
+		//Breakable locker
+
+/obj/structure/closet/TDM
+	anchorable = 0
+	anchored = 1
+	var/broken_icon = 'icons/oldschool/objects.dmi'
+	var/broken_icon_state = "locker_broken"
+
+/obj/structure/closet/TDM/bust_open()
+	. = ..()
+	visible_message("<B>The [src] breaks open.</B>")
+	addtimer(CALLBACK(src, .proc/reset_broken), 300)
+
+/obj/structure/closet/TDM/proc/reset_broken()
+	broken = FALSE
+	obj_integrity = max_integrity
+	visible_message("The [src] seems to have been repaired on its own.")
+	update_icon()
+
+/obj/structure/closet/TDM/can_close(mob/living/user)
+	if(broken)
+		if(user)
+			to_chat(user, "<span class='danger'>The [src] seems to be completely smashed.</span>")
+		return FALSE
+	return ..()
+
+/obj/structure/closet/TDM/obj_destruction(damage_flag)
+	obj_integrity = integrity_failure
+
+/obj/structure/closet/TDM/examine(mob/user)
+	. = ..()
+	if(broken)
+		. += "<span class='warning'>It appears to be totally smashed.</span>"
+
+/obj/structure/closet/TDM/update_icon()
+	if(opened && broken && !icon_door_override && !is_animating_door)
+		cut_overlays()
+		layer = BELOW_OBJ_LAYER
+		var/image/I = new()
+		I.icon = broken_icon
+		I.icon_state = broken_icon_state
+		I.pixel_x = -5
+		I.pixel_y = -1
+		overlays.Add(I)
+		return
+	return . = ..()
+
+/obj/structure/closet/TDM/tool_interact(obj/item/W, mob/user)
+	. = TRUE
+	if(opened && W.tool_behaviour == cutting_tool)
+		return
+	. = ..()
+
+/obj/structure/closet/TDM/attackby(obj/item/W, mob/user, params)
+	if((user in src) || (istype(W,/obj/item/stack/sheet/plasteel) && opened && !istype(src,/obj/structure/closet/secure_closet) && !istype(src,/obj/structure/closet/crate)))
+		return
+	return ..()
