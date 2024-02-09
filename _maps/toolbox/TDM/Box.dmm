@@ -112,6 +112,7 @@
 "ch" = (/obj/machinery/gateway{pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "ci" = (/obj/machinery/power/port_gen/pacman{anchored = 1; resistance_flags = 115},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "cj" = (/obj/structure/holographic_item/universal_magazine,/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM)
+"ck" = (/obj/structure/holographic_item/health_pickup,/turf/open/floor/sepia/TDM,/area/TDM)
 
 (1,1,1) = {"
 ababababababababababababababababababababababababababab
@@ -126,7 +127,7 @@ bKbKabbIbIbIbIbIbIbIabbIbMbNbObIabbIbIbIbIbIbIbIabbKbK
 abababbIaWaWaXaYaYbIbIbIaYbQaYbIbIbIaYaYaZaWaWbIababab
 abbIbIbIbaajajajbbbbbbbbbbbbbbbbbbbbbbajajajbabIbIbIab
 abbIbcbcbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbcbcbIab
-abbIbcbdbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbdbcbIab
+abbIbcbdbcbcaXaWaWaWaWaWaWckaWaWaWaWaWaWaZbcbcbdbcbIab
 abbIbcbcbcbcaXbebfbfbfbhaWaWaWbebfbfbfbhaZbcbcbcbcbIab
 abbIbdbcbcbiajajbjbjbjbRbgbgbgbSbjbjbjajajblbdbccdbIab
 abbIbcbcbibmbjbjbjbjbjbjbjbjbjbjbjbjbjbjbjbnblbcbcbIab
@@ -134,7 +135,7 @@ abbIbcbcbcaZbjbjbkbFbjcjbjbobjcjbjbGbkbjbjaXbcbcbcbIab
 abbIbcbcbpbqbjbjbjbjbjbjbjbjbjbjbjbjbjbjbjbrbsbcbcbIab
 abbIcdbcbdbpajajbjbjbjbTbvbvbvbUbjbjbjajajbsbcbcbdbIab
 abbIbcbcbcbcaXbtbubububwaWaWaWbtbubububwaZbcbcbcbcbIab
-abbIbcbdbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbdbcbIab
+abbIbcbdbcbcaXaWaWaWaWaWaWckaWaWaWaWaWaWaZbcbcbdbcbIab
 abbIbcbcbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbcbcbIab
 abcebIbIbxajajajbybybybybybybybybybybyajajajbxbIbIbIab
 abababbIaWaWaXaYaYbIbIbIbBbVbWbIbIbIaYaYaZaWaWbIababab
