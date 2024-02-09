@@ -920,6 +920,8 @@
 	return "[area.name] : [equipment]/[lighting]/[environ] ([lastused_equip+lastused_light+lastused_environ]) : [cell? cell.percent() : "N/C"] ([charging])"
 
 /obj/machinery/power/apc/proc/update()
+	if(!area?.requires_power)
+		return
 	if(operating && !shorted && !failure_timer)
 		area.power_light = (lighting > 1)
 		area.power_equip = (equipment > 1)
@@ -1405,6 +1407,8 @@
 		INVOKE_ASYNC(src, .proc/break_lights)
 
 /obj/machinery/power/apc/proc/break_lights()
+	if(!area?.dynamic_lighting == DYNAMIC_LIGHTING_DISABLED)
+		return
 	for(var/obj/machinery/light/L in area)
 		L.on = TRUE
 		L.break_light_tube()
@@ -1432,6 +1436,8 @@
 
 
 /obj/machinery/power/apc/proc/energy_fail(duration)
+	if(!area?.requires_power)
+		return
 	for(var/obj/machinery/M in area.contents)
 		if(M.critical_machine)
 			return
@@ -1444,6 +1450,8 @@
 
 /obj/machinery/power/apc/proc/set_nightshift(on)
 	set waitfor = FALSE
+	if(!area?.dynamic_lighting == DYNAMIC_LIGHTING_DISABLED)
+		return
 	nightshift_lights = on
 	for(var/obj/machinery/light/L in area)
 		if(L.nightshift_allowed)

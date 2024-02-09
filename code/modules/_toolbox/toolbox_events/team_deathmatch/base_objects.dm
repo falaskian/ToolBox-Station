@@ -349,6 +349,8 @@ GLOBAL_LIST_EMPTY(TDM_cloner_dropoffs)
 	icon_state = "shield-old"
 	layer = 2.1
 	density = 1
+	CanAtmosPass = ATMOS_PASS_NO
+	var/list/bump_exceptions = list(/obj/structure/TDM/spawn_protection,/obj/effect/particle_effect) //list of objects that will not bounce.
 	var/team = null
 	var/hasShocked = FALSE
 
@@ -362,14 +364,15 @@ GLOBAL_LIST_EMPTY(TDM_cloner_dropoffs)
 	if(!.)
 		bump_field(mover)
 
-
 /obj/structure/TDM/spawn_protection/proc/clear_shock()
 	hasShocked = FALSE
 
-
 /obj/structure/TDM/spawn_protection/proc/bump_field(atom/movable/AM as mob|obj)
-	if(hasShocked)
+	if(hasShocked || AM == src)
 		return FALSE
+	for(var/t in bump_exceptions)
+		if(istype(AM,t))
+			return
 	hasShocked = TRUE
 	if(isliving(AM) || AM.density)
 		do_sparks(5, TRUE, AM.loc)
@@ -377,7 +380,11 @@ GLOBAL_LIST_EMPTY(TDM_cloner_dropoffs)
 		AM.throw_at(target, 200, 4)
 	addtimer(CALLBACK(src, .proc/clear_shock), 5)
 
-
+/obj/structure/TDM/spawn_protection/Move(atom/newloc, direct=0)
+	var/oldloc = loc
+	. = ..()
+	if(oldloc && newloc != oldloc && !QDELETED(src))
+		forceMove(oldloc)
 
 /obj/structure/TDM/spawn_protection/red
 	name = "red base"

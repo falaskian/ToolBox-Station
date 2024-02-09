@@ -254,9 +254,9 @@
 /area/TDM
 	name = "Arena"
 	icon_state = "blue-red-d"
-	has_gravity = TRUE
-	dynamic_lighting = 0 //Fully lit at all times
-	requires_power = 0 // Constantly powered
+	has_gravity = STANDARD_GRAVITY
+	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED //Fully lit at all times
+	requires_power = FALSE // Constantly powered
 	always_unpowered = 0
 
 /area/TDM/lobby

@@ -809,29 +809,38 @@ obj/structure/TDM/fence_door
 obj/item/TDM_pickup
 	name = "pick up"
 	desc = "Click on me to pick me up."
-	anchored = 1
-
 
 obj/item/TDM_pickup/health
 	name = "instant-aid kit"
 	desc = "Heals 50 damage of any type."
-	icon = 'icons/oldschool/items.dmi'
-	icon_state = "floating_firstaid"
-	var/heal_brute = -50
-	var/heal_burn = -40
-	var/heal_tox = -10
-	var/heal_oxy = -10
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "firstaid"
+	var/total_healing = 50
 
-obj/item/TDM_pickup/health/attack_hand(mob/living/user)
+obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
+	. = ..()
 	if(iscyborg(user))
 		return
-	user.adjustBruteLoss(heal_brute)
-	user.adjustFireLoss(heal_burn)
-	user.adjustToxLoss(heal_tox)
-	user.adjustOxyLoss(heal_oxy)
+	var/bruteloss = user.getBruteLoss()
+	var/fireloss = user.getFireLoss()
+	var/toxloss = user.getToxLoss()
+	var/oxyloss = user.getOxyLoss()
+	var/healing_remaining = total_healing
+	if(bruteloss)
+		user.adjustBruteLoss(healing_remaining*-1)
+		healing_remaining -= bruteloss
+	if(healing_remaining > 0 && fireloss)
+		user.adjustFireLoss(healing_remaining*-1)
+		healing_remaining -= fireloss
+	if(healing_remaining > 0 && toxloss)
+		user.adjustToxLoss(healing_remaining*-1)
+		healing_remaining -= fireloss
+	if(healing_remaining > 0 && oxyloss)
+		user.adjustOxyLoss(healing_remaining*-1)
+		healing_remaining -= oxyloss
+	to_chat(user,"<span class='notice'>You have been healed.</span>")
 	playsound(loc, 'sound/effects/refill.ogg', 100)
 	qdel(src)
-
 
 		//Universal Magazine
 
@@ -1003,6 +1012,14 @@ obj/item/TDM_pickup/health/attack_hand(mob/living/user)
 /obj/structure/holographic_item/universal_magazine
 	starting_item = /obj/item/universal_magazine
 	respawn_time = 300
+
+		//floating health hologram
+
+/obj/structure/holographic_item/health_pickup
+	starting_item = /obj/item/TDM_pickup/health
+	respawn_time = 450
+
+
 
 
 		//Breakable locker
