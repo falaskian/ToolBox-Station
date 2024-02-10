@@ -238,6 +238,45 @@
 	clean_map_items = 0
 	clean_map_bodies = 0
 	items_respawn = 1
+	custom_huds_icon = 'icons/mob/hud.dmi'
+	custom_huds_states = list(
+		TDM_RED_TEAM = "hudclown",
+		TDM_BLUE_TEAM = "hudmime")
+	var/list/tracked_farters = list()
+	var/fart_timer = 200 //how long a mime has to stay in one place before farting
+	var/fart_camper_distance = 3 //how far must a mime move to stop farting.
+	var/fart_probability = 40 //The chance per server tick that a camping mime will fart.
+	var/reset_fart_timer_after_fart = TRUE //when a mime farts should the timer reset? If FALSE then he will fart constantly while camping.
+
+//mimes fart when not moving around enough.
+/datum/team_deathmatch_map/hide_and_seek/process_mob(mob/living/L,datum/toolbox_event/team_deathmatch/TDM)
+	if(istype(L) && L.mind && L.mind.assigned_role == TDM.player_assigned_role && L.stat == CONSCIOUS)
+		if(L.mind.special_role == TDM_BLUE_TEAM)
+			var/turf/tdmT = TDM.player_locations[L]
+			if(!tdmT)
+				return
+			if(!tracked_farters[L] && tdmT)
+				tracked_farters[L] = list(
+					"last_turf" = tdmT,
+					"last_time" = world.time)
+			var/list/mime_shit = tracked_farters[L]
+			var/turf/last_turf = mime_shit["last_turf"]
+			var/last_time = mime_shit["last_time"]
+			var/too_close = 0
+			if(get_dist(tdmT,last_turf) <= fart_camper_distance)
+				too_close = 1
+			var/timesup = 0
+			if(isnum(last_time) && world.time >= last_time+fart_timer)
+				timesup = 1
+			if(!too_close)
+				mime_shit["last_time"] = world.time
+				mime_shit["last_turf"] = tdmT
+			else if(too_close && timesup)
+				if(prob(fart_probability))
+					L.emote("fart")
+					if(reset_fart_timer_after_fart)
+						mime_shit["last_time"] = world.time
+						mime_shit["last_turf"] = tdmT
 
 /datum/map_template/ruin/space/MimeAcademy
 	name = "H&S MimeAcademy"

@@ -942,6 +942,10 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 
 /obj/structure/holographic_item/attack_hand(mob/user)
 	if(holder)
+		if(item_image)
+			holder.pixel_x = item_image.pixel_x
+			holder.pixel_y = item_image.pixel_y
+		holder.forceMove(loc)
 		if(!user.put_in_hands(holder))
 			holder.forceMove(user.loc)
 		to_chat(user,"<span class='notice'>You take the [holder].</span>")

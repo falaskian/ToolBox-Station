@@ -167,8 +167,15 @@ client/verb/clearbullshit()
 				announce_end_round_conditions += "ends after [minutes] minutes[seconds > 0 ? " and [seconds] seconds" : ""]."
 			announce("Team deathmatch has begun, this round ends when [announce_end_round_conditions]")
 		if(COMBAT_PHASE)
-			//spawning new joiners
-			gather_and_spawn_lobbyists(1)
+
+			//any code that needs to run through the entire player list in this phase should go here. We should only do this once per tick
+			var/list/all_players = get_available_players()
+			for(var/mob/M in all_players)
+				gather_and_spawn_lobbyists(_players = list(M), midround = 1)
+				block_offlimits(M)
+				if(current_map)
+					current_map.process_mob(M,src)
+
 			//respawning items if set
 			respawn_items()
 
@@ -329,7 +336,19 @@ client/verb/clearbullshit()
 			if(!(M.special_role in list(TDM_RED_TEAM,TDM_BLUE_TEAM)))
 				I.icon_state = ""
 			else
-				I.icon_state = "team_[M.special_role]"
+				var/unique_icon
+				var/hud_icon_state = "team_[M.special_role]"
+				if(current_map)
+					if(current_map.custom_huds_icon)
+						unique_icon = current_map.custom_huds_icon
+					if(current_map.custom_huds_states && current_map.custom_huds_states.len)
+						if(current_map.custom_huds_states[M.special_role])
+							hud_icon_state = current_map.custom_huds_states[M.special_role]
+				if(unique_icon)
+					I.icon = unique_icon
+				else
+					I.icon = 'icons/oldschool/huds.dmi'
+				I.icon_state = hud_icon_state
 				the_team = M.special_role
 		images[I] = the_team
 	for(var/mob/M in mobs)
@@ -342,22 +361,15 @@ client/verb/clearbullshit()
 				if(mob_team && image_team && image_team == mob_team && !(I in M.client.images))
 					M.client.images += I
 
-/datum/toolbox_event/team_deathmatch/proc/gather_and_spawn_lobbyists(midround = 0)
+/datum/toolbox_event/team_deathmatch/proc/gather_and_spawn_lobbyists(list/_players,midround = 0)
 	while(building_ruin)
 		sleep(1)
 	var/player_detected = 0
 	var/list/minds_to_spawn = list()
-	for(var/mob/living/L in get_available_players())
+	if(!_players || !_players.len)
+		_players = get_available_players()
+	for(var/mob/living/L in _players)
 		var/area/A = get_area(L)
-
-		//putting this here so were only searching the player_list once per round tick
-		if(midround && current_offlimits && L.mind && L.mind.assigned_role == player_assigned_role && L.mind.special_role)
-			if(isturf(player_locations[L]))
-				var/area/offlimits = locate(current_offlimits)
-				if(A == offlimits)
-					L.forceMove(player_locations[L])
-			player_locations[L] = get_turf(L)
-
 		for(var/a in team_lobby_areas)
 			if(istype(A,a) && L.mind)
 				if(!teams[team_lobby_areas[a]])
@@ -402,6 +414,15 @@ client/verb/clearbullshit()
 	else
 		failed_to_launch = "Team deathmatch failed to start, not enough teams."
 	return failed_to_launch
+
+/datum/toolbox_event/team_deathmatch/proc/block_offlimits(mob/living/L)
+	if(istype(L) && current_offlimits && L.mind && L.mind.assigned_role == player_assigned_role && L.mind.special_role)
+		var/area/A = get_turf(L)
+		if(isturf(player_locations[L]))
+			var/area/offlimits = locate(current_offlimits)
+			if(A == offlimits)
+				L.forceMove(player_locations[L])
+		player_locations[L] = get_turf(L)
 
 /datum/toolbox_event/team_deathmatch/proc/restart_players(mob/player = null)
 	while(building_ruin)
