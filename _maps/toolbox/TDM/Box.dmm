@@ -109,7 +109,7 @@
 "ce" = (/obj/TDM_map_modifier/dirtifier/Dust1,/turf/closed/indestructible/riveted/TDM/wall/rusty,/area/TDM)
 "cf" = (/obj/machinery/gateway{dir = 4; layer = 2.91; pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "cg" = (/obj/structure/ore_box/TDM,/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
-"ch" = (/obj/machinery/gateway{pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/obj/structure{alpha = 0; density = 1; mouse_opacity = 0; name = ""},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"ch" = (/obj/machinery/gateway{pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/obj/structure{alpha = 0; anchored = 1; density = 1; mouse_opacity = 0; name = ""; resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "ci" = (/obj/machinery/power/port_gen/pacman{anchored = 1; resistance_flags = 115},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "cj" = (/obj/structure/holographic_item/universal_magazine{respawn_time = 250},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "ck" = (/obj/structure/holographic_item/universal_magazine{respawn_time = 250},/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM)
