@@ -117,7 +117,7 @@
 "cm" = (/obj/structure/extinguisher_cabinet/regenerating{pixel_y = 32},/turf/open/indestructible,/area/TDM/blue_base)
 "cn" = (/obj/machinery/gateway/centerstation{density = 0; layer = 3.1; level = 2; pixel_y = -8},/obj/effect/portal/permanent{icon_state = "portal"; id = "dust1_p_1"; name = "portal"; pixel_y = 1},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "co" = (/obj/machinery/gateway{dir = 4; layer = 2.91; pixel_y = -8},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
-"cp" = (/obj/machinery/gateway{pixel_y = -8},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"cp" = (/obj/machinery/gateway{pixel_y = -8},/obj/structure{alpha = 0; density = 1; mouse_opacity = 0; name = ""},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

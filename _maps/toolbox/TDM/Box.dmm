@@ -100,19 +100,19 @@
 "bV" = (/obj/machinery/gateway{density = 0; dir = 1; layer = 4.1; pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "bW" = (/obj/machinery/gateway{density = 0; dir = 5; layer = 4.1; pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "bX" = (/obj/machinery/gateway{dir = 8; layer = 2.91; pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
-"bY" = (/obj/machinery/gateway/centerstation{density = 0; layer = 3.1; level = 2; pixel_y = -8},/obj/effect/portal/permanent{icon_state = "portal"; id = "dust1_p_1"; name = "portal"; pixel_y = 1},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"bY" = (/obj/machinery/gateway/centerstation{density = 0; layer = 3.1; level = 2; pixel_y = -8},/obj/effect/portal/permanent{icon_state = "portal"; id = "box_p_a1"; name = "portal"; pixel_y = 1},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "bZ" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
 "ca" = (/obj/machinery/status_display{message1 = "BLUE"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
 "cb" = (/obj/machinery/status_display{font_color = "#F00"; message1 = "RED"; message2 = "BASE"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/red_base)
 "cc" = (/obj/machinery/status_display{message1 = "KILLS"},/turf/closed/indestructible/riveted/TDM/wall,/area/TDM/blue_base)
-"cd" = (/obj/structure/holographic_item/universal_magazine,/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"cd" = (/obj/structure/holographic_item/health_pickup{respawn_time = 250},/turf/open/floor/sepia/TDM,/area/TDM)
 "ce" = (/obj/TDM_map_modifier/dirtifier/Dust1,/turf/closed/indestructible/riveted/TDM/wall/rusty,/area/TDM)
 "cf" = (/obj/machinery/gateway{dir = 4; layer = 2.91; pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "cg" = (/obj/structure/ore_box/TDM,/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
-"ch" = (/obj/machinery/gateway{pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"ch" = (/obj/machinery/gateway{pixel_y = -8},/obj/structure/lattice/catwalk{resistance_flags = 115},/obj/structure{alpha = 0; density = 1; mouse_opacity = 0; name = ""},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "ci" = (/obj/machinery/power/port_gen/pacman{anchored = 1; resistance_flags = 115},/obj/structure/lattice/catwalk{resistance_flags = 115},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
-"cj" = (/obj/structure/holographic_item/universal_magazine,/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM)
-"ck" = (/obj/structure/holographic_item/health_pickup,/turf/open/floor/sepia/TDM,/area/TDM)
+"cj" = (/obj/structure/holographic_item/universal_magazine{respawn_time = 250},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
+"ck" = (/obj/structure/holographic_item/universal_magazine{respawn_time = 250},/turf/open/floor/plating/asteroid{color = "#BEBDBD"},/area/TDM)
 
 (1,1,1) = {"
 ababababababababababababababababababababababababababab
@@ -127,15 +127,15 @@ bKbKabbIbIbIbIbIbIbIabbIbMbNbObIabbIbIbIbIbIbIbIabbKbK
 abababbIaWaWaXaYaYbIbIbIaYbQaYbIbIbIaYaYaZaWaWbIababab
 abbIbIbIbaajajajbbbbbbbbbbbbbbbbbbbbbbajajajbabIbIbIab
 abbIbcbcbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbcbcbIab
-abbIbcbdbcbcaXaWaWaWaWaWaWckaWaWaWaWaWaWaZbcbcbdbcbIab
+abbIbcbdbcbcaXaWaWaWaWaWaWcdaWaWaWaWaWaWaZbcbcbdbcbIab
 abbIbcbcbcbcaXbebfbfbfbhaWaWaWbebfbfbfbhaZbcbcbcbcbIab
-abbIbdbcbcbiajajbjbjbjbRbgbgbgbSbjbjbjajajblbdbccdbIab
+abbIbdbcbcbiajajbjbjbjbRbgbgbgbSbjbjbjajajblbdbccjbIab
 abbIbcbcbibmbjbjbjbjbjbjbjbjbjbjbjbjbjbjbjbnblbcbcbIab
-abbIbcbcbcaZbjbjbkbFbjcjbjbobjcjbjbGbkbjbjaXbcbcbcbIab
+abbIbcbcbcaZbjbjbkbFbjckbjbobjckbjbGbkbjbjaXbcbcbcbIab
 abbIbcbcbpbqbjbjbjbjbjbjbjbjbjbjbjbjbjbjbjbrbsbcbcbIab
-abbIcdbcbdbpajajbjbjbjbTbvbvbvbUbjbjbjajajbsbcbcbdbIab
+abbIcjbcbdbpajajbjbjbjbTbvbvbvbUbjbjbjajajbsbcbcbdbIab
 abbIbcbcbcbcaXbtbubububwaWaWaWbtbubububwaZbcbcbcbcbIab
-abbIbcbdbcbcaXaWaWaWaWaWaWckaWaWaWaWaWaWaZbcbcbdbcbIab
+abbIbcbdbcbcaXaWaWaWaWaWaWcdaWaWaWaWaWaWaZbcbcbdbcbIab
 abbIbcbcbcbcaXaWaWaWaWaWaWaWaWaWaWaWaWaWaZbcbcbcbcbIab
 abcebIbIbxajajajbybybybybybybybybybybyajajajbxbIbIbIab
 abababbIaWaWaXaYaYbIbIbIbBbVbWbIbIbIaYaYaZaWaWbIababab
