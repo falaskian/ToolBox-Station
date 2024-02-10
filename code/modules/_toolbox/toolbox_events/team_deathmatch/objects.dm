@@ -384,7 +384,7 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	//MediGun
 /obj/structure/displaycase/TDM_item_spawn/medigun
 	start_showpiece_type = /obj/item/gun/medbeam/TDM/team
-	ammunition = null
+	ammunition = /obj/item/clothing/glasses/hud/health
 	tier_level = 2
 
 
