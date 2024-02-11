@@ -61,6 +61,8 @@
 
 /datum/team_deathmatch_map/proc/process_mob(mob/M,datum/toolbox_event/team_deathmatch/TDM)
 
+/datum/team_deathmatch_map/proc/post_player_spawn(mob/living/M,datum/toolbox_event/team_deathmatch/TDM)
+
 //************* TURFS *************
 
 

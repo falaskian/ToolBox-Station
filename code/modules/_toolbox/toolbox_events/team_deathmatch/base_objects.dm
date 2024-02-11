@@ -120,21 +120,24 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	if(H.client)
 		H.client.prefs.copy_to(H)
 	H.dna.update_dna_identity()
+	var/datum/toolbox_event/team_deathmatch/TDM_event
+	if(SStoolbox_events)
+		for(var/t in SStoolbox_events.cached_events)
+			var/datum/toolbox_event/team_deathmatch/E = SStoolbox_events.is_active(t)
+			if(istype(E) && E.active)
+				TDM_event = E
 	if(H.mind)
 		GLOB.dont_inform_to_adminhelp_death += H.mind
 		H.mind.assigned_role = "Team Deathmatch"
 		if(team)
 			H.mind.special_role = team
-		if(SStoolbox_events)
-			for(var/t in SStoolbox_events.cached_events)
-				var/datum/toolbox_event/team_deathmatch/E = SStoolbox_events.is_active(t)
-				if(istype(E) && E.active)
-					E.create_hud_for_mob(H)
+		if(TDM_event)
+			TDM_event.create_hud_for_mob(H)
 	create_record(H)
-	equip_clothing(H)
+	equip_clothing(H,TDM_event)
 	return H
 
-/obj/machinery/clonepod/TDM/proc/equip_clothing(mob/living/carbon/human/H)
+/obj/machinery/clonepod/TDM/proc/equip_clothing(mob/living/carbon/human/H,datum/toolbox_event/team_deathmatch/TDM)
 	if(!istype(H))
 		return
 	var/chosen = get_current_tier_outfit()
@@ -143,6 +146,8 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 			qdel(O)
 		H.equipOutfit(chosen)
 		teleport_to_spawn(H)
+		if(TDM && TDM.current_map)
+			TDM.current_map.post_player_spawn(H,TDM)
 
 /obj/machinery/clonepod/TDM/proc/get_current_tier_outfit()
 	var/list/team_outfit = list()
@@ -215,6 +220,12 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	. = ..()
 	if(!occupant)
 		current_record = null
+	var/datum/toolbox_event/team_deathmatch/TDM_event
+	if(SStoolbox_events)
+		for(var/t in SStoolbox_events.cached_events)
+			var/datum/toolbox_event/team_deathmatch/E = SStoolbox_events.is_active(t)
+			if(istype(E) && E.active)
+				TDM_event = E
 	if(M)
 		if(last_go_out != M)
 			last_go_out = M
@@ -223,7 +234,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 					M.client.prefs.copy_to(M)
 					M.dna.update_dna_identity()
 				M.fully_heal(1)
-				equip_clothing(M)
+				equip_clothing(M,TDM_event)
 				if(cancel_flash)
 					M.clear_fullscreen("flash")
 			if(!mess)

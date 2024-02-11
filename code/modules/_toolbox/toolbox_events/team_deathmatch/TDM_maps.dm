@@ -248,6 +248,8 @@
 	var/fart_probability = 40 //The chance per server tick that a camping mime will fart.
 	var/reset_fart_timer_after_fart = TRUE //when a mime farts should the timer reset? If FALSE then he will fart constantly while camping.
 
+	var/list/mime_spells = list(/obj/effect/proc_holder/spell/targeted/mime/speak,/obj/effect/proc_holder/spell/aoe_turf/conjure/mime_wall/TDM)
+
 //mimes fart when not moving around enough.
 /datum/team_deathmatch_map/hide_and_seek/process_mob(mob/living/L,datum/toolbox_event/team_deathmatch/TDM)
 	if(istype(L) && L.mind && L.mind.assigned_role == TDM.player_assigned_role && L.stat == CONSCIOUS)
@@ -277,6 +279,35 @@
 					if(reset_fart_timer_after_fart)
 						mime_shit["last_time"] = world.time
 						mime_shit["last_turf"] = tdmT
+
+/datum/team_deathmatch_map/hide_and_seek/post_player_spawn(mob/living/L,datum/toolbox_event/team_deathmatch/TDM)
+	if(istype(L) && L.mind && L.mind.assigned_role == TDM.player_assigned_role && L.stat == CONSCIOUS)
+		var/titlename = null
+		if(L.mind.special_role == TDM_BLUE_TEAM)
+			titlename = "mime"
+			L.mind.miming = 1
+			var/list/found_spells = list()
+			for(var/obj/effect/proc_holder/spell/S in L.mind.spell_list)
+				found_spells += S.type
+			for(var/spell in mime_spells)
+				if(!(spell in found_spells))
+					var/obj/effect/proc_holder/spell/S = new spell()
+					L.mind.AddSpell(S)
+		else if(L.mind.special_role == TDM_RED_TEAM)
+			titlename = "clown"
+		if(titlename && L.client)
+			L.apply_pref_name(titlename, L.client)
+		var/mob/living/carbon/human/H = L
+		if(istype(H))
+			var/obj/item/card/id/id = new /obj/item/card/id/()
+			id.assignment = "Unknown"
+			if(titlename)
+				id.assignment = "[capitalize(titlename)]"
+			id.registered_name = "[L.real_name]"
+			id.update_label()
+			if(titlename in icon_states(id.icon))
+				id.icon_state = titlename
+			H.equip_to_slot_or_del(id, SLOT_WEAR_ID)
 
 /datum/map_template/ruin/space/MimeAcademy
 	name = "H&S MimeAcademy"

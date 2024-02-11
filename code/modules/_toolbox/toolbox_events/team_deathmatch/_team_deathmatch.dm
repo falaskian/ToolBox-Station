@@ -129,7 +129,6 @@ client/verb/clearbullshit()
 				phase = SETUP_PHASE
 				remembering.Remove("10seconds")
 		if(SETUP_PHASE)
-			update_kill_caps()
 			var/failed_to_launch = gather_and_spawn_lobbyists()
 			if(failed_to_launch)
 				phase = SETUP_LOBBY
@@ -141,6 +140,7 @@ client/verb/clearbullshit()
 				if(cloner.team)
 					cloner.TDM_on = 1
 			phase = COMBAT_PHASE
+			update_kill_caps()
 			var/announce_end_round_conditions = ""
 			if(islist(death_caps) && death_caps.len)
 				var/position_check = 0
@@ -406,7 +406,7 @@ client/verb/clearbullshit()
 					H.forceMove(cloner.loc)
 					M.special_role = t
 					cloner.create_record(H)
-					cloner.equip_clothing(H)
+					cloner.equip_clothing(H,src)
 					if(M in GLOB.Original_Minds)
 						GLOB.Original_Minds.Remove(M)
 			if(failed_to_launch)
@@ -499,7 +499,7 @@ client/verb/clearbullshit()
 	var/datum/team_deathmatch_map/current = get_current_map()
 	if(current)
 		var/list/player_count = list()
-		for(var/mob/living/L in GLOB.mob_list)
+		for(var/mob/living/L in get_available_players())
 			if(L.mind && (L.mind.special_role in current.increase_kills_per_player))
 				if(!player_count[L.mind.special_role])
 					player_count[L.mind.special_role] = 0
@@ -509,6 +509,7 @@ client/verb/clearbullshit()
 				if(t in death_caps)
 					var/players = player_count[t]
 					if(players >= current.increase_kills_after_threshold)
+						players -= current.increase_kills_after_threshold
 						var/original_cap = death_caps[t]
 						var/theincreaseper = current.increase_kills_per_player[t]
 						death_caps[t] = original_cap+(players*theincreaseper)

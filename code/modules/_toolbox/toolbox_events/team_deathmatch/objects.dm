@@ -816,11 +816,21 @@ obj/item/TDM_pickup/health
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "firstaid"
 	var/total_healing = 50
+	var/health_percent_pickup_minimum = 0.9 //the modifier to see if their health is too high to pick this up.
+
+obj/item/TDM_pickup/health/attack_hand(mob/living/user)
+	if(iscyborg(user) || !istype(user))
+		return
+	if(user.health >= round(user.maxHealth*health_percent_pickup_minimum,1))
+		user << sound('sound/machines/buzz-two.ogg', volume = 50)
+		to_chat(user, "<span class='warning'><B>Your health is too high right now.</B></span>")
+		return
+	if(!isturf(loc))
+		loc = get_turf(src)
+	. = ..()
 
 obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 	. = ..()
-	if(iscyborg(user))
-		return
 	var/bruteloss = user.getBruteLoss()
 	var/fireloss = user.getFireLoss()
 	var/toxloss = user.getToxLoss()
@@ -942,19 +952,16 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 
 /obj/structure/holographic_item/attack_hand(mob/user)
 	if(holder)
-		if(item_image)
-			holder.pixel_x = item_image.pixel_x
-			holder.pixel_y = item_image.pixel_y
-		holder.forceMove(loc)
-		if(!user.put_in_hands(holder))
-			holder.forceMove(user.loc)
-		to_chat(user,"<span class='notice'>You take the [holder].</span>")
-		holder = null
-		animate_outline()
-		last_take = world.time
-		START_PROCESSING(SSobj, src)
-		update_icon()
-		return
+		var/holderoldloc = holder.loc
+		holder.attack_hand(user)
+		if(holder.loc != holderoldloc)
+			to_chat(user,"<span class='notice'>You take the [holder].</span>")
+			holder = null
+			animate_outline()
+			last_take = world.time
+			START_PROCESSING(SSobj, src)
+			update_icon()
+			return
 	. = ..()
 
 /obj/structure/holographic_item/proc/animate_outline()
@@ -984,7 +991,7 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 	return sleep_duration
 
 /obj/structure/holographic_item/proc/respawn_item()
-	holder = new starting_item()
+	holder = new starting_item(src)
 	name = holder.name
 	desc = holder.desc
 	update_icon()
@@ -1009,6 +1016,13 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 
 /obj/structure/holographic_item/take_damage()
 	return
+
+/obj/structure/holographic_item/Destroy()
+	if(holder)
+		if(holder.loc == src)
+			qdel(holder)
+		holder = null
+	return . = ..()
 
 
 		//floating ammo hologram
@@ -1083,3 +1097,17 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 	if((user in src) || (istype(W,/obj/item/stack/sheet/plasteel) && opened && !istype(src,/obj/structure/closet/secure_closet) && !istype(src,/obj/structure/closet/crate)))
 		return
 	return ..()
+
+
+		//TDM mime wall
+/obj/effect/forcefield/mime/TDM
+
+/obj/effect/forcefield/mime/TDM/CanPass(atom/movable/mover, turf/target)
+	if(istype(mover, /mob/living))
+		var/mob/living/L = mover
+		if(L.mind && L.mind.assigned_role == "Team Deathmatch" && L.mind.special_role == TDM_BLUE_TEAM)
+			return TRUE
+	. = ..()
+
+/obj/effect/proc_holder/spell/aoe_turf/conjure/mime_wall/TDM
+	summon_type = list(/obj/effect/forcefield/mime/TDM)
