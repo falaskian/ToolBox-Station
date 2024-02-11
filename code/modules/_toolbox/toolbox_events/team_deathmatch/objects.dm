@@ -387,7 +387,17 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	ammunition = /obj/item/clothing/glasses/hud/health
 	tier_level = 2
 
+	//Katana
+/obj/structure/displaycase/TDM_item_spawn/katana
+	start_showpiece_type = /obj/item/katana/TDM
+	ammunition = /obj/item/clothing/head/fedora
+	tier_level = 3
 
+	//Police Baton
+/obj/structure/displaycase/TDM_item_spawn/baton
+	start_showpiece_type = /obj/item/melee/classic_baton/police/deputy
+	ammunition = /obj/item/reagent_containers/food/snacks/donut
+	tier_level = 2
 
 
 	//Medical Cabinet
@@ -1029,13 +1039,13 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 
 /obj/structure/holographic_item/universal_magazine
 	starting_item = /obj/item/universal_magazine
-	respawn_time = 300
+	respawn_time = 250
 
 		//floating health hologram
 
 /obj/structure/holographic_item/health_pickup
 	starting_item = /obj/item/TDM_pickup/health
-	respawn_time = 450
+	respawn_time = 300
 
 
 

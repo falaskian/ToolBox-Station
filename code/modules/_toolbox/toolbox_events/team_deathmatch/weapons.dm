@@ -249,6 +249,10 @@
 	bayonet = TRUE
 
 
+	//Katana
+/obj/item/katana/TDM
+	force = 50
+
 
 	//Deagle
 /obj/item/gun/ballistic/automatic/pistol/deagle/TDM
