@@ -455,6 +455,8 @@ client/verb/clearbullshit()
 					continue
 				if(L.mind)
 					L.mind.special_role = ""
+					L.mind.RemoveAllSpells()
+					L.mind.miming = 0
 					if(L.mind.assigned_role == player_assigned_role)
 						var/mob/living/carbon/human/H = create_human(L.mind,pick(lobby_turfs),1)
 						if(H)
