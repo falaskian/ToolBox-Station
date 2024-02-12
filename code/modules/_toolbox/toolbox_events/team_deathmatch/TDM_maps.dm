@@ -28,7 +28,21 @@
 	clean_map_bodies = 1	//Clean dead bodies
 	items_respawn = 0 		//Respawn mapped items
 	respawn_time = 3000		//How often do mapped items respawn, default is 5 minutes
+
 	baseturf = /turf/open/floor/plating //Turf that will spawn after explosion deletes a turf
+	off_limits = /area/TDM/offlimits //set an area where players will be teleported away from if they enter it. an off limits area
+	list/no_firing_allowed_areas = list(TDM_RED_TEAM = list(/area/TDM/red_base),TDM_BLUE_TEAM = list(/area/TDM/blue_base)) //modifies weapon firing pin so they cant fire in these areas. based on teams
+	ban_map = 0
+	list/increase_kills_per_player = list(TDM_RED_TEAM = 2,TDM_BLUE_TEAM = 2)
+	increase_kills_after_threshold = 10
+	items_respawn = 0 //do items respawn?
+	respawn_time = 3000
+
+	//Change these to have custom team huds.
+	custom_huds_icon = null
+	list/custom_huds_states = list(
+		TDM_RED_TEAM = null,
+		TDM_BLUE_TEAM = null)
 
 /datum/map_template/ruin/space/TDM_Template
 	name = "TDM Template Name"
@@ -238,10 +252,14 @@
 	clean_map_items = 0
 	clean_map_bodies = 0
 	items_respawn = 1
-	custom_huds_icon = 'icons/mob/hud.dmi'
+	custom_huds_icon = 'icons/oldschool/huds.dmi'
 	custom_huds_states = list(
-		TDM_RED_TEAM = "hudclown",
-		TDM_BLUE_TEAM = "hudmime")
+		TDM_RED_TEAM = "team_clown",
+		TDM_BLUE_TEAM = "team_mime")
+
+	list/increase_kills_per_player = list(TDM_RED_TEAM = 0,TDM_BLUE_TEAM = 2)
+	increase_kills_after_threshold = 10
+
 	var/list/tracked_farters = list()
 	var/fart_timer = 200 //how long a mime has to stay in one place before farting
 	var/fart_camper_distance = 3 //how far must a mime move to stop farting.
