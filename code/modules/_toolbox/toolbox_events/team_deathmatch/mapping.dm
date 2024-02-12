@@ -33,6 +33,7 @@
 	var/increase_kills_after_threshold = 10
 	var/items_respawn = 0 //do items respawn?
 	var/respawn_time = 3000
+	var/list/item_respawn_blacklist = list(/obj/item/clothing/head/crown) //A black list for items you dont want respawning
 
 	//Change these to have custom team huds.
 	var/custom_huds_icon = null

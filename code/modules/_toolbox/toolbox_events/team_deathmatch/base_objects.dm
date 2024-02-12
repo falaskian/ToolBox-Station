@@ -256,7 +256,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	if(istype(spawn_area))
 		var/list/turfs = list()
 		for(var/turf/T in spawn_area)
-			if(T.density || istype(T,/turf/open/space))
+			if(T.density || istype(T,/turf/open/space) || istype(T,/turf/closed))
 				continue
 			var/obscured = 0
 			for(var/obj/O in T)
@@ -267,7 +267,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 				continue
 			turfs += T
 		if(turfs.len)
-			drop_off_turf += pick(turfs)
+			drop_off_turf = pick(turfs)
 	else if(GLOB.TDM_cloner_dropoffs.len)
 		var/list/dropoffs = list()
 		for(var/obj/effect/landmark/TDM_cloner_transport/landmark in GLOB.TDM_cloner_dropoffs)

@@ -586,12 +586,23 @@ client/verb/clearbullshit()
 	if(new_map && new_map.items_respawn)
 		var/list/turfs = get_all_ruin_floors(new_map.map)
 		if(turfs.len)
-			var/list/in_objects = list(/obj/item/storage,/obj/structure/closet)
+			var/list/in_objects = list(/obj/item/storage,/obj/structure/closet,/mob/living/carbon/human)
 			var/list/whitelisted_types = list(/obj/item,/obj/structure/reagent_dispensers,/obj/machinery/vending)
 			var/itemcount = 1
+			var/list/type_blacklist = list()
+			if(current_map && islist(current_map.item_respawn_blacklist) && current_map.item_respawn_blacklist.len)
+				type_blacklist = current_map.item_respawn_blacklist
 			for(var/obj/O in world)
 				if(QDELETED(O) || !O.loc)
 					continue
+				if(type_blacklist.len)
+					var/blacklisted = 0
+					for(var/t in type_blacklist)
+						if(istype(O,t))
+							blacklisted = 1
+							break
+					if(blacklisted)
+						continue
 				var/turf/T = get_turf(O)
 				if(!(T in turfs))
 					continue
@@ -707,6 +718,11 @@ client/verb/clearbullshit()
 								if(istype(I,/obj/machinery/vending))
 									var/obj/machinery/vending/V = I
 									V.onstation = 0
+									for(var/t in list(V.product_records,V.hidden_records,V.coin_records))
+										var/list/record_list = t
+										if(istype(record_list))
+											for(var/datum/data/vending_product/R in record_list)
+												R.amount = 0
 								the_list["item"] = I
 								the_list["last_time_home"] = world.time
 

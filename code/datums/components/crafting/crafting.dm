@@ -110,6 +110,11 @@
 		if((AM.flags_1 & HOLOGRAM_1)  || (blacklist && (AM.type in blacklist)))
 			continue
 		. += AM
+	if(istype(a,/mob))
+		var/mob/M = a
+		for(var/obj/item/I in M.get_contents())
+			if(!(I in .))
+				. += I
 
 
 /datum/component/personal_crafting/proc/get_surroundings(atom/a, list/blacklist=null)

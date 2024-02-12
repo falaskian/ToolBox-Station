@@ -31,16 +31,17 @@
 
 	baseturf = /turf/open/floor/plating //Turf that will spawn after explosion deletes a turf
 	off_limits = /area/TDM/offlimits //set an area where players will be teleported away from if they enter it. an off limits area
-	list/no_firing_allowed_areas = list(TDM_RED_TEAM = list(/area/TDM/red_base),TDM_BLUE_TEAM = list(/area/TDM/blue_base)) //modifies weapon firing pin so they cant fire in these areas. based on teams
+	no_firing_allowed_areas = list(TDM_RED_TEAM = list(/area/TDM/red_base),TDM_BLUE_TEAM = list(/area/TDM/blue_base)) //modifies weapon firing pin so they cant fire in these areas. based on teams
 	ban_map = 0
-	list/increase_kills_per_player = list(TDM_RED_TEAM = 2,TDM_BLUE_TEAM = 2)
+	increase_kills_per_player = list(TDM_RED_TEAM = 2,TDM_BLUE_TEAM = 2)
 	increase_kills_after_threshold = 10
 	items_respawn = 0 //do items respawn?
 	respawn_time = 3000
+	item_respawn_blacklist = list(/obj/item/clothing/head/crown) //A black list for items you dont want respawning
 
-	//Change these to have custom team huds.
+	//Change these to have custom team huds. Leaving null just makes them return to the default team icons.
 	custom_huds_icon = null
-	list/custom_huds_states = list(
+	custom_huds_states = list(
 		TDM_RED_TEAM = null,
 		TDM_BLUE_TEAM = null)
 
