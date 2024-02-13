@@ -208,10 +208,11 @@
 
 	if(malfai && operating)
 		malfai.malf_picker.processing_time = CLAMP(malfai.malf_picker.processing_time - 10,0,1000)
-	area.power_light = FALSE
-	area.power_equip = FALSE
-	area.power_environ = FALSE
-	area.power_change()
+	if(area?.requires_power)
+		area.power_light = FALSE
+		area.power_equip = FALSE
+		area.power_environ = FALSE
+		area.power_change()
 	if(occupier)
 		malfvacate(1)
 	qdel(wires)
@@ -920,9 +921,11 @@
 	return "[area.name] : [equipment]/[lighting]/[environ] ([lastused_equip+lastused_light+lastused_environ]) : [cell? cell.percent() : "N/C"] ([charging])"
 
 /obj/machinery/power/apc/proc/update()
-	if(!area?.requires_power)
-		return
-	if(operating && !shorted && !failure_timer)
+	if((!area?.requires_power)||(operating && !shorted && !failure_timer))
+		if(!area?.requires_power)
+			lighting = 2
+			equipment = 2
+			environ = 2
 		area.power_light = (lighting > 1)
 		area.power_equip = (equipment > 1)
 		area.power_environ = (environ > 1)

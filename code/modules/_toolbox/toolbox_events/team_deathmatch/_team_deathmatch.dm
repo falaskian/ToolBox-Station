@@ -93,6 +93,7 @@ client/verb/clearbullshit()
 		while(!SSminor_mapping || !SSminor_mapping.initialized)
 			sleep(1)
 		CONFIG_SET(flag/allow_random_events, 0)
+		GLOB.secret_force_mode = "secret_extended"
 		if(GLOB)
 			GLOB.ghost_role_flags = NONE
 		load_maps()
@@ -399,6 +400,9 @@ client/verb/clearbullshit()
 					if(H.mind)
 						H.mind.special_role = t
 				if(team_cloners.len)
+					for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
+						if(H.ckey)
+							cloner.locked_to_teams[H.ckey] = t
 					var/obj/machinery/clonepod/TDM/cloner = pick(team_cloners)
 					if(!cloner)
 						failed_to_launch = "Team deathmatch failed to start, unable to detect cloners."

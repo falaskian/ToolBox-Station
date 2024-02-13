@@ -31,6 +31,7 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	var/list/last_cloned = list()
 	var/rapid_death_time = 150 //how much time you must be alive for your death to count as a kill.
 	var/cancel_flash = 0
+	var/list/locked_to_teams = list()
 	care_about_suiciding = 0
 
 /obj/machinery/clonepod/TDM/Initialize()
@@ -72,6 +73,9 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 /obj/machinery/clonepod/TDM/attack_ghost(mob/user)
 	if(!TDM_on)
 		return
+	if(locked_to_teams.len && locked_to_teams[user.ckey] && locked_to_teams[user.ckey] != team)
+		to_chat(user,"<span class='warning'>You cannot join team [team], you are locked to a different team.</span>")
+		return
 	if(click_cooldowns[user.ckey] && click_cooldowns[user.ckey] > world.time)
 		to_chat(user,"<span class='warning'>You cant respawn like this at this time.</span>")
 		return
@@ -79,8 +83,17 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 	var/confirm = alert(user,"Do you wish to join the deathmatch battle?","Team Deathmatch","Yes","No")
 	if(confirm != "Yes" || !C || !istype(C.mob,/mob/dead/observer))
 		return
-	create_human(user)
-	click_cooldowns[user.ckey] = world.time+click_cooldown
+	if(user.ckey)
+		for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
+			cloner.click_cooldowns[user.ckey] = world.time+click_cooldown
+			cloner.locked_to_teams[user.ckey] = team
+	var/mob/living/carbon/human/H = create_human(user)
+	H.ghostize(1)
+	H.moveToNullspace()
+	H.death()
+	H.ghostize(1)
+	qdel(H)
+	alert(user,"You have been added to the clone queue.","Team Deathmatch","Ok")
 
 /obj/machinery/clonepod/TDM/proc/update_display_cases()
 	var/area/A = get_area(src)
@@ -246,7 +259,9 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 						times_cloned++
 						last_cloned[M.mind] = world.time+rapid_death_time
 
-/obj/machinery/clonepod/TDM/proc/teleport_to_spawn(mob/M)
+/obj/machinery/clonepod/TDM/proc/teleport_to_spawn(mob/living/M)
+	if(!istype(M))
+		return
 	var/turf/drop_off_turf
 	if(ispath(spawn_area))
 		for(var/area/A in world)
