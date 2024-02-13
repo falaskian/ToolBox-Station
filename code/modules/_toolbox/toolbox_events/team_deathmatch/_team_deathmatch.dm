@@ -645,6 +645,7 @@ client/verb/clearbullshit()
 	if(map_respawn_time)
 		respawn_time = map_respawn_time
 	if(respawned_items.len)
+		var/list/successful_respawns = list()
 		for(var/i in respawned_items)
 			var/list/the_list = respawned_items[i]
 			if(istype(the_list))
@@ -681,50 +682,73 @@ client/verb/clearbullshit()
 						if(istype(R))
 							R.amount++
 							vending_to_be_refilled -= R
-							spawn(n)
-								playsound(get_turf(item), 'sound/toolbox/itemrespawn.ogg', 50, 0)
+					playsound(get_turf(item), 'sound/toolbox/itemrespawn.ogg', 50, 0)
 					the_list["last_time_home"] = world.time
 				else if(!inrange && timesup)
 					var/thepath = the_list["type"]
 					if(ispath(thepath))
-						var/atom/respawn_loc = home_turf
 						var/locpath = the_list["loc"]
-						var/checkforspawn = 0
-						if(ispath(locpath))
-							checkforspawn = 1
-						spawn(0)
+						var/pixx = the_list["pixel_x"]
+						var/pixy = the_list["pixel_y"]
+						var/obj/I = new thepath(home_turf)
+						if(istype(I,/obj/machinery/vending))
+							var/obj/machinery/vending/V = I
+							V.onstation = 0
+							for(var/t in list(V.product_records,V.hidden_records,V.coin_records))
+								var/list/record_list = t
+								if(istype(record_list))
+									for(var/datum/data/vending_product/R in record_list)
+										R.amount = 0
+						else if(istype(I,/obj/item/storage))
+							for(var/obj/item/tool in I)
+								if(tool == I)
+									continue
+								qdel(tool)
+						if(istype(I))
+							if(isnum(pixx))
+								I.pixel_x = pixx
+							if(isnum(pixy))
+								I.pixel_y = pixy
 							if(ispath(locpath))
-								if(checkforspawn)
-									var/foundspawner = 1
-									while(foundspawner)
-										foundspawner = 0
-										for(var/obj/effect/TDM_item_respawn/R in home_turf)
-											foundspawner = 1
-											break
-										if(foundspawner)
-											sleep(1)
-								for(var/obj/possible_loc in home_turf)
-									if(istype(possible_loc,locpath))
-										if(istype(possible_loc,/obj/structure/closet))
-											var/obj/structure/closet/C = possible_loc
-											if(C.opened)
-												continue
-										respawn_loc = possible_loc
-										break
-							var/pixx = the_list["pixel_x"]
-							var/pixy = the_list["pixel_y"]
-							var/obj/I = respawn_item(thepath,respawn_loc,pixx,pixy)
-							if(I)
-								if(istype(I,/obj/machinery/vending))
-									var/obj/machinery/vending/V = I
-									V.onstation = 0
-									for(var/t in list(V.product_records,V.hidden_records,V.coin_records))
-										var/list/record_list = t
-										if(istype(record_list))
-											for(var/datum/data/vending_product/R in record_list)
-												R.amount = 0
-								the_list["item"] = I
-								the_list["last_time_home"] = world.time
+								successful_respawns[I] = locpath
+							else
+								successful_respawns += I
+							the_list["item"] = I
+							the_list["last_time_home"] = world.time
+		var/list/goes_to_locker = list()
+		var/list/respawned_turfs = list()
+		for(var/obj/O in successful_respawns)
+			if(!O.loc && QDELETED(O))
+				continue
+			if(!(O.loc in respawned_turfs))
+				playsound(O.loc, 'sound/toolbox/itemrespawn.ogg', 50, 0)
+				respawned_turfs += O.loc
+			var/locpath = successful_respawns[O]
+			if(locpath)
+				for(var/obj/container in O.loc)
+					if(istype(container,locpath))
+						if(istype(container,/obj/item/storage))
+							var/obj/item/storage/S = container
+							var/datum/component/storage/STR = S.GetComponent(/datum/component/storage)
+							if(STR.can_be_inserted(O, TRUE))
+								//possibility of multiples of the same object going in wrong box
+								STR.handle_item_insertion(O, TRUE)
+								successful_respawns -= O
+								break
+						else if(istype(container,/obj/structure/closet))
+							var/obj/structure/closet/C = container
+							if(!C.opened)
+								goes_to_locker[O] = container
+								successful_respawns -= O
+		for(var/obj/O in goes_to_locker)
+			var/locker = goes_to_locker[O]
+			if(locker)
+				O.forceMove(locker)
+		for(var/obj/O in successful_respawns)
+			var/obj/effect/TDM_item_respawn/R = new(O.loc)
+			R.pixel_x = O.pixel_x
+			R.pixel_y = O.pixel_y
+			R.respawn_with(O)
 
 /datum/toolbox_event/team_deathmatch/proc/on_mob(obj/O)
 	var/atom/the_loc = O
@@ -737,34 +761,6 @@ client/verb/clearbullshit()
 		if(M.ckey)
 			return TRUE
 	return FALSE
-
-/datum/toolbox_event/team_deathmatch/proc/respawn_item(new_item,atom/home_turf,pixel_X = null,pixel_Y = null)
-	if(!istype(home_turf))
-		return
-	var/new_path
-	if(ispath(new_item))
-		new_path = new_item
-	else if(istype(new_item,/obj))
-		var/obj/O = new_item
-		new_path = O.type
-	if(ispath(new_path))
-		var/atom/O = new new_path()
-		if(istype(O,/obj/item/storage))
-			for(var/obj/item/I in O)
-				if(I == O)
-					continue
-				qdel(I)
-		if(istype(O))
-			var/obj/effect/TDM_item_respawn/R = new(home_turf)
-			if(isnum(pixel_X))
-				O.pixel_x = pixel_X
-				R.pixel_x = pixel_X
-			if(isnum(pixel_Y))
-				O.pixel_y = pixel_Y
-				R.pixel_y = pixel_Y
-			R.respawn_with(O)
-			return O
-	return null
 
 //respawn effect
 /obj/effect/TDM_item_respawn
@@ -781,12 +777,12 @@ client/verb/clearbullshit()
 	icon = to_be_spawned.icon
 	icon_state = to_be_spawned.icon_state
 	overlays = to_be_spawned.overlays
+	name = to_be_spawned.name
 	desc = to_be_spawned.desc
 	color = to_be_spawned.color
 	alpha = 0
 	var/interval = round(255/10,1)
 	spawn(0)
-		playsound(get_turf(src), 'sound/toolbox/itemrespawn.ogg', 50, 0)
 		for(var/i=1,i<=10,i++)
 			sleep(1)
 			alpha+=interval
