@@ -365,10 +365,9 @@ client/verb/clearbullshit()
 /datum/toolbox_event/team_deathmatch/proc/gather_and_spawn_lobbyists(list/_players,midround = 0)
 	while(building_ruin)
 		sleep(1)
-	var/player_detected = 0
-	var/list/minds_to_spawn = list()
 	if(!_players || !_players.len)
 		_players = get_available_players()
+	var/player_count = 0
 	for(var/mob/living/L in _players)
 		var/area/A = get_area(L)
 		for(var/a in team_lobby_areas)
@@ -376,10 +375,62 @@ client/verb/clearbullshit()
 				if(!teams[team_lobby_areas[a]])
 					teams[team_lobby_areas[a]] = list()
 				teams[team_lobby_areas[a]] += L.mind
-				minds_to_spawn[L.mind] = team_lobby_areas[a]
-				player_detected = 1
+				player_count++
 	var/failed_to_launch = null
-	if(player_detected && (teams.len >= 2 || midround))
+	var/list/got_moved = list()
+	if(player_count > 0 && teams.len >= 2 && !midround)
+		if(current_map)
+			var/list/team_ratios = current_map.team_ratio
+			var/found_a_zero_ratio = 0
+			var/total_ratios = 0
+			for(var/t in team_ratios)
+				total_ratios += team_ratios[t]
+				if(!team_ratios[t] || team_ratios[t] <= 0)
+					found_a_zero_ratio = 1
+			if(!found_a_zero_ratio)
+				var/list/final_team_numbers = list()
+				for(var/t in team_ratios)
+					var/percent = team_ratios[t]/total_ratios
+					var/count = round(player_count*percent,1)
+					count = round(count*(1+current_map.team_ratio_balance_threshold),1)
+					count = max(count,1)
+					final_team_numbers[t] = count
+				var/list/to_be_moved = list()
+				var/list/needs_players = list()
+				for(var/t in teams)
+					var/list/team = teams[t]
+					var/overfilled = team.len-final_team_numbers[t]
+					if(overfilled > 0)
+						for(var/i=overfilled,i>0,i--)
+							var/datum/mind/moved_mind = pick(team)
+							to_be_moved += moved_mind
+							team -= moved_mind
+							got_moved[moved_mind] = t
+				for(var/t in teams)
+					var/list/team = teams[t]
+					var/missing = final_team_numbers[t]-team.len
+					if(missing > 0)
+						needs_players[t] = missing
+				if(to_be_moved.len)
+					for(var/t in needs_players)
+						var/list/team = teams[t]
+						var/missing = needs_players[t]
+						for(var/i=missing,i>0,i--)
+							var/datum/mind/moved_mind = pick(to_be_moved)
+							team += moved_mind
+							to_be_moved -= moved_mind
+					if(to_be_moved.len)
+						for(var/i=to_be_moved.len,i>0,i--) //do we still have dudes not sorted? this could happen because of rounding errors.
+							for(var/t in teams)
+								var/list/team = teams[t]
+								var/datum/mind/moved_mind = pick(to_be_moved)
+								team += moved_mind
+								to_be_moved -= moved_mind
+	if(player_count > 0 && (teams.len >= 2 || midround))
+		for(var/datum/mind/M in got_moved)
+			if(M.current && M.current.client)
+				spawn(0)
+					alert(M.current,"You were moved to Team [capitalize(got_moved[M])] because the other team was full.","Team Deathmatch","Ok")
 		for(var/t in teams)
 			var/list/team = teams[t]
 			if(!team.len && !midround)
@@ -392,8 +443,6 @@ client/verb/clearbullshit()
 				if(cloner.team == t)
 					team_cloners += cloner
 			for(var/datum/mind/M in team)
-				if(!(M in minds_to_spawn))
-					continue
 				var/mob/living/carbon/human/H = M.current
 				if(!istype(H,/mob/living/carbon/human))
 					H = create_human(M,M.current.loc)
@@ -523,6 +572,8 @@ client/verb/clearbullshit()
 /datum/toolbox_event/team_deathmatch/proc/get_current_map()
 	while(building_ruin)
 		sleep(1)
+	if(current_map)
+		return current_map
 	var/datum/map_template/ruin/previous_ruin
 	for(var/datum/map_template/ruin/R in active_ruins)
 		if(R.name == lobby_name)
@@ -997,7 +1048,8 @@ client/verb/clearbullshit()
 
 /datum/toolbox_event/team_deathmatch/open_admin_menu(mob/user)
 	if(!active)
-		alert(user,"Event is not active.","TDM Admin","Ok")
+		spawn(0)
+			alert(user,"Event is not active.","TDM Admin","Ok")
 		return
 	var/dat = "<font size=5><B>TDM Adminbus Menu</B></font> (<A href='?src=\ref[src];refresh=1'>Refresh</a>)<br><br>"
 	var/list/translate_phase = list(
@@ -1023,6 +1075,7 @@ client/verb/clearbullshit()
 	dat += "<A href='?src=\ref[src];forcemap=1'>Force Next Map</a>"
 	dat += "<br><br><A href='?src=\ref[src];endround=1'>End Round</a>"
 	dat += "<br><br><A href='?src=\ref[src];fakeplayer=1'>Create Dummy Player(Debug)</a>"
+	dat += " <A href='?src=\ref[src];fakeplayer=many'>Many Dummies(Debug)</a>"
 	dat += "<br><br><A href='?src=\ref[src];eventvars=1'>Event Variables(Debug)</a>"
 	var/datum/browser/popup = new(user, "tdmadmin", "TDM Admin", 500, 500)
 	popup.set_content(dat)
@@ -1055,17 +1108,20 @@ client/verb/clearbullshit()
 				next_timer = newinput
 				message_admins("[usr.ckey] has set the TDM timer to [input] seconds.")
 		else
-			alert(usr,"There is no timer right now[mb].","TDM Admin","Ok")
+			spawn(0)
+				alert(usr,"There is no timer right now[mb].","TDM Admin","Ok")
 			return
 	if(href_list["rotate"])
 		if(phase != LOBBY_PHASE)
-			alert(usr,"You can only rotate the map during the lobby phase[mb].","TDM Admin","Ok")
+			spawn(0)
+				alert(usr,"You can only rotate the map during the lobby phase[mb].","TDM Admin","Ok")
 			return
 		var/rotatequestionmark = alert(usr,"Are you sure you want to rotate the map[mb]? This will change the map to the next map[mb].","TDM Admin","Yes","No")
 		if(rotatequestionmark != "Yes")
 			return
 		if(phase != LOBBY_PHASE)
-			alert(usr,"Lobby phase has ended, cannot rotate at this time[mb].","TDM Admin","Ok")
+			spawn(0)
+				alert(usr,"Lobby phase has ended, cannot rotate at this time[mb].","TDM Admin","Ok")
 			return
 		message_admins("[usr.key] has rotated the TDM map.")
 		var/datum/team_deathmatch_map/old_map = get_current_map()
@@ -1087,7 +1143,8 @@ client/verb/clearbullshit()
 			message_admins("[usr.ckey] has disabled force TDM map.")
 		else
 			if(phase != LOBBY_PHASE)
-				alert(usr,"You can only force the next map during the Lobby phase.","TDM Admin","Ok")
+				spawn(0)
+					alert(usr,"You can only force the next map during the Lobby phase.","TDM Admin","Ok")
 				return
 			var/list/selections = list()
 			for(var/datum/team_deathmatch_map/map in ruin_maps)
@@ -1097,7 +1154,8 @@ client/verb/clearbullshit()
 				if(!(choice in selections))
 					return
 				if(phase != LOBBY_PHASE)
-					alert(usr,"You can only force the next map during the Lobby phase.","TDM Admin","Ok")
+					spawn(0)
+						alert(usr,"You can only force the next map during the Lobby phase.","TDM Admin","Ok")
 					return
 				forced_map = selections[choice]
 				rotate_map()
@@ -1109,7 +1167,8 @@ client/verb/clearbullshit()
 			if(endtheround != "Yes")
 				return
 			if(phase != COMBAT_PHASE)
-				alert(usr,"Combat Phase has already ended[mb].","TDM Admin","Ok")
+				spawn(0)
+					alert(usr,"Combat Phase has already ended[mb].","TDM Admin","Ok")
 				return
 			var/Guins_excuse = input(usr,"Write Guin's excuse for ending the round[mb].","TDM Admin","I have ended this current round. I was bored.") as text
 			message_admins("[usr.ckey] has ended the current round.")
@@ -1120,19 +1179,29 @@ client/verb/clearbullshit()
 			if(Guins_excuse)
 				announce("[Guins_excuse]")
 		else
-			alert(usr,"You can only force the round to end during Combat Phase[mb].","TDM Admin","Ok")
+			spawn(0)
+				alert(usr,"You can only force the round to end during Combat Phase[mb].","TDM Admin","Ok")
 	if(href_list["fakeplayer"])
 		if(phase != LOBBY_PHASE)
-			alert(usr,"This requires Lobby phase[mb].","TDM Admin","Ok")
+			spawn(0)
+				alert(usr,"This requires Lobby phase[mb].","TDM Admin","Ok")
 			return
-		var/mob/living/carbon/human/H = new()
-		if(!H.mind)
-			H.mind_initialize()
-		if(H.mind)
-			H.mind.assigned_role = player_assigned_role
-			debug_minds += H.mind
-			restart_players(H)
-			message_admins("[usr.ckey] has created a dummy player for team_deathmatch.")
+		var/count = 1
+		if(href_list["fakeplayer"] == "many")
+			var/many = input(usr,"How many dummys to spawn? Max(60)","TDM Admin",5) as num
+			if(isnum(many) && many > 0)
+				many = round(many,1)
+				count = min(many,60)
+		if(count >= 1)
+			for(var/i=count,i>0,i--)
+				var/mob/living/carbon/human/H = new()
+				if(!H.mind)
+					H.mind_initialize()
+				if(H.mind)
+					H.mind.assigned_role = player_assigned_role
+					debug_minds += H.mind
+					restart_players(H)
+			message_admins("[usr.ckey] has created [count > 1 ? "[count] dummy players" : "a dummy player"] for team_deathmatch.")
 	if(href_list["eventvars"])
 		if(usr.client)
 			usr.client.debug_variables(src)

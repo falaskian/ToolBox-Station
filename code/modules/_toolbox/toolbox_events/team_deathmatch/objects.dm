@@ -904,7 +904,7 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 			var/obj/item/box = new new_mag_type()
 			if(box)
 				moveToNullspace()
-				to_chat(user, "<span class='notice'>The [src] transforms in to <B>[capitalize(box.name)]</B>.</span>")
+				to_chat(user, "<span class='notice'>The [src] transforms into <B>[capitalize(box.name)]</B>.</span>")
 				if(user.put_in_hands(box))
 					B.attackby(box,user)
 				else

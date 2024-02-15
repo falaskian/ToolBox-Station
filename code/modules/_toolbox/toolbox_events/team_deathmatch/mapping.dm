@@ -19,6 +19,8 @@
 		"t1" = /datum/outfit/TDM/blue,
 		"t3" = /datum/outfit/TDM/blue/t3,
 		"t4" = /datum/outfit/TDM/blue/t4))
+	var/ban_map = 0 //Should the map be invisible?
+
 	//control what gets cleaned during repair cycle
 	var/repair_map = 1
 	var/clean_map_items = 1
@@ -28,16 +30,21 @@
 	var/baseturf = null //set this to the turf that will remain after an explosion, if left unchanged it will be space. this applies to the whole map
 	var/off_limits = /area/TDM/offlimits //set an area where players will be teleported away from if they enter it. an off limits area
 	var/list/no_firing_allowed_areas = list(TDM_RED_TEAM = list(/area/TDM/red_base),TDM_BLUE_TEAM = list(/area/TDM/blue_base)) //modifies weapon firing pin so they cant fire in these areas. based on teams
-	var/ban_map = 0
-	var/list/increase_kills_per_player = list(TDM_RED_TEAM = 2,TDM_BLUE_TEAM = 2)
-	var/increase_kills_after_threshold = 10
-	var/items_respawn = 0 //do items respawn?
-	var/respawn_time = 3000
-	var/list/item_respawn_blacklist = list(/obj/item/clothing/head/crown) //A black list for items you dont want respawning
 
-	//Change these to have custom team huds.
-	var/custom_huds_icon = null
-	var/list/custom_huds_states = list(
+	//game balancing
+	var/list/increase_kills_per_player = list(TDM_RED_TEAM = 2,TDM_BLUE_TEAM = 2) //how many points does the kill requirement go up for player.
+	var/increase_kills_after_threshold = 10 //how many players ar eneeded before increase_kills_per_player starts taking effect.
+	var/list/team_ratio = list(TDM_RED_TEAM = 0,TDM_BLUE_TEAM = 0) //Change these numbers to force a certain team size ratio. 0 means this is ignored.
+	var/team_ratio_balance_threshold = 0.1 //how much overflow is allowed before team_ratio forces balance
+
+	//item respawns
+	var/items_respawn = 0 //do items respawn when picked up or moved away from their spawn location?
+	var/respawn_time = 3000 //time untill an item respawns.
+	var/list/item_respawn_blacklist = list(/obj/item/clothing/head/crown) //A black list for items you dont want respawning.
+
+	//Change these to have custom team huds, if left unchanged it will be the default tiny blue and red squares.
+	var/custom_huds_icon = null //Set this as the icon.dmi file you want to use
+	var/list/custom_huds_states = list( //this list is the icon states for each time you want to use.
 		TDM_RED_TEAM = null,
 		TDM_BLUE_TEAM = null)
 
