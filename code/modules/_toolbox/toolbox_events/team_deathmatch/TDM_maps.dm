@@ -172,10 +172,90 @@
 
 
 
+		//Church
+
+/datum/team_deathmatch_map/church
+	name = "TDM Church"
+	map = /datum/map_template/ruin/space/TDM_Church
+	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20)
+	round_time = 0
+	ban_map = 0
+	team_home_areas = list(
+		/area/TDM/red_base = TDM_RED_TEAM,
+		/area/TDM/blue_base = TDM_BLUE_TEAM)
+	teir_kills = list(0,3,6,15)
+	team_outfits = list(
+		TDM_RED_TEAM = list(
+		"t1" = /datum/outfit/TDM/red,
+		"t3" = /datum/outfit/TDM/red/t3,
+		"t4" = /datum/outfit/TDM/red/t4),
+		TDM_BLUE_TEAM = list(
+		"t1" = /datum/outfit/TDM/blue,
+		"t3" = /datum/outfit/TDM/blue/t3,
+		"t4" = /datum/outfit/TDM/blue/t4))
+	//control what gets cleaned during repair cycle
+	repair_map = 1
+	clean_map_items = 1
+	clean_map_bodies = 1
+	baseturf = /turf/open/floor/plating/asteroid/has_air
+
+/datum/map_template/ruin/space/TDM_Church
+	name = "TDM Church"
+	id = "tdm_church"
+	description = "Small size Church map for TDM"
+	unpickable = TRUE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
+	prefix = "_maps/toolbox/TDM/Church.dmm"
+
+
+
+		//Box
+
+/datum/team_deathmatch_map/box
+	name = "TDM Box (1v1)"
+	map = /datum/map_template/ruin/space/TDM_Box
+	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20)
+	round_time = 0
+	ban_map = 0
+	team_home_areas = list(
+		/area/TDM/red_base = TDM_RED_TEAM,
+		/area/TDM/blue_base = TDM_BLUE_TEAM)
+	teir_kills = list(0,3,6,15)
+	team_outfits = list(
+		TDM_RED_TEAM = list(
+		"t1" = /datum/outfit/TDM/red,
+		"t3" = /datum/outfit/TDM/red/t3,
+		"t4" = /datum/outfit/TDM/red/t4),
+		TDM_BLUE_TEAM = list(
+		"t1" = /datum/outfit/TDM/blue,
+		"t3" = /datum/outfit/TDM/blue/t3,
+		"t4" = /datum/outfit/TDM/blue/t4))
+	//control what gets cleaned during repair cycle
+	repair_map = 1
+	clean_map_items = 1
+	clean_map_bodies = 1
+	items_respawn = 1
+	baseturf = /turf/open/floor/plating/asteroid
+
+/datum/map_template/ruin/space/TDM_Box
+	name = "TDM Box (1v1)"
+	id = "tdm_church"
+	description = "Tiny size map for TDM designed for 1v1-s."
+	unpickable = TRUE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
+	prefix = "_maps/toolbox/TDM/Box.dmm"
+
+
 		//MiniStation - GreyTide
 
 /datum/team_deathmatch_map/ministation_greytide
-	name = "TDM MiniStation - GreyTide"
+	name = "GreyTide MiniStation"
 	map = /datum/map_template/ruin/space/TDM_MiniStation_GreyTide
 	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20)
 	teir_kills = list(0,3,6,15)
@@ -191,7 +271,7 @@
 	items_respawn = 1
 
 /datum/map_template/ruin/space/TDM_MiniStation_GreyTide
-	name = "TDM MiniStation - GreyTide"
+	name = "GreyTide MiniStation"
 	id = "greytide_ministation"
 	description = "Mini Station map for Greytiding."
 	unpickable = TRUE
@@ -200,34 +280,6 @@
 	cost = 0
 	allow_duplicates = FALSE
 	prefix = "_maps/toolbox/TDM/MiniStation_GreyTide_no_displaycases.dmm"
-
-
-
-		//DeathRun
-
-/datum/team_deathmatch_map/deathrun
-	name = "DeathRun"
-	map = /datum/map_template/ruin/space/TDM_DeathRun
-	team_deaths = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 3) //Blue Team (Death) have only 3 respawn points
-	round_time = 0
-	team_outfits = list(
-		TDM_RED_TEAM = list(
-		"t1" = /datum/outfit/TDM/Runner),
-		TDM_BLUE_TEAM = list(
-		"t1" = /datum/outfit/TDM/Death))
-	baseturf = /turf/open/floor/holofloor/grass
-
-
-/datum/map_template/ruin/space/TDM_DeathRun
-	name = "DeathRun"
-	id = "tdm_deathrun"
-	description = "DeathRun Map"
-	unpickable = TRUE
-	always_place = FALSE
-	placement_weight = 1
-	cost = 0
-	allow_duplicates = FALSE
-	prefix = "_maps/toolbox/TDM/DeathRun.dmm"
 
 
 
@@ -257,9 +309,8 @@
 	custom_huds_states = list(
 		TDM_RED_TEAM = "team_clown",
 		TDM_BLUE_TEAM = "team_mime")
-
-	list/increase_kills_per_player = list(TDM_RED_TEAM = 0,TDM_BLUE_TEAM = 2)
-	increase_kills_after_threshold = 10
+	list/team_ratio = list(TDM_RED_TEAM = 1,TDM_BLUE_TEAM = 4)
+	team_ratio_balance_threshold = 0.1
 
 	var/list/tracked_farters = list()
 	var/fart_timer = 200 //how long a mime has to stay in one place before farting
@@ -341,12 +392,12 @@
 
 
 
-		//Church
+		//Revolution - BoxStationSimple
 
-/datum/team_deathmatch_map/church
-	name = "TDM Church"
-	map = /datum/map_template/ruin/space/TDM_Church
-	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20)
+/datum/team_deathmatch_map/bss
+	name = "REV BoxStation_S"
+	map = /datum/map_template/ruin/space/REV_BSS
+	team_deaths = list(TDM_RED_TEAM = 10,TDM_BLUE_TEAM = 25)
 	round_time = 0
 	ban_map = 0
 	team_home_areas = list(
@@ -355,70 +406,63 @@
 	teir_kills = list(0,3,6,15)
 	team_outfits = list(
 		TDM_RED_TEAM = list(
-		"t1" = /datum/outfit/TDM/red,
-		"t3" = /datum/outfit/TDM/red/t3,
-		"t4" = /datum/outfit/TDM/red/t4),
+		"t1" = /datum/outfit/job/security),
 		TDM_BLUE_TEAM = list(
-		"t1" = /datum/outfit/TDM/blue,
-		"t3" = /datum/outfit/TDM/blue/t3,
-		"t4" = /datum/outfit/TDM/blue/t4))
+		"t1" = /datum/outfit/job/assistant))
 	//control what gets cleaned during repair cycle
 	repair_map = 1
-	clean_map_items = 1
+	clean_map_items = 0
 	clean_map_bodies = 1
-	baseturf = /turf/open/floor/plating/asteroid/has_air
+	items_respawn = 1
+	baseturf = /turf/open/floor/plating
 
-/datum/map_template/ruin/space/TDM_Church
-	name = "TDM Church"
-	id = "tdm_church"
-	description = "Small size Church map for TDM"
+	list/increase_kills_per_player = list(TDM_RED_TEAM = 1,TDM_BLUE_TEAM = 2)
+	increase_kills_after_threshold = 10
+	custom_huds_icon = 'icons/oldschool/huds.dmi'
+	custom_huds_states = list(
+		TDM_RED_TEAM = "team_red",
+		TDM_BLUE_TEAM = "rev_head")
+	list/team_ratio = list(TDM_RED_TEAM = 1,TDM_BLUE_TEAM = 4)
+	team_ratio_balance_threshold = 0.1
+
+/datum/map_template/ruin/space/REV_BSS
+	name = "REV BoxStation_S"
+	id = "rev_box"
+	description = "Modified BoxStation for TDM_REV gamemode."
 	unpickable = TRUE
 	always_place = FALSE
 	placement_weight = 1
 	cost = 0
 	allow_duplicates = FALSE
-	prefix = "_maps/toolbox/TDM/Church.dmm"
+	prefix = "_maps/toolbox/TDM/BoxStationSimple.dmm"
 
 
 
-		//Box
+		//DeathRun
 
-/datum/team_deathmatch_map/box
-	name = "TDM Box"
-	map = /datum/map_template/ruin/space/TDM_Box
-	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20)
+/datum/team_deathmatch_map/deathrun
+	name = "DeathRun"
+	map = /datum/map_template/ruin/space/TDM_DeathRun
+	team_deaths = list(TDM_RED_TEAM = 30,TDM_BLUE_TEAM = 3) //Blue Team (Death) have only 3 respawn points
 	round_time = 0
-	ban_map = 0
-	team_home_areas = list(
-		/area/TDM/red_base = TDM_RED_TEAM,
-		/area/TDM/blue_base = TDM_BLUE_TEAM)
-	teir_kills = list(0,3,6,15)
 	team_outfits = list(
 		TDM_RED_TEAM = list(
-		"t1" = /datum/outfit/TDM/red,
-		"t3" = /datum/outfit/TDM/red/t3,
-		"t4" = /datum/outfit/TDM/red/t4),
+		"t1" = /datum/outfit/TDM/Runner),
 		TDM_BLUE_TEAM = list(
-		"t1" = /datum/outfit/TDM/blue,
-		"t3" = /datum/outfit/TDM/blue/t3,
-		"t4" = /datum/outfit/TDM/blue/t4))
-	//control what gets cleaned during repair cycle
-	repair_map = 1
-	clean_map_items = 1
-	clean_map_bodies = 1
-	baseturf = /turf/open/floor/plating/asteroid
+		"t1" = /datum/outfit/TDM/Death))
+	baseturf = /turf/open/floor/holofloor/grass
 
-/datum/map_template/ruin/space/TDM_Box
-	name = "TDM Box"
-	id = "tdm_church"
-	description = "Tiny size map for TDM designed for 1v1-s."
+
+/datum/map_template/ruin/space/TDM_DeathRun
+	name = "DeathRun"
+	id = "tdm_deathrun"
+	description = "DeathRun Map"
 	unpickable = TRUE
 	always_place = FALSE
 	placement_weight = 1
 	cost = 0
 	allow_duplicates = FALSE
-	prefix = "_maps/toolbox/TDM/Box.dmm"
-
+	prefix = "_maps/toolbox/TDM/DeathRun.dmm"
 
 
 

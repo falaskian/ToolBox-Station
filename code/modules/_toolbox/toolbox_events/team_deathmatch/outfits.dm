@@ -553,6 +553,7 @@
 		//CLOWN CLOTHES
 
 /obj/item/clothing/under/rank/civilian/clown/TDM
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/under/rank/civilian/clown/TDM/Initialize()
 	.=..()
@@ -560,6 +561,7 @@
 
 
 /obj/item/clothing/mask/gas/clown_hat/TDM
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/mask/gas/clown_hat/TDM/Initialize()
 	.=..()
@@ -567,6 +569,7 @@
 
 
 /obj/item/clothing/under/rank/civilian/clown/blue/TDM
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/under/rank/civilian/clown/blue/TDM/Initialize()
 	.=..()
@@ -574,6 +577,7 @@
 
 
 /obj/item/clothing/shoes/clown_shoes/TDM
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/shoes/clown_shoes/TDM/slow
 	slowdown = 0.2
@@ -584,6 +588,7 @@
 
 
 /obj/item/clothing/mask/gas/sexyclown/TDM
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | INDESTRUCTIBLE
 
 /obj/item/clothing/mask/gas/sexyclown/TDM/Initialize()
 	.=..()
