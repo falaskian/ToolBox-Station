@@ -383,16 +383,20 @@ client/verb/clearbullshit()
 			var/list/team_ratios = current_map.team_ratio
 			var/found_a_zero_ratio = 0
 			var/total_ratios = 0
+			var/top_ratio = 0
 			for(var/t in team_ratios)
 				total_ratios += team_ratios[t]
 				if(!team_ratios[t] || team_ratios[t] <= 0)
 					found_a_zero_ratio = 1
+				else if(team_ratios[t] > top_ratio)
+					top_ratio = team_ratios[t]
 			if(!found_a_zero_ratio)
 				var/list/final_team_numbers = list()
 				for(var/t in team_ratios)
 					var/percent = team_ratios[t]/total_ratios
 					var/count = round(player_count*percent,1)
-					count = round(count*(1+current_map.team_ratio_balance_threshold),1)
+					if(top_ratio && team_ratios[t] < top_ratio)
+						count = round(count*(1+current_map.team_ratio_balance_threshold),1)
 					count = max(count,1)
 					final_team_numbers[t] = count
 				var/list/to_be_moved = list()
@@ -470,11 +474,20 @@ client/verb/clearbullshit()
 
 /datum/toolbox_event/team_deathmatch/proc/block_offlimits(mob/living/L)
 	if(istype(L) && current_offlimits && L.mind && L.mind.assigned_role == player_assigned_role && L.mind.special_role)
-		var/area/A = get_turf(L)
-		if(isturf(player_locations[L]))
-			var/area/offlimits = locate(current_offlimits)
-			if(A == offlimits)
-				L.forceMove(player_locations[L])
+		var/list/offlimits_zones
+		if(ispath(current_offlimits))
+			offlimits_zones = list(current_offlimits)
+		if(islist(current_offlimits))
+			offlimits_zones = current_offlimits
+		if(islist(offlimits_zones) && offlimits_zones.len)
+			var/area/A = get_area(L)
+			var/turf/T = player_locations[L]
+			if(isarea(A) && isturf(T))
+				for(var/t in offlimits_zones)
+					var/area/offlimits = locate(t)
+					if(A == offlimits)
+						L.forceMove(player_locations[L])
+						break
 		player_locations[L] = get_turf(L)
 
 /datum/toolbox_event/team_deathmatch/proc/restart_players(mob/player = null)
