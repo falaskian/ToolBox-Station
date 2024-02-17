@@ -89,6 +89,8 @@
 	map = /datum/map_template/ruin/space/TDM_Dust1
 	teir_kills = list(0,3,6,15)
 	baseturf = /turf/open/floor/plating/asteroid
+	team_ratio = list(TDM_RED_TEAM = 1,TDM_BLUE_TEAM = 1)
+	team_ratio_balance_threshold = 0.1
 
 /datum/map_template/ruin/space/TDM_Dust1
 	name = "TDM Dust1"
@@ -109,6 +111,8 @@
 	name = "TDM Smeltery"
 	map = /datum/map_template/ruin/space/TDM_smeltery
 	baseturf = /turf/open/floor/plating/asteroid/basalt
+	team_ratio = list(TDM_RED_TEAM = 1,TDM_BLUE_TEAM = 1)
+	team_ratio_balance_threshold = 0.1
 
 /datum/map_template/ruin/space/TDM_smeltery
 	name = "TDM Smeltery"
@@ -133,6 +137,8 @@
 		/area/TDM/red_base = TDM_RED_TEAM,
 		/area/TDM/blue_base = TDM_BLUE_TEAM)
 	teir_kills = list(0,3,6,15)
+	team_ratio = list(TDM_RED_TEAM = 1,TDM_BLUE_TEAM = 1)
+	team_ratio_balance_threshold = 0.1
 	repair_map = 0
 	clean_map_items = 0
 	clean_map_bodies = 1
@@ -159,6 +165,8 @@
 	map = /datum/map_template/ruin/space/TDM_MiniStation
 	baseturf = /turf/open/floor/plating
 	ban_map = 0
+	team_ratio = list(TDM_RED_TEAM = 1,TDM_BLUE_TEAM = 1)
+	team_ratio_balance_threshold = 0.1
 	items_respawn = 1
 //		repair_map = 1
 //		clean_map_items = 1
@@ -198,6 +206,8 @@
 		"t1" = /datum/outfit/TDM/blue,
 		"t3" = /datum/outfit/TDM/blue/t3,
 		"t4" = /datum/outfit/TDM/blue/t4))
+	team_ratio = list(TDM_RED_TEAM = 1,TDM_BLUE_TEAM = 1)
+	team_ratio_balance_threshold = 0.1
 	//control what gets cleaned during repair cycle
 	repair_map = 1
 	clean_map_items = 1
@@ -238,6 +248,8 @@
 		"t1" = /datum/outfit/TDM/blue,
 		"t3" = /datum/outfit/TDM/blue/t3,
 		"t4" = /datum/outfit/TDM/blue/t4))
+	team_ratio = list(TDM_RED_TEAM = 1,TDM_BLUE_TEAM = 1)
+	team_ratio_balance_threshold = 0.1
 	//control what gets cleaned during repair cycle
 	repair_map = 1
 	clean_map_items = 1
@@ -269,6 +281,8 @@
 		"t1" = /datum/outfit/TDM/assistant_red),
 		TDM_BLUE_TEAM = list(
 		"t1" = /datum/outfit/TDM/assistant_blue))
+	team_ratio = list(TDM_RED_TEAM = 1,TDM_BLUE_TEAM = 1)
+	team_ratio_balance_threshold = 0.1
 //	repair_map = 1
 	clean_map_items = 0
 //	clean_map_bodies = 1
@@ -456,9 +470,9 @@
 	teir_kills = list(0,3,6,15) //kill requirements to unlock each teir of guns, 4 teirs right now.
 	team_outfits = list(
 		TDM_RED_TEAM = list(
-		"t1" = /datum/outfit/syndicate),
+		"t1" = /datum/outfit/nukie/nukie_hardsuit),
 		TDM_BLUE_TEAM = list(
-		"t1" = /datum/outfit/job/security))
+		"t1" = /datum/outfit/nukie/security))
 	ban_map = 0 //Should the map be invisible?
 
 	//control what gets cleaned during repair cycle
@@ -483,10 +497,10 @@
 	item_respawn_blacklist = list(/obj/item/clothing/head/crown) //A black list for items you dont want respawning.
 
 	//Change these to have custom team huds, if left unchanged it will be the default tiny blue and red squares.
-	custom_huds_icon = null //Set this as the icon.dmi file you want to use
+	custom_huds_icon = 'icons/oldschool/huds.dmi' //Set this as the icon.dmi file you want to use
 	custom_huds_states = list( //this list is the icon states for each time you want to use.
-		TDM_RED_TEAM = null,
-		TDM_BLUE_TEAM = null)
+		TDM_RED_TEAM = "synd",
+		TDM_BLUE_TEAM = "team_blue")
 
 /datum/map_template/ruin/space/TDM_Nukies
 	name = "TDM Nukies"
@@ -497,7 +511,7 @@
 	placement_weight = 1
 	cost = 0
 	allow_duplicates = FALSE
-	prefix = "_maps/toolbox/TDM/Template.dmm" //Map path
+	prefix = "_maps/toolbox/TDM/Nukies.dmm" //Map path
 
 
 
@@ -514,6 +528,8 @@
 		TDM_BLUE_TEAM = list(
 		"t1" = /datum/outfit/TDM/Death))
 	baseturf = /turf/open/floor/holofloor/grass
+	team_ratio = list(TDM_RED_TEAM = 5,TDM_BLUE_TEAM = 1)
+	team_ratio_balance_threshold = 0.1
 
 
 /datum/map_template/ruin/space/TDM_DeathRun

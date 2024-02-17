@@ -399,6 +399,19 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 	ammunition = /obj/item/reagent_containers/food/snacks/donut
 	tier_level = 2
 
+	//Hardsuit - Sec
+/obj/structure/displaycase/TDM_item_spawn/hardsuit_sec
+	start_showpiece_type = /obj/item/clothing/suit/space/hardsuit/security
+	ammunition = /obj/item/tank/jetpack/oxygen/harness
+	tier_level = 2
+
+	//Hardsuit - Nukie
+/obj/structure/displaycase/TDM_item_spawn/hardsuit_nukie
+	start_showpiece_type = /obj/item/clothing/suit/space/hardsuit/syndi
+	ammunition = /obj/item/tank/jetpack/oxygen/harness
+	tier_level = 1
+
+
 
 	//Medical Cabinet
 

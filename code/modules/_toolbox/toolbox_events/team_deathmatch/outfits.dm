@@ -288,9 +288,52 @@
 	l_pocket = /obj/item/chameleon
 
 
+	//Nukie - Nukie Hardsuit
+
+/datum/outfit/nukie/nukie_hardsuit
+	name = "TDM Nukie Hardsuit"
+	uniform = /obj/item/clothing/under/syndicate
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	back = /obj/item/storage/backpack/fireproof
+	ears = /obj/item/radio/headset/syndicate/alt
+	l_pocket = /obj/item/pinpointer/nuke/syndicate
+	id = /obj/item/card/id/syndicate
+	glasses = /obj/item/clothing/glasses/night
+	mask = /obj/item/clothing/mask/gas/syndicate
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+	internals_slot = SLOT_R_STORE
+	belt = /obj/item/storage/belt/military
+	backpack_contents = list(/obj/item/storage/box/syndie=1,\
+		/obj/item/tank/jetpack/oxygen/harness=1,\
+		/obj/item/gun/ballistic/automatic/pistol/TDM=1,\
+		/obj/item/kitchen/knife/combat/TDM=1,\
+		/obj/item/uplink/nuclear=1)
+	implants = list(/obj/item/implant/explosive)
 
 
+	//Nukie - Security
 
+/datum/outfit/nukie/security
+	name = "TDM Security Officer (Nukie)"
+	id = /obj/item/card/id/job/sec
+	belt = /obj/item/pda/security
+	ears = /obj/item/radio/headset/headset_sec/alt
+	uniform = /obj/item/clothing/under/rank/security/officer
+	gloves = /obj/item/clothing/gloves/color/black
+	head = /obj/item/clothing/head/helmet/sec
+	suit = /obj/item/clothing/suit/armor/vest/alt
+	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/restraints/handcuffs
+	r_pocket = /obj/item/assembly/flash/handheld
+	suit_store = /obj/item/gun/energy/e_gun/advtaser
+	backpack_contents = list(/obj/item/storage/box/security=1,/
+		/obj/item/melee/baton/loaded=1,/
+		/obj/item/pinpointer/nuke=1)
+	backpack = /obj/item/storage/backpack/security
+	box = /obj/item/storage/box/security
+	implants = list(/obj/item/implant/mindshield)
 
 /********************** TDM CLOTHES **************************/
 
