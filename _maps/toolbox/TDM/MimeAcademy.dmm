@@ -563,7 +563,7 @@
 "kQ" = (/obj/structure/table,/obj/item/chair/wood{name = "poorly built wooden chair"; pixel_y = 9},/turf/open/floor/plasteel,/area/TDM)
 "kR" = (/obj/machinery/door/window/eastright{base_state = "left"; dir = 8; icon_state = "left"; name = "glass door"},/turf/open/floor/plasteel,/area/TDM)
 "kS" = (/obj/structure/table,/obj/item/storage/firstaid/regular,/turf/open/floor/plasteel/white/side{dir = 8},/area/TDM)
-"kT" = (/obj/structure/chair/stool,/obj/effect/portal/permanent/one_way/destroy{alpha = 20; id = "mimeacademy_p_bb"},/turf/open/floor/plasteel/white/side{dir = 4},/area/TDM)
+"kT" = (/obj/structure/chair/stool,/obj/effect/portal/permanent/one_way/destroy{alpha = 0; id = "mimeacademy_p_bb"},/turf/open/floor/plasteel/white/side{dir = 4},/area/TDM)
 "kU" = (/obj/item/paper/crumpled,/turf/open/floor/plasteel,/area/TDM)
 "kV" = (/obj/structure/closet/crate/large{anchored = 1},/turf/open/floor/plasteel,/area/TDM)
 "kW" = (/turf/closed/indestructible/syndicate,/area/TDM/red_base)

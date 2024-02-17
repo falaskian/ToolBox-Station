@@ -4,15 +4,14 @@
 /*		//Template - These two datums are required for your map to be in the rotation
 
 /datum/team_deathmatch_map/template
-	name = "TDM Map Name"
-	map = /datum/map_template/ruin/space/TDM_Template 			//This can be either the type path of the specific map template ruin you want or the name of it
-	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20) 	//Number of respawn points for each team
-	round_time = 0 //How long does the round last
-	ban_map = 0 //Is map active in map rotation
+	name = "TDM MAP"
+	map = /datum/map_template/ruin/space/TDM_Template //This can be either the type path of the specific map template ruin you want or the name of it
+	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20) //round ends when a team meets their number of deaths
+	round_time = 0 //this is how many seconds before the round ends. if 0 its ignored and the round can only end based on kills.
 	team_home_areas = list(
 		/area/TDM/red_base = TDM_RED_TEAM,
 		/area/TDM/blue_base = TDM_BLUE_TEAM)
-	teir_kills = list(0,3,6,15) 	//kill requirements to unlock each teir of guns.
+	teir_kills = list(0,3,6,15) //kill requirements to unlock each teir of guns, 4 teirs right now.
 	team_outfits = list(
 		TDM_RED_TEAM = list(
 		"t1" = /datum/outfit/TDM/red,
@@ -21,27 +20,33 @@
 		TDM_BLUE_TEAM = list(
 		"t1" = /datum/outfit/TDM/blue,
 		"t3" = /datum/outfit/TDM/blue/t3,
-		"t4" = /datum/outfit/TDM/blue/t4)) //Outfits for each tier - t1,t2,t3,t4
-	//control what gets cleaned or respawned during repair cycle
-	repair_map = 1  		//Does Map get repaired
-	clean_map_items = 1		//Clean trash like empty mags, clothes etc.
-	clean_map_bodies = 1	//Clean dead bodies
-	items_respawn = 0 		//Respawn mapped items
-	respawn_time = 3000		//How often do mapped items respawn, default is 5 minutes
+		"t4" = /datum/outfit/TDM/blue/t4))
+	ban_map = 0 //Should the map be invisible?
 
-	baseturf = /turf/open/floor/plating //Turf that will spawn after explosion deletes a turf
-	off_limits = /area/TDM/offlimits //players will be teleported away from if they enter it. an off limits areacan be an area type path or a list of area type paths.
+	//control what gets cleaned during repair cycle
+	repair_map = 1
+	clean_map_items = 1
+	clean_map_bodies = 1
+	clean_exceptions = list(/obj/effect/decal) //atom type paths that will be skipped during clean up.
+
+	baseturf = null //set this to the turf that will remain after an explosion, if left unchanged it will be space. this applies to the whole map
+	off_limits = /area/TDM/offlimits //set an area where players will be teleported away from if they enter it. an off limits area
 	no_firing_allowed_areas = list(TDM_RED_TEAM = list(/area/TDM/red_base),TDM_BLUE_TEAM = list(/area/TDM/blue_base)) //modifies weapon firing pin so they cant fire in these areas. based on teams
-	ban_map = 0
-	increase_kills_per_player = list(TDM_RED_TEAM = 2,TDM_BLUE_TEAM = 2)
-	increase_kills_after_threshold = 10
-	items_respawn = 0 //do items respawn?
-	respawn_time = 3000
-	item_respawn_blacklist = list(/obj/item/clothing/head/crown) //A black list for items you dont want respawning
 
-	//Change these to have custom team huds. Leaving null just makes them return to the default team icons.
-	custom_huds_icon = null
-	custom_huds_states = list(
+	//game balancing
+	increase_kills_per_player = list(TDM_RED_TEAM = 2,TDM_BLUE_TEAM = 2) //how many points does the kill requirement go up for player.
+	increase_kills_after_threshold = 10 //how many players ar eneeded before increase_kills_per_player starts taking effect.
+	team_ratio = list(TDM_RED_TEAM = 0,TDM_BLUE_TEAM = 0) //Change these numbers to force a certain team size ratio. 0 means this is ignored.
+	team_ratio_balance_threshold = 0.1 //how much overflow is allowed before team_ratio forces balance
+
+	//item respawns
+	items_respawn = 0 //do items respawn when picked up or moved away from their spawn location?
+	respawn_time = 3000 //time untill an item respawns.
+	item_respawn_blacklist = list(/obj/item/clothing/head/crown) //A black list for items you dont want respawning.
+
+	//Change these to have custom team huds, if left unchanged it will be the default tiny blue and red squares.
+	custom_huds_icon = null //Set this as the icon.dmi file you want to use
+	custom_huds_states = list( //this list is the icon states for each time you want to use.
 		TDM_RED_TEAM = null,
 		TDM_BLUE_TEAM = null)
 
@@ -435,6 +440,64 @@
 	cost = 0
 	allow_duplicates = FALSE
 	prefix = "_maps/toolbox/TDM/BoxStationSimple.dmm"
+
+
+
+		//Nukies
+
+/datum/team_deathmatch_map/nukies
+	name = "TDM Nukies"
+	map = /datum/map_template/ruin/space/TDM_Nukies //This can be either the type path of the specific map template ruin you want or the name of it
+	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20) //round ends when a team meets their number of deaths
+	round_time = 0 //this is how many seconds before the round ends. if 0 its ignored and the round can only end based on kills.
+	team_home_areas = list(
+		/area/TDM/red_base = TDM_RED_TEAM,
+		/area/TDM/blue_base = TDM_BLUE_TEAM)
+	teir_kills = list(0,3,6,15) //kill requirements to unlock each teir of guns, 4 teirs right now.
+	team_outfits = list(
+		TDM_RED_TEAM = list(
+		"t1" = /datum/outfit/syndicate),
+		TDM_BLUE_TEAM = list(
+		"t1" = /datum/outfit/job/security))
+	ban_map = 0 //Should the map be invisible?
+
+	//control what gets cleaned during repair cycle
+	repair_map = 0
+	clean_map_items = 1
+	clean_map_bodies = 1
+	clean_exceptions = list(/obj/effect/decal) //atom type paths that will be skipped during clean up.
+
+	baseturf = /turf/open/floor/plating/asteroid/airless //set this to the turf that will remain after an explosion, if left unchanged it will be space. this applies to the whole map
+	off_limits = /area/TDM/offlimits //set an area where players will be teleported away from if they enter it. an off limits area
+	no_firing_allowed_areas = list(TDM_RED_TEAM = list(/area/TDM/red_base),TDM_BLUE_TEAM = list(/area/TDM/blue_base)) //modifies weapon firing pin so they cant fire in these areas. based on teams
+
+	//game balancing
+	increase_kills_per_player = list(TDM_RED_TEAM = 2,TDM_BLUE_TEAM = 2) //how many points does the kill requirement go up for player.
+	increase_kills_after_threshold = 10 //how many players ar eneeded before increase_kills_per_player starts taking effect.
+	team_ratio = list(TDM_RED_TEAM = 2,TDM_BLUE_TEAM = 3) //Change these numbers to force a certain team size ratio. 0 means this is ignored.
+	team_ratio_balance_threshold = 0.1 //how much overflow is allowed before team_ratio forces balance
+
+	//item respawns
+	items_respawn = 0 //do items respawn when picked up or moved away from their spawn location?
+	respawn_time = 3000 //time untill an item respawns.
+	item_respawn_blacklist = list(/obj/item/clothing/head/crown) //A black list for items you dont want respawning.
+
+	//Change these to have custom team huds, if left unchanged it will be the default tiny blue and red squares.
+	custom_huds_icon = null //Set this as the icon.dmi file you want to use
+	custom_huds_states = list( //this list is the icon states for each time you want to use.
+		TDM_RED_TEAM = null,
+		TDM_BLUE_TEAM = null)
+
+/datum/map_template/ruin/space/TDM_Nukies
+	name = "TDM Nukies"
+	id = "tdm_nukies"
+	description = "Modified ministation for nukie gamemode."
+	unpickable = TRUE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
+	prefix = "_maps/toolbox/TDM/Template.dmm" //Map path
 
 
 
