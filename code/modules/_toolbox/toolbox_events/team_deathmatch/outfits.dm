@@ -28,8 +28,8 @@
 	l_hand = null
 	toggle_helmet = TRUE
 	internals_slot = null
-	list/backpack_contents = null
-	list/implants = null
+	backpack_contents = null
+	implants = null
 	accessory = null
 */
 
@@ -309,14 +309,14 @@
 		/obj/item/tank/jetpack/oxygen/harness=1,\
 		/obj/item/gun/ballistic/automatic/pistol/TDM=1,\
 		/obj/item/kitchen/knife/combat/TDM=1,\
-		/obj/item/uplink/nuclear=1)
+		/obj/item/uplink/nuclear)
 	implants = list(/obj/item/implant/explosive)
 
 
 	//Nukie - Security
 
 /datum/outfit/nukie/security
-	name = "TDM Security Officer (Nukie)"
+	name = "TDM Security Officer - Nukie"
 	id = /obj/item/card/id/job/sec
 	belt = /obj/item/pda/security
 	ears = /obj/item/radio/headset/headset_sec/alt
@@ -328,11 +328,8 @@
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
 	suit_store = /obj/item/gun/energy/e_gun/advtaser
-	backpack_contents = list(/obj/item/storage/box/security=1,/
-		/obj/item/melee/baton/loaded=1,/
-		/obj/item/pinpointer/nuke=1)
-	backpack = /obj/item/storage/backpack/security
-	box = /obj/item/storage/box/security
+	backpack_contents = list(/obj/item/storage/box/security=1,/obj/item/melee/baton/loaded=1,/obj/item/pinpointer/nuke)
+	back = /obj/item/storage/backpack/security
 	implants = list(/obj/item/implant/mindshield)
 
 /********************** TDM CLOTHES **************************/
