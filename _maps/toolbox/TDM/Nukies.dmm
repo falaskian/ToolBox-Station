@@ -451,7 +451,7 @@
 "iI" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 6},/turf/open/floor/circuit,/area/TDM)
 "iJ" = (/obj/structure/cable/yellow{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 9},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 5},/turf/open/floor/plasteel/dark,/area/TDM)
 "iK" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 10},/turf/open/floor/circuit,/area/TDM)
-"iL" = (/obj/machinery/porta_turret/ai{dir = 8; faction = list("team_blue")},/turf/open/floor/plasteel/dark,/area/TDM)
+"iL" = (/obj/machinery/porta_turret/ai{dir = 8; faction = list("station_crew")},/turf/open/floor/plasteel/dark,/area/TDM)
 "iM" = (/obj/structure/disposalpipe/segment,/turf/open/floor/plating,/area/TDM)
 "iN" = (/obj/structure/chair/stool{pixel_y = 8},/turf/open/floor/wood,/area/TDM)
 "iO" = (/obj/structure/table/wood,/obj/machinery/light/small{dir = 1},/turf/open/floor/wood,/area/TDM)
@@ -485,7 +485,7 @@
 "jq" = (/obj/structure/table,/obj/structure/cable/yellow{icon_state = "1-2"},/obj/item/pinpointer/nuke,/obj/item/disk/nuclear,/obj/machinery/door/window,/obj/structure/window/reinforced{dir = 1; pixel_y = 1},/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 4},/turf/open/floor/plasteel/dark,/area/TDM)
 "jr" = (/obj/machinery/door/airlock{id_tag = "ministation_cabin_1"; name = "Cabin 1"},/turf/open/floor/wood,/area/TDM)
 "js" = (/obj/structure/sign/poster/official/no_erp,/turf/closed/wall,/area/TDM)
-"jt" = (/obj/machinery/airalarm{dir = 4; pixel_x = -23},/obj/machinery/porta_turret/ai{dir = 8; faction = list("team_blue")},/turf/open/floor/plasteel/dark,/area/TDM)
+"jt" = (/obj/machinery/airalarm{dir = 4; pixel_x = -23},/obj/machinery/porta_turret/ai{dir = 8; faction = list("station_crew")},/turf/open/floor/plasteel/dark,/area/TDM)
 "ju" = (/obj/structure/closet/emcloset,/turf/open/floor/plasteel,/area/TDM)
 "jv" = (/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/TDM)
 "jw" = (/obj/item/twohanded/required/kirbyplants/random,/turf/open/floor/plasteel,/area/TDM)
@@ -499,7 +499,7 @@
 "jE" = (/obj/machinery/light_switch/aoe{pixel_x = 0; pixel_y = 28},/turf/open/floor/plasteel/freezer,/area/TDM)
 "jF" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 1},/turf/open/floor/plasteel/freezer,/area/TDM)
 "jG" = (/obj/structure/cable/yellow,/obj/machinery/power/apc/auto_name/east{pixel_x = 24},/obj/machinery/light_switch/aoe{pixel_x = 0; pixel_y = 28},/turf/open/floor/plasteel/freezer,/area/TDM)
-"jH" = (/obj/machinery/porta_turret/ai{dir = 8; faction = list("team_blue")},/turf/open/floor/circuit,/area/TDM)
+"jH" = (/obj/machinery/porta_turret/ai{dir = 8; faction = list("station_crew")},/turf/open/floor/circuit,/area/TDM)
 "jI" = (/obj/structure/cable/yellow{icon_state = "1-2"},/turf/open/floor/circuit,/area/TDM)
 "jJ" = (/obj/effect/turf_decal/tile/neutral{dir = 4},/turf/open/floor/plasteel,/area/TDM)
 "jK" = (/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 1},/turf/open/floor/plasteel,/area/TDM)
@@ -689,7 +689,7 @@
 "nm" = (/obj/item/pinpointer/nuke,/turf/open/floor/mineral/titanium,/area/TDM/blue_base)
 "nn" = (/obj/machinery/door/airlock/external{name = "Ready Room"; req_access_txt = "150"},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral,/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/turf/open/floor/plasteel/dark,/area/TDM/red_base)
 "no" = (/obj/structure/chair/comfy/shuttle{dir = 4; name = "tactical chair"},/obj/effect/turf_decal/bot_white,/obj/machinery/light{dir = 8},/turf/open/floor/plasteel/dark,/area/TDM/red_base)
-"np" = (/obj/machinery/porta_turret/syndicate/shuttle{dir = 9; faction = list("team_red")},/turf/closed/indestructible/syndicate,/area/TDM/red_base)
+"np" = (/obj/machinery/porta_turret/syndicate/shuttle{dir = 9},/turf/closed/indestructible/syndicate,/area/TDM/red_base)
 "nq" = (/obj/machinery/door/poddoor{id = "smindicate"; name = "outer blast door"},/obj/machinery/button/door{id = "smindicate"; name = "external door control"; pixel_y = 26; req_access_txt = "150"},/obj/structure/fans/tiny{resistance_flags = 115},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plating,/area/TDM/red_base)
 "nr" = (/obj/machinery/door/airlock/external{name = "E.V.A. Gear Storage"; req_access_txt = "150"},/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral,/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/structure/fans/tiny{resistance_flags = 115},/turf/open/floor/plasteel/dark,/area/TDM/red_base)
 "ns" = (/obj/structure/sign/warning/vacuum/external{layer = 4},/turf/closed/indestructible/syndicate,/area/TDM/red_base)
@@ -820,8 +820,10 @@
 "pN" = (/obj/structure/sign/warning/vacuum/external{pixel_y = 32},/obj/effect/turf_decal/stripes/line{dir = 1},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 4},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 4},/obj/machinery/door/firedoor/border_only{dir = 4},/obj/machinery/door/firedoor/border_only{dir = 8},/turf/open/floor/plasteel,/area/TDM)
 "pO" = (/obj/machinery/door/firedoor/border_only{dir = 4},/obj/machinery/door/firedoor/border_only{dir = 8},/turf/open/floor/plasteel,/area/TDM)
 "pP" = (/obj/machinery/door/poddoor{id = "syndieshoppoddoor"; name = "outer blast door"},/obj/structure/fans/tiny{resistance_flags = 115},/turf/open/floor/engine,/area/TDM/red_base)
-"pQ" = (/obj/machinery/porta_turret/syndicate/shuttle{dir = 5; faction = list("team_red")},/turf/closed/indestructible/syndicate,/area/TDM/red_base)
-"pR" = (/turf/open/floor/plating,/obj/structure/grille,/turf/closed/indestructible/opsglass{layer = 2.91},/area/TDM/red_base)
+"pQ" = (/obj/machinery/porta_turret/syndicate/shuttle{dir = 5},/turf/closed/indestructible/syndicate,/area/TDM/red_base)
+"pR" = (/obj/machinery/porta_turret/syndicate/shuttle{dir = 5},/turf/closed/indestructible/syndicate,/area/TDM/red_base)
+"pS" = (/turf/open/floor/plating,/obj/structure/grille,/turf/closed/indestructible/opsglass{layer = 2.91},/area/TDM/red_base)
+"pT" = (/obj/machinery/porta_turret/syndicate/shuttle{dir = 9},/turf/closed/indestructible/syndicate,/area/TDM/red_base)
 
 (1,1,1) = {"
 nNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnNnN
@@ -897,17 +899,17 @@ nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRdRdRdRdRgWmQmQmQmQmRmQmQgWdRdRdRdRdRdRdRdR
 nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRdRdRdRdRgWgWgWmSmTgWgWgWgWdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnJnJnJnJnJnKnKnJnJnJnJnJnKnKnKnKnKnKnJnJnJnJnJnKnKnKnKnKnJnJnJnJnJnJnJnJnJnJnKnKnKnKnJnJnJnJnJnKnKnSnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnNnLnLnLnLnLnLnLnLnLnLnN
 nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRdRdRdRdRdRmUgWmVmWmXgWmYdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnJnJnJnKnKnKnJnJnJnJnKnRnKnKnKnKnKnKnKpInJnKnKnKnKnKnKnKnJnJnJnJnJnJnJnJnKnKnKnKnKnKnKnKnKnKnKnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnNnLnLnLnLnLnLnLnLnLnLnN
 nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRdRdRdRdRdRdRgWmZmMmZgWdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnKnJnKnKnKnKnJnJnJnKnKnKnKnKnKnJnKnKnKnKnKnKnKnKnKnKnKnKnKnKnJnJnJnJnJnKnKnKnKnKnKnKnKnKnKnKnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnNnLnLnLnLnLnLnLnLnLnLnN
-nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRdRnpgWgWgWgWgWnamMnbgWgWgWgWgWpQdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnKnKnKnKnKnJnJnJnJnJnSnKnKnKnJnJnJnJnJpInKnKnKnKnKnKnKnKnKnKnKnKnKpInKnKnKnKnKnKnJnJnJnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnNnLnLnLnLnLnLnLnLnLnLnN
+nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRdRnpgWgWgWgWgWnamMnbgWgWgWgWgWpRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnKnKnKnKnKnJnJnJnJnJnSnKnKnKnJnJnJnJnJpInKnKnKnKnKnKnKnKnKnKnKnKnKpInKnKnKnKnKnKnJnJnJnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnNnLnLnLnLnLnLnLnLnLnLnN
 nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRdRgWncmWmWpHgWnemMnfgWngpJmWnhgWdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnKnJnKnKnJnJnJnJnJnJnJnKnKnJnJnJnJnJnJnJnJnJnJnKnKnJnJnJnKnKnKnKnKnKnKnKnKnKnRnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnNnLnLnLnLnLnLnLnLnLnLnN
 nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRdRgWnimWmWnjgWnemWnfgWngmWmWnkgWdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnKnKnKnKpInKnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnNnLnLnLnLnLnLnLnLnLnLnN
-nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRdRgWnimWmWnlgWpRnnpRgWnomWmWnknqdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnNnLnLnLnLnLnLnLnLnLnLnN
+nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRdRgWnimWmWnlgWpSnnpSgWnomWmWnknqdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnNnLnLnLnLnLnLnLnLnLnLnN
 nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRdRgWnimWmWmMnrmWmWmWnXmMmWmWnknsdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN
-nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRdRgWntmWmWnupRmWmMmWpRngmWpKnvgWdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnJnJnJnJnJnJnKnKnJnJnJnJnJnJnJnJnJnJnJnJnKnKnKnKnSnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN
-nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRnpgWgWnwgWgWgWmWmMmWgWgWgWmSgWgWpQdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnKnJnJnJnJnQnKnKnKnJnJnJnJnJnJnJnJnJnJnKnKnKnKnKnKnKnJnJnJnJnJnJnJnJnKnKnSnKnJnJnJnJnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnPnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN
-nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRgWnxpMnynznApRmWmMmWpRnBnCnDnEnFgWdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInQnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInJnKnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnPnPnPnPnPnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN
-nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRgWnGmQmQmQmQpRnHmMnUpRmQmQmQmQmQgWdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnPnPnPnPnPnPnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN
+nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRdRgWntmWmWnupSmWmMmWpSngmWpKnvgWdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnJnJnJnJnJnJnKnKnJnJnJnJnJnJnJnJnJnJnJnJnKnKnKnKnSnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN
+nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRpTgWgWnwgWgWgWmWmMmWgWgWgWmSgWgWpQdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnKnJnJnJnJnQnKnKnKnJnJnJnJnJnJnJnJnJnJnKnKnKnKnKnKnKnJnJnJnJnJnJnJnJnKnKnSnKnJnJnJnJnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnPnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN
+nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRgWnxpMnynznApSmWmMmWpSnBnCnDnEnFgWdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInQnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInJnKnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnPnPnPnPnPnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN
+nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRgWnGmQmQmQmQpSnHmMnUpSmQmQmQmQmQgWdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnPnPnPnPnPnPnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN
 nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRgWnxmWnVnWnWnYnWnWnWosnWnWnZmWoagWdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnKnTnKnKnKnKnQnKnKnKnKnKnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnPnPnPnPnPnPnPnPnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN
-nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRgWobmWocododpRoeodoepRododofmWoggWdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInKnJnJnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnPnPnPnPnPnPnPnPnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN
+nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRgWobmWocododpSoeodoepSododofmWoggWdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInKnKnKnKnKpInKnJnJnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnPnPnPnPnPnPnPnPnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN
 nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRgWohoiojokolgWomonomgWooopoqoroqoydRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnKnJnJnJnJnJnJnJnJnJnJnJnJnKnKnKnJnJnJnJnJnJnJnJnJnJnJnJnJnKnKnQnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnJnJnJnJnJnJnJnJnPnPnPnPnPnPnPnPnPnPnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN
 nNaaaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRgWotmWougWgWgWomovomgWgWgWowoxoxpPdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnJnJnJnJnJnJnJnPnPnPnJnJnJnJnJnJnPnPnPnPnPnPnPnPnPnPnPnPnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN
 nNnLaaaaaaaaaaaaaaaaaaaadRdRdRdRdRdRdRgWozoAoBgWdRgWpEpEpEgWdRgWoxpFoxgWdRdRdRdRdRdRdRdRdRdRdRdRdRdRdRnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnJnPnPnPnPnPnPnJnJnJnJnJnJnPnPnPnPnJnJnJnJnPnPnPnPnPnPnPnPnPnPnPnPnPnPnPnPnPnNnLnLnLnLnLnLnLnLnLnLnN

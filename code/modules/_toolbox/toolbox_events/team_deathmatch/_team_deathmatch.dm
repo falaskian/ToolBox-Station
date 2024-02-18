@@ -368,6 +368,7 @@ client/verb/clearbullshit()
 	if(!_players || !_players.len)
 		_players = get_available_players()
 	var/player_count = 0
+	var/list/minds_to_spawn = list()
 	for(var/mob/living/L in _players)
 		var/area/A = get_area(L)
 		for(var/a in team_lobby_areas)
@@ -375,6 +376,7 @@ client/verb/clearbullshit()
 				if(!teams[team_lobby_areas[a]])
 					teams[team_lobby_areas[a]] = list()
 				teams[team_lobby_areas[a]] += L.mind
+				minds_to_spawn += L.mind
 				player_count++
 	var/failed_to_launch = null
 	var/list/got_moved = list()
@@ -447,6 +449,8 @@ client/verb/clearbullshit()
 				if(cloner.team == t)
 					team_cloners += cloner
 			for(var/datum/mind/M in team)
+				if(!(M in minds_to_spawn))
+					continue
 				var/mob/living/carbon/human/H = M.current
 				if(!istype(H,/mob/living/carbon/human))
 					H = create_human(M,M.current.loc)

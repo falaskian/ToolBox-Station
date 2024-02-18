@@ -501,6 +501,15 @@
 	custom_huds_states = list( //this list is the icon states for each time you want to use.
 		TDM_RED_TEAM = "synd",
 		TDM_BLUE_TEAM = "team_blue")
+	var/list/team_faction_settings = list(TDM_RED_TEAM = "Syndicate", TDM_BLUE_TEAM = "station_crew")
+
+/datum/team_deathmatch_map/nukies/post_player_spawn(mob/living/L,datum/toolbox_event/team_deathmatch/TDM)
+	if(istype(L) && L.mind && L.mind.assigned_role == TDM.player_assigned_role)
+		if(L.mind.special_role in team_faction_settings)
+			if("neutral" in L.faction)
+				L.faction -= "neutral"
+			if(!(team_faction_settings[L.mind.special_role] in L.faction))
+				L.faction += team_faction_settings[L.mind.special_role]
 
 /datum/map_template/ruin/space/TDM_Nukies
 	name = "TDM Nukies"
