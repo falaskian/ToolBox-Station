@@ -310,7 +310,7 @@
 		/obj/item/gun/ballistic/automatic/pistol/TDM=1,\
 		/obj/item/kitchen/knife/combat/TDM=1,\
 		/obj/item/uplink/nuclear)
-	implants = list(/obj/item/implant/explosive)
+	implants = list(/obj/item/implant/explosive,/obj/item/implant/weapons_auth)
 
 
 	//Nukie - Security
@@ -318,7 +318,7 @@
 /datum/outfit/nukie/security
 	name = "TDM Security Officer - Nukie"
 	id = /obj/item/card/id/job/sec
-	belt = /obj/item/pda/security
+	belt = null
 	ears = /obj/item/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security/officer
 	gloves = /obj/item/clothing/gloves/color/black
