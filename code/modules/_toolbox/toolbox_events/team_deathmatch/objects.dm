@@ -1239,7 +1239,7 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 	//Team ID Cards
 
 /obj/item/card/id/red_team
-	name = "Access Card"
+	name = "Access card"
 	desc = "Red Team access card."
 	icon_state = "sec"
 	registered_name = null
@@ -1248,9 +1248,17 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 
 
 /obj/item/card/id/blue_team
-	name = "Access Card"
+	name = "Access card"
 	desc = "Blue Team access card."
 	icon_state = "med"
 	registered_name = null
 	assignment = null
 	access = list("blue_team")
+
+/obj/machinery/light/indestructible
+	desc = "A lighting fixture. Seems very sturdy."
+	flags_1 = NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/machinery/light/indestructible/attack_hand(mob/living/user)
+	return
