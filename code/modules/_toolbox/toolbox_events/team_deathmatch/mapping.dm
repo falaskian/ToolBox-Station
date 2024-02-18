@@ -278,6 +278,12 @@
 	requires_power = FALSE // Constantly powered
 	always_unpowered = 0
 
+/area/dark
+	icon_state = "space"
+	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
+	has_gravity = STANDARD_GRAVITY
+	requires_power = FALSE
+
 /area/TDM/lobby
 	name = "Lobby"
 	icon_state = "blue-red2"
@@ -308,6 +314,17 @@
 	name = "Off Limits Area"
 	icon_state = "space_near"
 
+
+		//Planetary turf with light
+
+/turf/open/floor/plating/asteroid/has_air/desert_flora/TDM
+		//Dusk
+	light_color = "#945c34"
+	light_power = 0.013
+	light_range = 4
+		//Noon
+	//light_color = "##FFFDEB"
+	//light_power = 0.2
 
 		//Snow Turfs
 

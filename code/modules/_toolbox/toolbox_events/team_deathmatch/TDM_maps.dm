@@ -477,7 +477,7 @@
 
 	//control what gets cleaned during repair cycle
 	repair_map = 0
-	clean_map_items = 1
+	clean_map_items = 0
 	clean_map_bodies = 1
 	clean_exceptions = list(/obj/effect/decal) //atom type paths that will be skipped during clean up.
 
@@ -520,7 +520,78 @@
 	placement_weight = 1
 	cost = 0
 	allow_duplicates = FALSE
-	prefix = "_maps/toolbox/TDM/Nukies.dmm" //Map path
+	prefix = "_maps/toolbox/TDM/Nukies.dmm"
+
+
+
+		//Planetary Nukies
+
+/datum/team_deathmatch_map/planetary_nukies
+	name = "TDM Planetary Nukies"
+	map = /datum/map_template/ruin/space/TDM_Planetary_Nukies //This can be either the type path of the specific map template ruin you want or the name of it
+	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20) //round ends when a team meets their number of deaths
+	round_time = 0 //this is how many seconds before the round ends. if 0 its ignored and the round can only end based on kills.
+	team_home_areas = list(
+		/area/TDM/red_base = TDM_RED_TEAM,
+		/area/TDM/blue_base = TDM_BLUE_TEAM)
+	teir_kills = list(0,3,6,15) //kill requirements to unlock each teir of guns, 4 teirs right now.
+	team_outfits = list(
+		TDM_RED_TEAM = list(
+		"t1" = /datum/outfit/TDM/red/nukie,
+		"t3" = /datum/outfit/TDM/red/nukie/t3,
+		"t4" = /datum/outfit/TDM/red/nukie/t4),
+		TDM_BLUE_TEAM = list(
+		"t1" = /datum/outfit/TDM/blue,
+		"t3" = /datum/outfit/TDM/blue/t3,
+		"t4" = /datum/outfit/TDM/blue/t4))
+	ban_map = 0 //Should the map be invisible?
+
+	//control what gets cleaned during repair cycle
+	repair_map = 0
+	clean_map_items = 0
+	clean_map_bodies = 1
+	clean_exceptions = list(/obj/effect/decal) //atom type paths that will be skipped during clean up.
+
+	baseturf = /turf/open/floor/plating/asteroid/airless //set this to the turf that will remain after an explosion, if left unchanged it will be space. this applies to the whole map
+	off_limits = /area/TDM/offlimits //set an area where players will be teleported away from if they enter it. an off limits area
+	no_firing_allowed_areas = list(TDM_RED_TEAM = list(/area/TDM/red_base),TDM_BLUE_TEAM = list(/area/TDM/blue_base)) //modifies weapon firing pin so they cant fire in these areas. based on teams
+
+	//game balancing
+	increase_kills_per_player = list(TDM_RED_TEAM = 2,TDM_BLUE_TEAM = 2) //how many points does the kill requirement go up for player.
+	increase_kills_after_threshold = 10 //how many players ar eneeded before increase_kills_per_player starts taking effect.
+	team_ratio = list(TDM_RED_TEAM = 1,TDM_BLUE_TEAM = 1) //Change these numbers to force a certain team size ratio. 0 means this is ignored.
+	team_ratio_balance_threshold = 0.1 //how much overflow is allowed before team_ratio forces balance
+
+	//item respawns
+	items_respawn = 0 //do items respawn when picked up or moved away from their spawn location?
+	respawn_time = 3000 //time untill an item respawns.
+	item_respawn_blacklist = list(/obj/item/clothing/head/crown) //A black list for items you dont want respawning.
+
+	//Change these to have custom team huds, if left unchanged it will be the default tiny blue and red squares.
+	custom_huds_icon = 'icons/oldschool/huds.dmi' //Set this as the icon.dmi file you want to use
+	custom_huds_states = list( //this list is the icon states for each time you want to use.
+		TDM_RED_TEAM = "synd",
+		TDM_BLUE_TEAM = "team_blue")
+	var/list/team_faction_settings = list(TDM_RED_TEAM = "red_team", TDM_BLUE_TEAM = "blue_team")
+
+/datum/team_deathmatch_map/planetary_nukies/post_player_spawn(mob/living/L,datum/toolbox_event/team_deathmatch/TDM)
+	if(istype(L) && L.mind && L.mind.assigned_role == TDM.player_assigned_role)
+		if(L.mind.special_role in team_faction_settings)
+			if("neutral" in L.faction)
+				L.faction -= "neutral"
+			if(!(team_faction_settings[L.mind.special_role] in L.faction))
+				L.faction += team_faction_settings[L.mind.special_role]
+
+/datum/map_template/ruin/space/TDM_Planetary_Nukies
+	name = "TDM Planetary Nukies"
+	id = "tdm_planetary_nukies"
+	description = "Modified planet based ministation for nukie gamemode."
+	unpickable = TRUE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
+	prefix = "_maps/toolbox/TDM/Planetary_Nukies.dmm"
 
 
 

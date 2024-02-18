@@ -498,9 +498,15 @@ obj/structure/TDM/wallmed/attack_hand(mob/living/user)
 		//Windows
 obj/structure/window/plastitanium/tough/TDM
 	desc = "A window made of an alloy of of plasma and titanium. It looks very sturdy."
+	flags_1 = PREVENT_CLICK_UNDER_1 | NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
-obj/structure/window/plastitanium/tough/TDM/take_damage()
-	return
+
+		//Indestructable Shuttle Window
+/obj/structure/window/shuttle/TDM
+	desc = "A reinforced, air-locked pod window. It looks very sturdy."
+	flags_1 = PREVENT_CLICK_UNDER_1 | NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 		//APC
 
@@ -1134,3 +1140,117 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 
 /obj/effect/proc_holder/spell/aoe_turf/conjure/mime_wall/TDM
 	summon_type = list(/obj/effect/forcefield/mime/TDM)
+
+
+
+	//Turret
+
+/obj/machinery/porta_turret/TDM
+	name = "turret"
+	desc = "A ballistic semi-automatic auto-turret."
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+	faction = list("no_team")
+	max_integrity = 250
+	obj_integrity = 250
+	scan_range = 8
+	shot_delay = 3
+	installation = null
+	always_up = 1
+	use_power = NO_POWER_USE
+	has_cover = 0
+	req_access = null
+	mode = TURRET_LETHAL
+	stun_projectile = /obj/item/projectile/bullet/c9mm
+	lethal_projectile = /obj/item/projectile/bullet/c9mm
+	lethal_projectile_sound = 'sound/weapons/gunshot.ogg'
+	stun_projectile_sound = 'sound/weapons/gunshot.ogg'
+	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 80, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
+
+
+	//Red Team Turret
+/obj/machinery/porta_turret/TDM/red_team
+	name = "red team turret"
+	faction = list("red_team")
+
+	//Blue Team Turret
+/obj/machinery/porta_turret/TDM/blue_team
+	name = "blue team turret"
+	faction = list("blue_team")
+
+
+	//ATV
+
+/obj/vehicle/ridden/atv/TDM
+	key_type = /obj/item/key
+
+/obj/vehicle/ridden/atv/TDM/Initialize()
+	. = ..()
+	inserted_key = new /obj/item/key(src)
+
+
+	//Armed ATV
+
+/obj/vehicle/ridden/atv/TDM/armed
+	var/turret_type = /obj/machinery/porta_turret/TDM
+	var/obj/machinery/porta_turret/turret = null
+	key_type = /obj/item/key
+
+/obj/vehicle/ridden/atv/TDM/armed/Initialize()
+	. = ..()
+	turret = new turret_type(loc)
+	turret.base = src
+	turret.density = FALSE
+
+/obj/vehicle/ridden/atv/TDM/armed/Moved()
+	. = ..()
+	if(turret)
+		turret.forceMove(get_turf(src))
+		switch(dir)
+			if(NORTH)
+				turret.pixel_x = 0
+				turret.pixel_y = 4
+				turret.layer = ABOVE_MOB_LAYER
+			if(EAST)
+				turret.pixel_x = -12
+				turret.pixel_y = 4
+				turret.layer = OBJ_LAYER
+			if(SOUTH)
+				turret.pixel_x = 0
+				turret.pixel_y = 4
+				turret.layer = OBJ_LAYER
+			if(WEST)
+				turret.pixel_x = 12
+				turret.pixel_y = 4
+				turret.layer = OBJ_LAYER
+
+	//Red Team Armed ATV
+/obj/vehicle/ridden/atv/TDM/armed/red_team
+	color = "#FFD6D6"
+	turret_type = /obj/machinery/porta_turret/TDM/red_team
+
+	//Blue Team Armed ATV
+/obj/vehicle/ridden/atv/TDM/armed/blue_team
+	color = "#D4DAFF"
+	turret_type = /obj/machinery/porta_turret/TDM/blue_team
+
+
+
+	//Team ID Cards
+
+/obj/item/card/id/red_team
+	name = "Access Card"
+	desc = "Red Team access card."
+	icon_state = "sec"
+	registered_name = null
+	assignment = null
+	access = list("red_team")
+
+
+/obj/item/card/id/blue_team
+	name = "Access Card"
+	desc = "Blue Team access card."
+	icon_state = "med"
+	registered_name = null
+	assignment = null
+	access = list("blue_team")

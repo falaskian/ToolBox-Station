@@ -50,6 +50,8 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/beret/TDM/red
+	id = /obj/item/card/id/red_team
+	ears = /obj/item/radio/headset
 	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
 	r_pocket = /obj/item/stack/medical/gauze/two
 
@@ -72,6 +74,8 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/beret/TDM/blue
+	id = /obj/item/card/id/blue_team
+	ears = /obj/item/radio/headset
 	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
 	r_pocket = /obj/item/stack/medical/gauze/two
 
@@ -331,6 +335,36 @@
 	backpack_contents = list(/obj/item/storage/box/security=1,/obj/item/melee/baton/loaded=1,/obj/item/pinpointer/nuke)
 	back = /obj/item/storage/backpack/security
 	implants = list(/obj/item/implant/mindshield)
+
+
+	//Nukie - Planetary Nukie
+
+/datum/outfit/TDM/red/nukie
+	name = "TDM Planetary Nukie Red T1"
+	uniform = /obj/item/clothing/under/syndicate
+	belt = /obj/item/storage/belt/fannypack/red
+	back = /obj/item/storage/backpack/fireproof
+	glasses = /obj/item/clothing/glasses/night
+	gloves = /obj/item/clothing/gloves/combat
+	shoes = /obj/item/clothing/shoes/combat
+	id = /obj/item/card/id/red_team
+	ears = /obj/item/radio/headset/syndicate/alt
+	l_pocket = /obj/item/reagent_containers/pill/patch/styptic
+	r_pocket = /obj/item/pinpointer/nuke/syndicate
+	backpack_contents = list(/obj/item/storage/box/syndie=1,\
+	/obj/item/kitchen/knife/combat/TDM=1,)
+
+/datum/outfit/TDM/red/nukie/t3
+	name = "TDM Planetary Nukie Red T3"
+	suit = /obj/item/clothing/suit/armor/vest/alt
+
+/datum/outfit/TDM/red/nukie/t4
+	name = "TDM Planetary Nukie Red T4"
+	head = /obj/item/clothing/head/helmet/sec
+	suit = /obj/item/clothing/suit/armor/vest/alt
+
+
+
 
 /********************** TDM CLOTHES **************************/
 
