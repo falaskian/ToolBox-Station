@@ -1183,6 +1183,8 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 
 /obj/vehicle/ridden/atv/TDM
 	key_type = /obj/item/key
+	light_power = 1
+	light_range = 7
 
 /obj/vehicle/ridden/atv/TDM/Initialize()
 	. = ..()
@@ -1201,9 +1203,9 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 	turret = new turret_type(loc)
 	turret.base = src
 	turret.density = FALSE
+	update_turret_dir()
 
-/obj/vehicle/ridden/atv/TDM/armed/Moved()
-	. = ..()
+/obj/vehicle/ridden/atv/TDM/armed/proc/update_turret_dir()
 	if(turret)
 		turret.forceMove(get_turf(src))
 		switch(dir)
@@ -1223,6 +1225,11 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 				turret.pixel_x = 12
 				turret.pixel_y = 4
 				turret.layer = OBJ_LAYER
+
+
+/obj/vehicle/ridden/atv/TDM/armed/Moved()
+	. = ..()
+	update_turret_dir()
 
 	//Red Team Armed ATV
 /obj/vehicle/ridden/atv/TDM/armed/red_team
@@ -1261,4 +1268,4 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/machinery/light/indestructible/attack_hand(mob/living/user)
-	return
+	returns
