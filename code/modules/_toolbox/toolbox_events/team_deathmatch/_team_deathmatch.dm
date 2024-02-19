@@ -369,74 +369,99 @@ client/verb/clearbullshit()
 		_players = get_available_players()
 	var/player_count = 0
 	var/list/minds_to_spawn = list()
+	var/list/new_teams = list()
 	for(var/mob/living/L in _players)
 		var/area/A = get_area(L)
 		for(var/a in team_lobby_areas)
 			if(istype(A,a) && L.mind)
+				if(!new_teams[team_lobby_areas[a]])
+					new_teams[team_lobby_areas[a]] = list()
 				if(!teams[team_lobby_areas[a]])
 					teams[team_lobby_areas[a]] = list()
-				teams[team_lobby_areas[a]] += L.mind
+				new_teams[team_lobby_areas[a]] += L.mind
 				minds_to_spawn += L.mind
 				player_count++
 	var/failed_to_launch = null
 	var/list/got_moved = list()
-	if(player_count > 0 && teams.len >= 2 && !midround)
-		if(current_map)
-			var/list/team_ratios = current_map.team_ratio
-			var/found_a_zero_ratio = 0
-			var/total_ratios = 0
-			var/top_ratio = 0
+	if(player_count > 0 && current_map)
+		var/list/team_ratios = current_map.team_ratio
+		var/found_a_zero_ratio = 0
+		var/total_ratios = 0
+		var/top_ratio = 0
+		for(var/t in team_ratios)
+			total_ratios += team_ratios[t]
+			if(!team_ratios[t] || team_ratios[t] <= 0)
+				found_a_zero_ratio = 1
+			else if(team_ratios[t] > top_ratio)
+				top_ratio = team_ratios[t]
+		if(!found_a_zero_ratio)
+			var/players_already_in_game = 0
+			for(var/t in teams)
+				var/list/team = teams[t]
+				players_already_in_game += team.len
+			var/list/final_team_numbers = list()
 			for(var/t in team_ratios)
-				total_ratios += team_ratios[t]
-				if(!team_ratios[t] || team_ratios[t] <= 0)
-					found_a_zero_ratio = 1
-				else if(team_ratios[t] > top_ratio)
-					top_ratio = team_ratios[t]
-			if(!found_a_zero_ratio)
-				var/list/final_team_numbers = list()
-				for(var/t in team_ratios)
-					var/percent = team_ratios[t]/total_ratios
-					var/count = round(player_count*percent,1)
-					if(top_ratio && team_ratios[t] < top_ratio)
-						count = round(count*(1+current_map.team_ratio_balance_threshold),1)
-					count = max(count,1)
-					final_team_numbers[t] = count
-				var/list/to_be_moved = list()
-				var/list/needs_players = list()
-				for(var/t in teams)
-					var/list/team = teams[t]
-					var/overfilled = team.len-final_team_numbers[t]
-					if(overfilled > 0)
-						for(var/i=overfilled,i>0,i--)
-							var/datum/mind/moved_mind = pick(team)
-							to_be_moved += moved_mind
-							team -= moved_mind
-							got_moved[moved_mind] = t
-				for(var/t in teams)
-					var/list/team = teams[t]
-					var/missing = final_team_numbers[t]-team.len
-					if(missing > 0)
-						needs_players[t] = missing
-				if(to_be_moved.len)
-					for(var/t in needs_players)
-						var/list/team = teams[t]
-						var/missing = needs_players[t]
-						for(var/i=missing,i>0,i--)
-							var/datum/mind/moved_mind = pick(to_be_moved)
-							team += moved_mind
-							to_be_moved -= moved_mind
-					if(to_be_moved.len)
-						for(var/i=to_be_moved.len,i>0,i--) //do we still have dudes not sorted? this could happen because of rounding errors.
-							for(var/t in teams)
-								var/list/team = teams[t]
-								var/datum/mind/moved_mind = pick(to_be_moved)
-								team += moved_mind
-								to_be_moved -= moved_mind
+				var/percent = team_ratios[t]/total_ratios
+				var/count = round((player_count+players_already_in_game)*percent,1)
+				if(top_ratio && team_ratios[t] < top_ratio)
+					count = round(count*(1+current_map.team_ratio_balance_threshold),1)
+				count = max(count,1)
+				final_team_numbers[t] = count
+			var/list/needs_players = list()
+			var/list/overfilled = list()
+			for(var/t in new_teams)
+				var/list/new_team = new_teams[t]
+				var/list/real_team = teams[t]
+				var/runoff = (new_team.len+real_team.len)-final_team_numbers[t]
+				if(runoff > 0)
+					overfilled[t] = runoff
+				else if(runoff < 0)
+					needs_players[t] = runoff*-1
+			var/list/to_be_moved = list()
+			for(var/t in overfilled)
+				var/list/new_team = new_teams[t]
+				if(!new_team || !new_team.len)
+					continue
+				for(var/i=overfilled[t],i>0,i--)
+					if(!new_team.len)
+						break
+					var/datum/mind/mind = pick(new_team)
+					to_be_moved[mind] = t
+					got_moved[mind] = t
+					new_team -= mind
+			if(to_be_moved.len)
+				for(var/t in needs_players)
+					var/list/new_team = new_teams[t]
+					if(!new_team)
+						continue
+					for(var/i=needs_players[t],i>0,i--)
+						if(!to_be_moved.len)
+							break
+						var/datum/mind/mind = pick(to_be_moved)
+						new_team += mind
+						to_be_moved -= mind
+			if(to_be_moved.len)
+				for(var/datum/mind/mind in to_be_moved)
+					var/old_team = to_be_moved[mind]
+					if(old_team)
+						var/list/team = new_teams[old_team]
+						if(team)
+							team += mind
+							to_be_moved -= mind
+							got_moved -= mind
+	for(var/t in new_teams)
+		var/list/new_team = new_teams[t]
+		var/list/real_team = teams[t]
+		if(!new_team||!real_team)
+			continue
+		for(var/datum/mind/M in new_team)
+			real_team += M
 	if(player_count > 0 && (teams.len >= 2 || midround))
 		for(var/datum/mind/M in got_moved)
 			if(M.current && M.current.client)
+				var/old_team = got_moved[M]
 				spawn(0)
-					alert(M.current,"You were moved to Team [capitalize(got_moved[M])] because the other team was full.","Team Deathmatch","Ok")
+					alert(M.current,"You were moved to Team [capitalize(old_team)] because the other team was full.","Team Deathmatch","Ok")
 		for(var/t in teams)
 			var/list/team = teams[t]
 			if(!team.len && !midround)
