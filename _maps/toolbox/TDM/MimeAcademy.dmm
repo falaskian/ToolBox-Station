@@ -29,7 +29,7 @@
 "aC" = (/obj/structure/shuttle/engine/heater{dir = 8; resistance_flags = 115},/obj/structure/window/reinforced{dir = 4},/turf/open/floor/plating,/area/TDM/red_base)
 "aD" = (/obj/structure/closet/TDM,/obj/item/storage/firstaid/regular{pixel_y = 5},/turf/open/floor/plasteel/cafeteria,/area/TDM)
 "aE" = (/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral,/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/item/instrument/bikehorn,/turf/open/floor/plasteel/dark,/area/TDM/red_base)
-"aF" = (/obj/structure/grille,/obj/structure/window/plastitanium,/obj/machinery/door/poddoor{id = "caravansyndicate3_bridge"},/turf/open/floor/plating,/area/TDM/red_base)
+"aF" = (/obj/structure/grille,/obj/structure/window/plastitanium,/obj/machinery/door/poddoor{id = "mimeacademy_d_clownship_bridge"},/turf/open/floor/plating,/area/TDM/red_base)
 "aG" = (/obj/structure/chair/comfy/shuttle{dir = 1},/turf/open/floor/mineral/titanium/blue,/area/TDM)
 "aH" = (/obj/machinery/door/airlock/maintenance{req_access_txt = "0"},/turf/open/floor/plasteel,/area/TDM)
 "aI" = (/turf/open/floor/plasteel/white/side{dir = 8},/area/TDM)

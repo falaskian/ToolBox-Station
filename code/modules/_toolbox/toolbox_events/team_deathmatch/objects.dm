@@ -1145,7 +1145,7 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 
 	//Turret
 
-/obj/machinery/porta_turret/TDM
+/obj/machinery/porta_turret/syndicate/TDM
 	name = "turret"
 	desc = "A ballistic semi-automatic auto-turret."
 	icon_state = "syndie_off"
@@ -1167,14 +1167,20 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 	stun_projectile_sound = 'sound/weapons/gunshot.ogg'
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 80, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
 
+/obj/machinery/porta_turret/syndicate/TDM/target(atom/movable/target)
+	if(target)
+		setDir(get_dir(base, target))//even if you can't shoot, follow the target
+		shootAt(target)
+		addtimer(CALLBACK(src, .proc/shootAt, target), 5)
+		return TRUE
 
 	//Red Team Turret
-/obj/machinery/porta_turret/TDM/red_team
+/obj/machinery/porta_turret/syndicate/TDM/red_team
 	name = "red team turret"
 	faction = list("red_team")
 
 	//Blue Team Turret
-/obj/machinery/porta_turret/TDM/blue_team
+/obj/machinery/porta_turret/syndicate/TDM/blue_team
 	name = "blue team turret"
 	faction = list("blue_team")
 
@@ -1194,7 +1200,7 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 	//Armed ATV
 
 /obj/vehicle/ridden/atv/TDM/armed
-	var/turret_type = /obj/machinery/porta_turret/TDM
+	var/turret_type = /obj/machinery/porta_turret/syndicate/TDM
 	var/obj/machinery/porta_turret/turret = null
 	key_type = /obj/item/key
 
@@ -1234,12 +1240,12 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 	//Red Team Armed ATV
 /obj/vehicle/ridden/atv/TDM/armed/red_team
 	color = "#FFD6D6"
-	turret_type = /obj/machinery/porta_turret/TDM/red_team
+	turret_type = /obj/machinery/porta_turret/syndicate/TDM/red_team
 
 	//Blue Team Armed ATV
 /obj/vehicle/ridden/atv/TDM/armed/blue_team
 	color = "#D4DAFF"
-	turret_type = /obj/machinery/porta_turret/TDM/blue_team
+	turret_type = /obj/machinery/porta_turret/syndicate/TDM/blue_team
 
 
 
@@ -1268,4 +1274,25 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/machinery/light/indestructible/attack_hand(mob/living/user)
-	returns
+	return
+
+
+	//Nukie - Station Nuke
+
+/obj/machinery/nuclearbomb/selfdestruct/TDM
+	name = "Nuclear Self-Destruct Terminal"
+
+/obj/machinery/nuclearbomb/selfdestruct/TDM/actually_explode()
+	to_chat(world,"wow this worked")
+	for(var/datum/toolbox_event/team_deathmatch/T in SStoolbox_events.cached_events)
+		to_chat(world,"wow this worked [T.type]")
+		if(T.active)
+			to_chat(world,"wow this worked 2")
+			T.phase = GAME_OVER_PHASE
+			T.announce("This round is over. Major Nukie Victory!")
+			spawn(50)
+				T.phase = SETUP_LOBBY
+				T.clean_repair_ruins()
+				T.restart_players()
+				T.rotate_map()
+
