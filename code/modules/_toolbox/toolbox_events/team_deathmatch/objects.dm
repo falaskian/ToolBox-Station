@@ -1284,15 +1284,18 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 
 /obj/machinery/nuclearbomb/selfdestruct/TDM/actually_explode()
 	to_chat(world,"wow this worked")
-	for(var/datum/toolbox_event/team_deathmatch/T in SStoolbox_events.cached_events)
-		to_chat(world,"wow this worked [T.type]")
-		if(T.active)
-			to_chat(world,"wow this worked 2")
-			T.phase = GAME_OVER_PHASE
-			T.announce("This round is over. Major Nukie Victory!")
-			spawn(50)
-				T.phase = SETUP_LOBBY
-				T.clean_repair_ruins()
-				T.restart_players()
-				T.rotate_map()
+	for(var/t in SStoolbox_events.cached_events)
+		var/datum/toolbox_event/team_deathmatch/T = SStoolbox_events.cached_events[t]
+		if(istype(T))
+			to_chat(world,"wow this worked [T.type]")
+			if(T.active)
+				to_chat(world,"wow this worked 2")
+				T.phase = GAME_OVER_PHASE
+				T.announce("This round is over. Major Nukie Victory!")
+				spawn(50)
+					T.phase = SETUP_LOBBY
+					T.clean_repair_ruins()
+					T.restart_players()
+					SSmapping.remove_nuke_threat(src)
+					T.rotate_map()
 
