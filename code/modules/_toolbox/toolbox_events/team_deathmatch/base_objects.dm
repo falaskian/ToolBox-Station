@@ -432,3 +432,54 @@ GLOBAL_LIST_EMPTY(TDM_cloner_dropoffs)
 
 /obj/structure/mineral_door/iron/TDM/take_damage()
 	return
+
+
+
+	//Alien Clonepod
+
+/obj/machinery/clonepod/TDM/alien
+	name = "alien egg"
+	desc = "A gooey biological sack for growing organic tissue."
+	icon = 'icons/oldschool/TDM_icons.dmi'
+	icon_state = "egg"
+	resistance_flags = null  //Ugh
+	var/full = 1
+	var/full_icon = "egg"
+	var/empty_icon = "egg_hatched"
+
+/obj/machinery/clonepod/TDM/alien/proc/eatbody()
+	var/list/bodies = list()
+	for(var/mob/living/carbon/human/H in range(1,src))
+		if(H.stat == DEAD)
+			bodies += H
+	if(bodies.len)
+		var/mob/living/carbon/human/H = pick(bodies)
+		H.gib(no_brain = 1)
+		if(!H || QDELETED(H))
+			full = 1
+			update_icon()
+
+/obj/machinery/clonepod/TDM/alien/go_out(move = TRUE)
+	var/mob/living/carbon/human/H = occupant
+	. = ..()
+	if(H && H.loc && H.loc != src)
+		full = 0
+		flick("egg_opening",src)
+	update_icon()
+
+/obj/machinery/clonepod/TDM/alien/update_icon()
+	if(full == 1)
+		icon_state = full_icon
+	else
+		icon_state = empty_icon
+
+/obj/machinery/clonepod/TDM/alien/process()
+	. = ..()
+	eatbody()
+	update_icon()
+
+/obj/machinery/clonepod/TDM/alien/team_blue
+	team = TDM_BLUE_TEAM
+
+/obj/machinery/clonepod/TDM/alien/team_red
+	team = TDM_RED_TEAM

@@ -1281,6 +1281,7 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 
 /obj/machinery/nuclearbomb/selfdestruct/TDM
 	name = "Nuclear Self-Destruct Terminal"
+	var/round_end_announce = "This round is over. Major Nukie Victory!"
 
 /obj/machinery/nuclearbomb/selfdestruct/TDM/actually_explode()
 	to_chat(world,"wow this worked")
@@ -1291,7 +1292,7 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 			if(T.active)
 				to_chat(world,"wow this worked 2")
 				T.phase = GAME_OVER_PHASE
-				T.announce("This round is over. Major Nukie Victory!")
+				T.announce(round_end_announce)
 				spawn(50)
 					T.phase = SETUP_LOBBY
 					T.clean_repair_ruins()

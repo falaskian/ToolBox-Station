@@ -552,7 +552,7 @@
 	clean_map_bodies = 1
 	clean_exceptions = list(/obj/effect/decal) //atom type paths that will be skipped during clean up.
 
-	baseturf = /turf/open/floor/plating/asteroid/airless //set this to the turf that will remain after an explosion, if left unchanged it will be space. this applies to the whole map
+	baseturf = /turf/open/floor/plating/asteroid/has_air //set this to the turf that will remain after an explosion, if left unchanged it will be space. this applies to the whole map
 	off_limits = /area/TDM/offlimits //set an area where players will be teleported away from if they enter it. an off limits area
 	no_firing_allowed_areas = list(TDM_RED_TEAM = list(/area/TDM/red_base),TDM_BLUE_TEAM = list(/area/TDM/blue_base)) //modifies weapon firing pin so they cant fire in these areas. based on teams
 
@@ -592,6 +592,77 @@
 	cost = 0
 	allow_duplicates = FALSE
 	prefix = "_maps/toolbox/TDM/Planetary_Nukies.dmm"
+
+
+	//DustPlanet - Xenos
+
+/datum/team_deathmatch_map/dustplanet_xenos
+	name = "Dust Planet Xenos"
+	map = /datum/map_template/ruin/space/DustPlanet_Xenos //This can be either the type path of the specific map template ruin you want or the name of it
+	team_deaths = list(TDM_RED_TEAM = 20,TDM_BLUE_TEAM = 20) //round ends when a team meets their number of deaths
+	round_time = 0 //this is how many seconds before the round ends. if 0 its ignored and the round can only end based on kills.
+	team_home_areas = list(
+		/area/TDM/red_base = TDM_RED_TEAM,
+		/area/TDM/blue_base = TDM_BLUE_TEAM)
+	teir_kills = list(0,3,6,15) //kill requirements to unlock each teir of guns, 4 teirs right now.
+	team_outfits = list(
+		TDM_RED_TEAM = list(
+		"t1" = /datum/outfit/TDM/red,
+		"t3" = /datum/outfit/TDM/red/t3,
+		"t4" = /datum/outfit/TDM/red/t4),
+		TDM_BLUE_TEAM = list(
+		"t1" = null))
+	ban_map = 0
+
+	//control what gets cleaned during repair cycle
+	repair_map = 0
+	clean_map_items = 0
+	clean_map_bodies = 0
+	clean_exceptions = list(/obj/effect/decal) //atom type paths that will be skipped during clean up.
+
+	baseturf = /turf/open/floor/plating/asteroid/has_air //set this to the turf that will remain after an explosion, if left unchanged it will be space. this applies to the whole map
+	off_limits = /area/TDM/offlimits //set an area where players will be teleported away from if they enter it. an off limits area
+	no_firing_allowed_areas = list(TDM_RED_TEAM = list(/area/TDM/red_base),TDM_BLUE_TEAM = list(/area/TDM/blue_base)) //modifies weapon firing pin so they cant fire in these areas. based on teams
+
+	//game balancing
+	increase_kills_per_player = list(TDM_RED_TEAM = 2,TDM_BLUE_TEAM = 2) //how many points does the kill requirement go up for player.
+	increase_kills_after_threshold = 10 //how many players ar eneeded before increase_kills_per_player starts taking effect.
+	team_ratio = list(TDM_RED_TEAM = 3,TDM_BLUE_TEAM = 1) //Change these numbers to force a certain team size ratio. 0 means this is ignored.
+	team_ratio_balance_threshold = 0.1 //how much overflow is allowed before team_ratio forces balance
+
+	//item respawns
+	items_respawn = 0 //do items respawn when picked up or moved away from their spawn location?
+	respawn_time = 3000 //time untill an item respawns.
+	item_respawn_blacklist = list(/obj/item/clothing/head/crown) //A black list for items you dont want respawning.
+
+	//Change these to have custom team huds, if left unchanged it will be the default tiny blue and red squares.
+	custom_huds_icon = 'icons/oldschool/huds.dmi' //Set this as the icon.dmi file you want to use
+	custom_huds_states = list( //this list is the icon states for each time you want to use.
+		TDM_RED_TEAM = "team_red",
+		TDM_BLUE_TEAM = "team_blue")
+	var/list/team_faction_settings = list(TDM_RED_TEAM = "red_team", TDM_BLUE_TEAM = "blue_team")
+
+/datum/team_deathmatch_map/planetary_nukies/post_player_spawn(mob/living/L,datum/toolbox_event/team_deathmatch/TDM)
+	if(istype(L) && L.mind && L.mind.assigned_role == TDM.player_assigned_role)
+		var/mob/living/carbon/alien/larva/larva
+		if(L.mind.special_role == TDM_BLUE_TEAM)
+			larva = L.change_mob_type(/mob/living/carbon/alien/larva/fast_growing, null, null, 1)
+		if(larva && larva.mind.special_role in team_faction_settings)
+			if("neutral" in larva.faction)
+				larva.faction -= "neutral"
+			if(!(team_faction_settings[larva.mind.special_role] in larva.faction))
+				larva.faction += team_faction_settings[larva.mind.special_role]
+
+/datum/map_template/ruin/space/DustPlanet_Xenos
+	name = "Dust Planet Xenos"
+	id = "tdm_dustplanet_xenos"
+	description = "Modified planet based ministation for xeno gamemode."
+	unpickable = TRUE
+	always_place = FALSE
+	placement_weight = 1
+	cost = 0
+	allow_duplicates = FALSE
+	prefix = "_maps/toolbox/TDM/DustPlanet_Xenos.dmm"
 
 
 

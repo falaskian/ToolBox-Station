@@ -703,12 +703,12 @@
 "nA" = (/obj/machinery/light/indestructible,/turf/open/floor/mineral/titanium/blue,/area/TDM/dark_powered/blue_base)
 "nB" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/light/small{dir = 1},/obj/effect/decal/cleanable/cobweb,/turf/open/floor/plating/rust,/area/TDM/dark_powered)
 "nC" = (/turf/closed/wall/rust,/area/TDM/dark_powered)
-"nD" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/button/door{id = "pn_m1"; name = "Mine Blast Door Control"; pixel_x = 1; pixel_y = -24; req_access = list("blue_team"); req_access_txt = "0"; resistance_flags = 0},/turf/open/floor/plating/rust,/area/TDM/dark_powered)
+"nD" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/button/door{id = "pn_m1"; name = "Mine Blast Door Control"; pixel_x = 3; pixel_y = -25; req_access = list("blue_team"); req_access_txt = "0"; resistance_flags = 0},/turf/open/floor/plating/rust,/area/TDM/dark_powered)
 "nE" = (/obj/effect/turf_decal/sand/plating,/turf/open/floor/plating/rust,/area/TDM/dark_powered)
 "nF" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/light/small,/turf/open/floor/plating/rust,/area/TDM/dark_powered)
 "nG" = (/obj/machinery/door/poddoor/preopen{id = "pn_m1"},/obj/effect/turf_decal/sand/plating,/turf/open/floor/plating/rust,/area/TDM/dark_powered)
 "nH" = (/obj/structure/table/wood,/obj/item/storage/firstaid/regular,/obj/structure/disposalpipe/segment{dir = 5},/turf/open/floor/plasteel,/area/TDM/dark_powered)
-"nI" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/button/door{id = "ministation_cabin_3"; name = "Cabin Bolt Control"; normaldoorcontrol = 1; pixel_y = 25; specialfunctions = 4},/turf/open/floor/plating/rust,/area/TDM/dark_powered)
+"nI" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/button/door{id = "pn_m1"; name = "Mine Blast Door Control"; pixel_x = -3; pixel_y = 24; req_access = list("blue_team"); req_access_txt = "0"; resistance_flags = 0},/turf/open/floor/plating/rust,/area/TDM/dark_powered)
 "nJ" = (/obj/effect/turf_decal/sand/plating,/obj/structure/barricade/wooden,/turf/open/floor/plating/rust,/area/TDM/dark_powered)
 "nK" = (/obj/structure/table/wood,/obj/item/storage/briefcase{pixel_y = 3},/obj/item/coin/silver,/obj/structure/disposalpipe/segment{dir = 4},/turf/open/floor/plasteel,/area/TDM/dark_powered)
 "nL" = (/obj/structure/table/wood,/obj/item/storage/crayons,/turf/open/floor/plasteel,/area/TDM/dark_powered)
@@ -756,6 +756,12 @@
 "oB" = (/obj/effect/turf_decal/stripes/line{dir = 9},/obj/effect/decal/cleanable/dirt,/obj/item/pinpointer/nuke/syndicate,/obj/item/grenade/plastic/c4,/turf/open/floor/mineral/plastitanium,/area/TDM/dark_powered/red_base)
 "oC" = (/obj/structure/table,/obj/item/wrench,/obj/item/pickaxe,/turf/open/floor/plasteel,/area/TDM/dark_powered)
 "oD" = (/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral,/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/item/paper{info = "Nuke Code: 666"; name = "Nuke code"},/obj/item/paper{info = "Nuke Code: 666"; name = "Nuke code"},/obj/item/paper{info = "Nuke Code: 666"; name = "Nuke code"},/turf/open/floor/plasteel/dark,/area/TDM/dark_powered/red_base)
+"oE" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/button/door{id = "pn_c1"; name = "Blast Door Control"; pixel_x = 25; pixel_y = -3; req_access = list("blue_team")},/turf/open/floor/plating/rust,/area/TDM/dark_powered)
+"oF" = (/obj/effect/turf_decal/sand/plating,/turf/closed/wall/rust,/area/TDM/dark_powered)
+"oG" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/light/small{brightness = 3; dir = 8},/turf/open/floor/plating/rust,/area/TDM/dark_powered)
+"oH" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/door/poddoor{id = "pn_c1"},/turf/open/floor/plating/rust,/area/TDM/dark_powered)
+"oI" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/light/small{dir = 4},/turf/open/floor/plating/rust,/area/TDM/dark_powered)
+"oJ" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/button/door{id = "pn_c1"; name = "Blast Door Control"; pixel_x = -25; pixel_y = 3; req_access = list("blue_team")},/turf/open/floor/plating/rust,/area/TDM/dark_powered)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -769,12 +775,12 @@ aaababahahahahahahahahahahahahahahahahahahagagahahahahagagagagagagahahahahagagag
 aaabahahahahahahahahahahahahahahahahahagagagagagahahahagagagagagagahahahahagagagagagagagagagahahahagagagagagagahahahahahahahahagagagagagagagagagahagagagagagagagagagahahahagagagagagagagagagahahahahahahahahahahagagagagagagahahahahahahahahahahahahahahaa
 aaabahahahahahahahahahahahahahahagagagagagagagagahahahagagagagagagagahagagagagagagagagagagahahahahahagagagagagagagahahahahahahagagagagagagagagahahahagahahagagagagagagagagagagagagagagagagagagahahahahahahahahagagagagagagagagahahahahahahahahahahahahahaa
 aaahahahahahahahahahahahahahahagagagagagagagagagahahahagagagagagagagagagagagagagagagagagagahahahahahagagagagagagagagahahahahagagagagagagagagahahahahahahahahagagagagagagagagagagagagagagagagagagagahahahahahagagagagagagagagagagagahahahahahahahahahahahaa
-aaahahahahahahahahahahahahagagagagagagagagagagagahahahahagagagagagagagagagagagagagagagagagagagahahagagagagagagagagagagahahahagagagagagagagagahahahahahahahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagahahahagagagagagahahahahahahahahahabaa
-aaahahahahahahahahahahahagagagagagagagagagagagagagahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagahahahahahahahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagahahahahagagagagagahahahahahahahababaa
-aaahahahahahahahahahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagahahahagahahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagagahahahahagagagagagagahahahahahahababaa
-aaahahahahahahahahahagagagagagagagahahahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagahagagagahagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagahahahahagagagagagahahahahahahahabaa
-aaahahahahahahahahagagagagagagagahahahahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagahahagagagagagagagagagagagagagagagagagahahagagagagagahahahahahahahahabaa
-aaahahahahahahahagagagagagagagahahahahahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagahahahagagagagagagagagagagagagagagagagagagagagagagagagagagahahahahagagagagagagagagagagagagagagagagagagagagagagahahahahahahahahahabaa
+aaahahahahahahahahahahahahagagagagagagagagagagagahahahahagagagagagagagagagagagagagagagagagagagahahagagagagagagagagagagnCnCnCagagagagagagagagahahahahahahahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagahahahagagagagagahahahahahahahahahabaa
+aaahahahahahahahahahahahagagagagagagagagagagagagagahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagoEoFoGagagagagagagagagahahahahahahahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagahahahahagagagagagahahahahahahahababaa
+aaahahahahahahahahahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagnEoHnEagagagagagagagagahahahagahahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagagahahahahagagagagagagahahahahahahababaa
+aaahahahahahahahahahagagagagagagagahahahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagnEoHnEagagagagagagagagagahagagagahagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagahahahahagagagagagahahahahahahahabaa
+aaahahahahahahahahagagagagagagagahahahahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagoIoFoJagagagagagagagagagagagagagagagagagagagagagagagagagagagahahagagagagagagagagagagagagagagagagagahahagagagagagahahahahahahahahabaa
+aaahahahahahahahagagagagagagagahahahahahahagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagagnCnCnCagagagagagagagagagagagagagagagagagagagagagagagagagagahahahahagagagagagagagagagagagagagagagagagagagagagagahahahahahahahahahabaa
 aaabahahahahahahagagagagagagagahahahahahagagagagagagagagagagagagagagagagagagagagagagagagaiaiaiaiaiaiaiagagagagagahahahahahahahagagagagagagagagagagagagagagagagagagagagaiaiaiaiaiaiaiahahahagagagagagagagagagagagagagagagagagagagagahahahahahahahahahahahaa
 aaababahahahahahahagagagagagagahahahahagagagagagagagagagagagagagaghCagagagagagagagaghCagaiaMacaOcZaQaiagagagagahahahahahahahahahagagagagagagagagagagagagagagagagagagagaiaqaLaMaNaOaiahahahagagagagagagagagagagagagagagagagagagagahahahahahahahahahahahahaa
 aaababahahahahahahagagagagagagagagagagagagagagagagagagagagagagagagaiadaeaPaPaPaPafajaiagaiakalakaQaQaiaPaPaPaiaiaiahahahahahahaiaiaPaPaPaiaiaiaiaiaiaiaiaiaiaiaiaPaPaPaiaQaRaSaibpaiaiaiaiaiaiaPaPaPaPaiaiaiaiaiaiagagagagagagagahahahahahahahahahahahahaa
