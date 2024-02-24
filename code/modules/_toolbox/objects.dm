@@ -708,10 +708,12 @@
 /obj/structure/chair/noose/autobuckle/Initialize()
 	. = ..()
 	var/mob/to_buckle
-	for(var/mob/living/carbon/human/M in loc)
-		if(istype(M,/mob/living/carbon/human))
-			to_buckle = M
-			break
+	while(!to_buckle)
+		for(var/mob/living/carbon/human/M in loc)
+			if(istype(M,/mob/living/carbon/human))
+				to_buckle = M
+				break
+		sleep(10)
 	if(to_buckle)
 		buckle_mob(to_buckle)
 		return
