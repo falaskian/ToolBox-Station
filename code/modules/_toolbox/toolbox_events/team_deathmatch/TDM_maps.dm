@@ -642,16 +642,16 @@
 		TDM_BLUE_TEAM = "team_blue")
 	var/list/team_faction_settings = list(TDM_RED_TEAM = "red_team", TDM_BLUE_TEAM = "blue_team")
 
-/datum/team_deathmatch_map/planetary_nukies/post_player_spawn(mob/living/L,datum/toolbox_event/team_deathmatch/TDM)
+/datum/team_deathmatch_map/dustplanet_xenos/post_player_spawn(mob/living/L,datum/toolbox_event/team_deathmatch/TDM)
 	if(istype(L) && L.mind && L.mind.assigned_role == TDM.player_assigned_role)
-		var/mob/living/carbon/alien/larva/larva
-		if(L.mind.special_role == TDM_BLUE_TEAM)
-			larva = L.change_mob_type(/mob/living/carbon/alien/larva/fast_growing, null, null, 1)
-		if(larva && larva.mind.special_role in team_faction_settings)
-			if("neutral" in larva.faction)
-				larva.faction -= "neutral"
-			if(!(team_faction_settings[larva.mind.special_role] in larva.faction))
-				larva.faction += team_faction_settings[larva.mind.special_role]
+		var/mob/living/main_mob = L
+		if(main_mob.mind.special_role == TDM_BLUE_TEAM)
+			main_mob = L.change_mob_type(/mob/living/carbon/alien/larva/fast_growing, null, null, 1)
+		if(main_mob && main_mob.mind.special_role in team_faction_settings)
+			if("neutral" in main_mob.faction)
+				main_mob.faction -= "neutral"
+			if(!(team_faction_settings[main_mob.mind.special_role] in main_mob.faction))
+				main_mob.faction += team_faction_settings[main_mob.mind.special_role]
 
 /datum/map_template/ruin/space/DustPlanet_Xenos
 	name = "Dust Planet Xenos"
