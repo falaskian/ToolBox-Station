@@ -237,8 +237,10 @@
 							goforit = 0
 							break
 				if(goforit && prob(dirt_probability))
-					new /obj/effect/decal/cleanable/dirt(T)
+					run_turf(T)
 
+/obj/TDM_map_modifier/dirtifier/proc/run_turf(turf/T)
+	new /obj/effect/decal/cleanable/dirt(T)
 
 /obj/TDM_map_modifier/dirtifier/Dust1
 	area_list = list(
@@ -263,6 +265,23 @@
 		/turf/open/floor/sepia/TDM)
 	turf_blacklist = list()
 
+/*
+
+/obj/TDM_map_modifier/dirtifier/xeno_survivors
+	area_list = list(
+		/area/TDM,
+		/area/TDM/lobby,
+		/area/TDM/red_base,
+		/area/TDM/blue_base)
+	turf_whitelist = list(
+		/turf/open/floor/sepia/TDM/dark_10)
+	turf_blacklist = list(
+		/turf/open/floor/plasteel/stairs,
+		/turf/open/floor/plating/asteroid)
+
+/obj/TDM_map_modifier/dirtifier/xeno_survivors/run_turf(turf/T)
+
+*/
 
 
 /********************** AREAS **************************/
