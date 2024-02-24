@@ -199,6 +199,7 @@
 /obj/TDM_map_modifier/mass_turf_modifier
 	name = "Dirtifier Map Modifier"
 	var/probability = 20 //The chance each turf will be dirtied.
+	var/max_count = 0 //picks this many random turfs and only affects those.
 	var/local_area = 1 //Should we dirty the area this object is sitting in?
 	var/list/area_list = list() //lists of areas to dirty.
 	var/list/turf_whitelist = list() //if we only want specific turfs to be dirtied, whitelist them here. if left empty then all turfs in the listed areas will be dirtied.
@@ -217,13 +218,12 @@
 		var/area/current_area = get_area(src)
 		if(!(area_list in area_list))
 			area_list += current_area.type
-	var/list/searched_turfs = list()
+	var/list/turfs = list()
 	for(var/area/A in world)
 		if(A.type in area_list)
 			for(var/turf/open/floor/T in A)
-				if(T in searched_turfs)
+				if(T in turfs)
 					continue
-				searched_turfs += T
 				var/goforit = 1
 				if(turf_whitelist.len)
 					goforit = 0
@@ -236,10 +236,18 @@
 						if(istype(T,t))
 							goforit = 0
 							break
-				if(goforit && prob(probability))
-					run_turf(T)
+				if(goforit)
+					turfs += T
+	var/max_searched = turfs.len
+	if(max_count)
+		max_searched = max_count
+	for(var/i=max_searched,i>0,i--)
+		var/turf/T = pick(turfs)
+		turfs -= T
+		if(prob(probability) && run_turf(T))
+			return
 
-/obj/TDM_map_modifier/mass_turf_modifier/proc/run_turf(turf/T)
+/obj/TDM_map_modifier/mass_turf_modifier/proc/run_turf(turf/T) //if this proc returns TRUE then it stops the entire process.
 	new /obj/effect/decal/cleanable/dirt(T)
 
 /obj/TDM_map_modifier/mass_turf_modifier/Dust1
