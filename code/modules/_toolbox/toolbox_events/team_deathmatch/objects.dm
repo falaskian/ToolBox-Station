@@ -1293,10 +1293,14 @@ obj/item/TDM_pickup/health/equipped(mob/living/user, slot)
 				to_chat(world,"wow this worked 2")
 				T.phase = GAME_OVER_PHASE
 				T.announce(round_end_announce)
-				spawn(50)
+				explosion(src.loc,6, 12, 24, 0)
+				spawn(100)
 					T.phase = SETUP_LOBBY
 					T.clean_repair_ruins()
 					T.restart_players()
 					SSmapping.remove_nuke_threat(src)
 					T.rotate_map()
+
+
+
 
