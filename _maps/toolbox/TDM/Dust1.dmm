@@ -89,7 +89,7 @@
 "bK" = (/obj/structure/stone_tile,/obj/structure/stone_tile/surrounding_tile/cracked{dir = 8},/turf/open/floor/plating/asteroid,/area/TDM)
 "bL" = (/obj/structure/stone_tile/surrounding_tile/cracked{dir = 4},/turf/open/floor/plating/asteroid,/area/TDM)
 "bM" = (/obj/machinery/gateway{density = 0; dir = 9; layer = 4.1; pixel_y = -8},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
-"bN" = (/obj/TDM_map_modifier/dirtifier/Dust1,/turf/closed/indestructible/riveted/TDM,/area/TDM)
+"bN" = (/obj/TDM_map_modifier/mass_turf_modifier/Dust1,/turf/closed/indestructible/riveted/TDM,/area/TDM)
 "bO" = (/obj/machinery/gateway{density = 0; dir = 1; layer = 4.1; pixel_y = -8},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "bP" = (/obj/machinery/gateway{density = 0; dir = 5; layer = 4.1; pixel_y = -8},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)
 "bQ" = (/obj/machinery/gateway{dir = 8; layer = 2.91; pixel_y = -8},/turf/open/floor/sepia/TDM/dark_10,/area/TDM)

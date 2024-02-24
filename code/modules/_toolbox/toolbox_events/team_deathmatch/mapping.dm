@@ -196,16 +196,16 @@
 				A.mouse_opacity = 0
 
 
-/obj/TDM_map_modifier/dirtifier
+/obj/TDM_map_modifier/mass_turf_modifier
 	name = "Dirtifier Map Modifier"
-	var/dirt_probability = 20 //The chance each turf will be dirtied.
+	var/probability = 20 //The chance each turf will be dirtied.
 	var/local_area = 1 //Should we dirty the area this object is sitting in?
 	var/list/area_list = list() //lists of areas to dirty.
 	var/list/turf_whitelist = list() //if we only want specific turfs to be dirtied, whitelist them here. if left empty then all turfs in the listed areas will be dirtied.
 	var/list/turf_blacklist = list() //black list turfs to never be dirtied by this object.
 
 
-/obj/TDM_map_modifier/dirtifier/run_bs()
+/obj/TDM_map_modifier/mass_turf_modifier/run_bs()
 	. = ..()
 	if(SStoolbox_events)
 		for(var/t in SStoolbox_events.cached_events)
@@ -236,13 +236,13 @@
 						if(istype(T,t))
 							goforit = 0
 							break
-				if(goforit && prob(dirt_probability))
+				if(goforit && prob(probability))
 					run_turf(T)
 
-/obj/TDM_map_modifier/dirtifier/proc/run_turf(turf/T)
+/obj/TDM_map_modifier/mass_turf_modifier/proc/run_turf(turf/T)
 	new /obj/effect/decal/cleanable/dirt(T)
 
-/obj/TDM_map_modifier/dirtifier/Dust1
+/obj/TDM_map_modifier/mass_turf_modifier/Dust1
 	area_list = list(
 		/area/TDM,
 		/area/TDM/lobby,
@@ -254,7 +254,7 @@
 		/turf/open/floor/plasteel/stairs,
 		/turf/open/floor/plating/asteroid)
 
-/obj/TDM_map_modifier/dirtifier/smeltery
+/obj/TDM_map_modifier/mass_turf_modifier/smeltery
 	area_list = list(
 		/area/TDM,
 		/area/TDM/lobby,
@@ -267,7 +267,7 @@
 
 /*
 
-/obj/TDM_map_modifier/dirtifier/xeno_survivors
+/obj/TDM_map_modifier/mass_turf_modifier/xeno_survivors
 	area_list = list(
 		/area/TDM,
 		/area/TDM/lobby,
@@ -279,7 +279,7 @@
 		/turf/open/floor/plasteel/stairs,
 		/turf/open/floor/plating/asteroid)
 
-/obj/TDM_map_modifier/dirtifier/xeno_survivors/run_turf(turf/T)
+/obj/TDM_map_modifier/mass_turf_modifier/xeno_survivors/run_turf(turf/T)
 
 */
 
