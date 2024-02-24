@@ -640,7 +640,20 @@
 	custom_huds_states = list( //this list is the icon states for each time you want to use.
 		TDM_RED_TEAM = "team_red",
 		TDM_BLUE_TEAM = "team_blue")
+	//Map Specific Variables
 	var/list/team_faction_settings = list(TDM_RED_TEAM = "red_team", TDM_BLUE_TEAM = "blue_team")
+
+	//Day and Night Cycle
+	var/list/affected_turfs = list(/turf/open/floor/plating/asteroid/has_air/desert_flora/TDM)
+	var/list/night_cycle = list("day" = list("color=#FFFDEB;power=0.2"),
+								"dusk" = list("color=#945c34;power=0.05"),
+								"night" = list("color=#945c34;power=0.013"))
+	var/night_cycle_time = 200 //20 seconds
+	var/next_night_cycle = 0
+	var/current_night_cycle = "day"
+
+
+
 
 /datum/team_deathmatch_map/dustplanet_xenos/post_player_spawn(mob/living/L,datum/toolbox_event/team_deathmatch/TDM)
 	if(istype(L) && L.mind && L.mind.assigned_role == TDM.player_assigned_role)
@@ -652,6 +665,24 @@
 				main_mob.faction -= "neutral"
 			if(!(team_faction_settings[main_mob.mind.special_role] in main_mob.faction))
 				main_mob.faction += team_faction_settings[main_mob.mind.special_role]
+
+/datum/team_deathmatch_map/dustplanet_xenos/process_map(datum/toolbox_event/team_deathmatch/TDM)
+	if(world.time >= next_night_cycle)
+		next_night_cycle = world.time+night_cycle_time
+		for(var/turf/T in TDM.get_all_ruin_floors())
+			for(var/path in affected_turfs)
+				if(istype(T,path))
+					var/list/paramslist = params2list(night_cycle[current_night_cycle])
+					if(paramslist && paramslist.len)
+						T.light_color = paramslist["color"]
+						T.light_power = paramslist["power"]
+		var/found_it = 0
+		for(var/t in night_cycle)
+			if(found_it)
+				current_night_cycle = t
+			if(t == current_night_cycle)
+				found_it = 1
+
 
 /datum/map_template/ruin/space/DustPlanet_Xenos
 	name = "Dust Planet Xenos"

@@ -38,15 +38,32 @@
 	amount_grown = 0
 	max_grown = 20
 
-	//Queen
+
+	//Queen TDM
 
 /mob/living/carbon/alien/humanoid/royal/queen/TDM
 
-/*
+/mob/living/carbon/alien/humanoid/royal/queen/TDM/create_internal_organs()
+	..()
+	for(var/obj/item/organ/alien/eggsac/E in internal_organs)
+		internal_organs -= E
+		internal_organs += new /obj/item/organ/alien/eggsac/TDM
+		qdel(E)
+
+	//Alien Queen Disk
+
+/mob/living/carbon/alien/humanoid/royal/queen/TDM/nuke_disk
+	var/obj/item/disk/nuclear/disk = null
+
 /mob/living/carbon/alien/humanoid/royal/queen/TDM/nuke_disk/Initialize()
  	. = ..()
- 	new /obj/item/disk/nuclear(src.contents)
- */
+ 	disk = new /obj/item/disk/nuclear(src)
+
+/mob/living/carbon/alien/humanoid/royal/queen/TDM/nuke_disk/death()
+	if(disk)
+		disk.forceMove(loc)
+		disk = null
+	. = ..()
 
 /obj/item/organ/alien/eggsac/TDM
 	name = "egg sac"

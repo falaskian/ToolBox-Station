@@ -34,7 +34,7 @@
 "aH" = (/obj/structure/closet/firecloset,/obj/item/reverse_bear_trap,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 1},/obj/structure/cable/yellow{icon_state = "1-2"},/turf/open/floor/plating,/area/TDM/dark_powered)
 "aI" = (/obj/item/stack/sheet/iron/five,/turf/open/floor/plating,/area/TDM/dark_powered)
 "aJ" = (/obj/item/twohanded/spear,/turf/open/floor/plating,/area/TDM/dark_powered)
-"aK" = (/obj/structure/chair/noose/autobuckle,/obj/effect/dead_body_spawner{name = "Dead Blue Team Member"; outfit = /datum/outfit/TDM/blue},/turf/open/floor/plating,/area/TDM/dark_powered)
+"aK" = (/obj/structure/chair/noose/autobuckle,/obj/effect/dead_body_spawner/blue_team_corpse,/turf/open/floor/plating,/area/TDM/dark_powered)
 "aL" = (/obj/structure/falsewall{canSmoothWith = list(/turf/closed/wall,/turf/closed/wall/r_wall,/obj/structure/falsewall,/obj/structure/falsewall/brass,/obj/structure/falsewall/reinforced,/turf/closed/wall/rust,/turf/closed/wall/r_wall/rust,/turf/closed/wall/clockwork,/turf/closed/indestructible/riveted/TDM/wall)},/turf/open/floor/plating,/area/TDM/dark_powered)
 "aM" = (/obj/structure/closet/secure_closet/bar{req_access = null; req_access_txt = "0"},/turf/open/floor/plating,/area/TDM/dark_powered)
 "aN" = (/obj/structure/reagent_dispensers/beerkeg,/turf/open/floor/plating,/area/TDM/dark_powered)
@@ -593,7 +593,7 @@
 "lu" = (/obj/structure/cable/yellow{icon_state = "2-4"},/obj/structure/cable/yellow{icon_state = "1-2"},/obj/effect/turf_decal/stripes/line{dir = 4},/obj/structure/disposalpipe/broken{dir = 1},/turf/open/floor/plating,/area/TDM/dark_powered)
 "lv" = (/obj/machinery/door/airlock/maintenance{name = "Tool Storage Maintenance"; req_access_txt = "0"},/obj/structure/cable/yellow{icon_state = "4-8"},/obj/effect/mapping_helpers/airlock/locked,/turf/open/floor/plating,/area/TDM/dark_powered)
 "lw" = (/obj/effect/turf_decal/bot_white/right,/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral,/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{dir = 4},/turf/open/floor/plasteel/dark,/area/TDM/dark_powered)
-"lx" = (/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral,/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/machinery/nuclearbomb/selfdestruct/TDM{r_code = "666"},/turf/open/floor/plasteel/dark,/area/TDM/dark_powered)
+"lx" = (/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral,/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/machinery/nuclearbomb/selfdestruct/TDM{r_code = "666"; round_end_announce = "This round is over. Major Human Victory!"},/turf/open/floor/plasteel/dark,/area/TDM/dark_powered)
 "ly" = (/obj/structure/cable/yellow{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 6},/obj/effect/decal/cleanable/greenglow,/turf/open/floor/circuit,/area/TDM/dark_powered)
 "lz" = (/obj/effect/turf_decal/bot_white/left,/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral,/obj/effect/turf_decal/tile/neutral{dir = 4},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{dir = 8},/turf/open/floor/plasteel/dark,/area/TDM/dark_powered)
 "lA" = (/obj/effect/turf_decal/tile/neutral{dir = 1},/obj/effect/turf_decal/tile/neutral{dir = 8},/obj/machinery/light{dir = 8},/turf/open/floor/plasteel,/area/TDM/dark_powered)
@@ -764,6 +764,7 @@
 "oJ" = (/obj/structure/lattice/catwalk,/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plating/asteroid/has_air/desert_flora/TDM,/area/TDM/dark_powered)
 "oK" = (/obj/structure/lattice/catwalk,/obj/structure/lattice/catwalk,/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plating/asteroid/has_air/desert_flora/TDM,/area/TDM/dark_powered)
 "oL" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/button/door{id = "pn_c1"; name = "Solar Farm Blast Door Control"; pixel_x = 25; pixel_y = -3; req_access = list("blue_team")},/turf/open/floor/plating/rust,/area/TDM/dark_powered)
+"oM" = (/obj/TDM_map_modifier/mass_turf_modifier/xeno_survivors,/turf/closed/indestructible/rock{color = "#D1D1D1"},/area/TDM/dark_powered)
 "oN" = (/obj/structure/lattice/catwalk,/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plating/asteroid/has_air/desert_flora/TDM,/area/TDM/dark_powered)
 "oO" = (/obj/effect/turf_decal/sand/plating,/obj/machinery/button/door{id = "pn_c1"; name = "Solar Farm Blast Door Control"; pixel_x = -25; pixel_y = 3; req_access = list("blue_team")},/turf/open/floor/plating/rust,/area/TDM/dark_powered)
 "oQ" = (/obj/structure/barricade/wooden,/turf/open/floor/plating/asteroid/has_air/desert_flora/TDM,/area/TDM/dark_powered)
@@ -878,6 +879,6 @@ aaabacacacacacacacacacacackhkhkhkhkhkhacacacacacacacacacacacackhkhkhkhkhacacacac
 aaababacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacacabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
 aaabababacacacacacacacacacacacacacacacacacababacacacacacacacacacacacacacacacacacababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
 aaabababacacacacacacacacacacacacacacacacabababababababacacacacacababacacacacacabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
-aaababababacacacacacacababababacacacacabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
+aaoMabababacacacacacacababababacacacacabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}

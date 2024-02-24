@@ -133,15 +133,130 @@
 	dir = 8
 
 
-
 		//Mineral Walls
 
 /turf/closed/mineral/has_air
 	turf_type =	/turf/open/floor/plating/asteroid
 
 
+		//Planetary turf with sky light
 
-	//Area Dirtier
+/turf/open/floor/plating/asteroid/has_air/desert_flora/TDM
+		//Night
+	light_color = "#945c34"
+	light_power = 0.013
+	light_range = 4
+
+
+		//Snow Turfs
+
+/turf/open/floor/plating/asteroid/snow/snowball
+	name = "snow"
+	desc = "Looks cold."
+	baseturfs = /turf/open/floor/plating/asteroid/snow/snowball
+	slowdown = 0
+	environment_type = "snow"
+	planetary_atmos = FALSE
+	//archdrops = list() //maybe turn drops off for TDM?
+
+/turf/open/floor/plating/asteroid/snow/snowball/attack_hand(mob/user)
+	if(iscyborg(user))
+		return
+	if(do_after(user, 2))
+		user.put_in_hands(new /obj/item/ammo_casing/snowball())
+		to_chat(user, "<span class='notice'>You grab some snow and make a snowball.</span>")
+		playsound(loc, 'sound/effects/shovel_dig.ogg', 15, 1, -3)
+
+
+
+
+/********************** AREAS **************************/
+
+
+/area/TDM
+	name = "Arena"
+	icon_state = "blue-red-d"
+	has_gravity = STANDARD_GRAVITY
+	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED //Fully lit at all times
+	requires_power = FALSE // Constantly powered
+	always_unpowered = 0
+
+/area/TDM/lobby
+	name = "Lobby"
+	icon_state = "blue-red2"
+
+/area/TDM/lobby/nospawn
+	name = "Lobby"
+	desc = "Players wont spawn in this area."
+	icon_state = "space_near"
+
+/area/TDM/lobby/red
+	name = "Join Red Team"
+	icon_state = "red2"
+
+/area/TDM/lobby/blue
+	name = "Join Blue Team"
+	icon_state = "blue2"
+
+/area/TDM/red_base
+	name = "Red Base"
+	icon_state = "red2"
+
+
+/area/TDM/blue_base
+	name = "Blue Base"
+	icon_state = "blue2"
+
+/area/TDM/offlimits
+	name = "Off Limits Area"
+	icon_state = "space_near"
+
+
+		//Dark Powered
+
+/area/TDM/dark_powered
+	icon_state = "space"
+	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
+	has_gravity = STANDARD_GRAVITY
+	requires_power = TRUE
+
+/area/TDM/dark_powered/Initialize()
+	. = ..()
+	requires_power = FALSE
+
+
+/area/TDM/dark_powered/red_base
+	name = "Red Base"
+	icon_state = "red2"
+
+
+/area/TDM/dark_powered/blue_base
+	name = "Blue Base"
+	icon_state = "blue2"
+
+
+
+
+/********************** EFFECTS **************************/
+
+	//Blue Team corpse
+
+/obj/effect/dead_body_spawner/blue_team_corpse
+	name = "Blue Team Member Corpse"
+	color = "#3645FF"
+	outfit = /datum/outfit/TDM/blue
+
+	//Red Team corpse
+
+/obj/effect/dead_body_spawner/red_team_corpse
+	name = "Red Team Member Corpse"
+	color = "#00cc00"
+	outfit = /datum/outfit/TDM/red
+
+
+
+
+/********************** AREA MODIFIER **************************/
 
 /obj/TDM_map_modifier
 	name = "Map Modifier"
@@ -250,6 +365,9 @@
 /obj/TDM_map_modifier/mass_turf_modifier/proc/run_turf(turf/T) //if this proc returns TRUE then it stops the entire process.
 	new /obj/effect/decal/cleanable/dirt(T)
 
+
+	//Dust1 dirtifier
+
 /obj/TDM_map_modifier/mass_turf_modifier/Dust1
 	area_list = list(
 		/area/TDM,
@@ -262,6 +380,9 @@
 		/turf/open/floor/plasteel/stairs,
 		/turf/open/floor/plating/asteroid)
 
+
+	//Smeltry dirtifier
+
 /obj/TDM_map_modifier/mass_turf_modifier/smeltery
 	area_list = list(
 		/area/TDM,
@@ -273,122 +394,23 @@
 		/turf/open/floor/sepia/TDM)
 	turf_blacklist = list()
 
-/*
+
+	//DustPlanet - Xeno dead body spawner
 
 /obj/TDM_map_modifier/mass_turf_modifier/xeno_survivors
+	probability = 100
+	max_count = 6
 	area_list = list(
 		/area/TDM,
 		/area/TDM/lobby,
 		/area/TDM/red_base,
 		/area/TDM/blue_base)
 	turf_whitelist = list(
-		/turf/open/floor/sepia/TDM/dark_10)
-	turf_blacklist = list(
-		/turf/open/floor/plasteel/stairs,
-		/turf/open/floor/plating/asteroid)
+		/turf/open/floor/plasteel,
+		/turf/open/floor/plating)
+	turf_blacklist = list()
 
 /obj/TDM_map_modifier/mass_turf_modifier/xeno_survivors/run_turf(turf/T)
-
-*/
-
-
-/********************** AREAS **************************/
+	new /obj/effect/dead_body_spawner/blue_team_corpse(T)
 
 
-
-
-/area/TDM
-	name = "Arena"
-	icon_state = "blue-red-d"
-	has_gravity = STANDARD_GRAVITY
-	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED //Fully lit at all times
-	requires_power = FALSE // Constantly powered
-	always_unpowered = 0
-
-/area/TDM/lobby
-	name = "Lobby"
-	icon_state = "blue-red2"
-
-/area/TDM/lobby/nospawn
-	name = "Lobby"
-	desc = "Players wont spawn in this area."
-	icon_state = "space_near"
-
-/area/TDM/lobby/red
-	name = "Join Red Team"
-	icon_state = "red2"
-
-/area/TDM/lobby/blue
-	name = "Join Blue Team"
-	icon_state = "blue2"
-
-/area/TDM/red_base
-	name = "Red Base"
-	icon_state = "red2"
-
-
-/area/TDM/blue_base
-	name = "Blue Base"
-	icon_state = "blue2"
-
-/area/TDM/offlimits
-	name = "Off Limits Area"
-	icon_state = "space_near"
-
-
-		//Dark Powered
-
-/area/TDM/dark_powered
-	icon_state = "space"
-	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
-	has_gravity = STANDARD_GRAVITY
-	requires_power = TRUE
-
-/area/TDM/dark_powered/Initialize()
-	. = ..()
-	requires_power = FALSE
-
-
-/area/TDM/dark_powered/red_base
-	name = "Red Base"
-	icon_state = "red2"
-
-
-/area/TDM/dark_powered/blue_base
-	name = "Blue Base"
-	icon_state = "blue2"
-
-
-
-		//Planetary turf with sky light
-
-/turf/open/floor/plating/asteroid/has_air/desert_flora/TDM
-		//Night
-	light_color = "#945c34"
-	light_power = 0.013
-	light_range = 4
-		//Dusk
-//	light_power = 0.05
-//	light_range = 4
-		//Noon
-//	light_color = "##FFFDEB"
-//	light_power = 0.2
-
-		//Snow Turfs
-
-/turf/open/floor/plating/asteroid/snow/snowball
-	name = "snow"
-	desc = "Looks cold."
-	baseturfs = /turf/open/floor/plating/asteroid/snow/snowball
-	slowdown = 0
-	environment_type = "snow"
-	planetary_atmos = FALSE
-	//archdrops = list() //maybe turn drops off for TDM?
-
-/turf/open/floor/plating/asteroid/snow/snowball/attack_hand(mob/user)
-	if(iscyborg(user))
-		return
-	if(do_after(user, 2))
-		user.put_in_hands(new /obj/item/ammo_casing/snowball())
-		to_chat(user, "<span class='notice'>You grab some snow and make a snowball.</span>")
-		playsound(loc, 'sound/effects/shovel_dig.ogg', 15, 1, -3)
