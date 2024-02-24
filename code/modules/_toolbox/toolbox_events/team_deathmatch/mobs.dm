@@ -46,8 +46,9 @@
 /mob/living/carbon/alien/humanoid/royal/queen/TDM/create_internal_organs()
 	..()
 	for(var/obj/item/organ/alien/eggsac/E in internal_organs)
-		internal_organs -= E
-		internal_organs += new /obj/item/organ/alien/eggsac/TDM
+		E.Remove(src)
+		var/obj/item/organ/alien/eggsac/TDM/eggsac = new()
+		eggsac.Insert(src)
 		qdel(E)
 
 	//Alien Queen Disk
