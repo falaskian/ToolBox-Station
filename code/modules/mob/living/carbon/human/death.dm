@@ -45,6 +45,11 @@
 		H.beat = BEAT_NONE
 
 	. = ..()
+	//sounds taken from traitor deathmatch
+	var/die_sound = 'sound/toolbox/tsundeathmale.ogg'
+	if(gender == "female")
+		die_sound = 'sound/toolbox/tsundeathfemale.ogg'
+	playsound(loc, die_sound, 50, 0)
 
 	dizziness = 0
 	jitteriness = 0

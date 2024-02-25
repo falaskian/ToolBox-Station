@@ -707,17 +707,16 @@
 //autobuckling noose, for mapping purposes. yeah thats it.
 /obj/structure/chair/noose/autobuckle/Initialize()
 	. = ..()
-	var/mob/to_buckle
-	while(!to_buckle)
-		for(var/mob/living/carbon/human/M in loc)
-			if(istype(M,/mob/living/carbon/human))
-				to_buckle = M
-				break
-		sleep(10)
-	if(to_buckle)
-		buckle_mob(to_buckle)
-		return
-	qdel(src)
+	spawn(0)
+		var/mob/to_buckle
+		while(!to_buckle)
+			for(var/mob/living/carbon/human/M in loc)
+				if(istype(M,/mob/living/carbon/human))
+					to_buckle = M
+					break
+			sleep(10)
+		if(to_buckle)
+			buckle_mob(to_buckle)
 
 /obj/effect/spawner/structure/window/plastitanium/tough
 	name = "plastitanium window spawner"
