@@ -136,7 +136,7 @@ client/verb/clearbullshit()
 				teams.Cut()
 				announce(failed_to_launch)
 				return
-			clean_repair_ruins(lobby_name,repair = 1,clean_items = 1,clean_bodies = 0)
+			clean_repair_ruins(lobby_name,repair = 1,clean_items = 1,clean_bodies = 0,fix_air = 1)
 			for(var/obj/machinery/clonepod/TDM/cloner in GLOB.TDM_cloners)
 				if(cloner.team)
 					cloner.TDM_on = 1
@@ -191,7 +191,7 @@ client/verb/clearbullshit()
 				if(world.time >= repairtime)
 					var/datum/team_deathmatch_map/map = get_current_map()
 					if(map && map.map)
-						clean_repair_ruins(map,repair = map.repair_map,clean_items = map.clean_map_items,clean_bodies = map.clean_map_bodies,clean_exceptions = map.clean_exceptions)
+						clean_repair_ruins(map,repair = map.repair_map,clean_items = map.clean_map_items,clean_bodies = map.clean_map_bodies,fix_air = map.clean_map_air,clean_exceptions = map.clean_exceptions)
 						remembering.Remove("repairing")
 
 			//calculate if round should end
@@ -911,7 +911,7 @@ client/verb/clearbullshit()
 					results.Add(turfs)
 	return results
 
-/datum/toolbox_event/team_deathmatch/proc/clean_repair_ruins(specific,repair = 1,clean_items = 1,clean_bodies = 1,list/clean_exceptions = list())
+/datum/toolbox_event/team_deathmatch/proc/clean_repair_ruins(specific,repair = 1,clean_items = 1,clean_bodies = 1,fix_air = 1,list/clean_exceptions = list())
 	for(var/ruin in ruin_turfs)
 		if(specific && ruin != specific)
 			continue
@@ -959,11 +959,16 @@ client/verb/clearbullshit()
 						var/thetype = text2path(paramslist["type"])
 						if(ispath(thetype) && T.type != thetype)
 							T.ChangeTurf(thetype)
-						if(istype(T,/turf/open/floor))
+					if(fix_air)
+						var/airmix = text2path(paramslist["airmix"])
+						if(airmix && istype(T,/turf/open/floor))
 							var/turf/open/floor/F = T
-							if(F.initial_gas_mix && F.air)
-								F.air.copy_from_turf(F)
-								F.update_icon()
+							F.initial_gas_mix = airmix
+							if(F.air)
+								var/datum/gas_mixture/GM = new
+								GM.parse_gas_string(F.initial_gas_mix)
+								F.copy_air(GM)
+								F.update_visuals()
 
 /datum/toolbox_event/team_deathmatch/proc/spawn_ruin(datum/map_template/ruin/ruin,list/z_levels)
 	. = 0
@@ -1044,13 +1049,28 @@ client/verb/clearbullshit()
 			var/list/turfs = get_all_ruin_floors(new_map.map)
 			if(turfs.len)
 				ruin_turfs[new_map] = list()
+				var/list/area_baseturfs
+				if(new_map.baseturf_areas && new_map.baseturf_areas.len)
+					area_baseturfs = new_map.baseturf_areas.len
 				for(var/turf/T in turfs)
-					if(new_map.baseturf && !istype(T,/turf/open/space))
-						T.baseturfs = new_map.baseturf
+					if(!istype(T,/turf/open/space))
+						var/baseturf
+						if(area_baseturfs && area_baseturfs.len)
+							var/area/A = get_area(T)
+							for(var/t in area_baseturfs)
+								if(A.type == t)
+									baseturf = area_baseturfs[t]
+									if(baseturf && !ispath(baseturf))
+										baseturf = null
+									break
+						else if(new_map.baseturf)
+							baseturf = new_map.baseturf
+						if(baseturf)
+							T.baseturfs = new_map.baseturf
 					for(var/atom/movable/AM in T)
 						new_map.modify_object(AM)
 						clean_exempt += AM
-					ruin_turfs[new_map] += "type=[T.type];x=[T.x];y=[T.y];z=[T.z]"
+					ruin_turfs[new_map] += "type=[T.type];x=[T.x];y=[T.y];z=[T.z];airmix=[T.initial_gas_mix]"
 
 /datum/toolbox_event/team_deathmatch/proc/load_maps()
 	if(map_loaded)

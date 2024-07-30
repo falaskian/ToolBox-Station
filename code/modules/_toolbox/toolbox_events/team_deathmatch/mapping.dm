@@ -25,9 +25,11 @@
 	var/repair_map = 1
 	var/clean_map_items = 1
 	var/clean_map_bodies = 1
+	var/clean_map_air = 1
 	var/list/clean_exceptions = list(/obj/effect/decal) //atom type paths that will be skipped during clean up.
 
 	var/baseturf = null //set this to the turf that will remain after an explosion, if left unchanged it will be space. this applies to the whole map
+	var/list/baseturf_areas = list() //to be written like this 'list(/area/example = /turf/open/floor/plating, /area/exampletwo = /turf/open/floor/plating/dir)'. This lets you set specific areas with specific baseturfs. Setting this makes the regular baseturf variable get ignored.
 	var/off_limits = /area/TDM/offlimits //players will be teleported away from if they enter it. an off limits areacan be an area type path or a list of area type paths.
 	var/list/no_firing_allowed_areas = list(TDM_RED_TEAM = list(/area/TDM/red_base),TDM_BLUE_TEAM = list(/area/TDM/blue_base)) //modifies weapon firing pin so they cant fire in these areas. based on teams
 

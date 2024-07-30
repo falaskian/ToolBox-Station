@@ -311,6 +311,9 @@ GLOBAL_LIST_EMPTY(TDM_cloner_records)
 		if(cloner.team != team)
 			. += cloner.times_cloned
 
+/obj/machinery/clonepod/TDM/examine(mob/user)
+	. = list()
+
 /obj/machinery/clonepod/TDM/RefreshParts()	//locking these numbers, machine parts change nothing.
 	. = ..()
 	var/dmg_mult = CONFIG_GET(number/damage_multiplier)

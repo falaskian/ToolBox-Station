@@ -107,6 +107,10 @@
 
 /obj/machinery/clonepod/examine(mob/user)
 	. = ..()
+	. += examine_cloner(user)
+
+/obj/machinery/clonepod/proc/examine_cloner(mob/user)
+	. = list()
 	. += "<span class='notice'>The <i>linking</i> device can be <i>scanned<i> with a multitool. It can be emptied by Alt-Clicking it.</span>"
 	if(in_range(user, src) || isobserver(user))
 		. += "<span class='notice'>The status display reads: Cloning speed at <b>[speed_coeff*50]%</b>.<br>Predicted amount of cellular damage: <b>[100-heal_level]%</b><br> Storing up to <b>[reagents.maximum_volume]cm<sup>3</sup></b> of synthflesh.<br>"
