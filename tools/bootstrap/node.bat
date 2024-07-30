@@ -1,5 +1,5 @@
 @echo off
-set NODE_OPTIONS=--openssl-legacy-provider
+REM set NODE_OPTIONS=--openssl-legacy-provider
 where node.exe >nul 2>nul
 if %errorlevel% == 0 (
 	echo | set /p printed_str="Using system-wide Node "

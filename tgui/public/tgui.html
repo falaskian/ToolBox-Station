@@ -47,7 +47,9 @@ if (window.__windowId__ === '[' + 'tgui:windowId' + ']') {
   // Basic checks to detect whether this page runs in BYOND
   var isByond = tridentVersion !== null
     && location.hostname === '127.0.0.1'
-    && location.pathname.indexOf('/tmp') === 0
+    //&& location.pathname.indexOf('/tmp') === 0
+	//As of BYOND 515 the path doesn't seem to include tmp dir anymore if you're trying to open tgui in external browser and looking why it doesn't work
+    //&& location.pathname.indexOf('/tmp') === 0
     && location.search !== '?external';
 
   // Version constants
@@ -186,6 +188,8 @@ if (window.__windowId__ === '[' + 'tgui:windowId' + ']') {
   var isStyleSheetLoaded = function (node, url) {
     // Method #1 (works on IE10+)
     var styleSheet = node.sheet;
+	if(styleSheet.href === undefined)
+        return;
     if (styleSheet) {
       return styleSheet.rules.length > 0;
     }
