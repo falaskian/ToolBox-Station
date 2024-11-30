@@ -39,8 +39,7 @@
 	while(!event_turf && timeout > 0)
 		impact_area = findEventArea()
 		if(!impact_area)
-			CRASH("No valid areas for anomaly found.")
-			return
+			CRASH("No valid areas for anomaly found.") //Crash kills the procedure in the first place, no return needed.
 		var/list/turf_test = get_area_turfs(impact_area)
 		if(!turf_test.len)
 			fail = 1

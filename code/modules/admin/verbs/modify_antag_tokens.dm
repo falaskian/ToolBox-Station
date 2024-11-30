@@ -1,11 +1,13 @@
 #define ANTAG_TOKENS_MAXIMUM 255
 #define ANTAG_TOKENS_MINIMUM 0
 
+
 /client/proc/cmd_admin_mod_antag_tokens(client/C in GLOB.clients, var/operation)
 	set category = "Adminbus"
 	set name = "Modify Antagonist Tokens"
 	to_chat(usr,"This has been disabled. Access antag tokens from special verbs and ooc tab")
 	return
+/* DEPRECIATED - No code registered in comment, thus no more inaccessible code and no more errors :D
 	if(!check_rights(R_ADMIN))
 		return
 
@@ -43,3 +45,4 @@
 	log_admin("[key_name(usr)]: Modified [key_name(C)]'s antagonist tokens [log_text]")
 	message_admins("<span class='adminnotice'>[key_name_admin(usr)]: Modified [key_name(C)]'s antagonist tokens ([log_text])</span>")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Modify Antagonist Tokens") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+*/

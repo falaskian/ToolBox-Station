@@ -59,7 +59,7 @@
 	var/independentz = 0
 	var/turf/srcturf = get_turf(src)
 	var/list/zcheck = SSmapping.levels_by_trait(INDEPENDENTMACHINERY)
-	if(srcturf && srcturf.z in zcheck)
+	if(srcturf && (srcturf.z in zcheck))
 		independentz = 1
 	if(src.z > 6 || independentz)
 		to_chat(user, "<span class='boldannounce'>Unable to establish a connection</span>: \black You're too far away from the station!")

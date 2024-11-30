@@ -69,6 +69,7 @@
 	set desc = "Report an issue"
 	set hidden = 1
 	return
+/* DEPRECIATED
 	var/githuburl = CONFIG_GET(string/githuburl)
 	if(githuburl)
 		var/message = "This will open the Github issue reporter in your browser. Are you sure?"
@@ -87,7 +88,7 @@
 	else
 		to_chat(src, "<span class='danger'>The Github URL is not set in the server configuration.</span>")
 	return
-
+*/
 /client/verb/hotkeys_help()
 	set name = "hotkeys-help"
 	set category = "OOC"
@@ -111,6 +112,7 @@ Admin:
 	set name = "Changelog"
 	set category = "OOC"
 	return
+/* DEPRECIATED
 	var/datum/asset/simple/namespaced/changelog = get_asset_datum(/datum/asset/simple/namespaced/changelog)
 	changelog.send(src)
 	src << browse(changelog.get_htmlloader("changelog.html"), "window=changes;size=675x650")
@@ -118,7 +120,7 @@ Admin:
 		prefs.lastchangelog = GLOB.changelog_hash
 		prefs.save_preferences()
 		winset(src, "infowindow.changelog", "font-style=;")
-
+*/
 
 /mob/proc/hotkey_help()
 	var/hotkey_mode = {"<font color='purple'>
@@ -244,6 +246,7 @@ Any-Mode: (hotkey doesn't need to be on)
 	set desc = "Donate to the server"
 	set hidden = 1
 	return
+/* DEPRECIATED
 	var/donateurl = CONFIG_GET(string/donateurl)
 	if(donateurl)
 		if(alert("This will open the Donation page in your browser. Are you sure?",,"Yes","No")!="Yes")
@@ -252,6 +255,7 @@ Any-Mode: (hotkey doesn't need to be on)
 	else
 		to_chat(src, "<span class='danger'>The Donation URL is not set in the server configuration.</span>")
 	return
+*/
 
 /client/verb/discord()
 	set name = "discord"
@@ -271,6 +275,7 @@ Any-Mode: (hotkey doesn't need to be on)
 	set desc = "View the current map in the webviewer"
 	set hidden = 1
 	return
+/* DEPRECIATED
 	var/map_in_url
 	switch(SSmapping.config?.map_name)
 		if("Box Station")			map_in_url = "box"
@@ -285,3 +290,4 @@ Any-Mode: (hotkey doesn't need to be on)
 		src << link("*****")
 	else
 		to_chat(src, "<span class='danger'>The current map is either invalid or unavailable.</span>")
+*/

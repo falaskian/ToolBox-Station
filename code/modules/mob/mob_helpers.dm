@@ -106,6 +106,8 @@
 				newletter += "[newletter]"
 			if(20)
 				newletter += "[newletter][newletter]"
+			else
+				newletter += ""
 		. += "[newletter]"
 	return sanitize(.)
 
@@ -149,6 +151,8 @@
 				newletter = "nglu"
 			if(5)
 				newletter = "glor"
+			else
+				newletter += ""
 		. += newletter
 	return sanitize(.)
 
@@ -191,6 +195,8 @@
 				newletter = "kth"
 			if(5)
 				newletter = "toc"
+			else
+				newletter += "" // Nothing new happens, redundant statement to get rid of DM-Lang error.
 		. += newletter
 	return sanitize(.)
 
@@ -550,7 +556,7 @@
 			colored_message = "<font color=[color]>[message]</font>"
 		else
 			colored_message = "<font color='[color]'>[message]</font>"
-	
+
 	//This makes readability a bit better for admins.
 	switch(message_type)
 		if(LOG_WHISPER)

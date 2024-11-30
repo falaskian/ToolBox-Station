@@ -143,7 +143,7 @@
 		merge(o)
 	return ..()
 
-/obj/item/poker_chips/hitby(atom/movable/AM, skip, hitpush)
+/obj/item/poker_chips/hitby(atom/movable/AM, skip, hitpush, datum/thrownthing/throwingdatum)
 	if(istype(AM, /obj/item/poker_chips))
 		merge(AM)
 	return ..()

@@ -132,7 +132,7 @@ SUBSYSTEM_DEF(antagtokens)
 				currentminutes = minutes_tracked[C.ckey]
 			currentminutes++
 			//security gets double fucking tokens
-			if((C.mob.mind && C.mob.mind.assigned_role && C.mob.mind.assigned_role in GLOB.memorized_restricted_jobs)) //||(check_perseus(C.mob))
+			if((C.mob.mind && C.mob.mind.assigned_role && (C.mob.mind.assigned_role in GLOB.memorized_restricted_jobs)) || check_perseus(C.mob) )
 				currentminutes++
 			if(currentminutes >= MINUTESFORANTAGTOKEN)
 				var/tokens = 0

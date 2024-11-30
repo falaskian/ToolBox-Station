@@ -357,9 +357,16 @@
 						to_chat(user,"<span class='warning'>There is already an attachment on that slot.</span>")
 				return 0
 			return 1
-
+		// Why ever have a goto here? Why ever have a goto at all?
 		if(user.a_intent == "harm")
-			goto Damage
+			if(I.force)
+				to_chat(user,"<span class='attack'>You hit \the [src] with the [I].</span>")
+				TakeDamage(I.force, 0, I, user)
+				var/area/A = get_area(src)
+				log_message("[user.real_name]([user.ckey]) attacked a space pod[pilot ? " driven by [pilot.real_name]([pilot.ckey])" : ""] at [x] [y] [z]([A]) (RemainingHP: [health]).", LOG_ATTACK)
+				user.changeNext_move(8)
+				update_icon()
+				return
 
 		if(istype(I, /obj/item/stock_parts/cell))
 			if(power_source)
@@ -454,15 +461,6 @@
 			if(attachment.PodAttackbyAction(I, user))
 				return 0
 
-		Damage
-
-		if(I.force)
-			to_chat(user,"<span class='attack'>You hit \the [src] with the [I].</span>")
-			TakeDamage(I.force, 0, I, user)
-			var/area/A = get_area(src)
-			log_message("[user.real_name]([user.ckey]) attacked a space pod[pilot ? " driven by [pilot.real_name]([pilot.ckey])" : ""] at [x] [y] [z]([A]) (RemainingHP: [health]).", LOG_ATTACK)
-			user.changeNext_move(8)
-
 		update_icon()
 
 	emag_act(mob/user)
@@ -501,7 +499,7 @@
 			return env.return_pressure()
 		if(internal_air)
 			return internal_air.return_pressure()
-		else return ..()
+		else return //Proc doesnt have a parent proc, return ..() is impossible
 
 	proc/OnClick(var/atom/A, var/mob/M, var/list/modifiers = list())
 		var/click_type = GetClickTypeFromList(modifiers)
@@ -510,7 +508,7 @@
 			A.examine()
 
 		if(click_type == P_ATTACHMENT_KEYBIND_CTRL)
-			if(istype(A, /obj/machinery/portable_atmospherics/canister) && A in bounds(1))
+			if(istype(A, /obj/machinery/portable_atmospherics/canister) && (A in bounds(1)))
 				var/obj/machinery/portable_atmospherics/canister/canister = A
 				if(internal_canister)
 					to_chat(M,"<span class='notice'>There already is a gas canister installed.</span>")

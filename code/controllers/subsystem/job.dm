@@ -475,7 +475,7 @@ SUBSYSTEM_DEF(job)
 				if(SStoolbox_events)
 					for(var/t in SStoolbox_events.cached_events)
 						var/datum/toolbox_event/E = SStoolbox_events.cached_events[t]
-						if(E && E.active && rank in E.allow_job_multispawn_on_loc)
+						if(E && E.active && (rank in E.allow_job_multispawn_on_loc))
 							allow_multispawn = 1
 							break
 				if(!allow_multispawn && locate(/mob/living) in sloc.loc)

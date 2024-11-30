@@ -42,7 +42,7 @@ var/global/list/perseus_managers = list()
 		return
 	if(!pwhitelist)
 		pwhitelist = get_pwhitelist()
-	if(ckey && ckey in pwhitelist)
+	if(ckey && (ckey in pwhitelist))
 		var/list/paramslist = params2list(pwhitelist[ckey])
 		if(paramslist)
 			if(paramslist["rank"] in perseusranks)

@@ -911,7 +911,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	return ..()
 
 /obj/machinery/power/supermatter_crystal/proc/admin_menu(mob/user)
-	if(user.client && user.client in GLOB.admins)
+	if(user.client && (user.client in GLOB.admins))
 		var/dat = "<center><A href='?src=[REF(src)];pause=1'>Toggle Pause</A> <A href='?src=[REF(src)];invuln=1'>Toggle Invulnerable</A> <A href='?src=[REF(src)];heal=1'>Heal</A></center>"
 		dat+= "<P><B>Pause:</B> Prevents the supermatter from processing. No rads, arcing or interactions with gases. Stops explosions.<br>"
 		dat+= "<B>Invulnerability:</B> Locks the crystal's health, everything else will continue to run like rads and gases. This will not stop an explosion.<br>"
@@ -924,7 +924,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		return 1
 
 /obj/machinery/power/supermatter_crystal/Topic(href, href_list)
-	if(usr.client && usr.client in GLOB.admins)
+	if(usr.client && (usr.client in GLOB.admins))
 		if(href_list["openoptions"])
 			admin_menu(usr)
 			return

@@ -98,7 +98,7 @@ GLOBAL_VAR_INIT(override_lobby_player_count,0)
 				entry += " - <font color='darkgray'><b>In Lobby</b></font>"
 			else
 				entry += " - Playing as [C.mob.real_name]"
-				if(C.mob.mind && C.mob.mind.assigned_role in head_list)
+				if(C.mob.mind && (C.mob.mind.assigned_role in head_list))
 					var/jobcolor = "#d6d6d6"
 					var/datum/job/J = SSjob.GetJob(C.mob.mind.assigned_role)
 					if(J && J.selection_color)

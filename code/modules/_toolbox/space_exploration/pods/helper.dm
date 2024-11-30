@@ -132,7 +132,6 @@
 				return P_ATTACH_ERROR_TOOBIG
 		else
 			return P_ATTACH_ERROR_ALREADY_ATTACHED
-		return 0
 
 	proc/UsePower(var/amount = 0)
 		if(!power_source)
@@ -201,8 +200,6 @@
 			return P_LOCKTYPE_DNA
 		else
 			return P_LOCKTYPE_CODE
-
-		return 0
 
 	proc/CanOpenPod(var/mob/living/carbon/human/H)
 		if(!H)
