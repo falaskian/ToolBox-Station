@@ -67,6 +67,8 @@
 
 /obj/structure/railing/CanPass(atom/movable/mover, turf/target)
 	. = ..()
+	if(mover.throwing)
+		return TRUE
 	if(get_dir(loc, target) & dir)
 		var/checking = FLYING | FLOATING
 		return . || mover.movement_type & checking
@@ -78,6 +80,8 @@
 
 /obj/structure/railing/CheckExit(atom/movable/mover, turf/target)
 	..()
+	if(mover.throwing)
+		return TRUE
 	if(get_dir(loc, target) & dir)
 		var/checking = UNSTOPPABLE | FLYING | FLOATING
 		return !density || mover.movement_type & checking || mover.move_force >= MOVE_FORCE_EXTREMELY_STRONG

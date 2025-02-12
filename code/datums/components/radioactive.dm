@@ -41,14 +41,18 @@
 	return ..()
 
 /datum/component/radioactive/process()
-	if(strength >= RAD_WAVE_MINIMUM)
-		var/stoplogging = 0
-		if(hl3_release_date <= 0)
-			stoplogging = 1
-		radiation_pulse(parent, strength, RAD_DISTANCE_COEFFICIENT * RAD_DISTANCE_COEFFICIENT_COMPONENT_MULTIPLIER, FALSE, can_contaminate, _cosmic = is_cosmic, cancel_log = stoplogging)
-	if(!hl3_release_date)
-		return
-	strength -= strength / hl3_release_date
+	if(!isnum(strength))
+		strength = 0
+	strength = min(strength,2000000) //Capping the strength to 2mil to avoid it caping out and breaking the game. -falaskian
+	if(strength > 0)
+		if(strength >= RAD_WAVE_MINIMUM)
+			var/stoplogging = 0
+			if(hl3_release_date <= 0)
+				stoplogging = 1
+			radiation_pulse(parent, strength, RAD_DISTANCE_COEFFICIENT * RAD_DISTANCE_COEFFICIENT_COMPONENT_MULTIPLIER, FALSE, can_contaminate, _cosmic = is_cosmic, cancel_log = stoplogging)
+		if(!hl3_release_date)
+			return
+		strength -= strength / hl3_release_date
 
 	if(strength < RAD_COMPONENT_MINIMUM)
 		qdel(src)
