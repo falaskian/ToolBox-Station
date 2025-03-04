@@ -1,3 +1,11 @@
+/obj/structure/mirror_frame
+	name = "mirror frame"
+	desc = "Add a sheet of glass first to see yourself in this mirror."
+	icon = 'icons/obj/mirror.dmi'
+	icon_state = "mirror_frame"
+
+/obj/structure/mirror_frame/attackby(obj/item/I, mob/living/user, params)
+
 //wip wip wup
 /obj/structure/mirror
 	name = "mirror"
