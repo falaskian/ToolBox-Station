@@ -32,6 +32,11 @@
 
 	/*if(istype(get_turf(source), /turf/open/indestructible/sound/pool)) //Pools heavily block rads. Spent fuel pool!
 		intensity *= 0.05*/
+
+	if(!isnum(intensity))
+		intensity = 0
+	intensity = min(intensity,200000)
+
 	var/atom/theloc = source.loc
 	while(theloc)
 		if(theloc.contents_radiation_multiplier >= 0)

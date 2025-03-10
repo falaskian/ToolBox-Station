@@ -4,7 +4,7 @@
 	// depending on the species, it will run the corresponding apply_damage code there
 	. = dna.species.apply_damage(damage, damagetype, def_zone, blocked, src, forced)
 	if(. && (stat != DEAD && (damagetype==BRUTE || damagetype==BURN) && damage>10 && prob(10+damage/2)))
-		if(last_injury_scream+20 > world.time)
+		if(last_injury_scream+20 <= world.time)
 			emote("scream")
 			last_injury_scream = world.time
 

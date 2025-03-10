@@ -188,7 +188,10 @@
 		log_game("[key_name(user)] golem-swapped into [src]")
 		user.visible_message("<span class='notice'>A faint light leaves [user], moving to [src] and animating it!</span>","<span class='notice'>You leave your old body behind, and transfer into [src]!</span>")
 		show_flavour = FALSE
-		create(ckey = user.ckey,name = user.real_name)
+		var/mob/living/M = create(null,name = user.real_name)
+		user.mind.transfer_to(M)
+		M.faction = user.faction.Copy()
+		M.real_name = user.real_name
 		user.death()
 		return
 

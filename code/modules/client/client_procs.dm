@@ -261,6 +261,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	var/full_version = "[byond_version].[byond_build ? byond_build : "xxx"]"
 	log_access("Login: [key_name(src)] from [address ? address : "localhost"]-[computer_id] || BYOND v[full_version]")
 
+	if(byond_version >= 516)
+		spawn(30)
+			input(src,"You are using version 516 or higher. Your chat screen will be corrupted on this version. Here is a link where you can download version 515.","Version conflict.","https:/www.byond.com/download/build/515/") as text
+
 	var/alert_mob_dupe_login = FALSE
 	if(CONFIG_GET(flag/log_access))
 		for(var/I in GLOB.clients)
@@ -312,9 +316,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			else
 				qdel(src)
 				return
-	if(byond_build > MAX_RECOMMENDED_CLIENT)
+	/*if(byond_build > MAX_RECOMMENDED_CLIENT)
 		to_chat(src, "<span class='userdanger'>Your version of byond is over the maximum recommended version for clients (build [MAX_RECOMMENDED_CLIENT]) and may be unstable.</span>")
 		to_chat(src, "<span class='danger'>Please download an older version of byond. You can go to <a href=\"https://secure.byond.com/download/build\">BYOND's website</a> to download other versions.</span>")
+	*/
 	if(SSinput.initialized)
 		set_macros()
 

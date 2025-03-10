@@ -43,7 +43,7 @@
 /datum/component/radioactive/process()
 	if(!isnum(strength))
 		strength = 0
-	strength = min(strength,2000000) //Capping the strength to 2mil to avoid it caping out and breaking the game. -falaskian
+	strength = min(strength,200000) //Capping the strength to 2mil to avoid it caping out and breaking the game. -falaskian
 	if(strength > 0)
 		if(strength >= RAD_WAVE_MINIMUM)
 			var/stoplogging = 0
