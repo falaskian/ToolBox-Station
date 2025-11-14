@@ -64,6 +64,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	//used by CHECK_TICK as well so that the procs subsystems call can obey that SS's tick limits
 	var/static/current_ticklimit = TICK_LIMIT_RUNNING
 
+	var/list/crash_prevention_shutdown = list() //an attempt to debug crashes -falaskian
+
 /datum/controller/master/New()
 	if(!config)
 		config = new
@@ -413,6 +415,19 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		SS = thing
 		if (SS.state != SS_IDLE)
 			continue
+		if (world.cpu >= 100 && SS.tick_usage >= 100 && !(SS in crash_prevention_shutdown) && SS.can_crash_prevent)
+			crash_prevention_shutdown[SS] = world.time
+			message_admins("[SS.name] subsystem is using too much resources and is shutting down to prevent crash.")
+			log_game("[SS.name] subsystem is using too much resources and is shutting down to prevent crash.")
+			continue
+		if(SS in crash_prevention_shutdown)
+			if(world.cpu >= 100)
+				continue
+			var/thetime = crash_prevention_shutdown[SS]
+			if(thetime+200 <= world.time)
+				crash_prevention_shutdown.Remove(SS)
+				message_admins("[SS.name] subsystem has resumed processing.")
+				log_game("[SS.name] subsystem has resumed processing.")
 		if (SS.can_fire <= 0)
 			continue
 		if (SS.next_fire > world.time)

@@ -35,6 +35,8 @@
 
 	var/static/list/failure_strikes //How many times we suspect a subsystem type has crashed the MC, 3 strikes and you're out!
 
+	var/can_crash_prevent = 1
+
 //Do not override
 ///datum/controller/subsystem/New()
 

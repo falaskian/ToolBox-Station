@@ -9,6 +9,8 @@ SUBSYSTEM_DEF(input)
 	var/list/macro_sets
 	var/list/movement_keys
 
+	can_crash_prevent = 0 //so players can still move during a crash prevention -falaskian
+
 /datum/controller/subsystem/input/Initialize()
 	setup_default_macro_sets()
 

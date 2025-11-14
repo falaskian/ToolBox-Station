@@ -58,7 +58,7 @@
 	var/calculated_bin_rating
 	for(var/obj/item/stock_parts/matter_bin/bin in component_parts)
 		calculated_bin_rating += bin.rating
-	heat_capacity = 5000 * ((calculated_bin_rating - 1) ** 2)
+	heat_capacity = 5000 * ((calculated_bin_rating - 1) ** 2) * 1.5  // Apply a multiplier for increased power usage
 	min_temperature = T20C
 	max_temperature = T20C
 	if(cooling)
@@ -124,7 +124,8 @@
 
 	var/temperature_delta= abs(old_temperature - air_contents.return_temperature())
 	if(temperature_delta > 1)
-		active_power_usage = (heat_capacity * temperature_delta) / 10 + idle_power_usage
+		var/scaling_factor = 1000  // Higher multiplier for more realistic power usage
+		active_power_usage = (heat_capacity * temperature_delta * scaling_factor) + idle_power_usage
 		update_parents()
 	else
 		active_power_usage = idle_power_usage
